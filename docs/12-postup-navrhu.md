@@ -43,7 +43,7 @@
 |---|---|---|---|---|
 | **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
 | **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ hotovo: kapitoly v kostce, D59–D61 | 2–4 h |
-| **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ❌ | 4–8 h |
+| **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ✅ kostry a mapa následků schváleny (D62) | 4–8 h |
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 částečně, 2–5 chybí | 50–95 h |
 | **N4** | Papírový průchod každé kapitoly | záznam z testu a opravy | ❌ | 15–25 h |
 | **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ❌ | 4–8 h |
@@ -121,6 +121,10 @@ v bibli doplnit sloupce *příznak*, *nastaví se v* a *čte se v*. Kontrola: ka
 následek, každý následek má zdroj.
 
 **Výstup:** čtyři kostry a doplněná mapa následků. Autor je schválí, než začne N3.
+
+**Stav (2026-10-31):** kostry [2](kapitoly/02-planovani.md), [3](kapitoly/03-realizace.md),
+[4](kapitoly/04-krize.md) a [5](kapitoly/05-uzavreni.md) a
+[mapa následků](03-pribehova-bible.md#rozhodnutí-a-jejich-pozdější-následky) schváleny (D62).
 
 ## N3 Každá kapitola do detailu
 

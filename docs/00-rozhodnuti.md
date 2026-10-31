@@ -68,6 +68,7 @@
 | D59 | 2026-10-31 | N1: za Báru se hraje i ve **4. kapitole** po rozkolu: se seznamem pasažérů z kap. 1 odhalí Předsedu | seznam pasažérů z kap. 1 dostává hlavní následek; jestli Bára řekne pravdu Rudovi hned, rozhoduje její důvěra; úseky za Báru jsou v kap. 1, 3, 4 a 5 | [bible](03-pribehova-bible.md) |
 | D60 | 2026-10-31 | N1: romantická linka nemá vlastní konce, mění **epilog** podle Bářiny důvěry | vysoká: Bára poprvé řekne termín (rande), střední: parťáci, nízká: odchází; jen několik replik navíc | [bible](03-pribehova-bible.md#konce) |
 | D61 | 2026-10-31 | N1: tajný konec je **krátká scéna po titulcích** za dokonalý průchod | Komise rozpuštěna, z radnice sundávají lešení; podmínky upřesní návrh kap. 5 | [bible](03-pribehova-bible.md#konce) |
+| D62 | 2026-10-31 | N2: kostry kapitol 2–5 a mapa následků schváleny | Rudův vývoj má pět zdrojů (R1.1, R2.2, R3.2, R4.1, R5.2); nová rozhodnutí R5.1 předání a R5.2 já, nebo my; vrátný se v kap. 3 vrací jako jeřábník; další krok je N3, kapitola 1 do detailu | [kapitoly 2–5](kapitoly/), [mapa následků](03-pribehova-bible.md#rozhodnutí-a-jejich-pozdější-následky) |
 
 ## Čeká na rozhodnutí
 

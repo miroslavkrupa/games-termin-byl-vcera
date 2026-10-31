@@ -236,19 +236,48 @@ Každá kapitola jednou větou ve čtyřech bodech, aby šlo zkontrolovat tempo 
 
 ## Rozhodnutí a jejich pozdější následky
 
-| Volba | Kde se vrátí | Následek |
-|---|---|---|
-| R1.1 slíbit všechno | kap. 4 | sponzor trvá na všem, krize je tvrdší, chybí prostor pro vyjednávání |
-| R1.2 babička přehlédnuta | kap. 4 | babička zablokuje rampu, je nutný dlouhý vedlejší questline |
-| R1.3 Bára přeslechnuta | kap. 3 | Bára mlčí o vadě v řídicím softwaru, ta se projeví v kap. 4 |
-| R2.1 tým z kamarádů | kap. 3 | chybí klíčová schopnost, puzzle je nutné řešit oklikou |
-| R2.2 jedna metodika na všechno | kap. 3–4 | Gantt na všechno: software se naplánuje dopředu a obyvatelé ho při ukázce odmítnou. Krabice Ing. Frameworka: rampa se staví po sprintech a betonáž se rozpadne |
-| R2.2 výjimky zařazené špatně | kap. 4 | bezpečnostní systém bez certifikace nesmí startovat; interiér navržený od stolu nikdo nechce |
-| M15 nesladěné integrační body | kap. 4 | krize na rozhraní: software nejde do zavřeného trupu, nutné drahé otevírání |
-| R2.3 riziko krys zapsáno | kap. 3 | kočka Riziková vyřeší sklad za minutu, jinak dlouhé puzzle |
-| R3.1 bazén přijat bez řízení | kap. 3–4 | Scope Creep vyroste a sežere kus kapacity |
-| R3.3 retrospektiva vynechána | kap. 4 | opakují se stejné chyby, morálka padá, člen týmu odchází s klíčovým předmětem |
-| R4.1 zelený report | kap. 5 | start proběhne na falešných datech, horší konec |
+Mapa následků z kroku N2 [postupu návrhu](12-postup-navrhu.md). Podrobnosti jsou v návrzích
+kapitol ([1](kapitoly/01-iniciace.md), [2](kapitoly/02-planovani.md), [3](kapitoly/03-realizace.md),
+[4](kapitoly/04-krize.md), [5](kapitoly/05-uzavreni.md)). Kontrola: každé rozhodnutí má
+následek a každý čtený příznak se nastaví dřív, než se čte.
+
+| Volba nebo výsledek | Příznak | Nastaví se | Čte se | Následek | Mění proměnnou |
+|---|---|---|---|---|---|
+| R1.1 slíbit všechno | `c1_slib_vseho` | kap. 1 (M03) | kap. 2, 4 | sponzor trvá na všem, souboj v kap. 4 je tvrdší, chybí prostor pro vyjednávání | důvěra stakeholderů, rozsah, **Rudův vývoj** |
+| R1.2 babička | `c1_babicka` | kap. 1 | kap. 4 | přehlédnutá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
+| R1.3 Bára vyslechnuta | `c1_bara_vyslechnuta` | kap. 1 | kap. 2, 3 | Bára radí s rozdělením Archy; v kap. 3 řekne o vadě v softwaru, nebo mlčí | Bářina důvěra |
+| R1.4 „následné fáze“ | `c1_faze2` | kap. 1 | kap. 2, 3 | Předseda má páku: „fáze 2“ v roadmapě, analýza dopadu u každé změny | čas |
+| M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | snazší rozdělení a R4.2, repliky do souboje | důvěra stakeholderů |
+| razítko | `c1_razitko` | kap. 1 | kap. 2 | kávové razítko: formulář navíc | – |
+| seznam pasažérů | `c1_seznam_pasazeru` | kap. 1 (Bára) | kap. 4 | hlavní důkaz proti Předsedovi (D59) | – |
+| dohoda s Panem Změnou | `c1_zmena_dohoda` | kap. 1 | kap. 3 | M10 o kolo kratší | rozsah |
+| R2.1 tým | `c2_tym`, `c2_tym_pokryti` | kap. 2 | kap. 3, 5 | chybějící dovednost znamená puzzle oklikou; bez certifikátora náhradní puzzle při startu | morálka |
+| R2.2 rozdělení Archy | `c2_rozdeleni`, `c2_vyjimky` | kap. 2 | kap. 3, 4, 5 | Gantt na všechno: obyvatelé software odmítnou; krabice na všechno: betonáž se rozpadne; špatné výjimky: bezpečnostní systém bez certifikace nesmí startovat, interiér od stolu nikdo nechce | **sladění světů**, **Rudův vývoj** |
+| R2.3 riziko předem | `c2_riziko_predem` | kap. 2 | kap. 3, 4 | krysy: kočka Riziková vyřeší sklad za minutu; lano: jeřáb bez výpadku; úsměv: kratší konfrontace s Předsedou | čas |
+| M04 rozpad práce | `c2_rozpad` | kap. 2 | kap. 3 | mezery a překryvy jako překvapení | čas, technický dluh |
+| M06 roadmapa | `c2_mosty` | kap. 2 | kap. 3 | integrační body pro M15 | sladění světů |
+| M07 rizika | `c2_rizika_zapsana` | kap. 2 | kap. 3, 4 | zapsaná rizika nezaskočí | čas |
+| R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Scope Creep vyroste a sežere kapacitu; svačiny přes schvalování: naštvaní obyvatelé | rozsah, důvěra, sladění světů |
+| R3.2 Bára a priority | `c3_bara_priority` | kap. 3 | kap. 4 | řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
+| R3.3 retrospektiva | `c3_retro` | kap. 3 | kap. 4 | bez ní se opakují chyby, morálka padá, člen týmu odchází s klíčovým předmětem | morálka |
+| M13 harmonogram | `c3_rezerva` | kap. 3 | kap. 4 | rezerva na krizi | čas |
+| M14 ukázka | `c3_hodnota` | kap. 3 | kap. 4, 5 | obyvatelé dostanou, co potřebují | důvěra stakeholderů |
+| M10 změny | `c3_creep` | kap. 3 | kap. 4, 5 | velikost Scope Creepa | rozsah, čas |
+| M15 integrace | `c3_integrace` | kap. 3 | kap. 4, 5 | nesladěné body jako krize na rozhraní | sladění světů |
+| vada v softwaru | `c3_vada_hlasena` | kap. 3 (Bára) | kap. 4 | nenahlášená vada se projeví v krizi | Bářina důvěra |
+| sprint | `c3_dluh` | kap. 3 (Bára) | kap. 4 | přeplněné sprinty: víc chyb v krizi | technický dluh |
+| R4.1 report | `c4_report` | kap. 4 | kap. 5 | zelený report: start na falešných datech, horší konec | důvěra stakeholderů, **Rudův vývoj** |
+| R4.2 co obětovat | `c4_obet` | kap. 4 | kap. 5 | co v Arše chybí, reakce obyvatel v epilogu | rozsah |
+| R4.3 usmíření | `c4_usmireni` | kap. 4 | kap. 5 | snazší finální puzzle | Bářina důvěra, sladění světů |
+| Bára řekne pravdu (D59) | `c4_bara_rekla` | kap. 4 (Bára) | kap. 4 | konfrontace s Předsedou spolu, nebo Ruda sám | Bářina důvěra |
+| M03 souboj se sponzorem | `c4_souboj` | kap. 4 | kap. 4 | prostor pro vyjednání rozsahu (R4.2) | důvěra stakeholderů |
+| M11 Plachetnice | `c4_zlepseni` | kap. 4 | kap. 5 | jedno zlepšení pro finální puzzle | morálka |
+| R5.1 předání | `c5_predani` | kap. 5 | epilog | Archa po startu funguje, nebo posádka hledá vypínač | – |
+| R5.2 já, nebo my | `c5_my` | kap. 5 | konec | rozhoduje mezi konci Hrdina a Tým | **Rudův vývoj** |
+
+**Rudův vývoj (0–5)** má pět zdrojů, v každé kapitole jednu vadu a jedno rozhodnutí: slibuje
+všechno (R1.1), plánuje do mlhy (R2.2), mikromanažuje (R3.2), reportuje zeleně (R4.1) a hraje
+si na hrdinu (R5.2).
 
 ## Konce
 
