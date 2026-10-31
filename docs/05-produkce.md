@@ -6,8 +6,11 @@
 
 ## Rozsah pro jednoho autora
 
-- Hru dělá jeden autor bez rozpočtu. Cíl 8–12 hodin je horní mez, ne slib.
-- ✅ **Nejdřív kapitola 1 jako samostatná ukázka** (D38); rozsah celé hry se rozhodne po ní.
+- Hru dělá jeden autor bez rozpočtu.
+- ✅ **Rozsah celé hry (D56):** 4–5 hodin v 5 kapitolách, 11 miniher, výroba asi 360–570 h.
+  Každá kapitola má rozpočet (níže), který hlídá návrh i výroba.
+- ✅ **Nejdřív kapitola 1 jako samostatná ukázka** (D38); podle její skutečné pracnosti se
+  rozsah celé hry ověří a případně upraví.
 - **Nejdřív vertical slice** (kapitola 1, 30–45 min). Teprve podle skutečné rychlosti výroby
   se rozhodne o rozsahu dalších kapitol.
 - **Prototyp změřil rychlost výroby** ([vyhodnocení](09-vyhodnoceni-prototypu.md)): kapitola 1
@@ -16,6 +19,24 @@
 - **Vydávat po kapitolách.** Každá kapitola je samostatné vydání zdarma. Hráči dávají zpětnou
   vazbu průběžně a projekt nevisí na jednom velkém dokončení.
 - Když se nestíhá, škrtá se šíře (vedlejší linky, počet miniher), ne kvalita hlavní linky a humoru.
+
+## Rozpočty kapitol
+
+Stanoveno v kroku N0 [postupu návrhu](12-postup-navrhu.md) (D56). Návrh kapitoly se do rozpočtu
+musí vejít; překročení je vědomé rozhodnutí se záznamem. Počty jsou horní meze.
+
+| Kapitola | Délka | Scény (z toho nové pozadí) | Nové postavy | Předměty | Repliky na jazyk | Minihry |
+|---|---|---|---|---|---|---|
+| 1 Iniciace (s úvodem) | 40–60 min | 6 + úvod (7) | 9 + kocour | 15 | 400–500 | M01, M02, M03 |
+| 2 Plánování | 55–75 min | 6 (4) | 6 kandidátů do týmu | 15 | 400–500 | M04, M06, M07 |
+| 3 Realizace | 70–90 min | 6 (3) | 2 | 15 | 450–550 | M13, M14, M10, M15 |
+| 4 Krize | 45–60 min | 5 (1, ostatní ve večerní verzi) | 1 | 10 | 400–500 | M11, M03 (opakování) |
+| 5 Uzavření | 20–30 min | 3 (1) | 0 | 5 | 200–300 | žádná nová, finální puzzle za oba |
+| **Celkem** | **3,8–5,3 h** | **16 nových pozadí** | | **60** | **1 850–2 350** | **11 miniher** |
+
+Minihry jsou rozložené tak, aby na hodinu hraní připadly nejvýš 2–3 (pravidlo
+[výukové matice](02-vyukova-matice.md#pravidla-pro-práci-s-maticí)). Kapitola 3 je na horní
+hranici; když přeroste rozpočet, jako první se zkrátí Integrační okno nebo Scope Creep.
 
 ## Platformy a ovládání
 

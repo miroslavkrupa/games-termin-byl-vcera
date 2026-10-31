@@ -121,7 +121,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 
 | Dějství | Kapitoly | Co se děje | Rudův vnitřní stav |
 |---|---|---|---|
-| **I. Nástup** | prolog, 1 | Ruda dostane funkci omylem, hledá skutečný cíl a sponzora | „Tohle zvládnu sám za týden.“ |
+| **I. Nástup** | 1 (s úvodem) | Ruda dostane funkci omylem, hledá skutečný cíl a sponzora | „Tohle zvládnu sám za týden.“ |
 | **II. Stavba** | 2, 3 | plán, tým, sprinty, změny; Předseda škodí procesem | „Proč mě nikdo neposlouchá?“ |
 | **III. Krize a dodávka** | 4, 5 | následky dohánějí, tým se rozpadá, odhalení Předsedy, start | „Možná to není o mně.“ |
 
@@ -131,11 +131,12 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
 
 ## Osnova kapitol
 
-### Prolog: Kdo jsem a proč tu jsem
+### Úvod kapitoly 1: Kdo jsem a proč tu jsem
+- **Rozsah:** 3–5 minut, součást kapitoly 1, ne samostatný prolog (D57); nejvýš jedno nové pozadí.
 - **Cíl:** naučit ovládání (inventář, kombinace, dialogy), představit svět a Rudu.
 - **Děj:** Ruda je vyhozen z dalšího projektu. Při úprku před věřiteli omylem podepíše
   jmenování manažerem Velkého projektu (myslel si, že jde o stížnost).
-- **Klíčové puzzly:** dostat se z rozestavěného bytu, poznat, co je projekt a co ne (V01).
+- **Klíčové puzzly:** jeden jednoduchý puzzle na naučení ovládání; poznat, co je projekt a co ne (V01).
 - **Konec:** Ruda se dozví o kometě. Odpočet 30 dní začíná.
 
 ### Kapitola 1: Iniciace
@@ -157,8 +158,8 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
   nic neplánovala. Hráč rozhoduje část po části.
 - **Puzzly:** sestavení týmu (V10); **rozdělení Archy** (V11): každou část přiřadit ke světu plánu,
   nebo iterací. Výjimky (bezpečnostní systém, interiér) prověří, jestli hráč pochopil kritérium.
-- **Minihry:** *Jak sníst slona* (kamenná a mlžná půlka), *Jeřábový balet* (první úsek rampy),
-  *Poker s goblinem*, *Mapa do neznáma* (cesta a řeka), *Krabice od bot*.
+- **Minihry:** *Jak sníst slona* (kamenná a mlžná půlka), *Mapa do neznáma* (cesta a řeka),
+  *Krabice od bot*. Odhady v hospodě U Odhadu jako dialog (bývalý *Poker s goblinem*, D58).
 - **Hlavní rozhodnutí:**
   - **R2.1** Výběr 4 členů týmu z 6–8 kandidátů.
   - **R2.2** Rozdělení Archy: podle povahy práce, nebo jedna metodika na všechno (Rudův Gantt,
@@ -171,8 +172,9 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
   a Předsedovu sabotáž procesem.
 - **Struktura:** hra střídá **Rudu na rampě** a **Báru u řídicího systému a interiéru**.
 - **Puzzly:** zahlcená dílna (WIP, V16); krysy ve skladu (vrací se riziko z kap. 2).
-- **Minihry:** *Jeřábový balet* (další úseky), *Tetris kapacity* (se scénou ranní porady),
-  *Ukázka na náměstí*, *Scope Creep* (změny do obou světů), *Integrační okno*, první *Plachetnice*.
+- **Minihry:** *Jeřábový balet* (stavba rampy), *Ukázka na náměstí*, *Scope Creep* (změny do obou
+  světů), *Integrační okno*. Ranní porada a plánování sprintu jako scéna s rozhodnutím (bývalý
+  *Tetris kapacity*, D58). Retrospektiva (R3.3) jako krátká scéna.
 - **Hlavní rozhodnutí:**
   - **R3.1** Pan Změna chce bazén v trupu a objednávku svačin v aplikaci. Kam který požadavek
     poslat a jak s ním naložit?
@@ -189,7 +191,8 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
   Vztahová krize je zároveň metodická.
 - **Záporáci se spojí:** Předseda a Ing. Framework žijí z toho, že se nic nedokončí.
 - **Puzzly a události** podle předchozích voleb (viz tabulka následků níže).
-- **Minihry:** *Dashboard lží*, rozhodující *Souboj argumenty* se sponzorem, druhá *Plachetnice*.
+- **Minihry:** *Plachetnice* (retrospektiva po rozkolu), rozhodující *Souboj argumenty* se
+  sponzorem. Zelený report v řídicí věži jako puzzle (bývalý *Dashboard lží*, D58).
 - **Hlavní rozhodnutí:**
   - **R4.1** Eskalovat poctivě (s variantami), nebo dál reportovat zeleně?
   - **R4.2** Co obětovat z rozsahu, aby se stihl start?

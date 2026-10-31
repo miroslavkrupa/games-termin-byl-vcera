@@ -14,7 +14,7 @@ jménem Deadline – a hráč se mimochodem naučí řídit projekty.
 | | |
 |---|---|
 | **Žánr** | 2D point & click adventura, komedie, s minihrami |
-| **Délka** | 8–12 hodin, prolog + 5 kapitol (cíl ověřit na vertical slice) |
+| **Délka** | ✅ 4–5 hodin v 5 kapitolách, úvod je součástí kapitoly 1 (D56, D57); rozpočty kapitol v [produkci](05-produkce.md#rozpočty-kapitol) |
 | **Jazyk** | ✅ angličtina a čeština, vždy oba jazyky zároveň (viz Jazyky) |
 | **Platforma** | ✅ PC (Windows), Mac a mobily (Android, iOS); ovládání myší i dotykem |
 | **Model** | ✅ zdarma, s možností dobrovolného příspěvku (donate) |

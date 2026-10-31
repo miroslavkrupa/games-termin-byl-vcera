@@ -41,7 +41,7 @@
 
 | Krok | Co | Výstup | Stav (2026-10-31) | Odhad |
 |---|---|---|---|---|
-| **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ⚠️ otevřené: vize počítá s 8–12 h, vyhodnocení doporučuje 4–6 h | 1–2 h |
+| **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
 | **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ většinou hotovo, zbývají otevřené otázky | 2–4 h |
 | **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ❌ | 4–8 h |
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 částečně, 2–5 chybí | 50–95 h |
@@ -76,6 +76,10 @@ které pak vypadnou, by byla ztráta.
   Detailní návrh ho pak hlídá.
 
 **Výstup:** nové řádky v záznamu rozhodnutí, upravená vize, seznam miniher a rozpočty kapitol.
+
+**✅ Hotovo (2026-10-31):** 4–5 hodin v 5 kapitolách, kapitoly 2 a 3 zůstávají oddělené (D56);
+prolog je úvodem kapitoly 1 (D57); vyřazeny M05, M08 a M12, zůstává 11 miniher (D58).
+[Rozpočty kapitol](05-produkce.md#rozpočty-kapitol) jsou v produkčních zásadách.
 
 ## N1 Příběh celé hry
 

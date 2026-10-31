@@ -36,18 +36,21 @@
 |---|---|---|---|---|---|---|---|
 | **Společný základ** | M01 | Charter z trosek | project charter | 1 | Ruda | V02, V03 | ⭐ slice |
 | | M02 | Kdo tu vlastně velí | mapa stakeholderů | 1 | Ruda | V04 | ⭐ slice |
-| | M03 | Souboj argumenty | komunikace se stakeholdery | 1–5 | Ruda | V05 | ⭐ slice |
+| | M03 | Souboj argumenty | komunikace se stakeholdery | 1, 4 | Ruda | V05 | ⭐ slice |
 | | M07 | Krabice od bot | registr rizik | 2 | Ruda a Bára | V09 | střední |
-| | M11 | Plachetnice | retrospektiva, poučení | 3–4 | tým | V19, V22 | nízká |
+| | M11 | Plachetnice | retrospektiva, poučení | 4 | tým | V19, V22 | nízká |
 | **Svět plánu** | M04 | Jak sníst slona | WBS | 2 | Ruda | V06 | střední |
-| | M13 | Jeřábový balet | harmonogram, kritická cesta | 2–3 | Ruda | V23 | ⭐ prototyp jádra |
-| | M12 | Dashboard lží | měření plnění plánu vs. hodnoty | 4 | Ruda | V17 | nízká |
-| **Svět iterací** | M05 | Poker s goblinem | relativní odhady | 2–3 | Bára | V07 | střední |
-| | M08 | Tetris kapacity | plánování sprintu | 3 | Bára | V12 | nízká |
-| | M14 | Ukázka na náměstí | ukázka a zpětná vazba uživatelů | 3 | Bára | V24, V14 | ⭐ prototyp jádra |
+| | M13 | Jeřábový balet | harmonogram, kritická cesta | 3 | Ruda | V23 | ⭐ prototyp jádra |
+| **Svět iterací** | M14 | Ukázka na náměstí | ukázka a zpětná vazba uživatelů | 3 | Bára | V24, V14 | ⭐ prototyp jádra |
 | **Spojka** | M06 | Mapa do neznáma | hybridní roadmapa, plánování po vlnách | 2 | Ruda a Bára | V08 | střední |
 | | M10 | Scope Creep | řízení změn ve dvou světech | 3 | Ruda a Bára | V15 | střední |
-| | M15 | Integrační okno | integrace a synchronizace | 3–4 | Ruda a Bára | V25 | střední |
+| | M15 | Integrační okno | integrace a synchronizace | 3 | Ruda a Bára | V25 | střední |
+
+**Vyřazeno (D58):** M05 Poker s goblinem, M08 Tetris kapacity a M12 Dashboard lží. Témata
+zůstávají jinak: odhady (V07) jako dialog v hospodě U Odhadu, plánování sprintu (V12) jako
+scéna s rozhodnutím, zelený report (V17) jako puzzle v řídicí věži. Specifikace níže zůstávají
+pro případ návratu. Rozložení miniher po kapitolách je v
+[rozpočtech kapitol](05-produkce.md#rozpočty-kapitol).
 
 **Zrušeno jako minihra:** M09 Standup za 15 minut. Ranní porada zůstává jako krátká scéna
 před plánováním sprintu (V13), aby zbylo místo pro minihry, které nesou hlavní myšlenku.
@@ -126,7 +129,7 @@ před plánováním sprintu (V13), aby zbylo místo pro minihry, které nesou hl
 - **Riziko návrhu:** může být suché → potřebuje vtipného jeřábníka a vizuální gagy.
 - **Papírový prototyp:** kartičky úkolů na časové ose z papíru, jedna figurka jeřábu.
 
-### M12 Dashboard lží
+### M12 Dashboard lží (vyřazeno, D58)
 - **Příběh:** řídicí věž hlásí, že je vše zelené. Kometa se přitom blíží.
 - **Mechanika:** porovnávání ukazatelů s realitou ve scéně. U rampy dává smysl měřit plnění
   plánu. U softwaru ukazuje věž „87 % hotovo podle plánu“, a přitom nic nefunguje; tam je potřeba
@@ -136,14 +139,14 @@ před plánováním sprintu (V13), aby zbylo místo pro minihry, které nesou hl
 
 ## Svět iterací
 
-### M05 Poker s goblinem
+### M05 Poker s goblinem (vyřazeno, D58)
 - **Příběh:** v hospodě U Odhadu se o odhadech sází.
 - **Mechanika:** relativní odhady položek řídicího systému a interiéru kartami. Goblini
   podvádějí: kotví („tohle jsou dva dny, ne?“), předhánějí se v optimismu, skupinové myšlení.
   Kontrast: Ruda chce i software odhadovat v hodinách na měsíc dopředu a goblini se mu vysmějí.
 - **Výsledek:** přesnost odhadů ovlivní plánování sprintů.
 
-### M08 Tetris kapacity
+### M08 Tetris kapacity (vyřazeno, D58)
 - **Příběh:** plánování každého sprintu na řídicím systému a interiéru.
 - **Mechanika:** položky různých tvarů se skládají do kapacity sprintu; závislosti spojují dílky.
   Přeplněný sprint přetéká a zvyšuje technický dluh. Před plánováním proběhne krátká scéna
@@ -207,4 +210,4 @@ před plánováním sprintu (V13), aby zbylo místo pro minihry, které nesou hl
 - [ ] Jedna minihra opakovaná víckrát (souboj argumenty), nebo každá jen jednou?
 - [ ] Obtížnost miniher: jedna úroveň, nebo volitelná?
 - [ ] Mají mít minihry vlastní vizuální styl, nebo zůstat ve stylu scén?
-- [ ] 14 miniher je pro jednoho autora hodně. Které vyřadit, kdyby nebyl čas? (Kandidáti: M12, M05.)
+- [x] 14 miniher je pro jednoho autora hodně → vyřazeny M05, M08 a M12, zůstává 11 (D58)

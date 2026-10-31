@@ -240,4 +240,4 @@ emoce, oba jazyky. Vtipy jsou psané pro každý jazyk zvlášť, ne přeložen�
 - [ ] Předseda: zachovat závěrečný telefonát (prozrazuje ho), nebo ho zamlžit kvůli zvratu?
 - [ ] Číslo 4 812 obyvatel: běžecký vtip, nebo jen číslo?
 - [ ] Je cesta přes Pana Změnu dost zábavná, aby nebyla trestem za neposlouchání Báry?
-- [ ] Úvod (3–5 min) rozepsat zvlášť, nebo jako součást této kapitoly?
+- [x] Úvod (3–5 min) rozepsat zvlášť, nebo jako součást této kapitoly? → součást kapitoly, bývalý prolog (D57)

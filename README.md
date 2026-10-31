@@ -27,7 +27,7 @@ pro **PC, Mac a mobily**.
 | [Vize](docs/01-vize.md) | návrh na jednu stránku: pilíře, cílová skupina, co si hráč odnese, co hra není |
 | [Výuková matice](docs/02-vyukova-matice.md) | PM témata → kapitola → mechanika → důkaz pochopení; pokrytí domén PMBOK |
 | [Příběhová bible](docs/03-pribehova-bible.md) | svět, postavy, dějový oblouk, osnova kapitol, stavové proměnné, následky, konce |
-| [Minihry](docs/04-minihry.md) | 14 miniher ve čtyřech patrech koncepce, zásady, specifikace, pořadí prototypů, šablona |
+| [Minihry](docs/04-minihry.md) | 11 miniher ve čtyřech patrech koncepce (3 vyřazené), zásady, specifikace, pořadí prototypů, šablona |
 | [Produkce](docs/05-produkce.md) | rozsah pro jednoho autora, platformy a ovládání, příspěvky, AI grafika, příprava na dabing, jazyky |
 | [Stylová bible](docs/06-stylova-bible.md) | výtvarný styl podobný Deponii, pravidla, schválená varianta A (večer a krize C), zadání pro AI a automatické generování vzorků |
 | [Animace postav](docs/styl/animace-postav.md) | model postavy a zadání všech animací pro ChatGPT, pravidla a zpracování |
