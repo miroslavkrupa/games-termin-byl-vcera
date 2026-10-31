@@ -41,6 +41,11 @@ které vždy končí hratelnou verzí.
 
 F1 a F2 mohou běžet souběžně. Iterace F3 se mohou s F2 překrývat: grafika se dodává scénu po scéně.
 
+**Změna pořadí (D54, D55):** mezi F2 a F3 se vkládá návrh celé hry na papíře a první verze
+textů kapitoly 1 podle [postupu návrhu](12-postup-navrhu.md) (kroky N0–N6, brány A a B,
+papírová část asi 75–140 h). Iterace I2–I6 začnou až po bráně B, I1 se podle nového návrhu
+zkontroluje.
+
 Při 5–8 hodinách týdně to vychází na **3–5 měsíců**.
 
 **Materiály k F1:** [tiskový balíček](papirove-prototypy/kapitola-1.pdf) (průvodce testem, karty

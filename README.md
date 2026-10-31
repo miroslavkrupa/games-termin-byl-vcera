@@ -36,17 +36,22 @@ pro **PC, Mac a mobily**.
 | [Vyhodnocení prototypu](docs/09-vyhodnoceni-prototypu.md) | odpovědi O1–O8, změřené časy, odhad rozsahu hry, doporučení |
 | [Plán výroby kapitoly 1](docs/10-plan-kapitoly-1.md) | fáze F0–F5, iterace I1–I6, rozhodnutí na začátek, rizika, záznam času |
 | [Kapitola 1: Iniciace](docs/kapitoly/01-iniciace.md) | vertical slice: scény, puzzly, graf závislostí, rozhodnutí, minihry, ukázkové dialogy CS/EN |
+| [Postup návrhu](docs/12-postup-navrhu.md) | nejdřív celá hra na papíře, potom texty, potom výroba: kroky N0–N9, šablony, brány A a B |
 
 ## Postup návrhu
 
-1. **Vize** – schválit pilíře a rozhodnout otevřené otázky (cílová skupina, platforma, grafika)
-2. **Výuková matice** – doplnit a uzamknout témata
-3. **Příběhová bible** – dopsat osnovu kapitol a postavy
-4. **Systém rozhodnutí** – tabulka stavů a flagů (zatím součást příběhové bible)
-5. **Graf závislostí puzzlů** pro každou kapitolu
-6. **Papírové prototypy miniher**, playtest na 3–5 lidech
-7. **Vertical slice** – kapitola 1 hratelná naplno (30–45 min)
-8. **Výroba po kapitolách** – každá kapitola jako release s playtestem a retrospektivou
+Nejdřív celá hra do detailu na papíře, potom texty, teprve potom výroba v Godotu (D54, D55).
+Podrobně v [postupu návrhu](docs/12-postup-navrhu.md):
+
+1. **N0 Rozsah celé hry:** délka, počet kapitol a miniher, rozpočet každé kapitoly
+2. **N1 Příběh celé hry:** kontrola příběhové bible
+3. **N2 Kostry kapitol 2–5** a mapa následků
+4. **N3 Každá kapitola do detailu** (1, pak 2–5): obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů
+5. **N4 Papírový průchod** každé kapitoly s 2–3 lidmi
+6. **N5 Celá hra dohromady:** příznaky, konce, tempo, rozsah → brána A: celá hra uzamčena
+7. **N6 Texty první verze** kapitoly v obou jazycích → brána B
+8. **N7 Výroba v Godotu** (iterace I2–I6) s automatickým průchodem
+9. **N8 Playtest** s 5 hráči, **N9 ladění a vydání**; další kapitoly opakují N6–N9
 
 ## Technologie
 
