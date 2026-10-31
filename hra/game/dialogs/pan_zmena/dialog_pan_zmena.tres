@@ -10,10 +10,10 @@ id = "Prodej"
 text = "ch1_zmena_volba_prodej"
 
 [sub_resource type="Resource" id="Resource_hh4ls"]
-resource_name = "Propiska"
+resource_name = "Plakat"
 script = ExtResource("1_rrhpp")
-id = "Propiska"
-text = "ch1_zmena_volba_propiska"
+id = "Plakat"
+text = "ch1_zmena_volba_plakat"
 
 [sub_resource type="Resource" id="Resource_3jj2k"]
 resource_name = "Konec"

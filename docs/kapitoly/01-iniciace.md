@@ -61,7 +61,7 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
    a razítka Komise nedostane klíč od hangáru. Ruda: „Papír? Za mě mluví výsledky!“ Pembok: „Které?“
 2. **Kdo je sponzor?** Dekret podepsal „zástupce zástupce starosty“. Vrátný prozradí, že
    o Arše rozhoduje starosta Bohumil ve 2. patře. Výtah ale jezdí jen do 1½. patra.
-3. **Archiv.** Archivář Lumír pustí dovnitř jen s číslem projektu. Číslo na dekretu je pod kávou.
+3. **Archiv.** Archivář Lumír pustí dovnitř jen s číslem projektu (**94/017**). Číslo na dekretu je pod kávou.
    Dvě cesty:
    - **Bára** zná číslo nazpaměť (byla v původním týmu Archy). Řekne ho ale jen tehdy, když ji
      Ruda při prvním rozhovoru nechá domluvit (**R1.3**).

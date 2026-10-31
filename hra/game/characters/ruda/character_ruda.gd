@@ -235,6 +235,9 @@ func _pohled_ze_smeru_pohledu(i_zezadu: bool) -> String:
 
 func _nastav_stav(stav: String, pohled: String) -> void:
 	_nacti_sady()
+	# Popochiu po každé chůzi vypne _physics_process (_clear_navigation_path), a tím by zastavil
+	# i animaci stání a akce; akce by pak nikdy neskončila. Bez cesty v něm Popochiu nic nedělá.
+	set_physics_process(true)
 	_stav = stav
 	_pohled = pohled
 	_faze = 0

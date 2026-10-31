@@ -7,7 +7,7 @@ script = ExtResource("1_jgk05")
 script_name = "Stanek"
 description = "ch1_hs_stanek"
 cursor = 1
-interaction_polygon = PackedVector2Array(0, 445, 340, 450, 338, 738, 0, 742)
+interaction_polygon = PackedVector2Array(-90, 432, 130, 410, 335, 470, 335, 740, -90, 740)
 look_at_point = Vector2(170, 594)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=977608971]

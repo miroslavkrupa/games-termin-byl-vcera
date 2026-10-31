@@ -7,7 +7,7 @@ script = ExtResource("1_g0sg7")
 script_name = "Kasna"
 description = "ch1_hs_kasna"
 cursor = 1
-interaction_polygon = PackedVector2Array(290, 765, 300, 700, 420, 688, 495, 640, 500, 560, 650, 555, 690, 640, 760, 690, 875, 700, 885, 770, 760, 810, 580, 825, 420, 815)
+interaction_polygon = PackedVector2Array(472, 562, 520, 535, 620, 535, 664, 562, 600, 676, 780, 682, 877, 758, 800, 796, 570, 806, 340, 792, 258, 756, 352, 684, 504, 676)
 look_at_point = Vector2(587, 704)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1583018907]

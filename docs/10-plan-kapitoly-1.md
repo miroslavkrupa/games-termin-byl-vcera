@@ -32,7 +32,7 @@ které vždy končí hratelnou verzí.
 | Fáze | Obsah | Odhad | Milník |
 |---|---|---|---|
 | **F0 Rozhodnutí** | otevřené otázky níže, zkouška popředí a širšího pozadí | 3–5 h | **MA:** pravidla grafiky a ovládání uzamčena |
-| **F1 Papírové minihry** | M03 Souboj argumenty, M01 Charter, M02 Kdo velí na papíře, 3–5 testerů | 4–8 h | **MB:** pravidla miniher ověřena |
+| **F1 Papírové minihry** | M03 Souboj argumenty, M01 Charter, M02 Kdo velí na papíře, 3–5 testerů | 4–8 h | **MB:** pravidla miniher schválena (D53) |
 | **F2 Grafika** | pozadí, referenční listy postav, ikony, části Rudy pro animaci | 10–15 h | **MC:** veškerá grafika schválena |
 | **F3 Výroba** | iterace I1–I6 (viz níže) | 40–65 h | **MD:** kapitola dohratelná od začátku do konce |
 | **F4 Testování** | 5 hráčů (aspoň 2 bez znalosti PM), opravy, vyvážení nápověd | 8–15 h | **ME:** připraveno k vydání |
@@ -46,6 +46,9 @@ Při 5–8 hodinách týdně to vychází na **3–5 měsíců**.
 **Materiály k F1:** [tiskový balíček](papirove-prototypy/kapitola-1.pdf) (průvodce testem, karty
 a herní desky pro M03, M02 a M01; zdroj `papirove-prototypy/vytvor.py`).
 
+**Milník MB splněn (2026-10-31):** pravidla miniher schválena podle papírových modelů bez
+papírového testu (D53); zapracují se tak, jak jsou, a testovat se budou až ve hře.
+
 ## Iterace výroby (F3)
 
 Každá iterace končí hratelnou verzí na webu, autor ji projde na počítači i telefonu.
@@ -58,6 +61,16 @@ Každá iterace končí hratelnou verzí na webu, autor ji projde na počítači
 | **I4 Babička** | chaloupka, babička, kocour, **M02 Kdo velí**, R1.2, razítková poduška | babička jde odhalit, i přehlédnout |
 | **I5 Komise** | kancelář Komise, fronta na frontu, **hratelný úsek za Báru**, **M01 Charter**, Předseda, R1.4, závěr kapitoly | kapitola jde dohrát; konec ukáže, co si hra zapamatovala |
 | **I6 Rámec hry** | úvod (3–5 min), hlavní menu, ukládání, nastavení, titulky, závěrečná obrazovka „pokračování příště“ | hra je celá od spuštění po konec |
+
+**Stav I1 (2026-10-31):** náměstí ve finální grafice (široké pozadí, nově vyříznutá kašna,
+přenastavená aktivní místa a pochozí plocha). Bára, vrátný a Pan Změna stojí na náměstí jako
+nehybné postavy ze schválených listů (animace stání a mluvení přijdou se zadáním pro ChatGPT).
+Ruda začíná s dekretem, kávou, propiskou a Prof. Pembokem, který vysvětlí úkol a radí podle stavu
+hry (u Pana Změny ve dvou stupních). Obě cesty k číslu projektu fungují a jsou ověřené ladicími
+průchody: Bára ho řekne jen tomu, kdo ji v prvním rozhovoru nechá domluvit (R1.3), jinak pošle
+Rudu k Panu Změnovi; ten za podepsaný požadavek kávovým perem vydá plakát s číslem. Ikony
+předmětů jsou z listu `ikony-1`. **Dočasně:** dveře radnice hlídá vrátný (bez čísla nepustí),
+než v I2 přibude Lumír. Čeká: projít na počítači a telefonu, nasadit na web.
 
 Pro každou iteraci platí **definice hotového:**
 - všechny texty v češtině i angličtině, `kontrola_textu.py` bez chyb,
@@ -108,7 +121,7 @@ Pro každou iteraci platí **definice hotového:**
 | Iterace / fáze | Odhad | Skutečnost | Poznámky |
 |---|---|---|---|
 | F0 | 3–5 h | | |
-| F1 | 4–8 h | | |
+| F1 | 4–8 h | | papírový test vynechán, modely schváleny (D53) |
 | F2 | 10–15 h | | |
 | I1 | 6–10 h | | |
 | I2 | 6–10 h | | |

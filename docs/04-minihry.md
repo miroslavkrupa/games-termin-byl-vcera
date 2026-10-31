@@ -3,6 +3,7 @@
 > Každá minihra patří do jednoho ze čtyř pater koncepce [Dva světy, jedna Archa](07-dva-svety.md),
 > nese jedno nebo dvě výuková témata (ID z [výukové matice](02-vyukova-matice.md)) a je zakotvená
 > v příběhu. Před výrobou musí projít papírovým prototypem.
+> Výjimka: M01, M02 a M03 pro kapitolu 1 se testují až ve hře (D53).
 > Stav: **koncept**, verze 0.2
 
 ## Zásady

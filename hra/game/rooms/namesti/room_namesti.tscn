@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/stanek/hotspot_stanek.tscn" id="8_gky0t"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/kometa/hotspot_kometa.tscn" id="9_ls3d5"]
 [ext_resource type="PackedScene" path="res://game/characters/pan_zmena/character_pan_zmena.tscn" id="10_j80a0"]
+[ext_resource type="PackedScene" path="res://game/characters/bara/character_bara.tscn" id="14_cmmcn"]
+[ext_resource type="PackedScene" path="res://game/characters/vratny/character_vratny.tscn" id="15_ynjll"]
 
 [node name="RoomNamesti" type="Node2D" unique_id=1362046152]
 script = ExtResource("1_xhamq")
@@ -31,24 +33,24 @@ position = Vector2(768, 512)
 texture = ExtResource("3_pp1hi")
 
 [node name="KasnaPopredi" parent="Props" unique_id=672780915 instance=ExtResource("5_hcycl")]
-position = Vector2(585, 668)
-obstacle = true
-obstacle_polygon = PackedVector2Array(304, 94, 289, 107, 246, 119, 179, 128, 94, 134, 0, 136, -94, 134, -179, 128, -246, 119, -289, 107, -304, 94, -289, 81, -246, 69, -179, 60, -94, 54, -0, 52, 94, 54, 179, 60, 246, 69, 289, 81)
+position = Vector2(568, 668)
 texture = ExtResource("6_cmmcn")
+obstacle = true
+obstacle_polygon = [Vector2(307, 94), Vector2(292, 105), Vector2(248, 115), Vector2(180, 123), Vector2(95, 128), Vector2(0, 130), Vector2(-95, 128), Vector2(-180, 123), Vector2(-248, 115), Vector2(-292, 105), Vector2(-307, 94), Vector2(-292, 83), Vector2(-248, 73), Vector2(-180, 65), Vector2(-95, 60), Vector2(0, 58), Vector2(95, 60), Vector2(180, 65), Vector2(248, 73), Vector2(292, 83)]
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1536900053]
 
 [node name="Kasna" parent="Hotspots" unique_id=245226830 instance=ExtResource("5_eluva")]
-walk_to_point = Vector2(600, 845)
+walk_to_point = Vector2(570, 830)
 
 [node name="Budka" parent="Hotspots" unique_id=1323111521 instance=ExtResource("6_oahb7")]
-walk_to_point = Vector2(1235, 790)
+walk_to_point = Vector2(1250, 795)
 
 [node name="DvereRadnice" parent="Hotspots" unique_id=1826390217 instance=ExtResource("7_tc4kd")]
-walk_to_point = Vector2(950, 748)
+walk_to_point = Vector2(848, 716)
 
 [node name="Stanek" parent="Hotspots" unique_id=1402010503 instance=ExtResource("8_gky0t")]
-walk_to_point = Vector2(250, 805)
+walk_to_point = Vector2(290, 805)
 
 [node name="Kometa" parent="Hotspots" unique_id=522304014 instance=ExtResource("9_ls3d5")]
 
@@ -64,5 +66,10 @@ scale_bottom = 0.46
 [node name="Characters" type="Node2D" parent="." unique_id=1280374402]
 
 [node name="CharacterPanZmena" parent="Characters" unique_id=1644422242 instance=ExtResource("10_j80a0")]
-position = Vector2(170, 735)
-input_pickable = false
+position = Vector2(215, 750)
+
+[node name="CharacterBara" parent="Characters" unique_id=792553979 instance=ExtResource("14_cmmcn")]
+position = Vector2(790, 818)
+
+[node name="CharacterVratny" parent="Characters" unique_id=1674382504 instance=ExtResource("15_ynjll")]
+position = Vector2(935, 724)

@@ -10,8 +10,12 @@ extends PopochiuHotspot
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
 	await C.player.face_clicked()
+	# Do archivu jen s číslem projektu; vrátný hlídá místo archiváře, dokud není archiv (I2)
+	if not Globals.c1_cislo_projektu:
+		await C.Vratny.say("ch1_vratny_stop")
+		return
 	if not R.Namesti.state.archiv_navstiven:
-		await C.player.say("ch1_dvere_vstup")
+		await C.Vratny.say("ch1_vratny_pusti")
 	R.goto_room("Archiv")
 
 

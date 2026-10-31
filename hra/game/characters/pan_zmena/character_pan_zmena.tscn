@@ -1,17 +1,19 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://game/characters/pan_zmena/character_pan_zmena.gd" id="1_ywn00"]
+[ext_resource type="Texture2D" path="res://grafika/postavy/zmena_stoji/zmena_stoji.png" id="2_tex"]
 
 [node name="CharacterPanZmena" type="Area2D" unique_id=1644422242]
 script = ExtResource("1_ywn00")
 script_name = "PanZmena"
-description = "postava_pan_zmena"
-clickable = false
 cursor = 8
-interaction_polygon = PackedVector2Array()
+description = "postava_pan_zmena"
+interaction_polygon = PackedVector2Array(-33, -212, 33, -212, 33, 0, -33, 0)
 text_color = Color(0.78, 0.95, 0.55, 1)
 ignore_region_scaling = true
-dialog_pos = Vector2(0, -330)
+obstacle = true
+walk_to_point = Vector2(75, 55)
+dialog_pos = Vector2(0, -242)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=337128735]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
@@ -19,12 +21,16 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=638049865]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=976500593]
+scale = Vector2(0.3533, 0.3533)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -300)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2016066282]
 visible = false
-polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+polygon = PackedVector2Array(-33, -212, 33, -212, 33, 0, -33, 0)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=132649710]
 visible = false
+vertices = PackedVector2Array(36, 0, 31, 7, 18, 13, 0, 15, -18, 13, -31, 7, -36, 0, -31, -7, -18, -13, 0, -15, 18, -13, 31, -8)
 affect_navigation_mesh = true
 carve_navigation_mesh = true

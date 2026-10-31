@@ -5,9 +5,10 @@ extends PopochiuDialog
 
 #region Virtual ####################################################################################
 func _on_start() -> void:
-	await C.player.face_clicked()
 	await C.player.say("ch1_zmena_uvod_ruda")
 	await C.PanZmena.say("ch1_zmena_uvod")
+	# Na plakát se dá ptát, až si ho Ruda všimne
+	get_option("Plakat").visible = R.Namesti.state.plakat_videl
 
 
 func _option_selected(_opt: PopochiuDialogOption) -> void:
@@ -24,13 +25,20 @@ func _on_option_prodej(opt: PopochiuDialogOption) -> void:
 	await C.player.say("ch1_zmena_prodej_ruda")
 
 
-func _on_option_propiska(opt: PopochiuDialogOption) -> void:
+func _on_option_plakat(_opt: PopochiuDialogOption) -> void:
 	await D.say_selected()
-	await C.PanZmena.say("ch1_zmena_propiska_1")
-	await C.PanZmena.say("ch1_zmena_propiska_2")
-	await I.Propiska.add()
-	await C.player.say("ch1_zmena_propiska_ruda")
-	opt.turn_off_forever()
+	if Globals.c1_zmena_dohoda:
+		await C.PanZmena.say("ch1_zmena_dohoda_uz")
+		return
+	# Za plakát chce pokaždé něco jiného (puzzle 3 v návrhu kapitoly 1)
+	var stav = R.Namesti.state
+	var prani := ["ch1_zmena_prani_1", "ch1_zmena_prani_2", "ch1_zmena_prani_3"]
+	await C.PanZmena.say(prani[stav.zmena_prani % prani.size()])
+	stav.zmena_prani += 1
+	await C.player.say("ch1_zmena_prani_ruda")
+	# Po druhém pokusu Ruda sám napoví, kudy na to
+	if stav.zmena_prani == 2:
+		await C.player.say("ch1_zmena_napad")
 
 
 func _on_option_konec(_opt: PopochiuDialogOption) -> void:

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/vratny/character_vratny_state.gd" id="1_di84l"]
+
+[resource]
+resource_name = "Vratny"
+script = ExtResource("1_di84l")
+script_name = "Vratny"
+scene = "res://game/characters/vratny/character_vratny.tscn"

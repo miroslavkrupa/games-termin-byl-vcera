@@ -17,12 +17,9 @@ func _on_room_set() -> void:
 
 # Called when the character is clicked
 func _on_click() -> void:
-	# Replace the call to E.command_fallback() with your own logic.
-	E.command_fallback()
-	# Example: make the player walk to this character, face them, then say a line.
-#	await C.player.walk_to_clicked()
-#	await C.player.face_clicked()
-#	await C.player.say("Hi!")
+	await C.player.walk_to_clicked()
+	await C.player.face_clicked()
+	D.PanZmena.start()
 
 
 # Called when the character is double-clicked
@@ -35,11 +32,8 @@ func _on_double_click() -> void:
 
 # Called when the character is right-clicked
 func _on_right_click() -> void:
-	# Replace the call to E.command_fallback() with your own logic.
-	E.command_fallback()
-	# Example: make the player face the character and describe them.
-#	await C.player.face_clicked()
-#	await C.player.say("Mmmh, dude looks rad...")
+	await C.player.face_clicked()
+	await C.player.say("ch1_zmena_prohlednout")
 
 
 # Called when the character is middle clicked
@@ -52,11 +46,8 @@ func _on_middle_click() -> void:
 
 # Called when the character is clicked while an inventory item is selected
 func _on_item_used(_item: PopochiuInventoryItem) -> void:
-	# Replace the call to E.command_fallback() with your own logic.
-	E.command_fallback()
-	# Example: if the player uses a Key on this character, make the player say something.
-#	if _item == I.Key:
-#		await C.player.say("I don't want to give my key away!")
+	# Předměty na Pana Změnu fungují stejně jako na jeho stánek
+	await R.Namesti.get_hotspot("Stanek")._on_item_used(_item)
 
 
 # Override this to alter the idle animation or hook custom logic to it. 

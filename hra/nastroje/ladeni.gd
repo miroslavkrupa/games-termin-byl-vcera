@@ -8,11 +8,14 @@
 # cekej = sekundy před akcí, po = sekundy po akci; souřadnice hry (1536 × 1024)
 # dojdi = hráčova postava dojde na místo (ověří navigaci a zmenšování)
 # akce = <AktivniMisto>:pouzit|prohlednout|najet[,…] – klepnutí levým / pravým tlačítkem, nebo jen popisek jako při najetí
-#        myší; další krok počká, až hra dokončí předchozí (i přes změnu místnosti)
-# volby = <id>,<id>… – po akci vybírá volby dialogu, vždy jakmile se nabídka zobrazí
+#        myší; další krok počká, až hra dokončí předchozí (i přes změnu místnosti). Místo aktivního
+#        místa jde i postava v místnosti (Bara:pouzit) nebo předmět v inventáři (Pembok:pouzit)
+# volby = <id>,<id>… – po akci vybírá volby dialogu, vždy jakmile se nabídka zobrazí; u nabídky
+#        přímo ve skriptu (D.show_inline_dialog) je id pořadí volby od nuly
 # pouzij = <Predmet>:<Cil>[,<Predmet>:<Cil>…] – použije předmět z inventáře na aktivní místo nebo jiný předmět
 # po = sekundy čekání po posledním kroku (u akcí a předmětů se nejdřív počká, až hra domluví; hned=1 nečeká)
 # klik = simulované klepnutí; Popochiu ale čte skutečnou pozici kurzoru, takže míří tam, kde je myš
+# Na macOS spouštěj s --always-on-top: zakryté okno se nepřekresluje a snímek by nevznikl.
 #
 # Zakládání objektů Popochiu (viz nastroje/vytvor.gd):
 #   godot --headless --path hra -- vytvor <příkaz> <argumenty>
@@ -34,6 +37,8 @@ func _ready() -> void:
 		TranslationServer.set_locale(p["jazyk"])
 	if not p.has("snimek"):
 		return
+	# Úsporný režim kreslí jen při změně; u nehybné scény by snímek nikdy nevznikl
+	OS.low_processor_usage_mode = false
 	# Repliky se při ladění vypisují rychle a posouvají samy (hráč je posouvá klepnutím)
 	get_node("/root/E").settings.auto_continue_text = true
 	get_node("/root/E").text_speed = 0.005
@@ -77,6 +82,16 @@ func _ready() -> void:
 				await _az_bude_klid()
 			var c: PackedStringArray = kroky[i].split(":")
 			var misto: PopochiuClickable = get_node("/root/R").current.get_hotspot(c[0])
+			if not misto:
+				misto = get_node("/root/C").get_runtime_character(c[0])
+			if not misto:
+				# Předmět v inventáři: klepnutí jako od hráče
+				var predmet: PopochiuInventoryItem = get_node("/root/I").get_item_instance(c[0])
+				if c[1] == "prohlednout":
+					predmet._on_right_click()
+				else:
+					predmet._on_click()
+				continue
 			if c[1] == "najet":
 				get_node("/root/G").hover_text_shown.emit(misto.get_description())
 			else:
@@ -85,10 +100,16 @@ func _ready() -> void:
 	if p.has("volby"):
 		var d = get_node("/root/D")
 		for id in p["volby"].split(","):
-			await d.dialog_options_requested
+			await _az_budou_volby()
 			await get_tree().create_timer(0.8).timeout
-			d.option_selected.emit(d.current_dialog.get_option(id))
-		await d.dialog_finished
+			var volba: PopochiuDialogOption = d.current_dialog.get_option(id) if d.current_dialog else null
+			if not volba:
+				# Nabídka ze skriptu (D.show_inline_dialog): volby jsou očíslované od nuly
+				volba = PopochiuDialogOption.new()
+				volba.id = id
+			d.option_selected.emit(volba)
+		if d.current_dialog:
+			await d.dialog_finished
 	if p.has("pouzij"):
 		for krok in p["pouzij"].split(","):
 			var c: PackedStringArray = krok.split(":")
@@ -127,6 +148,19 @@ func _az_bude_klid() -> void:
 			if c is PopochiuCharacter and (c.is_talking or c.is_moving):
 				mluvi = true
 		klidnych = klidnych + 1 if e.in_room and not g.is_blocked and not mluvi else 0
+
+
+# Počká, až se zobrazí nabídka voleb: dialogu (PopochiuDialog), nebo přímo ze skriptu
+func _az_budou_volby() -> void:
+	var d = get_node("/root/D")
+	var stav := {"hotovo": false}
+	var hotovo := func(_volby = null) -> void: stav.hotovo = true
+	d.dialog_options_requested.connect(hotovo)
+	d.inline_dialog_requested.connect(hotovo)
+	while not stav.hotovo:
+		await get_tree().process_frame
+	d.dialog_options_requested.disconnect(hotovo)
+	d.inline_dialog_requested.disconnect(hotovo)
 
 
 # Použití předmětu jako od hráče: vybrat předmět, pak klepnout na cíl
@@ -175,6 +209,13 @@ func _vypis(kdy: String) -> void:
 		for v in room.state.get_script().get_script_property_list():
 			if v.usage & PROPERTY_USAGE_SCRIPT_VARIABLE and not v.name in zakladni:
 				stav[v.name] = room.state.get(v.name)
+	# Příznaky napříč místnostmi (Globals, např. c1_cislo_projektu)
+	var globalni := {}
+	var g = get_node("/root/Globals")
+	for v in g.get_script().get_script_property_list():
+		if v.usage & PROPERTY_USAGE_SCRIPT_VARIABLE:
+			globalni[v.name] = g.get(v.name)
+	stav["Globals"] = globalni
 	var pozadi = room.get_prop("Background") if room else null
 	print("[%s] barva hráče %s, pozadí %s" % [kdy, hrac.modulate if hrac else "?", pozadi.texture.resource_path if pozadi and pozadi.texture else "?"])
 	print("[%s] místnost %s, hráč %s, měřítko %s, inventář %s, stav %s, okno %s, viditelná oblast %s, kamera %s" % [

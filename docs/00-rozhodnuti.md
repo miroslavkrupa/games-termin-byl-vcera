@@ -59,6 +59,7 @@
 | D50 | 2026-10-31 | F0/R2: **popředí jako kulisa vyříznutá z pozadí** (`vyrez_popredi.gd`), s baseline a překážkou pro chůzi | zkouška na kašně: technika funguje; průchod za kašnou zrušen (Ruda tam byl skoro celý schovaný), cesty za popředím jen tam, kde postavu nezakryje celou | [stylová bible](06-stylova-bible.md) |
 | D51 | 2026-10-31 | Pozadí kapitoly 1 schválena (F2, krok 1 a 2): rozšířené náměstí (den, večer) a archiv, vestibul, starostova pracovna, kancelář Komise, babiččina chaloupka, vše 19,5:9 | střed rozšířených pozadí je překreslený, aktivní místa, pochozí plochy a kašna se ve hře nastaví znovu; posun budky ve večerní verzi (asi 20 px) se nechává | [hodnocení](styl/vzorky/hodnoceni-pozadi-kap1.md) |
 | D52 | 2026-10-31 | Listy vedlejších postav kapitoly 1 schváleny (Předseda, starosta, Pan Změna, Lumír, babička, vrátný, Ing. Framework, kocour) a ikony předmětů 1–17 | výšky proti Rudovi se nastaví ve hře měřítkem; Framework podobný Rudovi se nechává jako „zvrhlé dvojče“; kocourovo natržené ucho se v animacích (F3) hlídá ve všech pohledech | [hodnocení](styl/vzorky/hodnoceni-postavy-ikony-kap1.md) |
+| D53 | 2026-10-31 | Papírové modely miniher M03, M02 a M01 schváleny **bez papírového testu**; zapracují se tak, jak jsou, a testovat se budou až ve hře | milník MB se mění na „pravidla miniher schválena“; ověření s testery se přesouvá do F3 (po I3, I4 a I5) a F4; výjimka ze zásady v [seznamu miniher](04-minihry.md) | [plán kapitoly 1](10-plan-kapitoly-1.md), [tiskový balíček](papirove-prototypy/kapitola-1.pdf) |
 
 ## Čeká na rozhodnutí
 

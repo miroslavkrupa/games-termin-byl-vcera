@@ -17,15 +17,11 @@ ch1_stanek_prohlednout,"Stánek, který prodává všechno. Jen nikdy dvakrát t
 ch1_zmena_uvod_ruda,Dobrý den!,Good morning!,Ruda,sebevědomě,
 ch1_zmena_uvod,Vítejte u Pana Změny! Dnes prodáváme… to se ještě uvidí.,Welcome to Mr. Change's! Today we're selling... we'll see.,Pan Změna,nadšeně,hlas zpoza stánku
 ch1_zmena_volba_prodej,Co vlastně prodáváte?,So what are you actually selling?,Ruda,,volba dialogu
-ch1_zmena_volba_propiska,Neměl byste propisku?,"Got a pen, by any chance?",Ruda,,volba dialogu
 ch1_zmena_volba_konec,Na shledanou.,Goodbye.,Ruda,,volba dialogu
 ch1_zmena_prodej_1,"Deštníky. Ne, slunečníky. Vlastně holínky.","Umbrellas. No, parasols. Actually, wellies.",Pan Změna,rozhodně,odpovědi se střídají
 ch1_zmena_prodej_2,"Okurky. Ne, nakládané okurky. Čerstvé, ale nakládané.","Cucumbers. No, pickles. Fresh ones, but pickled.",Pan Změna,rozhodně,odpovědi se střídají
 ch1_zmena_001,"Chci Archu. Modrou. Ne, zelenou. S bazénem. Bez vody, kvůli bezpečnosti.","I want an Ark. Blue. No, green. With a pool. No water, for safety reasons.",Pan Změna,nadšeně,replika z návrhu kapitoly 1
 ch1_zmena_prodej_ruda,"Aspoň víte, co chcete. Ne, nevíte.","At least you know what you want. No, you don't.",Ruda,suše,
-ch1_zmena_propiska_1,"Mám! Vlastně ne. Vlastně ano, ale bez inkoustu.","I do! Actually, no. Actually, yes, but it's out of ink.",Pan Změna,zmateně,
-ch1_zmena_propiska_2,"Inkoust je ve fázi 2. Vezměte si ji zdarma, než si to rozmyslím.",The ink is in phase two. Take it for free before I change my mind.,Pan Změna,velkoryse,
-ch1_zmena_propiska_ruda,"Prázdná propiska. Přesně to, co projektový manažer potřebuje.",An empty pen. Exactly what a project manager needs.,Ruda,ironicky,
 ch1_zmena_konec,Nashle! Nebo ahoj. Ještě si to rozmyslím.,Goodbye! Or see ya. I'll decide later.,Pan Změna,rozverně,
 predmet_propiska,Propiska bez inkoustu,Empty pen,,,název předmětu
 predmet_propiska_prohlednout,"Propiska bez inkoustu. Podepíše cokoli, ale nic nezůstane.","An empty pen. It'll sign anything, but nothing sticks.",Ruda,suše,
@@ -46,7 +42,6 @@ ch1_zmena_dohoda_uz,Modrou! Mám to podepsané. Kávou.,Blue! It's signed. In co
 obecne_nelze,S tím nic neudělám.,I can't do anything with that.,Ruda,,výchozí reakce
 obecne_pouzit_s,Použít %s na %s? To nedává smysl ani podle mých standardů.,"Use %s on %s? That doesn't make sense, even by my standards.",Ruda,,"výchozí reakce; %s = předmět, cíl"
 obecne_nic_k_videni,Nic zvláštního.,Nothing special.,Ruda,,výchozí reakce
-ch1_dvere_vstup,"Zamčeno? Sklep ale zamčený není. V tomhle městě se nikdy nic nedokončí, ani zámky.","Locked? The basement isn't, though. Nothing in this town ever gets finished, not even the locks.",Ruda,potěšeně,prototyp: dveře vedou rovnou do archivu (v kap. 1 až po získání čísla projektu)
 ch1_hs_schody,Schody na náměstí,Stairs to the square,,,popisek aktivního místa
 ch1_schody_prohlednout,"Schody nahoru. Jediná cesta ven, a i ta je ve fázi 2: zábradlí končí v půlce.","Stairs going up. The only way out, and even that's in phase two: the railing stops halfway.",Ruda,suše,
 ch1_hs_kartoteka,Kartotéka,Card index,,,popisek aktivního místa
@@ -80,3 +75,89 @@ ch1_hs_kometa,Kometa Deadline,Comet Deadline,,,popisek aktivního místa
 ch1_kometa_prohlednout,Kometa Deadline. Každý den o kousek větší. Jako můj seznam úkolů.,Comet Deadline. A little bigger every day. Like my to-do list.,Ruda,zasmušile,
 ch1_kometa_vecer,"Počkám, až se setmí. Polovina projektového řízení je čekání.",I'll wait until it gets dark. Half of project management is waiting.,Ruda,trpělivě,prototyp: přepne náměstí na večer
 ch1_kometa_rano,A zase je ráno. Termín je o den blíž a já pořád nemám plán.,Morning again. The deadline's a day closer and I still don't have a plan.,Ruda,zívá,prototyp: přepne náměstí na den
+postava_bara,Bára Backlogová,Barb Backlog,,,anglické jméno schváleno (D47)
+postava_vratny,Vrátný,Porter,,,
+postava_pembok,Prof. Pembok,Prof. Pembok,,,mluvící kniha; jméno je narážka na PMBOK
+ch1_ruda_001,"Nedostavěnice. Město neomezených možností. Hlavně proto, že žádnou z nich nikdo nedotáhl.",Scope Creek. A town of endless possibilities. Mostly because nobody ever finished one.,Ruda,sebevědomě,replika z návrhu kapitoly 1; na začátku
+predmet_dekret,Jmenovací dekret,Letter of appointment,,,název předmětu
+predmet_dekret_prohlednout,Můj jmenovací dekret. Projektový manažer Archy. Podepsal zástupce zástupce starosty a číslo projektu je pod kávou.,"My letter of appointment. Project manager of the Ark. Signed by the deputy deputy mayor, and the project number is under a coffee stain.",Ruda,hrdě,
+ch1_dekret_kava,Víc kávy ho nezachrání. Číslo je pod skvrnou natrvalo.,More coffee won't save it. The number's under that stain for good.,Ruda,smutně,dekret + káva
+predmet_pembok,Prof. Pembok,Prof. Pembok,,,název předmětu
+predmet_pembok_prohlednout,"Prof. Pembok, mluvící kniha o řízení projektů. Dostal jsem ji k narozeninám a nikdy ji neotevřel.","Prof. Pembok, a talking book on project management. A birthday present I never opened.",Ruda,provinile,
+ch1_pembok_ukol,Bez papíru podepsaného sponzorem a bez razítka Komise ti klíč od hangáru nikdo nedá.,"Without a page signed by your sponsor and stamped by the Committee, nobody will hand you the hangar key.",Pembok,poučně,"úvodní úkol (návrh kapitoly 1, krok 1)"
+ch1_pembok_ukol_ruda,Papír? Za mě mluví výsledky!,Paperwork? My results speak for me!,Ruda,uraženě,
+ch1_pembok_ukol_2,Které?,Which ones?,Pembok,suše,
+ch1_pembok_001,"Než začneš stavět Archu, nebylo by dobré vědět, proč ji stavíš? Čistě teoreticky.","Before you build an Ark, might it help to know why? Purely hypothetically.",Pembok,ironicky,replika z návrhu kapitoly 1
+ch1_pembok_rada_vratny,"Dekret podepsal zástupce zástupce. Kdo tu doopravdy rozhoduje, ví ten, kdo celý den sedí u dveří.",Your letter was signed by a deputy's deputy. Who really decides here? Ask the man who sits by the door all day.,Pembok,nápověda,nápověda: vrátný
+ch1_pembok_rada_bara,"Lidé, kteří měří, většinou vědí víc než lidé, kteří slibují. Ta žena u kašny měří.",People who measure usually know more than people who promise. The woman by the fountain is measuring.,Pembok,nápověda,nápověda: Bára
+ch1_pembok_rada_stanek,Číslo projektu nemusí znát jen lidé. Prohlédni si pořádně ten stánek.,People aren't the only things that remember project numbers. Take a good look at that stall.,Pembok,nápověda,nápověda: plakát
+ch1_pembok_rada_zmena_1,"Kdo mění názor každou minutu, potřebuje jediné: aby mu ho někdo zapsal a dal podepsat.",Someone who changes his mind every minute needs one thing: to have it written down and signed.,Pembok,nápověda,"nápověda: Pan Změna, 1. stupeň"
+ch1_pembok_rada_zmena_2,Prázdná propiska nepíše. Ale v hrnku máš něco hnědého a tekutého.,An empty pen won't write. But there's something brown and runny in your mug.,Pembok,nápověda,"nápověda: Pan Změna, 2. stupeň"
+ch1_pembok_rada_zmena_3,"Máš čím psát. Tak Panu Změnovi jeho přání zapiš, dřív než si ho rozmyslí.",You've got something to write with. So write down Mr. Change's wish before he changes it.,Pembok,nápověda,"nápověda: Pan Změna, kávové pero"
+ch1_pembok_rada_archiv,Číslo máš. Archiv je ve sklepě radnice. Kde jinde by město schovávalo svoje chyby?,You've got the number. The archive is in the town hall basement. Where else would a town hide its mistakes?,Pembok,nápověda,nápověda: archiv
+ch1_vratny_prohlednout,"Vrátný. Hlídá dveře radnice, termosku a křížovku. V tomhle pořadí odzadu.","The porter. He guards the town hall door, his thermos and his crossword. In reverse order.",Ruda,pobaveně,
+ch1_vratny_kava,Má vlastní termosku. Kávu si tu každý hlídá sám.,"He's got his own thermos. Around here, everyone guards their own coffee.",Ruda,uznale,káva na vrátného
+ch1_vratny_uvod_ruda,"Dobrý den. Ruda Gantt, projektový manažer Archy.","Good morning. Rudy Gantt, project manager of the Ark.",Ruda,sebevědomě,
+ch1_vratny_uvod,Hm. Další.,Hm. Another one.,Vrátný,ospale,
+ch1_vratny_volba_kdo,Kdo tady rozhoduje o Arše?,Who makes the decisions about the Ark?,Ruda,,volba dialogu
+ch1_vratny_volba_dovnitr,Můžu dovnitř?,Can I go in?,Ruda,,volba dialogu
+ch1_vratny_volba_krizovka,Co luštíte?,What are you solving?,Ruda,,volba dialogu
+ch1_vratny_volba_konec,Na shledanou.,Goodbye.,Ruda,,volba dialogu
+ch1_vratny_kdo_1,Starosta Bohumil. Druhé patro.,Mayor Bohumil. Second floor.,Vrátný,ospale,
+ch1_vratny_kdo_ruda,A výtah?,And the elevator?,Ruda,nadějně,
+ch1_vratny_kdo_2,Jezdí do půl druhého. Druhá půlka je ve fázi 2.,It goes to floor one and a half. The other half is in phase two.,Vrátný,ospale,výtah do 1½. patra (návrh kapitoly 1)
+ch1_vratny_dovnitr_1,Na starostu nemáte výtah a do archivu nemáte číslo projektu. Archivář Lumír bez něj nepustí ani myš.,"You can't get up to the mayor, and you can't get into the archive without a project number. Lumír the archivist won't even let a mouse in without one.",Vrátný,ospale,Lumír pouští do archivu jen s číslem projektu
+ch1_vratny_dovnitr_ruda,Myš to zkoušela?,The mouse tried?,Ruda,pobaveně,
+ch1_vratny_dovnitr_2,Třikrát. Teď má číslo.,Three times. Now she has a number.,Vrátný,vážně,
+ch1_vratny_dovnitr_cislo,"Číslo máte, tak sklep je váš. Dolů po schodech, nahoru se stejně nedostanete.","You've got the number, so the basement's all yours. Downstairs. You won't get upstairs anyway.",Vrátný,ospale,
+ch1_vratny_krizovka_1,"Devět písmen: „věc, která se v tomhle městě nikdy nestala“.",Seven letters: 'something that never happens in this town'.,Vrátný,přemýšlivě,vtip je psaný pro každý jazyk zvlášť
+ch1_vratny_krizovka_ruda,Dokončení?,Closure?,Ruda,,
+ch1_vratny_krizovka_2,Sedí. Ale nevěřím tomu.,Fits. But I don't believe it.,Vrátný,podezíravě,
+ch1_vratny_konec,Hm.,Hm.,Vrátný,ospale,
+ch1_vratny_stop,Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi.,"Without a project number, Lumír will throw you out of the basement. And me with you.",Vrátný,ospale,dveře radnice bez čísla projektu
+ch1_vratny_pusti,"Číslo máte? Tak sklep je dolů. Všechno ostatní je nahoru, ale tam se nedostanete.","Got the number? Basement's downstairs. Everything else is upstairs, but you can't get there.",Vrátný,ospale,"dveře radnice s číslem, poprvé"
+ch1_bara_prohlednout,"Žena s metrem a tabletem. Jediný člověk ve městě, který něco měří, místo aby to odhadoval.",A woman with a tape measure and a tablet. The only person in town who measures things instead of guessing.,Ruda,zaujatě,
+ch1_bara_dekret,Tohle jí ukazovat nebudu. Ještě by změřila tu skvrnu.,I'm not showing her this. She'd measure the stain.,Ruda,opatrně,dekret na Báru
+ch1_bara_uvod_ruda,"Dobrý den! Ruda Gantt, nový projektový manažer Archy.","Hello! Rudy Gantt, the new project manager of the Ark.",Ruda,sebevědomě,první rozhovor (R1.3)
+ch1_bara_uvod,Bára Backlogová. Měřím.,Barb Backlog. I'm measuring.,Bára,věcně,
+ch1_bara_001,"Ta rampa má sklon o tři stupně větší, než stojí ve výkres—",That ramp is tilted three degrees more than the drawings sa—,Bára,věcně,"replika z návrhu kapitoly 1; R1.3, první místo"
+ch1_bara_volba_vyslechnout,(Nechat ji domluvit.),(Let her finish.),Ruda,,volba v prvním rozhovoru s Bárou
+ch1_ruda_020,"Výborně, poznamenám si to. (píše do vzduchu propiskou bez inkoustu)","Brilliant, I'll make a note. (writes in the air with an empty pen)",Ruda,skáče do řeči,replika z návrhu kapitoly 1; skočit do řeči
+ch1_bara_001_dokonci,"…ve výkresech. A kašna je o dvacet centimetrů nižší, než tvrdí radnice. Nic tu neodpovídá papírům.",...say. And the fountain is eight inches lower than the town hall claims. Nothing here matches the paperwork.,Bára,věcně,
+ch1_bara_001_prerusena,Propiskou bez inkoustu. Jasně.,With an empty pen. Sure.,Bára,suše,
+ch1_bara_002,Archa má odvézt celé město. Čtyři tisíce osm set dvanáct lidí. Jenže kajuty někdo počítal jen pro—,The Ark is supposed to carry the whole town. Four thousand eight hundred and twelve people. But somebody only counted cabins for—,Bára,vážně,"R1.3, druhé místo; 4812 = počet obyvatel"
+ch1_bara_skok_2,"Čísla jsou detail. Hlavně, že to poletí!",Numbers are details. What matters is it flies!,Ruda,skáče do řeči,
+ch1_bara_002_dokonci,"…polovinu. Takže buď dvakrát větší Archa, nebo poloviční město. To druhé by starosta podepsal hned.",...half. So either a twice-as-big Ark or a half-sized town. The mayor would sign the second one today.,Bára,věcně,dobrý útržek „kritéria úspěchu“ pro M01
+ch1_bara_002_prerusena,Poletí. Polovina.,It'll fly. Half of it.,Bára,suše,
+ch1_bara_003,"Byla jsem v původním týmu Archy. Pamatuju si i číslo projektu, kdybyste ho někdy—","I was on the original Ark team. I even remember the project number, in case you ever—",Bára,opatrně,"R1.3, třetí místo"
+ch1_bara_skok_3,"Číslo? Já myslím ve výsledcích, ne v číslech!","A number? I think in results, not numbers!",Ruda,skáče do řeči,
+ch1_bara_003_dokonci,…potřeboval. Devadesát čtyři lomeno nula sedmnáct. Lumír bez něj do archivu nikoho nepustí.,...need it. Ninety-four slash zero seventeen. Lumír won't let anyone into the archive without it.,Bára,věcně,číslo projektu 94/017
+ch1_bara_cislo_ruda,94/017. Poznamenám si to. (tentokrát si to opravdu zapamatuje),94/017. I'll make a note. (this time he actually remembers it),Ruda,vděčně,
+ch1_bara_odchod,"Víte co? Až budete mít čas poslouchat, víte, kde mě najdete. U kašny. Měřím ji.","Tell you what. When you have time to listen, you know where to find me. By the fountain. Measuring it.",Bára,chladně,"konec prvního rozhovoru, když jí Ruda skáče do řeči"
+ch1_bara_znovu_ruda,Zase já.,It's me again.,Ruda,,
+ch1_bara_znovu,Vidím. Dva metry třicet od kašny.,I can see that. Seven and a half feet from the fountain.,Bára,věcně,
+ch1_bara_volba_mereni,Co to vlastně měříte?,What exactly are you measuring?,Ruda,,volba dialogu
+ch1_bara_volba_cislo,Neznáte číslo projektu Archy?,Do you know the Ark's project number?,Ruda,,volba dialogu
+ch1_bara_volba_konec,Tak zatím.,See you around.,Ruda,,volba dialogu
+ch1_bara_mereni_1,"Všechno, co ostatní jen odhadují. Radnice je nakloněná o dva stupně. Doleva.",Everything everyone else just estimates. The town hall leans two degrees. To the left.,Bára,věcně,
+ch1_bara_mereni_ruda,"Politicky, nebo staticky?",Politically or structurally?,Ruda,pobaveně,
+ch1_bara_mereni_2,Ano.,Yes.,Bára,věcně,
+ch1_bara_cislo_znovu,"Devadesát čtyři lomeno nula sedmnáct. Pořád. Čísla se nemění, jen lidi.",Ninety-four slash zero seventeen. Still. Numbers don't change. People do.,Bára,věcně,
+ch1_bara_cislo_plakat,Ten plakát má číslo správně. Překvapivě.,That poster has the right number. Surprisingly.,Bára,uznale,
+ch1_bara_cislo_ne,"Znám. Ale minule jste mi skočil do řeči, tak jsem si ho nechala.","I do. But last time you cut me off, so I kept it to myself.",Bára,chladně,"R1.3: kdo nepočkal, číslo od Báry nedostane"
+ch1_bara_cislo_zmena,Zkuste Pana Změnu. Balí okurky do starého plakátu Archy.,Try Mr. Change. He wraps pickles in an old Ark poster.,Bára,suše,nápověda k druhé cestě
+ch1_bara_konec,"Zatím. Nejpřesnější termín, jaký jsem tu za celý den slyšela.",Around. The most precise deadline I've heard all day.,Bára,suše,
+ch1_zmena_prohlednout,"Pan Změna. Prodává všechno, ale nikdy dvakrát to samé. Má dvě tužky za každým uchem a ani jednu nepoužil.","Mr. Change. Sells everything, never the same thing twice. Two pencils behind each ear and he's never used one.",Ruda,pobaveně,
+ch1_stanek_plakat,A zboží balí do starého plakátu Archy. Pod okurkou je na něm nějaké číslo.,"And he wraps his goods in an old Ark poster. There's some kind of number on it, under a pickle.",Ruda,zaujatě,Ruda si všimne plakátu (druhá cesta k číslu projektu)
+ch1_zmena_volba_plakat,Co chcete za ten starý plakát?,What do you want for that old poster?,Ruda,,volba dialogu; jen když Ruda plakát viděl
+ch1_zmena_prani_1,"Deštník. Ne, holínky. Ne, deštník do holínek.","An umbrella. No, wellies. No, an umbrella for wellies.",Pan Změna,rozhodně,přání se střídají
+ch1_zmena_prani_2,"Vlastní Archu. Modrou. Ne, zelenou. Ne, tu modrou, ale zeleně.","My own Ark. Blue. No, green. No, the blue one, but in green.",Pan Změna,nadšeně,přání se střídají
+ch1_zmena_prani_3,"Nic. Ne, všechno. Ne, něco mezi.","Nothing. No, everything. No, something in between.",Pan Změna,rozhodně,přání se střídají
+ch1_zmena_prani_ruda,"Než vám to seženu, budete chtít něco jiného.","By the time I get it, you'll want something else.",Ruda,unaveně,
+ch1_zmena_napad,Kdyby to tak měl černé na bílém. A podepsané.,If only he had it in black and white. And signed.,Ruda,zamyšleně,vlastní nápověda po druhém pokusu
+ch1_zmena_plakat_1,"Když už to mám podepsané… Tady, plakát. Okurky zabalím do něčeho jiného. Do čeho? To se ještě uvidí.","Well, since it's signed... Here, the poster. I'll wrap the pickles in something else. In what? We'll see.",Pan Změna,velkoryse,po podpisu vydá plakát
+ch1_plakat_cislo,"Projekt Archa, číslo 94/017. Konečně papír, který něco říká.","Project Ark, number 94/017. Finally, a piece of paper that says something.",Ruda,spokojeně,číslo projektu z plakátu
+predmet_plakat,Plakát Archy,Ark poster,,,název předmětu
+predmet_plakat_prohlednout,"Plakát Archy z roku 1994. Raketa, nadšení a číslo projektu 94/017. Voní okurkami.","An Ark poster from 1994. A rocket, enthusiasm and project number 94/017. Smells of pickles.",Ruda,nostalgicky,
+predmet_pozadavek,Požadavek Pana Změny,Mr. Change's request,,,název předmětu
+predmet_pozadavek_prohlednout,„Archa. Modrá.“ Podepsáno kávou. Jediné rozhodnutí v dějinách města.,'Ark. Blue.' Signed in coffee. The only decision in the town's history.,Ruda,hrdě,

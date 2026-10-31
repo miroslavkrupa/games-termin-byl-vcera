@@ -26,6 +26,8 @@ func _on_double_click() -> void:
 func _on_right_click() -> void:
 	await C.player.face_clicked()
 	await C.player.say("ch1_stanek_prohlednout")
+	await C.player.say("ch1_stanek_plakat")
+	R.Namesti.state.plakat_videl = true
 
 
 # Called when the hotspot is middle clicked
@@ -85,8 +87,7 @@ func _on_movement_ended() -> void:
 #region Private ####################################################################################
 # Ruda zapíše požadavek Pana Změny kávovým perem a nechá ho podepsat (zárodek řízení změn)
 func _dohoda() -> void:
-	var stav = R.Namesti.state
-	if stav.zmena_dohoda:
+	if Globals.c1_zmena_dohoda:
 		await C.PanZmena.say("ch1_zmena_dohoda_uz")
 		return
 	await C.player.say("ch1_zmena_dohoda_ruda_1")
@@ -94,7 +95,11 @@ func _dohoda() -> void:
 	await C.player.say("ch1_zmena_dohoda_ruda_2")
 	await C.PanZmena.say("ch1_zmena_002")
 	await C.player.say("ch1_zmena_dohoda_ruda_3")
-	stav.zmena_dohoda = true
-
-
-#endregion
+	Globals.c1_zmena_dohoda = true
+	# S podepsaným požadavkem přestane měnit názor a plakát vydá (návrh kapitoly 1, puzzle 3)
+	await C.PanZmena.say("ch1_zmena_plakat_1")
+	await I.Pozadavek.add()
+	await I.Plakat.add()
+	R.Namesti.state.plakat_videl = true
+	Globals.c1_cislo_projektu = true
+	await C.player.say("ch1_plakat_cislo")

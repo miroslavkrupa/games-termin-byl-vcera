@@ -7,7 +7,7 @@ script = ExtResource("1_aqpur")
 script_name = "DvereRadnice"
 description = "ch1_hs_dvere"
 cursor = 1
-interaction_polygon = PackedVector2Array(820, 545, 940, 545, 945, 705, 820, 705)
+interaction_polygon = PackedVector2Array(800, 518, 952, 514, 952, 648, 800, 648)
 look_at_point = Vector2(881, 625)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1556697398]

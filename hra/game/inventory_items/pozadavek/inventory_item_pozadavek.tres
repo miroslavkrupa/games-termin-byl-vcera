@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/pozadavek/inventory_item_pozadavek_state.gd" id="1_k3rgw"]
+
+[resource]
+resource_name = "Pozadavek"
+script = ExtResource("1_k3rgw")
+script_name = "Pozadavek"
+scene = "res://game/inventory_items/pozadavek/inventory_item_pozadavek.tscn"

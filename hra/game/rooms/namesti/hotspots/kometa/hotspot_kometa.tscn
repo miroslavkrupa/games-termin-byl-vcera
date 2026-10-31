@@ -7,7 +7,7 @@ script = ExtResource("1_f0wtc")
 script_name = "Kometa"
 description = "ch1_hs_kometa"
 cursor = 1
-interaction_polygon = PackedVector2Array(150, 0, 340, 0, 610, 135, 610, 195, 530, 195, 320, 95, 150, 25)
+interaction_polygon = PackedVector2Array(140, 0, 330, 0, 575, 165, 565, 215, 500, 205, 140, 30)
 look_at_point = Vector2(387, 92)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=747960031]

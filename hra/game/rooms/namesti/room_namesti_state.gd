@@ -5,12 +5,24 @@ extends PopochiuRoomData
 # Use `save_custom` and `load_custom` to handle custom data types.
 # Note: `script_name` and `scene` variables inherited from the base class are not saved.
 
-## Ruda už dostal na začátku hrnek kávy
-var kava_dana := false
-## Pan Změna podepsal svůj požadavek (kap. 1, příznak c1_zmena_dohoda)
-var zmena_dohoda := false
-## Ruda už byl v archivu (replika u dveří zazní jen poprvé)
+## Ruda už dostal výchozí věci (dekret, káva, propiska, Pembok; návrh kapitoly 1, Výchozí stav)
+var vybava_dana := false
+## Ruda už byl v archivu
 var archiv_navstiven := false
+## Ruda už mluvil s Bárou (první rozhovor R1.3 je jen jeden)
+var bara_mluvila := false
+## Číslo projektu řekla Bára (ne plakát)
+var bara_rekla_cislo := false
+## Vrátný řekl, že o Arše rozhoduje starosta ve 2. patře
+var vratny_rekl_starosta := false
+## Ruda si všiml plakátu Archy, do kterého Pan Změna balí zboží
+var plakat_videl := false
+## Kolikrát se Ruda ptal Pana Změny, co chce za plakát (pokaždé chce něco jiného)
+var zmena_prani := 0
+## Pembok už vysvětlil úkol (poprvé otevřený)
+var pembok_otevren := false
+## Stupeň nápovědy k Panu Změnovi (0 = náznak, 1 = řešení)
+var napoveda_zmena := 0
 ## Na náměstí je večer (prototyp K7: paleta C a tónování postav)
 var vecer := false
 

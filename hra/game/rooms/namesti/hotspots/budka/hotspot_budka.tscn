@@ -7,7 +7,7 @@ script = ExtResource("1_l0dut")
 script_name = "Budka"
 description = "ch1_hs_budka"
 cursor = 1
-interaction_polygon = PackedVector2Array(1285, 520, 1475, 512, 1472, 782, 1290, 788)
+interaction_polygon = PackedVector2Array(1280, 492, 1492, 490, 1490, 782, 1282, 782)
 look_at_point = Vector2(1380, 650)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=415249088]

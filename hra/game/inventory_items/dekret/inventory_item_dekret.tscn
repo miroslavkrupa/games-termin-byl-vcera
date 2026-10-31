@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/dekret/inventory_item_dekret.gd" id="1_k5yxh"]
+[ext_resource type="Texture2D" path="res://grafika/predmety/dekret.png" id="2_ikona"]
+
+[node name="ItemDekret" type="TextureRect" unique_id=1068453404]
+texture = ExtResource("2_ikona")
+texture_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_k5yxh")
+script_name = "Dekret"
+description = "predmet_dekret"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=108999642]

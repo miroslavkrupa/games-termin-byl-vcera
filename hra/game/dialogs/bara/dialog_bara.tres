@@ -1,0 +1,28 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_lc6nj"]
+[ext_resource type="Script" path="res://game/dialogs/bara/dialog_bara.gd" id="2_yil1l"]
+
+[sub_resource type="Resource" id="Resource_jswsh"]
+resource_name = "Mereni"
+script = ExtResource("1_lc6nj")
+id = "Mereni"
+text = "ch1_bara_volba_mereni"
+
+[sub_resource type="Resource" id="Resource_k87di"]
+resource_name = "Cislo"
+script = ExtResource("1_lc6nj")
+id = "Cislo"
+text = "ch1_bara_volba_cislo"
+
+[sub_resource type="Resource" id="Resource_karqj"]
+resource_name = "Konec"
+script = ExtResource("1_lc6nj")
+id = "Konec"
+text = "ch1_bara_volba_konec"
+
+[resource]
+resource_name = "Bara"
+script = ExtResource("2_yil1l")
+script_name = "Bara"
+options = Array[ExtResource("1_lc6nj")]([SubResource("Resource_jswsh"), SubResource("Resource_k87di"), SubResource("Resource_karqj")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/dekret/inventory_item_dekret_state.gd" id="1_fjlki"]
+
+[resource]
+resource_name = "Dekret"
+script = ExtResource("1_fjlki")
+script_name = "Dekret"
+scene = "res://game/inventory_items/dekret/inventory_item_dekret.tscn"

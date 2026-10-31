@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/pembok/character_pembok_state.gd" id="1_tiwqc"]
+
+[resource]
+resource_name = "Pembok"
+script = ExtResource("1_tiwqc")
+script_name = "Pembok"
+scene = "res://game/characters/pembok/character_pembok.tscn"
