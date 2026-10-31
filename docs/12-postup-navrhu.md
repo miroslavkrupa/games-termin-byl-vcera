@@ -42,7 +42,7 @@
 | Krok | Co | Výstup | Stav (2026-10-31) | Odhad |
 |---|---|---|---|---|
 | **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
-| **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ většinou hotovo, zbývají otevřené otázky | 2–4 h |
+| **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ hotovo: kapitoly v kostce, D59–D61 | 2–4 h |
 | **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ❌ | 4–8 h |
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 částečně, 2–5 chybí | 50–95 h |
 | **N4** | Papírový průchod každé kapitoly | záznam z testu a opravy | ❌ | 15–25 h |
@@ -92,6 +92,10 @@ Bible už má dějový oblouk, osnovu kapitol, stavové proměnné, následky i 
 - upravit osnovu podle N0.
 
 **Výstup:** aktualizovaná bible.
+
+**✅ Hotovo (2026-10-31):** [kapitoly v kostce](03-pribehova-bible.md#kapitoly-v-kostce) v bibli;
+za Báru se hraje i v kapitole 4 (D59), romance mění epilog (D60), tajný konec je scéna po
+titulcích (D61). Prahy konců počkají na playtesty.
 
 ## N2 Kostry kapitol 2–5
 

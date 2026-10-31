@@ -2,7 +2,7 @@
 
 > Svět, postavy, dějový oblouk, osnova kapitol, rozhodnutí a konce. Zdroj pravdy pro scenáristy,
 > výtvarníky i návrh puzzlů.
-> Stav: **koncept**, verze 0.2 (zapracována koncepce [Dva světy, jedna Archa](07-dva-svety.md))
+> Stav: **koncept**, verze 0.3 (koncepce [Dva světy, jedna Archa](07-dva-svety.md), krok N1 [postupu návrhu](12-postup-navrhu.md))
 
 ## Tón a humor
 
@@ -39,7 +39,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 
 | Lokace | Kapitola | Popis | PM vtip |
 |---|---|---|---|
-| Rudův byt v rozestavěném paneláku | 0 | chybí stěna, výtah vede jen do 3½. patra | věčná „fáze 2“ |
+| Rudův byt v rozestavěném paneláku | 1 (úvod) | chybí stěna, výtah vede jen do 3½. patra | věčná „fáze 2“ |
 | Radnice / Komise | 1 | kanceláře, kde se schvaluje schvalování | byrokracie, řízení bez rozhodnutí |
 | Archiv zkrachovalých projektů | 1, 5 | nekonečné regály projektů, které nikdy neskončily | lessons learned, které nikdo nečte |
 | Pozemek pod rampou a babiččina chaloupka | 1, 4 | jediná dokončená stavba ve městě | přehlížený stakeholder |
@@ -115,7 +115,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 | **Prof. Pembok** | mluvící kniha, rádce | ironická nápověda a správce Deníku projektového manažera |
 | **Scope Creep** | tvor | roste s každou přijatou neřízenou změnou; maskot hry |
 | **Kočka Riziková** | mazlíček | získá ji jen ten, kdo zapsal riziko krys; ve 3. kapitole zachraňuje situaci |
-| **Tým podivínů** | členové týmu | 6–8 kandidátů s vlastnostmi a vadami; hráč vybírá 4 |
+| **Tým podivínů** | členové týmu | 6 kandidátů s vlastnostmi a vadami; hráč vybírá 4 (rozpočet D56) |
 
 ## Hlavní dějový oblouk
 
@@ -128,6 +128,19 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)): společný základ
 (kap. 1) → rozdělení Archy (kap. 2) → dva světy paralelně (kap. 3) → krize na rozhraní (kap. 4)
 → integrace a start (kap. 5).
+
+## Kapitoly v kostce
+
+Každá kapitola jednou větou ve čtyřech bodech, aby šlo zkontrolovat tempo celé hry (krok N1
+[postupu návrhu](12-postup-navrhu.md)). Délky a rozsah jsou v [rozpočtech kapitol](05-produkce.md#rozpočty-kapitol).
+
+| Kapitola | Začátek | Cíl | Zvrat | Konec |
+|---|---|---|---|---|
+| **1 Iniciace** (s úvodem) | Ruda na útěku před věřiteli omylem podepíše jmenování manažerem Archy; kometa dopadne za 30 dní | získat podepsaný charter a klíč od hangáru | původní zadání v archivu: Archa má odvézt **všechny**; Bára najde seznam pasažérů jen pro Komisi a nechá si ho (hráč ví víc než Ruda) | klíč od hangáru; Předseda zamlženě telefonuje (D44) |
+| **2 Plánování** | hangár je otevřený, Archa je vrak a bránu blokuje slon | sestavit tým, rozdělit Archu podle povahy práce, schválit roadmapu | Ruda chce Gantt na všechno, Ing. Framework krabici na všechno; hráč rozhoduje část po části (R2.2) | první beton, start stavby; kometa je větší |
+| **3 Realizace** | stavba běží ve dvou světech: Ruda na rampě, Bára v dílně | zavřít trup a smontovat Archu | Pan Změna a Předsedova sabotáž procesem; Bára narazí na vadu v řídicím softwaru a podle R1.3 o ní řekne, nebo mlčí | Archa je smontovaná, ale nefunguje |
+| **4 Krize** | kometa zrychlí, zbývá 7 dní, řídicí věž hlásí, že je vše zelené | ustát krizi na rozhraní a připravit start | Ruda a Bára se rozkmotří; Bára sama odhalí Předsedu (zná kometu léta) a podle důvěry to řekne Rudovi; Framework se spojí s Předsedou | usmíření (Plachetnice), Předseda odhalen, Archa připravená ke startu |
+| **5 Uzavření** | poslední den, obyvatelé čekají u rampy | spojit oba světy, odstartovat a předat Archu | start se zasekne na rozhraní a zvládnou ho jen Ruda a Bára spolu | start a konec podle voleb; archivář Lumír zakládá lístek prvního dokončeného projektu v dějinách města |
 
 ## Osnova kapitol
 
@@ -161,7 +174,7 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
 - **Minihry:** *Jak sníst slona* (kamenná a mlžná půlka), *Mapa do neznáma* (cesta a řeka),
   *Krabice od bot*. Odhady v hospodě U Odhadu jako dialog (bývalý *Poker s goblinem*, D58).
 - **Hlavní rozhodnutí:**
-  - **R2.1** Výběr 4 členů týmu z 6–8 kandidátů.
+  - **R2.1** Výběr 4 členů týmu z 6 kandidátů.
   - **R2.2** Rozdělení Archy: podle povahy práce, nebo jedna metodika na všechno (Rudův Gantt,
     nebo krabice Ing. Frameworka)?
   - **R2.3** Které zjištěné riziko řešit předem (rozpočet nestačí na všechna).
@@ -197,6 +210,9 @@ Pod osobním obloukem běží **metodický oblouk** ([koncepce](07-dva-svety.md)
   - **R4.1** Eskalovat poctivě (s variantami), nebo dál reportovat zeleně?
   - **R4.2** Co obětovat z rozsahu, aby se stihl start?
   - **R4.3** Jak usmířit Báru: přiznat, že plán nestačí, nebo trvat na svém?
+- **Hraní za Báru (D59):** po rozkolu jde Bára vlastní cestou. Se seznamem pasažérů z kapitoly 1
+  a tím, co zjistí sama, odhalí, že Předseda o kometě ví léta a projekt držel ve „fázi 2“ úmyslně.
+  Jestli to řekne Rudovi hned, nebo až po usmíření, rozhoduje Bářina důvěra.
 - **Bottleneck:** Předseda je odhalen, Archa je připravena ke startu.
 
 ### Kapitola 5: Uzavření
@@ -244,7 +260,12 @@ Konce kombinují **metodickou osu** (sladění světů) s **osobní osou** (Rud�
 | **Druhá etapa** (jen iterace) | převažuje svět iterací, sladění nízké | skvělá aplikace a útulné kajuty, ale rampa zůstala ve „fázi 2“. Kometa mine o metr, Komise vyhlásí „fázi 3“ a Předseda vyhrál |
 | **Hrdina** | sladění vysoké, Rudův vývoj 2–3 | Archa letí, Ruda si připíše všechny zásluhy |
 | **Tým** (pravý konec) | sladění vysoké, vývoj 4–5, Bářina důvěra vysoká | Archa letí, Ruda na pódiu poprvé řekne „my“ a Bára poprvé řekne termín. Tým jde rovnou na další projekt |
-| **Tajný** | ❓ | např. Ruda rozpustí Komisi a Nedostavěnice poprvé něco dokončí |
+| **Scéna po titulcích** (D61) | dokonalý průchod (podmínky upřesní návrh kap. 5) | Komise je rozpuštěna a z radnice po 40 letech sundávají lešení. Nedostavěnice poprvé něco dokončila |
+
+**Romantická linka (D60)** nemá vlastní konce, ale mění epilog podle Bářiny důvěry:
+- **vysoká:** Bára poprvé v životě řekne termín: „Večeře. Pátek. Osm. A přijdeš včas.“
+- **střední:** zůstanou parťáci, Bára Rudovi nabídne další společný projekt,
+- **nízká:** Bára odchází na jiný projekt a Ruda zůstane na pódiu sám.
 
 ## Opakující se vtipy
 
@@ -280,5 +301,5 @@ v F0/R6 (D47): vtip má fungovat i anglicky, nejen být doslova přeložený.
 - [x] Jména v angličtině (tabulka výše, D47)
 - [x] Jak moc otevřeně je Předseda záporák od začátku? → zvrat ve 4. kapitole, v kapitole 1 jen náznaky (D44)
 - [ ] Přesné prahy stavových proměnných pro konce (vyladit při playtestech)
-- [ ] Hraní za Báru: jisté jsou kap. 1 (archiv), kap. 3 (řídicí systém a interiér) a kap. 5 (finální spojení). Další místa?
-- [ ] Jak se romantická linka promítne do konců?
+- [x] Hraní za Báru: kap. 1 (archiv), kap. 3 (řídicí systém a interiér), kap. 4 (po rozkolu, odhalení Předsedy, D59) a kap. 5 (finální spojení)
+- [x] Jak se romantická linka promítne do konců? → varianty epilogu podle Bářiny důvěry (D60)

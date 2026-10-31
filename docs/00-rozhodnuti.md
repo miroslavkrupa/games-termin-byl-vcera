@@ -65,6 +65,9 @@
 | D56 | 2026-10-31 | N0: rozsah celé hry **4–5 hodin v 5 kapitolách, 11 miniher** (varianta B); každá kapitola má rozpočet (délka, scény, postavy, předměty, repliky, minihry) | výroba asi 360–570 h; neplatí 8–12 h a 14 miniher z vize; po kapitole 1 se rozsah ověří podle skutečné pracnosti (D38); minihry rozložené nejvýš 2–3 na hodinu: Jeřábový balet až v kap. 3, Plachetnice v kap. 4 | [produkce](05-produkce.md#rozpočty-kapitol), [vize](01-vize.md), [minihry](04-minihry.md) |
 | D57 | 2026-10-31 | N0: prolog není samostatná část, ale **úvod kapitoly 1** (3–5 min) | děj prologu (vyhazov, omylem podepsané jmenování, kometa) se vejde do úvodu; nejvýš jedno nové pozadí; vyrábí se v I6 | [bible](03-pribehova-bible.md), [kapitola 1](kapitoly/01-iniciace.md), [matice](02-vyukova-matice.md) |
 | D58 | 2026-10-31 | N0: vyřazeny minihry **M05 Poker s goblinem, M08 Tetris kapacity, M12 Dashboard lží**; Slon (M04) a Plachetnice (M11) zůstávají | odhady (V07) jako dialog v hospodě U Odhadu, plánování sprintu (V12) jako scéna s rozhodnutím, zelený report (V17) jako puzzle v řídicí věži | [minihry](04-minihry.md), [matice](02-vyukova-matice.md), [bible](03-pribehova-bible.md) |
+| D59 | 2026-10-31 | N1: za Báru se hraje i ve **4. kapitole** po rozkolu: se seznamem pasažérů z kap. 1 odhalí Předsedu | seznam pasažérů z kap. 1 dostává hlavní následek; jestli Bára řekne pravdu Rudovi hned, rozhoduje její důvěra; úseky za Báru jsou v kap. 1, 3, 4 a 5 | [bible](03-pribehova-bible.md) |
+| D60 | 2026-10-31 | N1: romantická linka nemá vlastní konce, mění **epilog** podle Bářiny důvěry | vysoká: Bára poprvé řekne termín (rande), střední: parťáci, nízká: odchází; jen několik replik navíc | [bible](03-pribehova-bible.md#konce) |
+| D61 | 2026-10-31 | N1: tajný konec je **krátká scéna po titulcích** za dokonalý průchod | Komise rozpuštěna, z radnice sundávají lešení; podmínky upřesní návrh kap. 5 | [bible](03-pribehova-bible.md#konce) |
 
 ## Čeká na rozhodnutí
 
