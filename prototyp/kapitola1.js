@@ -36,16 +36,16 @@
     },
 
     predmety: {
-      kava: { nazev: 'predmet_kava', prohlednout: 'predmet_kava_prohlednout', ikona: 'kava' },
-      propiska: { nazev: 'predmet_propiska', prohlednout: 'predmet_propiska_prohlednout', ikona: 'propiska' },
-      kavove_pero: { nazev: 'predmet_kavove_pero', prohlednout: 'predmet_kavove_pero_prohlednout', ikona: 'kavove_pero' },
+      kava: { nazev: 'predmet_kava', prohlednout: 'predmet_kava_prohlednout' },
+      propiska: { nazev: 'predmet_propiska', prohlednout: 'predmet_propiska_prohlednout' },
+      kavove_pero: { nazev: 'predmet_kavove_pero', prohlednout: 'predmet_kavove_pero_prohlednout' },
       pembok: {
-        nazev: 'predmet_pembok', prohlednout: 'predmet_pembok_prohlednout', ikona: 'pembok',
+        nazev: 'predmet_pembok', prohlednout: 'predmet_pembok_prohlednout',
         pouzit: { kdy: 'pembok_otevren', akce: '?', jinak: 'ch1_byt_kniha_mlci' },
       },
-      dekret: { nazev: 'predmet_dekret', prohlednout: 'predmet_dekret_prohlednout', ikona: 'dekret' },
-      plakat: { nazev: 'predmet_plakat', prohlednout: 'predmet_plakat_prohlednout', ikona: 'plakat' },
-      pozadavek: { nazev: 'predmet_pozadavek', prohlednout: 'predmet_pozadavek_prohlednout', ikona: 'pozadavek' },
+      dekret: { nazev: 'predmet_dekret', prohlednout: 'predmet_dekret_prohlednout' },
+      plakat: { nazev: 'predmet_plakat', prohlednout: 'predmet_plakat_prohlednout' },
+      pozadavek: { nazev: 'predmet_pozadavek', prohlednout: 'predmet_pozadavek_prohlednout' },
       tlacitko: { nazev: 'predmet_tlacitko', prohlednout: 'predmet_tlacitko_prohlednout' },
       zadani: { nazev: 'predmet_zadani', prohlednout: { stridat: ['predmet_zadani_prohlednout', 'predmet_zadani_prohlednout_2'] } },
       karta: { nazev: 'predmet_karta', prohlednout: 'predmet_karta_prohlednout' },
@@ -105,14 +105,15 @@
         ],
       },
 
-      // S1 Náměstí: pozadí z kapitoly 1, obdélníky podle polygonů v Godotu
+      // S1 Náměstí. Pozadí a postavy jsou schválené vzorky z docs/styl/vzorky (D51, D52).
       namesti: {
-        nazev: 'Náměstí', obrazek: 'namesti_den',
+        obrazek: 'pozadi_namesti',
+        nazev: 'Náměstí',
         mista: [
-          { id: 'kometa', nazev: 'ch1_hs_kometa', r: [9, 0, 28, 21], prohlednout: 'ch1_kometa_prohlednout' },
-          { id: 'amplion', nazev: 'ch1_hs_amplion', r: [87, 5, 9, 14],
+          { id: 'kometa', nazev: 'ch1_hs_kometa', r: [22, 0, 19, 16], prohlednout: 'ch1_kometa_prohlednout' },
+          { id: 'amplion', nazev: 'ch1_hs_amplion', r: [75.5, 6, 6, 12],
             prohlednout: 'ch1_amplion_prohlednout', pouzit: 'ch1_amplion_pouzit' },
-          { id: 'stanek', nazev: 'ch1_hs_stanek', r: [0, 40, 22, 32],
+          { id: 'stanek', nazev: 'ch1_hs_stanek', r: [11.5, 36, 18.5, 36],
             prohlednout: ['ch1_stanek_prohlednout', { kdy: '!c1_zmena_dohoda', akce: ['ch1_stanek_plakat', '$plakat_videl'] }],
             pouzit: { kdy: 'plakat_videl && !c1_zmena_dohoda', akce: 'ch1_stanek_ukrast', jinak: 'ch1_stanek_prohlednout' },
             na: {
@@ -123,7 +124,7 @@
               propiska: 'ch1_stanek_propiska',
               kava: 'ch1_stanek_kava',
             } },
-          { id: 'zmena', nazev: 'postava_pan_zmena', druh: 'postava', r: [9, 52, 8, 22],
+          { id: 'zmena', nazev: 'postava_pan_zmena', druh: 'postava', r: [18, 40, 8, 37], obraz: 'postava_zmena',
             prohlednout: 'ch1_zmena_prohlednout', pouzit: '#zmena',
             na: {
               kavove_pero: { kdy: '!c1_zmena_dohoda', akce: [
@@ -137,13 +138,13 @@
               pozadavek: 'ch1_zmena_pozadavek',
               papir: 'ch1_zmena_papir',
             } },
-          { id: 'ulicka', nazev: 'ch1_hs_ulicka', druh: 'vychod', vychod: 'chaloupka', r: [22, 44, 6, 9],
+          { id: 'ulicka', nazev: 'ch1_hs_ulicka', druh: 'vychod', vychod: 'chaloupka', r: [30.5, 43, 4.5, 15],
             prohlednout: 'ch1_ulicka_prohlednout' },
-          { id: 'kasna', nazev: 'ch1_hs_kasna', r: [17, 52, 40, 26],
+          { id: 'kasna', nazev: 'ch1_hs_kasna', r: [27.5, 53, 27, 25],
             prohlednout: 'ch1_kasna_prohlednout', pouzit: ['ch1_kasna_pouzit_1', 'ch1_kasna_pouzit_2'] },
-          { id: 'dvere_radnice', nazev: 'ch1_hs_dvere', druh: 'vychod', vychod: 'vestibul', r: [52, 50, 10, 13],
+          { id: 'dvere_radnice', nazev: 'ch1_hs_dvere', druh: 'vychod', vychod: 'vestibul', r: [51.5, 51, 6.5, 12],
             prohlednout: 'ch1_dvere_prohlednout' },
-          { id: 'bara', nazev: 'postava_bara', druh: 'postava', r: [48, 56, 7, 24],
+          { id: 'bara', nazev: 'postava_bara', druh: 'postava', r: [60, 42, 7, 36], obraz: 'postava_bara',
             prohlednout: 'ch1_bara_prohlednout',
             pouzit: { kdy: '!bara_prvni', akce: '#bara1', jinak: '#bara' },
             na: {
@@ -157,9 +158,9 @@
               papir: 'ch1_bara_papir',
               plakat: 'ch1_bara_cislo_plakat',
             } },
-          { id: 'budka', nazev: 'ch1_hs_budka', r: [83, 48, 14, 28],
+          { id: 'budka', nazev: 'ch1_hs_budka', r: [73.5, 47.5, 9, 28.5],
             prohlednout: 'ch1_budka_prohlednout', pouzit: ['ch1_budka_pouzit_1', 'ch1_budka_pouzit_2', 'ch1_budka_pouzit_3'] },
-          { id: 'kocour', nazev: 'postava_kocour', druh: 'postava', r: [2, 80, 8, 11],
+          { id: 'kocour', nazev: 'postava_kocour', druh: 'postava', r: [5.5, 72, 5, 12], obraz: 'postava_kocour',
             prohlednout: { stridat: ['ch1_kocour_prohlednout', ['ch1_kocour_obojek', '$obojek_videl']], dokola: false },
             pouzit: ['ch1_kocour_mluvit_ruda', 'ch1_kocour_mluvit', 'ch1_kocour_mluvit_ruda_2'],
             na: { kava: 'ch1_kocour_kava' } },
@@ -168,35 +169,37 @@
 
       // S2 Vestibul radnice
       vestibul: {
+        obrazek: 'pozadi_vestibul',
         nazev: 'Vestibul radnice',
         poprve: 'ch1_vestibul_prichod',
         mista: [
-          { id: 'deska', nazev: 'ch1_hs_deska', r: [20, 22, 13, 20], prohlednout: 'ch1_deska_prohlednout', pouzit: 'ch1_deska_pouzit' },
-          { id: 'vratny', nazev: 'postava_vratny', druh: 'postava', r: [40, 38, 12, 42],
+          { id: 'deska', nazev: 'ch1_hs_deska', r: [35, 32, 7, 18], prohlednout: 'ch1_deska_prohlednout', pouzit: 'ch1_deska_pouzit' },
+          { id: 'vratny', nazev: 'postava_vratny', druh: 'postava', r: [20, 22, 10, 48], obraz: 'postava_vratny',
             prohlednout: 'ch1_vratny_prohlednout', pouzit: '#vratny',
             na: {
               kava: 'ch1_vratny_kava', dekret: 'ch1_vratny_dekret', kavove_pero: 'ch1_vratny_kavove_pero',
               plakat: 'ch1_vratny_plakat', tlacitko: 'ch1_vratny_tlacitko',
             } },
-          { id: 'vytah', nazev: 'ch1_hs_vytah', r: [62, 18, 16, 58],
+          { id: 'vytah', nazev: 'ch1_hs_vytah', r: [42.5, 17, 14.5, 51],
             prohlednout: { stridat: ['ch1_ruda_010', 'ch1_vytah_prohlednout_2'] }, pouzit: '#vytah',
             na: { tlacitko: ['ch1_vytah_tlacitko', 'ch1_vytah_tlacitko_2', '-tlacitko', '$tlacitko_zapojeno'] } },
-          { id: 'schody_nahoru', nazev: 'ch1_hs_schody_nahoru', r: [83, 14, 15, 60],
+          { id: 'schody_nahoru', nazev: 'ch1_hs_schody_nahoru', r: [59.5, 30, 12, 38],
             prohlednout: 'ch1_schody_nahoru_prohlednout', pouzit: 'ch1_schody_nahoru_pouzit' },
-          { id: 'schody_sklep', nazev: 'ch1_hs_schody_sklep', druh: 'vychod', vychod: 'archiv', r: [3, 56, 15, 34],
+          { id: 'schody_sklep', stitek: true, nazev: 'ch1_hs_schody_sklep', druh: 'vychod', vychod: 'archiv', r: [3, 60, 13, 28],
             prohlednout: 'ch1_schody_sklep_prohlednout' },
-          { id: 'ven', nazev: 'ch1_hs_ven', druh: 'vychod', vychod: 'namesti', r: [40, 86, 20, 12] },
+          { id: 'ven', stitek: true, nazev: 'ch1_hs_ven', druh: 'vychod', vychod: 'namesti', r: [40, 86, 20, 13] },
         ],
       },
 
-      // S3 Archiv: pozadí z prototypu, kartotéka a schody podle polygonů v Godotu
+      // S3 Archiv
       archiv: {
-        nazev: 'Archiv', obrazek: 'archiv',
+        obrazek: 'pozadi_archiv',
+        nazev: 'Archiv',
         poprve: 'ch1_archiv_prichod',
         mista: [
-          { id: 'regal', nazev: 'ch1_hs_regal', r: [41, 16, 18, 25],
+          { id: 'regal', nazev: 'ch1_hs_regal', r: [41.5, 18, 13, 22],
             prohlednout: 'ch1_regal_prohlednout', pouzit: archiv('ch1_regal_pouzit') },
-          { id: 'hluboky_regal', nazev: 'ch1_hs_hluboky_regal', r: [77, 8, 17, 60],
+          { id: 'hluboky_regal', nazev: 'ch1_hs_hluboky_regal', r: [90, 5, 10, 85],
             prohlednout: 'ch1_hluboky_regal_prohlednout',
             bara_prohlednout: { stridat: ['ch1_usek_regal_1', 'ch1_usek_regal_2'], dokola: false },
             bara_pouzit: 'ch1_usek_regal_odhad',
@@ -205,19 +208,19 @@
               'ch1_usek_seznam_1', 'ch1_usek_seznam_2', 'ch1_usek_seznam_3', '+seznam', '$c1_seznam_pasazeru',
               'ch1_usek_konec', '~ruda', '>komise', '*karta:ch1_ui_hraje_ruda', 'ch1_fronta_konec',
               '$fronta_hotova', '$dny=28'] } },
-          { id: 'schody', nazev: 'ch1_hs_schody', druh: 'vychod', vychod: 'vestibul', r: [16, 34, 15, 28],
+          { id: 'schody', nazev: 'ch1_hs_schody', druh: 'vychod', vychod: 'vestibul', r: [25, 26, 8, 36],
             prohlednout: 'ch1_schody_prohlednout',
             bara_prohlednout: 'ch1_usek_schody', bara_pouzit: 'ch1_usek_odejit' },
-          { id: 'kartoteka', nazev: 'ch1_hs_kartoteka', r: [31, 36, 12, 27],
+          { id: 'kartoteka', nazev: 'ch1_hs_kartoteka', r: [35, 34.5, 8.5, 26],
             prohlednout: 'ch1_kartoteka_prohlednout',
             bara_prohlednout: 'ch1_usek_kartoteka',
             pouzit: archiv({ kdy: '!listky_ctene',
               akce: ['ch1_kartoteka_pouzit_1', 'ch1_kartoteka_pouzit_2', 'ch1_kartoteka_pouzit_3', '$listky_ctene', '$listek_vytah', '$listek_most'],
               jinak: { kdy: "!ma('zadani') && !ma('papir')", akce: ['ch1_kartoteka_razeni_uvod', '@razeni'], jinak: 'ch1_kartoteka_prohlednout' } }) },
-          { id: 'kniha', nazev: 'ch1_hs_kniha', r: [40, 44, 6, 6],
+          { id: 'kniha', nazev: 'ch1_hs_kniha', r: [42.5, 44, 4, 5],
             prohlednout: 'ch1_kniha_prohlednout', bara_prohlednout: 'ch1_usek_kniha',
             pouzit: archiv(['ch1_kniha_pouzit', '$kniha_ctena']) },
-          { id: 'lumir', nazev: 'postava_lumir', druh: 'postava', r: [46, 45, 9, 27],
+          { id: 'lumir', nazev: 'postava_lumir', druh: 'postava', r: [58, 26, 7, 40], obraz: 'postava_lumir',
             prohlednout: 'ch1_lumir_prohlednout', bara_prohlednout: 'ch1_usek_lumir_prohlednout',
             pouzit: { kdy: '!archiv_vstup', akce: '#lumir_stop', jinak: '#lumir' },
             bara_pouzit: '#usek_lumir',
@@ -231,9 +234,9 @@
               zadani: 'ch1_lumir_zadani',
               karta: 'ch1_lumir_karta_vratit',
             } },
-          { id: 'pouceni', nazev: 'ch1_hs_pouceni', r: [56.5, 43.5, 4, 5],
+          { id: 'pouceni', nazev: 'ch1_hs_pouceni', r: [51, 43.5, 3.5, 5],
             prohlednout: ['ch1_pouceni_prohlednout', '$pouceni_videl'], pouzit: archiv('ch1_pouceni_pouzit') },
-          { id: 'mapnik', nazev: 'ch1_hs_mapnik', r: [72, 34, 5, 26],
+          { id: 'mapnik', nazev: 'ch1_hs_mapnik', r: [9.5, 36, 5, 19],
             prohlednout: 'ch1_mapnik_prohlednout', bara_prohlednout: 'ch1_usek_mapnik',
             pouzit: archiv({ kdy: "!ma('mapa')", akce: ['ch1_mapnik_vzit', '+mapa'], jinak: 'ch1_mapnik_prohlednout' }) },
         ],
@@ -241,12 +244,13 @@
 
       // S4 Starostova pracovna
       pracovna: {
+        obrazek: 'pozadi_pracovna',
         nazev: 'Starostova pracovna',
         poprve: 'ch1_pracovna_prichod',
         mista: [
-          { id: 'fotky', nazev: 'ch1_hs_fotky', r: [4, 10, 26, 32], prohlednout: 'ch1_fotky_prohlednout' },
-          { id: 'okno', nazev: 'ch1_hs_okno', r: [62, 8, 22, 34], prohlednout: 'ch1_okno_prohlednout' },
-          { id: 'starosta', nazev: 'postava_starosta', druh: 'postava', r: [44, 32, 12, 46],
+          { id: 'fotky', nazev: 'ch1_hs_fotky', r: [27, 12, 12.5, 35], prohlednout: 'ch1_fotky_prohlednout' },
+          { id: 'okno', nazev: 'ch1_hs_okno', r: [59, 6, 20, 47], prohlednout: 'ch1_okno_prohlednout' },
+          { id: 'starosta', nazev: 'postava_starosta', druh: 'postava', r: [33, 30, 10, 44], obraz: 'postava_starosta',
             prohlednout: 'ch1_starosta_prohlednout',
             pouzit: { kdy: "ma('podpis') || ma('papir')", akce: 'ch1_starosta_po_podpisu', jinak: '#starosta' },
             na: {
@@ -254,19 +258,20 @@
               plakat: 'ch1_starosta_plakat', zadani: 'ch1_starosta_argument', karta: 'ch1_starosta_argument',
               podpis: 'ch1_starosta_podpis_predmet',
             } },
-          { id: 'noviny', nazev: 'ch1_hs_noviny', r: [28, 64, 13, 9], prohlednout: 'ch1_noviny_prohlednout', pouzit: 'ch1_noviny_pouzit' },
-          { id: 'vytah', nazev: 'ch1_hs_vytah', r: [87, 28, 11, 52], pouzit: '#vytah' },
+          { id: 'noviny', nazev: 'ch1_hs_noviny', r: [59.5, 48, 5, 6], prohlednout: 'ch1_noviny_prohlednout', pouzit: 'ch1_noviny_pouzit' },
+          { id: 'vytah', nazev: 'ch1_hs_vytah', r: [18, 19, 7, 47], pouzit: '#vytah' },
         ],
       },
 
       // S5 Kancelář Komise
       komise: {
+        obrazek: 'pozadi_komise',
         nazev: 'Kancelář Komise',
         poprve: 'ch1_komise_prichod',
         mista: [
-          { id: 'cedule', nazev: 'ch1_hs_cedule', r: [14, 6, 22, 12], prohlednout: ['ch1_ui_komise_cedule', 'ch1_cedule_ruda'] },
-          { id: 'vytah', nazev: 'ch1_hs_vytah', r: [1, 26, 11, 30], pouzit: '#vytah' },
-          { id: 'predseda', nazev: 'postava_predseda', druh: 'postava', r: [40, 26, 12, 42],
+          { id: 'cedule', nazev: 'ch1_hs_cedule', r: [22, 21, 27, 7], prohlednout: ['ch1_ui_komise_cedule', 'ch1_cedule_ruda'] },
+          { id: 'vytah', stitek: true, nazev: 'ch1_hs_vytah', r: [1, 40, 8, 35], pouzit: '#vytah' },
+          { id: 'predseda', nazev: 'postava_predseda', druh: 'postava', r: [83, 21, 7, 43], obraz: 'postava_predseda',
             prohlednout: 'ch1_predseda_prohlednout', pouzit: '#predseda',
             na: {
               dekret: 'ch1_predseda_dekret', kava: 'ch1_predseda_kava', propiska: 'ch1_predseda_propiska',
@@ -274,7 +279,7 @@
               zadani: ['ch1_predseda_zadani_1', 'ch1_predseda_zadani_2'], podpis: 'ch1_predseda_podpis_predmet',
               poduska: 'ch1_predseda_poduska',
             } },
-          { id: 'razitko', nazev: 'ch1_hs_razitko', r: [40, 70, 9, 8],
+          { id: 'razitko', nazev: 'ch1_hs_razitko', r: [51.5, 31, 8, 9],
             prohlednout: { stridat: ['ch1_razitko_prohlednout', 'ch1_razitko_napad'], dokola: false },
             pouzit: 'ch1_razitko_pouzit',
             na: {
@@ -286,20 +291,20 @@
                 jinak: 'ch1_razitko_pouzit' },
               kavove_pero: 'ch1_razitko_kavove_pero',
             } },
-          { id: 'telefon', nazev: 'ch1_hs_telefon', r: [55, 62, 6, 8], prohlednout: 'ch1_telefon_prohlednout', pouzit: 'ch1_telefon_pouzit' },
-          { id: 'stul', nazev: 'ch1_hs_stul', r: [14, 60, 22, 16],
+          { id: 'telefon', nazev: 'ch1_hs_telefon', r: [66, 30, 4, 5], prohlednout: 'ch1_telefon_prohlednout', pouzit: 'ch1_telefon_pouzit' },
+          { id: 'stul', nazev: 'ch1_hs_stul', r: [17.5, 44, 15, 18],
             prohlednout: 'ch1_stul_prohlednout',
             pouzit: { kdy: "!ma('podpis') && !ma('papir')", akce: 'ch1_stul_bez_podpisu', jinak: {
               kdy: "!ma('zadani') && !ma('papir')", akce: 'ch1_stul_bez_zadani', jinak: {
                 kdy: '!m02_hotovo', akce: ['ch1_pembok_m02_vyzva', 'ch1_pembok_m02_ruda', 'ch1_pembok_m02_2', '@m02'], jinak: {
                   kdy: "!ma('papir')", akce: '@m01', jinak: 'ch1_stul_hotovo' } } } } },
-          { id: 'fronta', nazev: 'ch1_hs_fronta', r: [62, 36, 19, 48],
+          { id: 'fronta', nazev: 'ch1_hs_fronta', r: [33, 51, 26, 19],
             prohlednout: 'ch1_fronta_prohlednout',
             pouzit: { kdy: "!ma('papir')", akce: 'ch1_fronta_bez_papiru', jinak: {
               kdy: '!fronta_hotova', akce: [
                 'ch1_ruda_090', 'ch1_fronta_cekani', '~bara', '+metr', '>archiv', '*karta:ch1_ui_hraje_bara', 'ch1_usek_uvod'],
               jinak: 'ch1_fronta_prohlednout' } } },
-          { id: 'framework', nazev: 'postava_framework', druh: 'postava', r: [84, 34, 10, 42],
+          { id: 'framework', nazev: 'postava_framework', druh: 'postava', r: [60, 28, 7, 44], obraz: 'postava_framework',
             prohlednout: 'ch1_framework_prohlednout', pouzit: '#framework',
             na: {
               dekret: 'ch1_framework_dekret', kava: 'ch1_framework_kava', kavove_pero: 'ch1_framework_kavove_pero',
@@ -310,11 +315,12 @@
 
       // S6 Babiččina chaloupka
       chaloupka: {
+        obrazek: 'pozadi_chaloupka',
         nazev: 'Babiččina chaloupka',
         poprve: 'ch1_chaloupka_prichod',
         mista: [
-          { id: 'rampa', nazev: 'ch1_hs_rampa', r: [46, 3, 52, 20], prohlednout: 'ch1_rampa_prohlednout' },
-          { id: 'babicka', nazev: 'postava_babicka', druh: 'postava', r: [38, 36, 11, 38],
+          { id: 'rampa', nazev: 'ch1_hs_rampa', r: [24.5, 0, 50, 30], prohlednout: 'ch1_rampa_prohlednout' },
+          { id: 'babicka', nazev: 'postava_babicka', druh: 'postava', r: [41.5, 42, 7, 30], obraz: 'postava_babicka',
             prohlednout: 'ch1_babicka_prohlednout',
             pouzit: { kdy: "c1_babicka=='odmitnuta'", akce: 'ch1_babicka_zavreno', jinak: '#babicka' },
             na: {
@@ -323,15 +329,15 @@
                 jinak: { kdy: "c1_babicka=='odmitnuta'", akce: 'ch1_babicka_zavreno', jinak: 'ch1_babicka_pozemek_1' } },
               dekret: 'ch1_babicka_dekret', kava: 'ch1_babicka_kava', karta: 'ch1_babicka_karta',
             } },
-          { id: 'lavicka', nazev: 'ch1_hs_lavicka', r: [16, 64, 18, 11],
+          { id: 'lavicka', nazev: 'ch1_hs_lavicka', r: [36.5, 58, 6, 6],
             prohlednout: 'ch1_lavicka_prohlednout',
             pouzit: { kdy: "c1_babicka=='spojenec'", akce: ['ch1_lavicka_buchta_1', 'ch1_lavicka_buchta_ruda'], jinak: 'ch1_lavicka_pouzit' } },
-          { id: 'plot', nazev: 'ch1_hs_plot', r: [56, 60, 40, 14], prohlednout: 'ch1_plot_prohlednout' },
-          { id: 'kocour', nazev: 'postava_kocour', druh: 'postava', r: [70, 50, 8, 10],
+          { id: 'plot', nazev: 'ch1_hs_plot', r: [49, 63, 22, 12], prohlednout: 'ch1_plot_prohlednout' },
+          { id: 'kocour', nazev: 'postava_kocour', druh: 'postava', r: [68, 52, 3.5, 10], obraz: 'postava_kocour',
             prohlednout: ['ch1_kocour_plot', 'ch1_kocour_obojek', '$obojek_videl'],
             pouzit: ['ch1_kocour_mluvit_ruda', 'ch1_kocour_mluvit', 'ch1_kocour_mluvit_ruda_2'],
             na: { kava: 'ch1_kocour_kava' } },
-          { id: 'ulicka', nazev: 'ch1_hs_ulicka_zpet', druh: 'vychod', vychod: 'namesti', r: [0, 38, 9, 44] },
+          { id: 'ulicka', stitek: true, nazev: 'ch1_hs_ulicka_zpet', druh: 'vychod', vychod: 'namesti', r: [2, 55, 13, 28] },
         ],
       },
     },
@@ -340,8 +346,8 @@
       veritel: {
         poprve: ['ch1_veritel_buseni_1', 'ch1_veritel_buseni_2', 'ch1_veritel_buseni_ruda'],
         volby: [
-          { t: 'ch1_veritel_volba_nikdo', akce: ['ch1_veritel_nikdo_1', 'ch1_veritel_nikdo_ruda', 'ch1_veritel_nikdo_2'] },
-          { t: 'ch1_veritel_volba_kolik', akce: ['ch1_veritel_kolik_1', 'ch1_veritel_kolik_2', 'ch1_veritel_kolik_3', 'ch1_veritel_kolik_ruda'] },
+          { t: 'ch1_veritel_volba_nikdo', jednou: true, akce: ['ch1_veritel_nikdo_1', 'ch1_veritel_nikdo_ruda', 'ch1_veritel_nikdo_2'] },
+          { t: 'ch1_veritel_volba_kolik', jednou: true, akce: ['ch1_veritel_kolik_1', 'ch1_veritel_kolik_2', 'ch1_veritel_kolik_3', 'ch1_veritel_kolik_ruda'] },
           { t: 'ch1_veritel_volba_co', kdy: "!ma('dekret')", akce: [
             'ch1_veritel_co_1', 'ch1_veritel_co_ruda', 'ch1_veritel_co_2',
             { kdy: "!ma('kava')", akce: 'ch1_veritel_bez_kavy', jinak: [
@@ -375,12 +381,13 @@
       },
       bara: {
         poprve: ['ch1_bara_znovu_ruda', 'ch1_bara_znovu'],
+        vycerpano: 'ch1_bara_vse',
         volby: [
-          { t: 'ch1_bara_volba_mereni', akce: ['ch1_bara_mereni_1', 'ch1_bara_mereni_ruda', 'ch1_bara_mereni_2'] },
-          { t: 'ch1_bara_volba_cislo', akce: { kdy: '!c1_cislo_projektu', akce: ['ch1_bara_cislo_ne', 'ch1_bara_cislo_zmena'],
+          { t: 'ch1_bara_volba_mereni', jednou: true, akce: ['ch1_bara_mereni_1', 'ch1_bara_mereni_ruda', 'ch1_bara_mereni_2'] },
+          { t: 'ch1_bara_volba_cislo', jednou: true, akce: { kdy: '!c1_cislo_projektu', akce: ['ch1_bara_cislo_ne', 'ch1_bara_cislo_zmena'],
             jinak: { kdy: 'cislo_z_plakatu && c1_bara_vyslechnuta<3', akce: 'ch1_bara_cislo_plakat', jinak: 'ch1_bara_cislo_znovu' } } },
-          { t: 'ch1_bara_volba_kdo', kdy: '!vratny_rekl_starosta', akce: 'ch1_bara_kdo' },
-          { t: 'ch1_bara_volba_rozsah', kdy: "ma('zadani') || ma('papir')", akce: [
+          { t: 'ch1_bara_volba_kdo', kdy: '!vratny_rekl_starosta', jednou: true, akce: 'ch1_bara_kdo' },
+          { t: 'ch1_bara_volba_rozsah', jednou: true, kdy: "ma('zadani') || ma('papir')", akce: [
             'ch1_bara_rozsah_1', 'ch1_bara_rozsah_ruda', 'ch1_bara_rozsah_2', 'ch1_bara_rozsah_utrzek', '$utrzek_mimo'] },
           { t: 'ch1_bara_volba_konec', konec: true, akce: 'ch1_bara_konec' },
         ],
@@ -389,10 +396,11 @@
       zmena: {
         poprve: ['ch1_zmena_uvod_ruda', 'ch1_zmena_uvod'],
         uvod: { kdy: 'c1_zmena_dohoda', akce: 'ch1_zmena_dohoda_uz' },
+        vycerpano: 'ch1_zmena_vse',
         volby: [
-          { t: 'ch1_zmena_volba_prodej', akce: [{ stridat: ['ch1_zmena_prodej_1', 'ch1_zmena_prodej_2'] }, 'ch1_zmena_prodej_ruda'] },
-          { t: 'ch1_zmena_volba_kdo', akce: 'ch1_zmena_kdo' },
-          { t: 'ch1_zmena_volba_archa', akce: ['ch1_zmena_001', 'ch1_zmena_archa_2', 'ch1_zmena_archa_3', 'ch1_zmena_archa_ruda', '$slysel_zmena_archa'] },
+          { t: 'ch1_zmena_volba_prodej', jednou: true, akce: [{ stridat: ['ch1_zmena_prodej_1', 'ch1_zmena_prodej_2'] }, 'ch1_zmena_prodej_ruda'] },
+          { t: 'ch1_zmena_volba_kdo', jednou: true, akce: 'ch1_zmena_kdo' },
+          { t: 'ch1_zmena_volba_archa', jednou: true, akce: ['ch1_zmena_001', 'ch1_zmena_archa_2', 'ch1_zmena_archa_3', 'ch1_zmena_archa_ruda', '$slysel_zmena_archa'] },
           { t: 'ch1_zmena_volba_plakat', kdy: 'plakat_videl && !c1_zmena_dohoda', akce: [
             { stridat: ['ch1_zmena_prani_1', 'ch1_zmena_prani_2', 'ch1_zmena_prani_3'] }, 'ch1_zmena_prani_ruda', '$zmena_prani+1',
             { kdy: 'zmena_prani>=2', akce: 'ch1_zmena_napad' }] },
@@ -400,15 +408,18 @@
         ],
       },
 
+      // Po zapojení tlačítka „2“ vrátný odpovídá jinak, proto jsou volby rozdělené podle stavu.
       vratny: {
         poprve: ['ch1_vratny_uvod_ruda', 'ch1_vratny_uvod'],
+        vycerpano: 'ch1_vratny_vse',
         volby: [
-          { t: 'ch1_vratny_volba_kdo', akce: ['ch1_vratny_kdo_1', 'ch1_vratny_kdo_ruda', 'ch1_vratny_kdo_2', '$vratny_rekl_starosta'] },
-          { t: 'ch1_vratny_volba_dovnitr', akce: [
-            { kdy: 'c1_cislo_projektu', akce: 'ch1_vratny_dovnitr_cislo', jinak: ['ch1_vratny_dovnitr_1', 'ch1_vratny_dovnitr_ruda', 'ch1_vratny_dovnitr_2'] },
-            '$lumir_zminen'] },
+          { t: 'ch1_vratny_volba_kdo', kdy: '!tlacitko_zapojeno', jednou: true, akce: ['ch1_vratny_kdo_1', 'ch1_vratny_kdo_ruda', 'ch1_vratny_kdo_2', '$vratny_rekl_starosta'] },
+          { t: 'ch1_vratny_volba_kdo', kdy: 'tlacitko_zapojeno', jednou: true, akce: ['ch1_vratny_kdo_1', 'ch1_vratny_kdo_ruda', 'ch1_vratny_kdo_2_tlacitko', '$vratny_rekl_starosta'] },
+          { t: 'ch1_vratny_volba_dovnitr', kdy: '!c1_cislo_projektu', jednou: true, akce: ['ch1_vratny_dovnitr_1', 'ch1_vratny_dovnitr_ruda', 'ch1_vratny_dovnitr_2', '$lumir_zminen'] },
+          { t: 'ch1_vratny_volba_dovnitr', kdy: 'c1_cislo_projektu && !tlacitko_zapojeno', jednou: true, akce: ['ch1_vratny_dovnitr_cislo', '$lumir_zminen'] },
+          { t: 'ch1_vratny_volba_dovnitr', kdy: 'tlacitko_zapojeno', jednou: true, akce: ['ch1_vratny_dovnitr_tlacitko', '$lumir_zminen'] },
           { t: 'ch1_vratny_volba_lumir', kdy: 'lumir_zminen', jednou: true, akce: ['ch1_vratny_lumir_1', 'ch1_vratny_lumir_ruda', 'ch1_vratny_lumir_2'] },
-          { t: 'ch1_vratny_volba_krizovka', akce: [
+          { t: 'ch1_vratny_volba_krizovka', jednou: true, akce: [
             'ch1_vratny_krizovka_1', 'ch1_vratny_krizovka_ruda', 'ch1_vratny_krizovka_2',
             { kdy: '!vratny_jerab', akce: ['ch1_vratny_jerab_1', 'ch1_vratny_jerab_ruda', 'ch1_vratny_jerab_2', '$vratny_jerab'] }] },
           { t: 'ch1_vratny_volba_konec', konec: true, akce: 'ch1_vratny_konec' },
@@ -432,29 +443,31 @@
         znovu: 'ch1_lumir_stop_1',
         volby: [
           { t: 'ch1_lumir_volba_cislo', kdy: 'c1_cislo_projektu', akce: ['ch1_lumir_cislo_1', 'ch1_lumir_cislo_2', '$archiv_vstup', '#lumir'] },
-          { t: 'ch1_lumir_volba_vymyslet', kdy: '!c1_cislo_projektu', akce: 'ch1_lumir_spatne_cislo' },
+          { t: 'ch1_lumir_volba_vymyslet', kdy: '!c1_cislo_projektu', jednou: true, akce: 'ch1_lumir_spatne_cislo' },
           { t: 'ch1_lumir_volba_konec', konec: true, akce: 'ch1_lumir_konec' },
         ],
       },
       lumir: {
         poprve: 'ch1_lumir_001',
+        vycerpano: 'ch1_lumir_vse',
         volby: [
           { t: 'ch1_lumir_volba_krabice', kdy: "listek_vytah && !ma('tlacitko') && !tlacitko_zapojeno", akce: [
             'ch1_lumir_krabice_1', 'ch1_lumir_krabice_2', 'ch1_lumir_krabice_ruda', 'ch1_lumir_krabice_3', '+tlacitko'] },
-          { t: 'ch1_lumir_volba_krabice_bez', kdy: '!listek_vytah', akce: 'ch1_lumir_krabice_bez' },
-          { t: 'ch1_lumir_volba_kartoteka', akce: ['ch1_lumir_kartoteka_1', 'ch1_lumir_kartoteka_ruda', 'ch1_lumir_kartoteka_2'] },
+          { t: 'ch1_lumir_volba_krabice_bez', kdy: '!listek_vytah', jednou: true, akce: 'ch1_lumir_krabice_bez' },
+          { t: 'ch1_lumir_volba_kartoteka', jednou: true, akce: ['ch1_lumir_kartoteka_1', 'ch1_lumir_kartoteka_ruda', 'ch1_lumir_kartoteka_2'] },
           { t: 'ch1_lumir_volba_karta', kdy: "(listek_most || pouceni_videl) && !karta_pujcena", akce: ['ch1_lumir_karta_1', '$karta_pozadana'] },
-          { t: 'ch1_lumir_volba_mapy', kdy: "!ma('mapa')", akce: 'ch1_lumir_mapy' },
-          { t: 'ch1_lumir_volba_regal', akce: 'ch1_lumir_regal' },
-          { t: 'ch1_lumir_volba_ty', akce: ['ch1_lumir_002', 'ch1_lumir_hrdost_2'] },
+          { t: 'ch1_lumir_volba_mapy', kdy: "!ma('mapa')", jednou: true, akce: 'ch1_lumir_mapy' },
+          { t: 'ch1_lumir_volba_regal', jednou: true, akce: 'ch1_lumir_regal' },
+          { t: 'ch1_lumir_volba_ty', jednou: true, akce: ['ch1_lumir_002', 'ch1_lumir_hrdost_2'] },
           { t: 'ch1_lumir_volba_konec', konec: true, akce: 'ch1_lumir_konec' },
         ],
       },
       usek_lumir: {
         poprve: ['ch1_usek_lumir_1', 'ch1_usek_lumir_bara'],
+        vycerpano: 'ch1_lumir_vse',
         volby: [
-          { t: 'ch1_usek_volba_regal', akce: 'ch1_lumir_regal' },
-          { t: 'ch1_usek_volba_listek', akce: ['ch1_usek_lumir_listek', 'ch1_usek_lumir_listek_bara'] },
+          { t: 'ch1_usek_volba_regal', jednou: true, akce: 'ch1_lumir_regal' },
+          { t: 'ch1_usek_volba_listek', jednou: true, akce: ['ch1_usek_lumir_listek', 'ch1_usek_lumir_listek_bara'] },
           { t: 'ch1_usek_volba_konec', konec: true, akce: 'ch1_lumir_konec' },
         ],
       },
@@ -464,7 +477,7 @@
         volby: [
           { t: 'ch1_starosta_volba_souboj', akce: [
             { kdy: '!souboj_rada', akce: ['ch1_pembok_rada_starosta_pred', '$souboj_rada'] }, 'ch1_m03_k1_namitka', '@m03'] },
-          { t: 'ch1_starosta_volba_noviny', akce: ['ch1_starosta_noviny_1', 'ch1_starosta_noviny_2'] },
+          { t: 'ch1_starosta_volba_noviny', jednou: true, akce: ['ch1_starosta_noviny_1', 'ch1_starosta_noviny_2'] },
           { t: 'ch1_starosta_volba_konec', konec: true, akce: 'ch1_starosta_konec' },
         ],
       },
@@ -472,16 +485,18 @@
       predseda: {
         poprve: ['ch1_predseda_uvod_1', { kdy: "!ma('podpis') && !ma('papir')", akce: ['ch1_predseda_bez_podpisu_ruda', 'ch1_predseda_bez_podpisu'] }],
         uvod: { kdy: 'fronta_hotova && !predseda_dalsi', akce: ['ch1_predseda_dalsi', '$predseda_dalsi'] },
+        vycerpano: 'ch1_predseda_vse',
         volby: [
-          { t: 'ch1_predseda_volba_navrh', akce: { kdy: "ma('podpis') || ma('papir')", akce: ['ch1_predseda_001', 'ch1_predseda_navrh_ruda', 'ch1_predseda_navrh_2'], jinak: 'ch1_predseda_bez_podpisu' } },
-          { t: 'ch1_predseda_volba_termin', akce: ['ch1_predseda_termin', '$utrzek_termin_nesmysl'] },
-          { t: 'ch1_predseda_volba_kdo', akce: ['ch1_predseda_kdo', '$utrzek_kdo_nesmysl'] },
+          { t: 'ch1_predseda_volba_navrh', kdy: "!ma('podpis') && !ma('papir')", jednou: true, akce: 'ch1_predseda_bez_podpisu' },
+          { t: 'ch1_predseda_volba_navrh', kdy: "ma('podpis') || ma('papir')", jednou: true, akce: ['ch1_predseda_001', 'ch1_predseda_navrh_ruda', 'ch1_predseda_navrh_2'] },
+          { t: 'ch1_predseda_volba_termin', jednou: true, akce: ['ch1_predseda_termin', '$utrzek_termin_nesmysl'] },
+          { t: 'ch1_predseda_volba_kdo', jednou: true, akce: ['ch1_predseda_kdo', '$utrzek_kdo_nesmysl'] },
           { t: 'ch1_predseda_volba_razitko', kdy: '!razitko_hotovo', akce: { kdy: "!ma('papir')", akce: 'ch1_predseda_razitko_bez_papiru', jinak: {
             kdy: '!fronta_hotova', akce: 'ch1_pembok_rada_fronta', jinak: {
               kdy: 'predseda_souhlas', akce: ['ch1_predseda_razitko_1'], jinak: [
                 'ch1_predseda_razitko_1', 'ch1_predseda_razitko_ruda', 'ch1_predseda_razitko_2', '$predseda_souhlas',
                 { kdy: 'poduska_mokra', akce: RAZITKO_KAVOU }] } } } },
-          { t: 'ch1_predseda_volba_podpis', kdy: 'predseda_souhlas && !razitko_hotovo', akce: 'ch1_predseda_podpis' },
+          { t: 'ch1_predseda_volba_podpis', kdy: 'predseda_souhlas && !razitko_hotovo', jednou: true, akce: 'ch1_predseda_podpis' },
           { t: 'ch1_predseda_volba_konec', konec: true, akce: 'ch1_predseda_konec' },
         ],
       },
@@ -497,23 +512,25 @@
 
       framework: {
         poprve: 'ch1_framework_uvod',
+        vycerpano: 'ch1_framework_vse',
         volby: [
-          { t: 'ch1_framework_volba_fronta', akce: ['ch1_framework_001', 'ch1_ruda_091', 'ch1_framework_002'] },
-          { t: 'ch1_framework_volba_kufr', akce: ['ch1_framework_kufr_1', 'ch1_framework_kufr_ruda', 'ch1_framework_kufr_2'] },
-          { t: 'ch1_framework_volba_vizitka', akce: ['ch1_framework_vizitka', 'ch1_framework_vizitka_ruda', 'ch1_framework_vizitka_2'] },
+          { t: 'ch1_framework_volba_fronta', jednou: true, akce: ['ch1_framework_001', 'ch1_ruda_091', 'ch1_framework_002'] },
+          { t: 'ch1_framework_volba_kufr', jednou: true, akce: ['ch1_framework_kufr_1', 'ch1_framework_kufr_ruda', 'ch1_framework_kufr_2'] },
+          { t: 'ch1_framework_volba_vizitka', jednou: true, akce: ['ch1_framework_vizitka', 'ch1_framework_vizitka_ruda', 'ch1_framework_vizitka_2'] },
           { t: 'ch1_framework_volba_konec', konec: true, akce: 'ch1_framework_konec' },
         ],
       },
 
       babicka: {
         poprve: 'ch1_babicka_uvod',
+        vycerpano: 'ch1_babicka_vse',
         volby: [
-          { t: 'ch1_babicka_volba_dum', akce: 'ch1_babicka_001' },
-          { t: 'ch1_babicka_volba_pradlo', akce: 'ch1_babicka_pradlo' },
-          { t: 'ch1_babicka_volba_pocasi', akce: 'ch1_babicka_pocasi' },
+          { t: 'ch1_babicka_volba_dum', jednou: true, akce: 'ch1_babicka_001' },
+          { t: 'ch1_babicka_volba_pradlo', jednou: true, akce: 'ch1_babicka_pradlo' },
+          { t: 'ch1_babicka_volba_pocasi', jednou: true, akce: 'ch1_babicka_pocasi' },
           { t: 'ch1_babicka_volba_pozemek', kdy: "(ma('mapa') || obojek_videl) && c1_babicka!='spojenec'", akce: [
             'ch1_babicka_pozemek_1', 'ch1_babicka_pozemek_2', 'ch1_babicka_pozemek_3', '#babicka_r12'] },
-          { t: 'ch1_babicka_volba_kocour', kdy: "c1_babicka=='spojenec'", akce: 'ch1_babicka_kocour' },
+          { t: 'ch1_babicka_volba_kocour', kdy: "c1_babicka=='spojenec'", jednou: true, akce: 'ch1_babicka_kocour' },
           { t: 'ch1_babicka_volba_konec', konec: true, akce: 'ch1_babicka_konec' },
         ],
       },
@@ -657,14 +674,29 @@
             ],
           };
         },
+        // Chybné pokusy: 1. a 2. obecně, 3. a 4. ukáže kartu a osu, od 5. řekne, kam kartu dát.
         vyhodnot: (h, v) => {
           const ok = { starosta: [true, null], predseda: [true, true], babicka: [true, false], zmena: [false, true], bara: [false, true], obyvatele: [false, true] };
+          const nazvy = { starosta: 'postava_starosta', predseda: 'postava_predseda', babicka: 'postava_babicka', zmena: 'postava_pan_zmena', bara: 'postava_bara', obyvatele: 'ch1_m02_obyvatele' };
           const znama = h.ma('mapa') || !!h.s.priznaky.obojek_videl;
           const u = v.umisteni || {};
-          const sedi = (id) => u[id] && u[id][0] === ok[id][0] && (ok[id][1] === null || u[id][1] === ok[id][1]);
-          if (!sedi('predseda')) { h.rekni('ch1_m02_predseda_stred'); return { hotovo: false }; }
-          for (const id of ['starosta', 'zmena', 'bara', 'obyvatele']) if (!sedi(id)) { h.rekni('ch1_m02_spatne'); return { hotovo: false }; }
-          if (znama && !sedi('babicka')) { h.rekni(u.babicka ? 'ch1_m02_spatne' : 'ch1_m02_babicka_chybi'); return { hotovo: false }; }
+          const st = h.s.minihra;
+          // Která osa je u karty špatně: 0 = může zastavit, 1 = záleží, -1 = sedí
+          const chyba = (id) => {
+            if (!u[id] || u[id][0] !== ok[id][0]) return 0;
+            if (ok[id][1] !== null && u[id][1] !== ok[id][1]) return 1;
+            return -1;
+          };
+          const spatne = ['predseda', 'starosta', ...(znama ? ['babicka'] : []), 'zmena', 'bara', 'obyvatele'].filter((id) => chyba(id) >= 0);
+          if (spatne.length) {
+            st.pokusy = (st.pokusy || 0) + 1;
+            const id = spatne[0];
+            const osa = chyba(id);
+            if (st.pokusy <= 2) h.rekni(id === 'predseda' ? 'ch1_m02_predseda_stred' : id === 'babicka' && !u.babicka ? 'ch1_m02_babicka_chybi' : 'ch1_m02_spatne');
+            else if (st.pokusy <= 4) h.rekni(osa === 0 ? 'ch1_m02_rada_vliv' : 'ch1_m02_rada_zajem', [nazvy[id]]);
+            else h.rekni(osa === 0 ? (ok[id][0] ? 'ch1_m02_rada_nahoru' : 'ch1_m02_rada_dolu') : (ok[id][1] ? 'ch1_m02_rada_doprava' : 'ch1_m02_rada_doleva'), [nazvy[id]]);
+            return { hotovo: false };
+          }
           if (!znama && !h.s.priznaky.m02_babicka_upozorneni) { h.proved(['ch1_m02_babicka_chybi', '$m02_babicka_upozorneni']); return { hotovo: false }; }
           h.proved(['ch1_m02_hotovo', 'ch1_m02_hotovo_ruda', 'ch1_m02_hotovo_pembok', '$m02_hotovo']);
           if (znama && !h.s.priznaky.c1_babicka) h.nastav('c1_babicka=odhalena');
@@ -832,6 +864,27 @@
         'volba ch1_predseda_volba_odmitnout_rozsah',
       ],
       ocekavej: ['konec', "c1_razitko=='poduska'", "c1_babicka=='spojenec'", 'c1_mimo_rozsah'],
+    },
+    playtest_vratny_m02: {
+      popis: 'Z playtestu: vrátný po zapojení tlačítka, vyčerpaný dialog a postupné rady v M02',
+      kroky: [
+        ...UVOD,
+        'pouzij bara', 'volba ch1_bara_volba_vyslechnout', 'volba ch1_bara_volba_vyslechnout', 'volba ch1_bara_volba_vyslechnout',
+        ...DO_ARCHIVU,
+        'pouzij lumir', 'volba ch1_lumir_volba_cislo', 'volba ch1_lumir_volba_konec',
+        ...ARCHIV.slice(0, ARCHIV.indexOf('predmet tlacitko vytah') + 1),
+        'pouzij vratny', 'volba ch1_vratny_volba_kdo', 'volba ch1_vratny_volba_dovnitr', 'volba ch1_vratny_volba_krizovka',
+        'volba ch1_vratny_volba_lumir', 'volba ch1_vratny_volba_konec',
+        'pouzij vratny',
+        'ocekavej rekl(\'ch1_vratny_vse\')',
+        ...ARCHIV.slice(ARCHIV.indexOf('predmet tlacitko vytah') + 1), ...souboj(...D),
+        'pouzij vytah', 'volba =1½ · Komise',
+        'pouzij stul',
+        ...Array.from({ length: 5 }, () => ({ minihra: { umisteni: {} } })),
+        { minihra: { umisteni: M02_SPRAVNE } },
+      ],
+      ocekavej: ["rekl('ch1_vratny_kdo_2_tlacitko')", "rekl('ch1_vratny_dovnitr_tlacitko')", "rekl('ch1_m02_predseda_stred')",
+        "rekl('ch1_m02_rada_vliv')", "rekl('ch1_m02_rada_nahoru')", 'm02_hotovo'],
     },
     J_babicka_odbyta: {
       popis: 'Varianta J: babička odbytá, razítko kávou nalitou předem (K12)',

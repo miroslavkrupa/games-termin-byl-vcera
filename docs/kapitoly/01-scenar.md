@@ -10,18 +10,18 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Scéna | Repliky | Volby | Popisky |
 |---|---|---|---|
 | Úvod: Rudův byt | 47 | 4 | 6 |
-| Náměstí | 117 | 11 | 7 |
-| Vestibul radnice | 42 | 5 | 5 |
-| Archiv | 53 | 10 | 13 |
+| Náměstí | 119 | 11 | 7 |
+| Vestibul radnice | 45 | 5 | 5 |
+| Archiv | 54 | 10 | 13 |
 | Archiv: úsek za Báru | 28 | 3 | 2 |
 | Starostova pracovna a M03 | 62 | 3 | 7 |
-| Kancelář Komise, M01 a M02 | 92 | 13 | 30 |
-| Babiččina chaloupka | 30 | 9 | 5 |
+| Kancelář Komise, M01 a M02 | 100 | 13 | 30 |
+| Babiččina chaloupka | 31 | 9 | 5 |
 | Nápovědy Prof. Pemboka | 40 | 0 | 0 |
 | Předměty a kombinace | 22 | 0 | 15 |
 | Konec kapitoly | 3 | 0 | 16 |
-| Výchozí reakce, postavy a GUI | 10 | 0 | 11 |
-| **Celkem** | **546** | **58** | **117** |
+| Výchozí reakce, postavy a GUI | 11 | 0 | 11 |
+| **Celkem** | **562** | **58** | **117** |
 
 ## Úvod: Rudův byt
 
@@ -111,6 +111,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_zmena_001` | Pan Změna | nadšeně | Chci Archu. Modrou. Ne, zelenou. S bazénem. Bez vody, kvůli bezpečnosti. | I want an Ark. Blue. No, green. With a pool. No water, for safety reasons. | replika z návrhu kapitoly 1 |
 | `ch1_zmena_prodej_ruda` | Ruda | suše | Aspoň víte, co chcete. Ne, nevíte. | At least you know what you want. No, you don't. |  |
 | `ch1_zmena_konec` | Pan Změna | rozverně | Nashle! Nebo ahoj. Ještě si to rozmyslím. | Goodbye! Or see ya. I'll decide later. |  |
+| `ch1_zmena_vse` | Pan Změna |  | Dnes už nic nechci. Zítra možná všechno. | I don't want anything today. Tomorrow, maybe everything. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_kombinace_pero_1` | Ruda | vítězoslavně | Inkoust je ve fázi 2? Káva je ve fázi teď. | Ink is in phase two? Coffee is in phase now. | propiska + káva |
 | `ch1_kombinace_pero_2` | Ruda | hrdě | Kávové pero. Inovace, kterou by nikdo neschválil, a proto funguje. | A coffee pen. An innovation nobody would ever approve, which is why it works. |  |
 | `ch1_stanek_propiska` | Ruda | přemýšlivě | Prázdnou propiskou nic nezapíšu. Potřebovala by něco hnědého a tekutého. | I can't write anything with an empty pen. It needs something brown and runny. | nápověda ke kombinaci s kávou |
@@ -161,6 +162,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_bara_cislo_ne` | Bára | chladně | Znám. Ale minule jste mi skočil do řeči, tak jsem si ho nechala. | I do. But last time you cut me off, so I kept it to myself. | R1.3: kdo nepočkal, číslo od Báry nedostane |
 | `ch1_bara_cislo_zmena` | Bára | suše | Zkuste Pana Změnu. Balí okurky do starého plakátu Archy. | Try Mr. Change. He wraps pickles in an old Ark poster. | nápověda k druhé cestě |
 | `ch1_bara_konec` | Bára | suše | Zatím. Nejpřesnější termín, jaký jsem tu za celý den slyšela. | Around. The most precise deadline I've heard all day. |  |
+| `ch1_bara_vse` | Bára |  | Všechno jsem vám řekla. Teď měřím. | I've told you everything. Now I'm measuring. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_zmena_prohlednout` | Ruda | pobaveně | Pan Změna. Prodává všechno, ale nikdy dvakrát to samé. Má dvě tužky za každým uchem a ani jednu nepoužil. | Mr. Change. Sells everything, never the same thing twice. Two pencils behind each ear and he's never used one. |  |
 | `ch1_stanek_plakat` | Ruda | zaujatě | A zboží balí do starého plakátu Archy. Pod okurkou je na něm nějaké číslo. | And he wraps his goods in an old Ark poster. There's some kind of number on it, under a pickle. | Ruda si všimne plakátu (druhá cesta k číslu projektu) |
 | `ch1_zmena_volba_plakat` | Ruda |  | Co chcete za ten starý plakát? | What do you want for that old poster? | volba dialogu; jen když Ruda plakát viděl |
@@ -240,14 +242,17 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_vratny_kdo_1` | Vrátný | ospale | Starosta Bohumil. Druhé patro. | Mayor Bohumil. Second floor. |  |
 | `ch1_vratny_kdo_ruda` | Ruda | nadějně | A výtah? | And the elevator? |  |
 | `ch1_vratny_kdo_2` | Vrátný | ospale | Jezdí do půl druhého. Druhá půlka je ve fázi 2. | It goes to floor one and a half. The other half is in phase two. | výtah do 1½. patra (návrh kapitoly 1) |
+| `ch1_vratny_kdo_2_tlacitko` | Vrátný |  | Výtahem. Co v něm zase je dvojka, jezdí celý. Pamětníci pláčou. | By lift. Ever since it got its number two back, it goes all the way. The old-timers are in tears. | po zapojení tlačítka „2“ (playtest prototypu) |
 | `ch1_vratny_dovnitr_1` | Vrátný | ospale | Na starostu nemáte výtah a do archivu nemáte číslo projektu. Archivář Lumír bez něj nepustí ani myš. | You can't get up to the mayor, and you can't get into the archive without a project number. Lumír the archivist won't even let a mouse in without one. | Lumír pouští do archivu jen s číslem projektu |
 | `ch1_vratny_dovnitr_ruda` | Ruda | pobaveně | Myš to zkoušela? | The mouse tried? |  |
 | `ch1_vratny_dovnitr_2` | Vrátný | vážně | Třikrát. Teď má číslo. | Three times. Now she has a number. |  |
 | `ch1_vratny_dovnitr_cislo` | Vrátný | ospale | Číslo máte, tak sklep je váš. Dolů po schodech, nahoru se stejně nedostanete. | You've got the number, so the basement's all yours. Downstairs. You won't get upstairs anyway. |  |
+| `ch1_vratny_dovnitr_tlacitko` | Vrátný |  | Sklep máte a nahoru teď taky. Za chvíli tu nebudu mít co hlídat. | You've got the basement, and now upstairs too. Soon there'll be nothing left for me to guard. | po zapojení tlačítka „2“ (playtest prototypu) |
 | `ch1_vratny_krizovka_1` | Vrátný | přemýšlivě | Devět písmen: „věc, která se v tomhle městě nikdy nestala“. | Seven letters: 'something that never happens in this town'. | vtip je psaný pro každý jazyk zvlášť |
 | `ch1_vratny_krizovka_ruda` | Ruda |  | Dokončení? | Closure? |  |
 | `ch1_vratny_krizovka_2` | Vrátný | podezíravě | Sedí. Ale nevěřím tomu. | Fits. But I don't believe it. |  |
 | `ch1_vratny_konec` | Vrátný | ospale | Hm. | Hm. |  |
+| `ch1_vratny_vse` | Vrátný |  | Hm. Všechno jsem řekl. Teď luštím. | Hm. Said it all. Doing my crossword now. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_vratny_stop` | Vrátný | ospale | Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi. | Without a project number, Lumír will throw you out of the basement. And me with you. | jen I1 (dveře radnice bez čísla); v N7 vyřadit, archiv hlídá Lumír (K11) |
 | `ch1_vratny_pusti` | Vrátný | ospale | Číslo máte? Tak sklep je dolů. Všechno ostatní je nahoru, ale tam se nedostanete. | Got the number? Basement's downstairs. Everything else is upstairs, but you can't get there. | jen I1 (dveře radnice s číslem); v N7 vyřadit, archiv hlídá Lumír (K11) |
 | `ch1_vestibul_prichod` | Ruda | suše | Vestibul radnice. Mramor, lešení a vrátný. Dvě z těch věcí tu zůstanou navždy. | The town hall lobby. Marble, scaffolding and a porter. Two of those are here forever. | jen při prvním příchodu |
@@ -331,6 +336,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_lumir_hrdost_2` | Lumír | něžně | Je na něm překlep. Nechal jsem ho tam, aby bylo vidět, že je skutečný. | There's a typo on it. I left it in, so you can tell it's real. |  |
 | `ch1_lumir_volba_konec` | Ruda |  | Děkuju, Lumíre. | Thank you, Lumír. | volba dialogu |
 | `ch1_lumir_konec` | Lumír | monotónně | Nic nenechávejte na schodech. Zůstalo by to tam navždy. | Don't leave anything on the stairs. It'd stay there forever. |  |
+| `ch1_lumir_vse` | Lumír |  | Všechno, co vím, je v kartotéce. Zbytek není založený. | Everything I know is in the card index. The rest isn't filed. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_lumir_dekret` | Lumír | monotónně | Skvrna od kávy, letošní ročník. Číslo pod ní nepřečtu. Mám ji založit? | A coffee stain, this year's vintage. I can't read the number under it. Shall I file it? | dekret na Lumíra ★ |
 | `ch1_lumir_kava` | Lumír | zděšeně | Káva v archivu?! Tyhle papíry přežily tři povodně a jednu reorganizaci. | Coffee in the archive?! These papers survived three floods and a reorganisation. | káva na Lumíra ★ |
 | `ch1_lumir_pozadavek` | Lumír | uznale | Podepsaný požadavek. Vzácný kus. Až skončí, rád ho založím. | A signed request. A rare specimen. When it's done, I'd be glad to file it. | požadavek na Lumíra ★ |
@@ -536,6 +542,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_predseda_podpis` | Předseda | vlídně | Podpis bez razítka je jen kresba. Pěkná kresba. | A signature without a stamp is just a drawing. A nice drawing. |  |
 | `ch1_predseda_volba_konec` | Ruda |  | Zatím děkuju. | Thanks, for now. | volba dialogu |
 | `ch1_predseda_konec` | Předseda | vlídně | Kdykoli. Tedy, v úředních hodinách. | Any time. During office hours, that is. |  |
+| `ch1_predseda_vse` | Předseda |  | Vše podstatné bylo řečeno. Zbytek odložíme. | Everything essential has been said. The rest we shall postpone. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_predseda_dalsi` | Předseda | vlídně | Další, prosím. Zcela bez spěchu. | Next, please. In no hurry whatsoever. | po frontě na frontu |
 | `ch1_predseda_faze_1` | Předseda | až příliš vlídně | Výborně. A ještě maličkost. Dovolil jsem si připsat: „…a následné fáze.“ | Excellent. Just one tiny thing. I've taken the liberty of adding: '...and subsequent phases.' | R1.4 po razítku |
 | `ch1_predseda_faze_2` | Předseda | až příliš vlídně | Čistě formálně. Aby Archa měla kam růst. | Purely a formality. So the Ark has room to grow. |  |
@@ -576,6 +583,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_framework_vizitka_2` | Framework | sebevědomě | Všude, kde jsem ještě nebyl. | Everywhere I haven't been yet. |  |
 | `ch1_framework_volba_konec` | Ruda |  | Nashle. | Bye. | volba dialogu |
 | `ch1_framework_konec` | Framework | obchodnicky | Ozvěte se! Fronta 3.0 je na cestě. | Be in touch! Queue 3.0 is on its way. |  |
+| `ch1_framework_vse` | Framework |  | Víc vám řeknu jen za poplatek. Ve fázi 2. | Anything more costs extra. In phase two. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_framework_dekret` | Framework | obchodnicky | Projektový manažer! Gratuluju. Mám pro vás krabici „Manažer v krabici“. Pak už nebudete potřeba. | Project manager! Congratulations. I've got a 'Manager in a Box' for you. Then you won't be needed. | dekret na Frameworka ★ |
 | `ch1_framework_kava` | Framework | povýšeně | Kávu? Piju jen nápoje s certifikátem. | Coffee? I only drink certified beverages. | káva na Frameworka ★ |
 | `ch1_framework_kavove_pero` | Framework | nadšeně | Hnědé pero! Z toho by šla udělat metodika. „Hnědé psaní.“ Zapisuju si to. | A brown pen! I could make a methodology out of that. 'Brown Writing.' Noting it down. | kávové pero na Frameworka ★ |
@@ -614,6 +622,12 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_m02_babicka_chybi` | Pembok | nápověda | Pod rampou je něčí pozemek. Kdo by mohl rampu zastavit? | The land under the ramp belongs to somebody. Who could stop the ramp? | babička chybí nebo je neznámá |
 | `ch1_m02_malo` | Pembok | nápověda | O téhle postavě víš málo. Promluv si s ní. | You don't know much about this one. Go and talk to them. | postava, se kterou hráč nemluvil |
 | `ch1_m02_spatne` | Pembok | nápověda | Takhle to ve městě nechodí. Zkus to znovu. | That's not how this town works. Try again. | jiné špatné umístění |
+| `ch1_m02_rada_vliv` | Pembok |  | Podívej se ještě na kartu „%s“. Jde o to, kdo může Archu zastavit. | Take another look at the "%s" card. The question is who can stop the Ark. | M02, 3. a 4. chybný pokus; %s = postava (playtest prototypu) |
+| `ch1_m02_rada_zajem` | Pembok |  | Podívej se ještě na kartu „%s“. Jde o to, komu na Arše záleží. | Take another look at the "%s" card. The question is who actually cares about the Ark. | M02, 3. a 4. chybný pokus; %s = postava |
+| `ch1_m02_rada_nahoru` | Pembok |  | Kartu „%s“ dej nahoru. Bez ní se Archa nehne. | Put the "%s" card at the top. Without them, the Ark goes nowhere. | M02, od 5. chybného pokusu |
+| `ch1_m02_rada_dolu` | Pembok |  | Kartu „%s“ dej dolů. Archu sama nezastaví. | Put the "%s" card at the bottom. They can't stop the Ark on their own. | M02, od 5. chybného pokusu |
+| `ch1_m02_rada_doprava` | Pembok |  | Kartu „%s“ dej doprava. Tomu, kdo na ní je, na Arše záleží. | Put the "%s" card on the right. Whoever is on it cares about the Ark. | M02, od 5. chybného pokusu |
+| `ch1_m02_rada_doleva` | Pembok |  | Kartu „%s“ dej doleva. Tomu, kdo na ní je, jde o něco jiného než o Archu. | Put the "%s" card on the left. Whoever is on it cares about something other than the Ark. | M02, od 5. chybného pokusu |
 | `ch1_m02_hotovo` | Pembok | uznale | Teď víš, s kým mluvit. A koho se ptát. | Now you know who to talk to. And who to ask. | konec M02 |
 | `ch1_m02_hotovo_ruda` | Ruda | zvědavě | A kde jsem já? | And where am I? |  |
 | `ch1_m02_hotovo_pembok` | Pembok | suše | Ty to kreslíš. To stačí. | You're the one drawing it. That's enough. |  |
@@ -661,6 +675,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_babicka_kocour` | Babička | láskyplně | Mourek chodí na radnici kontrolovat, jestli už něco dodělali. Vrací se zklamaný. | Marmalade goes to the town hall to check if they've finished anything. Comes back disappointed. |  |
 | `ch1_babicka_volba_konec` | Ruda |  | Na shledanou. | Goodbye. | volba dialogu |
 | `ch1_babicka_konec` | Babička | suše | Zastavte se. Když budete mít čas poslouchat. | Drop by. When you've got time to listen. |  |
+| `ch1_babicka_vse` | Babička |  | Povídali jsme si dost. Rajčata čekají. | We've talked enough. The tomatoes are waiting. | vyčerpaný dialog (playtest prototypu) |
 | `ch1_lavicka_buchta_1` | Babička | vlídně | Sedněte si. Buchtu? Povidlová. Upečená podle plánu a hotová včas. | Sit down. A bun? Plum jam. Baked to plan and ready on time. | lavička, jen spojenec |
 | `ch1_lavicka_buchta_ruda` | Ruda | dojatě | Tohle je první dokončená věc, kterou jsem kdy jedl. | This is the first finished thing I've ever eaten. |  |
 | `ch1_babicka_dekret` | Babička | suše | Projektový manažer? Těch tu bylo. Jeden mi jednou zalil rajčata betonem. | Project manager? We've had plenty. One of them watered my tomatoes with concrete. | dekret na babičku ★ |
@@ -796,6 +811,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `obecne_nelze_4` | Ruda |  | Kdyby to šlo, už by to tu někdo začal a nedokončil. | If that were possible, someone here would have started it and never finished. | výchozí reakce |
 | `obecne_vzit` | Ruda |  | To se mi do kapes nevejde. A to mám kapsy na celý plán. | That won't fit in my pockets. And my pockets hold an entire plan. | výchozí reakce na sebrat |
 | `obecne_mluvit` | Ruda |  | Mluvit s tím? Na poradách jsem měl horší posluchače. | Talk to it? I've had worse audiences in meetings. | výchozí reakce na mluvit |
+| `obecne_vse_receno` | Ruda |  | Všechno podstatné už jsme si řekli. | We've covered everything that matters. | výchozí reakce: vyčerpaný dialog (playtest prototypu) |
 | `obecne_nic_k_videni_2` | Ruda |  | Vypadá to přesně tak, jak to vypadá. | It looks exactly like it looks. | výchozí reakce na prohlédnout |
 | `obecne_pouzit_s_2` | Ruda |  | %s a %s? Ne. Na prezentaci by to nevypadalo dobře. | %s with %s? No. That wouldn't even look good on a slide. | výchozí reakce; %s = předmět, cíl |
 | `ch1_ui_kapitola` |  |  | Kapitola 1: Podepište tady | Chapter 1: Sign Here | titulek kapitoly; návrh, D26 (místo „Iniciace“) |

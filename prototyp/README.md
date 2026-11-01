@@ -9,7 +9,8 @@ a stejná pravidla zkontroluje skript.
 | `engine.js` | logika bez grafiky: scény, předměty, příznaky, dialogy, nápověda; běží v prohlížeči i v Node |
 | `kapitola1.js` | kapitola 1 jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody |
 | `prehravac.html` | přehrávač: šedé scény, titulky, inventář, minihry a panel autora |
-| `obrazky/` | zmenšená pozadí náměstí a archivu a ikony předmětů z `hra/grafika` |
+| `obrazky/` | schválená pozadí scén (D51), postavy zepředu a ikony předmětů (D52) ze `docs/styl/vzorky` |
+| `priprav_obrazky.gd` | vyřízne postavy a ikony ze vzorků (Godot); pozadí se převádí nástrojem `sips` |
 | `sestav.mjs` | složí vše do jednoho HTML souboru ve `vystup/` (není v gitu) |
 | `kontrola.mjs` | automatická kontrola kapitoly |
 

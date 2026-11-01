@@ -23,6 +23,7 @@ ch1_zmena_prodej_2,"Okurky. Ne, nakládané okurky. Čerstvé, ale nakládané."
 ch1_zmena_001,"Chci Archu. Modrou. Ne, zelenou. S bazénem. Bez vody, kvůli bezpečnosti.","I want an Ark. Blue. No, green. With a pool. No water, for safety reasons.",Pan Změna,nadšeně,replika z návrhu kapitoly 1
 ch1_zmena_prodej_ruda,"Aspoň víte, co chcete. Ne, nevíte.","At least you know what you want. No, you don't.",Ruda,suše,
 ch1_zmena_konec,Nashle! Nebo ahoj. Ještě si to rozmyslím.,Goodbye! Or see ya. I'll decide later.,Pan Změna,rozverně,
+ch1_zmena_vse,Dnes už nic nechci. Zítra možná všechno.,"I don't want anything today. Tomorrow, maybe everything.",Pan Změna,,vyčerpaný dialog (playtest prototypu)
 predmet_propiska,Propiska bez inkoustu,Empty pen,,,název předmětu
 predmet_propiska_prohlednout,"Propiska bez inkoustu. Podepíše cokoli, ale nic nezůstane.","An empty pen. It'll sign anything, but nothing sticks.",Ruda,suše,
 predmet_kava,Hrnek kávy,Mug of coffee,,,název předmětu
@@ -106,14 +107,17 @@ ch1_vratny_volba_konec,Na shledanou.,Goodbye.,Ruda,,volba dialogu
 ch1_vratny_kdo_1,Starosta Bohumil. Druhé patro.,Mayor Bohumil. Second floor.,Vrátný,ospale,
 ch1_vratny_kdo_ruda,A výtah?,And the elevator?,Ruda,nadějně,
 ch1_vratny_kdo_2,Jezdí do půl druhého. Druhá půlka je ve fázi 2.,It goes to floor one and a half. The other half is in phase two.,Vrátný,ospale,výtah do 1½. patra (návrh kapitoly 1)
+ch1_vratny_kdo_2_tlacitko,"Výtahem. Co v něm zase je dvojka, jezdí celý. Pamětníci pláčou.","By lift. Ever since it got its number two back, it goes all the way. The old-timers are in tears.",Vrátný,,po zapojení tlačítka „2“ (playtest prototypu)
 ch1_vratny_dovnitr_1,Na starostu nemáte výtah a do archivu nemáte číslo projektu. Archivář Lumír bez něj nepustí ani myš.,"You can't get up to the mayor, and you can't get into the archive without a project number. Lumír the archivist won't even let a mouse in without one.",Vrátný,ospale,Lumír pouští do archivu jen s číslem projektu
 ch1_vratny_dovnitr_ruda,Myš to zkoušela?,The mouse tried?,Ruda,pobaveně,
 ch1_vratny_dovnitr_2,Třikrát. Teď má číslo.,Three times. Now she has a number.,Vrátný,vážně,
 ch1_vratny_dovnitr_cislo,"Číslo máte, tak sklep je váš. Dolů po schodech, nahoru se stejně nedostanete.","You've got the number, so the basement's all yours. Downstairs. You won't get upstairs anyway.",Vrátný,ospale,
+ch1_vratny_dovnitr_tlacitko,Sklep máte a nahoru teď taky. Za chvíli tu nebudu mít co hlídat.,"You've got the basement, and now upstairs too. Soon there'll be nothing left for me to guard.",Vrátný,,po zapojení tlačítka „2“ (playtest prototypu)
 ch1_vratny_krizovka_1,"Devět písmen: „věc, která se v tomhle městě nikdy nestala“.",Seven letters: 'something that never happens in this town'.,Vrátný,přemýšlivě,vtip je psaný pro každý jazyk zvlášť
 ch1_vratny_krizovka_ruda,Dokončení?,Closure?,Ruda,,
 ch1_vratny_krizovka_2,Sedí. Ale nevěřím tomu.,Fits. But I don't believe it.,Vrátný,podezíravě,
 ch1_vratny_konec,Hm.,Hm.,Vrátný,ospale,
+ch1_vratny_vse,Hm. Všechno jsem řekl. Teď luštím.,Hm. Said it all. Doing my crossword now.,Vrátný,,vyčerpaný dialog (playtest prototypu)
 ch1_vratny_stop,Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi.,"Without a project number, Lumír will throw you out of the basement. And me with you.",Vrátný,ospale,"jen I1 (dveře radnice bez čísla); v N7 vyřadit, archiv hlídá Lumír (K11)"
 ch1_vratny_pusti,"Číslo máte? Tak sklep je dolů. Všechno ostatní je nahoru, ale tam se nedostanete.","Got the number? Basement's downstairs. Everything else is upstairs, but you can't get there.",Vrátný,ospale,"jen I1 (dveře radnice s číslem); v N7 vyřadit, archiv hlídá Lumír (K11)"
 ch1_bara_prohlednout,"Žena s metrem a tabletem. Jediný člověk ve městě, který něco měří, místo aby to odhadoval.",A woman with a tape measure and a tablet. The only person in town who measures things instead of guessing.,Ruda,zaujatě,
@@ -147,6 +151,7 @@ ch1_bara_cislo_plakat,Ten plakát má číslo správně. Překvapivě.,That post
 ch1_bara_cislo_ne,"Znám. Ale minule jste mi skočil do řeči, tak jsem si ho nechala.","I do. But last time you cut me off, so I kept it to myself.",Bára,chladně,"R1.3: kdo nepočkal, číslo od Báry nedostane"
 ch1_bara_cislo_zmena,Zkuste Pana Změnu. Balí okurky do starého plakátu Archy.,Try Mr. Change. He wraps pickles in an old Ark poster.,Bára,suše,nápověda k druhé cestě
 ch1_bara_konec,"Zatím. Nejpřesnější termín, jaký jsem tu za celý den slyšela.",Around. The most precise deadline I've heard all day.,Bára,suše,
+ch1_bara_vse,Všechno jsem vám řekla. Teď měřím.,I've told you everything. Now I'm measuring.,Bára,,vyčerpaný dialog (playtest prototypu)
 ch1_zmena_prohlednout,"Pan Změna. Prodává všechno, ale nikdy dvakrát to samé. Má dvě tužky za každým uchem a ani jednu nepoužil.","Mr. Change. Sells everything, never the same thing twice. Two pencils behind each ear and he's never used one.",Ruda,pobaveně,
 ch1_stanek_plakat,A zboží balí do starého plakátu Archy. Pod okurkou je na něm nějaké číslo.,"And he wraps his goods in an old Ark poster. There's some kind of number on it, under a pickle.",Ruda,zaujatě,Ruda si všimne plakátu (druhá cesta k číslu projektu)
 ch1_zmena_volba_plakat,Co chcete za ten starý plakát?,What do you want for that old poster?,Ruda,,volba dialogu; jen když Ruda plakát viděl
@@ -340,6 +345,7 @@ ch1_lumir_002,Tenhle lístek jsem dokončil v roce 1998. Dodnes ho mám rád.,I 
 ch1_lumir_hrdost_2,"Je na něm překlep. Nechal jsem ho tam, aby bylo vidět, že je skutečný.","There's a typo on it. I left it in, so you can tell it's real.",Lumír,něžně,
 ch1_lumir_volba_konec,"Děkuju, Lumíre.","Thank you, Lumír.",Ruda,,volba dialogu
 ch1_lumir_konec,Nic nenechávejte na schodech. Zůstalo by to tam navždy.,Don't leave anything on the stairs. It'd stay there forever.,Lumír,monotónně,
+ch1_lumir_vse,"Všechno, co vím, je v kartotéce. Zbytek není založený.",Everything I know is in the card index. The rest isn't filed.,Lumír,,vyčerpaný dialog (playtest prototypu)
 ch1_lumir_dekret,"Skvrna od kávy, letošní ročník. Číslo pod ní nepřečtu. Mám ji založit?","A coffee stain, this year's vintage. I can't read the number under it. Shall I file it?",Lumír,monotónně,dekret na Lumíra ★
 ch1_lumir_kava,Káva v archivu?! Tyhle papíry přežily tři povodně a jednu reorganizaci.,Coffee in the archive?! These papers survived three floods and a reorganisation.,Lumír,zděšeně,káva na Lumíra ★
 ch1_lumir_pozadavek,"Podepsaný požadavek. Vzácný kus. Až skončí, rád ho založím.","A signed request. A rare specimen. When it's done, I'd be glad to file it.",Lumír,uznale,požadavek na Lumíra ★
@@ -530,6 +536,7 @@ ch1_predseda_volba_podpis,"Nestačí, když se podepíšu?",Can't I just sign it
 ch1_predseda_podpis,Podpis bez razítka je jen kresba. Pěkná kresba.,A signature without a stamp is just a drawing. A nice drawing.,Předseda,vlídně,
 ch1_predseda_volba_konec,Zatím děkuju.,"Thanks, for now.",Ruda,,volba dialogu
 ch1_predseda_konec,"Kdykoli. Tedy, v úředních hodinách.","Any time. During office hours, that is.",Předseda,vlídně,
+ch1_predseda_vse,Vše podstatné bylo řečeno. Zbytek odložíme.,Everything essential has been said. The rest we shall postpone.,Předseda,,vyčerpaný dialog (playtest prototypu)
 ch1_predseda_dalsi,"Další, prosím. Zcela bez spěchu.","Next, please. In no hurry whatsoever.",Předseda,vlídně,po frontě na frontu
 ch1_predseda_faze_1,Výborně. A ještě maličkost. Dovolil jsem si připsat: „…a následné fáze.“,Excellent. Just one tiny thing. I've taken the liberty of adding: '...and subsequent phases.',Předseda,až příliš vlídně,R1.4 po razítku
 ch1_predseda_faze_2,Čistě formálně. Aby Archa měla kam růst.,Purely a formality. So the Ark has room to grow.,Předseda,až příliš vlídně,
@@ -570,6 +577,7 @@ ch1_framework_vizitka_ruda,Kde jinde?,Where's elsewhere?,Ruda,zvědavě,
 ch1_framework_vizitka_2,"Všude, kde jsem ještě nebyl.",Everywhere I haven't been yet.,Framework,sebevědomě,
 ch1_framework_volba_konec,Nashle.,Bye.,Ruda,,volba dialogu
 ch1_framework_konec,Ozvěte se! Fronta 3.0 je na cestě.,Be in touch! Queue 3.0 is on its way.,Framework,obchodnicky,
+ch1_framework_vse,Víc vám řeknu jen za poplatek. Ve fázi 2.,Anything more costs extra. In phase two.,Framework,,vyčerpaný dialog (playtest prototypu)
 ch1_framework_dekret,Projektový manažer! Gratuluju. Mám pro vás krabici „Manažer v krabici“. Pak už nebudete potřeba.,Project manager! Congratulations. I've got a 'Manager in a Box' for you. Then you won't be needed.,Framework,obchodnicky,dekret na Frameworka ★
 ch1_framework_kava,Kávu? Piju jen nápoje s certifikátem.,Coffee? I only drink certified beverages.,Framework,povýšeně,káva na Frameworka ★
 ch1_framework_kavove_pero,Hnědé pero! Z toho by šla udělat metodika. „Hnědé psaní.“ Zapisuju si to.,A brown pen! I could make a methodology out of that. 'Brown Writing.' Noting it down.,Framework,nadšeně,kávové pero na Frameworka ★
@@ -614,6 +622,7 @@ ch1_babicka_volba_kocour,Váš kocour se toulá po náměstí.,Your cat wanders 
 ch1_babicka_kocour,"Mourek chodí na radnici kontrolovat, jestli už něco dodělali. Vrací se zklamaný.",Marmalade goes to the town hall to check if they've finished anything. Comes back disappointed.,Babička,láskyplně,
 ch1_babicka_volba_konec,Na shledanou.,Goodbye.,Ruda,,volba dialogu
 ch1_babicka_konec,Zastavte se. Když budete mít čas poslouchat.,Drop by. When you've got time to listen.,Babička,suše,
+ch1_babicka_vse,Povídali jsme si dost. Rajčata čekají.,We've talked enough. The tomatoes are waiting.,Babička,,vyčerpaný dialog (playtest prototypu)
 ch1_lavicka_buchta_1,Sedněte si. Buchtu? Povidlová. Upečená podle plánu a hotová včas.,Sit down. A bun? Plum jam. Baked to plan and ready on time.,Babička,vlídně,"lavička, jen spojenec"
 ch1_lavicka_buchta_ruda,"Tohle je první dokončená věc, kterou jsem kdy jedl.",This is the first finished thing I've ever eaten.,Ruda,dojatě,
 ch1_babicka_dekret,Projektový manažer? Těch tu bylo. Jeden mi jednou zalil rajčata betonem.,Project manager? We've had plenty. One of them watered my tomatoes with concrete.,Babička,suše,dekret na babičku ★
@@ -679,6 +688,7 @@ obecne_nelze_3,To nechám na fázi 2.,I'll leave that for phase two.,Ruda,,vých
 obecne_nelze_4,"Kdyby to šlo, už by to tu někdo začal a nedokončil.","If that were possible, someone here would have started it and never finished.",Ruda,,výchozí reakce
 obecne_vzit,To se mi do kapes nevejde. A to mám kapsy na celý plán.,That won't fit in my pockets. And my pockets hold an entire plan.,Ruda,,výchozí reakce na sebrat
 obecne_mluvit,Mluvit s tím? Na poradách jsem měl horší posluchače.,Talk to it? I've had worse audiences in meetings.,Ruda,,výchozí reakce na mluvit
+obecne_vse_receno,Všechno podstatné už jsme si řekli.,We've covered everything that matters.,Ruda,,výchozí reakce: vyčerpaný dialog (playtest prototypu)
 obecne_nic_k_videni_2,"Vypadá to přesně tak, jak to vypadá.",It looks exactly like it looks.,Ruda,,výchozí reakce na prohlédnout
 obecne_pouzit_s_2,%s a %s? Ne. Na prezentaci by to nevypadalo dobře.,%s with %s? No. That wouldn't even look good on a slide.,Ruda,,"výchozí reakce; %s = předmět, cíl"
 ch1_m01_nazev,Jeden papír o Arše,One Page About the Ark,,,nadpis minihry M01
@@ -714,6 +724,12 @@ ch1_m02_predseda_stred,"Předseda uprostřed? Jsi si jistý? Vzpomeň si, přes 
 ch1_m02_babicka_chybi,Pod rampou je něčí pozemek. Kdo by mohl rampu zastavit?,The land under the ramp belongs to somebody. Who could stop the ramp?,Pembok,nápověda,babička chybí nebo je neznámá
 ch1_m02_malo,O téhle postavě víš málo. Promluv si s ní.,You don't know much about this one. Go and talk to them.,Pembok,nápověda,"postava, se kterou hráč nemluvil"
 ch1_m02_spatne,Takhle to ve městě nechodí. Zkus to znovu.,That's not how this town works. Try again.,Pembok,nápověda,jiné špatné umístění
+ch1_m02_rada_vliv,"Podívej se ještě na kartu „%s“. Jde o to, kdo může Archu zastavit.","Take another look at the ""%s"" card. The question is who can stop the Ark.",Pembok,,"M02, 3. a 4. chybný pokus; %s = postava (playtest prototypu)"
+ch1_m02_rada_zajem,"Podívej se ještě na kartu „%s“. Jde o to, komu na Arše záleží.","Take another look at the ""%s"" card. The question is who actually cares about the Ark.",Pembok,,"M02, 3. a 4. chybný pokus; %s = postava"
+ch1_m02_rada_nahoru,Kartu „%s“ dej nahoru. Bez ní se Archa nehne.,"Put the ""%s"" card at the top. Without them, the Ark goes nowhere.",Pembok,,"M02, od 5. chybného pokusu"
+ch1_m02_rada_dolu,Kartu „%s“ dej dolů. Archu sama nezastaví.,"Put the ""%s"" card at the bottom. They can't stop the Ark on their own.",Pembok,,"M02, od 5. chybného pokusu"
+ch1_m02_rada_doprava,"Kartu „%s“ dej doprava. Tomu, kdo na ní je, na Arše záleží.","Put the ""%s"" card on the right. Whoever is on it cares about the Ark.",Pembok,,"M02, od 5. chybného pokusu"
+ch1_m02_rada_doleva,"Kartu „%s“ dej doleva. Tomu, kdo na ní je, jde o něco jiného než o Archu.","Put the ""%s"" card on the left. Whoever is on it cares about something other than the Ark.",Pembok,,"M02, od 5. chybného pokusu"
 ch1_m02_hotovo,"Teď víš, s kým mluvit. A koho se ptát.",Now you know who to talk to. And who to ask.,Pembok,uznale,konec M02
 ch1_m02_hotovo_ruda,A kde jsem já?,And where am I?,Ruda,zvědavě,
 ch1_m02_hotovo_pembok,Ty to kreslíš. To stačí.,You're the one drawing it. That's enough.,Pembok,suše,

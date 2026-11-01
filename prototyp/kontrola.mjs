@@ -31,7 +31,8 @@ const pouzite = new Set();
     const k = x.replace(/^\*karta:/, '');
     if (KLIC.test(k)) pouzite.add(k);
   } else if (Array.isArray(x)) x.forEach(projdi);
-  else if (x && typeof x === 'object') Object.values(x).forEach(projdi);
+  // obraz a obrazek jsou jména souborů, ne klíče textů
+  else if (x && typeof x === 'object') Object.entries(x).forEach(([k, v]) => { if (k !== 'obraz' && k !== 'obrazek') projdi(v); });
 })({ ...data, pruchody: null, minihry: null });
 // Klíče, které skládají minihry v kódu
 const MINIHRY_KLICE = Object.keys(texty).filter((k) => /_m0\d_|_listek_|_kartoteka_(abecedne|spatne|stejny_rok|hotovo)|_priloha_stop|_starosta_(podpis|slib|prohra)|_pembok_kriteria/.test(k) && k.startsWith(predpona));

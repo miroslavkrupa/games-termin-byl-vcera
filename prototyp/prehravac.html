@@ -80,8 +80,8 @@
   .hra { display: grid; gap: 10px; min-width: 0; }
 
   /* scéna */
-  .platno-obal { width: 100%; max-width: calc((100vh - 250px) * 16 / 9); min-width: min(100%, 320px); margin-inline: auto; }
-  .platno { position: relative; width: 100%; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 10px; overflow: hidden; box-shadow: var(--stin); background: var(--vykres); user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+  .platno-obal { width: 100%; max-width: calc((100vh - 250px) * 19.5 / 9); min-width: min(100%, 320px); margin-inline: auto; }
+  .platno { position: relative; width: 100%; aspect-ratio: 19.5 / 9; max-width: 100%; border-radius: 10px; overflow: hidden; box-shadow: var(--stin); background: var(--vykres); user-select: none; -webkit-user-select: none; touch-action: manipulation; }
   .platno .pozadi { position: absolute; inset: 0; background-size: cover; background-position: center; }
   .platno.vykres .pozadi {
     background-color: var(--vykres);
@@ -115,7 +115,13 @@
   .misto.postava .figurka::before { content: ''; position: absolute; left: 50%; top: 4%; width: 34%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: currentColor; opacity: 0.85; }
   .misto.postava .figurka::after { content: ''; position: absolute; left: 50%; top: 26%; width: 70%; height: 66%; transform: translateX(-50%); border-radius: 40% 40% 12% 12%; background: currentColor; opacity: 0.85; }
   .platno.obraz .misto.postava { color: rgba(250, 236, 205, 0.55); filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.9)); }
-  .platno.obraz .misto.postava .stitek { opacity: 1; top: auto; bottom: -2px; transform: translate(-50%, 100%); }
+  .platno.obraz .misto.postava .stitek { top: auto; bottom: -2px; transform: translate(-50%, 100%); }
+  .misto.postava { z-index: 2; }
+  .misto .obraz-postavy { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; pointer-events: none; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.35)); }
+  .platno.obraz .misto.postava:has(.obraz-postavy) { filter: none; }
+  .platno.obraz.zvyraznit .misto.postava { background: transparent; }
+  .platno.obraz .misto.stitek-vzdy .stitek { opacity: 1; }
+  .platno.obraz .misto.vychod .stitek::after { content: ' →'; color: var(--accent); }
   .platno.vykres .misto.postava { color: rgba(233, 241, 245, 0.32); border-radius: 999px 999px 10px 10px; }
   .platno .misto.postava .stitek { font-family: var(--f-display); font-weight: 400; letter-spacing: 0.06em; font-size: clamp(10px, 1.2vw, 15px); max-width: none; overflow: visible; }
   .platno.zaneprazdneno .misto { pointer-events: none; }
@@ -244,7 +250,7 @@
         <div class="platno vykres" id="platno">
           <div class="pozadi" id="pozadi"></div>
           <div class="vodoznak" id="vodoznak"></div>
-          <div class="razitko-sedy">Šedá scéna · zástupná grafika</div>
+          <div class="razitko-sedy">Šedá scéna · pozadí zatím není</div>
           <div id="mista"></div>
           <div class="nazev-mista" id="nazev-mista" hidden></div>
           <div class="titulky" id="titulky" hidden role="button" tabindex="0" aria-live="polite">
@@ -280,7 +286,7 @@
           <li><kbd>H</kbd> zvýrazní místa ve scénách s obrazem, <kbd>N</kbd> zavolá Pemboka, <kbd>P</kbd> přepne prohlížení.</li>
         </ul>
         <p class="nadpis-panelu">Co je prototyp</p>
-        <p>Pravidla a texty kapitoly 1 bez grafiky. Náměstí a archiv mají hotová pozadí, ostatní scény jsou šedé výkresy s popsanými místy. Postavy jsou figurky.</p>
+        <p>Pravidla a texty kapitoly 1 se schválenými pozadími, postavami a ikonami ze vzorků. Postavy stojí bez animace, Rudův byt je šedý výkres (pozadí zatím není).</p>
         <p>Logika je v <code>prototyp/kapitola1.js</code>, texty v <code>hra/texty/texty.csv</code>. Stejná pravidla projde příkaz <code>node prototyp/kontrola.mjs</code>.</p>
         <p>Hra se průběžně ukládá v tomto prohlížeči.</p>
       </div>
@@ -414,7 +420,9 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
         style: `left:${x}%;top:${y}%;width:${w}%;height:${h}%`,
         'aria-label': t(m.nazev),
       });
-      if (m.druh === 'postava') b.append(el('span', { trida: 'figurka' }));
+      if (m.obraz && OBRAZKY[m.obraz]) b.append(el('img', { trida: 'obraz-postavy', src: OBRAZKY[m.obraz], alt: '' }));
+      else if (m.druh === 'postava') b.append(el('span', { trida: 'figurka' }));
+      if (m.stitek) b.classList.add('stitek-vzdy');
       b.append(el('span', { trida: 'stitek', text: t(m.nazev) }));
       pripojDotek(b, () => klikNaMisto(m), () => prohledni(m));
       b.addEventListener('pointerenter', () => ukazNazev(t(m.nazev)));
@@ -537,7 +545,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     if (!predmety.length) inv.append(el('div', { trida: 'prazdny', text: 'Prázdné kapsy.' }));
     for (const id of predmety) {
       const p = DATA.predmety[id];
-      const obr = p.ikona && OBRAZKY['predmet_' + p.ikona];
+      const obr = OBRAZKY['predmet_' + id];
       const b = el('button', { trida: 'predmet', 'aria-pressed': drzenyPredmet === id ? 'true' : 'false', title: t(p.nazev) },
         obr ? el('img', { src: obr, alt: '' }) : el('span', { trida: 'zastupce', text: t(p.nazev).slice(0, 1) }),
         el('span', { text: t(p.nazev) }));

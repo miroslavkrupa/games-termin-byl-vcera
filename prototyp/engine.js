@@ -7,12 +7,13 @@
 //   "+predmet"   přidá předmět aktivní postavě, "-predmet" ho odebere
 //   "$priznak"   nastaví příznak na true, "$p=3", "$p=slovo", "$p+1" (přičte)
 //   ">scena"     přejde do scény (spustí její „prichod“)
-//   "#dialog"    otevře dialog, samotné "#" ho zavře
+//   "#dialog"    otevře dialog, samotné "#" ho zavře; volba s `jednou` po vybrání zmizí
+//                a když zbude jen rozloučení, postava řekne `vycerpano` a dialog se zavře
 //   "@minihra"   otevře minihru
 //   "~bara"      přepne hranou postavu (Bára / Ruda)
 //   "*karta:klic"  titulková karta, "*konec" obrazovka následků
 // a objekty {kdy, akce, jinak} pro podmínky a {stridat: [..]} pro střídání replik.
-// Podmínky jsou JS výrazy nad příznaky: ma('kava'), byl('archiv'), c1_babicka=='spojenec'.
+// Podmínky jsou JS výrazy nad příznaky: ma('kava'), byl('archiv'), rekl('ch1_klic'), c1_babicka=='spojenec'.
 (function (koren) {
   'use strict';
 
@@ -40,6 +41,7 @@
     }
     function rekni(klic, dosad) {
       const t = text(klic);
+      s.citace['rec_' + klic] = (s.citace['rec_' + klic] || 0) + 1;
       udalosti.push({ typ: 'rec', klic, mluvci: t.mluvci || '', dosad: dosad || null });
     }
 
@@ -49,6 +51,7 @@
       byl: (sc) => !!s.navstiveno[sc],
       postava: () => s.postava,
       scena: () => s.scena,
+      rekl: (klic) => !!s.citace['rec_' + klic],
     };
     const rozsah = new Proxy({}, {
       has: () => true,
@@ -135,6 +138,11 @@
       const k = 'dialog_' + id;
       if (!s.citace[k]) { s.citace[k] = 1; proved(d.poprve); } else proved(d.znovu);
       if (s.dialog === id) proved(d.uvod);
+      // Vyčerpaný dialog: zbylo jen rozloučení, takže postava řekne, že už nemá co dodat.
+      if (s.dialog === id && !volby().some((v) => !v.konec)) {
+        rekni(d.vycerpano || 'obecne_vse_receno');
+        otevriDialog(null);
+      }
     }
 
     function volby() {
