@@ -244,6 +244,8 @@ Testování s lidmi se dělá až na prototypu v Godotu (N8, D66).
   volbami z dřívějška.
 - **Po kontrole:** opravit N3 dané kapitoly, zapsat rozhodnutí. Odhad délky kapitoly je jen
   odhad, změří se až v N8.
+- **Pomůcka (D70):** kapitolu přepsanou do dat [šedého prototypu](../prototyp/README.md) jde
+  dohrát v prohlížeči a `node prototyp/kontrola.mjs` ověří průchody, texty a zaseknutí.
 
 ## N5 Celá hra dohromady
 

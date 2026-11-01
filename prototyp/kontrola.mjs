@@ -1,0 +1,226 @@
+// Automatická kontrola kapitoly nad pravidly šedého prototypu (krok N4 strojem).
+//   node prototyp/kontrola.mjs [číslo kapitoly] [--nahodne 300]
+// 1. Každý klíč textu v datech existuje v texty.csv.
+// 2. Průchody z dat (nejkratší cesta a varianty) dojdou do konce s očekávanými příznaky.
+// 3. Náhodné hraní hledá chyby v podmínkách, chybějící texty a zaseknutí.
+// 4. Vypíše texty kapitoly, které při žádném průchodu nezazněly.
+import { engine, nactiKapitolu, nactiTexty } from './nacti.mjs';
+
+const argumenty = process.argv.slice(2);
+const kapitola = Number(argumenty.find((a) => /^\d+$/.test(a)) || 1);
+const iNahodne = argumenty.indexOf('--nahodne');
+const pocetNahodnych = iNahodne >= 0 ? Number(argumenty[iNahodne + 1]) : 200;
+const AKCI = 3000;
+
+const texty = nactiTexty();
+const data = nactiKapitolu(kapitola);
+const predpona = `ch${kapitola}_`;
+let problemu = 0;
+const zaznelo = new Set();
+
+function problem(zprava) {
+  problemu++;
+  console.log('  ✗ ' + zprava);
+}
+
+// --- 1. klíče textů v datech -------------------------------------------------
+const KLIC = /^(ch\d+|predmet|postava|obecne|ui)_[a-z0-9_]+$/;
+const pouzite = new Set();
+(function projdi(x) {
+  if (typeof x === 'string') {
+    const k = x.replace(/^\*karta:/, '');
+    if (KLIC.test(k)) pouzite.add(k);
+  } else if (Array.isArray(x)) x.forEach(projdi);
+  else if (x && typeof x === 'object') Object.values(x).forEach(projdi);
+})({ ...data, pruchody: null, minihry: null });
+// Klíče, které skládají minihry v kódu
+const MINIHRY_KLICE = Object.keys(texty).filter((k) => /_m0\d_|_listek_|_kartoteka_(abecedne|spatne|stejny_rok|hotovo)|_priloha_stop|_starosta_(podpis|slib|prohra)|_pembok_kriteria/.test(k) && k.startsWith(predpona));
+MINIHRY_KLICE.forEach((k) => pouzite.add(k));
+
+console.log(`Kapitola ${kapitola}: ${Object.keys(data.sceny).length} scén, ${Object.keys(data.dialogy).length} dialogů, ${Object.keys(data.predmety).length} předmětů`);
+console.log('\n1. Klíče textů');
+const chybejici = [...pouzite].filter((k) => !texty[k]);
+chybejici.forEach((k) => problem('v texty.csv chybí ' + k));
+if (!chybejici.length) console.log(`  ✓ všech ${pouzite.size} klíčů existuje`);
+
+// --- pomocník pro hraní ------------------------------------------------------
+function novaHra() {
+  const h = engine.vytvorHru(data, texty);
+  h.start();
+  return h;
+}
+function spotrebuj(h) {
+  for (const u of h.vyber()) if (u.typ === 'rec') zaznelo.add(u.klic);
+}
+
+function krok(h, k) {
+  if (typeof k === 'object') {
+    if (!h.s.minihra) throw new Error('čeká se minihra, ale žádná není otevřená');
+    const v = h.dokonciMinihru(k.minihra);
+    if (!v) throw new Error('minihra nevrátila výsledek');
+    return;
+  }
+  if (h.s.minihra) throw new Error(`otevřená minihra ${h.s.minihra.id}, krok „${k}“ ji přeskočil`);
+  const [prikaz, ...zbytek] = k.split(' ');
+  const arg = zbytek.join(' ');
+  const ok = {
+    pouzij: () => h.pouzit(arg),
+    prohledni: () => h.prohlednout(arg),
+    predmet: () => h.predmetNa(zbytek[0], zbytek[1]),
+    volba: () => h.zvol(arg),
+    napoveda: () => h.napoveda() !== null,
+    ocekavej: () => {
+      if (!h.plati(arg)) throw new Error('neplatí ' + arg);
+      return true;
+    },
+  }[prikaz];
+  if (!ok) throw new Error('neznámý příkaz ' + prikaz);
+  if (ok() === false) throw new Error(h.chyby.at(-1) || 'krok selhal');
+}
+
+// --- 2. průchody -------------------------------------------------------------
+console.log('\n2. Průchody');
+for (const [id, p] of Object.entries(data.pruchody)) {
+  const h = novaHra();
+  spotrebuj(h);
+  let i = 0;
+  try {
+    for (; i < p.kroky.length; i++) {
+      const pred = h.chyby.length;
+      krok(h, p.kroky[i]);
+      spotrebuj(h);
+      if (h.chyby.length > pred) throw new Error(h.chyby.slice(pred).join('; '));
+    }
+    const neplati = p.ocekavej.filter((o) => (o === 'konec' ? !h.s.konec : !h.plati(o)));
+    if (neplati.length) problem(`${id}: na konci neplatí ${neplati.join(', ')}`);
+    else console.log(`  ✓ ${id} (${p.kroky.length} kroků): ${p.popis}`);
+  } catch (e) {
+    const popis = typeof p.kroky[i] === 'object' ? JSON.stringify(p.kroky[i]) : p.kroky[i];
+    problem(`${id}: krok ${i + 1} „${popis}“ ve scéně ${h.s.scena}: ${e.message}`);
+  }
+}
+
+// --- 3. náhodné hraní --------------------------------------------------------
+console.log(`\n3. Náhodné hraní (${pocetNahodnych} her, nejvýš ${AKCI} akcí)`);
+let semeno = 1;
+const nahoda = () => ((semeno = (semeno * 1103515245 + 12345) % 2147483648) / 2147483648);
+const vyber = (pole) => pole[Math.floor(nahoda() * pole.length)];
+const nalezene = new Map();
+let dohrano = 0;
+
+function nahodnaMinihra(h) {
+  const m = h.minihraData();
+  if (m.druh === 'razeni') return nahoda() < 0.5 ? { poradi: ['most', 'leseni', 'vytah', 'archa', 'kasna'] } : { poradi: m.listky.map((l) => l.id).sort(() => nahoda() - 0.5) };
+  if (m.druh === 'souboj') return { volba: vyber(m.odpovedi).druh };
+  if (m.druh === 'mrizka') {
+    const umisteni = {};
+    for (const k of m.karty) if (!k.neznama) umisteni[k.id] = [nahoda() < 0.5, nahoda() < 0.5];
+    if (nahoda() < 0.6) Object.assign(umisteni, { starosta: [true, true], predseda: [true, true], babicka: [true, false], zmena: [false, true], bara: [false, true], obyvatele: [false, true] });
+    return { umisteni };
+  }
+  if (m.druh === 'kolonky') {
+    const prirazeni = {};
+    for (const k of m.kolonky) {
+      const moznosti = m.utrzky.filter((u) => u.kolonka === k.id || nahoda() < 0.05);
+      if (moznosti.length) prirazeni[k.id] = vyber(moznosti).id;
+    }
+    return { prirazeni };
+  }
+  return {};
+}
+
+// Průzkumník: v každém kroku sestaví všechny možné akce a s pravděpodobností `zvedavost`
+// vybere tu, kterou v dané situaci zkoušel nejméně často. Tak projde i dlouhé řetězy puzzlů.
+function moznosti(h) {
+  if (h.s.dialog) return h.volby().map((v) => ({ sig: `${h.s.dialog}|${v.index}`, popis: 'volba ' + v.t, proved: () => h.zvol(v.index) }));
+  const vse = [];
+  const predmety = h.s.predmety[h.s.postava];
+  for (const m of h.mista()) {
+    vse.push({ sig: `${h.s.scena}|p|${m.id}`, popis: 'prohledni ' + m.id, proved: () => h.prohlednout(m.id) });
+    vse.push({ sig: `${h.s.scena}|u|${m.id}`, popis: 'pouzij ' + m.id, proved: () => h.pouzit(m.id) });
+    for (const p of predmety) vse.push({ sig: `${h.s.scena}|${p}|${m.id}`, popis: `predmet ${p} ${m.id}`, proved: () => h.predmetNa(p, m.id) });
+  }
+  for (const p of predmety) {
+    vse.push({ sig: `i|${p}`, popis: 'pouzij predmet ' + p, proved: () => h.pouzitPredmet(p) });
+    for (const q of predmety) if (p < q) vse.push({ sig: `k|${p}|${q}`, popis: `kombinace ${p} ${q}`, proved: () => h.kombinovat(p, q) });
+  }
+  return vse;
+}
+
+function hrajNahodne(h, akci, zvedavost = 0.7) {
+  const pocty = new Map();
+  for (let a = 0; a < akci && !h.s.konec; a++) {
+    const pred = h.chyby.length;
+    let popis = '';
+    try {
+      if (h.s.minihra) {
+        if (nahoda() < 0.1) { popis = 'zavřít minihru'; h.zavriMinihru(); }
+        else { const v = nahodnaMinihra(h); popis = 'minihra ' + h.s.minihra.id; h.dokonciMinihru(v); }
+      } else {
+        const vse = moznosti(h);
+        if (!vse.length) throw new Error(h.s.dialog ? 'dialog ' + h.s.dialog + ' nemá žádnou volbu' : 'žádná možná akce');
+        let volba;
+        if (nahoda() < zvedavost) {
+          const nejmene = Math.min(...vse.map((v) => pocty.get(v.sig) || 0));
+          volba = vyber(vse.filter((v) => (pocty.get(v.sig) || 0) === nejmene));
+        } else volba = vyber(vse);
+        pocty.set(volba.sig, (pocty.get(volba.sig) || 0) + 1);
+        popis = volba.popis;
+        volba.proved();
+      }
+    } catch (e) { h.chyby.push('výjimka: ' + e.message); }
+    spotrebuj(h);
+    for (const ch of h.chyby.slice(pred)) {
+      const klic = ch.replace(/ v dialogu .*/, '');
+      if (!nalezene.has(klic)) nalezene.set(klic, `${ch} (scéna ${h.s.scena}, akce „${popis}“)`);
+    }
+  }
+}
+
+// Zaseknutí: z nedohrané hry zkusí dalších 10 zvědavých pokračování. Když žádné nedojde
+// do konce, je to podezřelý stav a vypíše se.
+const zaseknuti = [];
+function kopie(h) {
+  const k = novaHra();
+  k.vyber();
+  for (const klic of Object.keys(k.s)) delete k.s[klic];
+  Object.assign(k.s, JSON.parse(JSON.stringify(h.s)));
+  return k;
+}
+for (let hra = 0; hra < pocetNahodnych; hra++) {
+  semeno = hra + 1;
+  const h = novaHra();
+  spotrebuj(h);
+  hrajNahodne(h, AKCI, hra % 2 ? 0.7 : 0.2);
+  if (h.s.konec) { dohrano++; continue; }
+  if (zaseknuti.length >= 3) continue;
+  let dojde = false;
+  for (let pokus = 0; pokus < 10 && !dojde; pokus++) {
+    const k = kopie(h);
+    hrajNahodne(k, 20000, 0.9);
+    dojde = k.s.konec;
+  }
+  if (!dojde) zaseknuti.push(h);
+}
+if (nalezene.size) for (const v of nalezene.values()) problem(v);
+else console.log('  ✓ žádná chyba v podmínkách, textech ani dialozích');
+console.log(`  dohráno náhodně: ${dohrano} z ${pocetNahodnych}`);
+for (const h of zaseknuti) {
+  const p = Object.entries(h.s.priznaky).filter(([, v]) => v).map(([k, v]) => (v === true ? k : `${k}=${v}`));
+  problem(`možné zaseknutí ve scéně ${h.s.scena}, postava ${h.s.postava}, předměty [${h.s.predmety[h.s.postava].join(', ')}], příznaky: ${p.join(', ')}`);
+}
+if (!zaseknuti.length) console.log('  ✓ z každé zkoumané nedohrané hry jde náhodně dojít do konce');
+
+// --- 4. texty, které nezazní -------------------------------------------------
+const kapitolni = Object.keys(texty).filter((k) => k.startsWith(predpona));
+const nikdy = kapitolni.filter((k) => !zaznelo.has(k) && !pouzite.has(k));
+const nepouzite = kapitolni.filter((k) => !pouzite.has(k));
+console.log(`\n4. Texty kapitoly: ${kapitolni.length}, v datech ${kapitolni.length - nepouzite.length}, zazněly ${[...zaznelo].filter((k) => k.startsWith(predpona)).length}`);
+if (nepouzite.length) {
+  console.log(`  texty, které data nepoužívají (${nepouzite.length}):`);
+  for (const k of nepouzite) console.log(`    · ${k}: ${texty[k].cs.slice(0, 70)}${texty[k].poznamka ? '  [' + texty[k].poznamka.slice(0, 50) + ']' : ''}`);
+}
+if (nikdy.length) console.log(`  (${nikdy.length} z nich ani nezazní)`);
+
+console.log(problemu ? `\n${problemu} problémů` : '\nBez problémů');
+process.exit(problemu ? 1 : 0);
