@@ -3,7 +3,7 @@
 > Krok N3b [postupu návrhu](../12-postup-navrhu.md). Každá akce hráče na samostatném řádku.
 > Z průchodu vznikne v kroku N7 automatický test pro `ladeni.gd`. Scény a předměty jsou
 > v [obsahu místností](02-mistnosti.md), puzzly v [kartách](02-puzzly.md).
-> Stav: **návrh ke schválení**, verze 0.2 (zapracována autorská kontrola, D68)
+> Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
 Formát: `č. scéna · kdo · akce → výsledek · příznak`. Akce: *prohlédni*, *použij*, *mluv*,
 *vezmi*, *použij X na Y*, *jdi*.

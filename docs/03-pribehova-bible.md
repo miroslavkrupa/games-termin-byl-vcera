@@ -328,11 +328,11 @@ v F0/R6 (D47): vtip má fungovat i anglicky, nejen být doslova přeložený.
 | Prof. Pembok | Prof. Pembok | narážka na PMBOK |
 | Kočka Riziková | Risky the Cat | |
 | Hospoda U Odhadu | The Rough Estimate | hospoda |
-| Věra Výztužná | Vera Rebar | statička (návrh, kap. 2) |
-| Norbert Norma | Norman Standards | certifikátor (návrh, kap. 2) |
-| Klára Maketová | Mona Mockup | designérka interiérů (návrh, kap. 2) |
-| Zdenda Známý | Benny Buddy | Rudův kamarád (návrh, kap. 2) |
-| Kryštof Krabička | Chip Checkbox | Frameworkův asistent (návrh, kap. 2) |
+| Věra Výztužná | Vera Rebar | statička (kap. 2, D69) |
+| Norbert Norma | Norman Standards | certifikátor (kap. 2, D69) |
+| Klára Maketová | Mona Mockup | designérka interiérů (kap. 2, D69) |
+| Zdenda Známý | Benny Buddy | Rudův kamarád (kap. 2, D69) |
+| Kryštof Krabička | Chip Checkbox | Frameworkův asistent (kap. 2, D69) |
 
 ## Otevřené otázky
 

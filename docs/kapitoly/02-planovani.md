@@ -2,7 +2,7 @@
 
 > Podrobný návrh kapitoly 2. Vznikl z kostry (N2, D62) v kroku N3
 > [postupu návrhu](../12-postup-navrhu.md).
-> Stav: **návrh do detailu (N3) ke schválení**, verze 0.3 (zapracována autorská kontrola K1–K19, D68)
+> Stav: **návrh do detailu (N3) schválen** (D69), verze 0.3 (zapracována autorská kontrola K1–K19, D68)
 > Podrobnosti: [obsah místností a matice předmětů](02-mistnosti.md), [karty puzzlů](02-puzzly.md),
 > [průchod hrou](02-pruchod.md), [osnovy dialogů](02-dialogy.md),
 > [autorská kontrola](02-kontrola.md)
@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| **Titulek kapitoly** | *Plán na všechno* / *A Plan for Everything* (návrh) |
+| **Titulek kapitoly** | *Plán na všechno* / *A Plan for Everything* |
 | **Cíl hráče** | sestavit tým, rozdělit Archu podle povahy práce a nechat schválit plán cesty ke startu, aby se mohlo začít stavět |
 | **Délka** | 55–75 minut |
 | **Patro v popředí** | rozdělení Archy ([koncepce](../07-dva-svety.md)) |
@@ -83,7 +83,7 @@ Dostavba je práce kapitol 2 a 3. Popisek rampy v kapitole 1 („rovná, hotová
 **Vracející se:** Ruda, Bára, Prof. Pembok, Předseda Věčný, Ing. Framework, Pan Změna, vrátný
 (na konci jako jeřábník), babička jen zmínkou.
 
-**Nové: kandidáti do týmu** (návrh jmen ke schválení, D47 platí i pro ně: vtip v každém jazyce zvlášť)
+**Nové: kandidáti do týmu** (jména schválena v D69, D47 platí i pro ně: vtip v každém jazyce zvlášť)
 
 | Kandidát | EN | Svět | Síla | Vada | Zkouška v hospodě |
 |---|---|---|---|---|---|
@@ -335,10 +335,10 @@ Všechny tři se testují až ve hře (D53, D66). Rozhraní nepoužívá odborn�
 
 ## Otevřené otázky
 
-- [x] Jména a vtipy kandidátů v obou jazycích → návrh v tabulce výše, čeká na schválení autorem
+- [x] Jména a vtipy kandidátů v obou jazycích → tabulka výše (D69)
 - [x] Mlžná pláň jako samostatná scéna, nebo jen obrazovka minihry? → samostatná scéna, ale levná
   (mlha); brána hangáru a staveniště sdílejí jedno pozadí, takže rozpočet 6 (4) platí
 - [x] Jak se hráč dozví, že vrátný má průkaz na jeřáb? → v kap. 1 to vrátný řekne mimochodem
   (`ch1_vratny_jerab_1`), v kap. 2 to ví Zdenda a cedule na jeřábu; na konci přijde sám
-- [ ] Titulek kapitoly *Plán na všechno* / *A Plan for Everything*
-- [ ] Hospoda bez obsluhy (cedule „Obsluha: fáze 2“), nebo hostinský jako sedmá postava?
+- [x] Titulek kapitoly → *Plán na všechno* / *A Plan for Everything* (D69)
+- [x] Hospoda bez obsluhy, nebo hostinský jako sedmá postava? → bez obsluhy, cedule „Obsluha: fáze 2“ (D69)

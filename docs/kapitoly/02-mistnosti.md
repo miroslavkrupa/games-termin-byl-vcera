@@ -3,7 +3,7 @@
 > Krok N3a a N3d [postupu návrhu](../12-postup-navrhu.md). Co je v každé scéně kapitoly 2,
 > jaké předměty kapitola má a jak hra reaguje na jejich použití. Návrh kapitoly je
 > v [02-planovani.md](02-planovani.md), puzzly v [02-puzzly.md](02-puzzly.md).
-> Stav: **návrh ke schválení**, verze 0.2 (zapracována autorská kontrola, D68)
+> Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
 Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Finální texty vzniknou v kroku N6.
 **K** v poznámce = podezřelá věc pro Krabici od bot: s krabicí v inventáři se prohlédnutím zapíše.

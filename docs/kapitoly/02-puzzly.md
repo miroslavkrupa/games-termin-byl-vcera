@@ -3,7 +3,7 @@
 > Krok N3c [postupu návrhu](../12-postup-navrhu.md). Jedna karta na každý puzzle z
 > [grafu závislostí](02-planovani.md#graf-závislostí-puzzlů). Scény a předměty jsou
 > v [obsahu místností](02-mistnosti.md).
-> Stav: **návrh ke schválení**, verze 0.2 (zapracována autorská kontrola, D68)
+> Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
 Nápověda Prof. Pemboka má tři stupně: **1** náznak, **2** směr, **3** skoro řešení. Radí k puzzlu,
 který je nejblíž splnění. Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen

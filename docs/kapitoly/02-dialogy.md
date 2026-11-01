@@ -2,7 +2,7 @@
 
 > Krok N3e [postupu návrhu](../12-postup-navrhu.md). Co která postava hráči řekne, za jakých
 > podmínek a co se tím změní. Texty první verze (N6) se napíšou až před výrobou kapitoly 2.
-> Stav: **návrh ke schválení**, verze 0.2 (zapracována autorská kontrola, D68)
+> Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
 **Poučení z kapitoly 1:** odhad 460 replik skončil na 546, tedy o 19 % víc. Rozpočet replik je
 vodítko, ne strop: mírné překročení nevadí, když repliky nesou hru (autor, 2026-11-01).
