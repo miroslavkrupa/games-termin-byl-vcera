@@ -3,7 +3,7 @@
 > Krok N3c [postupu návrhu](../12-postup-navrhu.md). Jedna karta na každý puzzle z
 > [grafu závislostí](03-realizace.md#graf-závislostí-puzzlů). Scény a předměty jsou
 > v [obsahu místností](03-mistnosti.md).
-> Stav: **schváleno** (D72), verze 0.1
+> Stav: **schváleno** (D72), verze 0.2 (zapracována autorská kontrola, D73)
 
 Nápověda má tři stupně: **1** náznak, **2** směr, **3** skoro řešení. Rudovi radí Prof. Pembok,
 Báře její metr (vlastní poznámky při měření, jako v kap. 1). Radí se k puzzlu, který je
@@ -25,7 +25,7 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 | P3.8 | Vada v počítadle | Bára, Ruda | S4 | B–C | ne (následek v kap. 4) | V14, V20; R1.3 |
 | P3.9 | Ještětoto (M10, R3.1) | Ruda | S2 | B | ano | V15 změny |
 | P3.10 | Servisní poklop | Ruda | S5, S6 | B–C | ne (bez něj je M15 těžší) | V25 příprava |
-| P3.11 | Bára a pořadí práce (R3.2) | Ruda | S4 | C | ano | V14, V20 |
+| P3.11 | Bára a pořadí práce (R3.2) | Ruda | S4 | B (konec) | ano | V14, V20 |
 | P3.12 | Než se zavře trup (M15) | Ruda a Bára | S6 | C | ano | V25 integrace |
 | P3.13 | Co příště jinak (R3.3) | Ruda | S2 | C | ano | V19 poučení |
 
@@ -49,7 +49,7 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
   kam patří další karta kritické cesty.
 - **Příznaky:** `c3_rezerva`, `c3_drolivy` (jen `krabice`); předmět **rozpis rampy**.
 - **Co nese:** V23; skrytě: kritická cesta a sdílený zdroj. Rudův způsob tu funguje.
-- **Riziko:** suché. Vrátný komentuje každý den, zřícené bednění je gag a Pembok chválí.
+- **Riziko:** suché. Vrátný komentuje každý den, zřícené bednění je gag a Pembok chválí bez ironie.
 
 ### P3.2 Krysy ve skladu
 - **Cíl hráče:** dostat se ke plechům na trup (a k servisnímu poklopu).
@@ -57,7 +57,7 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 - **Řešení:**
   - **Bez kočky** (`c2_riziko_predem` ≠ `krysy`): vzít od vrátného **klíč od skladu**,
     otevřít dveře skladu, položit **žádosti o změnu** jako stopu od dveří k Předsedově
-    otevřené aktovce (použít žádosti na dveře skladu, nebo na aktovku). Krysy vyrazí po čerstvém
+    otevřené aktovce (použít žádosti na otevřené dveře skladu, nebo na aktovku). Krysy vyrazí po čerstvém
     papíře do aktovky. Předseda ji zavře: „Výborně, výborně.“ a odejde. Aktovka se hýbe.
   - **S kočkou:** klíč od skladu, promluvit s kočkou Rizikovou („Pojď.“), ta se ve dveřích
     podívá na krysy a krysy si vezmou dovolenou. Kočka zůstane ve skladu hlídat.
@@ -72,7 +72,8 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
   budou krysy čilé.“), krabice od bot na krysy (nápověda výše), babiččin kocour (★ „Tenhle
   krysy nehoní. Ten soudí lidi.“, jako v kap. 2), žádosti o změnu rovnou na krysy uvnitř
   (★ „Krysy si je vzaly a zůstaly. Potřebují je dostat ven.“, formuláře se vrátí),
-  žádosti na Předsedu (★ „Další kopie? Jistě.“).
+  žádosti na Předsedu (★ „Další kopie? Jistě.“), žádosti na aktovku, dokud je sklad zamčený
+  (★ „Krysy jsou pořád zamčené.“, žádosti zůstanou, K15).
 - **Nápověda:** 1 „Co krysy v tomhle městě jedí?“ · 2 „Papír. Kdo tu nosí nejvíc papíru?“ ·
   3 „Otevři sklad a udělej krysám stopu ze žádostí až k Předsedově aktovce.“ (s kočkou:
   1 „Někdo ti poslal pomoc v koši.“ · 3 „Vezmi kočku ke skladu.“)
@@ -159,7 +160,8 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
   vidí, jak se háčky znovu plní.
 
 ### P3.6 Plán kola (za Báru)
-- **Cíl hráče (Bára):** naplánovat, co se do ukázky na náměstí stihne.
+- **Cíl hráče (Bára):** naplánovat, co se do ukázky na náměstí stihne. Kolo trvá tři dny
+  (zbývá 24 → 21), ukázka je na jeho konci (K1).
 - **Překážka:** karet je víc, než se vejde, a nahoře je Rudův odpočet.
 - **Řešení:** použít Bářinu tabuli seznamu práce → scéna:
   - **cíl kola** ze tří: „Jestli lidi najdou cestu“ ✔ / „Ať to vypadá hotově“ / „Všechno najednou“,
@@ -190,7 +192,8 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
   se dozvěděli… nic.“), nechat heslo (babička neprojde), odpočet nahoru (nikoho nezajímá).
 - **Nápověda (metr):** 1 „Kdo tu dnes stojí a co drží v ruce?“ · 2 „Ukazuj po každém kole.
   Co nikdo nechce, vyhoď.“ · 3 v minihře zvýrazní kartu, kterou reakce otočila nejvýš.
-- **Příznaky:** `c3_hodnota`, `c3_dluh`; Ještětoto se narodí (svačiny Pana Změny).
+- **Příznaky:** `c3_hodnota`, `c3_dluh`; Ještětoto se narodí ve střihu po M14 (svačiny Pana
+  Změny), i když hráč minihru přeskočí (K14).
 - **Co nese:** V24, V14.
 - **Riziko:** skrytá informace jako náhoda. Každá reakce má stopu ve scéně dřív, než padne.
 
@@ -202,16 +205,17 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
   - **za Báru:** dát zápis Rudovi. Při **vysoké důvěře** (`c1_bara_vyslechnuta` ≥ 2 a
     `c2_rozdeleni` ≠ `gantt`) ji Ruda vyslechne: „Kdo se nevejde?“ „Podle pořadí na lince
     pomoci ty.“ „…Oprav to.“ Při nízké ji odbyde: „Teď ne, Báro, mám jeřáb.“ a zápis se vrátí;
-  - **za Rudu** (po odbytí): Bára se v dílně mračí do počítače. Ruda: „Báro, něco tě trápí?“
+  - **za Rudu** (hned po nalezení vady, bez ohledu na pokus za Báru, K4): Bára se v dílně
+    mračí do počítače. Ruda: „Báro, něco tě trápí?“
     Bára mluví pomalu a Ruda má tři příležitosti skočit jí do řeči („Rychle, mám jeřáb.“). Když
     mlčí, dozví se to. Když skočí do řeči, Bára: „Nic. Neřeším.“ a znovu se to nabídne až v kap. 4.
 - **Stopy ve světě:** babiččina otázka v M14 („Vejdeme se všichni? I s kocourem?“); amplion
-  a linka pomoci „4 812“; Bára se po odbytí mračí do počítače; Pembok: „Bára něco ví. Zeptej
+  a linka pomoci „4 812“; Bára se od nalezení vady mračí do počítače; Pembok: „Bára něco ví. Zeptej
   se. A pak mlč.“
 - **Chybné, ale logické pokusy:** opravit to potichu (★ Bára: „Opravím to. Ale on to má vědět.“),
   dát zápis Pepovi (★ „Dva dny.“), dát Rudovi seznam pasažérů (★ „Ještě ne.“).
 - **Nápověda:** Bára (metr): 1 „4 811. Kdo chybí?“ · 2 „Tohle musí vědět Ruda.“ · 3 „Dej Rudovi
-  zápis vady.“ Ruda (Pembok, po odbytí): 1 „Bára se mračí.“ · 2 „Zeptej se jí, co se děje.“ ·
+  zápis vady.“ Ruda (Pembok, od nalezení vady): 1 „Bára se mračí.“ · 2 „Zeptej se jí, co se děje.“ ·
   3 „Zeptej se a nech ji domluvit. Celou dobu.“
 - **Příznaky:** `c3_vada_hlasena`; Bářina důvěra (+ při vyslechnutí).
 - **Co nese:** V14, V20; navazuje na R1.3: kdo poslouchá, dozví se, co se pokazilo.
@@ -260,7 +264,9 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 ### P3.11 Bára a pořadí práce (R3.2)
 - **Cíl hráče:** vědět, co bude v trupu, až se zavře.
 - **Překážka:** Rudovi se nelíbí, že pořadí v Bářině seznamu není podle jeho Gantta.
-- **Řešení:** ve fázi C vejít jako Ruda do dílny → scéna: Ruda sáhne po kartách. Volba:
+- **Řešení:** na konci fáze B (po M10, zbývá 15) vejít jako Ruda do dílny → scéna (Bára přijde,
+  když tam není): Ruda přinese svůj Gantt přepsaný na papír a sáhne po kartách. Rozhodne
+  se pořadí 4. kola, ve kterém se dělá řídicí systém (K1). Volba:
   - „Pořadí je tvoje. Řekni mi jen, co bude hotové, až se zavře trup.“ → `c3_bara_priority` =
     ano; Bára: „…Dobře. Počítadlo do zavření. Navigace potom.“,
   - „Pořadí určuju já.“ → ne; Ruda dá nahoru odpočet a heslo; Bára: „Dobře. Tvůj Gantt.“
@@ -280,7 +286,7 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 - **Cíl hráče:** zavřít trup se vším, co v něm musí být, a nic víc.
 - **Překážka:** Ruda chce všechno dovnitř, Bára nechce nic slíbit; některé programy do zavření
   hotové nebudou.
-- **Řešení:** ve fázi C po R3.2 použít místo pro počítač → M15
+- **Řešení:** ve fázi C (po R3.2) použít místo pro počítač → M15 (Bára přijde do trupu, K6)
   ([pravidla](03-realizace.md#m15-než-se-zavře-trup-integrační-okno)): všechny tři přípojky
   dovnitř, start motorů a počítadlo dovnitř (pokud bude hotové), navigaci poklopem, aplikaci
   ven. Bez mostu *zkouška nástupu* dát Báře rozpis rampy.
@@ -292,7 +298,8 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 - **Nápověda:** 1 „Co se po zavření už nedá natáhnout?“ · 2 „Kabely dovnitř vždycky. Programy
   jen ty, které budou hotové a které potřebuje nejbližší zkouška.“ · 3 v minihře ukáže jednu
   špatně umístěnou kartu.
-- **Příznaky:** `c3_integrace`, `c3_klic_poklopu`.
+- **Příznaky:** `c3_integrace`, `c3_odchazi` (kdo dostane klíč od poklopu, bez poklopu plán
+  zapojení trupu, K2).
 - **Co nese:** V25.
 - **Riziko:** abstraktní. Řez skutečným trupem, Věra s nýtovačkou a tři druhy chyb, které se
   vrátí jako tři krize kapitoly 4.

@@ -56,6 +56,7 @@ babiččin plot (chaloupka mimo obraz). Hlavní scéna kapitoly 3.
 | Domíchávač betonu | aktivní místo | míchá od rána, nikdo neví co | – | – | gag; na konci první beton |
 | Babiččin plot | aktivní místo | podle `c1_babicka`: `spojenec` mává a nechá na plotě buchtu / `odmitnuta` zatažená záclona („Babička si pamatuje, že jsem spěchal.“) / `prehlizena` a `neodhalena` jen prádlo, nikdo nemává | buchta: „Tohle je jediná věc tady, co je dopečená.“ | spojenec | jen zmínka, následek v kap. 4 (K10) |
 | Kocour | postava | babiččin zrzavý kocour z kap. 1 sedí na plotě a soudí | krabice nebo obálka: „Tenhle krysy nehoní. Ten soudí lidi.“ | – | převzatý sprite (K11) |
+| Dveře skladu | aktivní místo | „Zamčeno. Uvnitř něco šustí.“ | – | – | připraveno pro kap. 3 (sklad, krysy; N4 kap. 3, K8) |
 | Ulička | východ | – | → S1 | – | |
 | Brána (otevřená) | východ | – | → S3 | po M04 | |
 
@@ -80,6 +81,8 @@ Při `c1_charter_kvalita` = 3 visí nad tabulí cíl z papíru o Arše (K13). Po
 | Předseda | postava | stojí u vrat a usmívá se; „kontrolní návštěva“ | dialog `predseda_hangar` | do potvrzení R2.2 | **K** úsměv; předá formulář při `c1_razitko` = `kava` |
 | Ing. Framework | postava | kufr plný krabic | dialog `framework` | od prvního použití tabule do potvrzení R2.2 | nabídka krabice (R2.2) |
 | Tým | postavy | 4 vybraní kandidáti | krátké repliky, podpisy formuláře | po R2.1 | |
+| Boční dveře | aktivní místo | „Bářin kout. Zatím jen bedny.“ | – | – | připraveno pro kap. 3 (dílna; N4 kap. 3, K8) |
+| Žebřík k Arše | aktivní místo | „Dovnitř zatím ne. Je tam hlavně rez.“ | – | – | připraveno pro kap. 3 (trup; N4 kap. 3, K8) |
 | Zadní vrata | východ | za nimi mlha | → S5 | – | |
 | Brána | východ | – | → S2 | – | |
 

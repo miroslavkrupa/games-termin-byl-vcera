@@ -320,7 +320,7 @@ Všechny tři se testují až ve hře (D53, D66). Rozhraní nepoužívá odborn�
 - [x] Šířka grafu: po otevření hangáru 3–4 rozdělané úkoly ([průchod](02-pruchod.md#šířka-grafu))
 - [x] Každý puzzle má aspoň dvě stopy ve světě a tři stupně nápovědy (D10)
 - [x] PEGI 12 (D11): hospoda bez alkoholu v popředí (štamgasti mají „limonádu z fáze 2“)
-- [x] Rozpočet (D56): 6 scén (4 nové), 6 nových postav, 13 předmětů, odhad 451 replik, 3 minihry
+- [x] Rozpočet (D56): 6 scén (4 nové), 6 nových postav, 13 předmětů, odhad 454 replik, 3 minihry
   ([osnovy dialogů](02-dialogy.md#součet))
 - [x] Otevřené otázky níže
 
@@ -332,7 +332,7 @@ Všechny tři se testují až ve hře (D53, D66). Rozhraní nepoužívá odborn�
 | Nové postavy s referenčním listem | 6 kandidátů; slon jako objekt minihry |
 | Předměty v inventáři | 13 (z toho 4 přenesené z kap. 1) |
 | Minihry | 3 |
-| Repliky | odhad 451 na jazyk |
+| Repliky | odhad 454 na jazyk |
 
 ## Otevřené otázky
 

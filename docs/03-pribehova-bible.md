@@ -263,7 +263,7 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | M07 rizika | `c2_rizika_zapsana` | kap. 2 | kap. 3, 4 | zapsaná rizika nezaskočí | čas |
 | R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Ještětoto (Scope Creep) vyroste a bazén zabere v trupu místo kabelu (M15); svačiny přes posouzení: naštvaní obyvatelé | rozsah, důvěra, sladění světů |
 | R3.2 Bára a pořadí práce | `c3_bara_priority` | kap. 3 (dílna, před M15) | kap. 3, 4 | hned v M15: co je hotové k zavření trupu; kap. 4: řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
-| R3.3 co příště jinak | `c3_retro`, `c3_zlepseni` | kap. 3 | kap. 4 | bez posezení se opakují chyby, morálka padá a odejde člen týmu s klíčem od servisního poklopu (`c3_klic_poklopu`); zlepšení navazuje na M11 | morálka |
+| R3.3 co příště jinak | `c3_retro`, `c3_zlepseni` | kap. 3 | kap. 4 | bez posezení se opakují chyby, morálka padá a odejde člen týmu s klíčem od servisního poklopu, bez poklopu s plánem zapojení trupu (`c3_odchazi`); zlepšení navazuje na M11 | morálka |
 | M13 harmonogram | `c3_rezerva` (−3 až 2) | kap. 3 | kap. 4 | rezerva na krizi, záporná = zpoždění rampy | čas |
 | M13 ukázky betonu (jen `krabice`) | `c3_drolivy` | kap. 3 | kap. 4 | rampa se drolí | čas, technický dluh |
 | M14 ukázka | `c3_hodnota` | kap. 3 | kap. 4, 5 | obyvatelé dostanou, co potřebují | důvěra stakeholderů |

@@ -3,7 +3,7 @@
 > Krok N3a a N3d [postupu návrhu](../12-postup-navrhu.md). Co je v každé scéně kapitoly 3,
 > jaké předměty kapitola má a jak hra reaguje na jejich použití. Návrh kapitoly je
 > v [03-realizace.md](03-realizace.md), puzzly v [03-puzzly.md](03-puzzly.md).
-> Stav: **schváleno** (D72), verze 0.1
+> Stav: **schváleno** (D72), verze 0.2 (zapracována autorská kontrola, D73)
 
 Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Finální texty vzniknou v kroku N6.
 Za Báru se prohlíží jinak než za Rudu: Ruda soudí, Bára měří. Sloupec uvádí Rudovu verzi,
@@ -26,7 +26,8 @@ kdykoli, M15 se nabídne až ve fázi C po R3.2. Zadní vrata hangáru jsou zav�
 ## S1 Staveniště rampy (převzaté z kap. 2)
 
 Pozadí kapitoly 2 bez slona a bez prasklého lana, pokud ho R2.3 vyměnilo. Rampa roste po fázích:
-A jen spodní půlka z roku 1994, B pilíře, C dráha, konec plošina (kulisy přes pozadí). Vpravo
+A jen spodní půlka z roku 1994, B pilíře v bednění, C pilíře a dráha, konec plošina (kulisy přes
+pozadí). Vpravo
 dveře skladu (nové aktivní místo na stávajícím pozadí).
 
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
@@ -36,12 +37,12 @@ dveře skladu (nové aktivní místo na stávajícím pozadí).
 | Vrátný (jeřábník) | postava | „Za třicet let poprvé vidím, kam jedu.“ | dialog `vratny` → klíč od skladu | – | P3.2; lano podle R2.3 |
 | Lano jeřábu | aktivní místo | `lano`: nové, ještě voní; jinak prasklé lanko a cedule „Lano měněno: 1994“ | – | – | M13 výpadek |
 | Domíchávač | aktivní místo | „Míchá od kapitoly dvě.“ | – | – | gag |
-| Předseda Věčný | postava | stojí u jeřábu, kontroluje beton pohledem; „Výborně. Pomalu.“ | dialog `predseda` | fáze A–B, dokud krysy nejsou pryč | P3.2; formuláře |
+| Předseda Věčný | postava | stojí u jeřábu, kontroluje beton pohledem; „Výborně. Pomalu.“ | dialog `predseda` | fáze A–B; při řešení aktovkou odejde hned po P3.2 (K11) | P3.2; formuláře; do M10 přijde vždy |
 | Předsedova aktovka | aktivní místo | otevřená, plná papíru; „Krysám by se tam líbilo.“ | formuláře → stopa (P3.2) | Předseda tu je | P3.2 |
 | Dveře skladu | východ / aktivní místo | zamčené; zevnitř je slyšet šustění papíru | klíč od skladu → otevřít; formuláře → stopa krysám | – | P3.2 |
 | Kočka Riziková | postava | sedí v koši u dveří skladu; „Na všechno připravená.“ | mluvit / použít na dveře skladu → krysy pryč | jen `krysy` | P3.2 |
 | Rozpis rampy na plotě | aktivní místo | po M13 Rudův rozpis přibitý na plot; „Tohle mi jde.“ | – | po M13 | Pembok chválí |
-| Babiččin plot | aktivní místo | `spojenec`: babička čte noviny s lupou a mává; `odmitnuta`: zatažená záclona; jinak prádlo | buchta (spojenec) | – | stopa M14 (lupa) |
+| Babiččin plot | aktivní místo | `spojenec`: babička čte noviny s lupou a mává; `odmitnuta`: zatažená záclona a cedule „Pozemek je můj.“; `prehlizena` a `neodhalena`: prádlo a „Rajčata jsou ještě bledší. Rampa roste.“ | buchta (spojenec) | – | stopa M14 (lupa); předzvěst kap. 4 (K9) |
 | Kocour | postava | sedí na plotě a soudí | ★ s kočkou Rizikovou: „Dva soudci. Jedno město.“ | – | převzatý |
 | Kometa | aktivní místo | „Je vidět i ve dne. To není dobré znamení. To je kalendář.“ | – | – | |
 | Brána hangáru | východ | – | → S2 | – | |
@@ -61,7 +62,7 @@ změn a na tabuli Ještětoto.
 | Rozcestník změn | aktivní místo | čtyři přihrádky: *Rovnou udělat*, *Posoudit a vyjednat*, *Do Bářina seznamu*, *Ne* | použít → M10 | fáze B, po M13 a M14 | P3.9 |
 | Ještětoto | postava | podle `c3_creep`: „Malý. Zatím.“ / „Už se nevejde na tabuli.“ | ★ s předměty | od M14 | nová postava |
 | Rudův Gantt na stěně | aktivní místo | 214 řádků; po R2.2 = `povaha` polovina přeškrtnutá | – | – | |
-| Kalendář | aktivní místo | zbývá 24 / 18 / 12 / 9 | – | – | |
+| Kalendář | aktivní místo | zbývá 24 / 21 / 15 (po M10) / 12 / 9 | – | – | |
 | Pan Změna | postava | s podepsanými (`c1_zmena_dohoda`), nebo nepodepsanými přáními | dialog `zmena` | při M10 | |
 | Věra, Norbert | postavy | kdo je v týmu; Věra počítá dopad, Norbert hlídá bezpečnostní systém | krátké repliky | fáze B–C | |
 | Zadní vrata | aktivní místo | „Mlha počká. Teď se staví.“ | – | – | zavřená |
@@ -80,7 +81,7 @@ B je tu stánek s ukázkou (nástupní sloupek a maketa kajuty).
 | Kašna | aktivní místo | teče z ní kafe; rybáři v ní chytají | – | – | |
 | Rybáři | aktivní místo (skupina) | „Chytáme, co teče.“ udice delší než oni | mluvit: „Na Archu? S udicemi, nebo vůbec.“ | – | stopa M14 (udice) |
 | Obyvatelé s kufry | aktivní místo (skupina) | pořád nevědí, kudy nastoupit | mluvit: „Kudy se bude nastupovat?“ | – | stopa M14 (šipky) |
-| Babička | postava | ve fázi B přišla na ukázku; noviny čte s lupou | dialog `babicka` | fáze B | stopa M14; podle `c1_babicka` |
+| Babička | postava | ve fázi B přišla na ukázku; noviny čte s lupou | dialog `babicka` | fáze B | stopa M14; podle `c1_babicka`; spojenkyně na ukázce: „Konečně se někdo ptá.“ (K9) |
 | Stánek s ukázkou | aktivní místo | sloupek s obrazovkou a maketa kajuty | použít → M14 (za Báru) | fáze B | P3.7 |
 | Pan Změna | postava | u stánku; „Dneska prodávám přání.“ | dialog `zmena` | – | svačiny → Ještětoto |
 | Norbert Norma | postava | sedí na lavičce a čte normu o lavičkách | dialog `norbert_mesto` → podpis (P3.3) | jen bez Norberta v týmu, od fáze B | P3.3 |
@@ -104,13 +105,13 @@ z kap. 2.
 | Rudův model rampy | aktivní místo | „Ruda si tu rozdělal rampu. U mě.“ | odložit na polici, nebo dát Rudovi | fáze A | P3.5, gag |
 | Police „Někdy“ | aktivní místo | „Sem patří všechno, co nedělám.“ | odložit rozdělanou věc | – | P3.5 |
 | Krabička lepicích lístků | aktivní místo | Kryštofovy (nebo „zbylé z hospody“) | vzít → lepicí lístky | – | P3.5 |
-| Bářina tabule seznamu práce | aktivní místo | karty seřazené podle odhadu; nahoře Rudův odpočet | použít → plán kola (P3.6); fáze C → R3.2 | – | P3.6, P3.11 |
+| Bářina tabule seznamu práce | aktivní místo | karty seřazené podle odhadu; nahoře Rudův odpočet | použít → plán kola (P3.6); po M10 → R3.2 | – | P3.6, P3.11 |
 | Kuchyňská minutka | aktivní místo | ve tvaru komety; „Patnáct minut. Ani o minutu víc.“ | použít → ranní porada | fáze A, na začátku | P3.4 |
 | Zkušební počítač | aktivní místo | běží na něm počítadlo lidí | po M14: spočítat všechny → vada | fáze B | P3.8 |
 | Mlha v rohu | aktivní místo | „Kus slona. Nejde dokončit, jde jen ukousnout.“ | – | – | z kap. 2 |
 | Pepa, Klára, Kryštof | postavy | kdo je v týmu | porada, krátké repliky | – | P3.4 |
 | Zdenda | postava | „Znám chlapa, co má kafe.“ přichází na poradu kvůli kafi | – | Zdenda v týmu | gag |
-| Ruda (návštěva) | postava | vtrhne na poradu; ve fázi C sahá po kartách | zápis vady (P3.8) | při poradě a ve fázi C; jinak tam, kde ho hráč nechal | P3.4, P3.11; mikromanagement |
+| Ruda (návštěva) | postava | vtrhne na poradu; přinese Gantt přepsaný na papír („Ať to máš po ruce.“, K10); po M10 sahá po kartách | zápis vady (P3.8) | při poradě a v R3.2; jinak tam, kde ho hráč nechal | P3.4, P3.11; mikromanagement |
 | Dveře do hangáru | východ | – | → S2 | – | |
 
 ## S5 Sklad materiálu (nové pozadí)
@@ -141,14 +142,14 @@ nad tímto pozadím.
 | Přípojky | aktivní místo | tři konce kabelů; Bára: „Tudy povedou programy. Pokud tu budou kabely.“ | – | – | stopa M15 |
 | Místo pro počítač | aktivní místo | „Sem přijde mozek Archy. Zatím tu je prach.“ | použít → M15 | fáze C, po R3.2 | P3.12 |
 | Panel bezpečnostního systému | aktivní místo | podle `c2_vyjimky`: zapečetěný Norbertem / „předělává se každý týden“ | – | – | varování (kap. 5) |
-| Věra | postava | s nýtovačkou; „Zítra zavírám. Kdo tu bude, zůstane.“ | dialog `vera` | Věra v týmu | |
+| Věra | postava | s nýtovačkou; „Zítra zavírám. Kdo tu bude, zůstane.“ | dialog `vera` | Věra v týmu | bez Věry nýtuje Ruda (K13) |
 | Norbert | postava | „Podle normy se zavírá jen podepsaný trup.“ | dialog `norbert` | Norbert v týmu | P3.3 |
 | Okénko | aktivní místo | kometa | – | – | |
 | Žebřík | východ | – | → S2 | – | |
 
 ## Předměty
 
-Dohromady 15 předmětů, z toho 7 přenesených z kap. 1–2 a 2 jen ve variantách. V jednom
+Dohromady 15 předmětů, z toho 7 přenesených z kap. 1–2 a 1 jen ve variantě (výpočet statika). V jednom
 průchodu jich hráč uvidí 11–13. Ikony nových předmětů podle stylové bible (D52).
 
 | # | Předmět | Kdo | Kde vznikne | Kdy | Spotřebuje se | Poznámka |
@@ -194,7 +195,7 @@ rizika.“), rozpis rampy + plán cesty ★ („Plán, který sedí na plán. Po
 | Kávové pero | – | ★ | – | – | – | – | – | ★ | – | ★ | – | ★ | – | – | – |
 | Krabice od bot | ★ (lano) | ★ (úsměv, `usmev`) | – | – | ✔ nápověda (lístek krysy) | ★ | ★ | – | ★ („Na tebe lístek nemám. Zatím.“) | ★ | – | – | – | – | – |
 | Plán cesty | – | ✔ (jen `c1_faze2`, M10) / ★ | – | – | – | – | – | ★ | – | ★ | – | – | – | – | – |
-| Žádosti o změnu | ★ | ★ („Další kopie? Jistě.“) | ✔ (stopa, P3.2) | ✔ (stopa, P3.2) | ✔ (P3.2) | – | – | ★ | ★ („Nekrmit.“) | ★ | – | – | – | – | ★ |
+| Žádosti o změnu | ★ | ★ („Další kopie? Jistě.“) | ✔ (stopa, P3.2; dokud je sklad zamčený ★ „Krysy jsou pořád zamčené.“) | ✔ (stopa, P3.2) | ✔ (P3.2) | – | – | ★ | ★ („Nekrmit.“) | ★ | – | – | – | – | ★ |
 | Klíč od skladu | – | – | – | ✔ | – | – | – | – | – | – | – | – | – | – | – |
 | Výpočet statika | ✔ (bez Věry) | ★ | – | – | – | – | – | – | – | – | ★ („Ten je dobrý. Skoro jako můj.“) | – | – | – | – |
 | Rozpis rampy | ★ | ★ | – | – | – | – | – | ★ | – | ✔ (M15, den lávky) | – | – | ★ („Dva dny?“) | – | – |
@@ -215,6 +216,6 @@ a Rudova modelu ✔), ne předmět v inventáři. Dát Rudův model Rudovi jde, 
 v dílně (★ „Můj model! Kdo ho tu rozdělal?“).
 
 Cíl matice: každá kombinace, kterou hráči při playtestu (N8) zkusí víckrát, dostane ★. V matici
-je **asi 72 vlastních reakcí** (47 u Rudy, 22 u Báry, 3 kombinace předmětů). Je to víc než
+je **asi 73 vlastních reakcí** (48 u Rudy, 22 u Báry, 3 kombinace předmětů). Je to víc než
 v kap. 2 (53), protože hrají dvě postavy. V N6 se škrtá nejdřív tady. Za Báru a za Rudu se výchozí reakce liší
 (sada `obecne_*` a `bara_*` z kapitoly 1).

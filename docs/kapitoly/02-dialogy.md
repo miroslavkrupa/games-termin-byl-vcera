@@ -120,7 +120,7 @@ na přijetí a odmítnutí. Pro členy týmu navíc 1–2 repliky u tabule a pod
 
 | Skupina | Podstata | Odhad |
 |---|---|---|
-| prohlédnutí aktivních míst ve všech scénách | podle [obsahu místností](02-mistnosti.md), asi 45 míst | 48 |
+| prohlédnutí aktivních míst ve všech scénách | podle [obsahu místností](02-mistnosti.md), asi 48 míst (3 připravená pro kap. 3) | 51 |
 | prohlédnutí předmětů | 13 předmětů (4 z kap. 1 mají nový popis) | 13 |
 | zapsání do krabice | „To si zapíšu.“ + 5 lístků + kometa a slon | 8 |
 | vlastní reakce ★ z matice | podle [matice předmětů](02-mistnosti.md#matice-předmětů) | 52 |
@@ -154,9 +154,9 @@ pokrytí), rozdělení (3), riziko předem (3), mapa (2), odhad (2). Celkem asi 
 | Ing. Framework | 16 |
 | Předseda | 26 |
 | Pan Změna, obyvatelé, vrátný, babička, kocour | 23 |
-| Ruda a prohlížení | 140 |
+| Ruda a prohlížení | 143 |
 | minihry | 36 |
-| **Celkem** | **≈ 451 na jazyk** |
+| **Celkem** | **≈ 454 na jazyk** |
 
 Rozpočet je 400–500 (D56). K tomu asi 44 popisků miniher, 12 vět obrazovky následků a GUI.
 Nejdražší je nábor (107 replik). Když se v N6 ukáže, že je to moc, škrtají se nejdřív třetí

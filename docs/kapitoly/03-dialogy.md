@@ -2,7 +2,7 @@
 
 > Krok N3e [postupu návrhu](../12-postup-navrhu.md). Co která postava hráči řekne, za jakých
 > podmínek a co se tím změní. Texty první verze (N6) se napíšou až před výrobou kapitoly 3.
-> Stav: **schváleno** (D72), verze 0.1
+> Stav: **schváleno** (D72), verze 0.2 (zapracována autorská kontrola, D73)
 
 **Poučení z kapitol 1 a 2:** kapitola 1 přetáhla odhad o 19 %, kapitola 2 o 3–4 % už při N4.
 Rozpočet replik je vodítko, ne strop (D68). Bára mluví v kapitole 3 nejvíc z celé hry, proto
@@ -14,7 +14,7 @@ má i vlastní prohlížení a nápovědy.
 |---|---|---|---|---|
 | úvod | záběry 1–6 z [návrhu](03-realizace.md#úvod-ráno-na-staveništi): „Tohle umím.“ „Tohle opravdu umíš.“ „Napíšu ti, co máš dělat.“ „Nenapíšeš.“; Předseda a formuláře; kočka v koši | `c1_faze2`, `krysy` | – | 14 |
 | přepínání | „Podívej se jejíma očima.“; připomínka, když jedna linka stojí: „Zkus to chvíli očima Báry.“ / „…Rudy.“ | – | – | 4 |
-| pochvala | Pembok chválí Rudu poprvé (M13, rozpis na plotě): „Tohle ti jde. Nezvykej si.“ | po M13 | – | 3 |
+| pochvala | Pembok chválí Rudu bez ironie za to, co opravdu umí (M13, rozpis na plotě; v kap. 1 chválil jen uznale, K7): „Tohle ti jde. Nezvykej si.“ | po M13 | – | 3 |
 | nápovědy | 3 stupně pro P3.1–P3.3, P3.8 (za Rudu), P3.9, P3.10, P3.12; 1 stupeň u P3.11 a P3.13 | podle stavu | – | 28 |
 | chybějící vstupy | rozcestník před M13 a M14, místo pro počítač před R3.2, schválený poklop chybí | – | – | 4 |
 | přeskočení minihry | M13 „podle Gantta“, M14 „všechno najednou“, M10 „všechno k posouzení“, M15 „všechno dovnitř“ | přeskočení | – | 4 |
@@ -44,7 +44,7 @@ Bářiny výchozí reakce (`bara_*`) z kapitoly 1 se použijí znovu.
 |---|---|---|---|
 | vtrhne na poradu | „Tak. Rozdělím vám to. Pepa: odpočet…“; „Deset minut. Měřím to.“; při `gantt` s vytištěným Ganttem | P3.4 | 4 |
 | odbytí | „Teď ne, Báro, mám jeřáb.“ | P3.8, nízká důvěra | 1 |
-| návštěva v dílně (hraje-li se za Rudu, ★) | „Tohle dej sem. A tohle do úterý.“, „Můj model! Kdo ho tu rozdělal?“ | fáze A–B | 3 |
+| návštěva v dílně (hraje-li se za Rudu, ★) | Gantt přepsaný na papír: „Ať to máš po ruce.“ (K10), „Tohle dej sem. A tohle do úterý.“, „Můj model! Kdo ho tu rozdělal?“ | fáze A–B | 4 |
 
 ## Tým
 
@@ -106,9 +106,9 @@ Mluví jen ti, kdo jsou v `c2_tym`. Každý má repliku k posezení (R3.3) podle
 
 | Postava | Podstata | Podmínka | Odhad |
 |---|---|---|---|
-| Ještětoto | narození u stánku (Ruda, nebo Bára: „Co to je?“ Pan Změna: „Ještě tohle.“); prohlédnutí podle velikosti 0–4, jméno se natahuje (viz níže) | M14, `c3_creep` | 7 |
+| Ještětoto | narození u stánku (Ruda, nebo Bára: „Co to je?“ Pan Změna: „Ještě tohle.“); prohlédnutí podle velikosti 0–4, jméno se natahuje ([M10](03-realizace.md#m10-ještětoto-scope-creep)) | M14, `c3_creep` | 7 |
 | kočka Riziková | příchod v koši; ve skladu: krysy si vezmou dovolenou; ★ s kocourem „Dva soudci. Jedno město.“ | `krysy` | 6 |
-| babička | noviny s lupou; „Přišla jsem se podívat, jestli se tam vejdu. I s kocourem.“; podle `c1_babicka` (spojenec / odmítnutá / ostatní) | fáze B | 6 |
+| babička | noviny s lupou; „Přišla jsem se podívat, jestli se tam vejdu. I s kocourem.“; podle `c1_babicka` (spojenec / odmítnutá / ostatní); předzvěst kap. 4 na plotě: „Rajčata jsou ještě bledší. Rampa roste.“, cedule „Pozemek je můj.“, „Konečně se někdo ptá.“ (K9) | fáze B, plot | 9 |
 | rybáři | „Chytáme, co teče.“; „Na Archu? S udicemi, nebo vůbec.“ | – | 3 |
 | obyvatelé s kufry | „Kudy se bude nastupovat?“ (pořád) | – | 3 |
 | kocour | ★ s kočkou, ★ s krabicí („Tenhle soudí.“) | – | 2 |
@@ -127,10 +127,10 @@ Mluví jen ti, kdo jsou v `c2_tym`. Každý má repliku k posezení (R3.3) podle
 |---|---|---|
 | prohlédnutí aktivních míst | podle [obsahu místností](03-mistnosti.md), asi 45 míst a 10 variant podle fáze (rampa, Archa, kalendář, Ještětoto) | 55 |
 | prohlédnutí předmětů | 15 předmětů (Bářiny prohlíží Bára) | 15 |
-| vlastní reakce ★ z matice | podle [matice předmětů](03-mistnosti.md#matice-předmětů) | 72 |
+| vlastní reakce ★ z matice | podle [matice předmětů](03-mistnosti.md#matice-předmětů) | 73 |
 | krabice od bot | lístky krysy a lano jako nápověda; kometa a Ještětoto ★ | 4 |
 | mikromanagement | Ruda v dílně a u Bářiných karet | 4 |
-| střihy fází | „Zbývá 18.“, „Zbývá 12. Zítra se zavírá trup.“ a co se mezitím postavilo | 6 |
+| střihy fází | „Zbývá 21.“, „Zbývá 12. Zítra se zavírá trup.“ a co se mezitím postavilo | 6 |
 | konec kapitoly | proslov podle R3.2, tlačítko, „Dva dny.“ | 8 |
 | výchozí reakce | sada z kap. 1 (`obecne_*`) se použije znovu | 0 |
 
@@ -141,7 +141,7 @@ Mluví jen ti, kdo jsou v `c2_tym`. Každý má repliku k posezení (R3.3) podle
 | M13 Jeřábový balet | vrátný komentuje dny (6), zřícené bednění, fronta, „Nemáme bednění“, lano, oslava, zrání „jediná věc, co opravdu trvá dva dny“, zábradlí, výsledek (2) | 14 replik + 12 popisků |
 | M14 Ukázka na náměstí | reakce na 8 karet, babička podle `c1_babicka`, rybáři, Ruda zakazuje ukázku (`gantt`), výsledek | 20 replik + 11 popisků |
 | M10 Ještětoto | 6 karet × důvody cest, vyjednávání bazénu, Ještětoto roste | 22 replik + 10 popisků |
-| M15 Než se zavře trup | Ruda „všechno dovnitř“, Bára „nic neslíbím“, Věra vrací aplikaci, bazén v cestě, zavření, výsledek | 16 replik + 14 popisků |
+| M15 Než se zavře trup | Ruda „všechno dovnitř“, Bára „nic neslíbím“, Věra vrací aplikaci, bazén v cestě, zavření, bez Věry nýtuje Ruda (K13), výsledek | 17 replik + 14 popisků |
 
 ## Konec kapitoly a obrazovka následků
 
@@ -155,19 +155,19 @@ Celkem asi 18 vět.
 |---|---|
 | úvod, Pembok, přepínání | 61 |
 | Bára (hraná) | 93 |
-| Ruda jako postava | 8 |
+| Ruda jako postava | 9 |
 | tým | 61 |
 | vrátný | 12 |
 | Předseda | 18 |
 | Pan Změna | 14 |
 | Ing. Framework | 8 |
-| Ještětoto, kočka, babička, rybáři, obyvatelé, kocour | 27 |
+| Ještětoto, kočka, babička, rybáři, obyvatelé, kocour | 30 |
 | scény s rozhodnutím | 18 |
-| Ruda a prohlížení | 164 |
-| minihry | 72 |
-| **Celkem** | **≈ 556 na jazyk** |
+| Ruda a prohlížení | 165 |
+| minihry | 73 |
+| **Celkem** | **≈ 562 na jazyk** |
 
-Rozpočet je 450–550 (D56). Odhad je o 1 % nad horní mezí. K tomu asi 47 popisků miniher,
-18 vět obrazovky následků a GUI. V jednom průchodu hráč slyší asi 420: varianty podle týmu,
+Rozpočet je 450–550 (D56). Odhad je o 2 % nad horní mezí (autorská kontrola přidala 6 replik, D73). K tomu asi 47 popisků miniher,
+18 vět obrazovky následků a GUI. V jednom průchodu hráč slyší asi 425: varianty podle týmu,
 `c2_rozdeleni`, kočky a babičky se vylučují. Když se v N6 ukáže, že je to moc, škrtají se
 nejdřív vlastní reakce ★ (72) a prohlížení za Báru tam, kde nenese stopu.

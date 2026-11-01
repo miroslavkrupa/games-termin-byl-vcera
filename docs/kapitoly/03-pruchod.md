@@ -3,7 +3,7 @@
 > Krok N3b [postupu návrhu](../12-postup-navrhu.md). Každá akce hráče na samostatném řádku.
 > Z průchodu vznikne automatický test (šedý prototyp D70, později `ladeni.gd`). Scény a předměty
 > jsou v [obsahu místností](03-mistnosti.md), puzzly v [kartách](03-puzzly.md).
-> Stav: **schváleno** (D72), verze 0.1
+> Stav: **schváleno** (D72), verze 0.2 (zapracována autorská kontrola, D73)
 
 Formát: `č. scéna · kdo · akce → výsledek · příznak`. Akce: *prohlédni*, *použij*, *mluv*,
 *vezmi*, *použij X na Y*, *jdi*, *přepni* (portrét druhé postavy).
@@ -34,21 +34,21 @@ Formát: `č. scéna · kdo · akce → výsledek · příznak`. Akce: *prohléd
 14. S4 · Bára · použij Půlka čidla na Police „Někdy“; použij Rudův model rampy na Police „Někdy“
 15. S4 · Bára · Pepa: „Hra Had na sloupek!“ → „Až něco dokončíme.“ · dilna_volna
 16. S4 · Bára · použij Bářina tabule seznamu práce → plán kola: cíl „Jestli lidi najdou cestu“; šipky, mapa kajut, maketa · c3_dluh=0
-17. S1 · cutscéna · zbývá 18; pilíře stojí; kometa je větší
+17. S1 · cutscéna · zbývá 21; pilíře stojí v bednění; kometa je větší
 18. S4 · Bára · jdi → S2 → S1 → S3
-19. S3 · Bára · použij Stánek s ukázkou → M14: 1. kolo šipky, mapa, maketa; babička: velká tlačítka a kocour; rybáři: udice; Pan Změna: svačiny → narodí se Ještětoto; 2. kolo tlačítka, udice, kocour; heslo a odpočet vyhodit · c3_hodnota=3
+19. S3 · Bára · použij Stánek s ukázkou → M14 (ukázky na zbývá 21, 18, 15): 1. kolo šipky, mapa, maketa; babička: velká tlačítka a kocour; rybáři: udice; Pan Změna: svačiny → narodí se Ještětoto; 2. kolo tlačítka, udice, kocour; heslo a odpočet vyhodit · c3_hodnota=3
 20. S3 · Bára · jdi → S1 → S2 → S4
 21. S4 · Bára · použij Zkušební počítač → počítadlo skončí na 4 811 → zápis vady
 22. S4 · Bára · jdi → S2 → S1 (Ruda tam stojí)
 23. S1 · Bára · použij Zápis vady na Ruda → „Kdo se nevejde?“ „Podle pořadí na lince pomoci ty.“ „…Oprav to.“ · c3_vada_hlasena
 24. S1 · Bára · přepni → Ruda v S1
-25. S1 · Ruda · jdi Brána → S2; Pan Změna přichází s přáními
+25. S1 · Ruda · jdi Brána → S2; Pan Změna přichází s přáními; Bára přijde ze staveniště
 26. S2 · Ruda · použij Rozcestník změn → M10: bazén posoudit a vyjednat (papír o Arše; nafukovací bazén do kajuty); svačiny do Bářina seznamu; poklop posoudit, schváleno; tlačítko Zpět do Bářina seznamu; Gantt v aplikaci ne; 3. kolo odpadá (dohoda) · c3_creep=0, c3_bazen=vyjednan, c3_svaciny=seznam, c3_poklop schválen
-27. S2 · cutscéna · zbývá 12; „Zítra se zavírá trup.“
-28. S2 · Ruda · jdi Boční dveře → S4; Ruda sáhne po kartách → „Pořadí je tvoje. Řekni mi jen, co bude hotové, až se zavře trup.“ · c3_bara_priority
+27. S2 · Ruda · jdi Boční dveře → S4 (zbývá 15; Bára přijde z hangáru); Ruda přinese Gantt na papíře a sáhne po kartách → „Pořadí je tvoje. Řekni mi jen, co bude hotové, až se zavře trup.“ · c3_bara_priority
+28. S4 · cutscéna · zbývá 12; „Zítra se zavírá trup.“
 29. S4 · Ruda · jdi → S2 → Žebřík do trupu → S6
 30. S6 · Ruda · použij Servisní poklop na Otvor v boku → poklop nasazený · c3_poklop=ano
-31. S6 · Ruda · použij Místo pro počítač → M15: tři přípojky dovnitř, start motorů a počítadlo dovnitř, navigace poklopem, aplikace ven (den lávky Bára zná z mostu) · c3_integrace=0, c3_klic_poklopu=Pepa; Věra trup zanýtuje
+31. S6 · Ruda · použij Místo pro počítač → Bára přijde do trupu → M15: tři přípojky dovnitř, start motorů a počítadlo dovnitř, navigace poklopem, aplikace ven (den lávky Bára zná z mostu) · c3_integrace=0, c3_odchazi=Pepa (klíč od poklopu); Věra trup zanýtuje
 32. S2 · Ruda · tým čeká → „Sedneme si a řekneme si, co příště jinak.“ → Věra, Pepa, Norbert, Klára řeknou po jedné věci; zlepšení „Ptát se Báry dřív“ · c3_retro, c3_zlepseni
 33. S2 · cutscéna · zbývá 9; Archa smontovaná; „Já… teda my…“; červené tlačítko, nic; Pepa: „Dva dny.“; obrazovka následků · konec kapitoly
 ```
@@ -67,7 +67,7 @@ Navíc proti nejkratší cestě (vloženo na místa, kde dává smysl):
  S1 · Ruda · prohlédni Aktovka, Žádosti o změnu („pro krysy“)
  S5 · Ruda · prohlédni Hnízdo, Regály, Okousané kabely; použij Krabice od bot na Krysy (před P3.2) → „Zapsal jsem si: žerou papír.“
  S1 · Ruda · prohlédni Rozpis rampy na plotě → Pembok chválí podruhé
- S4 · Ruda · jdi do dílny ve fázi A → „Tohle dej sem. A tohle do úterý.“ Bára: „Rudo.“ (mikromanagement, ★)
+ S4 · Ruda · jdi do dílny ve fázi A → přinese Gantt přepsaný na papír: „Ať to máš po ruce.“; „Tohle dej sem. A tohle do úterý.“ Bára: „Rudo.“ (mikromanagement, ★)
  S4 · Bára · prohlédni Tabule „Dělám / Hotovo“, Mlha v rohu, Police „Někdy“
  S4 · Bára · použij Seznam pasažérů na Ruda (kdekoli) → „Ještě ne.“
  S3 · Bára · mluv Rybáři, Obyvatelé s kufry, Babička (před M14)
@@ -92,7 +92,7 @@ cesta za dvě postavy prochází pět scén dvakrát. Když se v N8 potvrdí, zk
 | **B Bazén odmítnut** (R3.1) | 26: bazén *Ne* | `odmitnut`, Ještětoto +1; ve 3. kole se Pan Změna vrátí s „bazénem s vlnami“ i s dohodou (nebyl vyjednán) |
 | **C Svačiny k posouzení** (R3.1) | 26: svačiny *Posoudit a vyjednat* | `c3_svaciny`=`schvalovani`; Předseda razítkuje, obyvatelé: „Svačina za tři týdny?“ (kap. 4 důvěra) |
 | **D Poklop odmítnut / rovnou** | 26 | `ne`: krok 30 odpadá, v M15 chybí přihrádka *Později*, navigace uvnitř nehotová (`c3_integrace` ≥ 1); `netesni`: krok 30 projde, poklop netěsní (kap. 4) |
-| **E Pořadí určuje Ruda** (R3.2) | 28: „Pořadí určuju já.“ | `c3_bara_priority`=ne; v M15 je hotový odpočet a počítadlo až ve 3. kole: musí poklopem, jinak nehotové uvnitř; na konci „Já jsem postavil Archu.“ |
+| **E Pořadí určuje Ruda** (R3.2) | 27: „Pořadí určuju já.“ | `c3_bara_priority`=ne; v M15 je hotový odpočet a počítadlo až po zavření: musí poklopem, jinak nehotové uvnitř; na konci „Já jsem postavil Archu.“ |
 | **F Bez posezení** (R3.3) | 32: „Nemáme čas. Stavíme.“ | `c3_retro`=ne; tým mlčky odchází; v kap. 4 odejde ten, kdo drží klíč od poklopu |
 | **G Neukázat po 2. kole** (M14) | 19 | `c3_hodnota` ≤ 2 |
 | **H Přeplněné kolo** | 16, 19: karty nad kapacitu | `c3_dluh` 1–3; dílna na konci chátrá (kulisa) |
@@ -107,17 +107,17 @@ cesta za dvě postavy prochází pět scén dvakrát. Když se v N8 potvrdí, zk
 |---|---|---|
 | **M Kočka Riziková** (`c2_riziko_predem`=`krysy`) | 1: kurýr přinese kočku; 5: místo žádostí mluv Kočka → jde ke skladu → krysy pryč | `c3_krysy`=`kocka`; Předseda zůstane u jeřábu do konce fáze B; v M13 lano praskne 9. a 10. den (zapsané v krabici → vidět dopředu; nejlepší plán dá lávku hned po pilířích) |
 | **N Kotva** (`c2_odhad`=`kotva`) | 3: první den oslava „rampy za dva dny“ | `c3_rezerva` ≤ 1; Pepa: „Dva dny. Říkal jsem to.“ |
-| **O Krabice na všechno** (`c2_rozdeleni`=`krabice`) | 3: v M13 karty *Ukázka betonu* 3., 6., 9., 12. den → odnést do kufru; 19: seznam v krabici → vyndat; Framework je v úvodu na staveništi | `c3_drolivy`, když hráč ukázky nechá; Bářina důvěra nižší → vada přes Rudu (J) |
+| **O Krabice na všechno** (`c2_rozdeleni`=`krabice`) | 3: v M13 karty *Ukázka betonu* 3., 6., 9., 12. den → odnést do kufru; 19: seznam v krabici → vyndat; Framework je v úvodu na staveništi | `c3_drolivy`, když hráč ukázky nechá; Bára: „Tak to si budu zkoušet sama.“ (z kap. 2), důvěra se ale počítá jen podle `c1_bara_vyslechnuta` a `gantt` |
 | **P Gantt na všechno** (`c2_rozdeleni`=`gantt`) | 9: Ruda přinese vytištěný Gantt; 16: 1. kolo nadiktované (odpočet, heslo, mapa); 19: ukázka po 2. kole zakázaná; důvěra nízká → 23 nevyjde, varianta J | `c3_hodnota` nejvýš 2; R3.2 má pro Báru větší váhu |
 | **Q Bez statičky** (`c2_tym` bez Věry) | 3 je zamčené: cedule „Nad deset metrů jen podle výpočtu“ → nejdřív 4–5, pak S5 vezmi Hnízdo → výpočet statika → použij Výpočet na Vrátný → 3 s osou o den kratší | `c3_rezerva` ≤ 1; v trupu nýtuje Ruda sám („Nýtovačka. Jak těžké to může být.“) |
 | **R Bez certifikátora** (`c2_tym` bez Norberta) | před 31: S3 mluv Norbert (lavička) → „Dokud tu mluví kniha…“ → použij Pembok na Norbert → Norbert jde do trupu a podepíše | `c3_rezerva` −1 |
-| **S Bez zkoušení** (bez Pepy i Kláry) | 9: porada jen s Kryštofem a Zdendou; 16, 19: kapacita 2 | `c3_hodnota` nejvýš 2; `c3_klic_poklopu`=Věra |
+| **S Bez zkoušení** (bez Pepy i Kláry) | 9: porada jen s Kryštofem a Zdendou; 16, 19: kapacita 2 | `c3_hodnota` nejvýš 2; `c3_odchazi`=Věra |
 | **T Fáze 2** (`c1_faze2`) | 1: Předseda chce i analýzy dopadu; 26: před M10 použij Plán cesty na Předseda → „Pozastavena… No ano. Prozatím.“ | bez toho každá posouzená karta stojí den (`c3_rezerva` −1 za každou, nejvýš −2) |
 | **U Bez dohody** (bez `c1_zmena_dohoda`) | 26: 3. kolo „bazén s vlnami“ | Ještětoto roste snáz |
 | **V Lano nepřipravené a nezapsané** | 3: výpadek 9. a 10. den až při přehrání | nejspíš `c3_rezerva` 0–1 |
 | **W Babička odmítnutá** (`c1_babicka`=`odmitnuta`) | 19: babička mlčí do 2. kola | kocour se objeví až po 2. ukázce |
 | **X Rozpad** (`c2_rozpad` ≥ 1 / ≥ 2) | 3: zábradlí při přehrání; 14: navíc dvakrát nakrájený plech (odložit) | `c3_rezerva` −1 |
-| **Y Bez mostů** (`c2_mosty` bez `trup` / `nastup`) | 31: Bára u počítadla „2. kolo, možná 3.“; bez `nastup` před M15 použij Rozpis rampy na Bára | bez rozpisu `c3_integrace` +1 |
+| **Y Bez mostů** (`c2_mosty` bez `trup` / `nastup`) | 31: Bára u počítadla „Před zavřením. Možná.“; bez `nastup` před M15 použij Rozpis rampy na Bára | bez rozpisu `c3_integrace` +1 |
 
 ### „Špatné“ kapitoly 1 a 2 dohromady
 
@@ -196,5 +196,5 @@ dvě betonáže pilířů a dvě bednění potřebují čtyři dny jeřábu, pak
 | fáze A, Ruda | M13, klíč od skladu, krysy (bez Věry výpočet) (2–3) |
 | fáze A, Bára | porada → dílna → plán kola (1, řetěz) |
 | fáze A celkem | 3–4 |
-| fáze B | M14 (Bára), vada (Bára), krysy a poklop (Ruda, pokud zbývají), M10 (spolu), Norbert (bez něj) (3–4) |
-| fáze C | R3.2 → poklop → M15 → R3.3 (1, záměrně lineární závěr) |
+| fáze B | M14 (Bára), vada (Bára), krysy a poklop (Ruda, pokud zbývají), M10 a po něm R3.2 (spolu), Norbert (bez něj) (3–4) |
+| fáze C | poklop → M15 → R3.3 (1, záměrně lineární závěr) |

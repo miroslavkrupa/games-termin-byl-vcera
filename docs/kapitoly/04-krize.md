@@ -40,7 +40,8 @@
    hned, rozhoduje její důvěra.
 10. **R4.3 Usmíření:** Ruda přizná, že plán nestačí, nebo trvá na svém.
 11. **M11 Plachetnice:** retrospektiva po usmíření. Tým vybere jedno zlepšení pro kap. 5.
-    Bez posezení v kap. 3 (R3.3) tu chybí člen týmu, který drží klíč od servisního poklopu.
+    Bez posezení v kap. 3 (R3.3) tu chybí člen týmu (`c3_odchazi`) i s klíčem od poklopu,
+    nebo s plánem zapojení trupu.
 12. **Konfrontace v kanceláři Komise:** Předseda odhalen. Archa je připravená ke startu.
 
 ## Místa (rozpočet 5 scén, z toho 1 nová)
@@ -106,7 +107,7 @@ Další příznaky: `c4_souboj` (M03, výsledek), `c4_zlepseni` (M11, jedno zlep
 | `c3_creep`, `c3_bazen` | velký Scope Creep sežere kus kapacity |
 | `c3_vada_hlasena` | nenahlášená vada se projeví v krizi |
 | `c3_poklop` | krize na rozhraní se řeší servisním poklopem; `netesni` = poklop teče, `ne` = trup se musí otevřít (doplněno při N3 kap. 3) |
-| `c3_klic_poklopu` | bez posezení (`c3_retro` = ne) odejde právě ten, kdo drží klíč od poklopu (doplněno při N3 kap. 3) |
+| `c3_odchazi` | bez posezení (`c3_retro` = ne) odejde právě tento člen týmu: s poklopem si odnese klíč od poklopu, bez něj plán zapojení trupu (doplněno při N3 a N4 kap. 3) |
 | `c3_rezerva`, `c3_drolivy` | rezerva dní na krizi; drolivá rampa při `krabice` (doplněno při N3 kap. 3) |
 | `c3_krysy` | `aktovka`: krysy žijí v kanceláři Komise (vtip při konfrontaci) |
 
