@@ -2,8 +2,10 @@
 
 > Podrobný návrh kapitoly 1. Je to první hratelná část hry: ověří zábavnost, humor, minihry,
 > rozhodnutí s pozdějším následkem, hraní za Báru i rychlost výroby.
-> Stav: **koncept**, verze 0.2
+> Stav: **návrh do detailu (N3)**, verze 0.3
 > Výroba: [plán výroby kapitoly 1](../10-plan-kapitoly-1.md)
+> Podrobnosti: [obsah místností a matice předmětů](01-mistnosti.md), [karty puzzlů](01-puzzly.md),
+> [průchod hrou](01-pruchod.md), [osnovy dialogů](01-dialogy.md), [scénář](01-scenar.md)
 
 ## Přehled
 
@@ -25,9 +27,9 @@ se tu ale poprvé ukážou v postavách a kapitola zasévá rozdělení Archy pr
 - **Ruda a Bára se poprvé střetnou:** on slibuje, ona měří (R1.3).
 - **Původní zadání Archy** v archivu má dvě části, které se liší: „Rampa a trup: výkresy hotové,
   schváleno 1994.“ a „Řídicí systém a kajuty: dopracuje se podle potřeb obyvatel.“
-- **Ing. Framework** se mihne ve frontě na frontu a nabízí „agilní frontu“.
-- Vertical slice rozdíl mezi světy ještě netestuje. Proto po něm hned následuje papírový
-  prototyp dvojice M13 Jeřábový balet a M14 Ukázka na náměstí ([minihry](../04-minihry.md)).
+- **Ing. Framework** se mihne ve frontě na frontu a nabízí „frontu 2.0“.
+- Vertical slice rozdíl mezi světy ještě netestuje. Ten ověří až prototyp dvojice M13 Jeřábový
+  balet a M14 Ukázka na náměstí v kapitole 3 ([minihry](../04-minihry.md), D66).
 
 Výuka zůstává skrytá: nikdo ve hře neřekne „charter“, „stakeholder“ ani „business case“.
 Ruda prostě potřebuje papír, bez kterého ho Komise nepustí dál, a zjistí, že ten papír má smysl
@@ -70,13 +72,15 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
      kávové pero**, jeho požadavek zapsat a nechat ho podepsat. S podepsaným požadavkem
      přestane měnit názor. (Zárodek tématu řízení změn pro kapitolu 3.)
 4. **V archivu** najde Ruda:
-   - **tlačítko „2“** do výtahu v krabici projektu *Modernizace výtahu (1987–dosud)*;
+   - **tlačítko „2“** do výtahu v krabici projektu *Modernizace výtahu (1987–dosud)*; číslo
+     krabice je na lístku v kartotéce a Lumír krabice vydává jen podle čísla;
    - **původní zadání Archy**. Kartotéka je seřazená podle plánovaného dokončení a na každém
      lístku stojí „příští rok“. Kdo seřadí lístky podle skutečného data zahájení z Lumírovy
      knihy, zadání najde. Zadání říká: Archa má odvézt **všechny** obyvatele. Rampa a trup
      mají hotové výkresy, řídicí systém a kajuty se mají „dopracovat podle potřeb obyvatel“
      (zárodek rozdělení Archy v kap. 2);
-   - **kartu poučení** *Most přes řeku (1974): Zapomněli jsme se zeptat rybářů.*;
+   - **kartu poučení** *Most přes řeku (1974): Zapomněli jsme se zeptat rybářů.* Lumír ji
+     půjčí jen na podepsanou výpůjčku, takže je potřeba kávové pero;
    - **katastrální mapu**, podle které pozemek pod rampou patří někomu jménem Pozemková.
 5. **Starosta.** Tlačítko „2“ zapojené do výtahu ho dopraví ke starostovi. Starosta chce „něco,
    co bude v novinách“. Následuje **M03 Souboj argumenty**. Repliky se sbírají z původního
@@ -84,7 +88,8 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
    Kdo chce vyhrát hned, může všechno slíbit (**R1.1**).
 6. **Podpis sponzora.** Starosta podepíše, určí termín (30 dní) a pošle Rudu na Komisi.
 7. **M02 Kdo tu vlastně velí.** Před Komisí si Ruda (na Pembokovu radu) nakreslí, kdo o čem
-   rozhoduje. Babičku lze správně umístit jen s katastrální mapou nebo po rozhovoru s jejím kocourem.
+   rozhoduje. Babičku lze správně umístit jen s katastrální mapou nebo po prohlédnutí obojku jejího
+   kocoura, který se toulá po náměstí.
 8. **Babička Pozemková** (volitelné, **R1.2**). Pozemek pod rampou je její a nikdo se jí nikdy
    na nic nezeptal. Kdo ji vyslechne, získá spojence a **funkční razítkovou podušku**
    (Komisi už dávno vyschla).
@@ -92,15 +97,14 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
    cíl z původního zadání, kritéria úspěchu od Báry (jen když ji poslouchal), nesmysly od Pana
    Změny a od Předsedy.
 10. **Fronta na frontu.** Ruda musí čekat ve frontě, aby se mohl postavit do fronty. Ve frontě
-    stojí i **Ing. Framework** a nabízí „agilní frontu“: stejná fronta, ale každé dva týdny se
+    stojí i **Ing. Framework** a nabízí „frontu 2.0“: stejná fronta, ale každé dva týdny se
     jí říká jinak. Mezitím se **hraje za Báru** (viz níže).
-11. **Předseda Věčný** charter orazítkuje. Bez babiččiny podušky jen kávovým perem: razítko je
-    hnědé a rozmazané, platí, ale Předseda se mračí. Na závěr chce do charteru připsat
+11. **Předseda Věčný** charter orazítkuje. Poduška Komise je vyschlá. Bez babiččiny podušky
+    jen kávou nalitou na vyschlou podušku: razítko je hnědé a rozmazané, platí, ale Předseda se mračí. Na závěr chce do charteru připsat
     „a následné fáze“ (**R1.4**).
 12. **Konec kapitoly.** Ruda dostane klíč od hangáru. Kometa je o kousek větší. Předseda v kanceláři
-    telefonuje: „Ano, pustil jsem ho dál. Nebojte se. V tomhle městě se nikdy nic nedokončí.“
-    (Pozor: tahle scéna prozrazuje Předsedu. Upravit podle rozhodnutí, zda je záporák od začátku,
-    nebo zvrat.)
+    telefonuje, ale zamlženě (D44): slyšíme jen „Ano… Pustil jsem ho dál… Nebojte se.“
+    Podrobně v části [Úvod a konec](#úvod-a-konec-n3g).
 
 ## Hraní za Báru: skrytá přihrádka
 
@@ -219,10 +223,53 @@ emoce, oba jazyky. Vtipy jsou psané pro každý jazyk zvlášť, ne přeložen�
 | `ch1_predseda_002` | Předseda | nad kávovým razítkem | Hnědé razítko. Platné. Bohužel. | A brown stamp. Valid. Regrettably. |
 | `ch1_babicka_001` | babička Pozemková | suše | Mladej, můj dům tu stojí šedesát let. Jediná dokončená stavba ve městě. Proto se mnou nikdo nemluví – nevědí, co se s hotovou věcí dělá. | Young man, my house has stood here for sixty years. The only finished building in town. That's why nobody talks to me. They don't know how to handle closure. |
 | `ch1_ruda_090` | Ruda | ve frontě | Fronta na frontu. Kdyby tohle šlo exportovat, byli bychom nejbohatší město na světě. | A queue for the queue. If we could export this, we'd be the richest city on earth. |
-| `ch1_framework_001` | Ing. Framework | obchodnicky | Agilní fronta! Pořád stejná fronta, ale každé dva týdny jí říkáme jinak. Zvýší to morálku čekajících o čtyřicet procent. | The agile queue! Same queue, but every two weeks we give it a new name. Boosts waiting-room morale by forty percent. |
+| `ch1_framework_001` | Ing. Framework | obchodnicky | Fronta 2.0! Pořád stejná fronta, ale každé dva týdny jí dáme nové jméno. Zvýší to morálku čekajících o čtyřicet procent. | Queue 2.0! Same queue, but every two weeks we give it a new name. Boosts waiting-room morale by forty percent. |
 | `ch1_ruda_091` | Ruda | podezíravě | A kdo to změřil? | And who measured that? |
-| `ch1_framework_002` | Ing. Framework | uraženě | Měřit? To je strašně vodopádové. | Measured? How terribly waterfall of you. |
+| `ch1_framework_002` | Ing. Framework | uraženě | Měřit? To je tak minulé čtvrtletí. | Measure it? That's so last quarter. |
 | `ch1_ui_komise_cedule` | cedule | – | Komise pro schvalování komisí. Úřední hodiny: příští fáze. | Committee for Approving Committees. Office hours: next phase. |
+
+## Úvod a konec (N3g)
+
+### Úvod: Rudův byt (3–5 min, D57)
+
+| Záběr | Kde | Co se stane | Co se hráč naučí |
+|---|---|---|---|
+| 1 | byt | telefon: projekt číslo 14 skončil, „samozřejmě vinou ostatních“ | – |
+| 2 | byt | hráč může prohlédnout zeď slávy (14 diplomů, „týdenní výměna žárovek“, V01) | prohlédnout |
+| 3 | byt | sebrat kávu, propisku a knihu (Pembok zatím mlčí) | sebrat |
+| 4 | byt | věřitelé buší, rozhovor přes dveře; pode dveřmi „stížnost“, Ruda ji podepíše a polije kávou | rozhovor |
+| 5 | byt | díra ve zdi, skluz na suť | použít |
+| 6 | náměstí | amplion ohlásí kometu za 30 dní a jmenování Rudy; „Kdo? … Já?!“ | – |
+| 7 | náměstí | Pembok se poprvé sám otevře a vysvětlí úkol | nápověda |
+
+Kombinace předmětů se v úvodu neučí: první kombinací je kávové pero na náměstí.
+
+### Konec kapitoly
+
+1. Předseda předá klíč od hangáru „s přáním hladké fáze 2“.
+2. Ruda vyjde na náměstí, kometa je o kousek větší. Bára stojí u kašny (při vysoké důvěře
+   kývne, jinak dál měří).
+3. Střih do kanceláře Komise: Předseda telefonuje, slyšíme jen „Ano… Pustil jsem ho dál…
+   Nebojte se.“ a dveře se zavřou (D44).
+4. Obrazovka **„Co si hra zapamatovala“**: bez čísel, jen věty (např. „Bára si pamatuje, že
+   jsi ji nechal domluvit.“, „Babička čeká, jestli se ještě někdo zastaví.“). Pokračování příště.
+
+## Kontrola proti zásadám (N3h)
+
+- [x] Pilíře vize: učí mechanika (číslo jen za poslech, kartotéka podle skutečnosti), rozhodnutí
+  mají váhu (R1.1–R1.4), absurdní, ale fér (stopy u každého puzzlu, [karty](01-puzzly.md))
+- [x] **Slovník D26:** repliky Ing. Frameworka přepsány bez odborných slov; módní fráze si
+  vymýšlí sám („fronta 2.0“, „to je tak minulé čtvrtletí“), D26 platí bez výjimky (D63)
+- [x] Žádný puzzle na jazykové hříčce (D03); křížovka vrátného je vtip, ne puzzle
+- [x] Nic nezávisí na najetí myší (D04); prohlédnutí podržením prstu (D43)
+- [x] Žádná slepá ulička ([kontrola v průchodu](01-pruchod.md#kontrola-slepých-uliček)),
+  minihry přeskočitelné (D12)
+- [x] Šířka grafu: 2–4 rozdělané úkoly, lineární jen krátký závěr ([průchod](01-pruchod.md#šířka-grafu))
+- [x] Každý puzzle má stopy ve světě a tři stupně nápovědy (D10)
+- [x] PEGI 12 (D11)
+- [x] Rozpočet (D56): 7 scén, 15 + 2 předměty, odhad 460 replik, 3 minihry
+  ([osnovy dialogů](01-dialogy.md#součet))
+- [x] Otevřené otázky níže
 
 ## Rozsah výroby (odhad)
 
@@ -237,7 +284,8 @@ emoce, oba jazyky. Vtipy jsou psané pro každý jazyk zvlášť, ne přeložen�
 
 ## Otevřené otázky
 
-- [ ] Předseda: zachovat závěrečný telefonát (prozrazuje ho), nebo ho zamlžit kvůli zvratu?
-- [ ] Číslo 4 812 obyvatel: běžecký vtip, nebo jen číslo?
-- [ ] Je cesta přes Pana Změnu dost zábavná, aby nebyla trestem za neposlouchání Báry?
+- [x] Předseda: zachovat závěrečný telefonát (prozrazuje ho), nebo ho zamlžit kvůli zvratu? → zamlžit (D44)
+- [x] Číslo 4 812 obyvatel: běžecký vtip, nebo jen číslo? → běžecký vtip (D64)
+- [x] Je cesta přes Pana Změnu dost zábavná, aby nebyla trestem za neposlouchání Báry? → kávové pero
+  potřebuje i karta poučení, takže cesta není zdržení navíc ([P1.3](01-puzzly.md#p13-číslo-od-pana-změny))
 - [x] Úvod (3–5 min) rozepsat zvlášť, nebo jako součást této kapitoly? → součást kapitoly, bývalý prolog (D57)

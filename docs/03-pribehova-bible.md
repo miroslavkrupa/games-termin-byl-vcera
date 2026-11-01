@@ -299,11 +299,13 @@ Konce kombinují **metodickou osu** (sladění světů) s **osobní osou** (Rud�
 ## Opakující se vtipy
 
 - Pepa na všechno odhaduje „dva dny“, i na Archu.
-- Ing. Framework vytahuje z kufru stále absurdnější krabice metodik („Agilní beton“, „Scrum pro kočky“).
+- Ing. Framework vytahuje z kufru stále absurdnější krabice metodik („Beton v krabici“, „Metodika pro kočky“). Na krabicích nejsou odborné názvy (D26, D63).
 - Ruda kreslí Ganttův diagram na všechno, i na snídani.
 - Scope Creep se objevuje v pozadí scén a pokaždé je o kus větší.
 - Radniční výtah vede vždy jen do půlky patra.
 - Rudův slovník manažerských frází, kterým nikdo nerozumí, včetně něj.
+- **Číslo 4 812** (D64): tolik lidí má Nedostavěnice a tolikátý je Ruda v pořadí na lince pomoci.
+  Vrátí se v každé kapitole; v kapitole 5 se na Archu nalodí přesně 4 812 lidí.
 
 ## Jména v obou jazycích
 

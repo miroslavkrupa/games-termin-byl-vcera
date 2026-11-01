@@ -12,7 +12,8 @@ Chyby:
 Varování:
   - text v uzlu GUI (text, title), který není v tabulce. Přeskakují se uzly s auto_translate_mode = 2,
     ukázkové texty šablony s BBCode a zástupné texty, které skripty za běhu přepíšou (PREPISUJE_SKRIPT),
-  - klíč v tabulce, který se nikde nepoužívá.
+  - klíč v tabulce, který se nikde nepoužívá. Texty se píšou před výrobou (krok N6), proto se
+    standardně vypíše jen jejich počet; seznam vypíše přepínač --nepouzite.
 """
 import csv
 import pathlib
@@ -102,9 +103,12 @@ def main():
                 elif cesta.startswith("game/gui/") and vlastnost in ("text", "title"):
                     varovani.append(f"{cesta}: {vlastnost} „{hodnota}“ není v tabulce (zůstane anglicky)")
 
-    for klic in sorted(klice):
-        if KLIC.match(klic) and klic not in pouzite:
-            varovani.append(f"{TABULKA.name}: klíč {klic} se nikde nepoužívá")
+    # Texty se píšou dopředu (N6), takže nepoužitých klíčů bývá hodně: vypíšou se jen s --nepouzite
+    nepouzite = [k for k in sorted(klice) if KLIC.match(k) and k not in pouzite]
+    if "--nepouzite" in sys.argv:
+        varovani += [f"{TABULKA.name}: klíč {k} se nikde nepoužívá" for k in nepouzite]
+    elif nepouzite:
+        varovani.append(f"{TABULKA.name}: {len(nepouzite)} klíčů se zatím nikde nepoužívá (vypíše je --nepouzite)")
 
     for v in varovani:
         print("VAROVÁNÍ:", v)

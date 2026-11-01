@@ -69,6 +69,10 @@
 | D60 | 2026-10-31 | N1: romantická linka nemá vlastní konce, mění **epilog** podle Bářiny důvěry | vysoká: Bára poprvé řekne termín (rande), střední: parťáci, nízká: odchází; jen několik replik navíc | [bible](03-pribehova-bible.md#konce) |
 | D61 | 2026-10-31 | N1: tajný konec je **krátká scéna po titulcích** za dokonalý průchod | Komise rozpuštěna, z radnice sundávají lešení; podmínky upřesní návrh kap. 5 | [bible](03-pribehova-bible.md#konce) |
 | D62 | 2026-10-31 | N2: kostry kapitol 2–5 a mapa následků schváleny | Rudův vývoj má pět zdrojů (R1.1, R2.2, R3.2, R4.1, R5.2); nová rozhodnutí R5.1 předání a R5.2 já, nebo my; vrátný se v kap. 3 vrací jako jeřábník; další krok je N3, kapitola 1 do detailu | [kapitoly 2–5](kapitoly/), [mapa následků](03-pribehova-bible.md#rozhodnutí-a-jejich-pozdější-následky) |
+| D63 | 2026-11-01 | N3: slovník D26 platí **bez výjimky i pro Ing. Frameworka**; jeho módní fráze jsou vymyšlené („fronta 2.0“, „to je tak minulé čtvrtletí“) | přepsány ukázkové repliky `ch1_framework_001` a `_002`; krabice metodik bez odborných názvů („Beton v krabici“) | [kapitola 1](kapitoly/01-iniciace.md), [bible](03-pribehova-bible.md#opakující-se-vtipy) |
+| D64 | 2026-11-01 | N3: **4 812 je běžecký vtip**: počet obyvatel i pořadí na lince pomoci | vrátí se v každé kapitole; v kap. 5 se nalodí přesně 4 812 lidí | [bible](03-pribehova-bible.md#opakující-se-vtipy) |
+| D65 | 2026-11-01 | N6 pro kapitolu 1 **předsunut před N4**: texty kapitoly 1 se píšou hned po N3, ne až po bráně A | autorská kontrola (N4, D66) a kontrola celé hry (N5) texty kapitoly 1 opraví; brána B se uzavře až po nich | [postup](12-postup-navrhu.md), [scénář](kapitoly/01-scenar.md) |
+| D66 | 2026-11-01 | **Papírový průchod s hráči se nedělá.** Autor si každou kapitolu odladí sám (N4 je autorská kontrola) a s lidmi se testuje až prototyp v Godotu (N8); rozšiřuje D53 na minihry všech kapitol | mění D55; papírová část kratší asi o 10–15 h; délky kapitol a matice předmětů se ověří až v N8 | [postup](12-postup-navrhu.md#n4-autorská-kontrola-každé-kapitoly) |
 
 ## Čeká na rozhodnutí
 

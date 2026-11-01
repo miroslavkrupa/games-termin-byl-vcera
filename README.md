@@ -48,7 +48,7 @@ Podrobně v [postupu návrhu](docs/12-postup-navrhu.md):
 2. **N1 Příběh celé hry:** kontrola příběhové bible
 3. **N2 Kostry kapitol 2–5** a mapa následků
 4. **N3 Každá kapitola do detailu** (1, pak 2–5): obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů
-5. **N4 Papírový průchod** každé kapitoly s 2–3 lidmi
+5. **N4 Autorská kontrola** každé kapitoly (bez hráčů; s lidmi se testuje až prototyp, D66)
 6. **N5 Celá hra dohromady:** příznaky, konce, tempo, rozsah → brána A: celá hra uzamčena
 7. **N6 Texty první verze** kapitoly v obou jazycích → brána B
 8. **N7 Výroba v Godotu** (iterace I2–I6) s automatickým průchodem

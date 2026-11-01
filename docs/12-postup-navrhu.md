@@ -1,10 +1,10 @@
 # Postup návrhu: nejdřív papír, potom texty, potom výroba
 
 > Jak dokončit návrh celé hry dřív, než začne technická výroba v Godotu. Všechny kapitoly se
-> navrhnou do detailu a projdou papírovým průchodem (D54, D55). Mění pořadí fází
+> navrhnou do detailu a autor je sám zkontroluje (D54, D55, D66). Mění pořadí fází
 > v [plánu výroby kapitoly 1](10-plan-kapitoly-1.md): iterace I2–I6 počkají, až bude celá hra
 > na papíře a kapitola 1 bude mít první verzi textů.
-> Stav: **návrh ke schválení**, verze 0.2
+> Stav: **návrh ke schválení**, verze 0.3
 
 ## Proč
 
@@ -44,15 +44,15 @@
 | **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
 | **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ hotovo: kapitoly v kostce, D59–D61 | 2–4 h |
 | **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ✅ kostry a mapa následků schváleny (D62) | 4–8 h |
-| **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 částečně, 2–5 chybí | 50–95 h |
-| **N4** | Papírový průchod každé kapitoly | záznam z testu a opravy | ❌ | 15–25 h |
+| **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 hotová (čeká na N4), 2–5 chybí | 50–95 h |
+| **N4** | Autorská kontrola každé kapitoly | autor projde kapitolu sám, opravy | ❌ papírový průchod s hráči zrušen (D66) | 5–10 h |
 | **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ❌ | 4–8 h |
-| **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ 119 textů `ch1_` z prototypu a I1 | 15–25 h na kapitolu 1 |
+| **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65); brána B až po N4 a N5 | 15–25 h na kapitolu 1 |
 | **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⏸️ I1 hotová, I2+ čekají na bránu B | 40–65 h |
 | **N8** | Playtest | 5 hráčů, opravy → milník **ME** | – | 8–15 h |
 | **N9** | Ladění a vydání | vtipy, zvuk, animace, itch.io → milník **MF** | – | 8–12 h |
 
-**Papírová část N0–N5 vychází zhruba na 75–140 h**, při 5–8 hodinách týdně na 3–6 měsíců před
+**Papírová část N0–N5 vychází zhruba na 65–125 h**, při 5–8 hodinách týdně na 3–6 měsíců před
 prvním dalším krokem v Godotu. Odhad N3 počítá s kapitolou 1 za 8–15 h a s kapitolami 2–5
 za 10–20 h každou, protože kapitoly 2 a 3 jsou větší. Zpřesní se po kapitole 1.
 
@@ -191,7 +191,7 @@ Tabulka **předmět × cíl** (aktivní místa, postavy, jiné předměty):
 | Dekret | – | ★ | – | – | |
 
 ✔ = řešení, ★ = vlastní vtip, – = výchozí reakce. Cíl: každá kombinace, kterou zkouší víc
-lidí, má ★. Matice se doplní po papírovém průchodu (N4) a playtestu (N8) podle toho, co hráči
+lidí, má ★. Matice se doplní po playtestu prototypu (N8) podle toho, co hráči
 skutečně zkoušeli.
 
 ### N3e Osnovy dialogů → `0X-dialogy.md`
@@ -208,8 +208,8 @@ Součet odhadů replik se porovná s rozpočtem kapitoly z N0.
 ### N3f Minihry kapitoly
 
 Pravidla podle [šablony miniher](04-minihry.md#šablona-pro-novou-minihru) a papírový model.
-Kapitola 1 je má hotová (D53). U kapitol 2–5 se minihry testují na papíře spolu s průchodem
-v N4, hlavně M13 a M14, které nesou rozdíl mezi světy.
+Kapitola 1 je má hotová (D53). Minihry všech kapitol se testují až ve hře (D53, D66). U M13
+a M14, které nesou rozdíl mezi světy, autor v N4 aspoň projde pravidla krok za krokem.
 
 ### N3g Úvod a konec kapitoly
 
@@ -231,20 +231,19 @@ Před N4 projít kapitolu podle tohoto seznamu:
 - [ ] kapitola se vejde do rozpočtu z N0
 - [ ] uzavřené otevřené otázky kapitoly
 
-## N4 Papírový průchod každé kapitoly
+## N4 Autorská kontrola každé kapitoly
 
-Ověří logiku kapitoly bez kódu. Dělá se hned po N3 dané kapitoly, ne až na konci.
+Ověří logiku kapitoly bez kódu a bez hráčů. Autor ji dělá sám hned po N3 dané kapitoly.
+Testování s lidmi se dělá až na prototypu v Godotu (N8, D66).
 
-- **Pomůcky:** vytištěná pozadí nebo náčrtky místností (u kapitol 2–5 grafika ještě není, stačí
-  rukou kreslené mapy), kartičky předmětů a postav, papírové modely miniher. Autor hraje „engine“
-  a čte reakce z obsahu místností a matice. Tiskový balíček jde rozšířit
-  v `papirove-prototypy/vytvor.py`.
-- **Hráči:** 2–3, aspoň jeden bez znalosti projektového řízení.
-- **Stav na začátku:** u kapitol 2–5 vybrat, s jakými rozhodnutími z dřívějška hráč přichází.
-  Aspoň jeden průchod s „dobrými“ a jeden se „špatnými“ volbami.
-- **Zapisovat:** kde hráč neví, co dál; co zkoušel (do matice předmětů); které stopy přehlédl;
-  kolik nápověd potřeboval; kolik minut kapitola trvala.
-- **Po testu:** opravit N3 dané kapitoly, zapsat rozhodnutí.
+- **Průchod:** projít nejkratší cestu a všechny varianty z `0X-pruchod.md` krok za krokem proti
+  kartám puzzlů a obsahu místností. Ke každému kroku musí existovat stopa ve světě.
+- **Pohled nováčka:** u každého puzzlu si říct, co by zkusil hráč, který o projektovém řízení
+  nic neví, a jestli na to matice předmětů odpoví.
+- **Stav na začátku:** u kapitol 2–5 projít aspoň jednu cestu s „dobrými“ a jednu se „špatnými“
+  volbami z dřívějška.
+- **Po kontrole:** opravit N3 dané kapitoly, zapsat rozhodnutí. Odhad délky kapitoly je jen
+  odhad, změří se až v N8.
 
 ## N5 Celá hra dohromady
 
@@ -254,14 +253,14 @@ Po poslední kapitole se ověří, že hra drží pohromadě:
   někde čte (mapa následků)
 - [ ] **Konce:** ke každému konci existuje cesta; spočítat, jaké volby k němu vedou
 - [ ] **Předměty a postavy mezi kapitolami:** co si hráč nese dál a co se s tím stane
-- [ ] **Tempo:** délky kapitol z N4, střídání puzzlů, miniher, dialogů a úseků za Báru
+- [ ] **Tempo:** odhadované délky kapitol, střídání puzzlů, miniher, dialogů a úseků za Báru
 - [ ] **Výuková matice:** každé téma z [matice](02-vyukova-matice.md) má mechaniku a místo ve hře
 - [ ] **Metodický oblouk:** kapitoly sledují [koncepci](07-dva-svety.md) (společný základ →
   rozdělení → dva světy → krize na rozhraní → integrace)
 - [ ] **Opakující se vtipy** rozložené přes celou hru
 - [ ] **Rozsah:** součet scén, postav, replik a miniher proti N0; odhad hodin výroby celé hry
 
-**Brána A, celá hra uzamčena:** všechny kapitoly prošly papírovým průchodem, kontrolní seznamy
+**Brána A, celá hra uzamčena:** všechny kapitoly prošly autorskou kontrolou (N4), kontrolní seznamy
 N3h a N5 jsou odškrtnuté, autor návrh schválil.
 
 ## N6 Texty první verze
@@ -332,7 +331,7 @@ Další kapitoly pak opakují N6 → N7 → N8 → N9.
 |---|---|---|
 | N0–N2 | navrhne varianty s dopady, kostry kapitol, mapu následků, kontroluje konzistenci | rozhoduje a schvaluje |
 | N3 | sepíše první verze průchodu, karet, matice a osnov; kontroluje graf × průchod × matice | vymýšlí puzzly a vtipy, škrtá |
-| N4 | připraví tiskové karty a záznamový arch | vede test s lidmi |
+| N4 | porovná průchod s kartami, maticí a obsahem místností, hlásí mezery | projde kapitolu sám, rozhodne opravy |
 | N5 | projde příznaky, konce a rozsah napříč kapitolami | schvaluje bránu A |
 | N6 | píše první verzi textů v obou jazycích (D09), hlídá ID a kontroly | upravuje humor a hlas postav, čte nahlas |
 | N7 | staví místnosti a logiku, píše automatický průchod | zkouší v editoru a na telefonu |
@@ -343,7 +342,7 @@ Další kapitoly pak opakují N6 → N7 → N8 → N9.
 
 | Brána | Po kroku | Podmínka |
 |---|---|---|
-| **A Celá hra uzamčena** | N5 | všechny kapitoly prošly papírovým průchodem, kontroly N3h a N5 splněny, schváleno autorem |
+| **A Celá hra uzamčena** | N5 | všechny kapitoly prošly autorskou kontrolou (N4), kontroly N3h a N5 splněny, schváleno autorem |
 | **B Texty kapitoly první verze** | N6 | všechny repliky kapitoly v obou jazycích, `kontrola_textu.py` bez chyb, přečteno nahlas |
 | **MD** | N7 | kapitola dohratelná v Godotu, automatický průchod projde |
 | **ME** | N8 | playtest splnil cíle |

@@ -30,7 +30,7 @@
    poznává rozhovory a malými zkouškami. Pepa „Dva dny“ a štamgasti se předhánějí v odhadech
    a kotví („to jsou dva dny, ne?“). Kdo kotvě odolá, dostane realistický odhad (V07). Výběr
    čtyř je **R2.1**.
-4. **Ing. Framework** přijede s kufrem krabic: „Agilní beton“, „Scrum pro rampy“. Nabízí jednu
+4. **Ing. Framework** přijede s kufrem krabic: „Beton v krabici“, „Rampa za dva týdny“. Nabízí jednu
    krabici na všechno.
 5. **Rozdělení Archy (R2.2)** na tabuli v hangáru: každou část (rampa, trup, pohon, bezpečnostní
    systém, řídicí systém, aplikace, nástup, interiér) přiřadit k Rudovu, nebo Bářinu způsobu.
