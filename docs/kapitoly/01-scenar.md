@@ -12,16 +12,16 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Úvod: Rudův byt | 47 | 4 | 6 |
 | Náměstí | 117 | 11 | 7 |
 | Vestibul radnice | 42 | 5 | 5 |
-| Archiv | 51 | 10 | 12 |
-| Archiv: úsek za Báru | 27 | 3 | 2 |
+| Archiv | 53 | 10 | 13 |
+| Archiv: úsek za Báru | 28 | 3 | 2 |
 | Starostova pracovna a M03 | 62 | 3 | 7 |
-| Kancelář Komise, M01 a M02 | 90 | 11 | 31 |
+| Kancelář Komise, M01 a M02 | 92 | 13 | 30 |
 | Babiččina chaloupka | 30 | 9 | 5 |
-| Nápovědy Prof. Pemboka | 39 | 0 | 0 |
+| Nápovědy Prof. Pemboka | 40 | 0 | 0 |
 | Předměty a kombinace | 22 | 0 | 15 |
-| Konec kapitoly | 3 | 0 | 15 |
+| Konec kapitoly | 3 | 0 | 16 |
 | Výchozí reakce, postavy a GUI | 10 | 0 | 11 |
-| **Celkem** | **540** | **56** | **116** |
+| **Celkem** | **546** | **58** | **117** |
 
 ## Úvod: Rudův byt
 
@@ -248,8 +248,8 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_vratny_krizovka_ruda` | Ruda |  | Dokončení? | Closure? |  |
 | `ch1_vratny_krizovka_2` | Vrátný | podezíravě | Sedí. Ale nevěřím tomu. | Fits. But I don't believe it. |  |
 | `ch1_vratny_konec` | Vrátný | ospale | Hm. | Hm. |  |
-| `ch1_vratny_stop` | Vrátný | ospale | Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi. | Without a project number, Lumír will throw you out of the basement. And me with you. | I1: dveře radnice bez čísla projektu; od N7 schody do sklepa (P1.4) |
-| `ch1_vratny_pusti` | Vrátný | ospale | Číslo máte? Tak sklep je dolů. Všechno ostatní je nahoru, ale tam se nedostanete. | Got the number? Basement's downstairs. Everything else is upstairs, but you can't get there. | I1: dveře radnice s číslem, poprvé; od N7 schody do sklepa (P1.4) |
+| `ch1_vratny_stop` | Vrátný | ospale | Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi. | Without a project number, Lumír will throw you out of the basement. And me with you. | jen I1 (dveře radnice bez čísla); v N7 vyřadit, archiv hlídá Lumír (K11) |
+| `ch1_vratny_pusti` | Vrátný | ospale | Číslo máte? Tak sklep je dolů. Všechno ostatní je nahoru, ale tam se nedostanete. | Got the number? Basement's downstairs. Everything else is upstairs, but you can't get there. | jen I1 (dveře radnice s číslem); v N7 vyřadit, archiv hlídá Lumír (K11) |
 | `ch1_vestibul_prichod` | Ruda | suše | Vestibul radnice. Mramor, lešení a vrátný. Dvě z těch věcí tu zůstanou navždy. | The town hall lobby. Marble, scaffolding and a porter. Two of those are here forever. | jen při prvním příchodu |
 | `ch1_hs_vytah` |  |  | Výtah | Elevator | popisek aktivního místa (vestibul, pracovna, Komise) |
 | `ch1_ruda_010` | Ruda | uznale | Výtah do půl patra. Konečně stavba, která přiznává, jak na tom je. | An elevator that only goes halfway. Finally, a building that's honest about its progress. | replika z návrhu kapitoly 1; prohlédnout výtah |
@@ -317,7 +317,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_lumir_kartoteka_1` | Lumír | monotónně | Kartotéka je seřazená podle plánovaného dokončení. | The index is sorted by planned completion date. |  |
 | `ch1_lumir_kartoteka_ruda` | Ruda | suše | A u všech stojí „příští rok“. | And they all say 'next year'. |  |
 | `ch1_lumir_kartoteka_2` | Lumír | monotónně | Plány se mění. Data zahájení ne. Ta mám v knize. | Plans change. Start dates don't. I keep those in my ledger. | stopa P1.5 |
-| `ch1_lumir_volba_karta` | Ruda |  | Můžu si půjčit kartu o mostě? | Can I borrow the bridge card? | volba dialogu; po přečtení lístku mostu |
+| `ch1_lumir_volba_karta` | Ruda |  | Můžu si půjčit to poučení o mostě? | Can I borrow the bridge lesson? | volba dialogu; po přečtení lístku mostu nebo krabičky Poučení |
 | `ch1_lumir_karta_1` | Lumír | monotónně | Výpůjčka. Podpis. Čitelný. | Loan slip. Signature. Legible. | P1.7 |
 | `ch1_lumir_propiska` | Lumír | monotónně | Tohle není podpis. To je vzpomínka na podpis. | That's not a signature. That's the memory of one. | propiska na Lumíra ★; chybný pokus P1.7 |
 | `ch1_lumir_karta_pero_1` | Lumír | monotónně | Hnědý. Ale čitelný. Půjčeno na neurčito. Jako všechno ostatní. | Brown. But legible. Lent indefinitely. Like everything else. | kávové pero na Lumíra ✔; předmět karta poučení |
@@ -337,17 +337,17 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_lumir_zadani` | Lumír | monotónně | Vy jste ho našel. Leželo tam od roku 1994. Já ho jen zakládal. Čtení není moje oddělení. | You found it. It's been there since 1994. I only filed it. Reading isn't my department. | zadání na Lumíra ★ |
 | `ch1_lumir_karta_vratit` | Lumír | monotónně | Ještě ne. Poučení se vrací, až když se použije. | Not yet. A lesson only comes back once it's been used. | karta poučení na Lumíra ★ |
 | `ch1_kartoteka_razeni_uvod` | Ruda | přemýšlivě | Pět lístků a na všech „příští rok“. Podle čeho je seřadit? | Five cards, all saying 'next year'. How do I sort them? | P1.5, začátek řazení |
-| `ch1_listek_most` |  |  | Most přes řeku. Zahájen 1974. Plánované dokončení: příští rok. | Bridge over the River. Started 1974. Planned completion: next year. | lístek k řazení |
+| `ch1_listek_most` |  |  | Most přes řeku. Zahájen 1974. Plánované dokončení: příští rok. Pozn.: viz poučení. | Bridge over the River. Started 1974. Planned completion: next year. Note: see lesson. | lístek k řazení |
 | `ch1_listek_leseni` |  |  | Lešení radnice. Zahájeno 1986. Pozn.: lešení se stalo součástí stavby. | Town Hall Scaffolding. Started 1986. Note: the scaffolding is now part of the building. | lístek k řazení |
 | `ch1_listek_vytah` |  |  | Modernizace výtahu. Zahájena 1987. Krabice 87/3. | Elevator Modernisation. Started 1987. Box 87/3. | lístek k řazení; číslo krabice pro P1.6 |
 | `ch1_listek_kasna` |  |  | Voda v kašně. Zahájeno 1994. Fáze 2. | Water in the Fountain. Started 1994. Phase two. | lístek k řazení |
 | `ch1_listek_archa` |  |  | Archa. Zahájena 1994. Pozn.: viz zadání. | The Ark. Started 1994. Note: see brief. | lístek k řazení |
 | `ch1_kartoteka_abecedne` | Lumír | monotónně | Abecedně? Jsme archiv, ne telefonní seznam. | Alphabetically? We're an archive, not a phone book. | chybný pokus P1.5 |
-| `ch1_kartoteka_cisla` | Lumír | monotónně | Podle čísel ne. V roce 1990 se všechno přečíslovalo. To byl taky projekt. | Not by number. Everything was renumbered in 1990. That was a project too. | chybný pokus P1.5 |
 | `ch1_kartoteka_spatne` | Ruda | zamračeně | Tohle pořadí nedává smysl. Ani podle mých standardů. | That order makes no sense. Not even by my standards. | jiné špatné pořadí |
 | `ch1_kartoteka_stejny_rok` | Ruda | přemýšlivě | Kašna i Archa: 1994. Rozhodne měsíc. | Fountain and Ark: both 1994. The month will decide. |  |
 | `ch1_kartoteka_hotovo_1` | Ruda | vzrušeně | Podle skutečného data… a za lístkem Archy je složený papír. | By the real start dates... and behind the Ark's card there's a folded sheet. | řešení P1.5 |
 | `ch1_kartoteka_hotovo_2` | Lumír | monotónně | Původní zadání. Dal jsem ho tam v devadesátém čtvrtém. Nikdo se nezeptal. | The original brief. I put it there in ninety-four. Nobody asked. | předmět původní zadání |
+| `ch1_lumir_priloha_stop` | Lumír | monotónně | Přílohy vydávám jen k lístkům, které jsou na svém místě. | I only issue attachments for cards that are in their proper place. | K1: lístek Archy bez řazení |
 | `ch1_hs_kniha` |  |  | Lumírova kniha | Lumír's ledger | popisek aktivního místa |
 | `ch1_kniha_prohlednout` | Ruda | uznale | Lumírova kniha skutečných dat zahájení. Jediný dokument ve městě, ve kterém se nic nepřeplánovalo. | Lumír's ledger of actual start dates. The only document in town where nothing got rescheduled. |  |
 | `ch1_kniha_pouzit` | Ruda | čte | Most: březen 1974. Lešení: 1986. Výtah: 1987. Archa: květen 1994. Kašna: září 1994. | Bridge: March 1974. Scaffolding: 1986. Elevator: 1987. Ark: May 1994. Fountain: September 1994. | klíč k P1.5 |
@@ -359,6 +359,9 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_mapnik_vzit` | Ruda | spokojeně | Mapa pozemků kolem rampy. Vezmu si ji. Lumír řekl, že smím. | A map of the plots around the ramp. I'll take it. Lumír said I could. | předmět katastrální mapa |
 | `ch1_hs_hluboky_regal` |  |  | Hluboký regál | Deep shelf | popisek aktivního místa |
 | `ch1_hluboky_regal_prohlednout` | Ruda | soucitně | Velký regál. Plný šanonů, které nikdo nikdy neotevřel. Znám ten pocit. | A big shelf. Full of binders nobody's ever opened. I know the feeling. | Ruda si přihrádky nevšimne |
+| `ch1_hs_pouceni` |  |  | Krabička Poučení | Lessons box | popisek aktivního místa (K2) |
+| `ch1_pouceni_prohlednout` | Ruda | pobaveně | Krabička s nápisem „Poučení“. Uvnitř jediná karta. Lumír ji hlídá jako rodinné stříbro. | A box labelled 'Lessons'. One card inside. Lumír guards it like the family silver. | K2: karta poučení je samostatná |
+| `ch1_pouceni_pouzit` | Ruda | zamyšleně | Bez výpůjčky mi ji Lumír nedá. A výpůjčka chce podpis. | Lumír won't hand it over without a loan slip. And a loan slip needs a signature. | stopa P1.7 |
 
 ## Archiv: úsek za Báru
 
@@ -381,6 +384,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_usek_seznam_2` | Bára | chladně | A dál nic. Čtyři tisíce osm set dvanáct lidí, a tady je jich dvacet tři. | And nobody else. Four thousand eight hundred and twelve people, and there are twenty-three on here. | 4812 = počet obyvatel |
 | `ch1_usek_seznam_3` | Bára | rozhodně | Tohle si nechám. Dokud nebudu vědět, komu to ukázat. | I'm keeping this. Until I know who to show it to. | c1_seznam_pasazeru |
 | `ch1_usek_konec` | Bára | věcně | Hotovo. Zpátky ke kašně, než si toho někdo všimne. | Done. Back to the fountain before anyone notices. | konec úseku za Báru |
+| `ch1_usek_odejit` | Bára | rozhodně | Nejdřív to přeměřím. Pak půjdu. | I'll measure it first. Then I'll go. | schody během úseku za Báru (K7) |
 | `ch1_usek_kartoteka` | Bára | suše | Plánovaná data dokončení. Nejkrásnější beletrie ve městě. | Planned completion dates. The finest fiction in town. | Bára prohlédne kartotéku |
 | `ch1_usek_mapnik` | Bára | věcně | Mapy sedí. Měřila jsem je. | The maps are right. I measured them. | Bára prohlédne mapník |
 | `ch1_usek_schody` | Bára | věcně | Zábradlí končí po čtyřech metrech a dvanácti centimetrech. Pořád. | The railing ends after thirteen feet six. Still. | Bára prohlédne schody |
@@ -496,6 +500,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_razitko_kava_1` | Ruda | spokojeně | Hnědé a tekuté. Přesně tohle chybělo. | Brown and runny. Just what it needed. | káva na podušku ✔ (c1_razitko = kava) |
 | `ch1_predseda_002` | Předseda | nad kávovým razítkem | Hnědé razítko. Platné. Bohužel. | A brown stamp. Valid. Regrettably. | replika z návrhu kapitoly 1 |
 | `ch1_razitko_kava_2` | Předseda | mračí se | Pro příště: příští fáze se razítkuje modře. | For future reference: the next phase is stamped in blue. |  |
+| `ch1_razitko_kava_brzy` | Ruda | spokojeně | Poduška je mokrá. Teď ještě papír. | The pad's wet. Now I just need the page. | káva na podušku před papírem (K12); pak stačí Předseda |
 | `ch1_razitko_poduska_1` | Ruda | hrdě | Poduška od babičky Pozemkové. Šedesát let stará a pořád funguje. | Granny Plotkins' ink pad. Sixty years old and still working. | poduška na razítko ✔ (c1_razitko = poduska) |
 | `ch1_razitko_poduska_2` | Předseda | vlídně, ale ostražitě | Modré razítko. Jako za starých časů. Kde jste… ach tak. Pozemková. | A blue stamp. Like the old days. Where did you... ah. Plotkins. |  |
 | `ch1_hs_stul` |  |  | Stůl pro žadatele | Applicants' desk | popisek aktivního místa |
@@ -518,6 +523,10 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_predseda_001` | Předseda | vlídně | Váš návrh je vynikající. Právě proto ho musíme důkladně odložit. | Your proposal is excellent. Which is precisely why it must be thoroughly postponed. | replika z návrhu kapitoly 1 |
 | `ch1_predseda_navrh_ruda` | Ruda | zaskočeně | Kam? | Postponed where? |  |
 | `ch1_predseda_navrh_2` | Předseda | vlídně | Do příští fáze. Tam je místa dost. | The next phase. There's plenty of room there. |  |
+| `ch1_predseda_volba_termin` | Ruda |  | Do kdy to Komise stihne? | When will the Committee be done? | volba dialogu (K5) |
+| `ch1_predseda_termin` | Předseda | vlídně | Až to bude. Termíny nás jen zbytečně stresují. | When it's done. Deadlines only cause needless stress. | útržek-nesmysl „Až to bude.“ pro M01 |
+| `ch1_predseda_volba_kdo` | Ruda |  | Kdo o Arše vlastně rozhoduje? | Who actually decides about the Ark? | volba dialogu (K5) |
+| `ch1_predseda_kdo` | Předseda | vlídně | Komise pro schvalování komisí. Pokud schválí. | The Committee for Approving Committees. Pending approval. | útržek-nesmysl „…pokud schválí“ pro M01 |
 | `ch1_predseda_volba_razitko` | Ruda |  | Potřebuju razítko. | I need a stamp. | volba dialogu |
 | `ch1_predseda_razitko_bez_papiru` | Předseda | vlídně | Razítko na co? Na prázdný stůl? To jsme dělali v osmdesátých letech. | A stamp on what? An empty desk? We did that in the eighties. | bez papíru o Arše |
 | `ch1_predseda_razitko_1` | Předseda | lítostivě | S radostí. Jen… poduška je ve fázi 2. Inkoust objednán v roce 1994. | With pleasure. Only... the ink pad is in phase two. Ink ordered in 1994. | s papírem o Arše |
@@ -582,18 +591,16 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_m01_utrzek_cil` |  |  | Odvézt všechny obyvatele do bezpečí před dopadem komety. | Get every resident to safety before the comet hits. | dobrý útržek; z původního zadání |
 | `ch1_m01_utrzek_cil_nesmysl` |  |  | Aby to bylo hezký. | Make it look nice. | nesmysl; od Pana Změny |
 | `ch1_m01_utrzek_termin` |  |  | Start nejpozději 30. den. | Launch by day 30 at the latest. | dobrý útržek; od starosty |
-| `ch1_m01_utrzek_termin_nesmysl` |  |  | Až to bude. | When it's done. | nesmysl; od Předsedy |
+| `ch1_m01_utrzek_termin_nesmysl` |  |  | Až to bude. | When it's done. | nesmysl; od Předsedy (ch1_predseda_termin) |
 | `ch1_m01_utrzek_kriteria` |  |  | Archa unese 4 812 lidí a vzlétne. | The Ark carries 4,812 people and actually lifts off. | dobrý útržek; od Báry (c1_bara_kriteria) |
 | `ch1_m01_utrzek_kriteria_nesmysl` |  |  | Všichni budou spokojení. | Everyone will be happy. | nesmysl; od Pana Změny |
 | `ch1_m01_utrzek_mimo` |  |  | Bazén, vyhlídková terasa, fontána. | Pool, observation deck, fountain. | dobrý útržek; od Báry |
 | `ch1_m01_utrzek_mimo_nesmysl` |  |  | Nic, všechno se tam vejde. | Nothing. It'll all fit. | nesmysl; od Rudy |
 | `ch1_m01_utrzek_kdo` |  |  | Starosta Bohumil. | Mayor Bohumil. | dobrý útržek; z podpisu sponzora |
-| `ch1_m01_utrzek_kdo_nesmysl` |  |  | Komise pro schvalování komisí, pokud schválí. | The Committee for Approving Committees, pending approval. | nesmysl; od Předsedy |
-| `ch1_m01_utrzek_faze` |  |  | …a následné fáze. | ...and subsequent phases. | nesmysl; od Předsedy (R1.4) |
+| `ch1_m01_utrzek_kdo_nesmysl` |  |  | Komise pro schvalování komisí, pokud schválí. | The Committee for Approving Committees, pending approval. | nesmysl; od Předsedy (ch1_predseda_kdo) |
 | `ch1_m01_reakce_dobra` | Ruda | spokojeně | Sedí. | Fits. | útržek ve správné kolonce |
 | `ch1_m01_reakce_nesmysl` | Ruda | váhavě | Vejde se to tam. Jen nevím, jestli to tam patří. | It fits. I'm just not sure it belongs. | nesmysl v kolonce |
 | `ch1_m01_reakce_spatna_kolonka` | Ruda | zamračeně | Tohle je odpověď na jinou otázku. | That answers a different question. | útržek v nesprávné kolonce |
-| `ch1_m01_reakce_faze` | Ruda | podezíravě | „…a následné fáze“ se nevejde nikam. To je asi dobře. | '...and subsequent phases' doesn't fit anywhere. That's probably a good sign. | útržek fáze |
 | `ch1_m01_pembok_kriteria` | Pembok | nápověda | Jak poznáš, že se to povedlo? Někdo ve městě to spočítal. Škoda, žes ho neposlouchal. | How will you know it worked? Someone in town worked that out. Shame you didn't listen. | chybí Bářina kritéria |
 | `ch1_m01_hotovo` | Ruda | hrdě | Papír je hotový. Všechno podstatné na jedné straně. | The page is done. Everything that matters, on one side. | c1_charter_kvalita = 3 |
 | `ch1_m01_hotovo_slabe` | Ruda | nejistě | Hotovo. Vypadá to jako papír. Na první pohled. | Done. It looks like a proper page. At first glance. | c1_charter_kvalita < 3 |
@@ -639,8 +646,8 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_babicka_pozemek_2` | Babička | hořce | Můj. Po tátovi. V devadesátém čtvrtém mi na něj postavili rampu. Nikdo nezazvonil. | Mine. From my father. In ninety-four they built a ramp on it. Nobody rang the bell. |  |
 | `ch1_babicka_pozemek_3` | Babička | smutně | Od té doby mi stíní rajčata. Šedesát let pěstuju rajčata a posledních třicet jsou bledá. | Since then it's shaded my tomatoes. Sixty years I've grown tomatoes, and for the last thirty they've been pale. |  |
 | `ch1_babicka_volba_vyslechnout` | Ruda |  | (Poslouchat dál.) | (Keep listening.) | volba R1.2: c1_babicka = spojenec |
-| `ch1_babicka_volba_spechat` | Ruda |  | Rozumím. Můžete mi rychle něco podepsat? Spěchám. | I see. Could you just sign something quickly? I'm in a hurry. | volba R1.2: okno se zavře |
-| `ch1_babicka_volba_slib` | Ruda |  | Až Archa poletí, dostanete nová rajčata. Slibuju. | When the Ark flies, you'll get new tomatoes. I promise. | volba R1.2: okno se zavře |
+| `ch1_babicka_volba_spechat` | Ruda |  | Rozumím. Můžete mi rychle něco podepsat? Spěchám. | I see. Could you just sign something quickly? I'm in a hurry. | volba R1.2: c1_babicka = odmitnuta |
+| `ch1_babicka_volba_slib` | Ruda |  | Až Archa poletí, dostanete nová rajčata. Slibuju. | When the Ark flies, you'll get new tomatoes. I promise. | volba R1.2: c1_babicka = odmitnuta |
 | `ch1_babicka_vyslechnout_1` | Babička | tiše | Nikdo se mě nikdy na nic nezeptal. Ani kudy rampa povede, ani jestli mi nevadí. | Nobody ever asked me anything. Not where the ramp would go, not whether I minded. |  |
 | `ch1_babicka_vyslechnout_2` | Babička | věcně | Kdyby se zeptali, řekla bych jim, že o tři metry dál je skála. Tam by stála rovně. | If they'd asked, I'd have told them there's bedrock ten feet over. It would have stood straight there. | souvisí s Bářiným sklonem rampy (kap. 2) |
 | `ch1_babicka_vyslechnout_ruda` | Ruda | upřímně | Děkuju. Tohle mi nikdo jiný neřekl. | Thank you. Nobody else told me that. |  |
@@ -649,7 +656,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_babicka_poduska_2` | Babička | suše | Komisi vyschla ta jejich už v devadesátých letech. Já vím všechno. Jen se mě nikdo neptá. | The Committee's pad dried up back in the nineties. I know everything. Nobody just asks me. |  |
 | `ch1_babicka_spechat` | Babička | chladně | Nejdřív buchtu. Pak podpisy. Ale vy na buchtu nemáte čas, že? | Bun first. Signatures later. But you haven't got time for a bun, have you? | pak zavře okno |
 | `ch1_babicka_slib` | Babička | chladně | Slibů mám plnou spíž. V zimě jsou k ničemu. | I've a pantry full of promises. They're no use in winter. | pak zavře okno |
-| `ch1_babicka_zavreno` | Ruda | zklamaně | Okno je zavřené. Jediná věc v Nedostavěnici, která se zavírá spolehlivě. | The window's shut. The one thing in Scope Creek that closes reliably. | po zavření okna (R1.2) |
+| `ch1_babicka_zavreno` | Ruda | zklamaně | Okno je zavřené. Jediná věc v Nedostavěnici, která se zavírá spolehlivě. | The window's shut. The one thing in Scope Creek that closes reliably. | po zavření okna (R1.2): c1_babicka = odmitnuta, okno zůstane zavřené do konce kapitoly |
 | `ch1_babicka_volba_kocour` | Ruda |  | Váš kocour se toulá po náměstí. | Your cat wanders around the square. | volba dialogu; jen spojenec |
 | `ch1_babicka_kocour` | Babička | láskyplně | Mourek chodí na radnici kontrolovat, jestli už něco dodělali. Vrací se zklamaný. | Marmalade goes to the town hall to check if they've finished anything. Comes back disappointed. |  |
 | `ch1_babicka_volba_konec` | Ruda |  | Na shledanou. | Goodbye. | volba dialogu |
@@ -700,7 +707,8 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_pembok_rada_fronta` | Pembok | nápověda | Papír máš. Teď se postav do fronty. Do té před frontou. | You've got the page. Now join the queue. The one before the queue. | P1.11 po M01 |
 | `ch1_pembok_rada_razitko_1` | Pembok | nápověda | Razítko bez barvy nic neorazítkuje. | A stamp without ink stamps nothing. | P1.13, 1. stupeň |
 | `ch1_pembok_rada_razitko_2` | Pembok | nápověda | Co máš u sebe hnědého a tekutého? | What have you got on you that's brown and runny? | P1.13, 2. stupeň (cesta kávou) |
-| `ch1_pembok_rada_razitko_2_babicka` | Pembok | nápověda | Kdo ve městě má něco dokončeného? Třeba i fungující podušku. | Who in this town has anything finished? A working ink pad, maybe. | P1.13, 2. stupeň (cesta poduškou), když babička je spojenec nebo odhalena |
+| `ch1_pembok_rada_razitko_2_babicka` | Pembok | nápověda | Kdo ve městě má něco dokončeného? Třeba i fungující podušku. | Who in this town has anything finished? A working ink pad, maybe. | P1.13, 2. stupeň (cesta poduškou), když c1_babicka = odhalena nebo prehlizena |
+| `ch1_pembok_rada_razitko_2_poduska` | Pembok | nápověda | Máš babiččinu podušku. Razítko ji bude mít rádo. | You've got Granny's ink pad. The stamp will love it. | P1.13, 2. stupeň: spojenec s poduškou (K9) |
 | `ch1_pembok_rada_razitko_3` | Pembok | nápověda | Polij tu vyschlou podušku kávou. | Pour your coffee on that dried-up ink pad. | P1.13, 3. stupeň |
 | `ch1_pembok_rada_nic` | Pembok | suše | Teď nevím o ničem, co by ti chybělo. Kromě plánu. | Right now I can't think of anything you're missing. Apart from a plan. | není co radit |
 
@@ -762,6 +770,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_pamet_babicka_spojenec` |  |  | Babička Pozemková si pamatuje, že ses jí zeptal. | Granny Plotkins remembers that you asked her. | c1_babicka = spojenec |
 | `ch1_pamet_babicka_prehlizena` |  |  | Babička čeká, jestli se ještě někdo zastaví. | Granny's still waiting to see if anyone will stop by. | c1_babicka = prehlizena |
 | `ch1_pamet_babicka_neodhalena` |  |  | Pod rampou někdo bydlí. Zatím o tom nevíš. | Someone lives under the ramp. You don't know that yet. | c1_babicka = neodhalena |
+| `ch1_pamet_babicka_odmitnuta` |  |  | Babička si pamatuje, že jsi spěchal. | Granny remembers that you were in a hurry. | c1_babicka = odmitnuta (K6) |
 | `ch1_pamet_faze2_ne` |  |  | Předseda si pamatuje, že jsi nepřipsal „následné fáze“. | The Chairman remembers that you didn't add 'subsequent phases'. | c1_faze2 = false |
 | `ch1_pamet_faze2_ano` |  |  | Předseda si pamatuje, že jsi podepsal „…a následné fáze“. | The Chairman remembers that you signed '...and subsequent phases'. | c1_faze2 = true |
 | `ch1_pamet_zmena` |  |  | Pan Změna si poprvé v životě za něčím stojí. Za modrou. | For the first time in his life, Mr. Change stands by something. Blue. | c1_zmena_dohoda |

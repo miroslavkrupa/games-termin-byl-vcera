@@ -94,7 +94,7 @@ Další příznaky: `c4_souboj` (M03, výsledek), `c4_zlepseni` (M11, jedno zlep
 | Příznak | Následek v kapitole 4 |
 |---|---|
 | `c1_slib_vseho` | sponzor trvá na všem, souboj je tvrdší, chybí prostor pro vyjednávání |
-| `c1_babicka` | `prehlizena`: blokuje rampu, vedlejší úkol; `spojenec`: pomůže |
+| `c1_babicka` | `prehlizena`, `odmitnuta` nebo `neodhalena`: blokuje rampu, vedlejší úkol; `spojenec`: pomůže |
 | `c1_charter_kvalita` | repliky do souboje; dobré „mimo rozsah“ usnadní R4.2 |
 | `c1_seznam_pasazeru` | hlavní důkaz proti Předsedovi (D59) |
 | `c2_riziko_predem` = úsměv | Ruda Předsedu podezíral dřív; konfrontace je kratší |

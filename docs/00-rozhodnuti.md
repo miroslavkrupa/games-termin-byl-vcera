@@ -73,6 +73,7 @@
 | D64 | 2026-11-01 | N3: **4 812 je běžecký vtip**: počet obyvatel i pořadí na lince pomoci | vrátí se v každé kapitole; v kap. 5 se nalodí přesně 4 812 lidí | [bible](03-pribehova-bible.md#opakující-se-vtipy) |
 | D65 | 2026-11-01 | N6 pro kapitolu 1 **předsunut před N4**: texty kapitoly 1 se píšou hned po N3, ne až po bráně A | autorská kontrola (N4, D66) a kontrola celé hry (N5) texty kapitoly 1 opraví; brána B se uzavře až po nich | [postup](12-postup-navrhu.md), [scénář](kapitoly/01-scenar.md) |
 | D66 | 2026-11-01 | **Papírový průchod s hráči se nedělá.** Autor si každou kapitolu odladí sám (N4 je autorská kontrola) a s lidmi se testuje až prototyp v Godotu (N8); rozšiřuje D53 na minihry všech kapitol | mění D55; papírová část kratší asi o 10–15 h; délky kapitol a matice předmětů se ověří až v N8 | [postup](12-postup-navrhu.md#n4-autorská-kontrola-každé-kapitoly) |
+| D67 | 2026-11-01 | N4 kapitoly 1: všech 12 nálezů autorské kontroly zapracováno. Lumír vydá zadání jen k zařazenému lístku; karta poučení je samostatná v krabičce Poučení; „…a následné fáze“ nejsou v M01; M03 má 5 kol a vyhrává se 3 koly, `c1_slib_vseho` 0–5; útržky M01 jsou příznaky; nová hodnota `c1_babicka` = `odmitnuta` | +12 textů, −3 texty; v N7 vyřadit repliky vrátného ke sklepu | [kontrola](kapitoly/01-kontrola.md) |
 
 ## Čeká na rozhodnutí
 

@@ -5,7 +5,8 @@
 > Stav: **návrh do detailu (N3)**, verze 0.3
 > Výroba: [plán výroby kapitoly 1](../10-plan-kapitoly-1.md)
 > Podrobnosti: [obsah místností a matice předmětů](01-mistnosti.md), [karty puzzlů](01-puzzly.md),
-> [průchod hrou](01-pruchod.md), [osnovy dialogů](01-dialogy.md), [scénář](01-scenar.md)
+> [průchod hrou](01-pruchod.md), [osnovy dialogů](01-dialogy.md), [scénář](01-scenar.md),
+> [autorská kontrola](01-kontrola.md)
 
 ## Přehled
 
@@ -47,7 +48,7 @@ Z úvodu má Ruda v inventáři:
 
 | # | Scéna | Postavy | Co se tu děje |
 |---|---|---|---|
-| S1 | **Náměstí před radnicí** (rozcestí) | Bára, Pan Změna, vrátný | úvodní rozhovory, stánek Pana Změny, Bára u kašny |
+| S1 | **Náměstí před radnicí** (rozcestí) | Bára, Pan Změna, kocour | úvodní rozhovory, stánek Pana Změny, Bára u kašny |
 | S2 | **Vestibul radnice** | vrátný | výtah jezdí jen do 1½. patra, schody jsou „ve fázi 2“ |
 | S3 | **Archiv zkrachovalých projektů** (sklep) | archivář Lumír | nekonečné regály, kartotéka, skrytá přihrádka |
 | S4 | **Starostova pracovna** (2. patro) | starosta Bohumil | souboj argumenty, podpis sponzora |
@@ -76,11 +77,11 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
      krabice je na lístku v kartotéce a Lumír krabice vydává jen podle čísla;
    - **původní zadání Archy**. Kartotéka je seřazená podle plánovaného dokončení a na každém
      lístku stojí „příští rok“. Kdo seřadí lístky podle skutečného data zahájení z Lumírovy
-     knihy, zadání najde. Zadání říká: Archa má odvézt **všechny** obyvatele. Rampa a trup
+     knihy, zadání dostane: Lumír vydává přílohy jen k lístkům, které jsou na svém místě. Zadání říká: Archa má odvézt **všechny** obyvatele. Rampa a trup
      mají hotové výkresy, řídicí systém a kajuty se mají „dopracovat podle potřeb obyvatel“
      (zárodek rozdělení Archy v kap. 2);
-   - **kartu poučení** *Most přes řeku (1974): Zapomněli jsme se zeptat rybářů.* Lumír ji
-     půjčí jen na podepsanou výpůjčku, takže je potřeba kávové pero;
+   - **kartu poučení** *Most přes řeku (1974): Zapomněli jsme se zeptat rybářů.* Leží v Lumírově
+     krabičce „Poučení“, kde je jediná. Lumír ji půjčí jen na podepsanou výpůjčku, takže je potřeba kávové pero;
    - **katastrální mapu**, podle které pozemek pod rampou patří někomu jménem Pozemková.
 5. **Starosta.** Tlačítko „2“ zapojené do výtahu ho dopraví ke starostovi. Starosta chce „něco,
    co bude v novinách“. Následuje **M03 Souboj argumenty**. Repliky se sbírají z původního
@@ -121,7 +122,7 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
 | ID | Kde | Volby | Příznak (flag) | Kde se vrátí |
 |---|---|---|---|---|
 | R1.1 | souboj se starostou | realistický charter / slíbit všechno (rozsah, termín i rozpočet) | `c1_slib_vseho` | kap. 4: sponzor trvá na všem, krize je tvrdší |
-| R1.2 | babička | vyslechnout / nenavštívit / neodhalit | `c1_babicka` = `spojenec` / `prehlizena` | kap. 4: zablokovaná rampa |
+| R1.2 | babička | vyslechnout / odbýt / nenavštívit / neodhalit | `c1_babicka` = `spojenec` / `odmitnuta` / `prehlizena` / `neodhalena` | kap. 4: zablokovaná rampa |
 | R1.3 | první rozhovor s Bárou | nechat domluvit / skočit do řeči | `c1_bara_vyslechnuta` (počet), Bářina důvěra | kap. 3: Bára mlčí o vadě softwaru |
 | R1.4 | Předseda a „následné fáze“ | odmítnout s odkazem na rozsah / přijmout | `c1_faze2` | kap. 3: Předseda má páku na nekonečné změny |
 
@@ -157,7 +158,7 @@ flowchart TD
   m01 --> fronta["Fronta na frontu"]
   fronta --> barasegment["Hraje se za Báru: skrytá přihrádka"]
   poduska --> razitko["Razítko Komise"]
-  pero -.->|náhradní cesta| razitko
+  start -.->|káva: náhradní cesta| razitko
   barasegment & razitko --> predseda{"Následné fáze? (R1.4)"}
   predseda --> konec(["Klíč od hangáru"])
 ```
@@ -176,9 +177,12 @@ Plné šipky jsou nutné kroky, tečkované jsou náhradní nebo volitelné cest
 | Kritéria úspěchu | CS: *Archa unese 4 812 lidí a vzlétne.* EN: *The Ark carries 4,812 people and actually lifts off.* | CS: *Všichni budou spokojení.* EN: *Everyone will be happy.* | Bára / Pan Změna |
 | Mimo rozsah | CS: *Bazén, vyhlídková terasa, fontána.* EN: *Pool, observation deck, fountain.* | CS: *Nic, všechno je v rozsahu.* EN: *Nothing. Everything's in scope.* | Bára / Ruda |
 | Kdo rozhoduje | CS: *Starosta Bohumil.* EN: *Mayor Bohumil.* | CS: *Komise pro schvalování komisí, pokud schválí.* EN: *The Committee for Approving Committees, pending approval.* | podpis / Předseda |
-| Navíc | – | CS: *…a následné fáze.* EN: *…and subsequent phases.* | Předseda (R1.4) |
 
 `c1_charter_kvalita` = počet kolonek se správným útržkem (cíl, termín, kritéria), 0–3.
+
+Útržky nejsou předměty. Hra si pamatuje, co hráč slyšel nebo získal, a M01 nabídne jen tyto
+útržky. Nesmysly Předsedy zazní v jeho prvním rozhovoru. „…a následné fáze“ v M01 není, Předseda
+s nimi přijde až po razítku (R1.4).
 
 ### M02 Kdo tu vlastně velí: postavy na mapě
 
@@ -199,8 +203,13 @@ Plné šipky jsou nutné kroky, tečkované jsou náhradní nebo volitelné cest
 | CS: *Archa musí být největší v kraji!* EN: *The Ark must be the biggest in the region!* | CS: *Podle původního zadání má odvézt všechny obyvatele. Velikost z toho vyplyne.* EN: *The original brief says it has to carry everyone. The size follows from that.* (z archivu) | CS: *Bude největší na světě.* EN: *It'll be the biggest in the world.* |
 | CS: *Minule to taky nevyšlo.* EN: *It didn't work last time either.* | CS: *Minule se nikdo nezeptal rybářů. My se zeptáme.* EN: *Last time nobody asked the fishermen. We will.* (karta poučení) | CS: *Minule jsem tu nebyl já.* EN: *Last time you didn't have me.* |
 | CS: *Kdo za to ponese odpovědnost?* EN: *Who's going to take responsibility?* | CS: *Vy za to proč, já za to jak.* EN: *You own the why. I own the how.* | CS: *Já za všechno!* EN: *Me. For everything!* |
+| CS: *A jak poznám, že se to povedlo?* EN: *And how will I know it worked?* | CS: *Archa unese 4 812 lidí a vzlétne. To se dá spočítat. I vyfotit.* EN: *The Ark carries 4,812 people and lifts off. You can count that. And photograph it.* (Bára) | CS: *Všichni budou nadšení!* EN: *Everyone will be thrilled!* |
 
-Rychlé repliky vyhrají kolo, ale každá zvyšuje `c1_slib_vseho`. Tři rychlé repliky = R1.1 „slíbit všechno“.
+**Pravidla:** 5 kol (páté: *A jak poznám, že se to povedlo?* s dobrou replikou z Bářiných čísel),
+výhra = aspoň 3 vyhraná kola. Dobrá replika se ukáže jen s podkladem (kolo 2 zadání, kolo 3
+karta poučení, kolo 5 Bářina čísla), kola 1 a 4 mají dobrou repliku vždy. Rychlá replika kolo
+vyhraje a zvýší `c1_slib_vseho` o 1 (0–5), slabá kolo prohraje. Tři a víc rychlých replik = R1.1
+„slíbit všechno“. Prohra nic nebere, souboj jde opakovat.
 
 ## Ukázkové dialogy
 

@@ -31,11 +31,11 @@ prohlédnout, sebrat, použít, rozhovor.
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
 | Stůl s hrnkem kávy | aktivní místo | jediná věc v bytě, která funguje | sebrat → **hrnek kávy** | – | učí sebrat |
-| Propiska | aktivní místo | propiska bez inkoustu, „vydrží všechno“ | sebrat → **propiska** | – | |
+| Propiska | aktivní místo | propiska bez inkoustu, „vydrží všechno“ | sebrat → **propiska** | – | popisek z názvu předmětu |
 | Police s knihou | aktivní místo | dárek k narozeninám, nikdy neotevřený | sebrat → **Prof. Pembok** | – | Pembok zatím mlčí |
 | Zeď slávy | aktivní místo | 14 diplomů za 14 projektů; č. 9 „týdenní výměna žárovek, 6 let, probíhá“ | Ruda: „To nebyl projekt, to byl provoz.“ | – | V01, volitelné |
-| Dveře | aktivní místo | buší na ně věřitelé | rozhovor přes dveře (2–3 volby) | – | učí rozhovor |
-| Škvíra pode dveřmi | aktivní místo | – | věřitel prostrčí „stížnost“ k podpisu; Ruda podepíše cizí propiskou a polije papír kávou → **dekret** | hrnek kávy v ruce | cutscéna, vznik dekretu |
+| Dveře | aktivní místo | buší na ně věřitelé | rozhovor přes dveře; volba „Co chcete?“: pode dveřmi „stížnost“ a cizí propiska, Ruda podepíše a polije papír kávou → **dekret** | podpis jen s hrnkem kávy | učí rozhovor; vznik dekretu |
+| Škvíra pode dveřmi | aktivní místo | chodí jí účty, upomínky a průvan | – | – | jen k prohlédnutí |
 | Díra ve zdi | východ | chybějící stěna, výhled na město, skluz na suť | → S1 | dekret, káva, propiska a Pembok v inventáři | jen jednou |
 
 ## S1 Náměstí (den, večer)
@@ -61,7 +61,7 @@ prohlédnout, sebrat, použít, rozhovor.
 | Výtah | aktivní místo | tlačítka 1 a 1½, místo „2“ díra | → S5; s tlačítkem „2“ → S4 | – | P1.6 |
 | Schody nahoru | aktivní místo | „ve fázi 2“, zatarasené páskou | Ruda: nejdou | – | gag, ne puzzle |
 | Úřední deska | aktivní místo | „Komise: úřední hodiny příští fáze“ | – | – | náznak Předsedy |
-| Schody do sklepa | východ | – | → S3 | – | |
+| Schody do sklepa | východ | odtud se nic nevrací, jen lístky | → S3 | – | volné, archiv hlídá Lumír |
 | Dveře ven | východ | – | → S1 | – | |
 
 ## S3 Archiv zkrachovalých projektů
@@ -69,12 +69,15 @@ prohlédnout, sebrat, použít, rozhovor.
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
 | Archivář Lumír | postava | hrdý na každý dokončený lístek | dialog `lumir` | – | P1.4 |
-| Kartotéka | aktivní místo | seřazená podle plánovaného dokončení, všude „příští rok“ | číst lístky (výtah, most, Archa chybí) | číslo projektu | P1.5, P1.7; část hotova v I1 |
+| Kartotéka | aktivní místo | seřazená podle plánovaného dokončení, všude „příští rok“ | číst lístky (výtah s krabicí 87/3, most); seřadit pět lístků | vstup do archivu | P1.5, P1.6; část hotova v I1 |
 | Lumírova kniha | aktivní místo | kniha skutečných dat zahájení | číst | – | klíč k P1.5 |
 | Regál s krabicemi | aktivní místo | krabice podle čísel lístků | Lumír vydá krabici podle čísla z lístku | číslo krabice z kartotéky | P1.6 |
-| Mapník | aktivní místo | katastrální mapy, „mapy nejsou projekty“ | sebrat → **katastrální mapa** | – | P1.9 |
+| Mapník | aktivní místo | katastrální mapy, „mapy nejsou projekty“ | sebrat → **katastrální mapa** | vstup do archivu | P1.9 |
+| Krabička Poučení | aktivní místo | jediná karta, Lumír ji hlídá | výpůjčka kávovým perem → **karta poučení** | vstup do archivu | P1.7 |
 | Hluboký regál | aktivní místo | zvenku hlubší než zevnitř (jen Bára si všimne) | Bára: metr → přihrádka | úsek za Báru | P1.12 |
 | Schody | východ | zábradlí končí v půlce | → S2 | – | hotovo v I1 |
+
+Dokud Ruda nemá číslo projektu, Lumír ho zastaví u každého prvku archivu („Číslo projektu.“).
 
 ## S4 Starostova pracovna (2. patro)
 
@@ -94,7 +97,7 @@ prohlédnout, sebrat, použít, rozhovor.
 | Fronta na frontu | aktivní místo | fronta, do které se stojí ve frontě | postavit se → úsek za Báru | charter hotový | P1.11 |
 | Ing. Framework | postava | kufr krabic s metodikami | dialog `framework` | – | jen ve frontě |
 | Cedule | aktivní místo | „Úřední hodiny: příští fáze“ | – | – | |
-| Razítko a poduška | aktivní místo | poduška vyschlá „ve fázi 2“ | babiččina poduška / káva → razítko | charter, Předseda souhlasí | P1.13 |
+| Razítko a poduška | aktivní místo | poduška vyschlá „ve fázi 2“ | babiččina poduška / káva → razítko | papír o Arše a Předsedův souhlas; kávu jde nalít i dřív | P1.13 |
 | Stůl pro žadatele | aktivní místo | sem se skládá charter | M02, pak M01 | podpis sponzora, původní zadání | P1.9, P1.11 |
 | Telefon | aktivní místo | – | – | – | konec kapitoly |
 | Výtah | východ | – | → S2, S4 | – | |
@@ -125,7 +128,7 @@ Ruda má 15 předmětů, Bára 2 (ikony 1–17, D52).
 | 7 | Požadavek Pana Změny | S1, kávové pero na stánek | cesta B | ne (vrací se v kap. 3) | ikony-1 #7 |
 | 8 | Tlačítko „2“ | S3, krabice výtahu | po vstupu do archivu | ve výtahu | ikony-1 #8 |
 | 9 | Původní zadání Archy | S3, kartotéka | po seřazení | v M01 (útržek cíle) | ikony-1 #9 |
-| 10 | Karta poučení (Most 1974) | S3, Lumír | po výpůjčce kávovým perem | ne (replika do M03) | ikony-2 #1 |
+| 10 | Karta poučení (Most 1974) | S3, Lumírova krabička Poučení | po výpůjčce kávovým perem | ne (replika do M03) | ikony-2 #1 |
 | 11 | Katastrální mapa | S3, mapník | po vstupu do archivu | ne (M02, babička) | ikony-2 #2 |
 | 12 | Razítková poduška | S6, babička | jen spojenec (R1.2) | při razítku | ikony-2 #3 |
 | 13 | Podpis sponzora | S4, starosta | po M03 | v M01 | ikony-2 #4 |

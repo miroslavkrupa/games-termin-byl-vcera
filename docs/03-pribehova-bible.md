@@ -244,7 +244,7 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | Volba nebo výsledek | Příznak | Nastaví se | Čte se | Následek | Mění proměnnou |
 |---|---|---|---|---|---|
 | R1.1 slíbit všechno | `c1_slib_vseho` | kap. 1 (M03) | kap. 2, 4 | sponzor trvá na všem, souboj v kap. 4 je tvrdší, chybí prostor pro vyjednávání | důvěra stakeholderů, rozsah, **Rudův vývoj** |
-| R1.2 babička | `c1_babicka` | kap. 1 | kap. 4 | přehlédnutá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
+| R1.2 babička | `c1_babicka` | kap. 1 | kap. 4 | přehlédnutá nebo odbytá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
 | R1.3 Bára vyslechnuta | `c1_bara_vyslechnuta` | kap. 1 | kap. 2, 3 | Bára radí s rozdělením Archy; v kap. 3 řekne o vadě v softwaru, nebo mlčí | Bářina důvěra |
 | R1.4 „následné fáze“ | `c1_faze2` | kap. 1 | kap. 2, 3 | Předseda má páku: „fáze 2“ v roadmapě, analýza dopadu u každé změny | čas |
 | M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | snazší rozdělení a R4.2, repliky do souboje | důvěra stakeholderů |

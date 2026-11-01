@@ -112,10 +112,14 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Řešení:** podle Lumírovy knihy skutečných dat zahájení seřadit pět lístků (most 1974,
   výtah 1987, kašna 1994, Archa 1994, lešení radnice 1986) podle skutečného data. Archa
   a kašna mají stejný rok, rozhodne měsíc v knize. Za lístkem Archy je složené původní zadání.
+  Lumír ho vydá, až když je lístek na svém místě: „Přílohy vydávám jen k lístkům, které jsou
+  na svém místě.“
+- **Ovládání:** překryvná obrazovka s pěti lístky, které se přetahují do řady; pořadí se
+  kontroluje po každém přesunu. Je to malá hádanka, ne minihra.
 - **Stopy ve světě:** prohlédnutí kartotéky („podle plánovaného dokončení“); Lumír: „Plány se
   mění. Data zahájení ne.“; kniha leží na pultu otevřená.
 - **Chybné, ale logické pokusy:** řadit abecedně (Lumír: „Abecedně? Jsme archiv, ne
-  telefonní seznam.“), podle čísla projektu (čísla se v roce 1990 přečíslovala).
+  telefonní seznam.“), vzít lístek Archy bez řazení (Lumír vydá přílohu jen k zařazenému lístku).
 - **Nápověda:** 1 „Kartotéka lže. Plány tu vždycky lhaly.“ · 2 „Kdy projekty doopravdy
   začaly? To se nedá přeplánovat.“ · 3 „Seřaď lístky podle Lumírovy knihy.“
 - **Příznaky:** předmět **původní zadání**.
@@ -138,10 +142,12 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Riziko:** žádné; hlavní vtip „projekt od 1987, hotové jedno tlačítko“.
 
 ### P1.7 Karta poučení
-- **Cíl hráče:** získat lístek „Most přes řeku (1974): zapomněli jsme se zeptat rybářů“.
-- **Překážka:** lístky neopouštějí archiv bez podepsané výpůjčky a propiska nepíše.
+- **Cíl hráče:** získat kartu poučení „Most přes řeku (1974): zapomněli jsme se zeptat rybářů“
+  z Lumírovy krabičky „Poučení“, kde je jediná. Lístek mostu v kartotéce zůstává pro řazení.
+- **Překážka:** karta neopustí archiv bez podepsané výpůjčky a propiska nepíše.
 - **Řešení:** kávovým perem podepsat Lumírovi výpůjčku.
-- **Stopy ve světě:** Lumír: „Výpůjčka. Podpis. Čitelný.“; prázdná propiska u něj ★.
+- **Stopy ve světě:** lístek mostu („Pozn.: viz poučení“), krabička Poučení; Lumír: „Výpůjčka.
+  Podpis. Čitelný.“; prázdná propiska u něj ★.
 - **Chybné, ale logické pokusy:** podepsat propiskou (nic nezůstane), opsat si to (Ruda si
   nezapamatuje ani vlastní číslo bot).
 - **Nápověda:** 1 „Lumír ti kartu půjčí. Formálně.“ · 2 „Potřebuješ něco, co píše.“ · 3 jako
@@ -155,13 +161,17 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Překážka:** starosta chce „něco, co bude v novinách“ a vznáší námitky.
 - **Řešení:** vyhrát M03 dobrými replikami: z původního zadání, karty poučení a Bářiných
   kritérií. Nebo vyhrát „rychlými“ sliby (R1.1).
+- **Pravidla:** 5 kol, výhra = aspoň 3 vyhraná kola. Dobrá replika se ukáže jen s podkladem
+  (kolo 2 zadání, kolo 3 karta poučení, kolo 5 Bářina čísla), kola 1 a 4 ji mají vždy. Rychlá
+  replika kolo vyhraje a přičte 1 k `c1_slib_vseho`, slabá kolo prohraje. Bez Báry i bez karty
+  jde vyhrát poctivě (kola 1, 2, 4).
 - **Stopy ve světě:** noviny na stole, fotky se stuhami; Pembok před soubojem: „Starosta
   chce noviny. Dej mu titulek, který je pravda.“
 - **Chybné, ale logické pokusy:** slíbit všechno: vyhraje, ale zvýší `c1_slib_vseho`.
   Prohrát: starosta pošle Rudu pryč a hráč se může vrátit s lepšími replikami.
 - **Nápověda:** 1 „Chybí ti argumenty.“ · 2 „Co víš o tom, proč Archa vznikla, a o mostu
   z roku 1974?“ · 3 konkrétně podle chybějící repliky.
-- **Příznaky:** `c1_slib_vseho` (0–3, tři rychlé repliky = R1.1 „slíbit všechno“), předmět
+- **Příznaky:** `c1_slib_vseho` (0–5 = počet rychlých replik; od 3 je to R1.1 „slíbit všechno“), předmět
   **podpis sponzora**, útržek termínu (30 dní).
 - **Co nese:** V05, V02.
 - **Riziko:** nejdražší na texty. Začít se 4 koly (ukázková v [návrhu](01-iniciace.md)).
@@ -189,7 +199,9 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
   něco (přehlédne to a zavře okno).
 - **Nápověda:** 1 „Na mapě je jméno.“ · 2 „Pozemek pod rampou je něčí.“ · 3 „Zajdi za babičkou
   uličkou k rampě a poslouchej ji.“
-- **Příznaky:** `c1_babicka` = `spojenec` / `prehlizena` (nenavštívena po M02) / `neodhalena`.
+- **Příznaky:** `c1_babicka` = `spojenec` / `odmitnuta` (spěchal nebo slíbil; okno zůstane
+  zavřené do konce kapitoly a poduška se nedá získat) / `prehlizena` (nenavštívena po M02) /
+  `neodhalena`.
 - **Co nese:** V04; následek v kap. 4.
 - **Riziko:** hráč ji vynechá, aniž by věděl, že něco vynechal. To je záměr. Následek v kap. 4
   musí být fér: kocour i mapa jsou výrazné.
@@ -199,7 +211,8 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Překážka:** útržky jsou rozházené po celé kapitole, mezi nimi nesmysly.
 - **Řešení:** M01: do kolonek dát správné útržky (cíl ze zadání, termín od starosty, kritéria
   od Báry, kdo rozhoduje z podpisu). Pak se postavit do fronty na frontu.
-- **Stopy ve světě:** každý útržek hráč dostal s replikou, kterou si může vybavit.
+- **Stopy ve světě:** každý útržek hráč dostal s replikou, kterou si může vybavit. Útržky nejsou
+  předměty: hra si pamatuje, co hráč slyšel, a M01 nabídne jen tyto útržky.
 - **Chybné, ale logické pokusy:** nesmysly Pana Změny a Předsedy vyplní kolonku, ale sníží
   kvalitu. Bez Bářiných kritérií zbude jen „Všichni budou spokojení“.
 - **Nápověda:** v minihře.
@@ -232,7 +245,8 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Chybné, ale logické pokusy:** kávové pero na razítko (★ „Pero není razítko.“), podepsat
   se místo razítka (Předseda: „Podpis bez razítka je jen kresba.“).
 - **Nápověda:** 1 „Razítko bez barvy nic neorazítkuje.“ · 2 „Co tu máš hnědého a tekutého?“
-  (nebo „Kdo ve městě má něco dokončeného, i podušku?“) · 3 „Polij podušku kávou.“
+  (nebo „Kdo ve městě má něco dokončeného, i podušku?“; s poduškou „Máš babiččinu podušku.“)
+  · 3 „Polij podušku kávou.“ Kávu jde na podušku nalít i dřív, razítko pak čeká na papír.
 - **Příznaky:** `c1_razitko` = `poduska` / `kava`, `c1_faze2`, předmět **klíč od hangáru**.
 - **Co nese:** V03 (rozsah má hranice).
 - **Riziko:** R1.4 musí být čitelná jako volba, ne jako nevinná formalita. Předseda ji nabídne

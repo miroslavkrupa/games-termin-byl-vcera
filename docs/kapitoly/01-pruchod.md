@@ -26,14 +26,14 @@ Formát: `č. scéna · kdo · akce → výsledek · příznak`. Akce: *prohléd
 13. S3 · Ruda · použij Kartotéka → lístek Modernizace výtahu, krabice č. 87/3
 14. S3 · Ruda · mluv Lumír → „Krabici 87/3, prosím.“ → tlačítko „2“
 15. S3 · Ruda · prohlédni Lumírova kniha → skutečná data zahájení
-16. S3 · Ruda · použij Kartotéka → seřadit 5 lístků podle knihy → původní zadání
-17. S3 · Ruda · použij Kávové pero na Lumír → výpůjčka → karta poučení
+16. S3 · Ruda · použij Kartotéka → seřadit 5 lístků podle knihy → Lumír vydá přílohu: původní zadání
+17. S3 · Ruda · použij Kávové pero na Lumír → výpůjčka z krabičky Poučení → karta poučení
 18. S3 · Ruda · vezmi Mapník → katastrální mapa
 19. S3 · Ruda · jdi Schody → S2
 20. S2 · Ruda · použij Tlačítko „2“ na Výtah → výtah do 2. patra → S4
-21. S4 · Ruda · mluv Starosta → M03 Souboj argumenty, dobré repliky (zadání, karta, kritéria) → podpis sponzora, termín 30 dní · c1_slib_vseho=0
+21. S4 · Ruda · mluv Starosta → M03 Souboj argumenty, dobré repliky (zadání, karta, kritéria) → 4–5 vyhraných kol z 5 → podpis sponzora, termín 30 dní · c1_slib_vseho=0
 22. S4 · Ruda · použij Výtah → 1½ → S5
-23. S5 · Ruda · použij Stůl pro žadatele → Pembok: „Nejdřív si nakresli, kdo tu velí.“ → M02, babička umístěna podle mapy · c1_babicka=odhalena
+23. S5 · Ruda · použij Stůl pro žadatele → Pembok: „Nejdřív si nakresli, kdo tu velí.“ → M02, babička umístěna podle mapy · c1_babicka=odhalena (bez návštěvy S6 na konci `prehlizena`)
 24. S5 · Ruda · použij Stůl pro žadatele → M01 Charter z trosek (cíl, termín, kritéria) → charter · c1_charter_kvalita=3
 25. S5 · Ruda · použij Fronta na frontu → Ruda čeká, Framework nabízí „frontu 2.0“
 26. S3 · Bára · prohlédni Hluboký regál → „Zvenku je delší.“
@@ -80,6 +80,7 @@ Odhad úplné cesty 50–60 minut (rozpočet 40–60, D56).
 | **D Slíbit všechno** (R1.1) | 21: tři rychlé repliky | `c1_slib_vseho`=3; kap. 2 a 4 tvrdší |
 | **E Babička neodhalená** | bez mapy i obojku; v M02 babička chybí | `c1_babicka`=`neodhalena`; kap. 4 blokuje rampu |
 | **F Babička odhalená, nenavštívená** | M02 s babičkou, ale bez S6 | `c1_babicka`=`prehlizena`; kap. 4 blokuje rampu |
+| **J Babička odbytá** (R1.2) | S6: spěchat nebo slíbit → okno se zavře | `c1_babicka`=`odmitnuta`; razítko jen kávou; kap. 4 blokuje rampu |
 | **G Následné fáze přijaty** (R1.4) | 30: přijmout | `c1_faze2`=true; kap. 2–3 Předseda má páku |
 | **H Razítko poduškou** | 29: poduška místo kávy | `c1_razitko`=`poduska`; v kap. 2 bez formuláře navíc |
 | **I Bez karty poučení** | vynechat 17 | souboj těžší (jedna dobrá replika chybí) |
@@ -94,7 +95,7 @@ pro `ladeni.gd`. Každá končí kontrolou příznaků.
 - [x] Kávové pero jde vyrobit kdykoli a potřebuje ho cesta B i karta poučení. Káva je nekonečná.
 - [x] Souboj jde opakovat; prohra nic nebere.
 - [x] M01 i M02 jdou dokončit i s horšími útržky (R1.3, R1.2 jsou volby, ne zámky).
-- [x] Razítko má dvě cesty (poduška, káva).
+- [x] Razítko má dvě cesty (poduška, káva). Zavřené okno babičky ho nezablokuje, zbývá káva.
 - [x] Žádný předmět se nedá ztratit ani dát pryč ([předměty](01-mistnosti.md#předměty)).
 - [x] Do Komise jde přijet dřív než ke starostovi: Předseda bez podpisu sponzora „nemůže
   zařadit ani do fronty“. Není to slepá ulička.

@@ -94,6 +94,7 @@
 | návrh | „Vynikající. Právě proto ho musíme důkladně odložit.“ (ukázka v návrhu) | – | – | 2 |
 | razítko | poduška ve fázi 2; po kávě: „Hnědé razítko. Platné. Bohužel.“ | charter | `c1_razitko` | 5 |
 | „a následné fáze“ | vlídně navrhne připsat; Ruda odmítne s odkazem na rozsah, nebo přijme | po razítku | `c1_faze2` | 6 |
+| do kdy, kdo rozhoduje | „Až to bude.“ a „Komise pro schvalování komisí. Pokud schválí.“ (nesmysly do M01) | – | – | 4 |
 | klíč | předá klíč od hangáru „s přáním hladké fáze 2“ | – | klíč | 3 |
 | telefonát (konec) | zamlžený (D44): slyšíme jen „Ano… Pustil jsem ho dál… Nebojte se.“ a dveře se zavřou | konec | – | 3 |
 | dekret, zadání ★ | u zadání krátce zbledne (náznak, D44) | předmět | – | 3 |
@@ -114,7 +115,7 @@
 | uvítání | jediná dokončená stavba ve městě; nikdo s ní nemluví (ukázka v návrhu) | – | – | 3 |
 | bez znalosti pozemku | jen prádlo, zahrádka, počasí | `c1_babicka` ≠ odhalena | – | 3 |
 | pozemek pod rampou | „Konečně se někdo ptá.“ Vypráví o rampě, která jí stíní rajčata | mapa nebo obojek | – | 6 |
-| vyslechnout / spěchat | vyslechnout → spojenkyně a poduška; spěchat nebo slibovat → zavře okno | – | `c1_babicka` | 6 |
+| vyslechnout / spěchat | vyslechnout → spojenkyně a poduška; spěchat nebo slibovat → zavře okno do konce kapitoly | – | `c1_babicka` = `spojenec` / `odmitnuta` | 6 |
 | buchta, kocour | gagy | spojenec | – | 4 |
 
 ## Ruda a prohlížení
@@ -149,15 +150,15 @@
 Rozpočet je 400–500 (D56). Z toho asi 110 replik už je v I1. Když se v N6 ukáže, že je
 to moc, škrtají se nejdřív vlastní reakce ★ s nejnižší pravděpodobností a gagy v úvodu.
 
-## Skutečnost po N6 (2026-11-01)
+## Skutečnost po N6 a N4 (2026-11-01)
 
 | | Odhad | Napsáno |
 |---|---|---|
-| Repliky (mluvené, bez voleb) | ≈ 460 | 540 |
-| Volby dialogů | v odhadu | 56 |
-| Popisky, útržky, GUI | v odhadu | 116 |
+| Repliky (mluvené, bez voleb) | ≈ 460 | 546 |
+| Volby dialogů | v odhadu | 58 |
+| Popisky, útržky, GUI | v odhadu | 117 |
 
-Repliky jsou asi o 17 % nad odhadem a o 8 % nad horní hranicí rozpočtu. Navíc proti osnově jsou
+Repliky jsou asi o 19 % nad odhadem a o 9 % nad horní hranicí rozpočtu. Navíc proti osnově jsou
 hlavně pátá kola souboje M03, reakce mimo souboj, Bára v archivu a výchozí reakce Báry.
 Asi 60 replik jsou vlastní reakce ★ a přečte je jen hráč, který zkouší kombinace, takže
 běžný průchod je kratší. Škrtat jde už při autorské kontrole (N4), hlavně ale po playtestu

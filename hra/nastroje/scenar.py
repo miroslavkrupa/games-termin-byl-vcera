@@ -32,7 +32,8 @@ SCENY = [
     ("Archiv", [
         "ch1_archiv_", "ch1_hs_schody", "ch1_schody_", "ch1_hs_kartoteka", "ch1_kartoteka_", "ch1_listek_",
         "ch1_hs_kniha", "ch1_kniha_", "ch1_hs_regal", "ch1_regal_", "ch1_hs_mapnik", "ch1_mapnik_",
-        "ch1_hs_hluboky_regal", "ch1_hluboky_regal_", "ch1_lumir_", "postava_lumir",
+        "ch1_hs_hluboky_regal", "ch1_hluboky_regal_", "ch1_hs_pouceni", "ch1_pouceni_", "ch1_lumir_",
+        "postava_lumir",
     ]),
     ("Archiv: úsek za Báru", ["ch1_usek_", "obecne_bara_", "predmet_metr", "predmet_seznam"]),
     ("Starostova pracovna a M03", [
