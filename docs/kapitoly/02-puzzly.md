@@ -184,7 +184,7 @@ pro autory.
 - **Nápověda:** 1 „Mlha je pro obě stejná. Jen cesta je v ní vidět dál.“ · 2 „Cestu plánuj
   dopředu, řeku jen kousek. Hlavně ať se potkají u mostů.“ · 3 v minihře: ukáže sloupec, kam
   patří nejbližší most.
-- **Příznaky:** `c2_mosty` (0–3); předmět **plán cesty ke startu**.
+- **Příznaky:** `c2_mosty` (seznam funkčních mostů, 0–3); předmět **plán cesty ke startu**.
 - **Co nese:** V08, V11.
 - **Riziko:** složitá pravidla. Bára je první kolo vysvětlí na příkladu, než hráč začne.
 

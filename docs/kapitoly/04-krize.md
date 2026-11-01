@@ -26,6 +26,7 @@
    to, co lidé opravdu dostali.
 3. **Krize na rozhraní** podle `c3_integrace`: software nejde do zavřeného trupu, trup neunese
    zařízení, nástupní aplikace neví o změně rampy. Řeší se v trupu a dílně (servisní poklop).
+   Tři druhy odpovídají třem chybám v M15 kapitoly 3.
 4. **Babička blokuje rampu** jen tehdy, když ji hráč v kap. 1 přehlédl (`c1_babicka`). Pak
    vedlejší úkol na staveništi. Spojenkyně babička naopak pomůže.
 5. **R4.1:** Ruda musí za sponzorem. Eskalovat poctivě s variantami, nebo dál reportovat zeleně?
@@ -39,7 +40,7 @@
    hned, rozhoduje její důvěra.
 10. **R4.3 Usmíření:** Ruda přizná, že plán nestačí, nebo trvá na svém.
 11. **M11 Plachetnice:** retrospektiva po usmíření. Tým vybere jedno zlepšení pro kap. 5.
-    Bez retrospektivy v kap. 3 (R3.3) tu chybí člen týmu.
+    Bez posezení v kap. 3 (R3.3) tu chybí člen týmu, který drží klíč od servisního poklopu.
 12. **Konfrontace v kanceláři Komise:** Předseda odhalen. Archa je připravená ke startu.
 
 ## Místa (rozpočet 5 scén, z toho 1 nová)
@@ -104,6 +105,10 @@ Další příznaky: `c4_souboj` (M03, výsledek), `c4_zlepseni` (M11, jedno zlep
 | `c3_retro` | bez retrospektivy odchází člen týmu s klíčovým předmětem |
 | `c3_creep`, `c3_bazen` | velký Scope Creep sežere kus kapacity |
 | `c3_vada_hlasena` | nenahlášená vada se projeví v krizi |
+| `c3_poklop` | krize na rozhraní se řeší servisním poklopem; `netesni` = poklop teče, `ne` = trup se musí otevřít (doplněno při N3 kap. 3) |
+| `c3_klic_poklopu` | bez posezení (`c3_retro` = ne) odejde právě ten, kdo drží klíč od poklopu (doplněno při N3 kap. 3) |
+| `c3_rezerva`, `c3_drolivy` | rezerva dní na krizi; drolivá rampa při `krabice` (doplněno při N3 kap. 3) |
+| `c3_krysy` | `aktovka`: krysy žijí v kanceláři Komise (vtip při konfrontaci) |
 
 ## Rozpočet
 

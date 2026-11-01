@@ -45,6 +45,8 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 | Pozemek pod rampou a babiččina chaloupka | 1, 4 | jediná dokončená stavba ve městě | přehlížený stakeholder |
 | Staveniště rampy s jediným jeřábem | 2–4 | beton zraje, jeřáb je jen jeden, všichni ho chtějí | harmonogram, kritická cesta |
 | Dílna a hangár Archy | 2–4 | hromady rozdělaných věcí; Bářin kout s prototypy a maketami kajut | WIP, technický dluh, prototypy |
+| Sklad materiálu | 3 | krysy na hnízdě z papírů z roku 1994, plechy, servisní poklop | riziko, které se splnilo |
+| Trup Archy zevnitř | 3–4 | přípojky, místo pro počítač, otvor na poklop | integrace |
 | Hospoda U Odhadu | 2 | tady se odhaduje, sází a podvádí | planning poker, optimismus |
 | Mlžná pláň | 2 | krajina, kterou nikdo nezmapoval | roadmapa, nejistota |
 | Řídicí věž | 4 | dashboardy svítí zeleně, zatímco vše hoří | melounový reporting |
@@ -113,7 +115,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 | **Babička Pozemková** | tichý, ale mocný stakeholder | vlastní pozemek pod rampou; přehlédnutí se vymstí |
 | **Sponzor, starosta Bohumil** | sponzor | chce výsledek, nerozumí mu, mění priority podle novin |
 | **Prof. Pembok** | mluvící kniha, rádce | ironická nápověda a správce Deníku projektového manažera |
-| **Scope Creep** | tvor | roste s každou přijatou neřízenou změnou; maskot hry |
+| **Scope Creep** (ve hře Ještětoto / Scopecreeper, D71) | tvor | malý chlupatý ještěr; narodí se v kap. 3 z prvního neřízeného přání („A ještě tohle…“); jméno se s velikostí natahuje (Ještětototo, Scopecreeeper); roste s každou přijatou neřízenou změnou; maskot hry |
 | **Kočka Riziková** | mazlíček | získá ji jen ten, kdo v kap. 2 dal obálku na krysy (R2.3); ve 3. kapitole zachraňuje situaci |
 | **Tým podivínů** | členové týmu | 6 kandidátů s vlastnostmi a vadami; hráč vybírá 4 (rozpočet D56) |
 
@@ -248,7 +250,7 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | R1.3 Bára vyslechnuta | `c1_bara_vyslechnuta` | kap. 1 | kap. 2, 3 | Bára radí s rozdělením Archy; v kap. 3 řekne o vadě v softwaru, nebo mlčí | Bářina důvěra |
 | R1.4 „následné fáze“ | `c1_faze2` | kap. 1 | kap. 2, 3 | Předseda má páku: „fáze 2“ v roadmapě, analýza dopadu u každé změny | čas |
 | M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | při 3 visí nad tabulí rozdělení cíl „Odvézt všechny obyvatele“ (stopa); snazší R4.2, repliky do souboje | důvěra stakeholderů |
-| M01 „Co na Archu nepatří“ | `c1_mimo_rozsah` | kap. 1 | kap. 2 | bazén, terasa ani fontána se neobjeví na tabuli rozdělení ani po slibu | rozsah |
+| M01 „Co na Archu nepatří“ | `c1_mimo_rozsah` | kap. 1 | kap. 2, 3 | bazén, terasa ani fontána se neobjeví na tabuli rozdělení ani po slibu; v kap. 3 Pan Změna hned přijme výměnu bazénu | rozsah |
 | razítko | `c1_razitko` | kap. 1 | kap. 2 | kávové razítko: formulář navíc | – |
 | seznam pasažérů | `c1_seznam_pasazeru` | kap. 1 (Bára) | kap. 4 | hlavní důkaz proti Předsedovi (D59) | – |
 | dohoda s Panem Změnou | `c1_zmena_dohoda` | kap. 1 | kap. 2, 3 | M10 o kolo kratší | rozsah |
@@ -257,17 +259,20 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | R2.3 riziko předem | `c2_riziko_predem` | kap. 2 | kap. 3, 4 | krysy: kočka Riziková vyřeší sklad za minutu; lano: jeřáb bez výpadku; úsměv: kratší konfrontace s Předsedou | čas |
 | M04 rozpad práce | `c2_rozpad` | kap. 2 | kap. 3 | mezery a překryvy jako překvapení | čas, technický dluh |
 | odhad bez kotvy | `c2_odhad` | kap. 2 | kap. 2 (M06), 3 | kotva „dva dny“: rampa se na mapě natáhne pozdě, nejvýš 2 mosty; v M13 se připomene | čas |
-| M06 roadmapa | `c2_mosty` | kap. 2 | kap. 3 | integrační body pro M15 | sladění světů |
+| M06 roadmapa | `c2_mosty` (seznam: `trup`, `nastup`, `start`) | kap. 2 | kap. 3 | most *trup se zavírá*: Bára v M15 ví přesně, co bude hotové; most *zkouška nástupu*: zná den lávky bez rozpisu rampy | sladění světů |
 | M07 rizika | `c2_rizika_zapsana` | kap. 2 | kap. 3, 4 | zapsaná rizika nezaskočí | čas |
-| R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Scope Creep vyroste a sežere kapacitu; svačiny přes schvalování: naštvaní obyvatelé | rozsah, důvěra, sladění světů |
-| R3.2 Bára a priority | `c3_bara_priority` | kap. 3 | kap. 4 | řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
-| R3.3 retrospektiva | `c3_retro` | kap. 3 | kap. 4 | bez ní se opakují chyby, morálka padá, člen týmu odchází s klíčovým předmětem | morálka |
-| M13 harmonogram | `c3_rezerva` | kap. 3 | kap. 4 | rezerva na krizi | čas |
+| R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Ještětoto (Scope Creep) vyroste a bazén zabere v trupu místo kabelu (M15); svačiny přes posouzení: naštvaní obyvatelé | rozsah, důvěra, sladění světů |
+| R3.2 Bára a pořadí práce | `c3_bara_priority` | kap. 3 (dílna, před M15) | kap. 3, 4 | hned v M15: co je hotové k zavření trupu; kap. 4: řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
+| R3.3 co příště jinak | `c3_retro`, `c3_zlepseni` | kap. 3 | kap. 4 | bez posezení se opakují chyby, morálka padá a odejde člen týmu s klíčem od servisního poklopu (`c3_klic_poklopu`); zlepšení navazuje na M11 | morálka |
+| M13 harmonogram | `c3_rezerva` (−3 až 2) | kap. 3 | kap. 4 | rezerva na krizi, záporná = zpoždění rampy | čas |
+| M13 ukázky betonu (jen `krabice`) | `c3_drolivy` | kap. 3 | kap. 4 | rampa se drolí | čas, technický dluh |
 | M14 ukázka | `c3_hodnota` | kap. 3 | kap. 4, 5 | obyvatelé dostanou, co potřebují | důvěra stakeholderů |
-| M10 změny | `c3_creep` | kap. 3 | kap. 4, 5 | velikost Scope Creepa | rozsah, čas |
+| M10 změny | `c3_creep` | kap. 3 | kap. 4, 5 | velikost Ještětoto (Scope Creep) | rozsah, čas |
+| servisní poklop | `c3_poklop` | kap. 3 (M10, trup) | kap. 3 (M15), 4 | bez poklopu nejde nic přidat po zavření trupu; krize v kap. 4 se řeší poklopem, jen když je | sladění světů |
 | M15 integrace | `c3_integrace` | kap. 3 | kap. 4, 5 | nesladěné body jako krize na rozhraní | sladění světů |
-| vada v softwaru | `c3_vada_hlasena` | kap. 3 (Bára) | kap. 4 | nenahlášená vada se projeví v krizi | Bářina důvěra |
-| sprint | `c3_dluh` | kap. 3 (Bára) | kap. 4 | přeplněné sprinty: víc chyb v krizi | technický dluh |
+| vada v počítadle (4 811) | `c3_vada_hlasena` | kap. 3 (Bára, nebo Ruda, když se zeptá a nechá ji domluvit) | kap. 4 | nenahlášená vada se projeví v krizi | Bářina důvěra |
+| krysy ve skladu | `c3_krysy` | kap. 3 | kap. 4 | `aktovka`: krysy žijí v Komisi (vtip) | – |
+| plán kola | `c3_dluh` | kap. 3 (Bára) | kap. 4 | přeplněná kola: víc chyb v krizi | technický dluh |
 | R4.1 report | `c4_report` | kap. 4 | kap. 5 | zelený report: start na falešných datech, horší konec | důvěra stakeholderů, **Rudův vývoj** |
 | R4.2 co obětovat | `c4_obet` | kap. 4 | kap. 5 | co v Arše chybí, reakce obyvatel v epilogu | rozsah |
 | R4.3 usmíření | `c4_usmireni` | kap. 4 | kap. 5 | snazší finální puzzle | Bářina důvěra, sladění světů |

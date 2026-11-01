@@ -159,7 +159,8 @@ Ing. Frameworkovi v kapitole 3 páku na sprinty betonování.
 
 **Další příznaky:** `c2_rozpad` (M04, počet mezer a překryvů, 0–3, 0 je nejlepší),
 `c2_odhad` = `realny` / `kotva` (P2.3), `c2_rizika_zapsana` (M07, seznam zapsaných lístků),
-`c2_mosty` (M06, počet funkčních mostů 0–3).
+`c2_mosty` (M06, seznam funkčních mostů `trup` / `nastup` / `start`, počet 0–3; seznam
+zavedla kapitola 3, která potřebuje vědět, který most drží).
 
 ## Graf závislostí puzzlů
 
@@ -277,8 +278,8 @@ Všechny tři se testují až ve hře (D53, D66). Rozhraní nepoužívá odborn�
   na cestě se po odkrytí mlhy překresluje.
 - **Bára** kreslí řeku s hráčem. Při `c1_bara_vyslechnuta` ≥ 2 radí („Řeku dál než kousek
   nekresli.“), jinak kreslí mlčky.
-- **Výsledek:** `c2_mosty` (0–3), předmět **plán cesty ke startu**. Přeskočení: Pembok nakreslí
-  „rovnou čáru“, `c2_mosty` = 1.
+- **Výsledek:** `c2_mosty` (seznam funkčních mostů, 0–3), předmět **plán cesty ke startu**. Přeskočení: Pembok nakreslí
+  „rovnou čáru“, `c2_mosty` = [start].
 - **Témata:** V08, V11.
 - **Riziko návrhu:** nejsložitější pravidla kapitoly. Papírový model pro autora: dva pruhy
   papíru, dlaždice na kartičkách, mlha jako list papíru, který se odsouvá.
