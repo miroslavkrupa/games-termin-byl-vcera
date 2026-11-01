@@ -12,7 +12,7 @@
 | úvodní bušení | „Gantte, víme, že jste doma! Projekt 14 skončil, faktury ne.“ | – | – | 3 |
 | „Tady nikdo nebydlí.“ | „Tak tu nikdo nepodepíše, že se odstěhoval.“ | – | – | 3 |
 | „Kolik dlužím?“ | částka roste s každou větou, jako rozpočet | – | – | 3 |
-| „Co chcete?“ | prostrčí „stížnost“ (ve skutečnosti jmenování), Ruda podepíše, polije kávou | káva v ruce | dekret | 5 |
+| „Co chcete?“ | prostrčí „stížnost“ (ve skutečnosti jmenování) a propisku, Ruda podepíše, propiska nepíše, ukápne káva | káva v ruce | dekret, propiska | 6 |
 
 ## Městský rozhlas (úvod)
 

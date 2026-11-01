@@ -79,15 +79,14 @@
             prohlednout: 'ch1_byt_zed_prohlednout',
             pouzit: { stridat: ['ch1_byt_zed_pouzit_1', 'ch1_byt_zed_pouzit_2', 'ch1_byt_zed_pouzit_3'] } },
           { id: 'stul', nazev: 'ch1_hs_byt_stul', r: [22, 58, 24, 18],
-            prohlednout: 'ch1_byt_stul_prohlednout',
-            pouzit: { kdy: "!ma('kava')", akce: ['ch1_byt_kava_vzit', '+kava'] } },
-          { id: 'propiska', nazev: 'predmet_propiska', r: [38, 51, 6, 6], kdy: '!propiska_vzata',
-            prohlednout: 'predmet_propiska_prohlednout',
-            pouzit: ['ch1_byt_propiska_vzit', '+propiska', '$propiska_vzata'] },
+            prohlednout: 'ch1_byt_stul_prohlednout' },
+          // Káva leží na stole a musí se vzít; propisku pošlou věřitelé pode dveřmi spolu s dekretem.
+          { id: 'kava', nazev: 'predmet_kava', r: [30, 50, 7, 9], kdy: "!ma('kava')",
+            prohlednout: 'predmet_kava_prohlednout',
+            pouzit: ['ch1_byt_kava_vzit', '+kava'] },
           { id: 'dira', nazev: 'ch1_hs_byt_dira', druh: 'vychod', r: [52, 28, 18, 44],
             prohlednout: 'ch1_byt_dira_prohlednout',
             pouzit: { kdy: "!ma('kava')", akce: 'ch1_byt_dira_bez_kavy', jinak: {
-              kdy: "!ma('propiska') && !ma('kavove_pero')", akce: 'ch1_byt_dira_bez_propisky', jinak: {
                 kdy: "!ma('pembok')", akce: 'ch1_byt_dira_bez_knihy', jinak: {
                   kdy: "!ma('dekret')", akce: 'ch1_byt_dira_bez_dekretu', jinak: [
                     'ch1_byt_dira_pouzit', 'ch1_byt_skluz', '>namesti', 'ch1_byt_pristani', 'ch1_ruda_001',
@@ -96,7 +95,7 @@
                     'ch1_pembok_otevreni_1', 'ch1_pembok_otevreni_ruda', 'ch1_pembok_otevreni_2', 'ch1_pembok_001',
                     'ch1_pembok_ukol', 'ch1_pembok_ukol_ruda', 'ch1_pembok_ukol_2', 'ch1_pembok_ukol_3', 'ch1_ruda_002',
                     '$pembok_otevren', '*karta:ch1_ui_ukol',
-                  ] } } } } },
+                  ] } } } },
           { id: 'dvere', nazev: 'ch1_hs_byt_dvere', r: [78, 22, 14, 58],
             prohlednout: 'ch1_byt_dvere_prohlednout',
             pouzit: { kdy: "ma('dekret')", akce: 'ch1_byt_dvere_pouzit', jinak: '#veritel' } },
@@ -352,7 +351,7 @@
             'ch1_veritel_co_1', 'ch1_veritel_co_ruda', 'ch1_veritel_co_2',
             { kdy: "!ma('kava')", akce: 'ch1_veritel_bez_kavy', jinak: [
               'ch1_veritel_podpis_ruda', 'ch1_veritel_podpis_kava', 'ch1_veritel_podpis_cteni', 'ch1_veritel_podpis_ruda_2',
-              'ch1_veritel_odchod', '+dekret'] }] },
+              'ch1_veritel_odchod', '+dekret', 'ch1_byt_propiska_vzit', '+propiska'] }] },
           { t: 'ch1_veritel_volba_konec', konec: true, akce: ['ch1_veritel_konec', 'ch1_veritel_konec_ruda'] },
         ],
       },
@@ -761,7 +760,7 @@
   const M01_BEZ_KRITERII = { cil: 'cil', termin: 'termin', mimo: 'mimo_nesmysl', kdo: 'kdo' };
 
   const UVOD = [
-    'pouzij stul', 'pouzij propiska', 'pouzij police',
+    'pouzij kava', 'pouzij police',
     'pouzij dvere', 'volba ch1_veritel_volba_co', 'volba ch1_veritel_volba_konec',
     'pouzij dira',
   ];

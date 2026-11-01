@@ -30,13 +30,13 @@ prohlédnout, sebrat, použít, rozhovor.
 
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
-| Stůl s hrnkem kávy | aktivní místo | jediná věc v bytě, která funguje | sebrat → **hrnek kávy** | – | učí sebrat |
-| Propiska | aktivní místo | propiska bez inkoustu, „vydrží všechno“ | sebrat → **propiska** | – | popisek z názvu předmětu |
+| Stůl | aktivní místo | hrnek kávy a zkušenosti ze čtrnácti projektů, „funguje jen ta káva“ | – | – | |
+| Hrnek kávy | aktivní místo | na stole, jediná věc v bytě, která funguje | sebrat → **hrnek kávy** | – | učí sebrat; po sebrání zmizí |
 | Police s knihou | aktivní místo | dárek k narozeninám, nikdy neotevřený | sebrat → **Prof. Pembok** | – | Pembok zatím mlčí |
 | Zeď slávy | aktivní místo | 14 diplomů za 14 projektů; č. 9 „týdenní výměna žárovek, 6 let, probíhá“ | Ruda: „To nebyl projekt, to byl provoz.“ | – | V01, volitelné |
-| Dveře | aktivní místo | buší na ně věřitelé | rozhovor přes dveře; volba „Co chcete?“: pode dveřmi „stížnost“ a cizí propiska, Ruda podepíše a polije papír kávou → **dekret** | podpis jen s hrnkem kávy | učí rozhovor; vznik dekretu |
+| Dveře | aktivní místo | buší na ně věřitelé | rozhovor přes dveře; volba „Co chcete?“: pode dveřmi „stížnost“ a propiska, Ruda podepíše (propiska nepíše) a ukápne na papír kávu → **dekret** a **propiska** | podpis jen s hrnkem kávy | učí rozhovor; vznik dekretu; propisku si Ruda nechá |
 | Škvíra pode dveřmi | aktivní místo | chodí jí účty, upomínky a průvan | – | – | jen k prohlédnutí |
-| Díra ve zdi | východ | chybějící stěna, výhled na město, skluz na suť | → S1 | dekret, káva, propiska a Pembok v inventáři | jen jednou |
+| Díra ve zdi | východ | chybějící stěna, výhled na město, skluz na suť | → S1 | dekret, káva a Pembok v inventáři (propiska přijde s dekretem) | jen jednou |
 
 ## S1 Náměstí (den, večer)
 
@@ -121,7 +121,7 @@ Ruda má 15 předmětů, Bára 2 (ikony 1–17, D52).
 |---|---|---|---|---|---|
 | 1 | Jmenovací dekret | Ú, škvíra pode dveřmi | úvod | ne (důkaz, kdo je Ruda) | ikony-1 #1 |
 | 2 | Hrnek kávy | Ú, stůl | úvod | nikdy (nekonečný) | ikony-1 #2 |
-| 3 | Propiska bez inkoustu | Ú, stůl | úvod | kombinací s kávou | ikony-1 #3 |
+| 3 | Propiska bez inkoustu | Ú, pode dveřmi s dekretem | úvod | kombinací s kávou | ikony-1 #3 |
 | 4 | Kávové pero | propiska + káva | kdykoli | ne | ikony-1 #4 |
 | 5 | Prof. Pembok | Ú, police | úvod | ne (nápověda) | ikony-1 #5 |
 | 6 | Plakát Archy | S1, Pan Změna | cesta B k číslu | ne | ikony-1 #6 |

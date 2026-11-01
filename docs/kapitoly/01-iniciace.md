@@ -248,8 +248,8 @@ emoce, oba jazyky. Vtipy jsou psané pro každý jazyk zvlášť, ne přeložen�
 |---|---|---|---|
 | 1 | byt | telefon: projekt číslo 14 skončil, „samozřejmě vinou ostatních“ | – |
 | 2 | byt | hráč může prohlédnout zeď slávy (14 diplomů, „týdenní výměna žárovek“, V01) | prohlédnout |
-| 3 | byt | sebrat kávu, propisku a knihu (Pembok zatím mlčí) | sebrat |
-| 4 | byt | věřitelé buší, rozhovor přes dveře; pode dveřmi „stížnost“, Ruda ji podepíše a polije kávou | rozhovor |
+| 3 | byt | sebrat kávu ze stolu a knihu z police (Pembok zatím mlčí) | sebrat |
+| 4 | byt | věřitelé buší, rozhovor přes dveře; pode dveřmi „stížnost“ a propiska, Ruda podepíše prázdnou propiskou a ukápne na papír kávu; propisku si nechá | rozhovor |
 | 5 | byt | díra ve zdi, skluz na suť | použít |
 | 6 | náměstí | amplion ohlásí kometu za 30 dní a jmenování Rudy; „Kdo? … Já?!“ | – |
 | 7 | náměstí | Pembok se poprvé sám otevře a vysvětlí úkol | nápověda |

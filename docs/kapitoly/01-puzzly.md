@@ -33,9 +33,9 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 ### P1.0 Útěk z bytu
 - **Cíl hráče:** dostat se z bytu, než se věřitelé probourají dovnitř.
 - **Překážka:** u dveří stojí věřitelé, Ruda nemá nic.
-- **Řešení:** sebrat kávu, propisku a knihu; promluvit s věřiteli přes dveře (pode dveřmi
-  prostrčí „stížnost“, Ruda ji podepíše a polije kávou: vznikne dekret); slézt dírou ve zdi
-  po skluzu na suť.
+- **Řešení:** sebrat kávu ze stolu a knihu z police; promluvit s věřiteli přes dveře (pode
+  dveřmi prostrčí „stížnost“ a propisku, Ruda podepíše, propiska nepíše a ukápne mu na papír
+  káva: vznikne dekret, propisku si nechá); slézt dírou ve zdi po skluzu na suť.
 - **Stopy ve světě:** díra ve zdi je vidět od začátku; Ruda u dveří řekne „tudy ne“ a pohlédne
   ke zdi; skluz je při prohlédnutí díry vidět.
 - **Chybné, ale logické pokusy:** jít dveřmi (věřitelé), výtah (jede jen do 3½. patra),

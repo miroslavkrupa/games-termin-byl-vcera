@@ -9,7 +9,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 
 | Scéna | Repliky | Volby | Popisky |
 |---|---|---|---|
-| Úvod: Rudův byt | 47 | 4 | 6 |
+| Úvod: Rudův byt | 46 | 4 | 6 |
 | Náměstí | 119 | 11 | 7 |
 | Vestibul radnice | 45 | 5 | 5 |
 | Archiv | 54 | 10 | 13 |
@@ -21,7 +21,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Předměty a kombinace | 22 | 0 | 15 |
 | Konec kapitoly | 3 | 0 | 16 |
 | Výchozí reakce, postavy a GUI | 11 | 0 | 11 |
-| **Celkem** | **562** | **58** | **117** |
+| **Celkem** | **561** | **58** | **117** |
 
 ## Úvod: Rudův byt
 
@@ -33,9 +33,9 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_uvod_004` | Ruda | nejistě | Plán byl, že to bude hotové. Haló? Haló? | The plan was that it'd be done. Hello? Hello? |  |
 | `ch1_uvod_005` | Ruda | uraženě | Zavěsili. Typické. Tady nikdo nedokončí ani hovor. | They hung up. Typical. Nobody here even finishes a phone call. |  |
 | `ch1_hs_byt_stul` |  |  | Stůl | Desk | popisek aktivního místa |
-| `ch1_byt_stul_prohlednout` | Ruda | suše | Můj pracovní stůl. Hrnek kávy, propiska a zkušenosti ze čtrnácti projektů. Funguje jedna z těch věcí. | My desk. A mug of coffee, a pen and the experience of fourteen projects. One of those works. |  |
+| `ch1_byt_stul_prohlednout` | Ruda | suše | Můj pracovní stůl. Hrnek kávy a zkušenosti ze čtrnácti projektů. Funguje jen ta káva. | My desk. A mug of coffee and the experience of fourteen projects. Only the coffee works. |  |
 | `ch1_byt_kava_vzit` | Ruda | láskyplně | Bez kávy nikam. Káva je jediný plán, který mě nikdy nezklamal. | Not going anywhere without coffee. The only plan that's never let me down. | sebrat hrnek |
-| `ch1_byt_propiska_vzit` | Ruda | spokojeně | Propiska. Nepíše, ale dobře vypadá v náprsní kapse. Jako já na poradách. | A pen. Doesn't write, but looks great in a breast pocket. Like me in meetings. | sebrat propisku |
+| `ch1_byt_propiska_vzit` | Ruda | spokojeně | Propiska. Nepíše, ale dobře vypadá v náprsní kapse. Jako já na poradách. | A pen. Doesn't write, but looks great in a breast pocket. Like me in meetings. | propisku si Ruda nechá po podpisu dekretu |
 | `ch1_hs_byt_police` |  |  | Police | Shelf | popisek aktivního místa |
 | `ch1_byt_police_prohlednout` | Ruda | provinile | Police. Jediná kniha, kterou mám. Dárek k narozeninám, pořád v celofánu. | A shelf. The only book I own. A birthday present, still in its shrink-wrap. |  |
 | `ch1_byt_kniha_vzit` | Ruda | sebevědomě | Vezmu ji. Kniha v ruce vypadá jako plán. | I'll take it. Holding a book looks like having a plan. | sebrat Pemboka |
@@ -53,7 +53,6 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_hs_byt_dira` |  |  | Díra ve zdi | Hole in the wall | popisek aktivního místa (východ) |
 | `ch1_byt_dira_prohlednout` | Ruda | suše | Chybějící stěna. „Byt s výhledem,“ říkal makléř. Dole vede skluz rovnou na suť. | The missing wall. 'A flat with a view,' said the estate agent. Below, a chute leads straight down to the rubble. | stopa P1.0 |
 | `ch1_byt_dira_bez_kavy` | Ruda | rozhodně | Bez kávy nikam. | Not without my coffee. | P1.0: chybí káva |
-| `ch1_byt_dira_bez_propisky` | Ruda | rozhodně | Bez propisky taky ne. Co kdyby po mně někdo chtěl podpis. | Not without a pen either. What if someone needs my signature? | P1.0: chybí propiska |
 | `ch1_byt_dira_bez_knihy` | Ruda | rozhodně | A kniha. Kdyby se mě někdo ptal, co čtu. | And the book. In case anyone asks what I'm reading. | P1.0: chybí kniha |
 | `ch1_byt_dira_bez_dekretu` | Ruda | váhavě | Ještě ne. Ti za dveřmi by mi nedali pokoj. Nejdřív zjistím, co chtějí. | Not yet. That lot outside would never let it go. First I'll find out what they want. | P1.0: chybí dekret |
 | `ch1_byt_dira_pouzit` | Ruda | odhodlaně | Hrdinové se neschovávají. Hrdinové utíkají. Strategicky. | Heroes don't hide. Heroes run. Strategically. | útěk dírou ve zdi |
@@ -78,7 +77,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_veritel_co_2` | Věřitel | věcně | Strčíme vám ho pode dveře. Podepište převzetí. Propisku posíláme taky. | We'll slide it under the door. Sign for it. We're sending a pen through too. |  |
 | `ch1_veritel_bez_kavy` | Ruda | zásadově | Nic nepodepisuju, dokud nemám v ruce kávu. Zásada číslo jedna. | I don't sign anything without a coffee in hand. Rule number one. | podmínka: hrnek kávy |
 | `ch1_veritel_podpis_ruda` | Ruda | rychle | Podepíšu cokoli, hlavně když to zmizí. | I'll sign anything, as long as it goes away. |  |
-| `ch1_veritel_podpis_kava` | Ruda | provinile | Jejda. Káva. Teď je to stížnost s příchutí. | Oops. Coffee. Now it's a flavoured complaint. | cutscéna: vznik dekretu |
+| `ch1_veritel_podpis_kava` | Ruda | provinile | Propiska nepíše. A jejda, ukáplo mi z hrnku. Teď je to stížnost s příchutí. | The pen doesn't write. And oops, I've spilled my coffee on it. Now it's a flavoured complaint. | cutscéna: vznik dekretu; podpis je jen kávová skvrna |
 | `ch1_veritel_podpis_cteni` | Ruda | čte, užasle | „Jmenovací dekret. Rudolf Gantt se jmenuje projektovým manažerem Archy.“ To není stížnost. | 'Letter of Appointment. Rudy Gantt is hereby appointed project manager of the Ark.' That's not a complaint. |  |
 | `ch1_veritel_podpis_ruda_2` | Ruda | zmateně | Archy? Jaké Archy? A číslo projektu je pod kávou. | The Ark? What Ark? And the project number's under the coffee. |  |
 | `ch1_veritel_odchod` | Věřitel | naštvaně | Převzato. A teď k těm fakturám! | Signed for. Right, about those invoices! |  |
