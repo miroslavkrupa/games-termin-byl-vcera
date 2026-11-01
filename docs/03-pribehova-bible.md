@@ -114,7 +114,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 | **Sponzor, starosta Bohumil** | sponzor | chce výsledek, nerozumí mu, mění priority podle novin |
 | **Prof. Pembok** | mluvící kniha, rádce | ironická nápověda a správce Deníku projektového manažera |
 | **Scope Creep** | tvor | roste s každou přijatou neřízenou změnou; maskot hry |
-| **Kočka Riziková** | mazlíček | získá ji jen ten, kdo zapsal riziko krys; ve 3. kapitole zachraňuje situaci |
+| **Kočka Riziková** | mazlíček | získá ji jen ten, kdo v kap. 2 dal obálku na krysy (R2.3); ve 3. kapitole zachraňuje situaci |
 | **Tým podivínů** | členové týmu | 6 kandidátů s vlastnostmi a vadami; hráč vybírá 4 (rozpočet D56) |
 
 ## Hlavní dějový oblouk
@@ -244,17 +244,19 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | Volba nebo výsledek | Příznak | Nastaví se | Čte se | Následek | Mění proměnnou |
 |---|---|---|---|---|---|
 | R1.1 slíbit všechno | `c1_slib_vseho` | kap. 1 (M03) | kap. 2, 4 | sponzor trvá na všem, souboj v kap. 4 je tvrdší, chybí prostor pro vyjednávání | důvěra stakeholderů, rozsah, **Rudův vývoj** |
-| R1.2 babička | `c1_babicka` | kap. 1 | kap. 4 | přehlédnutá nebo odbytá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
+| R1.2 babička | `c1_babicka` | kap. 1 | kap. 2, 4 | přehlédnutá nebo odbytá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
 | R1.3 Bára vyslechnuta | `c1_bara_vyslechnuta` | kap. 1 | kap. 2, 3 | Bára radí s rozdělením Archy; v kap. 3 řekne o vadě v softwaru, nebo mlčí | Bářina důvěra |
 | R1.4 „následné fáze“ | `c1_faze2` | kap. 1 | kap. 2, 3 | Předseda má páku: „fáze 2“ v roadmapě, analýza dopadu u každé změny | čas |
-| M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | snazší rozdělení a R4.2, repliky do souboje | důvěra stakeholderů |
+| M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | při 3 visí nad tabulí rozdělení cíl „Odvézt všechny obyvatele“ (stopa); snazší R4.2, repliky do souboje | důvěra stakeholderů |
+| M01 „Co na Archu nepatří“ | `c1_mimo_rozsah` | kap. 1 | kap. 2 | bazén, terasa ani fontána se neobjeví na tabuli rozdělení ani po slibu | rozsah |
 | razítko | `c1_razitko` | kap. 1 | kap. 2 | kávové razítko: formulář navíc | – |
 | seznam pasažérů | `c1_seznam_pasazeru` | kap. 1 (Bára) | kap. 4 | hlavní důkaz proti Předsedovi (D59) | – |
-| dohoda s Panem Změnou | `c1_zmena_dohoda` | kap. 1 | kap. 3 | M10 o kolo kratší | rozsah |
+| dohoda s Panem Změnou | `c1_zmena_dohoda` | kap. 1 | kap. 2, 3 | M10 o kolo kratší | rozsah |
 | R2.1 tým | `c2_tym`, `c2_tym_pokryti` | kap. 2 | kap. 3, 5 | chybějící dovednost znamená puzzle oklikou; bez certifikátora náhradní puzzle při startu | morálka |
 | R2.2 rozdělení Archy | `c2_rozdeleni`, `c2_vyjimky` | kap. 2 | kap. 3, 4, 5 | Gantt na všechno: obyvatelé software odmítnou; krabice na všechno: betonáž se rozpadne; špatné výjimky: bezpečnostní systém bez certifikace nesmí startovat, interiér od stolu nikdo nechce | **sladění světů**, **Rudův vývoj** |
 | R2.3 riziko předem | `c2_riziko_predem` | kap. 2 | kap. 3, 4 | krysy: kočka Riziková vyřeší sklad za minutu; lano: jeřáb bez výpadku; úsměv: kratší konfrontace s Předsedou | čas |
 | M04 rozpad práce | `c2_rozpad` | kap. 2 | kap. 3 | mezery a překryvy jako překvapení | čas, technický dluh |
+| odhad bez kotvy | `c2_odhad` | kap. 2 | kap. 2 (M06), 3 | kotva „dva dny“: rampa se na mapě natáhne pozdě, nejvýš 2 mosty; v M13 se připomene | čas |
 | M06 roadmapa | `c2_mosty` | kap. 2 | kap. 3 | integrační body pro M15 | sladění světů |
 | M07 rizika | `c2_rizika_zapsana` | kap. 2 | kap. 3, 4 | zapsaná rizika nezaskočí | čas |
 | R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Scope Creep vyroste a sežere kapacitu; svačiny přes schvalování: naštvaní obyvatelé | rozsah, důvěra, sladění světů |
@@ -321,11 +323,16 @@ v F0/R6 (D47): vtip má fungovat i anglicky, nejen být doslova přeložený.
 | Předseda Věčný | Chairman Evermore | zní jako jméno, „věčnost“ zůstává |
 | Pan Změna | Mr. Change | *change* jsou i drobné, k jeho stánku sedí |
 | Ing. Framework | Dr. Framework | titul Ing. angličtina nezná, doktor zní jako expert |
-| Pepa „Dva dny“ | Two-Weeks Joe | anglický věčný odhad je „za dva týdny“ |
+| Pepa „Dva dny“ | Two-Day Joe | kotva musí být i anglicky směšně nízká, „two weeks“ by byl skoro správný odhad rampy (D68 mění D47) |
 | Babička Pozemková | Granny Plotkins | *plot* je pozemek i úklad |
 | Prof. Pembok | Prof. Pembok | narážka na PMBOK |
 | Kočka Riziková | Risky the Cat | |
 | Hospoda U Odhadu | The Rough Estimate | hospoda |
+| Věra Výztužná | Vera Rebar | statička (návrh, kap. 2) |
+| Norbert Norma | Norman Standards | certifikátor (návrh, kap. 2) |
+| Klára Maketová | Mona Mockup | designérka interiérů (návrh, kap. 2) |
+| Zdenda Známý | Benny Buddy | Rudův kamarád (návrh, kap. 2) |
+| Kryštof Krabička | Chip Checkbox | Frameworkův asistent (návrh, kap. 2) |
 
 ## Otevřené otázky
 

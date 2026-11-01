@@ -112,6 +112,8 @@ Další příznaky: `c3_rezerva` (M13, dny rezervy), `c3_hodnota` (M14, přesnos
 | `c2_riziko_predem` | krysy: kočka Riziková; lano: jeřáb bez výpadku v M13 |
 | `c2_rozpad` | mezery a překryvy z M04 jako překvapení v M13 a dílně |
 | `c2_mosty` | integrační body pro M15; bez mostů je okno nejtěžší |
+| `c2_odhad` | `kotva`: v M13 Pepa připomene „dva dny“ a rampa má o úsek méně rezervy (doplněno při N3 kap. 2) |
+| `c2_rizika_zapsana` | co je zapsané v krabici od bot, hráče v kap. 3 nezaskočí (krysy, lano, nástup, odhad) |
 
 ## Rozpočet
 

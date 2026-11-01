@@ -53,7 +53,7 @@
 | D44 | 2026-10-31 | F0/R5: Předseda Věčný je **zvrat ve 4. kapitole**; v kapitole 1 jen náznaky, závěrečný telefonát zamlžený | hráč může tušit, ale neví | [bible](03-pribehova-bible.md) |
 | D45 | 2026-10-31 | F0/R7: kapitola 1 vyjde na **itch.io** (web, PC, Mac, dobrovolný příspěvek); **GitHub Pages** zůstávají jako rychlý odkaz pro kolegy a testery | | [plán kapitoly 1](10-plan-kapitoly-1.md) |
 | D46 | 2026-10-31 | F0/R8: hudba a zvuky z **volně licencovaných zdrojů** (CC0, CC-BY), autoři v titulcích | | [produkce](05-produkce.md) |
-| D47 | 2026-10-31 | F0/R6: anglická jména podle vtipu, ne doslova: město **Scope Creek**, Barb Backlog, Chairman Evermore, Dr. Framework, Two-Weeks Joe, Granny Plotkins; ostatní beze změny | tabulka v bibli už není pracovní | [bible](03-pribehova-bible.md) |
+| D47 | 2026-10-31 | F0/R6: anglická jména podle vtipu, ne doslova: město **Scope Creek**, Barb Backlog, Chairman Evermore, Dr. Framework, Two-Weeks Joe (D68: Two-Day Joe), Granny Plotkins; ostatní beze změny | tabulka v bibli už není pracovní | [bible](03-pribehova-bible.md) |
 | D48 | 2026-10-31 | F0/R4: písmo **Patrick Hand** (OFL) pro celé GUI (repliky, popisky, nabídky, nastavení), velikost 42 | ručně psané a čitelné i na telefonu; Monkey Island z Popochiu nemá česká písmena | [náhled](styl/vzorky/pisma-nahled_v01.png) |
 | D49 | 2026-10-31 | F0/R1: pozadí **19,5:9 (2218 × 1024)**, důležitý obsah v pásu 3:2 uprostřed; kamera drží záběr uprostřed a širší obrazovka ukáže víc z okrajů | zkouška na náměstí se zástupně rozšířeným pozadím (zrcadlené okraje); u 4:3 černé pruhy nahoře a dole | [stylová bible](06-stylova-bible.md) |
 | D50 | 2026-10-31 | F0/R2: **popředí jako kulisa vyříznutá z pozadí** (`vyrez_popredi.gd`), s baseline a překážkou pro chůzi | zkouška na kašně: technika funguje; průchod za kašnou zrušen (Ruda tam byl skoro celý schovaný), cesty za popředím jen tam, kde postavu nezakryje celou | [stylová bible](06-stylova-bible.md) |
@@ -74,6 +74,20 @@
 | D65 | 2026-11-01 | N6 pro kapitolu 1 **předsunut před N4**: texty kapitoly 1 se píšou hned po N3, ne až po bráně A | autorská kontrola (N4, D66) a kontrola celé hry (N5) texty kapitoly 1 opraví; brána B se uzavře až po nich | [postup](12-postup-navrhu.md), [scénář](kapitoly/01-scenar.md) |
 | D66 | 2026-11-01 | **Papírový průchod s hráči se nedělá.** Autor si každou kapitolu odladí sám (N4 je autorská kontrola) a s lidmi se testuje až prototyp v Godotu (N8); rozšiřuje D53 na minihry všech kapitol | mění D55; papírová část kratší asi o 10–15 h; délky kapitol a matice předmětů se ověří až v N8 | [postup](12-postup-navrhu.md#n4-autorská-kontrola-každé-kapitoly) |
 | D67 | 2026-11-01 | N4 kapitoly 1: všech 12 nálezů autorské kontroly zapracováno. Lumír vydá zadání jen k zařazenému lístku; karta poučení je samostatná v krabičce Poučení; „…a následné fáze“ nejsou v M01; M03 má 5 kol a vyhrává se 3 koly, `c1_slib_vseho` 0–5; útržky M01 jsou příznaky; nová hodnota `c1_babicka` = `odmitnuta` | +12 textů, −3 texty; v N7 vyřadit repliky vrátného ke sklepu | [kontrola](kapitoly/01-kontrola.md) |
+| D68 | 2026-11-01 | N4 kapitoly 2: všech 19 nálezů autorské kontroly zapracováno. Tým jde potvrdit až po prvním příchodu do hangáru; odhad píše tým, ne štamgasti; tabule při rozdělování sundá magnety doprostřed a špatně umístěnou běžnou část vrací doprostřed; kotva v M06 = nejvýš 2 mosty; Bára chodí do hangáru zadem přes mlhu; kap. 1 trvá o dva dny déle (fronta na frontu), hra počítá jen „zbývá N dní“; **Pepa anglicky Two-Day Joe (mění D47)**; Frameworkova krabice „Rampa každé dva týdny nová“; `c1_mimo_rozsah` schová všechny tři nesmysly; `c1_charter_kvalita` = 3 dá stopu nad tabulí; pokrytí týmu = stavba, zkoušení, podpis startu. Rozpočet replik je vodítko, ne strop | osnova 451 replik (rozpočet 400–500); Bářina věta o termínu zůstává epilogu (D60) | [kontrola](kapitoly/02-kontrola.md) |
 
 ## Čeká na rozhodnutí
 
+**N3 kapitoly 2** ([návrh](kapitoly/02-planovani.md)). Po schválení se zapíše jako jedno rozhodnutí:
+
+- brána hangáru a staveniště rampy na jednom pozadí, Mlžná pláň jako samostatná levná scéna,
+  vestibul se v kapitole 2 přeskočí střihem (6 scén, 4 nová pozadí);
+- rampa z roku 1994 je do půlky hotová a končí ve vzduchu (upravený popisek v kap. 1);
+- jména kandidátů: Věra Výztužná / Vera Rebar, Norbert Norma / Norman Standards,
+  Klára Maketová / Mona Mockup, Zdenda Známý / Benny Buddy, Kryštof Krabička / Chip Checkbox;
+- slon praská podle čar křídou (křída z hospody), krabice od bot je prázdná krabice původního
+  týmu z roku 1994 s obálkou „Na nepředvídané“;
+- nové příznaky `c1_mimo_rozsah` (doplněn do M01 kap. 1) a `c2_odhad` (odhad bez kotvy, tácky);
+- Předseda přijde do hangáru na „kontrolní návštěvu“ (úsměv pro M07, formulář při kávovém razítku);
+- vrátný na konci přijde k jeřábu sám;
+- titulek *Plán na všechno* / *A Plan for Everything*; hospoda bez obsluhy.

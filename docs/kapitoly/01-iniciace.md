@@ -99,7 +99,8 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
    Změny a od Předsedy.
 10. **Fronta na frontu.** Ruda musí čekat ve frontě, aby se mohl postavit do fronty. Ve frontě
     stojí i **Ing. Framework** a nabízí „frontu 2.0“: stejná fronta, ale každé dva týdny se
-    jí říká jinak. Mezitím se **hraje za Báru** (viz níže).
+    jí říká jinak. Mezitím se **hraje za Báru** (viz níže). Fronta trvá dva dny: počítadlo
+    komety po ní ukáže 28 a kapitola 2 začíná na 27 (doplněno při N4 kapitoly 2, D68).
 11. **Předseda Věčný** charter orazítkuje. Poduška Komise je vyschlá. Bez babiččiny podušky
     jen kávou nalitou na vyschlou podušku: razítko je hnědé a rozmazané, platí, ale Předseda se mračí. Na závěr chce do charteru připsat
     „a následné fáze“ (**R1.4**).
@@ -126,7 +127,7 @@ projekt a je na to tiše hrdý. Jako jediný ve městě něco opravdu dokončuje
 | R1.3 | první rozhovor s Bárou | nechat domluvit / skočit do řeči | `c1_bara_vyslechnuta` (počet), Bářina důvěra | kap. 3: Bára mlčí o vadě softwaru |
 | R1.4 | Předseda a „následné fáze“ | odmítnout s odkazem na rozsah / přijmout | `c1_faze2` | kap. 3: Předseda má páku na nekonečné změny |
 
-Další příznaky: `c1_charter_kvalita` (0–3), `c1_razitko` = `poduska` / `kava`,
+Další příznaky: `c1_charter_kvalita` (0–3), `c1_mimo_rozsah` (dobrá kolonka „Co na Archu nepatří“), `c1_razitko` = `poduska` / `kava`,
 `c1_seznam_pasazeru` (Bára má seznam), `c1_zmena_dohoda` (Pan Změna podepsal požadavek).
 
 ## Graf závislostí puzzlů
@@ -179,6 +180,8 @@ Plné šipky jsou nutné kroky, tečkované jsou náhradní nebo volitelné cest
 | Kdo rozhoduje | CS: *Starosta Bohumil.* EN: *Mayor Bohumil.* | CS: *Komise pro schvalování komisí, pokud schválí.* EN: *The Committee for Approving Committees, pending approval.* | podpis / Předseda |
 
 `c1_charter_kvalita` = počet kolonek se správným útržkem (cíl, termín, kritéria), 0–3.
+`c1_mimo_rozsah` = v kolonce „Co na Archu nepatří“ je dobrý útržek (doplněno při N3 kapitoly 2:
+s ním se Bazén neobjeví na tabuli v kapitole 2).
 
 Útržky nejsou předměty. Hra si pamatuje, co hráč slyšel nebo získal, a M01 nabídne jen tyto
 útržky. Nesmysly Předsedy zazní v jeho prvním rozhovoru. „…a následné fáze“ v M01 není, Předseda

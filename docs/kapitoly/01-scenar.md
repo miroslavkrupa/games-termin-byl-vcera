@@ -626,7 +626,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_hs_plot` |  |  | Plot | Fence | popisek aktivního místa |
 | `ch1_plot_prohlednout` | Ruda | uznale | Plot. Suť z celého města končí přesně u něj. Jediná hranice, kterou tu kdy někdo dodržel. | A fence. The rubble from the whole town stops exactly at it. The only boundary anyone here has ever respected. |  |
 | `ch1_hs_rampa` |  |  | Rampa | Ramp | popisek aktivního místa |
-| `ch1_rampa_prohlednout` | Ruda | suše | Rampa. Rovná, hotová a postavená přímo nad babiččinými rajčaty. | The ramp. Straight, finished, and built directly over Granny's tomatoes. | zárodek kap. 2 |
+| `ch1_rampa_prohlednout` | Ruda | suše | Rampa. Rovná, do půlky hotová a postavená přímo nad babiččinými rajčaty. | The ramp. Straight, half finished, and built directly over Granny's tomatoes. | zárodek kap. 2; končí ve vzduchu (N3 kap. 2) |
 | `ch1_hs_lavicka` |  |  | Lavička | Bench | popisek aktivního místa |
 | `ch1_lavicka_prohlednout` | Ruda | užasle | Lavička. Natřená. Natřenou lavičku tohle město nezná. | A bench. Painted. This town has never seen a painted bench. |  |
 | `ch1_lavicka_pouzit` | Ruda | odmítavě | Sednout si? Ne, vypadalo by to, že nemám co dělat. | Sit down? No, it'd look like I've got nothing to do. | lavička, babička není spojenec |

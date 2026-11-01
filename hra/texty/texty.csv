@@ -579,7 +579,7 @@ ch1_chaloupka_prichod,"Chaloupka pod rampou. Má střechu, okna i dveře. Všech
 ch1_hs_plot,Plot,Fence,,,popisek aktivního místa
 ch1_plot_prohlednout,"Plot. Suť z celého města končí přesně u něj. Jediná hranice, kterou tu kdy někdo dodržel.",A fence. The rubble from the whole town stops exactly at it. The only boundary anyone here has ever respected.,Ruda,uznale,
 ch1_hs_rampa,Rampa,Ramp,,,popisek aktivního místa
-ch1_rampa_prohlednout,"Rampa. Rovná, hotová a postavená přímo nad babiččinými rajčaty.","The ramp. Straight, finished, and built directly over Granny's tomatoes.",Ruda,suše,zárodek kap. 2
+ch1_rampa_prohlednout,"Rampa. Rovná, do půlky hotová a postavená přímo nad babiččinými rajčaty.","The ramp. Straight, half finished, and built directly over Granny's tomatoes.",Ruda,suše,zárodek kap. 2; končí ve vzduchu (N3 kap. 2)
 ch1_hs_lavicka,Lavička,Bench,,,popisek aktivního místa
 ch1_lavicka_prohlednout,Lavička. Natřená. Natřenou lavičku tohle město nezná.,A bench. Painted. This town has never seen a painted bench.,Ruda,užasle,
 ch1_lavicka_pouzit,"Sednout si? Ne, vypadalo by to, že nemám co dělat.","Sit down? No, it'd look like I've got nothing to do.",Ruda,odmítavě,"lavička, babička není spojenec"
