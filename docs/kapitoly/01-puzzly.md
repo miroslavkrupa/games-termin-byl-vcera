@@ -14,7 +14,7 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 | # | Puzzle | Scéna | Povinný | Co nese |
 |---|---|---|---|---|
 | P1.0 | Útěk z bytu | Ú | ano | ovládání; V01 projekt vs. provoz (volitelně) |
-| P1.1 | Kdo tu rozhoduje | S2 | ano | V04 stakeholdeři |
+| P1.1 | Kdo tu rozhoduje | S2 | ne (znalost, D76) | V04 stakeholdeři |
 | P1.2 | Číslo od Báry (R1.3) | S1 | jedna z cest | V05 komunikace, V14 hodnota |
 | P1.3 | Číslo od Pana Změny | S1 | jedna z cest | zárodek V15 řízení změn |
 | P1.4 | Vstup do archivu | S3 | ano | – |
@@ -56,6 +56,8 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Nápověda:** 1 „Kdo podepsal tvůj dekret?“ · 2 „Kdo tu doopravdy rozhoduje, ví ten, kdo
   celý den sedí u dveří.“ (hotovo v I1) · 3 „Zeptej se vrátného ve vestibulu.“
 - **Příznaky:** `vratny_rekl_starosta` (stav místnosti).
+- **Zámek:** žádný (D76). Je to znalost: tlačítko „2“ funguje i bez rozhovoru a výtah sám
+  ukazuje „2 · Starosta“. Rozhovor hráči řekne, proč tam jet.
 - **Co nese:** V04, skrytě: oficiální podpis ≠ skutečná moc.
 - **Riziko:** žádné, je to rozjezd.
 

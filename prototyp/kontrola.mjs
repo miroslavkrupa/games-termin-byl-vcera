@@ -217,7 +217,11 @@ function moznosti(h) {
 
 function hrajNahodne(h, akci, zvedavost = 0.7) {
   const pocty = new Map();
+  const videne = new Set();
   for (let a = 0; a < akci && !h.s.konec; a++) {
+    // Po pokroku (příznak nastavený poprvé) může jít i to, co předtím nešlo: zvědavost začne nanovo
+    const nove = Object.keys(h.s.priznaky).filter((k) => h.s.priznaky[k] && !videne.has(k));
+    if (nove.length) { nove.forEach((k) => videne.add(k)); pocty.clear(); }
     const pred = h.chyby.length;
     let popis = '';
     try {

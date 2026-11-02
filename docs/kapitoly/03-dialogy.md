@@ -64,7 +64,7 @@ Mluví jen ti, kdo jsou v `c2_tym`. Každý má repliku k posezení (R3.3) podle
 | Téma | Podstata | Podmínka | Odhad |
 |---|---|---|---|
 | uvítání | „Za třicet let poprvé vidím, kam jedu.“ | – | 2 |
-| klíč od skladu | „Mám klíče od všeho. Nikdo se nikdy nezeptal.“ | – | 2 |
+| klíč od skladu | ve fázi A „Až budou pilíře v bednění.“; bez Věry „Bez výpočtu do kabiny nesednu. Tak mám čas.“; jinak „Mám klíče od všeho. Nikdo se nikdy nezeptal.“ | fáze B, nebo bez Věry (D75) | 4 |
 | lano | `lano`: „Nové. Voní.“ / jinak: „Drží. Zatím.“ | R2.3 | 2 |
 | jeden jeřáb | „Jeden jeřáb, jeden den, jedna věc.“ (stopa M13) | – | 1 |
 | výpočet statika | „Nad deset metrů jen podle výpočtu.“, přijetí výpočtu | bez Věry | 3 |

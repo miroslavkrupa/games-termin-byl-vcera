@@ -135,7 +135,7 @@ Další příznaky: `c1_charter_kvalita` (0–3), `c1_mimo_rozsah` (dobrá kolon
 ```mermaid
 flowchart TD
   start(["Začátek: náměstí"]) --> vratny["Vrátný: starosta je ve 2. patře"]
-  vratny --> vytah{{"Výtah jede jen do 1½. patra"}}
+  vratny -.->|znalost, D76| vytah{{"Výtah jede jen do 1½. patra"}}
   start --> bara["Rozhovor s Bárou (R1.3)"]
   start --> zmena["Pan Změna mění požadavky"]
   start --> archivar["Archivář chce číslo projektu"]

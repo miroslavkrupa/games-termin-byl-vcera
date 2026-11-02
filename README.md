@@ -38,6 +38,7 @@ pro **PC, Mac a mobily**.
 | [Kapitola 1: Iniciace](docs/kapitoly/01-iniciace.md) | vertical slice: scény, puzzly, graf závislostí, rozhodnutí, minihry, ukázkové dialogy CS/EN |
 | Kapitoly [2](docs/kapitoly/02-planovani.md), [3](docs/kapitoly/03-realizace.md), [4](docs/kapitoly/04-krize.md), [5](docs/kapitoly/05-uzavreni.md) | kostry: průběh, místa, postavy, graf, rozhodnutí, čtené příznaky, rozpočet |
 | [Postup návrhu](docs/12-postup-navrhu.md) | nejdřív celá hra na papíře, potom texty, potom výroba: kroky N0–N9, šablony, brány A a B |
+| [Graf závislostí kapitol 1–3](docs/13-graf-zavislosti.md) | úplný graf puzzlů podle Rona Gilberta z dat prototypu, šířka a úzká hrdla, návrhy úprav; generuje `tools/graf_zavislosti.mjs` |
 
 ## Postup návrhu
 

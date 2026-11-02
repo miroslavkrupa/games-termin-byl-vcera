@@ -111,8 +111,8 @@ s Bárou v dílně. Zdenda chodí, kam je zrovna kafe. Každý mluví jen tehdy,
 
 | Fáze | Zbývá dní | Ruda | Bára | Spolu | Konec fáze |
 |---|---|---|---|---|---|
-| **A Začátek stavby** | 24 | M13, klíč od skladu, (krysy) | ranní porada, rozdělaná práce, plán kola | – | M13 hotová a Bára má naplánované 1. kolo |
-| **B Ukázka a změny** | 21 (ukázky na 21, 18 a 15) | krysy (pokud zbývají), servisní poklop ve skladu | M14 na náměstí, vada v počítadle | M10 v hangáru, R3.2 v dílně | sklad volný, M14, M10 a R3.2 hotové |
+| **A Začátek stavby** | 24 | M13 (bez Věry nejdřív klíč, krysy a výpočet) | ranní porada, rozdělaná práce, plán kola | – | M13 hotová a Bára má naplánované 1. kolo |
+| **B Ukázka a změny** | 21 (ukázky na 21, 18 a 15) | klíč od skladu, krysy, servisní poklop (D75) | M14 na náměstí, vada v počítadle | M10 v hangáru, R3.2 v dílně | sklad volný, M14, M10 a R3.2 hotové |
 | **C Zavírá se trup** | 12 | poklop do trupu | rozpis rampy (jen bez mostu) | M15, R3.3 | konec kapitoly (zbývá 9) |
 
 **Kolo za Báru trvá tři dny** (N4, K1): 1. kolo zbývá 24 → 21, 2. kolo → 18, 3. kolo → 15, ve
@@ -132,7 +132,9 @@ jedné scény na náměstí, stejně jako M13 zkrátí 16 dní stavby.
    městě, která opravdu trvá dva dny.“). Výsledek je **rozpis rampy** a `c3_rezerva`.
 3. **Krysy ve skladu (P3.2).** Sklad s plechy na trup je zamčený a plný krys, které sedí na hnízdě
    z papírů z roku 1994. **Klíč od skladu** má vrátný („Mám klíče od všeho. Nikdo se nikdy
-   nezeptal.“). S kočkou Rizikovou je hotovo za minutu. Bez ní: krysy jedí papír a nejvíc
+   nezeptal.“), ale ve fázi A betonuje pilíře a z kabiny neleze: „Až budou pilíře v bednění.“
+   Klíč dá až ve fázi B, takže krysy jsou Rudova práce, zatímco Bára chystá ukázku (D75). Bez
+   Věry ho dá hned: bez výpočtu statika do kabiny nesedne, a tak má čas. S kočkou Rizikovou je hotovo za minutu. Bez ní: krysy jedí papír a nejvíc
    papíru ve městě nosí Předseda. Ruda položí **žádosti o změnu** jako stopu od dveří skladu
    k Předsedově otevřené aktovce a krysy se do ní přestěhují. Předseda aktovku zavře a odejde:
    „Výborně, výborně.“ Aktovka se hýbe.
@@ -219,15 +221,15 @@ v trupu). R3.3 mění morálku.
 
 ```mermaid
 flowchart TD
-  start(["Úvod: zbývá 24, formuláře, přepínání"]) --> vratny["Vrátný: klíč od skladu"]
-  start --> m13[["M13 Jeřábový balet (Ruda)"]]
+  start(["Úvod: zbývá 24, formuláře, přepínání"]) --> m13[["M13 Jeřábový balet (Ruda)"]]
+  start -.->|bez Věry hned| vratny
   start --> porada["Ranní porada (Bára)"]
   vratny --> sklad["Krysy ve skladu"]
-  start -.->|bez Věry| sklad
   sklad -.->|výpočet z hnízda| m13
   porada --> dilna["Zahlcená dílna"]
   dilna --> plan["Plán kola"]
   m13 & plan --> fazeB(["Zbývá 21"])
+  fazeB --> vratny["Vrátný: klíč od skladu"]
   fazeB --> m14[["M14 Ukázka na náměstí (Bára)"]]
   m14 --> vada["Vada v počítadle"]
   m14 --> m10[["M10 Ještětoto (R3.1)"]]
@@ -248,8 +250,9 @@ flowchart TD
 Plné šipky jsou nutné kroky, tečkované jen pro některé stavy nebo volitelné. Proti kostře se
 R3.2 přesunulo **před M15**: volba se tak hned projeví v tom, co je hotové k zavření trupu.
 Graf má dvě nezávislé linky, takže hráč má skoro vždy 3–4 rozdělané věci
-([šířka grafu](03-pruchod.md#šířka-grafu)). Úzké místo je fáze C (poklop → M15 → R3.3), která je
-záměrně lineární.
+([šířka grafu](03-pruchod.md#šířka-grafu)). Klíč od skladu je až ve fázi B (D75), aby i Ruda měl
+ve fázi B vlastní linku, než se obě sejdou v M10 ([úplný graf](../13-graf-zavislosti.md#kapitola-3-realizace)).
+Úzké místo je fáze C (poklop → M15 → R3.3), která je záměrně lineární.
 
 ## Minihry v kapitole 3
 

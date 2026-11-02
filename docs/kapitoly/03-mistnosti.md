@@ -162,7 +162,7 @@ průchodu jich hráč uvidí 11–13. Ikony nových předmětů podle stylové b
 | 6 | Svinovací metr | Bára | z kap. 1 | – | ne | nápověda za Báru |
 | 7 | Seznam pasažérů | Bára | z kap. 1 | – | ne (kap. 4) | ★ „Ještě ne.“ (D59) |
 | 8 | Žádosti o změnu (tři kopie) | Ruda | Předseda v úvodu | fáze A | v P3.2 jako stopa krysám | Předseda je dá znovu |
-| 9 | Klíč od skladu | Ruda | vrátný | kdykoli | ne (zůstane v zámku) | P3.2 |
+| 9 | Klíč od skladu | Ruda | vrátný | fáze B, bez Věry hned (D75) | ne (zůstane v zámku) | P3.2 |
 | 10 | Výpočet statika z roku 1994 | Ruda | hnízdo ve skladu | po P3.2, jen bez Věry | u jeřábníka | P3.3 |
 | 11 | Rozpis rampy | Ruda | M13 | po M13 | ne (dá se Báře a ona ho vrátí) | M15 |
 | 12 | Servisní poklop | Ruda | sklad | po P3.2 | v trupu | P3.10 |
@@ -176,7 +176,7 @@ jednou, ale nejde je spotřebovat jinde.
 
 **Kontrola slepých uliček:** formuláře jdou utratit jen v P3.2. Když je hráč použije špatně
 (★ odmítnutí), zůstanou mu. Předseda je dá znovu, kdykoli s ním Ruda mluví. Klíč od skladu dá
-vrátný vždy. Výpočet statika a servisní poklop se objeví až po krysách. Rozpis rampy zůstane
+vrátný vždy, jakmile začne fáze B (bez Věry hned) a klíč se nedá ztratit. Výpočet statika a servisní poklop se objeví až po krysách. Rozpis rampy zůstane
 Rudovi i po předání Báře (Bára si ho opíše).
 
 ## Matice předmětů

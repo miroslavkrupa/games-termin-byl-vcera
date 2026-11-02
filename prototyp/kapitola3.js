@@ -23,6 +23,7 @@
   // --- přechody fází ---------------------------------------------------------
   const FAZE_B = { kdy: 'm13_hotovo && plan_kola_hotovo && !faze_b', akce: [
     '$faze_b', '$dny=21', '*karta:ch3_ui_zbyva_21', 'ch3_strih_21_pilire', 'ch3_strih_21_kometa',
+    { kdy: '!sklad_otevren', akce: 'ch3_strih_21_vratny' },
     { kdy: BARA, akce: 'ch3_strih_21_bara', jinak: 'ch3_strih_21_ruda' }] };
   const FAZE_C = { kdy: 'r32_hotovo && krysy_pryc && !faze_c', akce: [
     '$faze_c', '$dny=12', '*karta:ch3_ui_zbyva_12', 'ch3_strih_12_trup', 'ch3_strih_12_vera'] };
@@ -42,6 +43,14 @@
     'ch3_vratny_vypocet_prijat', 'ch3_vratny_vypocet_ruda', '-vypocet', '$vypocet_predan'] };
   const NORBERT_PEMBOK = { kdy: 'norbert_podpis', akce: 'ch3_norbert_lavicka_uz', jinak: [
     'ch3_pembok_slib_mlcet', 'ch3_norbert_lavicka_jde', 'ch3_pembok_teda', '$norbert_podpis', '$c3_rezerva+-1'] };
+
+  // --- klíč od skladu (D75) ----------------------------------------------------
+  // Ve fázi A vrátný betonuje pilíře a z kabiny neleze, klíč dá až ve fázi B. Bez Věry do kabiny
+  // bez výpočtu statika nesedne, takže má čas hned (výpočet leží v krysím hnízdě).
+  const KLIC_JDE = `faze_b || !${TYM('vera')}`;
+  const KLIC_SKLADU = { kdy: KLIC_JDE, akce: [
+    { kdy: '!faze_b', akce: 'ch3_vratny_klic_cas' }, 'ch3_vratny_klic_1', 'ch3_vratny_klic_2', '+klic_sklad'],
+    jinak: ['ch3_vratny_klic_pozdeji', 'ch3_vratny_klic_pozdeji_ruda'] };
 
   // --- jeřáb a M13 ----------------------------------------------------------
   const JERAB = { kdy: 'm13_hotovo', akce: 'ch3_jerab_hotovo', jinak: {
@@ -465,7 +474,7 @@
         poprve: 'ch3_vratny_uvod',
         vycerpano: 'ch3_vratny_vse',
         volby: [
-          { t: 'ch3_vratny_volba_klic', kdy: "!ma('klic_sklad') && !sklad_otevren", akce: ['ch3_vratny_klic_1', 'ch3_vratny_klic_2', '+klic_sklad'] },
+          { t: 'ch3_vratny_volba_klic', kdy: "!ma('klic_sklad') && !sklad_otevren", akce: KLIC_SKLADU },
           { t: 'ch3_vratny_volba_lano', jednou: true, akce: { kdy: "c2_riziko_predem=='lano'", akce: 'ch3_vratny_lano_nove', jinak: 'ch3_vratny_lano_drzi' } },
           { t: 'ch3_vratny_volba_jerab', jednou: true, akce: ['ch3_vratny_jeden_jerab', 'ch3_vratny_bedneni'] },
           { t: 'ch3_volba_konec', konec: true, akce: 'ch3_vratny_konec' },
@@ -608,8 +617,8 @@
       // Ruda (Prof. Pembok)
       { id: 'jerab', kdy: `${RUDA} && !m13_hotovo && (${TYM('vera')} || vypocet_predan)`, stupne: ['ch3_rada_jerab_1', 'ch3_rada_jerab_2', 'ch3_rada_jerab_3'] },
       { id: 'vypocet', kdy: `${RUDA} && !m13_hotovo`, stupne: ['ch3_rada_tym_1', 'ch3_rada_vypocet_2', 'ch3_rada_vypocet_3'] },
-      { id: 'kocka', kdy: `${RUDA} && !krysy_pryc && ${KOCKA}`, stupne: ['ch3_rada_kocka_1', 'ch3_rada_krysy_2', 'ch3_rada_kocka_3'] },
-      { id: 'krysy', kdy: `${RUDA} && !krysy_pryc`, stupne: ['ch3_rada_krysy_1', 'ch3_rada_krysy_2', 'ch3_rada_krysy_3'] },
+      { id: 'kocka', kdy: `${RUDA} && !krysy_pryc && ${KOCKA} && (${KLIC_JDE})`, stupne: ['ch3_rada_kocka_1', 'ch3_rada_krysy_2', 'ch3_rada_kocka_3'] },
+      { id: 'krysy', kdy: `${RUDA} && !krysy_pryc && (${KLIC_JDE})`, stupne: ['ch3_rada_krysy_1', 'ch3_rada_krysy_2', 'ch3_rada_krysy_3'] },
       { id: 'vada_ruda', kdy: `${RUDA} && vada_nalezena && !c3_vada_hlasena && !vada_skocil`, stupne: ['ch3_rada_vada_ruda_1', 'ch3_rada_vada_ruda_2', 'ch3_rada_vada_ruda_3'] },
       { id: 'faze', kdy: `${RUDA} && m14_hotovo && !m10_hotovo && c1_faze2 && !faze_zastavena`, stupne: ['ch3_rada_faze_1', 'ch3_rada_faze_2', 'ch3_rada_faze_3'] },
       { id: 'zmeny', kdy: `${RUDA} && m14_hotovo && !m10_hotovo`, stupne: ['ch3_rada_zmeny_1', 'ch3_rada_zmeny_2', 'ch3_rada_zmeny_3'] },
@@ -1147,11 +1156,12 @@
       popis: 'Nejkratší cesta, dobré kapitoly 1 a 2 (03-pruchod.md §1)',
       start: 'dobra',
       kroky: [
-        'pouzij vratny', 'volba ch3_vratny_volba_klic', 'volba ch3_volba_konec',
+        'pouzij vratny', 'volba ch3_vratny_volba_klic', "ocekavej rekl('ch3_vratny_klic_pozdeji')", 'volba ch3_volba_konec',
         'pouzij jerab', { minihra: { plan: M13_PLAN1 } },
-        'predmet klic_sklad sklad', 'predmet zadosti sklad', 'pouzij sklad', 'pouzij poklop', 'pouzij dvere',
         ...BARA_NEJKRATSI(['pepa', 'klara']),
         'ocekavej faze_b',
+        // Fáze B: Ruda vyžene krysy, Bára jde na ukázku
+        'prepni', ...KRYSY_AKTOVKOU, 'pouzij sklad', 'pouzij poklop', 'pouzij dvere', 'prepni',
         'pouzij dvere', 'pouzij brana', 'pouzij ulicka', 'pouzij stanek', ...M14_NEJLEPSI,
         'pouzij ulicka', 'pouzij brana', 'pouzij bocni', 'pouzij pocitac',
         'pouzij dvere', 'pouzij brana', 'predmet zapis ruda',
@@ -1170,7 +1180,6 @@
       popis: 'Špatné kapitoly 1 a 2: kotva, Gantt, rozpad, fáze 2, bez Norberta, vada přes Rudu (03-pruchod.md §3)',
       start: 'spatna',
       kroky: [
-        ...KRYSY_AKTOVKOU, 'pouzij sklad', 'pouzij poklop', 'pouzij dvere',
         'pouzij jerab', { minihra: { plan: posunPlan(M13_PLAN2, 1) } },
         'ocekavej c3_rezerva==0',
         'prepni', ...PORADA_DOBRA(['pepa', 'krystof', 'zdenda']),
@@ -1182,7 +1191,8 @@
         'ocekavej c3_hodnota<=2',
         'pouzij ulicka', 'pouzij brana', 'pouzij bocni', 'pouzij pocitac',
         'pouzij dvere', 'pouzij brana', 'predmet zapis ruda', 'ocekavej bara_odbyta',
-        'prepni', 'pouzij bara', 'volba ch3_vada_r_volba_mlcet', 'volba ch3_vada_r_volba_mlcet', 'volba ch3_vada_r_volba_mlcet',
+        'prepni', ...KRYSY_AKTOVKOU, 'pouzij sklad', 'pouzij poklop', 'pouzij dvere',
+        'pouzij bara', 'volba ch3_vada_r_volba_mlcet', 'volba ch3_vada_r_volba_mlcet', 'volba ch3_vada_r_volba_mlcet',
         'pouzij brana', 'predmet plan predseda',
         'pouzij rozcestnik', ...M10_DOBRE, { minihra: { karta: 'vlny', kam: 'posoudit' } },
         'pouzij bocni', 'volba ch3_r32_volba_bara', 'predmet rozpis bara',
@@ -1198,10 +1208,10 @@
       start: 'dobra',
       kroky: [
         'pouzij jerab', { minihra: { preskocit: true } },
-        ...KRYSY_AKTOVKOU, 'pouzij sklad', 'pouzij poklop', 'pouzij dvere',
         ...BARA_NEJKRATSI(['pepa', 'klara']).slice(0, -2), 'pouzij seznam', { minihra: { cil: 'cesta', karty: ['sipky', 'mapa', 'maketa', 'heslo'] } },
         'pouzij dvere', 'pouzij brana', 'pouzij ulicka', 'pouzij stanek', { minihra: { preskocit: true } },
-        'prepni', 'pouzij brana', 'pouzij rozcestnik', { minihra: { preskocit: true } },
+        'prepni', ...KRYSY_AKTOVKOU, 'pouzij sklad', 'pouzij poklop', 'pouzij dvere',
+        'pouzij brana', 'pouzij rozcestnik', { minihra: { preskocit: true } },
         'pouzij bocni', 'volba ch3_r32_volba_ruda',
         'pouzij dvere', 'pouzij zebrik', 'predmet poklop otvor', 'pouzij misto', { minihra: { preskocit: true } },
         'volba ch3_r33_volba_stavet',
@@ -1214,7 +1224,7 @@
       priznaky: { c2_riziko_predem: 'krysy', c2_tym: 'pepa-norbert-klara-krystof', c2_tym_pokryti: 2 },
       kroky: [
         'pouzij jerab', 'ocekavej vypocet_chybi',
-        'pouzij vratny', 'volba ch3_vratny_volba_klic', 'volba ch3_volba_konec', 'predmet klic_sklad sklad', 'pouzij kocka',
+        'pouzij vratny', 'volba ch3_vratny_volba_klic', "ocekavej rekl('ch3_vratny_klic_cas')", 'volba ch3_volba_konec', 'predmet klic_sklad sklad', 'pouzij kocka',
         'pouzij sklad', 'pouzij hnizdo', 'pouzij poklop', 'pouzij dvere', 'predmet vypocet vratny',
         'pouzij jerab', { minihra: { plan: posunPlan(M13_PLAN2, 1) } },
         // Den hledání výpočtu posune dráhu do výpadku lana: obě okliky dohromady stojí tři dny

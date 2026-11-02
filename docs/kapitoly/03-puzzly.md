@@ -55,6 +55,9 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 - **Cíl hráče:** dostat se ke plechům na trup (a k servisnímu poklopu).
 - **Překážka:** sklad je zamčený a uvnitř sedí krysy na hnízdě z papírů z roku 1994.
 - **Řešení:**
+  - **Klíč od skladu** dá vrátný až ve fázi B („Klíče mám v kabině a z kabiny teď nelezu, beton
+    nepočká. Až budou pilíře v bednění.“). Ve střihu „zbývá 21“ sám řekne, že má chvíli. Bez
+    Věry ho dá hned, protože bez výpočtu statika do kabiny nesedne (D75).
   - **Bez kočky** (`c2_riziko_predem` ≠ `krysy`): vzít od vrátného **klíč od skladu**,
     otevřít dveře skladu, položit **žádosti o změnu** jako stopu od dveří k Předsedově
     otevřené aktovce (použít žádosti na otevřené dveře skladu, nebo na aktovku). Krysy vyrazí po čerstvém
