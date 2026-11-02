@@ -13,7 +13,9 @@
 //   "~bara"      přepne hranou postavu (Bára / Ruda)
 //   "*karta:klic"  titulková karta, "*konec" obrazovka následků
 // a objekty {kdy, akce, jinak} pro podmínky a {stridat: [..]} pro střídání replik.
-// Podmínky jsou JS výrazy nad příznaky: ma('kava'), byl('archiv'), rekl('ch1_klic'), c1_babicka=='spojenec'.
+// Funkce (h) => … dostane API hry; hodí se na příznaky, které se počítají (tým, seznamy).
+// Podmínky jsou JS výrazy nad příznaky: ma('kava'), byl('archiv'), rekl('ch1_klic'), c1_babicka=='spojenec',
+// obsahuje(c2_mosty, 'trup'), pocet(c2_mosty). Globální objekty (String, Math) v nich nejsou.
 (function (koren) {
   'use strict';
 
@@ -52,6 +54,9 @@
       postava: () => s.postava,
       scena: () => s.scena,
       rekl: (klic) => !!s.citace['rec_' + klic],
+      // Seznamy v příznacích jsou řetězce s pomlčkami (c2_mosty = 'trup-nastup-start')
+      obsahuje: (seznam, prvek) => String(seznam || '').split('-').includes(prvek),
+      pocet: (seznam) => String(seznam || '').split('-').filter((x) => x && x !== 'zadny').length,
     };
     const rozsah = new Proxy({}, {
       has: () => true,
@@ -76,6 +81,7 @@
     function proved(akce) {
       if (akce === undefined || akce === null) return;
       if (Array.isArray(akce)) { for (const a of akce) proved(a); return; }
+      if (typeof akce === 'function') { akce(api); return; }
       if (typeof akce === 'object') {
         if ('stridat' in akce) {
           const id = akce.id || JSON.stringify(akce.stridat);
@@ -285,11 +291,12 @@
       return data.pamet.filter((p) => plati(p.kdy)).map((p) => p.klic);
     }
 
-    function start() {
+    // vstup = stav z předchozí kapitoly: {priznaky, predmety} (předměty nahradí výchozí)
+    function start(vstup) {
       udalosti = [];
       const st = data.start;
-      Object.assign(s.priznaky, st.priznaky || {});
-      for (const p of st.predmety || []) s.predmety.ruda.push(p);
+      Object.assign(s.priznaky, st.priznaky || {}, (vstup && vstup.priznaky) || {});
+      for (const p of (vstup && vstup.predmety) || st.predmety || []) s.predmety.ruda.push(p);
       jdi(st.scena);
       proved(st.akce);
     }

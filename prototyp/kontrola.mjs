@@ -26,14 +26,23 @@ function problem(zprava) {
 // --- 1. klíče textů v datech -------------------------------------------------
 const KLIC = /^(ch\d+|predmet|postava|obecne|ui)_[a-z0-9_]+$/;
 const pouzite = new Set();
+const predpony = new Set();
 (function projdi(x) {
   if (typeof x === 'string') {
     const k = x.replace(/^\*karta:/, '');
     if (KLIC.test(k)) pouzite.add(k);
+  } else if (typeof x === 'function') {
+    // Funkce v datech (minihry, počítané příznaky): klíče jsou řetězce v kódu,
+    // řetězec, ke kterému se něco přičítá, je předpona ('ch2_magnet_' + id, 'ch1_m03_k' + k)
+    for (const m of x.toString().matchAll(/'([a-z0-9_]+)'(\s*\+)?/g)) {
+      if (m[2] && KLIC.test(m[1] + 'x')) predpony.add(m[1]);
+      else if (KLIC.test(m[1])) pouzite.add(m[1]);
+    }
   } else if (Array.isArray(x)) x.forEach(projdi);
   // obraz a obrazek jsou jména souborů, ne klíče textů
-  else if (x && typeof x === 'object') Object.entries(x).forEach(([k, v]) => { if (k !== 'obraz' && k !== 'obrazek') projdi(v); });
-})({ ...data, pruchody: null, minihry: null });
+  else if (x && typeof x === 'object') Object.entries(x).forEach(([k, v]) => { if (k !== 'obraz' && k !== 'obrazek' && k !== 'predvolby') projdi(v); });
+})({ ...data, pruchody: null });
+for (const k of Object.keys(texty)) if ([...predpony].some((p) => k.startsWith(p))) pouzite.add(k);
 // Klíče, které skládají minihry v kódu
 const MINIHRY_KLICE = Object.keys(texty).filter((k) => /_m0\d_|_listek_|_kartoteka_(abecedne|spatne|stejny_rok|hotovo)|_priloha_stop|_starosta_(podpis|slib|prohra)|_pembok_kriteria/.test(k) && k.startsWith(predpona));
 MINIHRY_KLICE.forEach((k) => pouzite.add(k));
@@ -45,9 +54,11 @@ chybejici.forEach((k) => problem('v texty.csv chybí ' + k));
 if (!chybejici.length) console.log(`  ✓ všech ${pouzite.size} klíčů existuje`);
 
 // --- pomocník pro hraní ------------------------------------------------------
-function novaHra() {
+// Kapitoly 2+ začínají stavem z předchozí kapitoly (předvolby „dobra“ a „spatna“)
+const PREDVOLBY = Object.keys(data.predvolby || {});
+function novaHra(predvolba) {
   const h = engine.vytvorHru(data, texty);
-  h.start();
+  h.start(predvolba ? data.predvolby[predvolba] : undefined);
   return h;
 }
 function spotrebuj(h) {
@@ -82,7 +93,7 @@ function krok(h, k) {
 // --- 2. průchody -------------------------------------------------------------
 console.log('\n2. Průchody');
 for (const [id, p] of Object.entries(data.pruchody)) {
-  const h = novaHra();
+  const h = novaHra(p.start);
   spotrebuj(h);
   let i = 0;
   try {
@@ -118,6 +129,26 @@ function nahodnaMinihra(h) {
     for (const k of m.karty) if (!k.neznama) umisteni[k.id] = [nahoda() < 0.5, nahoda() < 0.5];
     if (nahoda() < 0.6) Object.assign(umisteni, { starosta: [true, true], predseda: [true, true], babicka: [true, false], zmena: [false, true], bara: [false, true], obyvatele: [false, true] });
     return { umisteni };
+  }
+  if (m.druh === 'slon') {
+    if (nahoda() < 0.15) return { preskocit: true };
+    if (nahoda() < 0.3) return { kus: vyber(m.kamen.flatMap((c) => c.kusy)).id };
+    if (nahoda() < 0.3) return { mlha: { cast: vyber(m.mlha).id, volba: nahoda() < 0.5 ? 'daleko' : 'blizko' } };
+    return { vybrano: m.kamen.flatMap((c) => c.kusy).filter((k) => k.druh !== 'velky' && nahoda() < 0.8).map((k) => k.id) };
+  }
+  if (m.druh === 'tabule') {
+    if (nahoda() < 0.2) return { cesta: vyber(['gantt', 'krabice']) };
+    const prirazeni = {};
+    for (const g of m.magnety) prirazeni[g.id] = g.nesmysl ? (nahoda() < 0.7 ? 'pryc' : 'ruda') : vyber(['ruda', 'bara']);
+    if (nahoda() < 0.5) Object.assign(prirazeni, { rampa: 'ruda', trup: 'ruda', pohon: 'ruda', rizeni: 'bara', aplikace: 'bara', nastup: 'bara' });
+    return { prirazeni };
+  }
+  if (m.druh === 'krabice') return { obalka: m.listky.length ? vyber(m.listky).id : 'nic' };
+  if (m.druh === 'mapa') {
+    if (nahoda() < 0.1) return { preskocit: true };
+    const mosty = {};
+    for (const most of m.mosty) mosty[most.id] = { cesta: vyber(most.cesta).id, reka: vyber(most.reka).id };
+    return { mosty, prijmout: nahoda() < 0.3 };
   }
   if (m.druh === 'kolonky') {
     const prirazeni = {};
@@ -190,7 +221,7 @@ function kopie(h) {
 }
 for (let hra = 0; hra < pocetNahodnych; hra++) {
   semeno = hra + 1;
-  const h = novaHra();
+  const h = novaHra(PREDVOLBY.length ? PREDVOLBY[hra % PREDVOLBY.length] : undefined);
   spotrebuj(h);
   hrajNahodne(h, AKCI, hra % 2 ? 0.7 : 0.2);
   if (h.s.konec) { dohrano++; continue; }

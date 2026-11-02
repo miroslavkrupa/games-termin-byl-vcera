@@ -1,5 +1,5 @@
 // Společné načítání pro sestavení a kontrolu: texty z CSV a data kapitoly.
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,16 +29,29 @@ function rozeberCsv(obsah) {
   return radky;
 }
 
-export function nactiTexty() {
-  const [hlavicka, ...radky] = rozeberCsv(readFileSync(join(KOREN, 'hra/texty/texty.csv'), 'utf-8'));
+function pridejCsv(texty, cesta) {
+  const [hlavicka, ...radky] = rozeberCsv(readFileSync(cesta, 'utf-8'));
   const sloupec = (jmeno) => hlavicka.indexOf(jmeno);
   const [k, cs, en, mluvci, pozn] = ['keys', 'cs', 'en', '_mluvci', '_poznamka'].map(sloupec);
-  const texty = {};
   for (const r of radky) {
     if (!r[k]) continue;
-    texty[r[k]] = { cs: r[cs], en: r[en], mluvci: r[mluvci] || '', poznamka: r[pozn] || '' };
+    texty[r[k]] = { cs: r[cs], en: r[en] || '', mluvci: r[mluvci] || '', poznamka: r[pozn] || '' };
   }
+}
+
+// Texty hry (hra/texty/texty.csv) a pracovní texty kapitol, které ještě nemají N6
+// (prototyp/texty/kapitolaN.csv, jen česky).
+export function nactiTexty() {
+  const texty = {};
+  pridejCsv(texty, join(KOREN, 'hra/texty/texty.csv'));
+  const pracovni = join(PROTOTYP, 'texty');
+  if (existsSync(pracovni)) for (const soubor of readdirSync(pracovni).filter((f) => f.endsWith('.csv')).sort()) pridejCsv(texty, join(pracovni, soubor));
   return texty;
+}
+
+// Kapitoly, které mají data prototypu (kapitola1.js, kapitola2.js, …)
+export function cislaKapitol() {
+  return readdirSync(PROTOTYP).map((f) => f.match(/^kapitola(\d+)\.js$/)).filter(Boolean).map((m) => Number(m[1])).sort((a, b) => a - b);
 }
 
 export function nactiKapitolu(cislo) {
