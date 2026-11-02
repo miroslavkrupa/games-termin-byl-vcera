@@ -56,9 +56,11 @@ if (!chybejici.length) console.log(`  ✓ všech ${pouzite.size} klíčů existu
 // --- pomocník pro hraní ------------------------------------------------------
 // Kapitoly 2+ začínají stavem z předchozí kapitoly (předvolby „dobra“ a „spatna“)
 const PREDVOLBY = Object.keys(data.predvolby || {});
-function novaHra(predvolba) {
+// Průchod může předvolbu upravit (jiný tým, jiné riziko): priznaky se přidají k předvolbě
+function novaHra(predvolba, priznaky) {
   const h = engine.vytvorHru(data, texty);
-  h.start(predvolba ? data.predvolby[predvolba] : undefined);
+  const p = predvolba ? data.predvolby[predvolba] : undefined;
+  h.start(p ? { ...p, priznaky: { ...p.priznaky, ...(priznaky || {}) } } : undefined);
   return h;
 }
 function spotrebuj(h) {
@@ -80,6 +82,7 @@ function krok(h, k) {
     prohledni: () => h.prohlednout(arg),
     predmet: () => h.predmetNa(zbytek[0], zbytek[1]),
     volba: () => h.zvol(arg),
+    prepni: () => h.prepni(),
     napoveda: () => h.napoveda() !== null,
     ocekavej: () => {
       if (!h.plati(arg)) throw new Error('neplatí ' + arg);
@@ -93,7 +96,7 @@ function krok(h, k) {
 // --- 2. průchody -------------------------------------------------------------
 console.log('\n2. Průchody');
 for (const [id, p] of Object.entries(data.pruchody)) {
-  const h = novaHra(p.start);
+  const h = novaHra(p.start, p.priznaky);
   spotrebuj(h);
   let i = 0;
   try {
@@ -150,6 +153,38 @@ function nahodnaMinihra(h) {
     for (const most of m.mosty) mosty[most.id] = { cesta: vyber(most.cesta).id, reka: vyber(most.reka).id };
     return { mosty, prijmout: nahoda() < 0.3 };
   }
+  if (m.druh === 'jerab') {
+    if (nahoda() < 0.1) return { preskocit: true };
+    if (m.muze_odnest && nahoda() < 0.2) return { odnest: true };
+    const plan = {};
+    if (nahoda() < 0.5) Object.assign(plan, { lp_bed: 1, lp_bet: 2, pp_bed: 3, pp_bet: 4, la_bed: 5, la_bet: 6, dr_bed: 7, dr_bet: 8, pl_bed: 11, pl_bet: 12 });
+    else {
+      const dny = Array.from({ length: m.dnu }, (_, i) => i + 1).sort(() => nahoda() - 0.5);
+      m.karty.forEach((k, i) => { plan[k.id] = dny[i]; });
+    }
+    return { plan };
+  }
+  if (m.druh === 'plan_kola') {
+    const karty = m.karty.filter(() => nahoda() < 0.5).map((k) => k.id);
+    return { cil: vyber(m.cile).id, karty: karty.length ? karty : [m.karty[2].id] };
+  }
+  if (m.druh === 'ukazka') {
+    if (nahoda() < 0.05) return { preskocit: true };
+    if (m.zamceno && nahoda() < 0.3) return { vyndat: true };
+    if (m.faze === 'ukazat') return m.muze_vynechat && nahoda() < 0.3 ? { vynechat: true } : { ukazat: true };
+    if (m.seznam.length && nahoda() < 0.2) return { vyhodit: vyber(m.seznam).id };
+    return { kolo: m.seznam.filter(() => nahoda() < 0.5).slice(0, m.kapacita + 1).map((k) => k.id) };
+  }
+  if (m.druh === 'rozcestnik') {
+    if (nahoda() < 0.05 || !m.karta) return { preskocit: true };
+    return { karta: m.karta.id, kam: vyber(m.prihradky).id };
+  }
+  if (m.druh === 'trup') {
+    if (nahoda() < 0.1) return { preskocit: true };
+    const umisteni = {};
+    for (const k of m.karty) umisteni[k.id] = nahoda() < 0.6 ? ({ aplikace: 'ven', prog_navigace: m.bez_poklopu ? 'ven' : 'pozdeji' }[k.id] || 'dovnitr') : vyber(m.prihradky).id;
+    return { umisteni, bazen: m.bazen ? vyber(['ven', 'nechat']) : undefined };
+  }
   if (m.druh === 'kolonky') {
     const prirazeni = {};
     for (const k of m.kolonky) {
@@ -172,6 +207,7 @@ function moznosti(h) {
     vse.push({ sig: `${h.s.scena}|u|${m.id}`, popis: 'pouzij ' + m.id, proved: () => h.pouzit(m.id) });
     for (const p of predmety) vse.push({ sig: `${h.s.scena}|${p}|${m.id}`, popis: `predmet ${p} ${m.id}`, proved: () => h.predmetNa(p, m.id) });
   }
+  if (data.prepinani && h.plati(data.prepinani)) vse.push({ sig: `prepni|${h.s.postava}`, popis: 'prepni', proved: () => h.prepni() });
   for (const p of predmety) {
     vse.push({ sig: `i|${p}`, popis: 'pouzij predmet ' + p, proved: () => h.pouzitPredmet(p) });
     for (const q of predmety) if (p < q) vse.push({ sig: `k|${p}|${q}`, popis: `kombinace ${p} ${q}`, proved: () => h.kombinovat(p, q) });

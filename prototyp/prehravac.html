@@ -234,6 +234,30 @@
   .prepinac-kapitol button[aria-pressed="true"] { background: var(--teal); color: #fff; }
   .start-volby { display: grid; gap: 8px; }
   .start-volby .volba small { display: block; font: 400 13px/1.3 var(--f-ui, inherit); color: var(--muted); margin-top: 3px; }
+  /* kapitola 3: portrét druhé postavy a minihry */
+  .portret { position: absolute; right: 1.6%; top: 3%; z-index: 4; display: grid; justify-items: center; gap: 2px; padding: 5px 7px 4px; border: 2px solid var(--accent); border-radius: 12px; background: rgba(10, 14, 13, 0.72); color: #fff; cursor: pointer; font: 600 11px/1.1 var(--f-ui); }
+  .portret img, .portret .tvar { width: clamp(30px, 4.2vw, 52px); height: clamp(30px, 4.2vw, 52px); object-fit: cover; object-position: top; border-radius: 50%; background: var(--teal); display: grid; place-items: center; font: 400 22px/1 var(--f-display); }
+  .portret:hover { border-color: #fff; }
+  .platno.zaneprazdneno .portret { display: none; }
+  .osa-dny { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(78px, 1fr); gap: 4px; overflow-x: auto; padding-bottom: 6px; }
+  .den { display: grid; grid-template-rows: auto minmax(52px, auto) auto; gap: 3px; padding: 5px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel-2); min-height: 108px; }
+  .den .cislo-dne { font: 600 11px/1.2 var(--f-mono); color: var(--muted); }
+  .den.blok { background: repeating-linear-gradient(135deg, var(--panel-2) 0 6px, var(--line) 6px 8px); }
+  .den .blok-text { font: 600 11px/1.2 var(--f-mono); color: var(--danger); }
+  .den .zraje { font: 600 10.5px/1.2 var(--f-mono); color: var(--teal); }
+  .den button.cil { border: 1px dashed var(--line); background: transparent; border-radius: 5px; cursor: pointer; color: var(--muted); font-size: 12px; }
+  .den button.cil:hover { border-color: var(--teal); }
+  .karta-dne { border: 0; border-radius: 5px; padding: 4px 5px; background: var(--teal); color: #fff; font: 400 14px/1.1 var(--f-rec); text-align: left; cursor: pointer; }
+  .karta-dne.bet { background: var(--accent); color: var(--accent-ink); }
+  .listek .sipky button[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .hvezdy { font: 600 12px var(--f-mono); color: var(--accent); margin-left: 6px; }
+  .hodnota { font: 600 12px var(--f-mono); margin-left: 6px; padding: 1px 5px; border-radius: 4px; background: var(--ink); color: var(--bg); }
+  .karta-zmeny { padding: 12px 14px; border-radius: 8px; border: 2px solid var(--accent); background: #fffdf5; color: #2a2418; display: grid; gap: 4px; }
+  .karta-zmeny b { font: 400 24px/1.1 var(--f-rec); }
+  .karta-zmeny small { font: 600 12px var(--f-mono); color: #8a7a55; }
+  .radek-trupu { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 1.6fr); gap: 8px; align-items: center; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); }
+  @media (max-width: 600px) { .radek-trupu { grid-template-columns: minmax(0, 1fr); } }
+  .radek-trupu .info { font-size: 13px; color: var(--muted); }
   .pamet { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
   .pamet li { font: 400 21px/1.25 var(--f-rec); padding-left: 18px; position: relative; }
   .pamet li::before { content: ''; position: absolute; left: 2px; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
@@ -268,6 +292,7 @@
           <div class="vodoznak" id="vodoznak"></div>
           <div class="razitko-sedy">Šedá scéna · pozadí zatím není</div>
           <div id="mista"></div>
+          <button class="portret" id="portret" hidden title="Přepnout postavu (X)"></button>
           <div class="nazev-mista" id="nazev-mista" hidden></div>
           <div class="titulky" id="titulky" hidden role="button" tabindex="0" aria-live="polite">
             <div class="kdo" id="titulky-kdo"></div>
@@ -299,11 +324,13 @@
           <li><b>Pravé tlačítko</b>, <b>podržení prstu</b> nebo režim <b>Prohlížet</b>: prohlédnout.</li>
           <li><b>Předmět</b>: klikni na něj v inventáři, pak na místo, postavu nebo jiný předmět. <kbd>Esc</kbd> ho pustí.</li>
           <li><b>Titulky</b> posouvá klik, <kbd>mezerník</kbd> nebo <kbd>Enter</kbd>.</li>
-          <li><kbd>H</kbd> zvýrazní místa ve scénách s obrazem, <kbd>N</kbd> zavolá Pemboka, <kbd>P</kbd> přepne prohlížení.</li>
+          <li><kbd>H</kbd> zvýrazní místa ve scénách s obrazem, <kbd>N</kbd> zavolá nápovědu (Pembok, za Báru metr), <kbd>P</kbd> přepne prohlížení.</li>
+          <li>Kapitola 3: <b>portrét</b> v rohu scény nebo <kbd>X</kbd> přepne mezi Rudou a Bárou. Každý zůstane, kde byl.</li>
         </ul>
         <p class="nadpis-panelu">Co je prototyp</p>
         <p>Kapitola 1: pravidla a texty se schválenými pozadími, postavami a ikonami ze vzorků. Rudův byt je šedý výkres.</p>
         <p>Kapitola 2: pravidla podle návrhu a <b>pracovní texty jen česky</b> (N6 ještě není). Nová místa jsou šedé výkresy. Na začátku vybereš, s jakým výsledkem kapitoly 1 hraješ.</p>
+        <p>Kapitola 3: hraje se za Rudu i Báru, <b>pracovní texty jen česky</b>. Dílna, sklad a trup jsou šedé výkresy.</p>
         <p>Logika je v <code>prototyp/kapitolaN.js</code>, texty v <code>hra/texty/texty.csv</code> a pracovní v <code>prototyp/texty/</code>. Stejná pravidla projde <code>node prototyp/kontrola.mjs N</code>.</p>
         <p>Hra se průběžně ukládá v tomto prohlížeči.</p>
       </div>
@@ -574,7 +601,9 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     vykresliKapitoly();
     $('ukol').textContent = hra.s.priznaky.pembok_otevren ? t(DATA.ukol) : '';
     $('odpocet').textContent = t(DATA.dny, hra.s.priznaky.dny || 30);
-    $('tl-napoveda').disabled = !hra.ma('pembok') || !hra.s.priznaky.pembok_otevren;
+    $('tl-napoveda').disabled = !radce() || !hra.s.priznaky.pembok_otevren;
+    $('tl-napoveda').textContent = radce() === 'metr' ? 'Metr radí' : 'Pembok radí';
+    vykresliPortret();
     $('tl-jazyk').textContent = jazyk === 'cs' ? 'EN' : 'CS';
 
     const radek = $('stav-radek');
@@ -583,6 +612,11 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
       radek.append(el('span', {}, 'Použít ', el('strong', { text: nazevPredmetu(drzenyPredmet) }), ' na místo, postavu nebo předmět'));
       radek.append(el('button', { trida: 'tlacitko', text: 'Prohlédnout', onclick: () => { const p = drzenyPredmet; drzenyPredmet = null; zapisAkci('Prohlédnout: ' + nazevPredmetu(p)); hra.prohlednoutPredmet(p); zpracuj(); } }));
       radek.append(el('button', { trida: 'tlacitko', text: 'Pustit (Esc)', onclick: () => { drzenyPredmet = null; vykresli(); } }));
+    } else if (DATA.prepinani && hra.s.kde) {
+      const druha = hra.s.postava === 'ruda' ? 'bara' : 'ruda';
+      const kde = hra.s.kde[druha] && DATA.sceny[hra.s.kde[druha]];
+      radek.append(el('span', {}, el('strong', { text: t(hra.s.postava === 'bara' ? 'ch1_ui_hraje_bara' : 'ch1_ui_hraje_ruda') }),
+        kde ? ` · ${druha === 'ruda' ? 'Ruda' : 'Bára'}: ${kde.nazev}` : ''));
     } else if (hra.s.postava === 'bara') {
       radek.append(el('span', {}, el('strong', { text: t('ch1_ui_hraje_bara') }), DATA.kapitola === 1 ? ' · Ruda stojí ve frontě na frontu' : ''));
     } else if (rezimProhlizet) {
@@ -635,10 +669,31 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     zpracuj();
   }
 
+  // Rudovi radí Pembok, Báře v kapitole 3 její metr
+  const radce = () => (hra.ma('pembok') ? 'pembok' : DATA.prepinani && hra.ma('metr') ? 'metr' : null);
   function napoveda() {
-    if (!hra || fronta.length || hra.s.minihra || !hra.ma('pembok')) return;
+    if (!hra || fronta.length || hra.s.minihra || !radce()) return;
     zapisAkci('Nápověda');
-    hra.pouzitPredmet('pembok');
+    hra.pouzitPredmet(radce());
+    zpracuj();
+  }
+
+  // Portrét druhé postavy (kapitola 3): klepnutím se hraje za ni
+  const muzePrepnout = () => hra && DATA.prepinani && hra.plati(DATA.prepinani) && !hra.s.dialog && !hra.s.minihra && !hra.s.konec && !fronta.length;
+  function vykresliPortret() {
+    const b = $('portret');
+    b.hidden = !muzePrepnout();
+    if (b.hidden) return;
+    const druha = hra.s.postava === 'ruda' ? 'bara' : 'ruda';
+    const obr = OBRAZKY['postava_' + druha];
+    b.replaceChildren(obr ? el('img', { src: obr, alt: '' }) : el('span', { trida: 'tvar', text: druha === 'ruda' ? 'R' : 'B' }),
+      el('span', { text: druha === 'ruda' ? 'Ruda' : 'Bára' }));
+    b.setAttribute('aria-label', 'Hrát za ' + (druha === 'ruda' ? 'Rudu' : 'Báru'));
+  }
+  function prepni() {
+    if (!muzePrepnout()) return;
+    drzenyPredmet = null;
+    hra.prepni();
     zpracuj();
   }
 
@@ -667,7 +722,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
   }
   function feed() {
     if (!feedMinihry.length) return null;
-    return el('div', { trida: 'feed', 'aria-live': 'polite' }, ...feedMinihry.filter((u) => !/_namitka$/.test(u.klic)).map((u) => el('div', { trida: 'r' }, mluvci(u) ? el('b', { text: mluvci(u) }) : null, el('span', { text: t(u.klic) }))));
+    return el('div', { trida: 'feed', 'aria-live': 'polite' }, ...feedMinihry.filter((u) => !/_namitka$/.test(u.klic)).map((u) => el('div', { trida: 'r' }, mluvci(u) ? el('b', { text: mluvci(u) }) : null, el('span', { text: t(u.klic, ...(u.dosad || []).map((x) => t(x))) }))));
   }
   function zavritMinihru() {
     return el('button', { trida: 'tlacitko', text: 'Zatím ne', onclick: () => { hra.zavriMinihru(); feedMinihry = []; zavriOkno(); zapisAkci('Minihra odložena'); vykresli(); } });
@@ -831,6 +886,139 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
           el('button', { trida: 'tlacitko', text: 'Takhle to nech', onclick: () => poslatMinihre({ mosty: { ...st.volby }, prijmout: true }) }),
           el('button', { trida: 'tlacitko hlavni', text: 'Mapa je hotová', onclick: () => posli({ mosty: { ...st.volby } }) })));
     }
+
+    // --- kapitola 3 ---
+    if (m.druh === 'jerab') {
+      st.plan = st.plan || {};
+      const blok = Object.fromEntries(m.blokovane.map((b) => [b.den, b.klic]));
+      for (const u of m.ukazky) blok[u] = blok[u] || 'ch3_m13_den_ukazka';
+      const naDni = {};
+      for (const [id, d] of Object.entries(st.plan)) naDni[d] = id;
+      const karta = (id) => m.karty.find((k) => k.id === id);
+      // Kde beton zraje podle plánu (bez posunů, které ukáže až přehrání)
+      const zraje = {};
+      for (const [id, d] of Object.entries(st.plan)) if (id.endsWith('_bet')) for (const z of [d + 1, d + 2]) (zraje[z] = zraje[z] || []).push(t('ch3_m13_prvek_' + id.slice(0, 2)));
+      if (st.vybrana && st.plan[st.vybrana]) st.vybrana = null;
+      const dny = Array.from({ length: m.dnu }, (_, i) => i + 1).map((d) => {
+        const id = naDni[d];
+        const obsah = blok[d] ? el('span', { trida: 'blok-text', text: t(blok[d]) })
+          : id ? el('button', { trida: 'karta-dne' + (id.endsWith('_bet') ? ' bet' : ''), text: t(karta(id).klic), title: 'Vrátit kartu', onclick: () => { delete st.plan[id]; st.vybrana = id; vykresliMinihru(); } })
+            : el('button', { trida: 'cil', text: st.vybrana ? 'sem' : '·', 'aria-label': `Dát kartu na ${d}. den`, disabled: !st.vybrana,
+              onclick: () => { st.plan[st.vybrana] = d; st.vybrana = m.karty.map((k) => k.id).find((k) => !st.plan[k]) || null; vykresliMinihru(); } });
+        return el('div', { trida: 'den' + (blok[d] ? ' blok' : '') },
+          el('span', { trida: 'cislo-dne', text: `${d}. den · zbývá ${25 - d}` }), obsah,
+          zraje[d] ? el('span', { trida: 'zraje', text: 'zraje: ' + zraje[d].join(', ') }) : el('span'));
+      });
+      const volne = m.karty.filter((k) => !st.plan[k.id]);
+      otevriOkno(...hlavicka, feed(),
+        el('p', { trida: 'oddil', text: volne.length ? 'Karty: vyber kartu, pak den' : 'Všechny karty jsou v rozpisu (klik na kartu ve dni ji vrátí)' }),
+        el('div', { trida: 'cipy' }, ...volne.map((k) => cip(t(k.klic), st.vybrana === k.id, () => { st.vybrana = st.vybrana === k.id ? null : k.id; vykresliMinihru(); }))),
+        el('p', { trida: 'oddil', text: 'Jeřáb: šestnáct dní' }),
+        el('div', { trida: 'osa-dny' }, ...dny),
+        el('div', { trida: 'tlacitka' }, zavritMinihru(),
+          m.muze_odnest ? el('button', { trida: 'tlacitko', text: 'Ukázky betonu do kufru', onclick: () => posli({ odnest: true }) }) : null,
+          el('button', { trida: 'tlacitko', text: 'Přeskočit (Pembok podle Gantta)', onclick: () => poslatMinihre({ preskocit: true }) }),
+          el('button', { trida: 'tlacitko hlavni', text: 'Přehrát rozpis', disabled: volne.length > 0, onclick: () => posli({ plan: { ...st.plan } }) })));
+      return;
+    }
+
+    if (m.druh === 'plan_kola') {
+      st.karty = st.karty || [...m.vynucene];
+      const nazevKarty = (id) => t(m.karty.find((k) => k.id === id).klic);
+      if (m.diktat) {
+        otevriOkno(...hlavicka, feed(),
+          el('p', { trida: 'navod', text: 'Ruda nadiktuje první kolo podle Gantta.' }),
+          el('div', { trida: 'listky' }, ...m.diktat.map((id) => el('div', { trida: 'listek' }, el('span', { trida: 'poradi', text: '▸' }), el('span', { text: nazevKarty(id) }), el('span')))),
+          el('div', { trida: 'tlacitka' }, zavritMinihru(), el('button', { trida: 'tlacitko hlavni', text: 'Dobře. Tvůj Gantt.', onclick: () => poslatMinihre({}) })));
+        return;
+      }
+      otevriOkno(...hlavicka, feed(),
+        el('p', { trida: 'oddil', text: 'Cíl kola' }),
+        el('div', { trida: 'cipy' }, ...m.cile.map((c) => cip(t(c.klic), st.cil === c.id, () => { st.cil = c.id; vykresliMinihru(); }))),
+        el('p', { trida: 'oddil', text: `Karty: kapacita ${m.kapacita}, vybráno ${st.karty.length}` }),
+        el('div', { trida: 'cipy' }, ...m.karty.map((k) => {
+          const b = cip(t(k.klic), st.karty.includes(k.id), () => {
+            if (m.vynucene.includes(k.id)) return;
+            st.karty = st.karty.includes(k.id) ? st.karty.filter((x) => x !== k.id) : [...st.karty, k.id];
+            vykresliMinihru();
+          });
+          b.append(el('span', { trida: 'hvezdy', text: '★'.repeat(k.odhad) }));
+          return b;
+        })),
+        m.vynucene.length ? el('p', { trida: 'navod', text: 'Ruda na poradě rozdělil: ' + m.vynucene.map(nazevKarty).join(', ') + ' je v kole napevno.' }) : null,
+        st.karty.length > m.kapacita ? el('p', { trida: 'navod', text: 'Karta nad kapacitu: stihne se, ale něco jiného tím počká.' }) : null,
+        el('div', { trida: 'tlacitka' }, zavritMinihru(),
+          el('button', { trida: 'tlacitko hlavni', text: 'Plán kola je hotový', onclick: () => posli({ cil: st.cil, karty: [...st.karty] }, (o) => { if ((o.vratit || []).includes('cil')) st.cil = null; }) })));
+      return;
+    }
+
+    if (m.druh === 'ukazka') {
+      st.vyber = (st.vyber || []).filter((id) => m.seznam.some((k) => k.id === id));
+      const planovat = m.faze === 'planovat';
+      const radekKarty = (k, akce) => el('div', { trida: 'listek' },
+        el('span', { trida: 'poradi', text: k.hodnota === null ? '?' : '✓' }),
+        el('span', {}, t(k.klic), el('span', { trida: 'hvezdy', text: k.odhad ? '★'.repeat(k.odhad) : 'nová' }),
+          k.hodnota === null ? null : el('span', { trida: 'hodnota', title: 'Skutečná hodnota', text: (k.hodnota > 0 ? '+' : '') + k.hodnota })),
+        akce || el('span'));
+      const seznam = m.seznam.map((k, i) => {
+        if (!planovat) return radekKarty(k);
+        if (m.zamceno) return radekKarty(k, el('span', { trida: 'cip razitko', text: i < m.kapacita ? 'v kole' : 'čeká' }));
+        const vybrana = st.vyber.includes(k.id);
+        return radekKarty(k, el('span', { trida: 'sipky' },
+          el('button', { 'aria-pressed': vybrana ? 'true' : 'false', 'aria-label': 'Do kola', title: 'Do kola', text: vybrana ? '✓' : '+',
+            onclick: () => { st.vyber = vybrana ? st.vyber.filter((x) => x !== k.id) : [...st.vyber, k.id]; vykresliMinihru(); } }),
+          el('button', { 'aria-label': 'Vyhodit', title: 'Vyhodit', text: '✕', onclick: () => posli({ vyhodit: k.id }) })));
+      });
+      otevriOkno(...hlavicka,
+        el('div', { trida: 'souboj-skore' }, el('span', { text: `Kolo ${m.kolo} ze 3` }), el('span', { text: `Ukázka na zbývá ${m.den}` }), el('span', { text: `Kapacita: ${m.kapacita} karty` })),
+        feed(),
+        el('p', { trida: 'oddil', text: 'Hotové karty' }),
+        el('div', { trida: 'listky' }, ...m.hotove.map((k) => radekKarty(k))),
+        el('p', { trida: 'oddil', text: planovat ? `Seznam práce: karty do kola ${m.kolo} (vybráno ${st.vyber.length})` : 'Seznam práce' }),
+        m.seznam.length ? el('div', { trida: 'listky' }, ...seznam) : el('p', { trida: 'navod', text: 'Seznam je prázdný.' }),
+        m.vyhozene.length ? el('p', { trida: 'navod', text: 'Vyhozené: ' + m.vyhozene.map((k) => t(k.klic)).join(', ') }) : null,
+        el('div', { trida: 'tlacitka' }, zavritMinihru(),
+          el('button', { trida: 'tlacitko', text: 'Přeskočit (všechno najednou)', onclick: () => poslatMinihre({ preskocit: true }) }),
+          m.zamceno ? el('button', { trida: 'tlacitko', text: 'Vyndat seznam z krabice', onclick: () => posli({ vyndat: true }) }) : null,
+          planovat ? el('button', { trida: 'tlacitko hlavni', text: `Udělat kolo ${m.kolo}`, onclick: () => posli({ kolo: [...st.vyber] }, () => { st.vyber = []; }) }) : null,
+          !planovat && m.muze_vynechat ? el('button', { trida: 'tlacitko', text: 'Neukazovat', onclick: () => posli({ vynechat: true }) }) : null,
+          !planovat ? el('button', { trida: 'tlacitko hlavni', text: 'Ukázat na náměstí', onclick: () => posli({ ukazat: true }) }) : null));
+      return;
+    }
+
+    if (m.druh === 'rozcestnik') {
+      otevriOkno(...hlavicka,
+        el('div', { trida: 'souboj-skore' }, el('span', { text: `Kolo ${m.kolo}` }), el('span', { text: `Na tabuli sedí ${t(m.tvor)} (velikost ${m.velikost} ze 4)` })),
+        feed(),
+        m.karta ? el('div', { trida: 'karta-zmeny' }, el('small', { text: 'Přání od: ' + t(m.karta.zadatel) }), el('b', { text: t(m.karta.klic) })) : null,
+        m.karta ? el('div', { trida: 'volby' }, ...m.prihradky.map((p, i) => el('button', { trida: 'volba', onclick: () => posli({ karta: m.karta.id, kam: p.id }) },
+          el('span', { trida: 'cislo', text: String(i + 1) }), t(p.klic)))) : null,
+        m.vyrizeno.length ? el('p', { trida: 'navod', text: 'Vyřízeno: ' + m.vyrizeno.map((v) => `${t('ch3_m10_karta_' + v.id)} → ${t('ch3_m10_prihradka_' + v.kam)}`).join(' · ') }) : null,
+        el('div', { trida: 'tlacitka' }, zavritMinihru(),
+          el('button', { trida: 'tlacitko', text: 'Přeskočit (všechno k posouzení)', onclick: () => poslatMinihre({ preskocit: true }) })));
+      return;
+    }
+
+    if (m.druh === 'trup') {
+      st.um = st.um || {};
+      st.oci = st.oci || 'ruda';
+      const radky = m.karty.map((k) => el('div', { trida: 'radek-trupu' },
+        el('div', {}, el('b', { text: t(k.klic) }), el('div', { trida: 'info', text: t(st.oci === 'ruda' ? k.ruda : k.bara) })),
+        el('div', { trida: 'cipy' }, ...m.prihradky.map((p) => cip(t(p.klic), st.um[k.id] === p.id, () => { st.um[k.id] = p.id; vykresliMinihru(); })))));
+      otevriOkno(...hlavicka, feed(),
+        el('div', { trida: 'cipy' },
+          cip('Očima Rudy: místo v trupu', st.oci === 'ruda', () => { st.oci = 'ruda'; vykresliMinihru(); }),
+          cip('Očima Báry: co bude hotové', st.oci === 'bara', () => { st.oci = 'bara'; vykresliMinihru(); })),
+        m.bez_poklopu ? el('p', { trida: 'navod', text: 'Trup nemá servisní poklop. „Později“ nepůjde.' }) : null,
+        el('div', { trida: 'casti' }, ...radky),
+        m.bazen ? el('div', { trida: 'cast' }, el('h3', { text: 'Bazén v trupu' }), el('span', { trida: 'pod', text: 'Zabírá místo, kudy vede kabel k navigaci.' }),
+          el('div', { trida: 'cipy' },
+            cip('Bazén ven', st.bazen === 'ven', () => { st.bazen = 'ven'; vykresliMinihru(); }),
+            cip('Bazén nechat', st.bazen === 'nechat', () => { st.bazen = 'nechat'; vykresliMinihru(); }))) : null,
+        el('div', { trida: 'tlacitka' }, zavritMinihru(),
+          el('button', { trida: 'tlacitko', text: 'Přeskočit (všechno dovnitř)', onclick: () => poslatMinihre({ preskocit: true }) }),
+          el('button', { trida: 'tlacitko hlavni', text: 'Zavřít trup', onclick: () => posli({ umisteni: { ...st.um }, bazen: st.bazen }, (o) => { for (const id of o.vratit || []) delete st.um[id]; }) })));
+    }
   }
 
   // Výsledek dohrané kapitoly (příznaky c1_, c2_ … a Rudovy kapsy) si vezme další kapitola
@@ -859,7 +1047,8 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     const priznaky = Object.fromEntries(Object.entries(hra.s.priznaky).filter(([, v]) => v !== false).sort(([a], [b]) => (/^c\d+_/.test(a) === /^c\d+_/.test(b) ? a.localeCompare(b) : /^c\d+_/.test(a) ? -1 : 1)));
     box.replaceChildren(
       el('p', { trida: 'nadpis-panelu', text: 'Kde a kdo' }),
-      radky({ scéna: DATA.sceny[hra.s.scena].nazev, postava: hra.s.postava, dialog: hra.s.dialog || '–', minihra: hra.s.minihra ? hra.s.minihra.id : '–' }),
+      radky({ scéna: DATA.sceny[hra.s.scena].nazev, postava: hra.s.postava, dialog: hra.s.dialog || '–', minihra: hra.s.minihra ? hra.s.minihra.id : '–',
+        ...(hra.s.kde && Object.keys(hra.s.kde).length ? { 'druhá postava': Object.entries(hra.s.kde).filter(([k]) => k !== hra.s.postava).map(([k, v]) => `${k}: ${v}`).join(', ') || '–' } : {}) }),
       el('p', { trida: 'nadpis-panelu', text: 'Předměty' }),
       radky({ Ruda: hra.s.predmety.ruda.join(', ') || '–', Bára: hra.s.predmety.bara.join(', ') || '–' }),
       el('p', { trida: 'nadpis-panelu', text: 'Příznaky' }),
@@ -877,16 +1066,21 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     const pred = h.chyby.length;
     const ok = ({
       pouzij: () => h.pouzit(arg), prohledni: () => h.prohlednout(arg), predmet: () => h.predmetNa(zbytek[0], zbytek[1]),
-      volba: () => h.zvol(arg), napoveda: () => h.napoveda(), ocekavej: () => { if (!h.plati(arg)) throw new Error('neplatí ' + arg); return true; },
+      volba: () => h.zvol(arg), napoveda: () => h.napoveda(), prepni: () => h.prepni(), ocekavej: () => { if (!h.plati(arg)) throw new Error('neplatí ' + arg); return true; },
     })[prikaz]();
     if (ok === false || h.chyby.length > pred) throw new Error(h.chyby.slice(pred).join('; ') || 'krok selhal');
+  }
+  // Předvolba průchodu s jeho úpravami (jiný tým, jiné riziko)
+  function startPruchodu(p) {
+    const pr = p.start ? DATA.predvolby[p.start] : undefined;
+    return pr ? { ...pr, priznaky: { ...pr.priznaky, ...(p.priznaky || {}) } } : undefined;
   }
   function popisKroku(k) { return typeof k === 'object' ? 'minihra ' + JSON.stringify(k.minihra) : k; }
 
   function skocNa(id, n) {
     const p = DATA.pruchody[id];
     const h = Prototyp.vytvorHru(DATA, TEXTY);
-    h.start(p.start ? DATA.predvolby[p.start] : undefined);
+    h.start(startPruchodu(p));
     try { for (let i = 0; i < n; i++) krok(h, p.kroky[i]); }
     catch (e) { zapisAkci(`Průchod ${id} se zastavil na kroku ${n}: ${e.message}`); }
     const udalosti = h.vyber();
@@ -903,7 +1097,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
   function overVse() {
     return Object.entries(DATA.pruchody).map(([id, p]) => {
       const h = Prototyp.vytvorHru(DATA, TEXTY);
-      h.start(p.start ? DATA.predvolby[p.start] : undefined);
+      h.start(startPruchodu(p));
       for (let i = 0; i < p.kroky.length; i++) {
         try { krok(h, p.kroky[i]); } catch (e) { return { id, ok: false, text: `krok ${i + 1} „${popisKroku(p.kroky[i])}“: ${e.message}` }; }
       }
@@ -938,6 +1132,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
   $('tl-zvyraznit').addEventListener('click', () => { zvyraznit = !zvyraznit; $('tl-zvyraznit').setAttribute('aria-pressed', String(zvyraznit)); vykresli(); });
   $('tl-prohlizet').addEventListener('click', () => { rezimProhlizet = !rezimProhlizet; $('tl-prohlizet').setAttribute('aria-pressed', String(rezimProhlizet)); vykresli(); });
   $('tl-napoveda').addEventListener('click', napoveda);
+  $('portret').addEventListener('click', (e) => { e.stopPropagation(); prepni(); });
   $('tl-jazyk').addEventListener('click', () => {
     jazyk = jazyk === 'cs' ? 'en' : 'cs'; ulozit('tbv-jazyk', jazyk);
     $('zaznam').replaceChildren(); zaznam.forEach(pridejDoZaznamu);
@@ -958,6 +1153,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     if (e.key === 'h' || e.key === 'H') $('tl-zvyraznit').click();
     if (e.key === 'p' || e.key === 'P') $('tl-prohlizet').click();
     if (e.key === 'n' || e.key === 'N') napoveda();
+    if (e.key === 'x' || e.key === 'X') prepni();
     if (/^[1-9]$/.test(e.key) && hra.s.dialog && !fronta.length && !hra.s.minihra) {
       const v = hra.volby()[Number(e.key) - 1];
       if (v) zvol(v);

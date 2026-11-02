@@ -7,7 +7,7 @@ a stejná pravidla zkontroluje skript.
 | Soubor | Obsah |
 |---|---|
 | `engine.js` | logika bez grafiky: scény, předměty, příznaky, dialogy, nápověda; běží v prohlížeči i v Node |
-| `kapitola1.js`, `kapitola2.js` | kapitoly jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody; od kapitoly 2 i startovní stavy z předchozí kapitoly (`predvolby`) |
+| `kapitola1.js` až `kapitola3.js` | kapitoly jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody; od kapitoly 2 i startovní stavy z předchozí kapitoly (`predvolby`) |
 | `texty/kapitolaN.csv` | pracovní texty kapitol, které ještě nemají texty první verze (N6); jen česky, stejné sloupce jako `texty.csv` |
 | `prehravac.html` | přehrávač: přepínač kapitol, volba startu, šedé scény, titulky, inventář, minihry a panel autora |
 | `obrazky/` | schválená pozadí scén (D51), postavy zepředu a ikony předmětů (D52) ze `docs/styl/vzorky` |
@@ -41,8 +41,8 @@ Kontrola ověří, že:
 
 Sestavení vytvoří jednu stránku se všemi kapitolami: `prototyp/vystup/prototyp-lokalne.html`
 otevře se přímo v prohlížeči, `prototyp.html` je verze pro artefakt. Kapitola se volí v hlavičce.
-Kapitola 2 se zeptá, s jakým výsledkem kapitoly 1 začít (vlastní dohraná hra, dobré, nebo
-špatné volby); po dohrání kapitoly 1 nabídne „Pokračovat kapitolou 2“. Panel autora ukazuje
+Kapitoly 2 a 3 se zeptají, s jakým výsledkem předchozí kapitoly začít (vlastní dohraná hra,
+dobré, nebo špatné volby); po dohrání kapitoly nabídne „Pokračovat kapitolou N+1“. Panel autora ukazuje
 záznam replik s klíči, stav příznaků a umí skočit na libovolný krok průchodu.
 
 ## Kapitola 2 v prototypu
@@ -55,12 +55,31 @@ v Godotu:
 - **Tácky (P2.3):** po čtvrtém tácku se otočí samy, bez návratu k sázkové tabuli.
 - **Tým (R2.1)** se vybírá volbou „Chcete do týmu?“ u každého kandidáta a potvrzuje u dveří.
 
+## Kapitola 3 v prototypu
+
+Podle [návrhu](../docs/kapitoly/03-realizace.md). Hraje se za Rudu i Báru: každá postava stojí
+ve své scéně (`s.kde`), portrét v rohu scény (nebo klávesa X) přepne na druhou a ta zůstane,
+kde byla. Báře radí metr (tlačítko „Metr radí“). Dílna, sklad a trup jsou šedé výkresy.
+Zjednodušení, která se ověří až v Godotu:
+- **Rozdělané věci v dílně (P3.5):** půlku čidla, Rudův model a plech Bára nejdřív vezme
+  a pak použije na polici „Někdy“ (v návrhu se odkládá rovnou místo na místo).
+- **M13 Jeřábový balet:** karty se dávají do dnů klepnutím (karta, pak den). Přehrání posune
+  kartu, která na svůj den nemůže; když se stavělo na nezralém betonu, bednění spadne a den
+  zabere úklid, další karty se posunou s ní. Bez Věry stojí jeřáb první den (hledání výpočtu).
+- **M14 Ukázka:** karty do kola se vybírají zaškrtnutím, ne přerovnáním sloupce; při
+  `krabice` se bere horních N karet, dokud Bára seznam nevyndá.
+- **M15 Než se zavře trup:** Rudův a Bářin pohled se přepíná přepínačem v okně minihry
+  (ne portrétem), karty se přiřazují klepnutím do přihrádky.
+- **Ranní porada (P3.4)** je řada krátkých rozhovorů: každý z týmu v dílně, překážka, Ruda.
+
 ## Zápis dat
 
 Akce jsou krátké řetězce, popis je v hlavičce `engine.js`: klíč textu se řekne, `+x` / `-x`
 přidá / odebere předmět, `$x`, `$x=3`, `$x+1` nastaví příznak, `>scena`, `#dialog`, `@minihra`,
-`~postava`. Podmínky jsou výrazy nad příznaky, např. `ma('kava') && c1_babicka=='spojenec'`;
-seznamy v příznacích jsou řetězce s pomlčkami (`obsahuje(c2_mosty, 'trup')`, `pocet(c2_mosty)`).
+`~postava` (přepnout hranou postavu), `^bara=dilna` (přesunout postavu do scény). Podmínky jsou výrazy nad příznaky, např. `ma('kava') && c1_babicka=='spojenec'`;
+seznamy v příznacích jsou řetězce s pomlčkami (`obsahuje(c2_mosty, 'trup')`, `pocet(c2_mosty)`),
+`kde('bara')` vrátí scénu postavy. Průchod může předvolbu upravit (`priznaky`, např. jiný tým)
+a krok `prepni` přepne postavu.
 Funkce `(h) => …` v akcích počítá příznaky, které zápis neunese (tým, pokrytí).
 
 Data jsou zároveň podklad pro N7: stejné scény, aktivní místa a pravidla se přepíšou

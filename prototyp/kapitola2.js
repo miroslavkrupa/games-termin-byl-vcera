@@ -529,7 +529,9 @@
           const spatne = Object.keys(BEZNE).filter((id) => pr[id] !== BEZNE[id]);
           if (spatne.length) { h.rekni('ch2_tabule_namitka_' + spatne[0]); return { hotovo: false, vratit: spatne }; }
           const vyjimky = (pr.bezpecnost === 'ruda' ? 1 : 0) + (pr.interier === 'bara' ? 1 : 0);
+          // Kapitola 3 potřebuje vědět, která výjimka chybí (interiér, bezpečnostní systém)
           return hotovo(['ch2_tabule_povaha', '$c2_rozdeleni=povaha', '$c2_vyjimky=' + vyjimky,
+            '$c2_interier=' + pr.interier, '$c2_bezpecnost=' + pr.bezpecnost,
             ...(pr.bezpecnost === 'ruda' ? ['$bezp_u_rudy'] : []),
             ...(pr.interier === 'ruda' ? ['$interier_u_rudy'] : []),
             vyjimky === 2 ? 'ch2_tabule_povaha_bara' : 'ch2_tabule_povaha_zelezo']);

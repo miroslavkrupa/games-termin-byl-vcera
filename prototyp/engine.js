@@ -10,7 +10,8 @@
 //   "#dialog"    otevře dialog, samotné "#" ho zavře; volba s `jednou` po vybrání zmizí
 //                a když zbude jen rozloučení, postava řekne `vycerpano` a dialog se zavře
 //   "@minihra"   otevře minihru
-//   "~bara"      přepne hranou postavu (Bára / Ruda)
+//   "~bara"      přepne hranou postavu (Bára / Ruda); každá stojí ve své scéně (s.kde)
+//   "^bara=dilna" přesune postavu do scény (nehranou jen přestaví, hranou do ní pošle)
 //   "*karta:klic"  titulková karta, "*konec" obrazovka následků
 // a objekty {kdy, akce, jinak} pro podmínky a {stridat: [..]} pro střídání replik.
 // Funkce (h) => … dostane API hry; hodí se na příznaky, které se počítají (tým, seznamy).
@@ -23,6 +24,7 @@
     const s = {
       scena: null,
       postava: 'ruda',
+      kde: {},
       predmety: { ruda: [], bara: [] },
       priznaky: {},
       citace: {},
@@ -53,6 +55,7 @@
       byl: (sc) => !!s.navstiveno[sc],
       postava: () => s.postava,
       scena: () => s.scena,
+      kde: (p) => (p === s.postava ? s.scena : s.kde[p]),
       rekl: (klic) => !!s.citace['rec_' + klic],
       // Seznamy v příznacích jsou řetězce s pomlčkami (c2_mosty = 'trup-nastup-start')
       obsahuje: (seznam, prvek) => String(seznam || '').split('-').includes(prvek),
@@ -103,7 +106,12 @@
       if (c === '#') { otevriDialog(a.slice(1)); return; }
       if (c === '?') { napoveda(); return; }
       if (c === '@') { s.minihra = { id: a.slice(1) }; udalosti.push({ typ: 'minihra', id: a.slice(1) }); return; }
-      if (c === '~') { s.postava = a.slice(1); udalosti.push({ typ: 'postava', id: s.postava }); return; }
+      if (c === '~') { prepniNa(a.slice(1)); return; }
+      if (c === '^') {
+        const [kdo, kam] = a.slice(1).split('=');
+        if (kdo === s.postava) jdi(kam); else s.kde[kdo] = kam;
+        return;
+      }
       if (c === '*') {
         const [druh, klic] = a.slice(1).split(':');
         if (druh === 'karta') udalosti.push({ typ: 'karta', klic });
@@ -111,6 +119,22 @@
         return;
       }
       rekni(a);
+    }
+
+    // Druhá postava zůstane, kde byla; hraná se vrátí do své scény
+    function prepniNa(kdo) {
+      if (kdo === s.postava) return;
+      s.kde[s.postava] = s.scena;
+      s.postava = kdo;
+      udalosti.push({ typ: 'postava', id: kdo });
+      if (s.kde[kdo] && s.kde[kdo] !== s.scena) jdi(s.kde[kdo]);
+    }
+    // Přepnutí portrétem (kapitola 3): jen mimo rozhovor a minihru, když to data dovolí
+    function prepni() {
+      if (!data.prepinani || !plati(data.prepinani) || s.dialog || s.minihra) { chyby.push('teď nejde přepnout'); return false; }
+      zaznamenej({ co: 'prepni' });
+      prepniNa(s.postava === 'ruda' ? 'bara' : 'ruda');
+      return true;
     }
 
     function nastav(zapis) {
@@ -212,7 +236,7 @@
       zaznamenej({ co: 'pouzit', id });
       const k = s.postava === 'bara' ? m.bara_pouzit : m.pouzit;
       if (k !== undefined) proved(k);
-      else if (m.vychod && s.postava === 'ruda') jdi(m.vychod);
+      else if (m.vychod && (s.postava === 'ruda' || data.bara_chodi)) jdi(m.vychod);
       else rekni(vychozi(m.druh === 'postava' ? 'mluvit' : 'pouzit'));
       return true;
     }
@@ -297,6 +321,8 @@
       const st = data.start;
       Object.assign(s.priznaky, st.priznaky || {}, (vstup && vstup.priznaky) || {});
       for (const p of (vstup && vstup.predmety) || st.predmety || []) s.predmety.ruda.push(p);
+      for (const p of st.predmety_bara || []) s.predmety.bara.push(p);
+      Object.assign(s.kde, st.kde || {});
       jdi(st.scena);
       proved(st.akce);
     }
@@ -310,7 +336,7 @@
     const api = {
       s, data, texty, chyby, plati, proved, rekni, nastav, start, vyber, mista, misto,
       prohlednout, pouzit, predmetNa, kombinovat, prohlednoutPredmet, pouzitPredmet,
-      volby, zvol, napoveda, minihraData, dokonciMinihru, zavriMinihru, pametKonce,
+      volby, zvol, napoveda, prepni, minihraData, dokonciMinihru, zavriMinihru, pametKonce,
       ma: pomocnici.ma,
     };
     return api;
