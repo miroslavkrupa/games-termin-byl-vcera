@@ -4,6 +4,7 @@
 export default {
   kapitola: 3,
   nazev: 'Realizace',
+  dvePostavy: true,
   cil: 'konec',
   stavy: {
     vera: 'tým bez Věry',

@@ -36,9 +36,9 @@ pro **PC, Mac a mobily**.
 | [Vyhodnocení prototypu](docs/09-vyhodnoceni-prototypu.md) | odpovědi O1–O8, změřené časy, odhad rozsahu hry, doporučení |
 | [Plán výroby kapitoly 1](docs/10-plan-kapitoly-1.md) | fáze F0–F5, iterace I1–I6, rozhodnutí na začátek, rizika, záznam času |
 | [Kapitola 1: Iniciace](docs/kapitoly/01-iniciace.md) | vertical slice: scény, puzzly, graf závislostí, rozhodnutí, minihry, ukázkové dialogy CS/EN |
-| Kapitoly [2](docs/kapitoly/02-planovani.md), [3](docs/kapitoly/03-realizace.md), [4](docs/kapitoly/04-krize.md), [5](docs/kapitoly/05-uzavreni.md) | kostry: průběh, místa, postavy, graf, rozhodnutí, čtené příznaky, rozpočet |
+| Kapitoly [2](docs/kapitoly/02-planovani.md), [3](docs/kapitoly/03-realizace.md), [4](docs/kapitoly/04-krize.md), [5](docs/kapitoly/05-uzavreni.md) | návrhy kapitol 2–4 (N3) a kostra kapitoly 5: průběh, místa, postavy, graf, rozhodnutí, čtené příznaky, rozpočet |
 | [Postup návrhu](docs/12-postup-navrhu.md) | nejdřív celá hra na papíře, potom texty, potom výroba: kroky N0–N9, šablony, brány A a B |
-| [Graf závislostí kapitol 1–3](docs/13-graf-zavislosti.md) | úplný graf puzzlů podle Rona Gilberta z dat prototypu, šířka a úzká hrdla, návrhy úprav; generuje `tools/graf_zavislosti.mjs` |
+| [Graf závislostí kapitol 1–4](docs/13-graf-zavislosti.md) | úplný graf puzzlů podle Rona Gilberta z dat prototypu (kap. 1–3) a z návrhu (kap. 4), šířka a úzká hrdla, návrhy úprav; generuje `tools/graf_zavislosti.mjs` |
 
 ## Postup návrhu
 

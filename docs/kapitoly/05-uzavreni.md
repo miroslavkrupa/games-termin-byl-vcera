@@ -79,6 +79,9 @@ flowchart TD
 | `c4_report` | `zelene`: start na falešných datech, horší konec |
 | `c4_obet` | co v Arše chybí; reakce obyvatel v epilogu |
 | `c4_usmireni`, `c4_zlepseni` | obtížnost finálního puzzlu |
+| `c4_integrace`, `c4_nastup` | nesladěné body ve finálním puzzlu; kolik skupin obyvatel nastoupí napoprvé (D77) |
+| `c4_slib`, `c4_creep` | starosta chce všechno, co slíbil v M03; velikost Ještětoto při startu |
+| `c4_clen_zpet`, `c4_predseda` | kdo stojí na rampě; Předseda ve frontě na nástup, epilog |
 | Rudův vývoj (0–5) | Hrdina (2–3), nebo Tým (4–5) |
 | Bářina důvěra | varianta epilogu (D60) |
 | vše výše na maximu | scéna po titulcích (D61) |

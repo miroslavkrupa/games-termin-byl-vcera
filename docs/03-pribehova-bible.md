@@ -273,12 +273,16 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | vada v počítadle (4 811) | `c3_vada_hlasena` | kap. 3 (Bára, nebo Ruda, když se zeptá a nechá ji domluvit) | kap. 4 | nenahlášená vada se projeví v krizi | Bářina důvěra |
 | krysy ve skladu | `c3_krysy` | kap. 3 | kap. 4 | `aktovka`: krysy žijí v Komisi (vtip) | – |
 | plán kola | `c3_dluh` | kap. 3 (Bára) | kap. 4 | přeplněná kola: víc chyb v krizi | technický dluh |
-| R4.1 report | `c4_report` | kap. 4 | kap. 5 | zelený report: start na falešných datech, horší konec | důvěra stakeholderů, **Rudův vývoj** |
-| R4.2 co obětovat | `c4_obet` | kap. 4 | kap. 5 | co v Arše chybí, reakce obyvatel v epilogu | rozsah |
-| R4.3 usmíření | `c4_usmireni` | kap. 4 | kap. 5 | snazší finální puzzle | Bářina důvěra, sladění světů |
-| Bára řekne pravdu (D59) | `c4_bara_rekla` | kap. 4 (Bára) | kap. 4 | konfrontace s Předsedou spolu, nebo Ruda sám | Bářina důvěra |
-| M03 souboj se sponzorem | `c4_souboj` | kap. 4 | kap. 4 | prostor pro vyjednání rozsahu (R4.2) | důvěra stakeholderů |
+| R4.1 zpráva starostovi | `c4_report`, `c4_listky` (0–6) | kap. 4 (věž) | kap. 4 (M03, podpis startu), 5 | zelená zpráva: starosta váhá s podpisem, start na falešných datech, horší konec; poctivá jen se 4 lístky | důvěra stakeholderů, **Rudův vývoj** |
+| R4.2 co obětovat | `c4_obet`, `c4_creep` | kap. 4 | kap. 4 (bazén), 5 | co v Arše chybí, velikost Ještětoto, reakce obyvatel v epilogu; obětovaný pomník zvedne morálku | rozsah, morálka |
+| R4.3 usmíření | `c4_usmireni` | kap. 4 (hangár) | kap. 5 | spolupráce ve finálním puzzlu, Rudův vývoj | Bářina důvěra, sladění světů |
+| Bára řekne pravdu (D59) | `c4_bara_rekla` | kap. 4 (Bára, posel) | kap. 4 | konfrontace s Předsedou spolu, nebo Ruda sám | Bářina důvěra |
+| M03 souboj se sponzorem | `c4_souboj`, `c4_slib` | kap. 4 | kap. 4, 5 | prostor pro vyjednání rozsahu (R4.2); rychlé sliby: starosta chce v kap. 5 všechno slíbené | důvěra stakeholderů |
 | M11 Plachetnice | `c4_zlepseni` | kap. 4 | kap. 5 | jedno zlepšení pro finální puzzle | morálka |
+| nástupní zkouška | `c4_nastup` (0–3) | kap. 4 | kap. 5 | kolik skupin obyvatel nastoupí napoprvé | důvěra stakeholderů |
+| navigace poklopem | `c4_integrace` (0–3) | kap. 4 („Stačí. Zavírám.“) | kap. 5 | nesladěné body ve finálním puzzlu | sladění světů |
+| odešlý člen zpět | `c4_clen_zpet` | kap. 4 (jen bez posezení) | kap. 5 | kdo stojí na rampě | morálka |
+| odhalení Předsedy | `c4_predseda` (`spolu` / `ruda`) | kap. 4 (konfrontace) | kap. 5, epilog | Předseda ve frontě na nástup | – |
 | R5.1 předání | `c5_predani` | kap. 5 | epilog | Archa po startu funguje, nebo posádka hledá vypínač | – |
 | R5.2 já, nebo my | `c5_my` | kap. 5 | konec | rozhoduje mezi konci Hrdina a Tým | **Rudův vývoj** |
 

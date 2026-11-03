@@ -14,8 +14,10 @@
 //   samo        krok se stane sám jako výsledek předchozího (předmět z minihry), nestojí tah
 //   jen         uzel existuje jen ve stavu z dřívější kapitoly (klíč z `stavy`)
 //   p           příznaky a předměty prototypu, kontrola ověří, že v kapitolaN.js jsou
+// Graf s `navrh: true` ještě nemá prototyp a příznaky se nekontrolují. Graf s `dvePostavy`
+// barví uzly podle postavy.
 // Grafy se vkládají do docs/13-graf-zavislosti.md mezi značky <!-- graf:kN --> a <!-- /graf:kN -->.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -101,13 +103,14 @@ function rozbor(g, zapnute = []) {
 
 // --- kontrola proti prototypu ------------------------------------------------
 function kontrola(g) {
-  const zdroj = readFileSync(join(KOREN, 'prototyp', `kapitola${g.kapitola}.js`), 'utf-8');
+  const cesta = join(KOREN, 'prototyp', `kapitola${g.kapitola}.js`);
+  const zdroj = !g.navrh && existsSync(cesta) ? readFileSync(cesta, 'utf-8') : null;
   const chyby = [];
   const ids = new Set(g.uzly.map((u) => u.id));
   for (const u of g.uzly) {
     for (const p of [...(u.po || []), ...(u.mekke || [])]) if (!ids.has(p)) chyby.push(`${u.id}: neznámý předpoklad ${p}`);
     if (u.jen && !(g.stavy || {})[u.jen]) chyby.push(`${u.id}: neznámý stav ${u.jen}`);
-    for (const p of u.p || []) {
+    for (const p of zdroj ? u.p || [] : []) {
       let hledej;
       if (p.startsWith('+')) hledej = [`'${p}'`];
       else if (p.startsWith('@')) hledej = [`'${p}'`, `minihry.${p.slice(1)} =`];
@@ -148,7 +151,7 @@ function mermaid(g) {
     if (u.druh === 'start' || u.druh === 'cil') tridy.push('kraj');
     else if (u.druh === 'nebo') tridy.push('nebo');
     else if (u.druh === 'strih') tridy.push('strih');
-    else if (g.kapitola === 3 || u.kdo === 'bara') tridy.push(u.kdo || 'ruda');
+    else if (g.dvePostavy || u.kdo === 'bara') tridy.push(u.kdo || 'ruda');
     if (u.volitelne) tridy.push('volitelny');
     if (u.jen) tridy.push('jen');
     radky.push(`  ${u.id}${tvar(u, popisek)}`);
@@ -202,7 +205,7 @@ function popisRozboru(r, nadpis) {
     if (!s.tah.length) return;
     const pov = s.pov.map((id) => {
       const u = r.uzly.get(id);
-      const kdo = r.g.kapitola === 3 ? ` (${KDO[u.kdo || 'ruda']})` : '';
+      const kdo = r.g.dvePostavy ? ` (${KDO[u.kdo || 'ruda']})` : '';
       const vetev = vedeDoRozcesti(r, id);
       const hrdlo = r.hrdla.includes(id) ? ' **⧗**' : r.povinne.has(id) ? '' : vetev ? ' *(větev)*' : ' *(teď nepotřebný)*';
       return jmeno(r, id) + kdo + hrdlo;
@@ -218,7 +221,8 @@ function popisRozboru(r, nadpis) {
 }
 
 const grafy = [];
-for (const k of [1, 2, 3]) grafy.push((await import(join(KOREN, 'tools', 'graf', `k${k}.mjs`))).default);
+const soubory = readdirSync(join(KOREN, 'tools', 'graf')).filter((f) => /^k\d+\.mjs$/.test(f)).sort();
+for (const f of soubory) grafy.push((await import(join(KOREN, 'tools', 'graf', f))).default);
 
 let chyby = [];
 for (const g of grafy) chyby = chyby.concat(kontrola(g).map((c) => `kapitola ${g.kapitola}: ${c}`));
