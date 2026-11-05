@@ -3,7 +3,7 @@
 > Krok N3a a N3d [postupu návrhu](../12-postup-navrhu.md). Co je v každé scéně kapitoly 4,
 > jaké předměty kapitola má a jak hra reaguje na jejich použití. Návrh kapitoly je
 > v [04-krize.md](04-krize.md), puzzly v [04-puzzly.md](04-puzzly.md).
-> Stav: **ke schválení**, verze 0.1 (tvar kapitoly schválen, D77)
+> Stav: **hotovo**, verze 0.2 (tvar D77, kontrola N4 zapracována v D78)
 
 Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Finální texty vzniknou v kroku N6.
 Ruda soudí, Bára měří: sloupec uvádí Rudovu verzi, Bářina je v poznámce, když nese stopu.
@@ -20,18 +20,19 @@ flowchart LR
   S3 <-->|servisní poklop, jen akt C| S5["S5 Trup Archy zevnitř"]
   S2 <-->|Na radnici| S6["S6 Archiv"]
   S2 <-->|Na radnici| S7["S7 Kancelář Komise"]
-  S6 <-->|výtah do 1½. patra| S7
 ```
 
-Všechny východy jsou otevřené od začátku. Výjimkou je trup: Věra ho na konci kapitoly 3
-zanýtovala, takže dovnitř vede jen servisní poklop, a to až v aktu C (P4.29). Bez poklopu
+Všechny východy jsou otevřené od začátku. Výjimkou je trup: od konce kapitoly 3 je
+zanýtovaný, takže dovnitř vede jen servisní poklop, a to až v aktu C (P4.29). Bez poklopu
 vede dovnitř otvor, který Věra navrtá. **Na radnici** je přechod: střih přes večerní náměstí
-a vestibul, pak nabídka *Archiv*, nebo *Komise*. Z archivu a z Komise vede výtah mezi nimi
-a východ zpátky na staveniště. Náměstí, vestibul, sklad, hospoda ani Mlžná pláň nemají
+a vestibul, pak nabídka *Archiv*, nebo *Komise*. Z archivu i z Komise se jde zpátky přes přechod: na
+staveniště, nebo do druhé z nich. Jako v kapitole 1 vede do archivu schodiště z vestibulu
+a do Komise výtah. Náměstí, vestibul, sklad, hospoda ani Mlžná pláň nemají
 v kapitole 4 aktivní místa.
 
 **Poslové (akt B, D77):** posel ve dveřích dílny je vidět z hangáru i z dílny. Posel na
 staveništi stojí u východu Na radnici. Předmět použitý na posla má hned druhá postava.
+Poslové se určí při rozkolu a do usmíření se nemění.
 
 ## S1 Řídicí věž (nové pozadí)
 
@@ -42,7 +43,7 @@ V aktu B a C je věž klidná: Zelenka sedí u tabule, která už ukazuje lístk
 
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
-| Tabule ukazatelů | aktivní místo | šest světel; dokud nejsou lístky, všechna zelená („Za třicet let jsem neviděl nic tak klidného.“); s lístky skutečné barvy a počet lístků | – | – | P4.1–P4.6 |
+| Tabule ukazatelů | aktivní místo | šest světel; dokud nejsou lístky, všechna zelená („Za třicet let jsem neviděl nic tak klidného.“); lístky jsou barevné papíry připnuté přes sklo, zelená žárovka svítí skrz skutečnou barvou; počet lístků | – | – | P4.1–P4.6 |
 | Štítky pod světly | aktivní místo (6) | Ruda přečte nápis, Bára i co znamená: Rampa *Dodané pytle cementu* („Pytle nejsou rampa.“), Trup *Odškrtnuté řádky Gantta* („Odškrtnuté není zapojené.“), Místa *Sedadla na výkresu*, Nástup *Vytištěné letáky*, Změny *Formuláře v šuplíku Komise* („Prázdný šuplík. Tak žádné změny.“), Tým *Podpisy na docházce* | – | – | hlavní stopy P4.1–P4.6; vidět vždy (D04) |
 | Dispečer Zelenka | postava | v čepici s kšiltem, hrdý na svá světla; „Zelená je klidná barva.“ | dialog `zelenka`: co které světlo měří, odkud jsou žárovky, vysílačky; komentuje každý lístek | – | nová postava (EN Mr Greenlight) |
 | Telegraf | aktivní místo | „Linka přímo ke starostovi. Píše se do ní jen dobrá zpráva.“ | použít → R4.1 (zelenou kdykoli, poctivě se 4 lístky) | akt A | P4.7 |
@@ -60,18 +61,19 @@ ověřený lístek postava nahlásí sama a v aktu B je vysílačka přeškrtnut
 
 Pozadí kapitoly 3 ve večerní verzi. Rampa podle kapitoly 3: celá s plošinou, bez plošiny
 (`c3_rezerva` < 0: prázdné bednění), nebo s prasklinami a hromádkami drti (`c3_drolivy`). Lávka
-z rampy vede přes babiččin plot. Pod věží sedí na kufrech obyvatelé, u plotu rybáři s udicemi.
+z rampy vede přes babiččin plot. Po nástupní zkoušce je na plošině křídou nakreslený obrys dveří
+Archy (Archa stojí v hangáru, vyjede až v závěru kapitoly). Pod věží sedí na kufrech obyvatelé, u plotu rybáři s udicemi.
 U brány hangáru stojí sud paliva.
 
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
 | Rampa | aktivní místo | „Hotová. Až nahoru.“ / bez plošiny: „Bez plošiny. Dva dny, říkal vrátný.“ / `c3_drolivy`: „Drolí se. Beton z ukázky.“ | – | – | P4.1, P4.14, P4.15 |
-| Lávka | aktivní místo | bez spojenectví: „Vede přes babiččin plot. Kdo ji kreslil, se neptal.“; spojenec: „Babička na ni věší prádlo.“ | Bára → vyzkoušet nástup (P4.4); palubní lístky → nástupní zkouška (P4.30) | P4.4 po rozhovoru s obyvateli; P4.30 v aktu C | P4.4, P4.30 |
+| Lávka | aktivní místo | bez spojenectví: „Vede přes babiččin plot. Kdo ji kreslil, se neptal.“; spojenec: „Babička na ni věší prádlo.“ | Bára → vyzkoušet nástup (P4.4); palubní lístky → nástupní zkouška nanečisto k obrysu dveří na plošině (P4.30) | P4.4 po rozhovoru s obyvateli; P4.30 v aktu C | P4.4, P4.30 |
 | Vrátný v jeřábu | postava | „Večer jezdím pomaleji. Kvůli výhledu.“ | dialog `vratny`: deník jeřábu, sud paliva (B), plošina (B), startovací klíč (bez Norberta), drolení (bez Věry) | – | P4.1, P4.10, P4.14, P4.15 |
 | Sud paliva | aktivní místo | „Palivo pro Archu. Sám ho neunesu. Nikdo ho neunese.“ | ★ zvednout („Ani na Gantt to není.“); vrátný ho spustí jeřábem do hangáru | akt B | P4.10 |
 | Obyvatelé s kufry | aktivní místo (skupina) | sedí na kufrech pod věží; „Kudy se nastupuje?“ | Bára: mluvit → kdo ví, kudy jít (`c3_hodnota`), pak lávka (P4.4); akt C: palubní lístky (P4.30) | – | P4.4, P4.30 |
 | Rybáři | aktivní místo (skupina) | udice delší než oni | mluvit: „Na Archu s udicemi, nebo vůbec.“ | – | P4.4, P4.30 |
-| Babička | postava | `spojenec`: za plotem, buchta a noviny s lupou; jinak na lehátku na svém pozemku přímo pod lávkou, cedule „Pozemek je můj.“ | dialog `babicka` | – | P4.13; v konfrontaci svědčí (spojenec) |
+| Babička | postava | `spojenec`: za plotem, buchta a noviny s lupou; jinak na lehátku na svém pozemku přímo pod lávkou; při `odmitnuta` cedule „Pozemek je můj.“, jinak noviny | dialog `babicka` | – | P4.13; v konfrontaci svědčí (spojenec) |
 | Kocour | postava | `spojenec`: na plotě; `odmitnuta`: chybí, sedí na palubě Archy | – | – | P4.13 |
 | Bednění plošiny | aktivní místo | „Bednění stojí. Beton ne.“ | vrátný → P4.14 | jen bez plošiny, akt B | P4.14 |
 | Prasklina v rampě | aktivní místo | „Ukázka betonu. Ukázala, co umí.“; Bára: „Prasklina je delší než včera. O dva centimetry.“ | Věra (bez Věry vrátný s deníkem) → P4.15 | jen `c3_drolivy`, akt B | P4.15 |
@@ -100,10 +102,10 @@ po žebříku se leze na palubu. V aktu B stojí v bočních dveřích dílny po
 | Žebřík na palubu | východ / aktivní místo | „Odtud je vidět celé město. A kometa.“ | → paluba (M11 po usmíření); `odmitnuta`: kocour | – | P4.13, P4.28 |
 | Ještětoto | postava | podle `c3_creep`: „Malý. Pořád.“ / „Už se nevejde do hangáru.“ | Bára: metr → lístek Změny | – | P4.5 |
 | Docházka na stěně | aktivní místo | „Pět podpisů denně. Spokojenost pět z pěti.“; Bára: „Všechny podpisy psal Kryštof.“ (bez Kryštofa: „automat na podpisy“) | – | – | stopa P4.6 |
-| Tým na bednách | postavy | kdo je v týmu (bez odešlého) | mluvit → „Jak se máš?“ (P4.6); Norbert → startovací klíč (akt B); člen s klíčem otevře poklop (P4.2) | – | P4.2, P4.6, P4.10 |
-| Pan Změna | postava | sedí u hadice, cedule „Bazén pro všechny“ | dialog `zmena` → kašna (P4.17) | jen bazén v trupu po R4.2 | P4.17 |
+| Tým na bednách | postavy | kdo je v týmu (bez odešlého) | mluvit → „Jak se máš?“ (P4.6); Norbert → startovací klíč (akt B; jako posel na staveništi); člen s klíčem otevře poklop (P4.2) | – | P4.2, P4.6, P4.10 |
+| Pan Změna | postava | sedí u hadice, cedule „Bazén pro všechny“ | dialog `zmena` → kašna (P4.17) | jen `c3_bazen_v_trupu` a bazén neobětovaný v R4.2 | P4.17 |
 | Kalendář | aktivní místo | zbývá 7 / 5 / 2 | – | – | |
-| Tabule z kap. 2, Rudův Gantt | aktivní místo | jako v kap. 3; Gantt: „Řádek 214: start. Úterý.“ | – | – | |
+| Tabule z kap. 2, Rudův Gantt | aktivní místo | jako v kap. 3; Gantt: „Řádek 214: start. Úterý.“; řádek „Pomník (Ruda)“ z kap. 3 | – | – | |
 | Boční dveře (posel ve dveřích dílny) | východ / postava | v aktu B v nich stojí první posel | → S4; použít předmět na posla → druhá postava; mluvit → co dělá druhá postava, vzkaz | – | D77 |
 | Brána | východ | – | → S2 | – | |
 
@@ -135,11 +137,11 @@ Bez poklopu vede dovnitř čerstvě navrtaný otvor.
 
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
-| Řídicí počítač | aktivní místo | „Mozek Archy. Zatím bez navigace.“ | použít → nahrání (P4.29): navigace, oprava počítadla (vada), programy podle `c3_integrace` | akt C | P4.29 |
+| Řídicí počítač | aktivní místo | „Mozek Archy. Zatím bez navigace.“ | použít → nahrání (P4.29): navigace, oprava počítadla (vada), úkony podle `c3_nesladeno` (bez bodu `lavka`) | akt C | P4.29 |
 | Přípojka navigace | aktivní místo | konec kabelu u poklopu; „Ven to vede. Dovnitř to nevede.“ | Ruda tahá kabel, Bára hlásí, kdy svítí | akt C | P4.29 |
 | Poklop zevnitř | aktivní místo | Rudova ruka drží poklop; „Držím. Pořád držím.“ | – | – | |
 | Panel bezpečnostního systému | aktivní místo | podle `c2_vyjimky`: zapečetěný / „předělává se každý týden“ | – | – | varování (kap. 5) |
-| Bazén | aktivní místo | jen `c3_bazen` = `bez_rizeni`, dokud ho Pan Změna nevypustí: „Kabel vede přes bazén. Doufám, že nevede do bazénu.“ | – | jen bez P4.17 | gag |
+| Bazén | aktivní místo | jen `c3_bazen_v_trupu`, dokud ho Pan Změna nevypustí: „Kabel vede přes bazén. Doufám, že nevede do bazénu.“ | – | jen bez P4.17 | zastaví nahrávání (P4.29) |
 | Okénko | aktivní místo | kometa | – | – | |
 | Poklop / otvor | východ | – | → S3 | – | |
 
@@ -153,10 +155,9 @@ Sklep radnice v noci. Lumír spí na pultu s razítkem na čele, svítí jen lam
 | Kartotéka | aktivní místo | lístky v řadě podle skutečného zahájení (Rudova práce z kap. 1); mezi „příští rok“ nový lístek „Pozorování komety (1994–dosud)“ | Bára: zařadit lístek komety (P4.20) | po probuzení Lumíra | P4.20 |
 | Lumírova kniha | aktivní místo | kniha skutečných dat zahájení; nový řádek „Pozorování komety: duben 1994. Komise.“ | číst | – | klíč k P4.20 |
 | Regál s krabicemi | aktivní místo | – | Lumír vydá přílohu k zařazenému lístku | po P4.20 | P4.20 |
-| Krabička Poučení | aktivní místo | prázdná, když má Ruda kartu poučení z kap. 1 | – | – | M11 (první lahev) |
+| Krabička Poučení | aktivní místo | prázdná; Lumír: „Poslal jsem ji dál.“ | – | – | M11 (první lahev) |
 | Hluboký regál | aktivní místo | Bára: „Tady byl seznam. Teď je u mě.“ | – | – | připomínka P1.12 |
-| Výtah | východ | „Do půlky patra. Pořád.“ | → S7 | – | |
-| Schody | východ | – | → S2 | – | |
+| Schody | východ | – | → přechod Na radnici (staveniště, Komise) | – | |
 
 ## S7 Kancelář Komise (převzatá z kap. 1, noc)
 
@@ -173,8 +174,7 @@ Komise úřaduje v noci („Ve dne je fáze 2.“). Ing. Framework má vlastní 
 | Razítko | aktivní místo | „Razítko na start. Poduška vyschlá. Úmyslně.“ | – | – | |
 | Předsedova aktovka | aktivní místo | `aktovka`: hýbe se a šustí | – | jen `aktovka` | krysy, gag v P4.31 |
 | Cedule | aktivní místo | „Úřední hodiny: příští fáze“ | – | – | |
-| Výtah | východ | – | → S6 | – | |
-| Dveře ven | východ | – | → S2 | – | |
+| Výtah | východ | „Do půlky patra. Pořád.“ | → přechod Na radnici (staveniště, archiv) | – | |
 
 ## Předměty
 
@@ -212,8 +212,8 @@ v kap. 3).
 
 **Kontrola slepých uliček:**
 - Deník jeřábu dá vrátný kdykoli a nespotřebuje se, takže je i pro drolení bez Věry.
-- Startovací klíč dá Norbert, jakmile začne akt B. Bez Norberta v hangáru (nevybraný,
-  nebo odešlý) ho dá vrátný („Mám klíče od všeho.“).
+- Startovací klíč dá Norbert, jakmile začne akt B (jako posel na staveništi). Bez Norberta v týmu
+  ho dá vrátný („Mám klíče od všeho.“). Odejít Norbert nemůže: tým má vždy Pepu, Kláru nebo Věru.
 - Palubní lístky se tisknou znovu, kolikrát je potřeba („Tiskárna nemá fázi 2.“), takže lístek
   pro babičku je nic nestojí.
 - Minutka zůstane u Lumíra, ale Lumír je pak vzhůru až do konce kapitoly.

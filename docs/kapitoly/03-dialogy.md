@@ -154,9 +154,9 @@ Celkem asi 18 vět.
 | Skupina | Odhad replik |
 |---|---|
 | úvod, Pembok, přepínání | 61 |
-| Bára (hraná) | 93 |
+| Bára (hraná) | 94 |
 | Ruda jako postava | 9 |
-| tým | 61 |
+| tým | 62 |
 | vrátný | 12 |
 | Předseda | 18 |
 | Pan Změna | 14 |
@@ -165,9 +165,9 @@ Celkem asi 18 vět.
 | scény s rozhodnutím | 18 |
 | Ruda a prohlížení | 165 |
 | minihry | 73 |
-| **Celkem** | **≈ 562 na jazyk** |
+| **Celkem** | **≈ 564 na jazyk** |
 
-Rozpočet je 450–550 (D56). Odhad je o 2 % nad horní mezí (autorská kontrola přidala 6 replik, D73). K tomu asi 47 popisků miniher,
+Rozpočet je 450–550 (D56). Odhad je o 3 % nad horní mezí (autorská kontrola přidala 6 replik, D73, kontrola kapitoly 4 další 2: klíčník a pomník, D78). K tomu asi 47 popisků miniher,
 18 vět obrazovky následků a GUI. V jednom průchodu hráč slyší asi 425: varianty podle týmu,
 `c2_rozdeleni`, kočky a babičky se vylučují. Když se v N6 ukáže, že je to moc, škrtají se
 nejdřív vlastní reakce ★ (72) a prohlížení za Báru tam, kde nenese stopu.

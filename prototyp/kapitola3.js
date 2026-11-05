@@ -99,7 +99,7 @@
     'ch3_konec_kometa', '*konec'];
 
   // Druhá postava stojí ve scéně jako postava, se kterou jde mluvit a předávat předměty
-  const ROZPIS_BARE = { kdy: "bara_zna_lavku || obsahuje(c2_mosty, 'nastup')", akce: 'ch3_rozpis_bara_uz', jinak: ['ch3_rozpis_bara_1', 'ch3_rozpis_bara_2', '$bara_zna_lavku'] };
+  const ROZPIS_BARE = { kdy: "c3_bara_zna_lavku || obsahuje(c2_mosty, 'nastup')", akce: 'ch3_rozpis_bara_uz', jinak: ['ch3_rozpis_bara_1', 'ch3_rozpis_bara_2', '$c3_bara_zna_lavku'] };
   const druha = (scena, r) => [
     { id: 'bara', nazev: 'postava_bara', druh: 'postava', postava: 'ruda', kdy: `kde('bara')=='${scena}'`, r, obraz: 'postava_bara',
       prohlednout: { kdy: 'vada_nalezena && !c3_vada_hlasena && !vada_skocil', akce: 'ch3_bara_mraci', jinak: 'ch3_bara_prohlednout' },
@@ -634,7 +634,7 @@
       { id: 'plan', kdy: `${BARA} && !plan_kola_hotovo`, stupne: ['ch3_rada_plan_1', 'ch3_rada_plan_2', 'ch3_rada_plan_3'] },
       { id: 'ukazka', kdy: `${BARA} && faze_b && !m14_hotovo`, stupne: ['ch3_rada_ukazka_1', 'ch3_rada_ukazka_2', 'ch3_rada_ukazka_3'] },
       { id: 'vada', kdy: `${BARA} && m14_hotovo && c3_vada_hlasena!='ano' && !bara_odbyta`, stupne: ['ch3_rada_vada_1', 'ch3_rada_vada_2', 'ch3_rada_vada_3'] },
-      { id: 'lavka', kdy: `${BARA} && faze_c && !obsahuje(c2_mosty, 'nastup') && !bara_zna_lavku`, stupne: ['ch3_rada_lavka'] },
+      { id: 'lavka', kdy: `${BARA} && faze_c && !obsahuje(c2_mosty, 'nastup') && !c3_bara_zna_lavku`, stupne: ['ch3_rada_lavka'] },
       { id: 'bara_ceka', kdy: BARA, stupne: ['ch3_rada_ocima_rudy'] },
     ],
 
@@ -1100,7 +1100,7 @@
         h.proved(['$m15_hotovo', '^bara=hangar', '>hangar', 'ch3_r33_hangar', '#r33']);
         return { hotovo: true };
       };
-      if (v.preskocit) return zavrit(['ch3_m15_preskocit', '$c3_integrace=2']);
+      if (v.preskocit) return zavrit(['ch3_m15_preskocit', '$c3_integrace=2', '$c3_nesladeno=navigace-svaciny', ...(p.c3_bazen === 'bez_rizeni' ? ['$c3_bazen_v_trupu'] : [])]);
       const um = v.umisteni || {};
       const karty = m15Karty(p);
       if (karty.some((k) => !um[k.id])) { h.rekni('ch3_m15_chybi'); return { hotovo: false }; }
@@ -1117,11 +1117,15 @@
       if (um.prog_pocitadlo === 'dovnitr' && !pocitadloHotove) chyby.push('ch3_m15_chyba_pocitadlo');
       if (um.prog_pocitadlo === 'ven') chyby.push('ch3_m15_chyba_pocitadlo_nikdy');
       if (um.svaciny === 'dovnitr') chyby.push('ch3_m15_chyba_svaciny');
-      if (!String(p.c2_mosty || '').split('-').includes('nastup') && !p.bara_zna_lavku) chyby.push('ch3_m15_chyba_lavka');
+      if (!String(p.c2_mosty || '').split('-').includes('nastup') && !p.c3_bara_zna_lavku) chyby.push('ch3_m15_chyba_lavka');
       const akce = ['ch3_m15_zavira_se'];
       if (v.bazen === 'ven') akce.push('ch3_m15_bazen_ven', 'ch3_m15_zmena_urazi', '$c3_creep+1');
       for (const c of [...new Set(chyby)]) akce.push(c);
       if (um.prog_pocitadlo === 'dovnitr' && pocitadloHotove) akce.push({ kdy: "c3_vada_hlasena=='ano'", akce: 'ch3_m15_pocitadlo_opravene' });
+      // Kap. 4 čte, co přesně zůstalo nesladěné (každý bod řeší jen jednou) a jestli bazén zůstal v trupu
+      const body = [...new Set(chyby)].map((c) => c.split('_chyba_')[1]);
+      if (body.length) akce.push('$c3_nesladeno=' + body.join('-'));
+      if (p.c3_bazen === 'bez_rizeni' && v.bazen === 'nechat') akce.push('$c3_bazen_v_trupu');
       akce.push('$c3_integrace=' + Math.min(3, chyby.length), chyby.length ? 'ch3_m15_vysledek_chyby' : 'ch3_m15_vysledek_dobre');
       return zavrit(akce);
     },
@@ -1201,7 +1205,7 @@
         'volba ch3_r33_volba_sednout', 'volba ch3_zlepseni_bara',
       ],
       ocekavej: ['konec', 'c3_rezerva==-1', "c3_vada_hlasena=='ano'", 'faze_zastavena', 'norbert_podpis', "c3_krysy=='aktovka'",
-        'c3_hodnota==2', 'c3_creep==0', 'c3_integrace==0', 'bara_zna_lavku', "c3_odchazi=='pepa'"],
+        'c3_hodnota==2', 'c3_creep==0', 'c3_integrace==0', 'c3_bara_zna_lavku', "c3_odchazi=='pepa'"],
     },
     preskocene: {
       popis: 'Varianta L: všechny minihry přeskočené, bez posezení (F), Ruda určuje pořadí (E)',

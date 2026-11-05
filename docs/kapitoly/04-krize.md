@@ -3,9 +3,10 @@
 > Podrobný návrh kapitoly 4. Vznikl z kostry (N2, D62) v kroku N3
 > [postupu návrhu](../12-postup-navrhu.md), až po hraní kapitol 2 a 3 v šedém prototypu (D74).
 > Zadání autora: **co nejširší graf závislostí, rozpočet smí být překročen.**
-> Stav: **tvar schválen** (D77: titulek, překročený rozpočet, dva poslové, 4 lístky), verze 0.3;
-> podrobné dokumenty ke schválení: [místnosti a předměty](04-mistnosti.md), [karty puzzlů](04-puzzly.md),
+> Stav: **hotovo** (tvar D77: titulek, překročený rozpočet, dva poslové, 4 lístky; kontrola N4 zapracována v D78),
+> verze 0.4; podrobné dokumenty: [místnosti a předměty](04-mistnosti.md), [karty puzzlů](04-puzzly.md),
 > [průchod](04-pruchod.md), [osnovy dialogů](04-dialogy.md).
+> Autorská kontrola (N4): [nálezy K1–K31](04-kontrola.md), zapracováno (D78).
 > Úplný graf a jeho rozbor: [graf závislostí](../13-graf-zavislosti.md#kapitola-4-krize).
 
 ## Přehled
@@ -64,7 +65,7 @@ se to na dvou rovinách:
   co lidé opravdu dostanou (zkouška s obyvateli). Hráč si to ověří šesti malými hádankami
   ve dvou světech.
 - **Vztahově:** rozhraní mezi světy se rozbije doslova. Ruda chce všechno zamknout, Bára
-  všechno přepracovat, a dva dny spolu nemluví. Bára vypne vysílačku a předměty mezi nimi nosí
+  všechno přepracovat, a pět dní spolu nemluví. Bára vypne vysílačku a předměty mezi nimi nosí
   dva poslové z týmu.
   Všechno, co jde udělat odděleně, se udělat dá. Archa ale nevzlétne, dokud se neusmíří.
 
@@ -84,25 +85,29 @@ Bez posezení (`c3_retro` = ne) odešel a pracuje „na zkoušku“ u Ing. Frame
 
 | Příznak z dřívějška | Jak se projeví v kapitole 4 |
 |---|---|
-| `c1_slib_vseho` ≥ 3 | starosta v M03 začne kolem „A fontánu jste slíbil.“; v R4.2 přibudou fontána a terasa, které nejde obětovat bez vyhraného kola |
+| `c1_slib_vseho` ≥ 3 | starosta v M03 začne kolem „A fontánu jste slíbil.“; v R4.2 přibudou fontána a terasa (jen bez `c1_mimo_rozsah`, jako v kap. 2) |
 | `c1_babicka` ≠ `spojenec` | babička sedí na lehátku na svém pozemku přímo pod lávkou rampy (P4.13); `spojenec`: přinese buchtu a v konfrontaci svědčí („Na pozemek se mě nikdo neptal. Kromě něj.“) |
-| `c1_charter_kvalita`, `c1_mimo_rozsah` | dobré repliky do M03; s „co nepatří“ jde v R4.2 bazén obětovat bez kola |
+| `c1_charter_kvalita`, `c1_mimo_rozsah` | dobré repliky do M03; s „co nepatří“ se v R4.2 nafukovací bazén nepočítá do limitu bez odporu (P4.9) |
 | `c1_seznam_pasazeru` | hlavní důkaz (P4.21) |
 | `c2_riziko_predem` = `usmev` | kopie podpisů nahradí v konfrontaci libovolný jiný důkaz |
 | `c2_rozdeleni` | `gantt`: obyvatelé aplikaci nevěří, palubní lístky musí být papírové (P4.23 o krok delší); `krabice`: viz `c3_drolivy` |
-| `c2_tym` | bez Norberta dá startovací klíč vrátný („Mám klíče od všeho.“); bez Věry drolení zpevní vrátný a trup navrtá Ruda |
+| `c2_tym` | bez Norberta v týmu dá startovací klíč vrátný („Mám klíče od všeho.“); bez Věry drolení zpevní vrátný a trup navrtá Ruda. „Bez Věry“ platí i tehdy, když Věra odešla (`c3_odchazi`) a ještě se nevrátila |
 | `c3_rezerva` < 0 | rampa bez odpalovací plošiny (P4.14) |
 | `c3_drolivy` | rampa se drolí (P4.15) |
 | `c3_poklop` | `ano`: navigace se nahraje poklopem; `netesni`: poklop se musí utěsnit (P4.16); `ne`: Věra navrtá trup podle plánu zapojení (P4.29) |
 | `c3_retro`, `c3_odchazi` | bez posezení musí Ruda odešlého člena přemluvit zpátky (P4.12), jinak nemá klíč od poklopu |
-| `c3_integrace` | počet nesladěných bodů na lístku Trup a počet úkonů při nahrávání (P4.29) |
+| `c3_nesladeno`, `c3_integrace` | body z M15 na lístku Trup; bod `lavka` řeší P4.18 a P4.24, každý další je jeden úkon při nahrávání (P4.29). Každý bod se řeší jen jednou |
 | `c3_vada_hlasena` | neopravená vada: počítadlo v P4.3 ukáže 4 811 a Bára píše opravu (P4.25) |
-| `c3_bara_priority` | `ne`: na lístku Trup je navíc „odpočet uvnitř, počítadlo venku“; počítadlo se nahrává v P4.29 |
+| `c3_bara_priority` | `ne`: na lístku Trup je navíc „Odpočet je uvnitř. Počítadlo venku.“; nehotové počítadlo je bod v `c3_nesladeno`, úkon navíc nepřidává |
 | `c3_hodnota` | kolik obyvatel v P4.4 ví, kudy nastoupit (0–3) |
-| `c3_creep`, `c3_bazen` | velikost Ještětoto na lístku Změny a v R4.2; bazén bez řízení, který v R4.2 zůstane, vytvoří P4.17 |
+| `c3_creep`, `c3_bazen`, `c3_bazen_v_trupu`, `c3_svaciny` | velikost Ještětoto na lístku Změny a v R4.2; dílky v R4.2 podle kapitoly 3 (P4.9); bazén v trupu (`c3_bazen_v_trupu`), který v R4.2 zůstane, vytvoří P4.17 |
 | `c3_dluh` | ≥ 2: zkouška počítadla v P4.3 hlásí i chyby a palubní lístky se tisknou dvakrát |
-| `c2_mosty` bez `nastup` a bez `bara_zna_lavku` | aplikace nezná den lávky (P4.18 a P4.24) |
+| `c3_nesladeno` s bodem `lavka` | aplikace nezná den lávky (P4.18 a P4.24); bod vznikne bez mostu *zkouška nástupu* a bez `c3_bara_zna_lavku` |
+| `c3_zlepseni` | v M11 připluje jako karta větru |
 | `c3_krysy` = `aktovka` | krysy žijí v kanceláři Komise a v konfrontaci sežerou Předsedovi poznámky (vtip) |
+
+**Bářina důvěra je vysoká** při `c1_bara_vyslechnuta` ≥ 2, `c2_rozdeleni` ≠ `gantt` a `c3_vada_hlasena`
+(pravidlo kapitoly 3 a nahlášená vada, D78). Body na stupnici 0–100 počkají na N7.
 
 ## Scény
 
@@ -137,13 +142,15 @@ a rybáři, Pan Změna (jen s bazénem), Ještětoto (velikost podle `c3_creep`)
 mezi hangárem a dílnou, takže ho vidí Ruda z hangáru i Bára z dílny. **Posel na staveništi**
 stojí u východu Na radnici, kudy chodí oba. Poslem se stane první, resp. druhý člen týmu podle
 pořadí Klára, Kryštof, Zdenda, Pepa, Norbert, Věra, který v aktu B v týmu je (tým má v aktu B
-vždy aspoň tři lidi). Pepa jako posel řekne „Za dva dny.“ a doběhne hned.
+vždy aspoň tři lidi). Pepa jako posel řekne „Za dva dny.“ a doběhne hned. Poslové se určí při rozkolu a do usmíření
+se nemění; vrácený člen týmu (P4.12) jde do hangáru.
 
 ## Jak se hraje
 
 - **Akt A:** jako kapitola 3, obě postavy se přepínají portrétem kdykoli a mohou si předávat
   předměty, když stojí ve stejné scéně. Zelenka dá oběma **vysílačku**: ověřený lístek postava
-  nahlásí do věže sama (jedna replika) a světlo na tabuli hned změní barvu. Lístky se nikam
+  nahlásí do věže sama (jedna replika). Zelenka připne barevný lístek přes sklo světla a zelená
+  žárovka svítí skrz skutečnou barvou (jiné než zelené žárovky ve městě nejsou). Lístky se nikam
   nenosí a nejsou předměty.
 - **Akt B:** portrét funguje dál, ale **Ruda a Bára spolu nemluví** a Bára vypne vysílačku.
   Ve stejné scéně se ignorují („S Rudou teď nemluvím.“ / „Vyřiďte Báře, že nemluvím.“).
@@ -170,8 +177,8 @@ vždy aspoň tři lidi). Pepa jako posel řekne „Za dva dny.“ a doběhne hne
 ### Akt A: Zelená věž (Ruda i Bára)
 
 Pod každým světlem je štítek, co měří. Kdo si štítek přečte (nebo se zeptá Zelenky), ví,
-co jít ověřit. **Lístek skutečnosti** nahlásí postava vysílačkou, Zelenka ho připne na tabuli
-a světlo změní barvu na tu skutečnou.
+co jít ověřit. **Lístek skutečnosti** nahlásí postava vysílačkou a Zelenka ho připne přes sklo
+světla: barevný papír, skrz který zelená žárovka svítí skutečnou barvou.
 Hráč potřebuje **4 lístky ze 6**, aby mohl poslat poctivou zprávu (R4.1). Zelenou jde poslat
 kdykoli.
 
@@ -197,12 +204,13 @@ kdykoli.
    „Žlutá ve zprávě? To se tu ještě nestalo.“
 8. **M03 Souboj se starostou ve věži (P4.8).** Starosta přijede: po poctivé zprávě zjistit,
    proč to není zelené, po zelené oslavit a přidat ohňostroj. Pravidla v [minihrách](#m03-souboj-argumenty-se-starostou).
-   Výsledek `c4_souboj` určí, kolik smí hráč v R4.2 obětovat bez starostova odporu.
+   Výsledek `c4_souboj` určí, kolik smí hráč v R4.2 obětovat bez starostova odporu (`c4_souboj` − 2).
 9. **R4.2 Co obětovat (P4.9).** Tabule rozsahu ve věži. Kapacita do startu je menší než seznam
-   práce (o to víc, čím větší je Ještětoto). Hráč vybírá, co z Archy vypadne: bazén, svačiny
-   v aplikaci, odpočet na celé obrazovce, tlačítko Zpět, navigace hned (místo později poklopem),
-   **Rudův pomník na rampě** (Ruda ho plánuje od kapitoly 1), fontána a terasa (jen při
-   `c1_slib_vseho` ≥ 3). Každá obětovaná věc Ještětoto zmenší. Pomník obětuje Ruda jen nerad
+   práce (o to víc, čím větší je Ještětoto). Hráč vybírá, co z Archy vypadne: bazén, věci
+   z aplikace, které po kapitole 3 zbyly na Bářině seznamu (svačiny, odpočet na celé obrazovce,
+   tlačítko Zpět, velká tlačítka, kulaté kajuty), **Rudův pomník na rampě** (v Ganttu od kapitoly 3),
+   fontána a terasa (jen při `c1_slib_vseho` ≥ 3 a bez `c1_mimo_rozsah`). Kapacita je vždy o 2 dílky
+   menší než seznam; tabulka dílků je na kartě P4.9. Každá obětovaná věc Ještětoto zmenší. Pomník obětuje Ruda jen nerad
    („Ten se počítá jako motivace.“). Výsledek `c4_obet`.
 10. **Rozkol (střih).** Ruda: „Od teď nic neměníme. Zamykám.“ Bára: „Počítadlo a nástup se musí
     přepracovat.“ Ruda: „Ne.“ Bára odejde do dílny a zavře dveře. Při vysoké Bářině důvěře je
@@ -217,12 +225,12 @@ kdykoli.
 | **P4.10** Zkouška motorů | dokázat, že Archu nastartuje sám | **startovací klíč** od Norberta (bez něj od vrátného); **sud paliva** na staveništi nechá vrátný jeřábem spustit do hangáru; v kokpitu klíč + start → motory naskočí a zhasnou: „Řídicí systém nepotvrdil nástup.“ Ruda: „…Báro?“ | vždy |
 | **P4.11** Povolení ke startu | razítko Komise na start | Předseda: „Analýza dopadu startu na fázi 3. Formulář 3-F. Fronta je tamhle.“ Fronta na frontu znovu (vtip z kap. 1). Pembok: „Tohle razítko nedostaneš. A on to ví.“ | vždy |
 | **P4.12** Odešlý člen týmu | vrátit klíč od poklopu (nebo plán zapojení) | v Komisi u Frameworka; Gantt ani slib nezabere, jen přiznat chybu („Neposlouchal jsem.“) a nechat ho domluvit. Vrátí se s klíčem a řekne, že Framework s Předsedou „podepsali něco na fázi 3“ (svědectví) | jen `c3_retro` = ne |
-| **P4.13** Babička na lehátku | uvolnit pozemek pod lávkou | vyslechnout ji (poprvé se jí někdo zeptá, proč tu sedí: na seznamu pasažérů není), potom jí dát **palubní lístek** od Báry přes posla. Při `odmitnuta` nejdřív donést kocoura, který se schoval v Arše | jen `c1_babicka` ≠ `spojenec` |
-| **P4.14** Plošina | dostavět odpalovací plošinu | vrátný a jeřáb: jedno bednění a jedna betonáž (bez minihry, „dva dny“ doopravdy) | jen `c3_rezerva` < 0 |
-| **P4.15** Drolivá rampa | zpevnit rampu | Věra namíchá správnou směs (bez Věry vrátný podle deníku) | jen `c3_drolivy` |
+| **P4.13** Babička na lehátku | uvolnit pozemek pod lávkou | vyslechnout ji (poprvé se jí někdo zeptá, proč tu sedí: lístek na Archu jí nikdo nedal), potom jí dát **palubní lístek** od Báry přes posla. Při `odmitnuta` nejdřív donést kocoura, který se schoval v Arše | jen `c1_babicka` ≠ `spojenec` |
+| **P4.14** Plošina | dostavět odpalovací plošinu | vrátný a jeřáb: jedno bednění a jedna betonáž (bez minihry, „dva dny“ doopravdy); beton zraje během aktu B, proto na objednanou plošinu čeká usmíření | jen `c3_rezerva` < 0, akt B |
+| **P4.15** Drolivá rampa | zpevnit rampu | Věra namíchá správnou směs (bez Věry, i odešlé, vrátný podle deníku) | jen `c3_drolivy` |
 | **P4.16** Netěsný poklop | utěsnit poklop | těsnicí páska z dílny od Báry přes posla | jen `c3_poklop` = `netesni` |
-| **P4.17** Bazén | dostat bazén z trupu | Pan Změna ho hlídá; nechat ho domluvit: chce bazén „pro všechny“. Nabídnout mu kašnu na náměstí (projekt z roku 1994 ve fázi 2) | jen bazén bez řízení, který v R4.2 zůstal |
-| **P4.18** Rozpis po poslovi | Báře chybí den lávky | dát rozpis rampy poslovi | jen bez mostu *zkouška nástupu* |
+| **P4.17** Bazén | dostat bazén z trupu | Pan Změna ho hlídá; nechat ho domluvit: chce bazén „pro všechny“. Nabídnout mu kašnu na náměstí (projekt *Voda v kašně* z roku 1994, teče z ní kafe): voda pro všechny | jen bazén v trupu (`c3_bazen_v_trupu`), který v R4.2 zůstal |
+| **P4.18** Rozpis po poslovi | Báře chybí den lávky | dát rozpis rampy poslovi | jen bod `lavka` v `c3_nesladeno` |
 
 **Bára:**
 
@@ -230,10 +238,10 @@ kdykoli.
 |---|---|---|---|
 | **P4.19** Archiv v noci | dostat se k Lumírovi | vzít v dílně **kuchyňskou minutku** (z ranní porady v kap. 3), v archivu ji natáhnout u spícího Lumíra. Lumír: „V noci vydávám jen lidem, kteří měří.“ | vždy |
 | **P4.20** Kometa v kartotéce | najít, kdo o kometě věděl | v kartotéce, kterou Ruda v kap. 1 seřadil podle skutečného zahájení, je nový lístek **„Pozorování komety (1994–dosud)“**, zastrčený mezi „příští rok“. Bára ho zařadí podle data z Lumírovy knihy: duben 1994, mezi výtah a Archu (květen 1994). Komise tedy viděla kometu měsíc předtím, než začala Archu. Lumír vydá přílohu: **hvězdářský záznam** podepsaný Předsedou: „Utajit. Fáze 2.“ | vždy |
-| **P4.21** Plán Komise | spojit důkazy | **záznam** na **seznam pasažérů**: stejné datum, duben 1994. Komise věděla o kometě a chystala Archu jen pro sebe. Bára připíše datum na seznam → předmět **plán Komise** (seznam se v něj změní, záznam zůstane) | vždy |
+| **P4.21** Plán Komise | spojit důkazy | **záznam** na **seznam pasažérů**: seznam je z roku 1994, kometa z dubna, Archa z května, takže seznam vznikl mezi tím. Komise věděla o kometě a chystala Archu jen pro sebe. Bára připíše datum na seznam → předmět **plán Komise** (seznam se v něj změní, záznam zůstane) | vždy |
 | **P4.22** Smlouva | proč Framework sedí u Předsedy | v Komisi se Frameworka zeptat na referenci. Hrdě ukáže **smlouvu na fázi 3** („Krabice Věčnost. Na zkoušku navždy.“) a ochotně dá kopii pro „srovnání“ | vždy |
 | **P4.23** Palubní lístky | lístek pro každého obyvatele | v dílně vytisknout z aplikace (počet míst z počítadla); při `gantt` navíc přepsat na papír, protože aplikaci obyvatelé nevěří; při `c3_dluh` ≥ 2 tiskne dvakrát | vždy |
-| **P4.24** Den lávky | aplikace musí vědět, kdy je lávka | rozpis rampy od posla (P4.18) | jen bez mostu *zkouška nástupu* |
+| **P4.24** Den lávky | aplikace musí vědět, kdy je lávka | rozpis rampy od posla (P4.18) | jen bod `lavka` |
 | **P4.25** Oprava počítadla | 4 811 → 4 812 | napsat opravu v dílně; nahraje se v aktu C | jen neopravená vada |
 | **P4.26** Zpráva Rudovi (D59) | říct Rudovi, co ví | s plánem Komise promluvit s kterýmkoli poslem: „Vyřiďte Rudovi, co vím o Předsedovi.“ Jen při vysoké Bářině důvěře („Hned.“), jinak ★ „Ještě ne.“ | volitelné |
 
@@ -241,26 +249,30 @@ Bára posílá přes posla i **palubní lístek pro babičku** (P4.13) a **těsn
 Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
 
 11. **R4.3 Usmíření (P4.27).** Když Ruda ví, že motory bez řídicího systému nenastartují a že
-    razítko nedostane, a Bára má důkazy a lístky, přijde Bára do hangáru. Ruda stojí u tichých
-    motorů. Volba: **„Plán nestačí. Potřebuju tě.“** nebo **„Plán byl dobrý. Jen ho nikdo
+    razítko nedostane (při `c3_rezerva` < 0 má i objednanou plošinu), a Bára má důkazy a lístky,
+    začne usmíření, jakmile je Bára v hangáru (vejde do něj, nebo v něm už stojí). Ruda přijde
+    k tichým motorům střihem. Volba: **„Plán nestačí. Potřebuju tě.“** nebo **„Plán byl dobrý. Jen ho nikdo
     nedodržel.“** Obě vedou dál (D12), mění Bářinu důvěru, Rudův vývoj a kapitolu 5. Bára
     řekne o Předsedovi teď, pokud to neudělala dřív (`c4_bara_rekla` = `hned` / `po_usmireni`).
     Při `po_usmireni` položí Rudovi na pult desky se svými důkazy: v konfrontaci je předkládá on.
 12. **M11 Plachetnice na palubě Archy (P4.28).** „Archa je loď. Tak si na ni sedneme.“ Tým, Ruda
     a Bára. Pravidla v [minihrách](#m11-plachetnice). Vybrané zlepšení `c4_zlepseni` platí
     v kapitole 5. Střih: **„Zbývá 2.“** Člen týmu s klíčem od poklopu ho dá Rudovi: „Teď ho
-    budete potřebovat oba.“
+    budete potřebovat oba.“ (Bez posezení jen při `c4_clen_zpet`, jinak klíč přinese až P4.12.)
 
 ### Akt C: Poslední přípravy (zbývá 2, spolu)
 
 13. **Navigace poklopem (P4.29).** Ruda otevře klíčem poklop a drží ho (u netěsného s páskou),
     Bára vleze do trupu a nahrává navigaci (plánovaně „později poklopem“ z M15), opravu
-    počítadla a programy, které se v M15 zavřely nehotové. Přípojka, která zůstala venku, se
-    natáhne poklopem: hráč přepíná, Ruda tahá kabel a Bára hlásí, kdy svítí. Po každém úkonu
-    může Ruda říct „Stačí. Zavírám.“ (Rudova vada naposledy); co zůstane, je `c4_integrace`.
+    počítadla a programy, které se v M15 zavřely nehotové. Každý bod z `c3_nesladeno`
+    kromě `lavka` je jeden úkon: hráč přepíná, Ruda tahá kabel a Bára hlásí, kdy svítí. Navigace se
+    nahraje vždy první; po každém dalším úkonu může Ruda říct „Stačí. Zavírám.“ (Rudova vada
+    naposledy); co zůstane, je `c4_integrace`. Bazén v trupu nahrávání zastaví: „Kabel vede přes
+    bazén.“ (P4.17).
     **Bez poklopu** Věra navrtá trup podle plánu zapojení (bez Věry Ruda: „Nýtovačka byla lehčí.“).
-14. **Nástupní zkouška (P4.30).** Obyvatelé s kufry a s palubními lístky přejdou po lávce do Archy
-    a zase ven. Jde jen po rampě bez babičky na lehátku, s plošinou a bez drolení, a když aplikace
+14. **Nástupní zkouška (P4.30).** Archa ještě stojí v hangáru, proto se zkouší nanečisto. Ruda
+    nakreslí na plošinu křídou obrys dveří („Tady budou dveře. Zítra.“) a obyvatelé s kufry
+    a s palubními lístky přejdou po lávce k obrysu a zpátky. Jde jen po rampě bez babičky na lehátku, s plošinou a bez drolení, a když aplikace
     zná den lávky. Ruda řídí frontu („Tohle je jediná fronta, kterou jsem kdy chtěl.“), Bára počítá.
     Výsledek `c4_nastup`.
 15. **Konfrontace v Komisi (P4.31).** Předseda, Ing. Framework, starosta (přijde podepsat start).
@@ -272,14 +284,15 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
 | „Fáze 2 byla opatrnost.“ | plán Komise (seznam + záznam) | kopie podpisů |
 | „Nikdo nám nic neprodal.“ | smlouva na fázi 3 | svědectví odešlého člena (P4.12); kopie podpisů |
 
-    Špatný důkaz: Předseda „Fáze 2.“ a nic se nestane (D12). Při `c4_bara_rekla` = `hned`
-    stojí Bára u toho a předkládá svou půlku důkazů sama; jinak předkládá Ruda všechno a Bára
-    přijde až na konec. **Antiklimax:** Předseda „Já? Já jsem jen schvaloval.“ a ukáže sbalený
-    kufr. Ruda mu podá palubní lístek: „Archa veze všechny. Fronta je tamhle.“ Framework:
+    Špatný důkaz: Předseda „Fáze 2.“ a nic se nestane (D12). Použít jde předmět z inventáře obou
+    postav. Při `c4_bara_rekla` = `hned` stojí Bára u toho a předkládá tři hlavní důkazy sama, Ruda
+    náhrady; jinak předkládá Ruda všechno (desky dostal při usmíření) a Bára přijde až na konec. **Antiklimax:** Předseda „Já? Já jsem jen schvaloval.“ a ukáže sbalený
+    kufr. Ruda mu podá palubní lístek z Bářina balíku („Jeden navíc. Pro jistotu.“):
+    „Archa veze všechny. Fronta je tamhle.“ Framework:
     „Já jsem jen prodával krabice.“ a nabídne krabici „Krize“. Při `aktovka` mu krysy
     z aktovky sežerou poznámky.
 16. **Povolení ke startu (P4.32).** Starosta podepíše start místo Komise: „Komise je
-    pozastavena. Do fáze 2.“ Po zelené zprávě (R4.1) váhá: „Včera jste mi hlásil zelenou.“
+    pozastavena. Do fáze 2.“ Po zelené zprávě (R4.1) váhá: „Před pěti dny jste mi hlásil zelenou.“
     a podepíše až s lístky skutečnosti na stole (bez nich jen s Bářinými čísly).
 17. **Konec kapitoly.** Zbývá 1. Archa je připravená ke startu. Podrobně v části
     [Úvod a konec](#úvod-a-konec).
@@ -291,7 +304,7 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
 | R4.1 | věž, telegraf | poctivě s variantami (4+ lístky) / zelenou | `c4_report` = `poctive` / `zelene`; `c4_listky` (0–6) | hned v M03 a P4.32; kap. 5: start na falešných datech, horší konec |
 | R4.2 | věž, tabule rozsahu | co obětovat (seznam) | `c4_obet` (seznam), `c4_creep` (velikost Ještětoto po R4.2) | P4.17 (bazén); kap. 5: co v Arše chybí, reakce obyvatel v epilogu |
 | R4.3 | hangár | „Plán nestačí. Potřebuju tě.“ / „Plán byl dobrý.“ | `c4_usmireni` = `priznal` / `trval` | kap. 5: spolupráce ve finálním puzzlu, Rudův vývoj, Bářina důvěra |
-| Bára (D59) | akt B, posel | říct Rudovi hned (jen při důvěře) / až po usmíření | `c4_bara_rekla` = `hned` / `po_usmireni` | P4.31: konfrontace spolu, nebo Ruda sám |
+| Bára (D59) | akt B, posel | říct Rudovi hned (jen při důvěře) / až po usmíření | `c4_bara_rekla` = `hned` / `po_usmireni` | P4.31: konfrontace spolu, nebo Ruda sám; kap. 5: Předseda ve frontě, epilog |
 
 **Stavové proměnné:** poctivá zpráva zvedne důvěru stakeholderů a Rudův vývoj o 1 (vada
 „reportuje zeleně“), zelená ho nezvedne a důvěru sníží. Obětovaný pomník zvedne morálku týmu.
@@ -301,13 +314,12 @@ R4.3 = přiznat zvedne Bářinu důvěru a sladění světů.
 
 | Příznak | Hodnoty | Nastaví | Čte |
 |---|---|---|---|
-| `c4_souboj` | 0–5 (vyhraná kola) | M03 | R4.2 (kolik jde obětovat bez odporu) |
+| `c4_souboj` | 0–5 (vyhraná kola) | M03 | R4.2 (bez odporu jde obětovat `c4_souboj` − 2 věcí) |
 | `c4_slib` | 0–5 (rychlé repliky v M03) | M03 | kap. 5 (starosta chce všechno, co slíbeno) |
 | `c4_zlepseni` | jedno ze tří | M11 | kap. 5 |
 | `c4_nastup` | 0–3 (kolik skupin obyvatel prošlo napoprvé) | P4.30 | kap. 5 (nástup) |
 | `c4_integrace` | 0–3 (nesladěné body po P4.29) | P4.29 | kap. 5 (finální puzzle) |
 | `c4_clen_zpet` | ano | P4.12 | kap. 5 (kdo stojí na rampě) |
-| `c4_predseda` | `spolu` / `ruda` | P4.31 | kap. 5 (Předseda ve frontě), epilog |
 
 ## Graf závislostí puzzlů
 
@@ -322,7 +334,8 @@ Zdroj je `tools/graf/k4.mjs`; kdo mění puzzle tady, mění ho i tam. Souhrn:
 | Úzká hrdla | M03, R4.2, usmíření, M11 | M03, R4.2 |
 
 Ve špatném stavu nejsou usmíření a M11 úzká hrdla, protože následky z dřívějška (babička,
-plošina, bazén, odešlý člen) jdou dodělat i v aktu C. To je záměr: hráč, který v kapitolách 1–3
+bazén, drolení, odešlý člen) jdou dodělat i v aktu C. Jen plošinu je potřeba objednat v aktu B,
+beton zraje dva dny (D78). To je záměr: hráč, který v kapitolách 1–3
 hodně pokazil, má víc práce, ale ne delší frontu.
 
 ## Minihry v kapitole 4
@@ -332,7 +345,8 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 - **Patro:** společný základ (komunikace se sponzorem). Rozhodující souboj hry ([M03](../04-minihry.md#m03-souboj-argumenty)).
 - **Pravidla jako v kapitole 1:** 5 kol, výhra = aspoň 3 vyhraná kola. Starosta vznáší námitky
   a hráč odpovídá replikou. Dobrá replika se ukáže jen s podkladem. Rychlá replika (slib) kolo
-  vyhraje a přičte 1 k `c4_slib`, slabá kolo prohraje. Prohra nic nebere (D12), jen se opakuje.
+  vyhraje a přičte 1 k `c4_slib`, slabá kolo prohraje. Prohra nic nebere (D12): souboj jde
+  opakovat, ale nemusí, platí poslední výsledek.
 - **Námitky a podklady:**
 
 | Kolo | Námitka po poctivé zprávě / po zelené | Dobrá replika z |
@@ -345,8 +359,8 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 
   Při `c1_slib_vseho` ≥ 3 přibude před 1. kolo „A fontánu jste slíbil.“ (dobrá replika jen
   z charteru). Po zelené zprávě jde poctivě vyhrát jen s lístky, které hráč přesto sebral.
-- **Výsledek:** `c4_souboj`, `c4_slib`. Kolik vyhraných kol, tolik věcí jde v R4.2 obětovat bez
-  starostova „To ne!“.
+- **Výsledek:** `c4_souboj`, `c4_slib`. Bez starostova „To ne!“ jde v R4.2 obětovat `c4_souboj` − 2
+  věcí (3 vyhraná kola: jednu, 5 kol: tři).
 - **Přeskočení:** Pembok vybere rychlé repliky; `c4_souboj` = 3, `c4_slib` = 2.
 
 ### M11 Plachetnice
@@ -357,20 +371,21 @@ hodně pokazil, má víc práce, ale ne delší frontu.
   **vítr** (co pomohlo) a **útesy** (co hrozí v kap. 5). Karty jsou události kapitoly a mluví
   za ně členové týmu: zelená světla, rozkol, posel, Ještětoto, babička, palivo bez řídicího
   systému, poctivá zpráva, Bářiny důkazy. Kotva i vítr jsou správně podle toho, jak to hráč
-  zažil: rozkol je kotva, posel vítr, zelená zpráva kotva, poctivá vítr.
-- **Lahve s poučením** připlouvají z Lumírovy krabičky Poučení (karta poučení z kap. 1, když ji
-  hráč má, připluje první: „Zapomněli jsme se zeptat rybářů.“). Lahev jde přiřadit k útesu.
+  zažil: rozkol je kotva, posel vítr, zelená zpráva kotva, poctivá vítr. Zlepšení z posezení v kap. 3
+  (`c3_zlepseni`) připluje jako karta větru („Minule jsme si sedli. Pomohlo to.“).
+- **Lahve s poučením** připlouvají z Lumírovy krabičky Poučení (první připluje vždy karta
+  poučení z kap. 1: „Zapomněli jsme se zeptat rybářů.“). Lahev jde přiřadit k útesu.
 - **Konec:** hráč vybere **jedno zlepšení pro kapitolu 5**: *Ptát se dřív, než se zamkne*
   (víc času ve finálním puzzlu), *Jedna tabule pro oba* (Ruda vidí, co ví Bára), nebo
   *Říct to nahlas* (tým radí ve finále). Výsledek `c4_zlepseni`.
 - **Bez posezení v kap. 3:** odešlý a vrácený člen řekne první kartu sám: „Odešel jsem, protože
-  jsme si nikdy nesedli.“
+  jsme si nikdy nesedli.“ Když ještě není zpátky (`c4_clen_zpet`), Pembok: „Někdo tu chybí.“
 - **Přeskočení:** Pembok vybere *Jedna tabule pro oba*.
 
 ### Malé hádanky (ne minihry)
 
 - **Tabule ukazatelů (P4.1–P4.6):** šest světel, pod každým štítek; lístky se připínají
-  přetažením nebo klepnutím. Žádné časování.
+  přes sklo světel přetažením nebo klepnutím. Žádné časování.
 - **Konfrontace (P4.31):** dialog, ve kterém se na výmluvu odpovídá předmětem z inventáře.
   Tři výmluvy, nekonečně pokusů.
 
@@ -388,10 +403,11 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 
 ### Konec kapitoly (zbývá 1)
 
-1. Po podpisu starosty střih na rampu v noci. Archa stojí na plošině, lávka je prázdná, kufry
+1. Po podpisu starosty se Archa vyveze z hangáru po dráze rampy na plošinu. Vrátný: „Konečně
+   něco ven.“ Rampa v noci, lávka je prázdná, kufry
    obyvatel jsou srovnané v řadě („jediná fronta ve městě, která někam vede“).
-2. Ve věži Zelenka vymění poslední zelenou žárovku za žlutou, kterou mu přinesla Bára: „Ta
-   svítí míň. Ale svítí.“
+2. Ve věži Zelenka vymění poslední zelenou žárovku za tu, kterou Bára v dílně natřela nažluto:
+   „Natřená. Svítí míň. Ale svítí.“
 3. Ruda a Bára na rampě. Při R4.3 = přiznal: „Zítra.“ Bára: „Zítra.“ (stále bez „termínu“, D60).
    Jinak stojí každý na jiném konci rampy.
 4. Předseda stojí ve frontě na nástup s kufrem, Framework za ním s krabicí „Krize“. Při `aktovka`
@@ -412,7 +428,7 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 - [x] Žádná slepá ulička: zelená zpráva jde kdykoli, M03 a M11 jdou přeskočit (D12), špatný
   důkaz v konfrontaci nic nestojí, posel donese cokoli a každý následek z dřívějška má řešení
 - [x] Každý puzzle má aspoň dvě stopy ve světě (štítky, Zelenka, Pembok, metr, tým) a tři stupně
-  nápovědy (D10); rozhodnutí R4.1–R4.3 mají jen 1. stupeň (K16 z kap. 3)
+  nápovědy (D10); rozhodnutí R4.1–R4.3 mají jen 1. stupeň (K16 z kap. 3), puzzly na jeden krok 1. a 3. stupeň (K7, D78)
 - [x] PEGI 12 (D11): Předseda není zatčen, jen pozastaven a postaví se do fronty
 - [x] Bára neřekne „termín“ (D60); seznam pasažérů konečně použije (D59)
 - [x] **Rozpočet (D56): překročen**, viz níže; schváleno autorem (D77)
@@ -432,18 +448,20 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 | Klíč od poklopu, plán zapojení, `c3_odchazi` | kap. 3, M15 | P4.2, P4.12, P4.29 |
 | Navigace „později poklopem“ | kap. 3, M15 | P4.29 (plánované použití poklopu) |
 | Framework „je teď u nás. Na zkoušku.“ | kap. 3, Předseda | Framework sedí v Komisi a má smlouvu na fázi 3 (P4.22) |
-| Kašna z roku 1994 ve fázi 2 | kap. 1, kartotéka | Pan Změna dostane bazén do kašny (P4.17) |
+| Kašna z roku 1994, teče z ní kafe | kap. 1–3 | Pan Změna vypustí bazén do kašny, kafe vystřídá voda (P4.17) |
+| Rudův pomník | kap. 3, řádek Gantta (D78) | R4.2 |
 | Rybáři a karta poučení „zapomněli jsme se zeptat rybářů“ | kap. 1, kap. 3 M14 | rybáři v nástupní zkoušce; karta jako první lahev v M11 |
 | Odpočet a vrátný „Dva dny.“ | kap. 3 konec | plošina se v P4.14 opravdu staví dva dny |
 
 ### Zpětné úpravy dřívějších kapitol
 
 - **Mapa následků v bibli:** nové příznaky `c4_listky`, `c4_slib`, `c4_creep`, `c4_nastup`,
-  `c4_integrace`, `c4_clen_zpet`, `c4_predseda` doplněny (D77); kapitola 5 je čte.
-- **Kapitola 3, konec:** Pepa (nebo kdo drží klíč) by měl v posledním střihu klíč od poklopu
-  ukázat („Nedám ho z ruky.“), aby byl v kapitole 4 čitelný. Jedna replika.
-- **Kapitola 1:** Rudova zeď slávy už má *týdenní výměnu žárovek* (V01). Beze změny, jen se
-  ověří, že diplom říká „zelené“.
+  `c4_integrace`, `c4_clen_zpet` doplněny (D77); kapitola 5 je čte spolu s `c4_bara_rekla` (D78).
+- **Kapitola 3, M15 (D78):** nové příznaky `c3_bazen_v_trupu` a `c3_nesladeno`, příznak
+  `bara_zna_lavku` přejmenován na `c3_bara_zna_lavku` (návrh, mapa i prototyp).
+- **Kapitola 3, konec (D78):** klíčník v posledním střihu ukáže klíč: „Nedám ho z ruky.“
+- **Kapitola 3, Gantt (D78):** řádek „Pomník (Ruda)“, Bára: „Ten je v Ganttu dřív než lávka.“
+- **Kapitola 1 (D78):** diplom *týdenní výměny žárovek* na Rudově zdi slávy říká „zelené“.
 
 ## Rozpočet
 
@@ -456,7 +474,7 @@ místností vyšlo 21 předmětů místo odhadovaných 19 (svědectví a kopie p
 | Scény (nové) | 5 (1) | 7 (1) + přechod na radnici | dílna a trup v aktu B a C nesou Bářinu a společnou linku; večerní verze 6 převzatých pozadí |
 | Nové postavy | 1 | 1 (Zelenka) | – |
 | Předměty | 10 | 21 (z toho 9 z dřívějších kapitol, 5 jen ve variantách; [seznam](04-mistnosti.md#předměty)) | každá souběžná linka potřebuje svůj předmět (deník, startovací klíč, minutka, záznam, smlouva, lístky) |
-| Repliky na jazyk | 400–500 | osnova ≈ 713 ([dialogy](04-dialogy.md#součet); v jednom průchodu asi 470) | šest ukazatelů ve dvou až třech stavech, posel, konfrontace, varianty následků |
+| Repliky na jazyk | 400–500 | osnova ≈ 722 po N4 ([dialogy](04-dialogy.md#součet); v jednom průchodu asi 475) | šest ukazatelů ve dvou až třech stavech, posel, konfrontace, varianty následků |
 | Minihry | M11, M03 | M11, M03 + dvě malé hádanky | – |
 
 **Kde ušetřit, kdyby bylo potřeba:** lístek Tým sloučit s lístkem Trup (−20 replik), konfrontaci

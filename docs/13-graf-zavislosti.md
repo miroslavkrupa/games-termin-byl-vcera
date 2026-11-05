@@ -565,7 +565,7 @@ flowchart TB
 
 ## Kapitola 4: Krize
 
-Graf je z [návrhu kapitoly 4](kapitoly/04-krize.md) (N3, tvar schválen v D77). Zadání autora bylo
+Graf je z [návrhu kapitoly 4](kapitoly/04-krize.md) (N3 a N4 hotové, D77 a D78). Zadání autora bylo
 **co nejširší graf**, proto má kapitola tři akty a v každém několik souběžných linek pro obě
 postavy. Uzly s *jen:* jsou následky z kapitol 1–3.
 
@@ -598,11 +598,11 @@ flowchart TB
   lehatko["Vyslechnout babičku na lehátku pod rampou<br/><i>jen: babička není spojenkyně (c1_babicka)</i>"]
   posel_listek["Převzít od posla palubní lístek pro babičku<br/><i>jen: babička není spojenkyně (c1_babicka)</i>"]
   babicka["Dát babičce palubní lístek: uvolní rampu<br/><i>jen: babička není spojenkyně (c1_babicka)</i>"]
-  plosina["Dostavět s vrátným odpalovací plošinu<br/><i>jen: rampa bez plošiny (c3_rezerva < 0)</i>"]
+  plosina["Objednat u vrátného odpalovací plošinu<br/><i>jen: rampa bez plošiny (c3_rezerva < 0)</i>"]
   droleni["Zpevnit drolivou rampu<br/><i>jen: rampa se drolí (c3_drolivy)</i>"]
   tesnit["Utěsnit netěsný poklop<br/><i>jen: poklop netěsní (c3_poklop=netesni)</i>"]
-  bazen["Vyjednat s Panem Změnou bazén z trupu do kašny<br/><i>jen: bazén v trupu a v R4.2 neobětovaný</i>"]
-  posel_rozpis["Poslat Báře rozpis rampy po poslovi<br/><i>jen: aplikace nezná den lávky (bez mostu nástup)</i>"]
+  bazen["Vyjednat s Panem Změnou bazén z trupu do kašny<br/><i>jen: bazén zůstal v trupu (c3_bazen_v_trupu) a v R4.2 neobětovaný</i>"]
+  posel_rozpis["Poslat Báře rozpis rampy po poslovi<br/><i>jen: aplikace nezná den lávky (bod lavka v c3_nesladeno, D78)</i>"]
   minutka("Vzít kuchyňskou minutku z dílny")
   lumir["Probudit Lumíra v archivu minutkou"]
   kometa["Najít v kartotéce lístek „Pozorování komety (1994–dosud)“"]
@@ -610,7 +610,7 @@ flowchart TB
   plan_komise("Seznam pasažérů + záznam: Komise chtěla odletět sama")
   smlouva("Zeptat se Frameworka na referenci: kopie smlouvy na fázi 3")
   tisk("Vytisknout palubní lístky pro všechny")
-  lavka["Doplnit do aplikace den lávky z rozpisu<br/><i>jen: aplikace nezná den lávky (bez mostu nástup)</i>"]
+  lavka["Doplnit do aplikace den lávky z rozpisu<br/><i>jen: aplikace nezná den lávky (bod lavka v c3_nesladeno, D78)</i>"]
   oprava("Napsat opravu počítadla<br/><i>jen: vada v počítadle neopravená (c3_vada_hlasena)</i>")
   rekne["Vzkázat Rudovi po poslovi, co ví o Předsedovi (jen při důvěře)"]
   usmireni{{"Usmíření v hangáru (R4.3)"}}
@@ -619,12 +619,12 @@ flowchart TB
   nahrat["Nahrát navigaci poklopem: Ruda drží, Bára nahrává<br/><i>jen: servisní poklop nasazený (c3_poklop)</i>"]
   vrtat["Bez poklopu: Věra navrtá trup podle plánu zapojení<br/><i>jen: bez servisního poklopu (c3_poklop=ne)</i>"]
   programy(("nebo"))
-  nastup["Nástupní zkouška: obyvatelé s palubními lístky po lávce"]
+  nastup["Nástupní zkouška nanečisto: po lávce k obrysu dveří na plošině"]
   kopie("Kopie všeho, co Předseda podepsal<br/><i>jen: kopie Předsedových podpisů (c2_riziko_predem=usmev)</i>")
   dukazy(("3 důkazy"))
   konfrontace["Konfrontace v Komisi: tři výmluvy, tři důkazy"]
   podpis["Starosta podepíše povolení ke startu"]
-  konec(["Předseda odhalen, Archa připravená ke startu"])
+  konec(["Předseda odhalen, Archa vyjede na plošinu"])
   start --> semafor
   start --> denik
   denik --> l_rampa
@@ -683,6 +683,7 @@ flowchart TB
   plan_komise --> usmireni
   smlouva --> usmireni
   tisk --> usmireni
+  plosina --> usmireni
   rekne -.-> usmireni
   usmireni --> m11
   m11 --> faze_c
@@ -690,9 +691,11 @@ flowchart TB
   klic_clen --> nahrat
   tesnit --> nahrat
   oprava --> nahrat
+  bazen --> nahrat
   faze_c --> vrtat
   klic_clen --> vrtat
   oprava --> vrtat
+  bazen --> vrtat
   nahrat --> programy
   vrtat --> programy
   faze_c --> nastup
@@ -714,7 +717,6 @@ flowchart TB
   programy --> konec
   nastup --> konec
   podpis --> konec
-  bazen --> konec
   classDef ruda fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a
   classDef bara fill:#ffedd5,stroke:#c2410c,color:#3a1a05
   classDef spolu fill:#ede9fe,stroke:#6d28d9,color:#24124a
@@ -746,7 +748,7 @@ flowchart TB
 | 7 | Seznam pasažérů + záznam: Komise chtěla odletět sama (Bára) | – |
 | 8 | Usmíření v hangáru (R4.3) (spolu) **⧗** | Vzkázat Rudovi po poslovi, co ví o Předsedovi (jen při důvěře) |
 | 9 | M11 Plachetnice na palubě Archy (spolu) **⧗** | – |
-| 10 | Nahrát navigaci poklopem: Ruda drží, Bára nahrává (spolu) · Nástupní zkouška: obyvatelé s palubními lístky po lávce (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
+| 10 | Nahrát navigaci poklopem: Ruda drží, Bára nahrává (spolu) · Nástupní zkouška nanečisto: po lávce k obrysu dveří na plošině (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
 | 11 | Starosta podepíše povolení ke startu (Ruda) | – |
 
 **⧗** úzké hrdlo (4): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
@@ -758,13 +760,13 @@ flowchart TB
 | 1 | Říct si vrátnému o deník jeřábu (Ruda) *(větev)* · Spustit zkoušku počítadla: lístek Počítadlo (Bára) *(větev)* · Zeptat se obyvatel s kufry, kudy nastoupí (Bára) *(větev)* · Změřit Ještětoto metrem: lístek Změny (Bára) *(větev)* · Zeptat se každého z týmu, jak se má: lístek Tým (Ruda) *(větev)* · Poslat starostovi zelenou (R4.1) (Ruda) *(větev)* | Zeptat se dispečera, co který ukazatel měří |
 | 2 | Porovnat rozpis rampy s deníkem: lístek Rampa (Ruda) *(větev)* · Zkusit nástup s babičkou a rybáři: lístek Nástup (Bára) *(větev)* · M03 Souboj se starostou ve věži (spolu) **⧗** | – |
 | 3 | Poslat starostovi skutečný stav s variantami (R4.1) (Ruda) *(větev)* · Co obětovat z rozsahu (R4.2) (spolu) **⧗** | – |
-| 4 | Startovací klíč od Norberta (bez něj od vrátného) (Ruda) · Nechat vrátného zvednout jeřábem sud paliva (Ruda) · Požádat Komisi o povolení ke startu: „analýza dopadu na fázi 3“ (Ruda) · Přemluvit člena týmu, který odešel k Frameworkovi (Ruda) · Vyslechnout babičku na lehátku pod rampou (Ruda) · Dostavět s vrátným odpalovací plošinu (Ruda) · Vyjednat s Panem Změnou bazén z trupu do kašny (Ruda) · Poslat Báře rozpis rampy po poslovi (Ruda) · Vzít kuchyňskou minutku z dílny (Bára) · Zeptat se Frameworka na referenci: kopie smlouvy na fázi 3 (Bára) · Vytisknout palubní lístky pro všechny (Bára) · Napsat opravu počítadla (Bára) | – |
+| 4 | Startovací klíč od Norberta (bez něj od vrátného) (Ruda) · Nechat vrátného zvednout jeřábem sud paliva (Ruda) · Požádat Komisi o povolení ke startu: „analýza dopadu na fázi 3“ (Ruda) · Přemluvit člena týmu, který odešel k Frameworkovi (Ruda) · Vyslechnout babičku na lehátku pod rampou (Ruda) · Objednat u vrátného odpalovací plošinu (Ruda) · Vyjednat s Panem Změnou bazén z trupu do kašny (Ruda) · Poslat Báře rozpis rampy po poslovi (Ruda) · Vzít kuchyňskou minutku z dílny (Bára) · Zeptat se Frameworka na referenci: kopie smlouvy na fázi 3 (Bára) · Vytisknout palubní lístky pro všechny (Bára) · Napsat opravu počítadla (Bára) | – |
 | 5 | Zkouška motorů: naskočí a zhasne, řídicí systém mlčí (Ruda) · Převzít od posla palubní lístek pro babičku (Ruda) · Probudit Lumíra v archivu minutkou (Bára) · Doplnit do aplikace den lávky z rozpisu (Bára) | – |
 | 6 | Dát babičce palubní lístek: uvolní rampu (Ruda) · Najít v kartotéce lístek „Pozorování komety (1994–dosud)“ (Bára) | – |
 | 7 | Seznam pasažérů + záznam: Komise chtěla odletět sama (Bára) | – |
 | 8 | Usmíření v hangáru (R4.3) (spolu) | Vzkázat Rudovi po poslovi, co ví o Předsedovi (jen při důvěře) |
 | 9 | M11 Plachetnice na palubě Archy (spolu) | – |
-| 10 | Bez poklopu: Věra navrtá trup podle plánu zapojení (spolu) · Nástupní zkouška: obyvatelé s palubními lístky po lávce (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
+| 10 | Bez poklopu: Věra navrtá trup podle plánu zapojení (spolu) · Nástupní zkouška nanečisto: po lávce k obrysu dveří na plošině (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
 | 11 | Starosta podepíše povolení ke startu (Ruda) | – |
 
 **⧗** úzké hrdlo (2): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
@@ -776,13 +778,13 @@ flowchart TB
 | 1 | Říct si vrátnému o deník jeřábu (Ruda) *(větev)* · Nechat člena týmu otevřít poklop: lístek Trup (Ruda) *(větev)* · Spustit zkoušku počítadla: lístek Počítadlo (Bára) *(větev)* · Zeptat se obyvatel s kufry, kudy nastoupí (Bára) *(větev)* · Změřit Ještětoto metrem: lístek Změny (Bára) *(větev)* · Zeptat se každého z týmu, jak se má: lístek Tým (Ruda) *(větev)* · Poslat starostovi zelenou (R4.1) (Ruda) *(větev)* · Kopie všeho, co Předseda podepsal (Ruda) *(větev)* | Zeptat se dispečera, co který ukazatel měří |
 | 2 | Porovnat rozpis rampy s deníkem: lístek Rampa (Ruda) *(větev)* · Zkusit nástup s babičkou a rybáři: lístek Nástup (Bára) *(větev)* · Poslat starostovi skutečný stav s variantami (R4.1) (Ruda) *(větev)* · M03 Souboj se starostou ve věži (spolu) **⧗** | – |
 | 3 | Co obětovat z rozsahu (R4.2) (spolu) **⧗** | – |
-| 4 | Startovací klíč od Norberta (bez něj od vrátného) (Ruda) · Nechat vrátného zvednout jeřábem sud paliva (Ruda) · Požádat Komisi o povolení ke startu: „analýza dopadu na fázi 3“ (Ruda) · Vyslechnout babičku na lehátku pod rampou (Ruda) · Dostavět s vrátným odpalovací plošinu (Ruda) · Zpevnit drolivou rampu (Ruda) · Utěsnit netěsný poklop (Ruda) · Vzít kuchyňskou minutku z dílny (Bára) · Zeptat se Frameworka na referenci: kopie smlouvy na fázi 3 (Bára) · Vytisknout palubní lístky pro všechny (Bára) | – |
+| 4 | Startovací klíč od Norberta (bez něj od vrátného) (Ruda) · Nechat vrátného zvednout jeřábem sud paliva (Ruda) · Požádat Komisi o povolení ke startu: „analýza dopadu na fázi 3“ (Ruda) · Vyslechnout babičku na lehátku pod rampou (Ruda) · Objednat u vrátného odpalovací plošinu (Ruda) · Zpevnit drolivou rampu (Ruda) · Utěsnit netěsný poklop (Ruda) · Vzít kuchyňskou minutku z dílny (Bára) · Zeptat se Frameworka na referenci: kopie smlouvy na fázi 3 (Bára) · Vytisknout palubní lístky pro všechny (Bára) | – |
 | 5 | Zkouška motorů: naskočí a zhasne, řídicí systém mlčí (Ruda) · Převzít od posla palubní lístek pro babičku (Ruda) · Probudit Lumíra v archivu minutkou (Bára) | – |
 | 6 | Dát babičce palubní lístek: uvolní rampu (Ruda) · Najít v kartotéce lístek „Pozorování komety (1994–dosud)“ (Bára) | – |
 | 7 | Seznam pasažérů + záznam: Komise chtěla odletět sama (Bára) | – |
 | 8 | Usmíření v hangáru (R4.3) (spolu) | Vzkázat Rudovi po poslovi, co ví o Předsedovi (jen při důvěře) |
 | 9 | M11 Plachetnice na palubě Archy (spolu) | – |
-| 10 | Nahrát navigaci poklopem: Ruda drží, Bára nahrává (spolu) · Nástupní zkouška: obyvatelé s palubními lístky po lávce (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
+| 10 | Nahrát navigaci poklopem: Ruda drží, Bára nahrává (spolu) · Nástupní zkouška nanečisto: po lávce k obrysu dveří na plošině (spolu) · Konfrontace v Komisi: tři výmluvy, tři důkazy (spolu) | – |
 | 11 | Starosta podepíše povolení ke startu (Ruda) | – |
 
 **⧗** úzké hrdlo (2): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
@@ -798,13 +800,14 @@ flowchart TB
    aktu B). Akt C se sbíhá až v cíli: navigace, nástupní zkouška a podpis starosty běží souběžně.
 3. **Akt B je kosočtverec přes obě postavy.** Ruda má tři linky (motory, povolení, následky),
    Bára tři (archiv, smlouva, lístky) a sejdou se v usmíření. Usmíření záměrně čeká na všech pět
-   povinných linek: obě postavy musí narazit na hranici toho, co zvládnou samy.
+   povinných linek (bez plošiny i na její objednání): obě postavy musí narazit na hranici toho, co zvládnou samy.
 4. **Bářina archivní linka je nejdelší řetěz** (minutka → Lumír → kometa → záznam → plán Komise,
    4 tahy). Běží ale souběžně s Rudovými linkami i s jejími dalšími dvěma, takže hráč nečeká.
 5. **Špatné kapitoly 1–3 přidávají šířku, ne délku.** Babička, plošina, drolení, poklop, bazén
    a odešlý člen týmu jsou samostatné větve aktu B s jedním až třemi kroky. Nejkratší sled
    zůstane 11 kol, jen v jednom kole je až 12 kroků k cíli. Usmíření a M11 pak nejsou úzká hrdla,
-   protože tyhle následky jdou dodělat i v aktu C.
+   protože tyhle následky jdou dodělat i v aktu C. Výjimka je plošina: beton zraje dva dny, proto
+   se objednává v aktu B a usmíření na ni čeká (D78).
 6. **Posel přidává závislosti přes postavy i v aktu B,** kde spolu postavy nemluví: palubní lístek
    pro babičku, těsnicí páska a rozpis rampy. Jsou to jediné šipky mezi Rudovou a Bářinou linkou
    v aktu B a všechny jsou jen ve špatných stavech.

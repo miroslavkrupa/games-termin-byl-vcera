@@ -61,7 +61,7 @@ změn a na tabuli Ještětoto.
 | Tabule z kap. 2 | aktivní místo | podle `c2_rozdeleni`: dva sloupce / Gantt / krabice | – | – | připomínka R2.2 |
 | Rozcestník změn | aktivní místo | čtyři přihrádky: *Rovnou udělat*, *Posoudit a vyjednat*, *Do Bářina seznamu*, *Ne* | použít → M10 | fáze B, po M13 a M14 | P3.9 |
 | Ještětoto | postava | podle `c3_creep`: „Malý. Zatím.“ / „Už se nevejde na tabuli.“ | ★ s předměty | od M14 | nová postava |
-| Rudův Gantt na stěně | aktivní místo | 214 řádků; po R2.2 = `povaha` polovina přeškrtnutá | – | – | |
+| Rudův Gantt na stěně | aktivní místo | 214 řádků; po R2.2 = `povaha` polovina přeškrtnutá; řádek „Pomník (Ruda)“, Bára: „Ten je v Ganttu dřív než lávka.“ (D78) | – | – | |
 | Kalendář | aktivní místo | zbývá 24 / 21 / 15 (po M10) / 12 / 9 | – | – | |
 | Pan Změna | postava | s podepsanými (`c1_zmena_dohoda`), nebo nepodepsanými přáními | dialog `zmena` | při M10 | |
 | Věra, Norbert | postavy | kdo je v týmu; Věra počítá dopad, Norbert hlídá bezpečnostní systém | krátké repliky | fáze B–C | |

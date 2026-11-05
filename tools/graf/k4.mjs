@@ -18,8 +18,8 @@ export default {
     plosina: 'rampa bez plošiny (c3_rezerva < 0)',
     drolivy: 'rampa se drolí (c3_drolivy)',
     vada: 'vada v počítadle neopravená (c3_vada_hlasena)',
-    lavka: 'aplikace nezná den lávky (bez mostu nástup)',
-    bazen: 'bazén v trupu a v R4.2 neobětovaný',
+    lavka: 'aplikace nezná den lávky (bod lavka v c3_nesladeno, D78)',
+    bazen: 'bazén zůstal v trupu (c3_bazen_v_trupu) a v R4.2 neobětovaný',
     usmev: 'kopie Předsedových podpisů (c2_riziko_predem=usmev)',
   },
   scenare: {
@@ -62,7 +62,8 @@ export default {
     { id: 'lehatko', t: 'Vyslechnout babičku na lehátku pod rampou', jen: 'babicka', po: ['rozkol'] },
     { id: 'posel_listek', t: 'Převzít od posla palubní lístek pro babičku', jen: 'babicka', po: ['tisk'] },
     { id: 'babicka', t: 'Dát babičce palubní lístek: uvolní rampu', jen: 'babicka', po: ['lehatko', 'posel_listek'] },
-    { id: 'plosina', t: 'Dostavět s vrátným odpalovací plošinu', jen: 'plosina', po: ['rozkol'] },
+    // Beton plošiny zraje dva dny, proto se objednává v aktu B a usmíření na ni čeká (D78)
+    { id: 'plosina', t: 'Objednat u vrátného odpalovací plošinu', jen: 'plosina', po: ['rozkol'] },
     { id: 'droleni', t: 'Zpevnit drolivou rampu', jen: 'drolivy', po: ['rozkol'] },
     { id: 'tesnit', t: 'Utěsnit netěsný poklop', jen: 'netesni', po: ['rozkol'] },
     { id: 'bazen', t: 'Vyjednat s Panem Změnou bazén z trupu do kašny', jen: 'bazen', po: ['r42'] },
@@ -82,21 +83,21 @@ export default {
 
     // Akt B se sbíhá: oba narazí na hranici toho, co zvládnou sami (Ruda: motory bez řídicího
     // systému a Komise bez razítka; Bára: důkazy a lístky bez nástupu a bez startu)
-    { id: 'usmireni', t: 'Usmíření v hangáru (R4.3)', druh: 'volba', kdo: 'spolu', po: ['zkouska', 'povoleni', 'plan_komise', 'smlouva', 'tisk'], mekke: ['rekne'] },
+    { id: 'usmireni', t: 'Usmíření v hangáru (R4.3)', druh: 'volba', kdo: 'spolu', po: ['zkouska', 'povoleni', 'plan_komise', 'smlouva', 'tisk', 'plosina'], mekke: ['rekne'] },
     { id: 'm11', t: 'M11 Plachetnice na palubě Archy', druh: 'minihra', kdo: 'spolu', po: ['usmireni'] },
     { id: 'faze_c', t: 'Střih: zbývá 2', druh: 'strih', po: ['m11'] },
 
     // Akt C: Poslední přípravy. Tři linky, které se sejdou u povolení ke startu.
     // Klíč od poklopu (bez poklopu plán zapojení) předá člen týmu na začátku aktu C sám;
-    // když odešel, musí ho Ruda v aktu B získat zpět
-    { id: 'nahrat', t: 'Nahrát navigaci poklopem: Ruda drží, Bára nahrává', kdo: 'spolu', jen: 'poklop', po: ['faze_c', 'klic_clen', 'tesnit', 'oprava'] },
-    { id: 'vrtat', t: 'Bez poklopu: Věra navrtá trup podle plánu zapojení', kdo: 'spolu', jen: 'bez_poklopu', po: ['faze_c', 'klic_clen', 'oprava'] },
+    // když odešel, musí ho Ruda získat zpět. Bazén v trupu zastaví nahrávání (kabel vede přes něj)
+    { id: 'nahrat', t: 'Nahrát navigaci poklopem: Ruda drží, Bára nahrává', kdo: 'spolu', jen: 'poklop', po: ['faze_c', 'klic_clen', 'tesnit', 'oprava', 'bazen'] },
+    { id: 'vrtat', t: 'Bez poklopu: Věra navrtá trup podle plánu zapojení', kdo: 'spolu', jen: 'bez_poklopu', po: ['faze_c', 'klic_clen', 'oprava', 'bazen'] },
     { id: 'programy', t: 'nebo', druh: 'nebo', po: ['nahrat', 'vrtat'] },
-    { id: 'nastup', t: 'Nástupní zkouška: obyvatelé s palubními lístky po lávce', kdo: 'spolu', po: ['faze_c', 'tisk', 'babicka', 'plosina', 'droleni', 'lavka'] },
+    { id: 'nastup', t: 'Nástupní zkouška nanečisto: po lávce k obrysu dveří na plošině', kdo: 'spolu', po: ['faze_c', 'tisk', 'babicka', 'plosina', 'droleni', 'lavka'] },
     { id: 'kopie', t: 'Kopie všeho, co Předseda podepsal', druh: 'predmet', jen: 'usmev', po: ['start'] },
     { id: 'dukazy', t: '3 důkazy', druh: 'nebo', k: 3, po: ['zaznam', 'plan_komise', 'smlouva', 'kopie', 'klic_clen'] },
     { id: 'konfrontace', t: 'Konfrontace v Komisi: tři výmluvy, tři důkazy', kdo: 'spolu', po: ['faze_c', 'povoleni', 'dukazy'] },
     { id: 'podpis', t: 'Starosta podepíše povolení ke startu', po: ['konfrontace'] },
-    { id: 'konec', t: 'Předseda odhalen, Archa připravená ke startu', druh: 'cil', po: ['programy', 'nastup', 'podpis', 'bazen'] },
+    { id: 'konec', t: 'Předseda odhalen, Archa vyjede na plošinu', druh: 'cil', po: ['programy', 'nastup', 'podpis'] },
   ],
 };

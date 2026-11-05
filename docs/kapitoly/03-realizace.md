@@ -213,6 +213,9 @@ v trupu). R3.3 mění morálku.
 | `c3_poklop` | `ano` / `netesni` / `ne` | M10 a P3.10 | M15; kap. 4 (krize se řeší poklopem) |
 | `c3_vada_hlasena` | ano / ne | P3.8 | kap. 4 |
 | `c3_integrace` | 0–3 (nesladěné body) | M15 | kap. 4, 5 |
+| `c3_nesladeno` | seznam nesladěných bodů z M15 (v prototypu názvy chyb: `kabel`, `start`, `navigace`, `pocitadlo`, `lavka`…) | M15 | kap. 4 (každý bod se řeší jednou, D78) |
+| `c3_bazen_v_trupu` | ano / ne | M15 (bazén bez řízení zůstal, kabel venku) | kap. 4 (P4.17) |
+| `c3_bara_zna_lavku` | ano / ne | Ruda dá Báře rozpis rampy | M15; kap. 4 (bez něj a bez mostu je bod `lavka`) |
 | `c3_krysy` | `kocka` / `aktovka` | P3.2 | kap. 4 (krysy v Komisi, vtip) |
 | `c3_odchazi` | Pepa / Klára / Věra / Norbert | konec M15 | kap. 4 (kdo odejde bez posezení; s poklopem si odnese klíč od poklopu, bez něj plán zapojení trupu) |
 | `c3_zlepseni` | jedno ze tří | R3.3 | kap. 4 (M11 navazuje) |
@@ -424,14 +427,16 @@ prototypu (D70). Rozhraní nepoužívá odborné pojmy (D26).
     jen „Před zavřením. Možná.“ Skutečnost se ukáže při zavření a dá se odvodit z R3.2
     a přeplněných kol (`c3_dluh`).
   - **Bazén bez řízení** (`c3_bazen` = `bez_rizeni`) zabere místo, kudy vede kabel k navigaci.
-    Buď bazén ven (Pan Změna se urazí, Ještětoto +1), nebo kabel zůstane venku.
+    Buď bazén ven (Pan Změna se urazí, Ještětoto +1), nebo kabel zůstane venku a bazén v trupu
+    (`c3_bazen_v_trupu`).
   - **Rozpis rampy:** nástupní aplikace musí znát den nástupní lávky. Při mostu *zkouška
-    nástupu* ho Bára zná, jinak jí Ruda musí dát rozpis rampy (kdykoli předtím, nebo během M15).
+    nástupu* ho Bára zná, jinak jí Ruda musí dát rozpis rampy (kdykoli předtím, nebo během M15;
+    `c3_bara_zna_lavku`).
   - **Vada:** při `c3_vada_hlasena` je v počítadle oprava. Bez ní se počítadlo zabuduje
     s chybou, ale v M15 to není vidět. Projeví se až v kapitole 4.
   - **Bez Věry** trup zanýtuje Ruda („Nýtovačka. Jak těžké to může být.“), stejně jako v M10
     sám počítá dopad změn (K13).
-- **Výsledek:** `c3_integrace` = počet nesladěných bodů, nejvýš 3: přípojka venku, nehotový
+- **Výsledek:** `c3_integrace` = počet nesladěných bodů (seznam je v `c3_nesladeno`, D78), nejvýš 3: přípojka venku, nehotový
   program uvnitř, aplikace bez dne lávky, program „později“ bez poklopu. Po zavření dostane
   jeden z týmu **klíč od poklopu**, bez poklopu **plán zapojení trupu** (`c3_odchazi`: Pepa,
   jinak Klára, jinak Věra, jinak Norbert; K2). Přeskočení: Pembok dá „všechno dovnitř“, `c3_integrace` = 2.
@@ -465,7 +470,8 @@ v [kartách puzzlů](03-puzzly.md): ranní porada P3.4, plán kola P3.6, co př�
    `c3_rezerva` hotová, nebo bez plošiny („Plošinu dostavíme. Dva dny.“).
 2. Ruda řeční k týmu („Já… teda my…“, jen při R3.2 = pustit; jinak „Já jsem postavil Archu.“).
 3. Ruda zmáčkne velké červené tlačítko. Nic. Zmáčkne ho znovu. Nic. Ještětoto na tabuli zívne.
-4. Pepa (nebo kdokoli z týmu): „Dva dny.“ Bára se podívá na počítač: při `c3_vada_hlasena`
+4. Klíčník (`c3_odchazi`) ukáže klíč od poklopu, bez poklopu plán zapojení: „Nedám ho z ruky.“
+   (stopa pro kap. 4, D78). Pepa (nebo kdokoli z týmu): „Dva dny.“ Bára se podívá na počítač: při `c3_vada_hlasena`
    „Tohle není počítadlo.“ Jinak se jen odvrátí.
 5. Kometa ve střešním okně hangáru. Obrazovka **„Co si Nedostavěnice zapamatovala“**: rampa
    (rezerva), ukázka (hodnota), Ještětoto (velikost), trup (nesladěné body), kdo určuje pořadí

@@ -42,7 +42,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_byt_kniha_mlci` | Ruda | spokojeně | Kniha mlčí. Konečně někdo, kdo mi neskáče do řeči. | The book is silent. Finally, someone who doesn't interrupt me. | Pembok v úvodu; ironie (R1.3) |
 | `ch1_hs_byt_zed` |  |  | Zeď slávy | Wall of Fame | popisek aktivního místa |
 | `ch1_byt_zed_prohlednout` | Ruda | hrdě | Zeď slávy. Čtrnáct diplomů za čtrnáct projektů. Všechny „za účast“. | My Wall of Fame. Fourteen certificates for fourteen projects. All of them for 'participation'. |  |
-| `ch1_byt_zed_pouzit_1` | Ruda | čte | Diplom číslo devět: Týdenní výměna žárovek na radnici. Šest let. Stav: probíhá. | Certificate number nine: Weekly Light Bulb Replacement at the town hall. Six years. Status: ongoing. | V01 projekt vs. provoz |
+| `ch1_byt_zed_pouzit_1` | Ruda | čte | Diplom číslo devět: Týdenní výměna zelených žárovek na radnici. Šest let. Stav: probíhá. | Certificate number nine: Weekly Green Light Bulb Replacement at the town hall. Six years. Status: ongoing. | V01 projekt vs. provoz |
 | `ch1_byt_zed_pouzit_2` | Ruda | zamyšleně | To nebyl projekt, to byl provoz. Ale diplom je diplom. | That wasn't a project, that was a routine. But a certificate is a certificate. | V01 |
 | `ch1_byt_zed_pouzit_3` | Ruda | suše | Na diplom číslo čtrnáct ještě nemám rámeček. Ten rámeček je taky projekt. | I've no frame for certificate fourteen yet. The frame is also a project. |  |
 | `ch1_hs_byt_dvere` |  |  | Dveře | Door | popisek aktivního místa |

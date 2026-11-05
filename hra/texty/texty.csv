@@ -181,7 +181,7 @@ ch1_byt_kniha_vzit,Vezmu ji. Kniha v ruce vypadá jako plán.,I'll take it. Hold
 ch1_byt_kniha_mlci,"Kniha mlčí. Konečně někdo, kdo mi neskáče do řeči.","The book is silent. Finally, someone who doesn't interrupt me.",Ruda,spokojeně,Pembok v úvodu; ironie (R1.3)
 ch1_hs_byt_zed,Zeď slávy,Wall of Fame,,,popisek aktivního místa
 ch1_byt_zed_prohlednout,Zeď slávy. Čtrnáct diplomů za čtrnáct projektů. Všechny „za účast“.,My Wall of Fame. Fourteen certificates for fourteen projects. All of them for 'participation'.,Ruda,hrdě,
-ch1_byt_zed_pouzit_1,Diplom číslo devět: Týdenní výměna žárovek na radnici. Šest let. Stav: probíhá.,Certificate number nine: Weekly Light Bulb Replacement at the town hall. Six years. Status: ongoing.,Ruda,čte,V01 projekt vs. provoz
+ch1_byt_zed_pouzit_1,Diplom číslo devět: Týdenní výměna zelených žárovek na radnici. Šest let. Stav: probíhá.,Certificate number nine: Weekly Green Light Bulb Replacement at the town hall. Six years. Status: ongoing.,Ruda,čte,V01 projekt vs. provoz
 ch1_byt_zed_pouzit_2,"To nebyl projekt, to byl provoz. Ale diplom je diplom.","That wasn't a project, that was a routine. But a certificate is a certificate.",Ruda,zamyšleně,V01
 ch1_byt_zed_pouzit_3,Na diplom číslo čtrnáct ještě nemám rámeček. Ten rámeček je taky projekt.,I've no frame for certificate fourteen yet. The frame is also a project.,Ruda,suše,
 ch1_hs_byt_dvere,Dveře,Door,,,popisek aktivního místa
