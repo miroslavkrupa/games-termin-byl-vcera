@@ -2,7 +2,7 @@
 
 > Svět, postavy, dějový oblouk, osnova kapitol, rozhodnutí a konce. Zdroj pravdy pro scenáristy,
 > výtvarníky i návrh puzzlů.
-> Stav: **koncept**, verze 0.3 (koncepce [Dva světy, jedna Archa](07-dva-svety.md), krok N1 [postupu návrhu](12-postup-navrhu.md))
+> Stav: **koncept**, verze 0.4 (koncepce [Dva světy, jedna Archa](07-dva-svety.md), krok N1 [postupu návrhu](12-postup-navrhu.md); konce upřesněny v D79)
 
 ## Tón a humor
 
@@ -41,7 +41,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 |---|---|---|---|
 | Rudův byt v rozestavěném paneláku | 1 (úvod) | chybí stěna, výtah vede jen do 3½. patra | věčná „fáze 2“ |
 | Radnice / Komise | 1 | kanceláře, kde se schvaluje schvalování | byrokracie, řízení bez rozhodnutí |
-| Archiv zkrachovalých projektů | 1, 5 | nekonečné regály projektů, které nikdy neskončily | lessons learned, které nikdo nečte |
+| Archiv zkrachovalých projektů | 1, 4, 5 | nekonečné regály projektů, které nikdy neskončily | lessons learned, které nikdo nečte |
 | Pozemek pod rampou a babiččina chaloupka | 1, 4 | jediná dokončená stavba ve městě | přehlížený stakeholder |
 | Staveniště rampy s jediným jeřábem | 2–4 | beton zraje, jeřáb je jen jeden, všichni ho chtějí | harmonogram, kritická cesta |
 | Dílna a hangár Archy | 2–4 | hromady rozdělaných věcí; Bářin kout s prototypy a maketami kajut | WIP, technický dluh, prototypy |
@@ -49,8 +49,8 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
 | Trup Archy zevnitř | 3–4 | přípojky, místo pro počítač, otvor na poklop | integrace |
 | Hospoda U Odhadu | 2 | tady se odhaduje, sází a podvádí | planning poker, optimismus |
 | Mlžná pláň | 2 | krajina, kterou nikdo nezmapoval | roadmapa, nejistota |
-| Řídicí věž | 4 | dashboardy svítí zeleně, zatímco vše hoří | melounový reporting |
-| Startovní rampa | 5 | finále | uzavření a předání |
+| Řídicí věž | 4, 5 | dashboardy svítí zeleně, zatímco vše hoří | melounový reporting |
+| Startovní rampa | 5 | horní konec rampy, Archa na plošině, fronta, pódium a bezpečnostní pult | uzavření a předání |
 
 ## Postavy
 
@@ -218,6 +218,7 @@ Každá kapitola jednou větou ve čtyřech bodech, aby šlo zkontrolovat tempo 
 - **Bottleneck:** Předseda je odhalen, Archa je připravena ke startu.
 
 ### Kapitola 5: Uzavření
+- **Podrobný návrh:** [kapitoly/05-uzavreni.md](kapitoly/05-uzavreni.md) (titulek *Hotovo*, D79)
 - **Cíl:** integrace, start, předání a poučení.
 - **Puzzly:** finální spojení obou světů (V25), kde Ruda a Bára musí spolupracovat a hráč
   střídá obě postavy v jednom puzzle; předání Archy provozovatelům (V21); zapsat poučení
@@ -283,8 +284,9 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | nástupní zkouška | `c4_nastup` (0–3) | kap. 4 | kap. 5 | kolik skupin obyvatel nastoupí napoprvé | důvěra stakeholderů |
 | navigace poklopem | `c4_integrace` (0–3) | kap. 4 („Stačí. Zavírám.“) | kap. 5 | nesladěné body ve finálním puzzlu | sladění světů |
 | odešlý člen zpět | `c4_clen_zpet` | kap. 4 (jen bez posezení) | kap. 5 | kdo stojí na rampě | morálka |
-| R5.1 předání | `c5_predani` | kap. 5 | epilog | Archa po startu funguje, nebo posádka hledá vypínač | – |
-| R5.2 já, nebo my | `c5_my` | kap. 5 | konec | rozhoduje mezi konci Hrdina a Tým | **Rudův vývoj** |
+| příprava předání | `c5_manual`, `c5_kapitan`, `c5_zauceni` | kap. 5 (návod od týmu, vrátný jako kapitán, zaučení) | kap. 5 (R5.1, R5.2) | předání s návodem jde jen s manuálem a zaučeným kapitánem; „my“ jmenuje ty, které Ruda o něco požádal | – |
+| R5.1 předání | `c5_predani` | kap. 5 | epilog, scéna po titulcích | vrátný přistane hladce, nebo posádka hledá vypínač | důvěra stakeholderů |
+| R5.2 já, nebo my | `c5_my` | kap. 5 | konec | bez „my“ není konec Tým | **Rudův vývoj** |
 
 **Rudův vývoj (0–5)** má pět zdrojů, v každé kapitole jednu vadu a jedno rozhodnutí: slibuje
 všechno (R1.1), plánuje do mlhy (R2.2), mikromanažuje (R3.2), reportuje zeleně (R4.1) a hraje
@@ -292,15 +294,21 @@ si na hrdinu (R5.2).
 
 ## Konce
 
-Konce kombinují **metodickou osu** (sladění světů) s **osobní osou** (Rudův vývoj, Bářina důvěra).
+Konce kombinují **metodickou osu** (sladění světů) s **osobní osou** (Rudův vývoj). Bářina důvěra
+mění jen epilog. Kapitola 4 zaručuje, že rampa stojí a všichni jsou nalodění (D12), proto se
+konce liší tím, **co se stane po startu** (D79). Pracovní body sladění a vývoje jsou v
+[návrhu kapitoly 5](kapitoly/05-uzavreni.md#konce); prahy se doladí po playtestech.
+
+**Kometa (D79)** dopadne do Mlžné pláně, kterou nikdo nezmapoval, metr za cedulí města. Nikdo
+nemohl vědět, kam dopadne, proto bylo správné evakuovat. Město ve všech koncích přežije.
 
 | Konec | Podmínka (pracovní) | Popis |
 |---|---|---|
-| **Pomník** (jen plán) | převažuje svět plánu, sladění nízké | rampa je dokonalá, ale nikdo neví, jak nastoupit, a řídicí systém nefunguje. Archa odletí bez lidí. Rudovi postaví pomník – nedokončený |
-| **Druhá etapa** (jen iterace) | převažuje svět iterací, sladění nízké | skvělá aplikace a útulné kajuty, ale rampa zůstala ve „fázi 2“. Kometa mine o metr, Komise vyhlásí „fázi 3“ a Předseda vyhrál |
-| **Hrdina** | sladění vysoké, Rudův vývoj 2–3 | Archa letí, Ruda si připíše všechny zásluhy |
-| **Tým** (pravý konec) | sladění vysoké, vývoj 4–5, Bářina důvěra vysoká | Archa letí, Ruda na pódiu poprvé řekne „my“ a Bára poprvé řekne termín. Tým jde rovnou na další projekt |
-| **Scéna po titulcích** (D61) | dokonalý průchod (podmínky upřesní návrh kap. 5) | Komise je rozpuštěna a z radnice po 40 letech sundávají lešení. Nedostavěnice poprvé něco dokončila |
+| **Pomník** (jen plán) | sladění nízké, převažuje plán (Gantt na všechno, nebo Ruda trval na svém) | Archa odstartuje přesně na vteřinu, ale uvnitř nikdo neví, kde sedí, a navigace je bez lidí. Obletí město a přistane, kde začala. Rudovi postaví pomník – nedokončený |
+| **Druhá etapa** (jen iterace) | sladění nízké, převažuje iterace (krabice na všechno) | skvělá aplikace a útulné kajuty, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: metr. Archa visí metr nad plošinou, kometa mine o metr, Komise vyhlásí „fázi 3“ a Předseda vyhrál |
+| **Hrdina** | sladění vysoké, Rudův vývoj ≤ 3, nebo R5.2 = „já“ | Archa vzlétne, počká nad mraky a přistane. Ruda si připíše všechny zásluhy, tým se rozejde |
+| **Tým** (pravý konec) | sladění vysoké, Rudův vývoj ≥ 4 včetně „my“ | Archa vzlétne a přistane. Ruda řekne „my“ a tým jde rovnou na další projekt: sundat lešení z radnice. Při vysoké Bářině důvěře Bára poprvé řekne termín (epilog) |
+| **Scéna po titulcích** (D61) | dokonalý průchod: Tým, vysoká Bářina důvěra, předání s návodem, poctivá zpráva, Bára řekla o Předsedovi hned, babička spojenkyně | Komise je rozpuštěna a z radnice po 40 letech sundávají lešení. Nedostavěnice poprvé něco dokončila |
 
 **Romantická linka (D60)** nemá vlastní konce, ale mění epilog podle Bářiny důvěry:
 - **vysoká:** Bára poprvé v životě řekne termín: „Večeře. Pátek. Osm. A přijdeš včas.“

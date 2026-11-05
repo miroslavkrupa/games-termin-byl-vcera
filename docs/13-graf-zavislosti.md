@@ -1,10 +1,10 @@
-# Graf závislostí puzzlů: kapitoly 1–4
+# Graf závislostí puzzlů: kapitoly 1–5
 
 > Úplný graf závislostí podle Rona Gilberta pro kapitoly, které jsou v šedém prototypu (1–3),
-> a pro návrh kapitoly 4, a co z něj plyne pro návrh. Grafy kapitol v návrzích ([1](kapitoly/01-iniciace.md#graf-závislostí-puzzlů),
+> a pro návrhy kapitol 4 a 5, a co z něj plyne pro návrh. Grafy kapitol v návrzích ([1](kapitoly/01-iniciace.md#graf-závislostí-puzzlů),
 > [2](kapitoly/02-planovani.md#graf-závislostí-puzzlů), [3](kapitoly/03-realizace.md#graf-závislostí-puzzlů))
 > jsou kostry s hlavní linkou. Tady je každý krok, který hra opravdu vyžaduje, podle dat prototypu.
-> Stav: **rozbor**, verze 0.4 (2026-11-03: přidána kapitola 4 z návrhu N3; D75, D76)
+> Stav: **rozbor**, verze 0.5 (2026-11-05: přidána kapitola 5 z návrhu N3, D79; kapitola 4 v D77, D78)
 
 ## Jak graf číst
 
@@ -46,8 +46,8 @@ ukazuje šířku grafu. Kroky, které se stanou samy (předmět z minihry, stři
 **Úzké hrdlo** je povinný krok, před kterým nutně je, nebo za kterým nutně je každý jiný povinný
 krok. „Nutně před“ znamená, že bez něj druhý krok nejde splnit vůbec, ani jinou cestou.
 
-**Zdroj a kontrola:** grafy jsou data v `tools/graf/k1.mjs` až `k4.mjs`. Kapitola 4 zatím
-nemá prototyp, její graf je z návrhu a příznaky se u ní nekontrolují. Příkaz
+**Zdroj a kontrola:** grafy jsou data v `tools/graf/k1.mjs` až `k5.mjs`. Kapitoly 4 a 5 zatím
+nemají prototyp, jejich grafy jsou z návrhu a příznaky se u nich nekontrolují. Příkaz
 `node tools/graf_zavislosti.mjs` ověří, že každý příznak a předmět uzlu v prototypu existuje,
 že cíl jde splnit v každém stavu a že žádný volitelný krok není ve skutečnosti povinný. Potom
 přepíše grafy a rozbory v tomhle dokumentu. Co je mezi značkami `graf:kN`, se ručně neupravuje.
@@ -812,10 +812,198 @@ flowchart TB
    pro babičku, těsnicí páska a rozpis rampy. Jsou to jediné šipky mezi Rudovou a Bářinou linkou
    v aktu B a všechny jsou jen ve špatných stavech.
 
+## Kapitola 5: Uzavření
+
+Graf je z [návrhu kapitoly 5](kapitoly/05-uzavreni.md) (N3 hotová a schválená v D79, čeká na N4). Část A
+je široká pro obě postavy, finále je kosočtverec pojistek přes rozhraní a část C je úzký závěr
+s rozhodnutími. Uzly s *jen:* jsou následky z kapitol 1–4.
+
+<!-- graf:k5 -->
+```mermaid
+flowchart TB
+  start(["Poslední den: Archa na plošině, obyvatelé ve frontě"])
+  dvere["Otevřít pákou dveře Archy: fronta nastupuje"]
+  rybari["Rybáři: složit udice, nebo je přivázat zvenku<br/><i>jen: skupiny neprošly nástupní zkouškou (c4_nastup < 3)</i>"]
+  sipky["Rozsvítit z věže šipky na palubu<br/><i>jen: skupiny neprošly nástupní zkouškou (c4_nastup < 3)</i>"]
+  kocour["Přinést babičce kocoura z pozemku pod rampou<br/><i>jen: skupiny neprošly nástupní zkouškou (c4_nastup < 3)</i>"]
+  nastoupeno["Fronta nastoupila"]
+  kontrola["Spustit předstartovní kontrolu řídicího systému"]
+  chybi["Počítadlo 4 811: ze seznamu lístků zjistit, že chybí Lumír"]
+  lumir["Lumír v archivu: „Bez archivu nejdu.“"]
+  krabicka("Vzít z pultu krabičku Poučení (plnou lahví z Plachetnice)")
+  lumir_jde["Dát Lumírovi krabičku Poučení: jde nastoupit"]
+  verze["Zamknout verzi bezpečnostního systému<br/><i>jen: bezpečnostní systém ve světě iterací (bez bezp_u_rudy)</i>"]
+  norbert_fronta["Přivést Norberta z fronty k pojistkám: zkouška a pečeť<br/><i>jen: Norbert není v týmu (c2_tym)</i>"]
+  pecet["Bezpečnostní systém zapečetěný"]
+  uzavreno["Uzavřít nástup: 4 812 / 4 812"]
+  stranky["Říct si třem z týmu o stránku návodu"]
+  manual("Stránky do krabice od bot: provozní manuál")
+  kapitan["Zeptat se vrátného, jestli povede Archu"]
+  barva["Natřít tlačítko Start žlutou barvou<br/><i>jen: velká tlačítka obětovaná v R4.2 (c4_obet)</i>"]
+  zauceni["Zkušební režim s vrátným: lístky skutečnosti jako legenda"]
+  odpocet>"Odpočet: deset… tři. Start zablokován na rozhraní"]
+  kamera_lavka["Kamera věže: na lávce za Archou stojí Pan Změna"]
+  zmena["Odložit Panu Změnovi poslední přání: „Po přistání.“"]
+  pak["Zavřít dveře pákou"]
+  kamera_dvere["Řídicí systém hlásí otevřeno: v kameře ocas Ještětota<br/><i>jen: Ještětoto drží přání (c4_creep ≥ 1 nebo c4_slib ≥ 1)</i>"]
+  prani["Odložit Ještětotovi přání jedno po druhém: zmenší se<br/><i>jen: Ještětoto drží přání (c4_creep ≥ 1 nebo c4_slib ≥ 1)</i>"]
+  hodnoty["Sladit hodnoty, které se na obou pultech liší<br/><i>jen: nesladěné body po kap. 4 (c4_integrace ≥ 1)</i>"]
+  stav["Pojistka Stav ověřen: lístky skutečnosti místo zelené<br/><i>jen: zelená zpráva starostovi (c4_report=zelene)</i>"]
+  pojistky["Pojistky zelené"]
+  ustoupit["„Na čí tři?“ Ruda ustoupí: „Na tvoje.“<br/><i>jen: Ruda při usmíření trval na svém (c4_usmireni=trval)</i>"]
+  natri["Na tři: Ruda odjistí, Bára předá palubě"]
+  klic("Startovací klíč pro posádku")
+  poradne{{"Předat s návodem a zaučením (R5.1)"}}
+  poradi{{"„Však vy si poradíte.“ (R5.1)"}}
+  r51(("nebo"))
+  r52{{"Pódium: „Já.“, nebo „My.“ (R5.2)"}}
+  konec(["Start a konec podle voleb"])
+  start --> dvere
+  dvere --> rybari
+  dvere --> sipky
+  dvere --> kocour
+  dvere --> nastoupeno
+  rybari --> nastoupeno
+  sipky --> nastoupeno
+  kocour --> nastoupeno
+  start --> kontrola
+  kontrola --> chybi
+  nastoupeno --> chybi
+  start --> lumir
+  chybi -.-> lumir
+  lumir --> krabicka
+  krabicka --> lumir_jde
+  start --> verze
+  start --> norbert_fronta
+  verze --> norbert_fronta
+  start --> pecet
+  verze --> pecet
+  norbert_fronta --> pecet
+  chybi --> uzavreno
+  lumir_jde --> uzavreno
+  pecet --> uzavreno
+  start --> stranky
+  stranky --> manual
+  start --> kapitan
+  kapitan --> barva
+  kapitan --> zauceni
+  barva --> zauceni
+  uzavreno --> odpocet
+  odpocet --> kamera_lavka
+  kamera_lavka --> zmena
+  odpocet --> pak
+  pak --> kamera_dvere
+  kamera_dvere --> prani
+  odpocet --> hodnoty
+  odpocet --> stav
+  zmena --> pojistky
+  pak --> pojistky
+  prani --> pojistky
+  hodnoty --> pojistky
+  stav --> pojistky
+  pojistky --> ustoupit
+  pojistky --> natri
+  ustoupit --> natri
+  natri --> klic
+  klic --> poradne
+  manual --> poradne
+  zauceni --> poradne
+  klic --> poradi
+  poradne --> r51
+  poradi --> r51
+  r51 --> r52
+  r52 --> konec
+  classDef ruda fill:#dbeafe,stroke:#1d4ed8,color:#0b1b3a
+  classDef bara fill:#ffedd5,stroke:#c2410c,color:#3a1a05
+  classDef spolu fill:#ede9fe,stroke:#6d28d9,color:#24124a
+  classDef kraj fill:#1f2937,stroke:#1f2937,color:#ffffff
+  classDef nebo fill:#fef9c3,stroke:#a16207,color:#3a2a00
+  classDef strih fill:#e5e7eb,stroke:#4b5563,color:#111827
+  classDef volitelny stroke-dasharray:5 4,color:#4b5563,fill:#f9fafb
+  classDef jen stroke-dasharray:2 3,stroke-width:2px
+  class dvere,rybari,kocour,nastoupeno,lumir,krabicka,lumir_jde,norbert_fronta,pecet,stranky,manual,kapitan,zmena,pak,prani,pojistky,ustoupit,klic,poradne,poradi,r52 ruda
+  class sipky,kontrola,chybi,verze,uzavreno,barva,zauceni,kamera_lavka,kamera_dvere bara
+  class hodnoty,stav,natri spolu
+  class start,konec kraj
+  class r51 nebo
+  class odpocet strih
+  class rybari,sipky,kocour,verze,norbert_fronta,barva,kamera_dvere,prani,hodnoty,stav,ustoupit jen
+```
+
+**Výchozí stav:** 18 kroků, z toho 12 povinných; nejkratší možný sled 9 kol; v jednom kole nejvýš 5 kroků k cíli (5 i s volitelnými).
+
+| Kolo | Kroky k cíli, které jdou udělat | Navíc volitelné |
+|---|---|---|
+| 1 | Otevřít pákou dveře Archy: fronta nastupuje (Ruda) · Spustit předstartovní kontrolu řídicího systému (Bára) · Lumír v archivu: „Bez archivu nejdu.“ (Ruda) · Říct si třem z týmu o stránku návodu (Ruda) *(větev)* · Zeptat se vrátného, jestli povede Archu (Ruda) *(větev)* | – |
+| 2 | Počítadlo 4 811: ze seznamu lístků zjistit, že chybí Lumír (Bára) · Vzít z pultu krabičku Poučení (plnou lahví z Plachetnice) (Ruda) · Stránky do krabice od bot: provozní manuál (Ruda) *(větev)* · Zkušební režim s vrátným: lístky skutečnosti jako legenda (Bára) *(větev)* | – |
+| 3 | Dát Lumírovi krabičku Poučení: jde nastoupit (Ruda) | – |
+| 4 | Uzavřít nástup: 4 812 / 4 812 (Bára) **⧗** | – |
+| 5 | Kamera věže: na lávce za Archou stojí Pan Změna (Bára) · Zavřít dveře pákou (Ruda) | – |
+| 6 | Odložit Panu Změnovi poslední přání: „Po přistání.“ (Ruda) | – |
+| 7 | Na tři: Ruda odjistí, Bára předá palubě (spolu) **⧗** | – |
+| 8 | Předat s návodem a zaučením (R5.1) (Ruda) *(větev)* · „Však vy si poradíte.“ (R5.1) (Ruda) *(větev)* | – |
+| 9 | Pódium: „Já.“, nebo „My.“ (R5.2) (Ruda) **⧗** | – |
+
+**⧗** úzké hrdlo (3): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
+
+**Špatné kapitoly 1–4 (skupiny, bez Norberta, nesladěné body, Ještětoto, zelená, trval, tlačítka):** 28 kroků, z toho 21 povinných; nejkratší možný sled 11 kol; v jednom kole nejvýš 6 kroků k cíli (6 i s volitelnými).
+
+| Kolo | Kroky k cíli, které jdou udělat | Navíc volitelné |
+|---|---|---|
+| 1 | Otevřít pákou dveře Archy: fronta nastupuje (Ruda) · Spustit předstartovní kontrolu řídicího systému (Bára) · Lumír v archivu: „Bez archivu nejdu.“ (Ruda) · Přivést Norberta z fronty k pojistkám: zkouška a pečeť (Ruda) · Říct si třem z týmu o stránku návodu (Ruda) *(větev)* · Zeptat se vrátného, jestli povede Archu (Ruda) *(větev)* | – |
+| 2 | Rybáři: složit udice, nebo je přivázat zvenku (Ruda) · Rozsvítit z věže šipky na palubu (Bára) · Přinést babičce kocoura z pozemku pod rampou (Ruda) · Vzít z pultu krabičku Poučení (plnou lahví z Plachetnice) (Ruda) · Stránky do krabice od bot: provozní manuál (Ruda) *(větev)* · Natřít tlačítko Start žlutou barvou (Bára) *(větev)* | – |
+| 3 | Počítadlo 4 811: ze seznamu lístků zjistit, že chybí Lumír (Bára) · Dát Lumírovi krabičku Poučení: jde nastoupit (Ruda) · Zkušební režim s vrátným: lístky skutečnosti jako legenda (Bára) *(větev)* | – |
+| 4 | Uzavřít nástup: 4 812 / 4 812 (Bára) **⧗** | – |
+| 5 | Kamera věže: na lávce za Archou stojí Pan Změna (Bára) · Zavřít dveře pákou (Ruda) · Sladit hodnoty, které se na obou pultech liší (spolu) · Pojistka Stav ověřen: lístky skutečnosti místo zelené (spolu) | – |
+| 6 | Odložit Panu Změnovi poslední přání: „Po přistání.“ (Ruda) · Řídicí systém hlásí otevřeno: v kameře ocas Ještětota (Bára) | – |
+| 7 | Odložit Ještětotovi přání jedno po druhém: zmenší se (Ruda) | – |
+| 8 | „Na čí tři?“ Ruda ustoupí: „Na tvoje.“ (Ruda) **⧗** | – |
+| 9 | Na tři: Ruda odjistí, Bára předá palubě (spolu) **⧗** | – |
+| 10 | Předat s návodem a zaučením (R5.1) (Ruda) *(větev)* · „Však vy si poradíte.“ (R5.1) (Ruda) *(větev)* | – |
+| 11 | Pódium: „Já.“, nebo „My.“ (R5.2) (Ruda) **⧗** | – |
+
+**⧗** úzké hrdlo (4): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
+
+**Bezpečnostní systém ve světě iterací a bez Norberta:** 20 kroků, z toho 14 povinných; nejkratší možný sled 9 kol; v jednom kole nejvýš 6 kroků k cíli (6 i s volitelnými).
+
+| Kolo | Kroky k cíli, které jdou udělat | Navíc volitelné |
+|---|---|---|
+| 1 | Otevřít pákou dveře Archy: fronta nastupuje (Ruda) · Spustit předstartovní kontrolu řídicího systému (Bára) · Lumír v archivu: „Bez archivu nejdu.“ (Ruda) · Zamknout verzi bezpečnostního systému (Bára) · Říct si třem z týmu o stránku návodu (Ruda) *(větev)* · Zeptat se vrátného, jestli povede Archu (Ruda) *(větev)* | – |
+| 2 | Počítadlo 4 811: ze seznamu lístků zjistit, že chybí Lumír (Bára) · Vzít z pultu krabičku Poučení (plnou lahví z Plachetnice) (Ruda) · Přivést Norberta z fronty k pojistkám: zkouška a pečeť (Ruda) · Stránky do krabice od bot: provozní manuál (Ruda) *(větev)* · Zkušební režim s vrátným: lístky skutečnosti jako legenda (Bára) *(větev)* | – |
+| 3 | Dát Lumírovi krabičku Poučení: jde nastoupit (Ruda) | – |
+| 4 | Uzavřít nástup: 4 812 / 4 812 (Bára) **⧗** | – |
+| 5 | Kamera věže: na lávce za Archou stojí Pan Změna (Bára) · Zavřít dveře pákou (Ruda) | – |
+| 6 | Odložit Panu Změnovi poslední přání: „Po přistání.“ (Ruda) | – |
+| 7 | Na tři: Ruda odjistí, Bára předá palubě (spolu) **⧗** | – |
+| 8 | Předat s návodem a zaučením (R5.1) (Ruda) *(větev)* · „Však vy si poradíte.“ (R5.1) (Ruda) *(větev)* | – |
+| 9 | Pódium: „Já.“, nebo „My.“ (R5.2) (Ruda) **⧗** | – |
+
+**⧗** úzké hrdlo (3): všechny ostatní povinné kroky jsou nutně před ním, nebo nutně za ním. *(větev)*: jedna z cest rozcestí „nebo“, sama povinná není. *(teď nepotřebný)*: v tomhle stavu k cíli nevede, v jiném ano.
+<!-- /graf:k5 -->
+
+### Co z grafu plyne
+
+1. **Část A je široká, ale krátká.** Na začátku jde udělat pět kroků k cíli za obě postavy
+   (dveře, kontrola, Lumír, kapitán, stránky návodu). Hráč má rozdělané tři úkoly: nástup,
+   Lumíra a předání.
+2. **Úzká hrdla jsou tři a všechna jsou společná:** uzavření nástupu (Bára, ale čeká na Rudu
+   s Lumírem), „Na tři“ (obě postavy najednou) a R5.2. R5.1 je rozcestí: s návodem a zaučením,
+   nebo bez nich.
+3. **Příprava předání nic nezamyká.** Stránky návodu, kapitán a zaučení jsou větev R5.1. Kdo
+   je přeskočí, kapitolu dohraje, ale epilog ukáže posádku, která hledá vypínač, a scéna po
+   titulcích nebude.
+4. **Finále je kosočtverec přes rozhraní.** Každá pojistka potřebuje krok obou postav: Bára vidí
+   (kamera, hodnoty), Ruda dělá (páka, Pan Změna, přání). Ve výchozím stavu jsou to dvě pojistky,
+   ve špatném čtyři souběžné a ocas ve dveřích.
+5. **Špatné kapitoly 1–4 přidávají hlavně šířku.** Skupiny ve frontě, Norbert z fronty, nesladěné
+   hodnoty a stav ze zelené zprávy jsou souběžné větve. Delší řetěz je jen u Ještětota (kamera,
+   přání) a u „Na čí tři?“. Proto je sled o dvě kola delší (11 místo 9).
+
 ## Mezi kapitolami
 
 Kapitoly na sebe navazují jen jedním tvrdým předpokladem: klíč od hangáru z kapitoly 1 otevře
-bránu v kapitole 2. Konec kapitoly 2 (vrátný na jeřábu) je začátek kapitoly 3. Ostatní
+bránu v kapitole 2. Konec kapitoly 2 (vrátný na jeřábu) je začátek kapitoly 3 a Archa na plošině
+z konce kapitoly 4 je začátek kapitoly 5. Ostatní
 návaznosti jsou stavy: nepřidávají předpoklad k cíli, ale **přidávají nebo mění kroky**.
 
 ```mermaid
@@ -835,8 +1023,17 @@ flowchart LR
   m15{{"M15 Poklop netěsní / chybí"}} -.->|utěsnit / navrtat trup| k4
   r31{{"R3.1 Bazén bez řízení"}} -.->|bazén do kašny| k4
   r23u{{"R2.3 Obálka na úsměv"}} -.->|kopie podpisů v konfrontaci| k4
+  k4 --> k5(["Kapitola 5: start a konec"])
+  r21n5{{"R2.1 Tým bez Norberta"}} -.->|Norbert z fronty| k5
+  r22v{{"R2.2 Bezpečnostní systém v iteracích"}} -.->|zamknout verzi| k5
+  p430{{"Nástupní zkouška neprošla"}} -.->|skupiny ve frontě| k5
+  p429{{"„Stačí. Zavírám.“"}} -.->|sladit hodnoty| k5
+  r42c{{"R4.2 a M03: Ještětoto a sliby"}} -.->|přání ve dveřích| k5
+  r41z{{"R4.1 Zelená zpráva"}} -.->|pojistka Stav ověřen| k5
+  r43t{{"R4.3 Trval na svém"}} -.->|„Na čí tři?“| k5
+  r42t{{"R4.2 Velká tlačítka obětovaná"}} -.->|natřít tlačítko| k5
   classDef kap fill:#1f2937,stroke:#1f2937,color:#ffffff
-  class k1,k2,k3,k4 kap
+  class k1,k2,k3,k4,k5 kap
 ```
 
 Všechny ostatní příznaky (R1.1–R1.3, R2.2, kvalita charteru, mosty, odhad) mění jen texty,
@@ -851,6 +1048,7 @@ obtížnost miniher a výsledky. Kroky grafu nemění.
 | 3 | Kap. 3: od střihu „zbývá 21“ do M10 neměl Ruda nic povinného, fáze B byla řetěz | ✅ zapracováno (D75): klíč od skladu až ve fázi B, bez Věry hned | – |
 | 4 | Kap. 3: schválení poklopu v M10 vytvoří povinný krok | ponechat, prototyp na chybějící poklop upozorní | – |
 | 5 | Kap. 2: tvar odpovídá Gilbertovu ideálu | beze změny | – |
+| 6 | Kap. 5: konec je řetěz tří úzkých hrdel („Na tři“ → R5.1 → R5.2) | ponechat, slavnostní závěr hry jako konec kap. 1 (D79) | ✅ schváleno (D79) |
 
 Šířka, kterou uvádějí průchody, se počítá z pohledu hráče (co má rozdělané, včetně volitelného).
 Tady je i šířka k cíli. Obě čísla dávají smysl, ale u fáze B kapitoly 3 se před D75 lišila nejvíc.

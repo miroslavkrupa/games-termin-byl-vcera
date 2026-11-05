@@ -376,7 +376,7 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 - **Lahve s poučením** připlouvají z Lumírovy krabičky Poučení (první připluje vždy karta
   poučení z kap. 1: „Zapomněli jsme se zeptat rybářů.“). Lahev jde přiřadit k útesu.
 - **Konec:** hráč vybere **jedno zlepšení pro kapitolu 5**: *Ptát se dřív, než se zamkne*
-  (víc času ve finálním puzzlu), *Jedna tabule pro oba* (Ruda vidí, co ví Bára), nebo
+  (pojistky startu jdou vyzkoušet před odpočtem, D79), *Jedna tabule pro oba* (Ruda vidí, co ví Bára), nebo
   *Říct to nahlas* (tým radí ve finále). Výsledek `c4_zlepseni`.
 - **Bez posezení v kap. 3:** odešlý a vrácený člen řekne první kartu sám: „Odešel jsem, protože
   jsme si nikdy nesedli.“ Když ještě není zpátky (`c4_clen_zpet`), Pembok: „Někdo tu chybí.“
