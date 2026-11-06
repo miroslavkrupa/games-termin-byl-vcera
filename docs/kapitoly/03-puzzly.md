@@ -313,7 +313,9 @@ odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 - **Řešení:** po M15 v hangáru tým čeká. Volba:
   - „Sedneme si a řekneme si, co příště jinak.“ → krátká scéna: každý z týmu řekne jednu věc,
     která se v kapitole pokazila (podle toho, co se stalo: lano, krysy, Ještětoto, porada, vada).
-    Hráč vybere **jedno zlepšení** ze tří, které se z toho nabízejí → `c3_retro`, `c3_zlepseni`.
+    Hráč vybere **jedno zlepšení** ze tří, které se z toho nabízejí → `c3_retro`, `c3_zlepseni`:
+    *Ptát se Báry dřív* (`bara`), *Zapsat, co se může pokazit, než se to pokazí* (`rizika`),
+    *Každé přání přes rozcestník. I moje.* (`zmeny`). Každé má malý následek v kap. 4 (D82).
     Kryštof (v týmu): „Navrhuju, abychom si co příště jinak řekli příště.“ ★
   - „Nemáme čas. Stavíme.“ → konec kapitoly hned; tým mlčky odchází (`c3_retro` = ne).
 - **Stopy ve světě:** tým sedí na bednách a nikdo nezačíná; Bára: „Než začneme dál, mohli

@@ -64,7 +64,7 @@ a interiér potřebují zkoušení s lidmi. Kde se části potkávají, musí se
   reportuje zeleně, plánuje do mlhy.
 - **Oblouk:** z chaotického „hrdiny“ servant leader. Každá kapitola mu jednu vadu (nemusí) zlomit,
   podle toho, jak hráč volí.
-- **Hlas:** sebevědomý, rychle mluví, plný manažerských frází, které používá špatně.
+- **Hlas:** sebevědomý, rychle mluví, všechno je pro něj „fáze“ a na všechno má Gantt.
 - **Svět plánu:** chce Ganttův diagram na všechno, i na software. Síla: struktura, termíny,
   přehled o závislostech. Vada: plánuje i to, co se naplánovat nedá, a slibuje přesné termíny
   tam, kde nikdo neví, co se staví. Na rampě (M13 Jeřábový balet) jeho způsob opravdu funguje.
@@ -235,7 +235,7 @@ Každá kapitola jednou větou ve čtyřech bodech, aby šlo zkontrolovat tempo 
 | Důvěra stakeholderů | 0–100 | ne (náznaky v dialozích) | charter, komunikace, poctivost reportů |
 | Morálka týmu | 0–100 | ne (nálada postav) | mikromanagement, retrospektivy, přetížení |
 | Technický dluh | 0–100 | ne (dílna chátrá) | zkratky, přeplněné sprinty |
-| Bářina důvěra | 0–100 | ne | jak s ní Ruda jedná |
+| Bářina důvěra | 0–5 bodů (D82): vyslechnuta ≥ 2, ne Gantt na všechno, vada nahlášená, Bára určuje pořadí, přiznal; vysoká ≥ 4, střední 2–3, nízká ≤ 1 | ne | jak s ní Ruda jedná |
 | Rudův vývoj | 0–5 zlomených vad | ne | klíčové volby v každé kapitole |
 | Sladění světů | 0–100 | ne (náznaky na mapě a v dílně) | rozdělení Archy (R2.2), mosty na roadmapě (M06), směrování změn (M10), integrační okno (M15) |
 
@@ -306,8 +306,8 @@ nemohl vědět, kam dopadne, proto bylo správné evakuovat. Město ve všech ko
 
 | Konec | Podmínka (pracovní) | Popis |
 |---|---|---|
-| **Pomník** (jen plán) | sladění nízké, převažuje plán (Gantt na všechno, nebo Ruda trval na svém) | Archa odstartuje přesně na vteřinu, ale uvnitř nikdo neví, kde sedí, a navigace je bez lidí. Obletí město a přistane, kde začala. Rudovi postaví pomník – nedokončený |
-| **Druhá etapa** (jen iterace) | sladění nízké, převažuje iterace (krabice na všechno) | skvělá aplikace a útulné kajuty, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: metr. Archa visí metr nad plošinou, kometa mine o metr, Komise vyhlásí „fázi 3“ a Předseda vyhrál |
+| **Pomník** (jen plán) | sladění nízké, převažuje plán: Gantt na všechno, nebo při rozdělení podle povahy interiér u Rudy (obojí nebo nic: podle R4.3, D82) | Archa odstartuje přesně na vteřinu, ale uvnitř nikdo neví, kde sedí, a navigace je bez lidí. Obletí město a přistane, kde začala. Rudovi postaví pomník – nedokončený |
+| **Druhá etapa** (jen iterace) | sladění nízké, převažuje iterace: krabice na všechno, nebo při rozdělení podle povahy bezpečnostní systém u Báry (D82) | skvělá aplikace a útulné kajuty, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: metr. Archa visí metr nad plošinou, kometa mine o metr, Komise vyhlásí „fázi 3“ a Předseda vyhrál |
 | **Hrdina** | sladění vysoké, Rudův vývoj ≤ 3, nebo R5.2 = „já“ | Archa vzlétne, počká nad mraky a přistane. Ruda si připíše všechny zásluhy, tým se rozejde |
 | **Tým** (pravý konec) | sladění vysoké, Rudův vývoj ≥ 4 včetně „my“ | Archa vzlétne a přistane. Ruda řekne „my“ a tým jde rovnou na další projekt: sundat lešení z radnice. Při vysoké Bářině důvěře Bára poprvé řekne termín (epilog) |
 | **Scéna po titulcích** (D61) | dokonalý průchod: Tým, vysoká Bářina důvěra, předání s návodem, poctivá zpráva, Bára řekla o Předsedovi hned, babička spojenkyně | Komise je rozpuštěna a z radnice po 40 letech sundávají lešení. Nedostavěnice poprvé něco dokončila |
@@ -324,7 +324,6 @@ nemohl vědět, kam dopadne, proto bylo správné evakuovat. Město ve všech ko
 - Ruda kreslí Ganttův diagram na všechno, i na snídani.
 - Ještětoto (Scope Creep) se narodí v kapitole 3 a od té doby je v pozadí scén pokaždé o kus větší.
 - Radniční výtah vede vždy jen do půlky patra.
-- Rudův slovník manažerských frází, kterým nikdo nerozumí, včetně něj.
 - **Číslo 4 812** (D64): tolik lidí má Nedostavěnice a tolikátý je Ruda v pořadí na lince pomoci.
   Vrátí se v každé kapitole; v kapitole 5 se na Archu nalodí přesně 4 812 lidí.
 

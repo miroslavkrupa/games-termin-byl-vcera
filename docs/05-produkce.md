@@ -27,19 +27,19 @@ musí vejít; překročení je vědomé rozhodnutí se záznamem. Počty jsou ho
 
 | Kapitola | Délka | Scény (z toho nové pozadí) | Nové postavy | Předměty | Repliky na jazyk | Minihry |
 |---|---|---|---|---|---|---|
-| 1 Iniciace (s úvodem) | 40–60 min | 6 + úvod (7) | 9 + kocour | 15 | 400–500 | M01, M02, M03 |
-| 2 Plánování | 55–75 min | 6 (4) | 6 kandidátů do týmu | 15 | 400–500 | M04, M06, M07 |
-| 3 Realizace | 70–90 min | 6 (3) | 2 | 15 | 450–550 | M13, M14, M10, M15 |
-| 4 Krize | 45–60 min | 5 (1, ostatní ve večerní verzi) | 1 | 10 | 400–500 | M11, M03 (opakování) |
-| 5 Uzavření | 20–30 min | 3 (1) | 0 | 5 | 200–300 | žádná nová, finální puzzle za oba |
-| **Celkem** | **3,8–5,3 h** | **16 nových pozadí** | | **60** | **1 850–2 350** | **11 miniher** |
+| 1 Iniciace (s úvodem) | 40–60 min | 6 + úvod (7) | 9 + kocour | 17 | 450–550 | M01, M02, M03 |
+| 2 Plánování | 55–75 min | 6 (4) | 6 kandidátů do týmu | 10 | 450–550 | M04, M06, M07 |
+| 3 Realizace | 75–95 min | 6 (3) | 2 | 10 | 500–600 | M13, M14, M10, M15 |
+| 4 Krize | 65–85 min | 7 (1, ostatní ve večerní verzi) | 1 | 12 | 650–750 | M11, M03 (opakování) |
+| 5 Uzavření | 25–40 min | 3 (1) | 0 | 5 | 350–450 | žádná nová, finální puzzle za oba |
+| **Celkem** | **4,5–6 h** (D82) | **16 nových pozadí** | | **54 nových** | **2 400–2 900 v osnovách** (D82) | **11 miniher** |
 
-Dvě upřesnění z kontroly celé hry ([N5](14-kontrola-hry.md), D81): **předměty** se počítají jako
-nové předměty na kapitolu (přenesené z dřívějška se nepočítají; návrhy mají 17 + 9 + 8 + 12 + 3 = 49),
+Upřesnění z kontroly celé hry ([N5](14-kontrola-hry.md), D81, D82): délka a repliky jsou podle
+návrhů po N4 (dřív 3,8–5,3 h a 1 850–2 350; v jednom průchodu hráč uslyší asi 2 100 replik,
+škrtá se až podle playtestu); **předměty** se počítají jako nové předměty na kapitolu (přenesené
+z dřívějška se nepočítají; návrhy mají 17 + 9 + 8 + 12 + 3 = 49),
 a k novým pozadím přibývá řádek **varianty pozadí** (3 stavy rampy a 2 stavy Archy v kap. 3,
 6 večerních verzí v kap. 4, 5 velikostí Ještětota, záběry čtyř konců; odhadem 10–20 h grafiky).
-Rozpočet replik a délky hry čeká na rozhodnutí autora (N5, H17 a H18).
-
 Minihry jsou rozložené tak, aby na hodinu hraní připadly nejvýš 2–3 (pravidlo
 [výukové matice](02-vyukova-matice.md#pravidla-pro-práci-s-maticí)). Kapitola 3 je na horní
 hranici; když přeroste rozpočet, jako první se zkrátí Integrační okno nebo Scope Creep.

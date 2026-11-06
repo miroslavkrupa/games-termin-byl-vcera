@@ -218,7 +218,7 @@ v trupu). R3.3 mění morálku.
 | `c3_bara_zna_lavku` | ano / ne | Ruda dá Báře rozpis rampy | M15; kap. 4 (bez něj a bez mostu je bod `lavka`) |
 | `c3_krysy` | `kocka` / `aktovka` | P3.2 | kap. 4 (krysy v Komisi, vtip) |
 | `c3_odchazi` | Pepa / Klára / Věra / Norbert | konec M15 | kap. 4 (kdo odejde bez posezení; s poklopem si odnese klíč od poklopu, bez něj plán zapojení trupu) |
-| `c3_zlepseni` | jedno ze tří | R3.3 | kap. 4 (M11 navazuje) |
+| `c3_zlepseni` | `bara` *Ptát se Báry dřív* / `rizika` *Zapsat, co se může pokazit* / `zmeny` *Každé přání přes rozcestník* (D82) | R3.3 | kap. 4: Bára čte štítky nahlas / popisky dílků R4.2 ukazují následek / Ještětoto o dílek menší; v M11 karta větru |
 
 ## Graf závislostí puzzlů
 

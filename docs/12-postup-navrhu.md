@@ -39,14 +39,14 @@
 
 ## Přehled kroků
 
-| Krok | Co | Výstup | Stav (2026-10-31) | Odhad |
+| Krok | Co | Výstup | Stav (2026-11-06) | Odhad |
 |---|---|---|---|---|
 | **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
 | **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ hotovo: kapitoly v kostce, D59–D61 | 2–4 h |
 | **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ✅ kostry a mapa následků schváleny (D62) | 4–8 h |
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 hotová, kapitola 2 hotová ([návrh](kapitoly/02-planovani.md), D69), kapitola 3 hotová ([návrh](kapitoly/03-realizace.md), D72), kapitola 4 hotová ([návrh](kapitoly/04-krize.md), D77, široký graf, rozpočet překročen), kapitola 5 hotová ([návrh](kapitoly/05-uzavreni.md), D79, rozpočet mírně překročen) | 50–95 h |
 | **N4** | Autorská kontrola každé kapitoly | autor projde kapitolu sám, opravy | ⚠️ kapitola 1 ✅ ([kontrola](kapitoly/01-kontrola.md), D67), kapitola 2 ✅ ([kontrola](kapitoly/02-kontrola.md), D68), 3 ✅ ([kontrola](kapitoly/03-kontrola.md), D73), 4 ✅ ([kontrola](kapitoly/04-kontrola.md), D78), 5 ✅ ([kontrola](kapitoly/05-kontrola.md), D80); papírový průchod s hráči zrušen (D66) | 5–10 h |
-| **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ⚠️ [kontrola hotová](14-kontrola-hry.md), opravy textu zapracované (D81); 10 rozhodnutí autora do brány A | 4–8 h |
+| **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ✅ [kontrola celé hry](14-kontrola-hry.md), nálezy zapracované (D81) a rozhodnutí zapsána (D82): **brána A** | 4–8 h |
 | **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65); brána B až po N4 a N5 | 15–25 h na kapitolu 1 |
 | **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⏸️ I1 hotová, I2+ čekají na bránu B | 40–65 h |
 | **N8** | Playtest | 5 hráčů, opravy → milník **ME** | – | 8–15 h |
@@ -252,19 +252,21 @@ Testování s lidmi se dělá až na prototypu v Godotu (N8, D66).
 
 Po poslední kapitole se ověří, že hra drží pohromadě:
 
-- [ ] **Příznaky:** každý příznak se nastaví dřív, než se čte, a každý nastavený příznak se
+- [x] **Příznaky:** každý příznak se nastaví dřív, než se čte, a každý nastavený příznak se
   někde čte (mapa následků)
-- [ ] **Konce:** ke každému konci existuje cesta; spočítat, jaké volby k němu vedou
-- [ ] **Předměty a postavy mezi kapitolami:** co si hráč nese dál a co se s tím stane
-- [ ] **Tempo:** odhadované délky kapitol, střídání puzzlů, miniher, dialogů a úseků za Báru
-- [ ] **Výuková matice:** každé téma z [matice](02-vyukova-matice.md) má mechaniku a místo ve hře
-- [ ] **Metodický oblouk:** kapitoly sledují [koncepci](07-dva-svety.md) (společný základ →
+- [x] **Konce:** ke každému konci existuje cesta; spočítat, jaké volby k němu vedou
+- [x] **Předměty a postavy mezi kapitolami:** co si hráč nese dál a co se s tím stane
+- [x] **Tempo:** odhadované délky kapitol, střídání puzzlů, miniher, dialogů a úseků za Báru
+- [x] **Výuková matice:** každé téma z [matice](02-vyukova-matice.md) má mechaniku a místo ve hře
+- [x] **Metodický oblouk:** kapitoly sledují [koncepci](07-dva-svety.md) (společný základ →
   rozdělení → dva světy → krize na rozhraní → integrace)
-- [ ] **Opakující se vtipy** rozložené přes celou hru
-- [ ] **Rozsah:** součet scén, postav, replik a miniher proti N0; odhad hodin výroby celé hry
+- [x] **Opakující se vtipy** rozložené přes celou hru
+- [x] **Rozsah:** součet scén, postav, replik a miniher proti N0; odhad hodin výroby celé hry
 
 **Brána A, celá hra uzamčena:** všechny kapitoly prošly autorskou kontrolou (N4), kontrolní seznamy
 N3h a N5 jsou odškrtnuté, autor návrh schválil.
+
+**✅ Brána A prošla 2026-11-06 (D82):** nálezy v [kontrole celé hry](14-kontrola-hry.md).
 
 ## N6 Texty první verze
 

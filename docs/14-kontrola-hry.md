@@ -6,8 +6,8 @@
 > opakující se vtipy a rozsah proti N0. Příznaky počítal skript nad daty prototypu (kap. 1–3)
 > a návrhy (kap. 4–5), ostatní body prošla čtyři nezávislá čtení (autorské a tři, která návrh
 > neznala); nálezy jsou sloučené a ověřené proti zdrojům.
-> Stav: **opravy textu zapracovány** (D81), 2026-11-06. Brána A čeká na deset rozhodnutí autora
-> (viz konec); H20 a H31 jsou úpravy návrhu, ne textu, proto čekají s nimi.
+> Stav: **hotovo, brána A** (D81, D82), 2026-11-06. Opravy textu zapracovány, deset rozhodnutí
+> autora zapsáno (viz konec).
 
 ## Shrnutí
 
@@ -261,23 +261,21 @@ R, důkaz `c3_dluh` ≤ 1, deník „Technický dluh“).
 (ve hře Ještětoto, *Než se zavře trup*); V07 deník „Planning poker“ při mechanice tichých
 odhadů na táccích; V05 a V20 v kap. 2 nic nenese (P2.2 výběr týmu je i vedení).
 
-## Co zbývá do brány A
+## Rozhodnutí autora (D82) a brána A
 
-Rozhodnutí autora (ostatní nálezy jsou opravy textu, které jdou zapracovat rovnou):
-
-1. **H17 délka hry:** přepsat D56 na 4,5–6 h, nebo škrtat v kap. 3 a 4.
-2. **H18 rozpočet replik:** počítat repliky v jednom průchodu a stropovat ★.
-3. **H8 Pomník, nebo Druhá etapa při rozdělení podle povahy:** podle R4.3, nebo podle výjimek.
-4. **H5 Bářina důvěra:** body a prahy.
-5. **H28 V01:** snížit na dialog, nebo přidat lístek do P1.5.
-6. **H29 Deník:** kdy a jak se pojmy odemykají, odborně nebo hravě.
-7. **H25 Rudův slovník:** škrtnout, nebo psát v N6.
-8. **H23:** doplnit skutečný čas N6 kap. 1 do plánu kapitoly 1.
-9. **H20 začátek kap. 2:** přesunout zkoušky kandidátů za slona a M07 před M06 (mění graf i prototyp).
-10. **H31 zlepšení z R3.3:** pojmenovat tři zlepšení a dát každému malý následek v kap. 4.
+| # | Nález | Rozhodnutí |
+|---|---|---|
+| 1 | H17 délka hry | rozpočet D56 přepsán na 4,5–6 h podle návrhů po N4; škrtat až podle playtestu (N8) |
+| 2 | H18 repliky | rozpočet přepsán na osnovy (2 400–2 900), bez stropu na ★ |
+| 3 | H8 Pomník, nebo Druhá etapa při rozdělení podle povahy | podle výjimek z R2.2 (interiér u Rudy → Pomník, bezpečnostní systém u Báry → Druhá etapa), jinak podle R4.3 |
+| 4 | H5 Bářina důvěra | body 0–5 (vyslechnuta, ne Gantt, vada, pořadí, přiznal); vysoká ≥ 4, střední 2–3, nízká ≤ 1 |
+| 5 | H28 V01 | jen dialog (zeď slávy), bez důkazu pochopení |
+| 6 | H29 Deník | sloupec *Odemkne* v matici; hravé názvy s odborným v závorce, napíšou se v N6 |
+| 7 | H25 Rudův slovník | škrtnut z bible; Rudův hlas je „fáze“ a Gantt |
+| 8 | H23 kalibrace odhadu | ponechán nekalibrovaný; kalibrace až po výrobě kapitoly 1 v Godotu (N7) |
+| 9 | H20 začátek kap. 2 | ponechán, změří N8 |
+| 10 | H31 zlepšení z R3.3 | pojmenována (`bara`, `rizika`, `zmeny`, názvy z prototypu) a každé má malý následek v aktu A kap. 4 |
 
 Zapracováno rovnou (D81): H1–H4, H6, H7, H9–H16, H21, H22, H24, H26, H27, H30, H32–H34;
-H19 ponecháno (změří N8).
-
-Po zapracování se odškrtne seznam N5 v [postupu návrhu](12-postup-navrhu.md) a hra je uzamčená
-(brána A).
+H19 ponecháno (změří N8). Seznam N5 v [postupu návrhu](12-postup-navrhu.md) je odškrtnutý,
+hra je uzamčená: **brána A** (D82).

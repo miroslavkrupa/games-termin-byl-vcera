@@ -249,7 +249,9 @@ Kapitola nemá další kapitolu, proto příznaky `c5_*` čtou jen R5.1, R5.2, k
 
 Konec se počítá při startu v pevném pořadí (D80): **1.** nízké sladění → Pomník, nebo Druhá etapa;
 **2.** „my“ a vývoj ≥ 4 → Tým; **3.** jinak Hrdina. Kombinuje **sladění světů** (metodická osa) a **Rudův vývoj**
-(osobní osa). **Bářina důvěra** mění jen epilog (D60). Konce v bibli popisovaly i to, že Archa
+(osobní osa). **Bářina důvěra** mění jen epilog (D60): body 0–5 (`c1_bara_vyslechnuta` ≥ 2, ne `gantt`,
+`c3_vada_hlasena`, `c3_bara_priority`, `c4_usmireni` = `priznal`), vysoká ≥ 4, střední 2–3, nízká ≤ 1 (D82);
+kap. 4 čte jen první tři (vzkaz po poslovi, D78). Konce v bibli popisovaly i to, že Archa
 odletí bez lidí nebo se rampa nedostaví. Kapitola 4 ale zaručuje, že rampa stojí a všichni jsou
 nalodění (D12), proto se konce liší tím, **co se stane po startu** (D79, upřesňuje
 [bibli](../03-pribehova-bible.md#konce)).
@@ -268,8 +270,8 @@ R4.1 poctivá zpráva, R5.2 „my“.
 
 | Konec | Podmínka (pracovní) | Co se stane po startu |
 |---|---|---|
-| **Pomník** (jen plán) | sladění nízké a převažuje plán: `c2_rozdeleni` = `gantt`, nebo `povaha` s `c4_usmireni` = `trval` | Archa odstartuje přesně na vteřinu. Uvnitř nikdo neví, kde sedí: kajuty jsou „podle výkresu“ a navigace bez lidí (při `c3_gantt_v_aplikaci`: „V aplikaci byl Gantt. Lidé ne.“). Archa obletí město a přistane tam, kde začala. Kometa dopadne do Mlžné pláně. Rudovi postaví pomník za nejpřesnější start v dějinách města. Nedokončený |
-| **Druhá etapa** (jen iterace) | sladění nízké a převažuje iterace: `c2_rozdeleni` = `krabice`, nebo `povaha` s `priznal` | aplikace vede každého na jeho místo, kajuty jsou útulné, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: jeden metr. Kometa mine město o metr. Komise vyhlásí „fázi 3“, Archa visí metr nad rampou a Předseda vyhrál |
+| **Pomník** (jen plán) | sladění nízké a převažuje plán: `c2_rozdeleni` = `gantt`, nebo `povaha` s `c2_interier` = `ruda` (a `c2_bezpecnost` = `ruda`); při obou výjimkách špatně, nebo obou dobře rozhodne R4.3: `trval` → Pomník (D82) | Archa odstartuje přesně na vteřinu. Uvnitř nikdo neví, kde sedí: kajuty jsou „podle výkresu“ a navigace bez lidí (při `c3_gantt_v_aplikaci`: „V aplikaci byl Gantt. Lidé ne.“). Archa obletí město a přistane tam, kde začala. Kometa dopadne do Mlžné pláně. Rudovi postaví pomník za nejpřesnější start v dějinách města. Nedokončený |
+| **Druhá etapa** (jen iterace) | sladění nízké a převažuje iterace: `c2_rozdeleni` = `krabice`, nebo `povaha` s `c2_bezpecnost` = `bara` (a `c2_interier` = `bara`); jinak R4.3: `priznal` → Druhá etapa (D82) | aplikace vede každého na jeho místo, kajuty jsou útulné, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: jeden metr. Kometa mine město o metr. Komise vyhlásí „fázi 3“, Archa visí metr nad rampou a Předseda vyhrál |
 | **Hrdina** | sladění vysoké a ne Tým (vývoj ≤ 3, nebo R5.2 = „já“) | Archa vzlétne nad mraky, počká, až kometa dopadne, a přistane zpátky na rampě. Ruda dostane od starosty medaili a všechny zásluhy. Tým se rozejde; při „my“ to Ruda řekl, ale pozdě („Tým už je na jiných projektech.“) |
 | **Tým** (pravý konec) | sladění vysoké, Rudův vývoj ≥ 4 včetně „my“ | Archa vzlétne, počká a přistane. Ruda na rampě řekne „my“ znovu, tentokrát bez mikrofonu. Tým jde rovnou na další projekt: sundat lešení z radnice |
 

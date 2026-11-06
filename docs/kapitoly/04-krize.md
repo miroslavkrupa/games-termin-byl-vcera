@@ -103,7 +103,7 @@ Bez posezení (`c3_retro` = ne) odešel a pracuje „na zkoušku“ u Ing. Frame
 | `c3_creep`, `c3_bazen`, `c3_bazen_v_trupu`, `c3_svaciny` | velikost Ještětoto na lístku Změny a v R4.2; dílky v R4.2 podle kapitoly 3 (P4.9); bazén v trupu (`c3_bazen_v_trupu`), který v R4.2 zůstane, vytvoří P4.17 |
 | `c3_dluh` | ≥ 2: zkouška počítadla v P4.3 hlásí i chyby a palubní lístky se tisknou dvakrát |
 | `c3_nesladeno` s bodem `lavka` | aplikace nezná den lávky (P4.18 a P4.24); bod vznikne bez mostu *zkouška nástupu* a bez `c3_bara_zna_lavku` |
-| `c3_zlepseni` | v M11 připluje jako karta větru |
+| `c3_zlepseni` | malý následek (D82): `bara` Bára v aktu A přečte štítky nahlas sama (2. stupeň nápovědy k lístkům zdarma); `rizika` dílky na tabuli rozsahu mají popisek, co se pokazí, když věc zůstane; `zmeny` Ještětoto zabírá na tabuli rozsahu o dílek míň; v M11 připluje jako karta větru |
 | `c3_krysy` = `aktovka` | krysy žijí v kanceláři Komise a v konfrontaci sežerou Předsedovi poznámky (vtip) |
 
 **Bářina důvěra je vysoká** při `c1_bara_vyslechnuta` ≥ 2, `c2_rozdeleni` ≠ `gantt` a `c3_vada_hlasena`
@@ -375,7 +375,8 @@ hodně pokazil, má víc práce, ale ne delší frontu.
   za ně členové týmu: zelená světla, rozkol, posel, Ještětoto, babička, palivo bez řídicího
   systému, poctivá zpráva, Bářiny důkazy. Kotva i vítr jsou správně podle toho, jak to hráč
   zažil: rozkol je kotva, posel vítr, zelená zpráva kotva, poctivá vítr. Zlepšení z posezení v kap. 3
-  (`c3_zlepseni`) připluje jako karta větru („Minule jsme si sedli. Pomohlo to.“).
+  (`c3_zlepseni`) připluje jako karta větru („Minule jsme si sedli. Pomohlo to.“) a má v aktu A
+  svůj malý následek (viz [výchozí stav](#výchozí-stav), D82).
 - **Lahve s poučením** připlouvají z Lumírovy krabičky Poučení (první připluje vždy karta
   poučení z kap. 1: „Zapomněli jsme se zeptat rybářů.“). Lahev jde přiřadit k útesu.
 - **Konec:** hráč vybere **jedno zlepšení pro kapitolu 5**: *Ptát se dřív, než se zamkne*
