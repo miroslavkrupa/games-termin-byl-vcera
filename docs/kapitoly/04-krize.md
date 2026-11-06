@@ -274,7 +274,7 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
     nakreslí na plošinu křídou obrys dveří („Tady budou dveře. Zítra.“) a obyvatelé s kufry
     a s palubními lístky přejdou po lávce k obrysu a zpátky. Jde jen po rampě bez babičky na lehátku, s plošinou a bez drolení, a když aplikace
     zná den lávky. Ruda řídí frontu („Tohle je jediná fronta, kterou jsem kdy chtěl.“), Bára počítá.
-    Výsledek `c4_nastup`.
+    Výsledek `c4_nastup` a seznam skupin, které neprošly, `c4_nastup_chybi` (D80).
 15. **Konfrontace v Komisi (P4.31).** Předseda, Ing. Framework, starosta (přijde podepsat start).
     Předseda má tři výmluvy a na každou platí jiný důkaz:
 
@@ -293,7 +293,8 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
     z aktovky sežerou poznámky.
 16. **Povolení ke startu (P4.32).** Starosta podepíše start místo Komise: „Komise je
     pozastavena. Do fáze 2.“ Po zelené zprávě (R4.1) váhá: „Před pěti dny jste mi hlásil zelenou.“
-    a podepíše až s lístky skutečnosti na stole (bez nich jen s Bářinými čísly).
+    a podepíše až s lístky skutečnosti na stole (bez nich jen s Bářinými čísly). Nepoužité důkazy
+    si vezme „pro noviny“ (D80).
 17. **Konec kapitoly.** Zbývá 1. Archa je připravená ke startu. Podrobně v části
     [Úvod a konec](#úvod-a-konec).
 
@@ -318,6 +319,7 @@ R4.3 = přiznat zvedne Bářinu důvěru a sladění světů.
 | `c4_slib` | 0–5 (rychlé repliky v M03) | M03 | kap. 5 (starosta chce všechno, co slíbeno) |
 | `c4_zlepseni` | jedno ze tří | M11 | kap. 5 |
 | `c4_nastup` | 0–3 (kolik skupin obyvatel prošlo napoprvé) | P4.30 | kap. 5 (nástup) |
+| `c4_nastup_chybi` | seznam: `rybari`, `obyvatele`, `babicka` (D80) | P4.30 | kap. 5 (P5.2: kdo uvízne a proč) |
 | `c4_integrace` | 0–3 (nesladěné body po P4.29) | P4.29 | kap. 5 (finální puzzle) |
 | `c4_clen_zpet` | ano | P4.12 | kap. 5 (kdo stojí na rampě) |
 
@@ -376,7 +378,7 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 - **Lahve s poučením** připlouvají z Lumírovy krabičky Poučení (první připluje vždy karta
   poučení z kap. 1: „Zapomněli jsme se zeptat rybářů.“). Lahev jde přiřadit k útesu.
 - **Konec:** hráč vybere **jedno zlepšení pro kapitolu 5**: *Ptát se dřív, než se zamkne*
-  (pojistky startu jdou vyzkoušet před odpočtem, D79), *Jedna tabule pro oba* (Ruda vidí, co ví Bára), nebo
+  (zkouška pojistek před odpočtem ukáže, co budou chtít, D79, D80), *Jedna tabule pro oba* (Ruda vidí, co ví Bára), nebo
   *Říct to nahlas* (tým radí ve finále). Výsledek `c4_zlepseni`.
 - **Bez posezení v kap. 3:** odešlý a vrácený člen řekne první kartu sám: „Odešel jsem, protože
   jsme si nikdy nesedli.“ Když ještě není zpátky (`c4_clen_zpet`), Pembok: „Někdo tu chybí.“

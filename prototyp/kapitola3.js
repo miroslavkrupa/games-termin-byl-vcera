@@ -13,6 +13,8 @@
   const KRABICE = "c2_rozdeleni=='krabice'";
   const GANTT = "c2_rozdeleni=='gantt'";
   const INTERIER_RUDA = "(c2_interier=='ruda' || c2_rozdeleni=='gantt')";
+  // Bezpečnostní systém ve světě iterací: zařazený k Báře, nebo krabice na všechno (D80, čte i kap. 5)
+  const BEZP_ITERACE = "(c2_bezpecnost=='bara' || c2_rozdeleni=='krabice')";
   const BEZ_ZKOUSENI = "!obsahuje(c2_tym, 'pepa') && !obsahuje(c2_tym, 'klara')";
   const NORBERT_CHYBI = "!obsahuje(c2_tym, 'norbert') && !norbert_podpis";
   const POKLOP_SCHVALEN = "(poklop_schvalen=='ano' || poklop_schvalen=='netesni')";
@@ -291,7 +293,7 @@
             prohlednout: 'ch3_vera_prohlednout', pouzit: { stridat: ['ch3_vera_bedneni', 'ch3_vera_trup_pocita'] },
             na: { poklop: 'ch3_vera_poklop', vypocet: 'ch3_vera_vypocet', kava: 'ch3_vera_kava' } },
           { id: 'norbert', nazev: 'postava_norbert', druh: 'postava', kdy: `${TYM('norbert')} && faze_b && !faze_c`, r: [17, 40, 6, 34],
-            prohlednout: 'ch3_norbert_prohlednout', pouzit: { stridat: ['ch3_norbert_podepsany', { kdy: "c2_bezpecnost=='bara'", akce: 'ch3_norbert_varovani', jinak: 'ch3_norbert_pecet' }] },
+            prohlednout: 'ch3_norbert_prohlednout', pouzit: { stridat: ['ch3_norbert_podepsany', { kdy: BEZP_ITERACE, akce: 'ch3_norbert_varovani', jinak: 'ch3_norbert_pecet' }] },
             na: { pembok: 'ch3_norbert_pembok_tym', kava: 'ch3_norbert_kava', kavove_pero: 'ch3_norbert_pero' } },
           { id: 'vrata', nazev: 'ch2_hs_zadni_vrata', r: [92, 2, 8, 8], prohlednout: 'ch3_vrata', pouzit: 'ch3_vrata' },
           { id: 'bocni', stitek: true, nazev: 'ch3_hs_bocni_dvere', druh: 'vychod', vychod: 'dilna', r: [0, 62, 8, 30], prohlednout: 'ch3_bocni_dvere' },
@@ -455,7 +457,7 @@
                 jinak: [{ kdy: "kde('bara')!='trup'", akce: ['^bara=trup', 'ch3_m15_bara_prisla'] }, 'ch3_m15_ruda_vse', 'ch3_m15_bara_nic', '@m15'] } } } },
             bara_prohlednout: 'ch3_misto_bara', bara_pouzit: 'ch3_misto_bara' },
           { id: 'panel', nazev: 'ch3_hs_panel', r: [56, 10, 10, 18],
-            prohlednout: { kdy: "c2_bezpecnost=='bara'", akce: 'ch3_panel_tyden', jinak: 'ch3_panel_zapeceteny' } },
+            prohlednout: { kdy: BEZP_ITERACE, akce: 'ch3_panel_tyden', jinak: 'ch3_panel_zapeceteny' } },
           { id: 'vera', nazev: 'postava_vera', druh: 'postava', kdy: `${TYM('vera')} && faze_c`, r: [58, 40, 6, 34],
             prohlednout: 'ch3_vera_nytovacka', pouzit: { stridat: ['ch3_vera_zitra', 'ch3_vera_trup_pocita'] },
             na: { poklop: { kdy: POKLOP_SCHVALEN, akce: 'ch3_vera_poklop_dovnitr', jinak: 'ch3_vera_bez_vypoctu' }, kava: 'ch3_vera_kava' } },

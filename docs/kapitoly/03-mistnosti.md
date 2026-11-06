@@ -141,7 +141,7 @@ nad tímto pozadím.
 | Otvor v boku | aktivní místo | „Díra. Bude z ní poklop, nebo nýty.“ | servisní poklop → nasadit | poklop schválen v M10 | P3.10 |
 | Přípojky | aktivní místo | tři konce kabelů; Bára: „Tudy povedou programy. Pokud tu budou kabely.“ | – | – | stopa M15 |
 | Místo pro počítač | aktivní místo | „Sem přijde mozek Archy. Zatím tu je prach.“ | použít → M15 | fáze C, po R3.2 | P3.12 |
-| Panel bezpečnostního systému | aktivní místo | podle `c2_vyjimky`: zapečetěný Norbertem / „předělává se každý týden“ | – | – | varování (kap. 5) |
+| Panel bezpečnostního systému | aktivní místo | zapečetěný Norbertem; ve světě iterací (`c2_bezpecnost` = `bara`, nebo `krabice`, D80) „předělává se každý týden“ | – | – | varování (kap. 5) |
 | Věra | postava | s nýtovačkou; „Zítra zavírám. Kdo tu bude, zůstane.“ | dialog `vera` | Věra v týmu | bez Věry nýtuje Ruda (K13) |
 | Norbert | postava | „Podle normy se zavírá jen podepsaný trup.“ | dialog `norbert` | Norbert v týmu | P3.3 |
 | Okénko | aktivní místo | kometa | – | – | |

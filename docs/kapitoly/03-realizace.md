@@ -54,7 +54,7 @@ pro Báru, servisní poklop).
 | `c1_babicka` | `spojenec`: babička na ukázce prozradí víc hned v 1. kole (kocour) a na plotě nechá buchtu; `odmitnuta`: na ukázce mluví až ve 2. kole; ostatní: běžné reakce |
 | `c2_tym`, `c2_tym_pokryti` | chybí stavba (Věra): výpočet statika z roku 1994 (P3.3); chybí podpis startu (Norbert): Norbert z lavičky na náměstí (P3.3); chybí zkoušení (Pepa i Klára): Bára má v kolech kapacitu 2 místo 3 |
 | `c2_rozdeleni` | `gantt`: Ruda nadiktuje Báře 1. kolo a zakáže ukázku po 2. kole (M14); `krabice`: Ing. Framework v M13 přidá „ukázky betonu“ a seznam práce v M14 zamkne do krabice; `povaha`: bez zásahu |
-| `c2_vyjimky` | interiér u Rudy: kajuta je „podle výkresu“ a místo na udice nejde přidat (M14); bezpečnostní systém u Báry: Norbert varuje, že „tohle nikdo nepodepíše“ (následek v kap. 5) |
+| `c2_vyjimky` | interiér u Rudy: kajuta je „podle výkresu“ a místo na udice nejde přidat (M14); bezpečnostní systém u Báry nebo krabice na všechno (D80): Norbert varuje, že „tohle nikdo nepodepíše“ (následek v kap. 5, P5.4) |
 | `c2_riziko_predem` | `krysy`: kočka Riziková vyřeší sklad za minutu; `lano`: jeřáb v M13 bez výpadku; `usmev`: v kap. 3 jen vtip, následek v kap. 4 |
 | `c2_rizika_zapsana` | zapsaná rizika nezaskočí: lístek „krysy“ napoví, že krysy jedí papír; lístek „lano“ ukáže výpadek jeřábu v M13 dopředu |
 | `c2_odhad` = `kotva` | první den M13 zabere oslava „rampy za dva dny“; rezerva nejvýš 1 |

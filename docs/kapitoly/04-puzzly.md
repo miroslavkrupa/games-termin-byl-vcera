@@ -561,8 +561,11 @@ Po M11 střih „Zbývá 2.“: člen týmu s klíčem od poklopu ho dá Rudovi 
 - **Stopy ve světě:** lístek Nástup; obyvatelé sedí na kufrech; Zelenka z věže: „Žlutá!… Zelená!“
 - **Nápověda:** 1 „Zkus to s nimi.“ · 2 „Každý potřebuje lístek a lávka musí být volná.“ · 3 „Dej
   obyvatelům palubní lístky.“
-- **Příznaky:** `c4_nastup` 0–3 (kolik skupin prošlo napoprvé: podle `c3_hodnota`, `c4_obet`
-  a `gantt`).
+- **Příznaky:** `c4_nastup` 0–3 (kolik skupin prošlo napoprvé) a `c4_nastup_chybi` (které
+  neprošly, D80). Každá skupina má jednu příčinu: **rybáři** neprojdou bez místa na udice (karta
+  *udice* chybí v `c3_hotove`), **obyvatelé** při `gantt` nebo `c3_hodnota` ≤ 1 („Aplikaci
+  nevěříme.“ / „Kudy?“), **babička** při obětovaných velkých tlačítkách. Kapitola 5 je zastaví
+  ze stejného důvodu.
 - **Co nese:** V14, V25.
 - **Riziko:** žádné; je to oslava.
 
@@ -595,7 +598,8 @@ Po M11 střih „Zbývá 2.“: člen týmu s klíčem od poklopu ho dá Rudovi 
 - **Cíl hráče:** podpis na start.
 - **Řešení:** po konfrontaci starosta: „Komise je pozastavena. Do fáze 2.“ a podepíše. Po zelené
   zprávě (R4.1) váhá: „Před pěti dny jste mi hlásil zelenou.“ a podepíše až s lístky skutečnosti na stole
-  (bez lístků s Bářinými čísly).
+  (bez lístků s Bářinými čísly). Nepoužité důkazy (kopie podpisů, svědectví) si vezme „pro
+  noviny“ (D80).
 - **Nápověda:** –
 - **Příznaky:** konec kapitoly.
 - **Co nese:** V18; eskalace ke sponzorovi, když ten, kdo má rozhodnout, nechce.

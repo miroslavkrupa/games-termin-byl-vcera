@@ -246,8 +246,8 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 
 | Volba nebo výsledek | Příznak | Nastaví se | Čte se | Následek | Mění proměnnou |
 |---|---|---|---|---|---|
-| R1.1 slíbit všechno | `c1_slib_vseho` | kap. 1 (M03) | kap. 2, 4 | sponzor trvá na všem, souboj v kap. 4 je tvrdší, chybí prostor pro vyjednávání | důvěra stakeholderů, rozsah, **Rudův vývoj** |
-| R1.2 babička | `c1_babicka` | kap. 1 | kap. 2, 4 | přehlédnutá nebo odbytá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
+| R1.1 slíbit všechno | `c1_slib_vseho` | kap. 1 (M03) | kap. 2, 4, 5 (Rudův vývoj) | sponzor trvá na všem, souboj v kap. 4 je tvrdší, chybí prostor pro vyjednávání | důvěra stakeholderů, rozsah, **Rudův vývoj** |
+| R1.2 babička | `c1_babicka` | kap. 1 | kap. 2, 4, 5 (epilog, scéna po titulcích) | přehlédnutá nebo odbytá zablokuje rampu (vedlejší úkol), spojenkyně pomůže | důvěra stakeholderů |
 | R1.3 Bára vyslechnuta | `c1_bara_vyslechnuta` | kap. 1 | kap. 2, 3 | Bára radí s rozdělením Archy; v kap. 3 řekne o vadě v softwaru, nebo mlčí | Bářina důvěra |
 | R1.4 „následné fáze“ | `c1_faze2` | kap. 1 | kap. 2, 3 | Předseda má páku: „fáze 2“ v roadmapě, analýza dopadu u každé změny | čas |
 | M01 charter | `c1_charter_kvalita` | kap. 1 | kap. 2, 4 | při 3 visí nad tabulí rozdělení cíl „Odvézt všechny obyvatele“ (stopa); snazší R4.2, repliky do souboje | důvěra stakeholderů |
@@ -255,33 +255,33 @@ následek a každý čtený příznak se nastaví dřív, než se čte.
 | razítko | `c1_razitko` | kap. 1 | kap. 2 | kávové razítko: formulář navíc | – |
 | seznam pasažérů | `c1_seznam_pasazeru` | kap. 1 (Bára) | kap. 4 | hlavní důkaz proti Předsedovi (D59) | – |
 | dohoda s Panem Změnou | `c1_zmena_dohoda` | kap. 1 | kap. 2, 3 | M10 o kolo kratší | rozsah |
-| R2.1 tým | `c2_tym`, `c2_tym_pokryti` | kap. 2 | kap. 3, 4, 5 | chybějící dovednost znamená puzzle oklikou; v kap. 4 bez Norberta a Věry zaskočí vrátný a Ruda, pořadí poslů; bez certifikátora náhradní puzzle při startu | morálka |
-| R2.2 rozdělení Archy | `c2_rozdeleni`, `c2_vyjimky` | kap. 2 | kap. 3, 4, 5 | Gantt na všechno: obyvatelé software odmítnou; krabice na všechno: betonáž se rozpadne; špatné výjimky: bezpečnostní systém bez certifikace nesmí startovat, interiér od stolu nikdo nechce | **sladění světů**, **Rudův vývoj** |
+| R2.1 tým | `c2_tym`, `c2_tym_pokryti` | kap. 2 | kap. 3, 4, 5 | chybějící dovednost znamená puzzle oklikou; v kap. 4 bez Norberta a Věry zaskočí vrátný a Ruda, pořadí poslů; bez certifikátora podepíše Norbert z lavičky v kap. 3 a v kap. 5 je jen cestující (D80) | morálka |
+| R2.2 rozdělení Archy | `c2_rozdeleni`, `c2_vyjimky`, `c2_bezpecnost` | kap. 2 | kap. 3, 4, 5 | Gantt na všechno: obyvatelé software odmítnou; krabice na všechno: betonáž se rozpadne; špatné výjimky: bezpečnostní systém ve světě iterací (i u krabice) se musí na startu zamknout a zapečetit (kap. 5), interiér od stolu nikdo nechce | **sladění světů**, **Rudův vývoj** |
 | R2.3 riziko předem | `c2_riziko_predem` | kap. 2 | kap. 3, 4 | krysy: kočka Riziková vyřeší sklad za minutu; lano: jeřáb bez výpadku; úsměv: kratší konfrontace s Předsedou | čas |
 | M04 rozpad práce | `c2_rozpad` | kap. 2 | kap. 3 | mezery a překryvy jako překvapení | čas, technický dluh |
 | odhad bez kotvy | `c2_odhad` | kap. 2 | kap. 2 (M06), 3 | kotva „dva dny“: rampa se na mapě natáhne pozdě, nejvýš 2 mosty; v M13 se připomene | čas |
-| M06 roadmapa | `c2_mosty` (seznam: `trup`, `nastup`, `start`) | kap. 2 | kap. 3, 4 (přes `c3_nesladeno`) | most *trup se zavírá*: Bára v M15 ví přesně, co bude hotové; most *zkouška nástupu*: zná den lávky bez rozpisu rampy | sladění světů |
+| M06 roadmapa | `c2_mosty` (seznam: `trup`, `nastup`, `start`) | kap. 2 | kap. 3, 4 (přes `c3_nesladeno`), 5 (sladění) | most *trup se zavírá*: Bára v M15 ví přesně, co bude hotové; most *zkouška nástupu*: zná den lávky bez rozpisu rampy | sladění světů |
 | M07 rizika | `c2_rizika_zapsana` | kap. 2 | kap. 3 | zapsaná rizika nezaskočí | čas |
 | R3.1 bazén a svačiny | `c3_bazen`, `c3_svaciny`, `c3_bazen_v_trupu` | kap. 3 | kap. 3, 4, 5 | bazén bez řízení: Ještětoto (Scope Creep) vyroste a bazén zabere v trupu místo kabelu (M15); když v M15 zůstane v trupu (`c3_bazen_v_trupu`), musí ho v kap. 4 vypustit Pan Změna; svačiny přes posouzení: naštvaní obyvatelé; dílky R4.2 podle toho, co zbylo | rozsah, důvěra, sladění světů |
-| R3.2 Bára a pořadí práce | `c3_bara_priority` | kap. 3 (dílna, před M15) | kap. 3, 4 | hned v M15: co je hotové k zavření trupu; kap. 4: řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
+| R3.2 Bára a pořadí práce | `c3_bara_priority` | kap. 3 (dílna, před M15) | kap. 3, 4, 5 (Rudův vývoj) | hned v M15: co je hotové k zavření trupu; kap. 4: řídicí systém dělá, co chtějí lidé, nebo co chtěl Ruda | Bářina důvěra, **Rudův vývoj** |
 | R3.3 co příště jinak | `c3_retro`, `c3_zlepseni` | kap. 3 | kap. 4 | bez posezení se opakují chyby, morálka padá a odejde člen týmu s klíčem od servisního poklopu, bez poklopu s plánem zapojení trupu (`c3_odchazi`); zlepšení navazuje na M11 | morálka |
 | M13 harmonogram | `c3_rezerva` (−3 až 2) | kap. 3 | kap. 4 | rezerva na krizi, záporná = zpoždění rampy | čas |
 | M13 ukázky betonu (jen `krabice`) | `c3_drolivy` | kap. 3 | kap. 4 | rampa se drolí | čas, technický dluh |
-| M14 ukázka | `c3_hodnota` | kap. 3 | kap. 4, 5 | obyvatelé dostanou, co potřebují | důvěra stakeholderů |
+| M14 ukázka | `c3_hodnota`, `c3_hotove` (seznam karet) | kap. 3 | kap. 4 (P4.4, P4.30; do kap. 5 přes `c4_nastup_chybi`) | obyvatelé dostanou, co potřebují; bez karty *udice* nemají rybáři místo na udice | důvěra stakeholderů |
 | M10 změny | `c3_creep` | kap. 3 | kap. 4, 5 | velikost Ještětoto (Scope Creep) | rozsah, čas |
 | servisní poklop | `c3_poklop` | kap. 3 (M10, trup) | kap. 3 (M15), 4 | bez poklopu nejde nic přidat po zavření trupu; krize v kap. 4 se řeší poklopem, jen když je | sladění světů |
 | M15 integrace | `c3_integrace`, `c3_nesladeno` (seznam bodů) | kap. 3 | kap. 4, 5 | nesladěné body jako krize na rozhraní; v kap. 4 se každý bod řeší jednou (`lavka` po poslovi, ostatní úkon při nahrávání poklopem) | sladění světů |
 | rozpis rampy Báře | `c3_bara_zna_lavku` | kap. 3 (Ruda dá rozpis) | kap. 3 (M15), 4 | Bára zná den lávky i bez mostu *zkouška nástupu* | sladění světů |
 | vada v počítadle (4 811) | `c3_vada_hlasena` | kap. 3 (Bára, nebo Ruda, když se zeptá a nechá ji domluvit) | kap. 4 | nenahlášená vada se projeví v krizi | Bářina důvěra |
-| krysy ve skladu | `c3_krysy` | kap. 3 | kap. 4 | `aktovka`: krysy žijí v Komisi (vtip) | – |
+| krysy ve skladu | `c3_krysy` | kap. 3 | kap. 4, 5 (vtip) | `aktovka`: krysy žijí v Komisi (vtip) | – |
 | plán kola | `c3_dluh` | kap. 3 (Bára) | kap. 4 | přeplněná kola: víc chyb v krizi | technický dluh |
 | R4.1 zpráva starostovi | `c4_report`, `c4_listky` (0–6) | kap. 4 (věž) | kap. 4 (M03, podpis startu), 5 | zelená zpráva: starosta váhá s podpisem, start na falešných datech, horší konec; poctivá jen se 4 lístky | důvěra stakeholderů, **Rudův vývoj** |
 | R4.2 co obětovat | `c4_obet`, `c4_creep` | kap. 4 | kap. 4 (bazén), 5 | co v Arše chybí, velikost Ještětoto, reakce obyvatel v epilogu; obětovaný pomník zvedne morálku | rozsah, morálka |
 | R4.3 usmíření | `c4_usmireni` | kap. 4 (hangár) | kap. 5 | spolupráce ve finálním puzzlu, Rudův vývoj | Bářina důvěra, sladění světů |
 | Bára řekne pravdu (D59) | `c4_bara_rekla` | kap. 4 (Bára, posel) | kap. 4, 5, epilog | konfrontace s Předsedou spolu, nebo Ruda sám; Předseda ve frontě na nástup | Bářina důvěra |
-| M03 souboj se sponzorem | `c4_souboj`, `c4_slib` | kap. 4 | kap. 4, 5 | prostor pro vyjednání rozsahu (R4.2); rychlé sliby: starosta chce v kap. 5 všechno slíbené | důvěra stakeholderů |
+| M03 souboj se sponzorem | `c4_souboj`, `c4_slib` | kap. 4 | kap. 4, 5 (jen `c4_slib`) | prostor pro vyjednání rozsahu (R4.2); rychlé sliby: starosta chce v kap. 5 všechno slíbené | důvěra stakeholderů |
 | M11 Plachetnice | `c4_zlepseni` | kap. 4 | kap. 5 | jedno zlepšení pro finální puzzle | morálka |
-| nástupní zkouška | `c4_nastup` (0–3) | kap. 4 | kap. 5 | kolik skupin obyvatel nastoupí napoprvé | důvěra stakeholderů |
+| nástupní zkouška | `c4_nastup` (0–3), `c4_nastup_chybi` (seznam skupin) | kap. 4 | kap. 5 | kdo uvízne při nástupu a proč (rybáři, obyvatelé, babička) | důvěra stakeholderů |
 | navigace poklopem | `c4_integrace` (0–3) | kap. 4 („Stačí. Zavírám.“) | kap. 5 | nesladěné body ve finálním puzzlu | sladění světů |
 | odešlý člen zpět | `c4_clen_zpet` | kap. 4 (jen bez posezení) | kap. 5 | kdo stojí na rampě | morálka |
 | příprava předání | `c5_manual`, `c5_kapitan`, `c5_zauceni` | kap. 5 (návod od týmu, vrátný jako kapitán, zaučení) | kap. 5 (R5.1, R5.2) | předání s návodem jde jen s manuálem a zaučeným kapitánem; „my“ jmenuje ty, které Ruda o něco požádal | – |

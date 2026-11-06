@@ -3,7 +3,7 @@
 > Krok N3a a N3d [postupu návrhu](../12-postup-navrhu.md). Co je v každé scéně kapitoly 5,
 > jaké předměty kapitola má a jak hra reaguje na jejich použití. Návrh kapitoly je
 > v [05-uzavreni.md](05-uzavreni.md), puzzly v [05-puzzly.md](05-puzzly.md).
-> Stav: **hotovo** (schváleno v D79), verze 0.1
+> Stav: **hotovo** (schváleno v D79, kontrola N4 zapracována v D80), verze 0.2
 
 Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Finální texty vzniknou v kroku N6.
 Ruda soudí, Bára měří: sloupec uvádí Rudovu verzi, Bářina je v poznámce, když nese stopu.
@@ -20,7 +20,8 @@ flowchart LR
 Ruda chodí mezi rampou a archivem (přechod **Na radnici** přes ranní náměstí a vestibul, jako
 v kapitole 4). Bára zůstává ve věži až do části C: věž stojí na kraji rampy a z okna je vidět
 Archa. Postavy se přepínají portrétem a vysílačkou si říkají, co vidí. Předměty si nepředávají.
-Vrátný přejde z rampy do věže po P5.6. V části C sejde Bára z věže na rampu (střih).
+Vrátný přejde z rampy do věže po P5.6 a po odpočtu sejde ke dveřím Archy (i bez P5.6). V části C
+sejde Bára z věže na rampu (střih).
 
 ## S1 Startovní rampa (nové pozadí)
 
@@ -36,16 +37,16 @@ Za Archou je kus lávky, který z rampy není vidět.
 | Ještětoto | postava | ve dveřích; velikost podle `c4_creep`: „Malý. Pořád.“ / „Ještětototo. Větší než dveře.“; v tlamě kartičky s přáním | mluvit → přání (P5.11) | – | P5.11 |
 | Fronta na lávce | aktivní místo (skupina) | obyvatelé s kufry a palubními lístky; „Nejdelší fronta, kterou jsem kdy chtěl.“ | mluvit → kdo stojí a proč (P5.2) | – | P5.1, P5.2 |
 | Rybáři | aktivní místo (skupina) | udice delší než dveře | mluvit → udice (P5.2) | jen uvíznou | P5.2 |
-| Babička | postava | `spojenec`: s buchtou a kocourem v kleci; jinak s kufrem a prázdnou klecí | dialog `babicka`: kocour (P5.2); spojenec ★ buchta | – | P5.2 |
+| Babička | postava | `spojenec`: s buchtou a kocourem v kleci; jinak s kufrem a kocourem v kleci; prázdná klec, jen když babička uvízne (P5.2) | dialog `babicka`: kocour (P5.2); spojenec ★ buchta | – | P5.2 |
 | Kocour | postava | pod rampou na babiččině pozemku | mluvit → jde s Rudou | jen když utekl | P5.2 |
-| Pan Změna | postava | s plovacími kruhy („Pro všechny.“); po odpočtu za Archou na lávce | dialog `zmena`: poslední přání (P5.10) | – | P5.10 |
+| Pan Změna | postava | s plovacími kruhy („Pro všechny.“); odbaví lístek a nastoupí, po odpočtu vyleze zadními dveřmi na lávku za Archou | dialog `zmena`: poslední přání (P5.10) | – | P5.10 |
 | Za Archou | východ / aktivní místo | „Za Archou nic nevidím.“ | jít → Pan Změna (P5.10) | po Bářině hlášení | P5.10 |
-| Předseda | postava | `hned`: na konci fronty bez kufru („Kajutu jedna dostala paní Pozemková.“); `po_usmireni`: s kufrem „kajuta č. 1“ zkouší předběhnout | ★ dialog; `aktovka`: z kufru vykoukne krysa | – | gag |
-| Ing. Framework | postava | za Předsedou s krabicí „Krize“ a novou „Předání“ | dialog `framework`: krabice „Předání“ ★ („Návod na všechno. Je prázdná.“) | – | ★ P5.5 |
-| Tým | postavy | čtyři členové u pódia (vrácený člen s nimi) | mluvit → stránka návodu (P5.5); Norbert → pečeť (P5.4) | – | P5.4, P5.5 |
-| Norbert ve frontě | postava | bez Norberta v týmu: s kufrem a razítkem v kapse („Jsem cestující.“) | mluvit → k pultu (P5.4) | jen bez Norberta | P5.4 |
-| Vrátný | postava | stojí u jeřábu s čepicí v ruce; „Poslední jízda byla v pět. Nikdo nečekal.“ | dialog `vratny`: „Povedete Archu?“ (P5.6); R5.1 | – | P5.6, P5.15 |
-| Bezpečnostní pult | aktivní místo | řada pojistek se štítky, startovací klíč v zámku, místo „Pečeť“; Bára: „Pevné pořadí. Nic se nemění. Rudův svět.“ | *Zkouška pojistek* (P5.4, *Ptát se dřív*); po odpočtu pojistky (P5.10–P5.14); klíč → „Na tři“ | – | P5.4, P5.10–P5.14 |
+| Předseda | postava | `hned`: na konci fronty s igelitkou („Kufr si nechal archivář. Jako přílohu.“); `po_usmireni`: s kufrem „kajuta č. 1“ zkouší předběhnout; nastoupí s frontou (P5.1) | ★ dialog; `aktovka`: z kufru vykoukne krysa | – | gag |
+| Ing. Framework | postava | za Předsedou s krabicí „Krize“ a novou „Předání“; nastoupí s frontou (P5.1) | dialog `framework`: krabice „Předání“ ★ („Návod na všechno. Je prázdná.“) | – | ★ P5.5 |
+| Tým | postavy | čtyři členové u pódia s odbavenými lístky (vrácený člen s nimi) | mluvit → stránka návodu (P5.5); Norbert → pečeť (P5.4, systém ve světě iterací) | – | P5.4, P5.5 |
+| Norbert ve frontě | postava | bez Norberta v týmu: s kufrem a razítkem v kapse; ★ „Trup jsem podepsal z lavičky. Start vidím poprvé.“; při systému ve světě iterací zůstane u lávky („Nastoupím, až uvidím zkoušku.“) | mluvit → k pultu (P5.4) | jen bez Norberta | P5.4 |
+| Vrátný | postava | sedí v kabině jeřábu s prázdným hákem; po odpočtu stojí u dveří Archy s čepicí v ruce | dialog `vratny`: „Povedete Archu?“ (P5.6); R5.1 | – | P5.6, P5.15 |
+| Bezpečnostní pult | aktivní místo | zkušební pult motorů z hangáru, kabelem spojený s trupem; řada pojistek se štítky, startovací klíč zamčený Norbertem, místo „Pečeť“; Bára: „Pevné pořadí. Nic se nemění. Rudův svět.“ | *Zkouška pojistek* vždy (P5.4; s *Ptát se dřív* ukáže i hodnoty, stav a přání); po odpočtu pojistky (P5.10–P5.14); klíč → „Na tři“ | – | P5.4, P5.10–P5.14 |
 | Kočka Riziková | postava | sedí na bezpečnostním pultu | ★ | jen `kocka` | gag |
 | Pódium | aktivní místo | pentle, mikrofon, cedule „Slavnostní start. Program: 1. Projev.“ | po předání → R5.2 | část C | P5.16 |
 | Rudův pomník | aktivní místo | jen neobětovaný v R4.2: „Nedokončený. Jako všechno, co bylo moje.“ | ★ | jen neobětovaný | R5.2 |
@@ -63,13 +64,13 @@ s vysílačkami, plechovka žluté barvy a štětec.
 | Prvek | Druh | Prohlédnout (podstata) | Použít / mluvit | Podmínka | Poznámka |
 |---|---|---|---|---|---|
 | Řídicí pult | aktivní místo | „Navigace, dveře, počítadlo, odpočet. Všechno živé.“ | *Předstartovní kontrola* (P5.8), *Seznam lístků* (P5.8), *Šipky na palubě* (P5.2), *Uzavřít nástup* (P5.9), *Zamknout verzi* (P5.4), *Zkušební režim* (P5.7), hodnoty (P5.12), *Předat palubě* (P5.14) | – | hlavní místo Báry |
-| Kamera Lávka | aktivní místo | lávka za Archou | dívat se → kdo na ní stojí (P5.10) | – | P5.10 |
-| Kamera Dveře | aktivní místo | dveře zevnitř | dívat se → ocas Ještětota (P5.11) | – | P5.11 |
+| Kamera Lávka | aktivní místo | lávka za Archou | dívat se → kdo na ní stojí (P5.10) | potřeba jen při `trval` | P5.10 |
+| Kamera Dveře | aktivní místo | dveře zevnitř | dívat se → ocas Ještětota (P5.11) | potřeba jen při `trval` | P5.11 |
 | Kamera Paluba | aktivní místo | chodby a kajuty | dívat se → kdo sedí, kde chybí šipky (P5.2) | – | P5.2 |
-| Tabule ukazatelů | aktivní místo | lístky skutečnosti z kap. 4 (bez lístků jen zelená světla) | vzít lístky → legenda pro vrátného (P5.7); přečíst stav (P5.13) | – | P5.7, P5.13 |
-| Plechovka žluté barvy | aktivní místo | „Zbylo z žárovky. Svítí míň. Ale svítí.“ | vzít → předmět | jen velká tlačítka obětovaná | P5.7 |
+| Tabule ukazatelů | aktivní místo | lístky skutečnosti z kap. 4 (bez lístků jen zelená světla) | použít → legenda pro vrátného, s lístky, nebo bez nich na barvách žárovek (P5.7); přečíst stav (P5.13) | – | P5.7, P5.13 |
+| Plechovka žluté barvy | aktivní místo | Bára ji ráno přinesla z dílny; „Zbylo z žárovky. Svítí míň. Ale svítí.“ | vzít → předmět | jen velká tlačítka obětovaná | P5.7 |
 | Dispečer Zelenka | postava | sedí u tabule, kšilt v ruce; „Dneska nesvítí nic zeleně. Je to krásné.“ | dialog `zelenka`; komentuje pojistky z okna („Žlutá!… Zelená!“) | – | |
-| Vrátný | postava | po P5.6 ve věži, mačká čepici | *Zkušební režim* (P5.7) | po P5.6 | P5.7 |
+| Vrátný | postava | po P5.6 ve věži, mačká čepici; po odpočtu jde ke dveřím Archy | *Zkušební režim* (P5.7) | po P5.6 | P5.7 |
 | Okno | aktivní místo | Archa, fronta, Ruda u pultu | – | – | |
 | Telegraf | aktivní místo | „Dneska nic. Starosta je tady.“ | – | – | |
 | Ruda (vysílačka) | – | – | zeptat se „Rudo, co děláš?“ (nápověda) | – | |
@@ -90,7 +91,8 @@ lahví z Plachetnice. Kartotéka seřazená podle skutečného zahájení s lís
 
 ## Předměty
 
-Dohromady **13 předmětů**: 8 z dřívějších kapitol a 5 nových (plechovka barvy jen ve variantě).
+Dohromady **13 předmětů**: 9 z dřívějších kapitol (startovací klíč a plechovka barvy z kap. 4)
+a 4 nové. Plechovka barvy je jen ve variantě.
 Ikony nových předmětů podle stylové bible (D52).
 
 | # | Předmět | Kdo | Kde vznikne | Kdy | Spotřebuje se | Poznámka |
@@ -106,8 +108,8 @@ Ikony nových předmětů podle stylové bible (D52).
 | 9 | Stránky návodu | Ruda | tým na rampě | kdykoli | v P5.5 | počítají se (1–4) |
 | 10 | Provozní manuál | Ruda | krabice od bot + 3 stránky | po P5.5 | v R5.1 (`poradne`) | |
 | 11 | Krabička Poučení | Ruda | archiv | po rozhovoru s Lumírem | u Lumíra | P5.3 |
-| 12 | Startovací klíč | Ruda | bezpečnostní pult | po P5.14 | v R5.1 | |
-| 13 | Plechovka žluté barvy | Bára | věž | jen velká tlačítka obětovaná | na tlačítku | P5.7 |
+| 12 | Startovací klíč | Ruda | z kap. 4, zamčený v bezpečnostním pultu | po P5.14 | v R5.1 | |
+| 13 | Plechovka žluté barvy | Bára | z kap. 4 (dílna), ráno ve věži | jen velká tlačítka obětovaná | na tlačítku | P5.7 |
 
 Lístky skutečnosti jsou aktivní místo na tabuli, ne předmět (jako v kap. 4). Přání Ještětota
 jsou kartičky v minihře dveří, ne předměty.
@@ -128,18 +130,18 @@ Kdyby se potkaly dřív…“).
 
 ### Rudovy předměty
 
-| Předmět ↓ / cíl → | Ještětoto | Fronta | Babička | Pan Změna | Předseda | Framework | Tým | Vrátný | Bezpečnostní pult | Starosta | Lumír |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Pembok | ★ („Tvůj nejstarší pacient.“) | – | ★ | ★ | ★ („Tohle se do mě nezapíše.“) | ★ | – | ★ | ★ („Pojistky. Konečně něco, co neumíš obejít.“) | ★ | ★ |
-| Hrnek kávy | ★ (vypije a zůstane sedět) | – | ★ | – | – | – | – | ★ („Za letu nepiju.“) | ★ („Na pult? Ne.“) | – | ★ |
-| Kávové pero | – | – | – | ★ (podepsat přání ★ „Podpis je slib.“) | – | – | ★ (stránku napíšou samy) | – | ★ | – | ★ („Výpůjčka mimo archiv? Ne.“) |
-| Krabice od bot | ★ („Na tebe tu lístek mám.“) | – | – | – | – | ★ („Kolega!“) | ✔ se stránkami (P5.5) | – | – | – | ★ |
-| Plán cesty | – | ★ | – | – | ★ („Start byl ve fázi 3.“) | – | – | – | ★ | ★ | ★ |
-| Rozpis rampy | – | – | ★ | – | – | – | – | ★ („Ten mi pořád jde.“) | – | – | – |
-| Deník jeřábu | – | – | – | – | – | – | – | ★ („Tu si nechte. Já začnu nový. Lodní.“) | ✔ váha (P5.12) | – | ★ („Založím. Až se vrátím.“) |
-| Stránky / provozní manuál | – | – | – | – | – | ★ („Prodám to.“) | – | ✔ v R5.1 / ★ dřív („To si přečtu v letu.“) | – | ★ | ★ |
-| Krabička Poučení | ★ | – | – | – | ★ („Ta je prázdná, ne?“) | – | – | – | – | – | ✔ (P5.3) |
-| Startovací klíč | – | – | – | ★ („Můžu měnit kurz?“) | ★ | – | ★ | ✔ (R5.1) | ★ („Ten už odjistil.“) | ★ | – |
+| Předmět ↓ / cíl → | Ještětoto | Fronta | Babička | Pan Změna | Předseda | Framework | Tým | Vrátný | Bezpečnostní pult | Starosta | Lumír |Rybáři | Kocour |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Pembok | ★ („Tvůj nejstarší pacient.“) | – | ★ | ★ | ★ („Tohle se do mě nezapíše.“) | ★ | – | ★ | ★ („Pojistky. Konečně něco, co neumíš obejít.“) | ★ | ★ |★ („Na hvězdy koukají celý život. Navigace.“) | – |
+| Hrnek kávy | ★ (vypije a zůstane sedět) | – | ★ | – | – | – | – | ★ („Za letu nepiju.“) | ★ („Na pult? Ne.“) | – | ★ |– | ★ („Kocour kafe nepije. Já dneska taky ne.“) |
+| Kávové pero | – | – | – | ★ (podepsat přání ★ „Podpis je slib.“) | – | – | ★ (stránku napíšou samy) | – | ★ | – | ★ („Výpůjčka mimo archiv? Ne.“) |– | – |
+| Krabice od bot | ★ („Na tebe tu lístek mám.“) | – | – | – | – | ★ („Kolega!“) | ✔ se stránkami (P5.5) | – | – | – | ★ |★ („Delší než krabice. Delší než Gantt.“) | ★ („Do krabice leze sám. Jen když nechceš.“) |
+| Plán cesty | – | ★ | – | – | ★ („Start byl ve fázi 3.“) | – | – | – | ★ | ★ | ★ |– | – |
+| Rozpis rampy | – | – | ★ | – | – | – | – | ★ („Ten mi pořád jde.“) | – | – | – |★ („Na rozpisu udice nejsou. Na výkresu taky ne.“) | – |
+| Deník jeřábu | – | – | – | – | – | – | – | ★ („Tu si nechte. Já začnu nový. Lodní.“) | ✔ váha (P5.12) | – | ★ („Založím. Až se vrátím.“) |– | – |
+| Stránky / provozní manuál | – | – | – | – | – | ★ („Prodám to.“) | – | ✔ v R5.1 / ★ dřív („To si přečtu v letu.“) | – | ★ | ★ |★ („Rybáři čtou jen hvězdy.“) | – |
+| Krabička Poučení | ★ | – | – | – | ★ („Ta je prázdná, ne?“) | – | – | – | – | – | ✔ (P5.3) |– | – |
+| Startovací klíč | – | – | – | ★ („Můžu měnit kurz?“) | ★ | – | ★ | ✔ (R5.1) | ★ („Ten už odjistil.“) | ★ | – |– | – |
 
 ### Bářiny předměty
 
@@ -149,5 +151,5 @@ jako nápověda. Plechovka: tlačítko Start ✔ (P5.7), tabule ★ („Další 
 („Kšilt nechte.“).
 
 Cíl matice: každá kombinace, kterou hráči při playtestu (N8) zkusí víckrát, dostane ★. V matici
-je **asi 50 vlastních reakcí** (42 u Rudy, 6 u Báry, 2 kombinace předmětů), méně než v kapitole 4
+je **asi 55 vlastních reakcí** (47 u Rudy, 6 u Báry, 2 kombinace předmětů), méně než v kapitole 4
 (115): kapitola je kratší a Bára má jen dva předměty.

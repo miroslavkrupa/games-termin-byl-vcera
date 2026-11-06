@@ -140,7 +140,7 @@ Bez poklopu vede dovnitř čerstvě navrtaný otvor.
 | Řídicí počítač | aktivní místo | „Mozek Archy. Zatím bez navigace.“ | použít → nahrání (P4.29): navigace, oprava počítadla (vada), úkony podle `c3_nesladeno` (bez bodu `lavka`) | akt C | P4.29 |
 | Přípojka navigace | aktivní místo | konec kabelu u poklopu; „Ven to vede. Dovnitř to nevede.“ | Ruda tahá kabel, Bára hlásí, kdy svítí | akt C | P4.29 |
 | Poklop zevnitř | aktivní místo | Rudova ruka drží poklop; „Držím. Pořád držím.“ | – | – | |
-| Panel bezpečnostního systému | aktivní místo | podle `c2_vyjimky`: zapečetěný / „předělává se každý týden“ | – | – | varování (kap. 5) |
+| Panel bezpečnostního systému | aktivní místo | zapečetěný; ve světě iterací (`c2_bezpecnost` = `bara`, nebo `krabice`, D80) „předělává se každý týden“ | – | – | varování (kap. 5) |
 | Bazén | aktivní místo | jen `c3_bazen_v_trupu`, dokud ho Pan Změna nevypustí: „Kabel vede přes bazén. Doufám, že nevede do bazénu.“ | – | jen bez P4.17 | zastaví nahrávání (P4.29) |
 | Okénko | aktivní místo | kometa | – | – | |
 | Poklop / otvor | východ | – | → S3 | – | |

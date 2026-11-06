@@ -3,7 +3,7 @@
 > Krok N3c [postupu návrhu](../12-postup-navrhu.md). Jedna karta na každý puzzle z
 > [návrhu](05-uzavreni.md#průběh-a-puzzly) a z [grafu závislostí](../13-graf-zavislosti.md#kapitola-5-uzavření).
 > Scény a předměty jsou v [obsahu místností](05-mistnosti.md).
-> Stav: **hotovo** (schváleno v D79), verze 0.1
+> Stav: **hotovo** (schváleno v D79, kontrola N4 zapracována v D80), verze 0.2
 
 Nápověda má tři stupně: **1** náznak, **2** směr, **3** skoro řešení. Rudovi radí Prof. Pembok,
 Báře její metr. Radí se k puzzlu, který je nejblíž splnění, u postavy, za kterou se právě hraje.
@@ -11,32 +11,44 @@ Když jedna postava nemá co dělat, první stupeň zní: „Zeptej se Báry, co
 Rudy, co dělá.“). Rozhodnutí mají jen 1. stupeň, puzzly na jeden krok 1. a 3. stupeň (D78).
 Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro autory.
 
+**Zkouška pojistek:** bezpečnostní pult má tlačítko *Zkouška pojistek* vždy (D80). Bez zlepšení
+ukáže jen to, co pult potřebuje před odpočtem (pečeť).
+
 **Zlepšení z Plachetnice (`c4_zlepseni`)** mění finále:
-- *Ptát se dřív, než se zamkne:* bezpečnostní pult má od začátku tlačítko *Zkouška pojistek*.
-  Zkouška před odpočtem ukáže, co která pojistka bude chtít, takže lávku, dveře a hodnoty jde
-  vyřešit ještě v části A.
-- *Jedna tabule pro oba:* Rudův pult ukazuje i Bářiny hodnoty. Na čtení se nemusí přepínat.
+- *Ptát se dřív, než se zamkne:* zkouška pojistek před odpočtem ukáže i to, co budou chtít
+  pojistky Hodnoty, Stav a Dveře (přání Ještětota). Ty jde vyřešit ještě v části A. Lávka (Pan
+  Změna vyleze až po odpočtu) a samotné zamčení dveří zůstanou na finále.
+- *Jedna tabule pro oba:* Rudův pult ukazuje i Bářiny hodnoty a kamery. Na čtení se nemusí
+  přepínat a Pana Změnu i ocas Ruda vidí sám.
 - *Říct to nahlas:* u každého pultu stojí člen týmu a nahlas řekne, co pojistka chce (2. stupeň
   nápovědy zdarma).
 
-**Usmíření (`c4_usmireni`):** při `priznal` Bára vysílačkou sama hlásí, co vidí v kamerách. Při
-`trval` hlásí jen na otázku: hráč se musí přepnout na Báru, nebo Rudou zavolat „Věži, co vidíš?“.
+**Usmíření (`c4_usmireni`):** při `priznal` Bára po odpočtu sama ohlásí, co vidí v kamerách
+(Pana Změnu na lávce, ocas ve dveřích), a hráč kamery ovládat nemusí. Při `trval` hlásí jen na
+otázku: hráč se musí přepnout na Báru a použít kameru, nebo Rudou zavolat „Věži, co vidíš?“ (D80).
+
+**Počítadlo (D80)** počítá odbavené palubní lístky, ne lidi v Arše. Tým, vrátný, Zelenka
+a starosta si lístek odbaví u lávky a čekají u pódia. Ruda a Bára mají lístky **4 811 a 4 812**
+a odbaví je až při startu, takže počítadlo doskočí na 4 812 v posledním záběru (D64).
+
+**Systém ve světě iterací** (`c2_bezpecnost` = `bara`, nebo `c2_rozdeleni` = `krabice`) je jedno
+pravidlo pro kapitolu 3 (panel „předělává se každý týden“) i 5 (P5.4), D80.
 
 ## Přehled
 
 | # | Puzzle | Kdo | Scéna | Povinný | Co nese |
 |---|---|---|---|---|---|
 | P5.1 | Nástup | Ruda | S1 | ano | V21 |
-| P5.2 | Skupiny ve frontě | Ruda, Bára | S1, S2 | jen `c4_nastup` < 3 | V14, V25 |
+| P5.2 | Skupiny ve frontě | Ruda, Bára | S1, S2 | jen skupiny v `c4_nastup_chybi` | V14, V25 |
 | P5.3 | Lumír | Ruda | S3 | ano | V22 |
-| P5.4 | Pečeť bezpečnostního systému | Ruda, Bára | S1, S2 | jen bez Norberta nebo bez `bezp_u_rudy` | V11, V25 |
+| P5.4 | Pečeť bezpečnostního systému | Ruda, Bára | S1, S2 | jen systém ve světě iterací | V11, V25 |
 | P5.5 | Návod pro posádku | Ruda | S1 | pro R5.1 s návodem | V21, V20 |
 | P5.6 | Kapitán | Ruda | S1 | pro R5.1 s návodem | V21 |
 | P5.7 | Zaučení posádky | Bára | S2 | pro R5.1 s návodem | V21, V14 |
 | P5.8 | Předstartovní kontrola | Bára | S2 | ano | V17 |
 | P5.9 | Uzavření nástupu | Bára | S2 | ano | – |
 | P5.10 | Pojistka Lávka volná | spolu | S1, S2 | ano | V25, V15 |
-| P5.11 | Pojistka Dveře zamčené | spolu | S1, S2 | ano (přání jen `c4_creep`, `c4_slib`) | V15, V25 |
+| P5.11 | Pojistka Dveře zamčené | spolu | S1, S2 | ano (přání jen při `c4_creep` ≥ 1 nebo `c4_slib` ≥ 1) | V15, V25 |
 | P5.12 | Pojistka Hodnoty sladěné | spolu | S1, S2 | jen `c4_integrace` ≥ 1 | V25 |
 | P5.13 | Pojistka Stav ověřen | spolu | S1, S2 | jen `c4_report` = `zelene` | V17 |
 | P5.14 | Na tři | spolu | S1, S2 | ano | V25, V20 |
@@ -51,34 +63,43 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Cíl hráče:** pustit frontu do Archy.
 - **Překážka:** dveře Archy jsou zavřené a ve dveřích sedí Ještětoto.
 - **Řešení:** použít páku u dveří → dveře se otevřou, Ještětoto se stáhne na práh a fronta se pohne.
-  Skupiny, které neprošly nástupní zkouškou v kapitole 4, uvíznou (P5.2).
+  U lávky každý odbaví palubní lístek. Skupiny, které neprošly nástupní zkouškou v kapitole 4,
+  uvíznou (P5.2). Tým, vrátný, Zelenka a starosta odbaví lístek a čekají u pódia. Předseda
+  a Framework nastoupí s frontou; jejich gagy jsou do této chvíle. Při systému ve světě iterací
+  zůstane Norbert u lávky: „Nastoupím, až uvidím zkoušku.“ (P5.4)
 - **Stopy ve světě:** fronta s kufry a palubními lístky; páka s nápisem „Dveře“; amplion
   „…podle pořadí na lístku.“; Pembok: „Archa je hotová. Ještě do ní někoho dostat.“
 - **Chybné, ale logické pokusy:** mluvit s frontou (★ „Až otevřete.“), vzít Ještětoto (★ „Kouše.
-  Do formulářů.“), hrnek kávy na Ještětoto (★ vypije a zůstane sedět).
+  Do formulářů.“), hrnek kávy na Ještětoto (★ vypije a zůstane sedět), mluvit s Ještětotem
+  (★ „Ty sedíš ve dveřích.“).
 - **Nápověda:** 1 „Fronta čeká na dveře.“ · 3 „Zatáhni za páku u dveří.“
 - **Příznaky:** –
 - **Co nese:** V21; začátek předání: lidé se stěhují do věci, kterou tým postavil.
 - **Riziko:** žádné, je to rozjezd.
 
-### P5.2 Skupiny ve frontě (jen `c4_nastup` < 3)
+### P5.2 Skupiny ve frontě (jen skupiny v `c4_nastup_chybi`)
 - **Cíl hráče:** dostat do Archy i ty, kdo uvízli.
-- **Překážka:** uvízne 3 − `c4_nastup` skupin, v pořadí rybáři → obyvatelé → babička.
+- **Překážka:** uvíznou skupiny, které neprošly nástupní zkouškou v kap. 4, ze stejného důvodu
+  (`c4_nastup_chybi`, D80): **rybáři** bez místa na udice (karta *udice* chybí v `c3_hotove`),
+  **obyvatelé** při `gantt` nebo `c3_hodnota` ≤ 1, **babička** při obětovaných velkých tlačítkách.
 - **Řešení:**
-  - **Rybáři:** udice neprojdou dveřmi. Mluvit s rybáři → „Do kajuty se vejdou?“ S místem na
-    udice (interiér u Báry, kap. 3 M14) je složí a projdou. Bez něj (`interier_u_rudy`) Ruda
-    navrhne udice přivázat na Archu zvenku: „Jako anténa.“ Rybář: „Konečně anténa, která něco chytí.“
+  - **Rybáři:** udice neprojdou dveřmi a v kajutě pro ně není místo. Mluvit s rybáři → „Kam
+    s nimi?“ → Ruda: „Přivažte je na Archu zvenku. Jako anténu.“ Rybář: „Konečně anténa, která
+    něco chytí.“
   - **Obyvatelé:** stojí ve dveřích a nevědí, na kterou palubu. Ruda: „Báro, kam?“ Bára ve věži
     použije pult → *Šipky na palubě*. Šipky se rozsvítí a obyvatelé jdou.
-  - **Babička:** nejde bez kocoura, který z klece utekl zpátky na pozemek pod rampou. Ruda
-    sejde po lávce, mluví s kocourem (jako v kap. 4) a kocour jde s ním.
+  - **Babička:** nenajde v aplikaci, kde se potvrzuje lístek, a mezitím jí z klece uteče kocour
+    zpátky na pozemek pod rampou. Ruda sejde po lávce, mluví s kocourem (jako v kap. 4), kocour
+    jde s ním a Ruda babičce lístek potvrdí sám.
 - **Stopy ve světě:** Bára v kameře vidí, kdo stojí („Rybáři. A udice.“); skupina řekne, co chce;
   Zelenka z věže: „Žlutá! Fronta stojí.“
-- **Chybné, ale logické pokusy:** udice zalomit (★ „To by nám ryby nikdy neodpustily.“), obyvatele
-  postrčit (★ „Kam? To nevím ani já.“), kocoura chytit za ocas (★ „Ne.“).
-- **Nápověda:** 1 „Kdo stojí a proč?“ · 2 „Rybáři mají udice, obyvatelé nevědí kam, babička čeká na
-  kocoura.“ · 3 podle skupiny („Zeptej se rybářů na kajutu.“, „Ať Bára rozsvítí šipky.“, „Kocour je
-  dole pod rampou.“)
+- **Chybné, ale logické pokusy:** udice zalomit (★ „To by nám ryby nikdy neodpustily.“), udice do
+  krabice od bot (★ „Delší než krabice. Delší než Gantt.“), rozpis rampy na rybáře (★ „Na rozpisu udice
+  nejsou. Na výkresu taky ne.“), obyvatele postrčit (★ „Kam? To nevím ani já.“), kocoura chytit za ocas (★ „Ne.“),
+  kocoura do krabice od bot (★ „Do krabice leze sám. Jen když nechceš.“).
+- **Nápověda:** 1 „Kdo stojí a proč?“ · 2 „Rybáři nemají kam s udicemi, obyvatelé nevědí kam,
+  babička čeká na kocoura.“ · 3 podle skupiny („Ať rybáři přivážou udice zvenku.“, „Ať Bára
+  rozsvítí šipky.“, „Kocour je dole pod rampou.“)
 - **Příznaky:** –
 - **Co nese:** V14, V25; následek nástupní zkoušky, každá chyba má jedno opatření.
 - **Riziko:** nuda opakování z kap. 4. Proto jen jeden krok na skupinu a každá skupina jinak.
@@ -103,29 +124,26 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Riziko:** Ruda se k archivu dostane i dřív, než Bára zjistí, že Lumír chybí. Lumír pak řekne
   totéž a hráč krok udělá „na zásobu“, což je v pořádku.
 
-### P5.4 Pečeť bezpečnostního systému (jen bez Norberta, nebo bez `bezp_u_rudy`)
+### P5.4 Pečeť bezpečnostního systému (jen systém ve světě iterací)
 - **Cíl hráče:** aby bezpečnostní systém směl startovat.
-- **Překážka:**
-  - **bez Norberta v týmu:** Norbert stojí ve frontě jako cestující: „Jsem cestující. Ne
-    certifikátor. Podepíšu jen to, co jsem viděl.“
-  - **bez `bezp_u_rudy`** (bezpečnostní systém ve světě iterací): „Včera to bylo jinak. Tohle nikdo
-    nepodepíše.“ Bezpečnostní systém se předělává každý týden, naposledy dnes ráno.
-- **Řešení:** bez `bezp_u_rudy` nejdřív Bára ve věži použije pult → *Zamknout verzi*: „Tahle verze.
-  Žádná další.“ (poprvé se k něčemu zaváže). Potom Ruda přivede Norberta k bezpečnostnímu pultu
-  (z fronty, nebo z týmu) a použije pult → *Zkouška pojistek*. Norbert se dívá, odříká normu
-  a připne pečeť.
-- **Stopy ve světě:** na pultu prázdné místo s nápisem „Pečeť“; Norbert ve frontě s razítkem
-  v kapse; Bára: „Co se mění každý týden, to nikdo nepodepíše.“; Pembok.
-- **Chybné, ale logické pokusy:** podepsat sám (★ „Pečeť je Norbertova. Já mám jen Gantt.“), kávové
-  razítko z kap. 1 (★ „Hnědá pečeť. Ne.“), zkouška bez Norberta (★ „Prošla. Nikdo to neviděl.“).
+- **Překážka:** bezpečnostní systém se předělává každý týden, naposledy dnes ráno (`c2_bezpecnost`
+  = `bara`, nebo `krabice`, D80). Norbert (v týmu, nebo u lávky jako cestující): „Včera to bylo
+  jinak. Tohle nikdo nepodepíše.“ Bez Norberta v týmu jinak nic navíc: trup i systém podepsal
+  v kap. 3 z lavičky („Trup jsem podepsal z lavičky. Start vidím poprvé.“ ★).
+- **Řešení:** Bára ve věži použije pult → *Zamknout verzi*: „Tahle verze. Žádná další.“ (poprvé
+  se k něčemu zaváže, bez slova termín). Potom Ruda přivede Norberta k bezpečnostnímu pultu
+  a použije pult → *Zkouška pojistek*. Norbert se dívá, odříká normu a připne pečeť.
+- **Stopy ve světě:** na pultu prázdné místo s nápisem „Pečeť“; zkouška pojistek ukáže „Pečeť:
+  chybí“; Bára: „Co se mění každý týden, to nikdo nepodepíše.“; Pembok.
+- **Chybné, ale logické pokusy:** podepsat sám (★ „Pečeť je Norbertova. Já mám jen Gantt.“), hrnek
+  kávy na pult (★ „Hnědá pečeť. Ne.“), zkouška bez Norberta (★ „Prošla. Nikdo to neviděl.“),
+  Norbert před zamčením verze (★ „Za hodinu bude jiná.“).
 - **Nápověda:** 1 „Bez pečeti systém neodstartuje.“ · 2 „Norbert podepíše, co uvidí. A co se už
-  nezmění.“ · 3 „Přiveď Norberta k pultu a pusť zkoušku pojistek.“ (bez `bezp_u_rudy` nejdřív „Ať Bára
-  zamkne verzi.“)
+  nezmění.“ · 3 „Ať Bára zamkne verzi. Pak přiveď Norberta k pultu a pusť zkoušku.“
 - **Příznaky:** `c5_pecet`.
 - **Co nese:** V11, V25; část s pevnou specifikací patří do světa plánu. Kdo ji zařadil jinam,
   musí ji na startu zmrazit.
-- **Riziko:** dva důvody v jedné kartě. Ve špatném stavu jsou oba, proto je jejich pořadí pevné:
-  nejdřív verze, potom Norbert.
+- **Riziko:** pevné pořadí (nejdřív verze, potom Norbert). Norbert to řekne sám.
 
 ### P5.5 Návod pro posádku (pro R5.1)
 - **Cíl hráče:** dát tomu, kdo Archu povede, něco do ruky.
@@ -151,8 +169,10 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 ### P5.6 Kapitán (pro R5.1)
 - **Cíl hráče:** najít, kdo Archu povede.
 - **Překážka:** nikdo se nikoho nezeptal.
-- **Řešení:** mluvit s vrátným → „Povedete Archu?“ → „Konečně se někdo zeptal.“ Vrátný slézá
-  z jeřábu naposledy („Poslední jízda byla v pět. Nikdo nečekal.“) a jde do věže za Bárou.
+- **Řešení:** vrátný sedí v kabině jeřábu s prázdným hákem. Mluvit s ním → „Povedete Archu?“ →
+  „Konečně se někdo zeptal.“ Sleze z jeřábu naposledy („Poslední jízda byla v pět. Nikdo
+  nečekal.“) a jde do věže za Bárou. Po odpočtu sejde ke dveřím Archy sám, zaučený nebo ne
+  („Dole mě budou potřebovat.“). Bez P5.6 sleze z jeřábu po odpočtu taky a čeká u dveří.
 - **Stopy ve světě:** vrátný řídí jediný stroj ve městě; Bára: „Kdo umí řídit něco velkého?“;
   Pembok: „Kdo tu dvacet let řídil a nikdo se ho nezeptal?“; rybáři: „Kapitán? Vrátný. Jezdí
   pomalu a dívá se.“
@@ -167,16 +187,18 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Cíl hráče (Bára):** aby vrátný uměl Archu odstartovat a přistát.
 - **Překážka:** nikdy nic takového neřídil a světla ve městě byla vždycky zelená.
 - **Řešení:** v řídicí věži použít pult → *Zkušební režim* s vrátným. Zasekne se: „Které je
-  které? Všechna byla zelená.“ Bára sundá z tabule ukazatelů lístky skutečnosti a dá mu je
-  jako legendu: „Zelená jet. Žlutá pozor. Červená stát.“ Druhý pokus projde. **Při obětovaných
-  velkých tlačítkách** (R4.2) vrátný nenajde tlačítko Start: Bára vezme z pultu Zelenky
-  **plechovku žluté barvy** (zbyla z natřené žárovky) a tlačítko natře. Třetí pokus projde.
+  které? Všechna byla zelená.“ Bára použije tabuli ukazatelů → napíše mu **legendu** na papír:
+  „Zelená jet. Žlutá pozor. Červená stát.“ a připne k ní lístky skutečnosti, které na tabuli
+  jsou. Bez lístků (`c4_listky` = 0) ukáže barvy na Zelenkově krabici žárovek a plechovce: „Zelenou
+  mám. Žlutou natřu. Červenou… vypnu.“ Druhý pokus projde. **Při obětovaných velkých tlačítkách**
+  (R4.2) vrátný nenajde tlačítko Start: Bára vezme **plechovku žluté barvy** (ráno ji přinesla
+  z dílny, zbyla z natřené žárovky) a tlačítko natře. Třetí pokus projde.
 - **Stopy ve světě:** vrátný ve věži nervózně mačká čepici; Bára: „Nechám ho to zkusit. Uvidím,
-  kde se zasekne.“; lístky na tabuli; v kap. 4 Zelenka „Natřená. Svítí míň. Ale svítí.“
+  kde se zasekne.“; tabule ukazatelů; v kap. 4 Zelenka „Natřená. Svítí míň. Ale svítí.“
 - **Chybné, ale logické pokusy:** vysvětlit mu to (★ vrátný: „Rozumím. Které je které?“), dát mu
   manuál (★ „To si přečtu v letu.“), metr (★ „Tlačítko měří dva centimetry. Moc malé.“).
-- **Nápověda:** 1 „Nech ho to zkusit.“ · 2 „Kde se zasekl? Co mu chybí?“ · 3 „Dej mu lístky
-  z tabule.“ (u tlačítek „Natři tlačítko.“)
+- **Nápověda:** 1 „Nech ho to zkusit.“ · 2 „Kde se zasekl? Co mu chybí?“ · 3 „Napiš mu legendu
+  barev.“ (u tlačítek „Natři tlačítko.“)
 - **Příznaky:** `c5_zauceni`.
 - **Co nese:** V21, V14; zaučit uživatele tak, že ho necháš zkusit a opravíš, kde se zasekne.
 - **Riziko:** Bára by mohla vrátného zaučit dřív, než ho Ruda požádá. Vrátný pak ve věži není
@@ -184,27 +206,29 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 
 ### P5.8 Předstartovní kontrola (za Báru)
 - **Cíl hráče (Bára):** ověřit, že je všechno připravené na odpočet.
-- **Překážka:** po nástupu počítadlo ukazuje 4 811 / 4 812.
+- **Překážka:** po nástupu počítadlo ukazuje 4 809 odbavených a 2 lístky u startu, dohromady
+  **4 811 / 4 812**.
 - **Řešení:** použít řídicí pult → *Předstartovní kontrola*: navigace ✔, dveře „čeká“, počítadlo
-  „nástup probíhá“. Po nástupu (P5.1, P5.2) ukáže 4 811 / 4 812. Bára: „Počítadlo je opravené.
-  Takže to není chyba. Někdo chybí.“ Použít pult → *Seznam lístků* → chybí jen jeden lístek:
-  **Lumír**. Bára vysílačkou Rudovi (při `trval` až na otázku).
+  „odbavování probíhá“. Po nástupu (P5.1, P5.2) ukáže 4 809 + 2. Bára: „Plus my dva. To je 4 811.
+  Počítadlo je opravené. Takže to není chyba. Někdo chybí.“ Použít pult → *Seznam lístků* →
+  neodbavený je jen jeden lístek: **Lumír**. Bára vysílačkou Rudovi (při `trval` až na otázku).
 - **Stopy ve světě:** číslo na pultu; vtip 4 811 z kap. 3–4; Zelenka: „Červená? Tu tu nemáme
   rádi.“; Bára: „Kdo nemá rád fronty a má rád papíry?“
 - **Chybné, ale logické pokusy:** spustit počítadlo znovu (★ „4 811. Pořád. Teď je to pravda.“),
   přičíst jedničku (★ „Tohle jsme dělat přestali.“).
-- **Nápověda:** 1 „Kdo chybí?“ · 2 „Každý má palubní lístek. Který nebyl použit?“ · 3 „Otevři seznam
-  lístků na pultu.“
+- **Nápověda:** 1 „Kdo chybí?“ · 2 „Každý má palubní lístek. Který nebyl odbaven?“ · 3 „Otevři
+  seznam lístků na pultu.“
 - **Příznaky:** `c5_chybi_lumir`.
 - **Co nese:** V17; číslo, kterému už jde věřit, a proto je dobré se ptát, co znamená.
-- **Riziko:** žádné; vtip s číslem 4 811 tu dostane pointu.
+- **Riziko:** když Lumír nastoupí dřív, než Bára kontrolu spustí, ukáže pult rovnou 4 812
+  a krok odpadne (D80).
 
 ### P5.9 Uzavření nástupu (za Báru)
 - **Cíl hráče (Bára):** pustit odpočet.
-- **Řešení:** když Lumír nastoupí, počítadlo ukáže 4 812 / 4 812 (D64). Bára použije pult →
-  *Uzavřít nástup*: „Nástup uzavřen.“ Bez pečeti (P5.4) pult řekne, že čeká na bezpečnostní
-  systém. Potom střih: odpočet.
-- **Nápověda:** jen 3. stupeň: „Uzavři nástup.“
+- **Řešení:** když Lumír odbaví lístek, pult ukáže 4 810 odbavených a 2 u startu: 4 812 / 4 812.
+  Bára použije pult → *Uzavřít nástup*: „Nástup uzavřen. Kromě nás dvou.“ Bez pečeti (P5.4)
+  pult řekne, že čeká na bezpečnostní systém. Potom střih: odpočet. Vrátný sejde ke dveřím Archy.
+- **Nápověda:** 1 „Všichni odbavení?“ · 3 „Uzavři nástup.“
 - **Příznaky:** spustí odpočet.
 - **Co nese:** –
 - **Riziko:** žádné.
@@ -216,12 +240,14 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 
 ### P5.10 Pojistka Lávka volná
 - **Cíl hráče:** aby na lávce nikdo nebyl.
-- **Překážka:** Ruda za Archu nevidí. Na lávce stojí Pan Změna s posledním přáním.
-- **Řešení:** Bára použije kameru *Lávka* → „Na lávce stojí Pan Změna.“ (při `priznal` to Bára
-  řekne sama). Ruda pak může jít kolem Archy (nové aktivní místo „Za Archou“) a mluvit s Panem
-  Změnou: „A ještě by se hodil…“ → **„Po přistání. Zapíšu si to.“** Pan Změna: „Poprvé mi někdo
-  řekl kdy.“ a nastoupí. (Volba „Dobře, uděláme to.“ ★ přidá Ještětotovi přání a Pan Změna stojí
-  dál: „A ještě…“)
+- **Překážka:** Pan Změna je odbavený, ale po odpočtu vylezl zadními dveřmi Archy na lávku za
+  Archou s posledním přáním. Ruda za Archu nevidí.
+- **Řešení:** při `priznal` Bára sama: „Někdo odbavený je venku. Na lávce stojí Pan Změna.“ Při
+  `trval` ho uvidí až kamerou *Lávka* (nebo na otázku „Věži, co vidíš?“); s *Jedna tabule pro
+  oba* ho Ruda vidí na svém pultu. Ruda pak může jít kolem Archy (nové aktivní místo „Za Archou“)
+  a mluvit s Panem Změnou: „A ještě by se hodil…“ → **„Po přistání. Zapíšu si to.“** Pan Změna:
+  „Poprvé mi někdo řekl kdy.“ a nastoupí. Ostatní volby se vrátí: „Dobře, uděláme to.“ (★ přání
+  přibude Ještětotovi a Pan Změna stojí dál: „A ještě…“), „Ne.“ (★ „Ne? A kdy?“).
 - **Stopy ve světě:** štítek pojistky „Lávka volná“; Ruda: „Za Archou nic nevidím.“; Pembok: „Kdo
   vidí za roh?“
 - **Nápověda:** 1 „Kdo vidí lávku?“ · 2 „Bára má kameru.“ · 3 „Ať se Bára podívá na lávku, a pak
@@ -234,39 +260,45 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 - **Cíl hráče:** zavřít a zamknout dveře Archy.
 - **Překážka:** zavřít jde jen pákou na rampě, zamčené to ale musí být podle řídicího systému.
   S `c4_creep` ≥ 1 nebo `c4_slib` ≥ 1 trčí ve dveřích ocas Ještětota.
-- **Řešení:** Ruda použije páku → „Zavřeno.“ Bára: „Řídicí systém hlásí otevřeno.“ Kamera
-  *Dveře*: „Ve dveřích je ocas.“ Ruda mluví s Ještětotem: v tlamě drží přání na kartičkách
-  (počet = `c4_creep`, s `c4_slib` ≥ 1 navíc „Ohňostroj (slíbeno starostovi)“). Ruda bere
-  přání jedno po druhém a každé odloží: „Po přistání.“ S každým se Ještětoto zmenší
-  (jméno se zkrátí: Ještětototo → Ještětoto). Když nemá žádné, vejde se dovnitř. Páka → zamčeno.
+- **Řešení:** Ruda použije páku → „Zavřeno.“ Bára (při `priznal` sama, při `trval` po kameře
+  *Dveře*): „Řídicí systém hlásí otevřeno. Ve dveřích je ocas.“ Ruda mluví s Ještětotem: v tlamě
+  drží přání na kartičkách (počet = `c4_creep`, nejvýš 3; s `c4_slib` ≥ 1 navíc „Ohňostroj
+  (slíbeno starostovi)“, tedy nejvýš čtyři). Ruda bere přání jedno po druhém a každé odloží:
+  „Po přistání.“ S každým se Ještětoto zmenší (jméno se zkrátí: Ještětototo → Ještětoto).
+  Když nemá žádné, vejde se dovnitř. Páka → zamčeno.
 - **Stopy ve světě:** Bářina kamera; Ještětoto s kartičkami v tlamě; Bára: „Roste z přání. Tak mu je
   vezmi.“; Pembok.
 - **Chybné, ale logické pokusy:** přání splnit (★ „Ohňostroj? Dobře.“ → Ještětoto vyroste, kartička
-  se vrátí), nacpat ho dovnitř (★ „Je větší než dveře. Díky mně.“), zavřít dveře znovu (★ „Kousl
-  mě do páky.“).
+  se vrátí), přání zahodit (★ „Zahozené přání se vrací. Větší.“, kartička se vrátí), nacpat ho
+  dovnitř (★ „Je větší než dveře. Díky mně.“), zavřít dveře znovu (★ „Kousl mě do páky.“).
 - **Nápověda:** 1 „Co drží dveře?“ · 2 „Ještětoto roste z přání.“ · 3 „Vezmi mu přání a odlož je.“
 - **Příznaky:** –
 - **Co nese:** V15; poslední přání se neplní, ale ani nezahazují. Odloží se, s datem.
-- **Riziko:** ve výchozím stavu (`c4_creep` = 0, `c4_slib` = 0) jsou dveře jen dvě akce. Ve špatném
-  až šest přání; každé je ale jedno klepnutí.
+- **Riziko:** ve výchozím stavu (`c4_creep` = 0, `c4_slib` = 0) jsou dveře jedna akce. Ve špatném
+  nejvýš čtyři kartičky; každá je jedno klepnutí.
 
 ### P5.12 Pojistka Hodnoty sladěné (jen `c4_integrace` ≥ 1)
 - **Cíl hráče:** aby oba pulty ukazovaly totéž.
 - **Překážka:** body, které v kap. 4 zůstaly nesladěné („Stačí. Zavírám.“), se ukážou jako dvě
-  různé hodnoty. Na každý bod jeden pár, nejvýš tři:
-  - **úhel rampy:** rampa 12°, navigace 14° → platí rampa (fyzika, Rudův svět),
-  - **počet míst:** bezpečnostní systém 4 812 sedadel podle výkresu, řídicí 4 812 lidí a kocour,
-    kočka a Ještětoto → platí řídicí (lidé, Bářin svět), bezpečnostní limit se přepíše na váhu,
-  - **váha nákladu:** bezpečnostní systém počítá s bazénem / svačinami, které v Arše nejsou (podle
-    `c4_obet`) → platí rampa (váha se měří, ne odhaduje); Ruda zváží podle deníku jeřábu.
+  různé hodnoty. Zbylé body jsou konec seznamu `c3_nesladeno` (P4.29 je řeší popořadě), na každý
+  jeden pár (D80):
+
+| Bod z kap. 3 | Pár ve finále | Platí | Jak |
+|---|---|---|---|
+| `kabel`, `start` | úhel rampy: rampa 12°, navigace 14° | rampa (beton) | *Převzít z rampy* |
+| `pocitadlo` | počet míst: výkres 4 812 sedadel, věž 4 812 lidí a kocour | věž (lidé) | *Převzít z věže* |
+| `svaciny`, `bazen` | váha: pult počítá s nákladem, který v Arše není | skutečná váha | Ruda použije deník jeřábu na pult (co jeřáb opravdu naložil) |
+| `navigace`, `lavka` | nezbude nikdy (navigace se nahrává první, lávka se řeší v aktu B) | – | – |
+
+  Stejný pár se ukáže jen jednou, i když na něj vede víc bodů.
 - **Řešení:** hráč na kterémkoli pultu klepne na rozdílnou hodnotu a vybere *Převzít z rampy*,
-  nebo *Převzít z věže*. Správně: fyzika z rampy, lidé z věže. Špatně: pojistka zabliká a hodnota
+  nebo *Převzít z věže*; u váhy použije deník jeřábu. Špatně: pojistka zabliká a hodnota
   se vrátí (metr: „Úhel rampy se podle aplikace nezmění.“, Pembok: „Kocour se podle výkresu
-  nezmenší.“).
-- **Stopy ve světě:** u každé hodnoty malá ikona (beton, nebo panáček); Bára: „Co je z betonu,
-  měř u tebe. Co dýchá, počítám já.“; M15 z kap. 3.
-- **Nápověda:** 1 „Kdo tu hodnotu zná líp?“ · 2 „Beton měříš ty. Lidi počítá Bára.“ · 3 zvýrazní
-  správné tlačítko.
+  nezmenší.“, u váhy: „Odhadem? To už tu bylo.“).
+- **Stopy ve světě:** u každé hodnoty malá ikona (beton, panáček, nebo hák jeřábu); Bára: „Co je
+  z betonu, měř u tebe. Co dýchá, počítám já. A co se nakládalo, ví vrátný.“; M15 z kap. 3.
+- **Nápověda:** 1 „Kdo tu hodnotu zná líp?“ · 2 „Beton měříš ty. Lidi počítá Bára. Náklad zapsal
+  vrátný.“ · 3 zvýrazní správné tlačítko (u váhy deník).
 - **Příznaky:** –
 - **Co nese:** V25; sladění podle povahy hodnoty, ne podle toho, kdo má pravdu.
 - **Riziko:** kvíz. Proto jen 1–3 páry a ikona u každé hodnoty.
@@ -277,7 +309,7 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
   Norbert: „Zelená ve zprávě není měření.“
 - **Řešení:** Bára ve věži přečte lístky skutečnosti z tabule ukazatelů (bez lístků svá čísla
   z pultu) a vysílačkou je řekne. Ruda je zadá do pultu → „Stav ověřen.“ Ruda: „Tohle jsem
-  měl napsat před pěti dny.“
+  měl napsat před týdnem.“
 - **Stopy ve světě:** štítek „Stav: podle zprávy“; Zelenka: „Zelená je klidná barva.“; Pembok:
   „Co jsi tehdy hlásil?“
 - **Nápověda:** 1 „Co systém ví o stavu Archy?“ · 3 „Ať ti Bára přečte lístky z tabule.“
@@ -290,11 +322,13 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 - **Překážka:** klíč na rampě a tlačítko ve věži se musí stisknout najednou a každý je jinde.
 - **Řešení:** když jsou ostatní pojistky zelené, Ruda použije startovací klíč (v pultu) → „Báro.
   Na tři.“ Při `priznal`: „Na tři.“ → oba najednou (střih na obě ruce) → „Pojistky uvolněny. Klíč
-  předejte posádce.“ Pult vysune **startovací klíč**. Při `trval` Bára: „Na čí tři?“ Volby: „Na moje.“
-  (Bára: „Tak počkáme.“, volba se vrátí) / **„Na tvoje.“** (Bára: „Tři.“).
+  předejte posádce.“ Pult vydá **startovací klíč**. Při `trval` Bára: „Na čí tři?“ Volby: „Na moje.“
+  (Bára: „Tak počkáme.“, volba se vrátí) / **„Na tvoje.“** (Bára: „Tři.“). Klíč dřív, než jsou
+  pojistky zelené: pult „Pojistky červené.“; Bářino *Předat palubě* dřív: „Rampa neodjištěna.“
 - **Stopy ve světě:** klíč a tlačítko svítí stejnou barvou; Pembok: „Tohle nejde sám. Celou dobu
   to nešlo.“
-- **Nápověda:** 1 „Je to na vás dvou.“ (u `trval` jen tohle).
+- **Nápověda:** 1 „Je to na vás dvou.“ · 3 „Otoč klíčem v pultu.“ Volba „Na čí tři?“ má jen
+  1. stupeň.
 - **Příznaky:** –
 - **Co nese:** V25, V20; start je společný. Při `trval` Ruda poprvé ustoupí.
 - **Riziko:** „Na moje.“ by mohlo vypadat jako past. Bára na ni odpoví klidně a volba se vrátí.
@@ -303,7 +337,8 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 
 ### P5.15 Předání (R5.1)
 - **Cíl hráče:** dát Archu tomu, kdo ji povede.
-- **Řešení:** použít startovací klíč na vrátného (nebo na dveře Archy, kde stojí). Volby:
+- **Řešení:** vrátný stojí od odpočtu u dveří Archy (P5.6). Použít startovací klíč na vrátného.
+  Volby:
   - **„Předat s návodem a zaučením.“** Jen s provozním manuálem (aspoň 3 stránky) a zaučeným
     kapitánem (P5.6, P5.7). Ruda dá klíč i krabici. Vrátný otevře první stránku a přikývne. →
     `c5_predani` = `poradne`.
@@ -316,7 +351,8 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 - **Příznaky:** `c5_predani`; s návodem důvěra stakeholderů +.
 - **Co nese:** V21.
 - **Riziko:** hráč, který šel rovnou na finále, zjistí až tady, že návod chybí. Proto jsou P5.5–P5.7
-  dostupné od začátku a odpočet na ně nečeká; po finále jdou dodělat (vrátný ještě stojí u dveří).
+  dostupné od začátku a odpočet na ně nečeká; po finále jdou dodělat (vrátný stojí u dveří
+  a na zaučení s Bárou zajde do věže a vrátí se).
 
 ### P5.16 Pódium (R5.2)
 - **Cíl hráče:** říct před městem, čí je to zásluha.

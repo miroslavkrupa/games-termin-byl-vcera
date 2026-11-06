@@ -91,7 +91,7 @@ Odhad úplné cesty **75–85 minut** (návrh 60–80, rozpočet 45–60 vědom�
 | **B Málo lístků** | 9 se 3 lístky: poctivá volba šedá, Pembok „Na poctivou zprávu víš málo.“ | hráč dojde pro čtvrtý; `c4_listky` 4–6 |
 | **C M03 prohraná nebo přeskočená** | 10: hráč souboj neopakuje, platí poslední výsledek | např. `c4_souboj`=2 (přeskočení 3, `c4_slib`=2); v 11 starosta „To ne!“ už u první oběti (při přeskočení u druhé), Ruda trvá na svém (důvěra stakeholderů −5 za každou) |
 | **D Pomník zůstane** (R4.2) | 11: kulaté kajuty a svačiny pod čáru | bez morálky +1; Ruda: „Pomník zůstane. Kvůli motivaci.“ |
-| **E Obětovaná velká tlačítka** | 11 | `c4_nastup` −1 (babička nenajde tlačítko); Bára: „To lidi chtěli.“ |
+| **E Obětovaná velká tlačítka** | 11 | `c4_nastup` −1 (babička nenajde tlačítko, `c4_nastup_chybi` obsahuje `babicka`); Bára: „To lidi chtěli.“ |
 | **F Trval na svém** (R4.3) | 26: „Plán byl dobrý. Jen ho nikdo nedodržel.“ | `c4_usmireni`=`trval`; Bára zapne vysílačku bez „Příjem.“; na konci stojí každý na jiném konci rampy |
 | **G Bára mlčí** | 25 vynechat (nebo nízká důvěra: „Ještě ne.“) | `c4_bara_rekla`=`po_usmireni`; v 26 Bára položí Rudovi desky s důkazy; v 31 předkládá Ruda sám, Bára přijde až na konec |
 | **H „Stačí. Zavírám.“** | 29 (jen při `c3_integrace` ≥ 1): Ruda zavře poklop dřív | `c4_integrace` = zbylé body; Bára zevnitř: „Ještě jeden!“ (poklop se otevře, kdo zvolí znovu „Zavírám“, zavře) |

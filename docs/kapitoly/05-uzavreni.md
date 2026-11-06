@@ -2,8 +2,9 @@
 
 > Podrobný návrh kapitoly 5. Vznikl z kostry (N2, D62) v kroku N3
 > [postupu návrhu](../12-postup-navrhu.md) po kontrole kapitoly 4 (D78).
-> Stav: **hotovo** (schváleno v D79), verze 0.3; podrobné dokumenty: [místnosti a předměty](05-mistnosti.md),
+> Stav: **hotovo** (schváleno v D79, kontrola N4 zapracována v D80), verze 0.4; podrobné dokumenty: [místnosti a předměty](05-mistnosti.md),
 > [karty puzzlů](05-puzzly.md), [průchod](05-pruchod.md), [osnovy dialogů](05-dialogy.md).
+> Autorská kontrola (N4): [nálezy K1–K29](05-kontrola.md), zapracováno (D80).
 > Úplný graf a jeho rozbor: [graf závislostí](../13-graf-zavislosti.md#kapitola-5-uzavření).
 
 ## Přehled
@@ -51,7 +52,7 @@ flowchart TD
 ```
 
 **Šířka:** ve výchozím stavu jde na začátku udělat 5 kroků k cíli najednou (nástup, kontrola,
-Lumír, kapitán, stránky návodu), se špatnými kapitolami 1–4 až 6. Úzká hrdla jsou uzavření
+Lumír, kapitán, stránky návodu), se systémem ve světě iterací až 6. Úzká hrdla jsou uzavření
 nástupu, „Na tři“ a R5.2; R5.1 je rozcestí se dvěma větvemi ([rozbor](../13-graf-zavislosti.md#kapitola-5-uzavření)).
 Následky z kapitoly 4 přidávají do finále **souběžné** pojistky, ne delší řetěz.
 
@@ -81,28 +82,39 @@ Ráno po kapitole 4, zbývá 0 („Dnes“). Archa stojí na plošině, obyvatel
 na lávce s kufry a s palubními lístky z kapitoly 4. Ruda je na rampě, Bára ve věži.
 
 **Ruda** má Prof. Pemboka, hrnek kávy, kávové pero, krabici od bot, plán cesty ke startu,
-rozpis rampy a deník jeřábu. Startovací klíč je zastrčený v bezpečnostním pultu na rampě
-(ze zkoušky motorů). **Bára** má svinovací metr. Ostatní předměty kapitoly 4 se spotřebovaly
-v konfrontaci, při nástupní zkoušce a v poklopu.
+rozpis rampy a deník jeřábu. **Bára** má svinovací metr a ráno přinesla z dílny plechovku žluté
+barvy (zbyla z natřené žárovky). Ostatní předměty kapitoly 4 se spotřebovaly v konfrontaci, při
+nástupní zkoušce a v poklopu; nepoužité důkazy si na konci kapitoly 4 vzal starosta „pro noviny“.
+
+**Bezpečnostní pult (D80):** zkušební pult motorů vyjel s Archou z hangáru a stojí na rampě jako
+bezpečnostní pult, spojený kabelem s panelem bezpečnostního systému v trupu. Norbert do něj ráno
+zamkl startovací klíč: „Klíč patří do pojistek, dokud start nepovolí.“ Po „Na tři“ ho pult vydá
+a vrátný ho zasune v kokpitu.
+
+**Počítadlo (D80)** počítá odbavené palubní lístky, ne lidi v Arše. Tým, vrátný, Zelenka
+a starosta lístek odbaví u lávky a čekají u pódia. Ruda a Bára mají lístky **4 811 a 4 812**
+a odbaví je až při startu: počítadlo doskočí na 4 812 v posledním záběru (D64).
 
 **Vysílačky fungují** (usmíření v kap. 4). Při `c4_usmireni` = `priznal` Bára hlásí sama, co
-vidí ve věži; při `trval` odpoví jen na otázku a ve finále se zeptá „Na čí tři?“ (P5.14).
+vidí v kamerách, a hráč je ovládat nemusí; při `trval` odpoví jen na otázku (kamera, nebo „Věži,
+co vidíš?“) a ve finále se zeptá „Na čí tři?“ (P5.14).
 
 | Příznak z dřívějška | Jak se projeví v kapitole 5 |
 |---|---|
-| `c4_nastup` (0–3) | kolik skupin z fronty projde dveřmi samo; zbytek uvízne v pořadí rybáři → obyvatelé → babička a každá skupina je jeden krok (P5.2) |
-| `c4_integrace` (0–3) | tolik hodnot se ve finále liší na obou pultech (P5.12) |
-| `c4_creep`, `c4_slib` | Ještětoto sedí ve dveřích Archy; drží v tlamě tolik přání, kolik je `c4_creep`, a při `c4_slib` ≥ 1 navíc starostův slíbený ohňostroj (P5.11) |
-| `c4_report` | `zelene`: pojistka *Stav ověřen* navíc (P5.13); starosta na pódiu „Hlásil jste zelenou, tak jsem to slíbil novinám.“; konec |
+| `c4_nastup_chybi` (D80) | skupiny, které neprošly nástupní zkouškou, uvíznou ze stejného důvodu: rybáři bez místa na udice, obyvatelé při `gantt` nebo `c3_hodnota` ≤ 1, babička při obětovaných velkých tlačítkách; každá je jeden krok (P5.2) |
+| `c4_integrace` (0–3), `c3_nesladeno` | zbylé body (konec seznamu) se ve finále ukážou jako rozdílné hodnoty na obou pultech: úhel rampy, počet míst, váha (P5.12) |
+| `c4_creep`, `c4_slib` | Ještětoto sedí ve dveřích Archy; drží v tlamě tolik přání, kolik je `c4_creep` (nejvýš 3), a při `c4_slib` ≥ 1 navíc starostův slíbený ohňostroj (P5.11) |
+| `c4_report`, `c4_listky` | `zelene`: pojistka *Stav ověřen* navíc (P5.13); lístky skutečnosti doplní legendu pro kapitána, bez nich ji Bára ukáže na barvách (P5.7); starosta na pódiu „Hlásil jste zelenou, tak jsem to slíbil novinám.“; konec |
 | `c4_usmireni` | Bára hlásí sama / jen na otázku; `trval`: „Na čí tři?“ (P5.14); konec |
-| `c4_zlepseni` | finále: *Ptát se dřív, než se zamkne* = zkouška pojistek před odpočtem; *Jedna tabule pro oba* = Ruda vidí na svém pultu i Bářiny hodnoty; *Říct to nahlas* = tým u pultů hlásí, co která pojistka chce |
+| `c4_zlepseni` | finále: *Ptát se dřív, než se zamkne* = zkouška pojistek před odpočtem ukáže i hodnoty, stav a přání; *Jedna tabule pro oba* = Ruda vidí na svém pultu i Bářiny hodnoty a kamery; *Říct to nahlas* = tým u pultů hlásí, co která pojistka chce |
 | `c4_obet` | neobětovaný pomník stojí u pódia (★, R5.2); obětovaná velká tlačítka: vrátný v zaučení nenajde start (P5.7); co v Arše chybí, okomentují obyvatelé v epilogu |
-| `c4_bara_rekla` | `hned`: Předseda stojí na konci fronty bez kufru (kajutu č. 1 dostala babička); `po_usmireni`: s kufrem zkusí předběhnout, fronta ho vrátí („Fronta je tamhle.“) |
+| `c4_bara_rekla` | `hned`: Předseda stojí na konci fronty s igelitkou, kufr „kajuta č. 1“ si Lumír nechal jako přílohu ke spisu („Založeno.“); `po_usmireni`: s kufrem zkusí předběhnout, fronta ho vrátí („Fronta je tamhle.“) |
 | `c4_clen_zpet` | vrácený člen týmu napíše stránku návodu „Proč jsem odešel“ (★, P5.5) |
-| `c2_tym` | bez Norberta v týmu stojí Norbert ve frontě jako cestující a podepíše jen to, co viděl (P5.4) |
-| `bezp_u_rudy` (R2.2, `c2_vyjimky`) | bezpečnostní systém ve světě iterací („předělává se každý týden“): Norbert ho nezapečetí, dokud Bára nezamkne verzi (P5.4) |
-| `interier_u_rudy` (R2.2) | kajuty „podle výkresu“ nemají místo na udice: rybáři je přivážou na Archu zvenku jako anténu (jen text) |
-| `c1_babicka` | `spojenec`: babička dá Rudovi buchtu na cestu a v epilogu svědčí; jinak jen ve frontě |
+| `c2_tym` | bez Norberta v týmu stojí Norbert ve frontě jako cestující; pečeť je z kap. 3 (podpis z lavičky), takže jen ★ „Trup jsem podepsal z lavičky. Start vidím poprvé.“ |
+| `c2_bezpecnost`, `c2_rozdeleni` (R2.2) | systém ve světě iterací (`c2_bezpecnost` = `bara`, nebo `krabice`; stejné pravidlo jako panel v kap. 3, D80): Norbert ho nezapečetí, dokud Bára nezamkne verzi (P5.4) |
+| `c3_hotove` (M14) | bez karty *udice* nemají kajuty místo na udice: rybáři uvíznou (přes `c4_nastup_chybi`) a přivážou udice na Archu zvenku jako anténu (P5.2) |
+| `c1_babicka` | `spojenec`: babička dá Rudovi buchtu na cestu a v epilogu svědčí; jinak jen ve frontě; scéna po titulcích |
+| `c1_slib_vseho`, `c2_mosty`, `c2_vyjimky`, `c3_integrace`, `c3_bara_priority` | body sladění a Rudova vývoje pro konec ([Konce](#konce)) |
 | `c3_krysy` | `kocka`: kočka Riziková sedí na bezpečnostním pultu; `aktovka`: z Předsedova kufru vykoukne krysa |
 | Rudův vývoj, sladění světů, Bářina důvěra | konec a epilog ([Konce](#konce)) |
 
@@ -139,7 +151,7 @@ celý život. Ryby nebraly.“).
   až do části C.
 - **Ruda** chodí po startovní rampě a do archivu. **Bára** je ve věži: řídicí pult, kamery
   (lávka, dveře, paluba), tabule ukazatelů s lístky skutečnosti z kapitoly 4.
-- **Odpočet** se spustí sám, jakmile je nástup uzavřený (4 812 / 4 812). Na „tři“ se zastaví
+- **Odpočet** se spustí, jakmile Bára uzavře nástup (4 812 / 4 812 i s lístky Rudy a Báry). Na „tři“ se zastaví
   a čeká. Kometa na obloze roste, ale nic se neztratí (D12): odpočet počká, kolik je potřeba.
 - **Čas:** jedno ráno. Střihy: ráno (úvod) → odpočet → start → přistání (epilog).
 
@@ -158,20 +170,20 @@ celý život. Ryby nebraly.“).
 
 | # | Puzzle | Řešení | Kdy |
 |---|---|---|---|
-| **P5.1** Nástup | otevřít dveře Archy, aby fronta mohla nastoupit | páka u dveří; Ještětoto uhne, jen když dveře otevře někdo, kdo se na něj podívá („Ty sedíš ve dveřích.“ ★), fronta se pohne | vždy |
-| **P5.2** Skupiny ve frontě | kdo neprojde sám (3 − `c4_nastup`, v pořadí): **rybáři** s udicemi neprojdou dveřmi (Ruda je nechá udice složit, bez místa na udice je přivážou na Archu zvenku), **obyvatelé** nevědí, na kterou palubu (Bára ve věži rozsvítí šipky), **babička** nepůjde bez kocoura, který utekl zpátky na pozemek (Ruda ho přinese) | jen `c4_nastup` < 3 |
+| **P5.1** Nástup | otevřít dveře Archy, aby fronta mohla nastoupit | páka u dveří; Ještětoto se stáhne na práh, fronta odbavuje lístky a nastupuje; tým, vrátný, Zelenka a starosta čekají odbavení u pódia | vždy |
+| **P5.2** Skupiny ve frontě | kdo neprošel nástupní zkouškou (`c4_nastup_chybi`): **rybáři** nemají místo na udice (přivážou je na Archu zvenku), **obyvatelé** nevědí, na kterou palubu (Bára ve věži rozsvítí šipky), **babička** nenajde potvrzení lístku a uteče jí kocour (Ruda ho přinese a lístek potvrdí) | jen skupiny v `c4_nastup_chybi` |
 | **P5.3** Lumír | v archivu: „Bez archivu nejdu. A archiv se do Archy nevejde.“ Na pultu stojí **krabička Poučení**, poprvé plná: v noci do ní Lumír založil lahve z Plachetnice. Vzít ji a dát Lumírovi: „Tohle je archiv. Zbytek jsou data.“ Lumír jde s krabičkou nastoupit | vždy (o chybějícím Lumírovi ví Bára, P5.8) |
-| **P5.4** Pečeť bezpečnostního systému | bez Norberta v týmu: Norbert stojí ve frontě („Jsem cestující. Ne certifikátor.“), podepíše jen to, co viděl: Ruda spustí před ním zkoušku pojistek. Se systémem ve světě iterací Norbert nepodepíše nic, dokud Bára ve věži nezamkne verzi („Tahle verze. Žádná další.“) | jen bez Norberta, nebo bez `bezp_u_rudy` |
+| **P5.4** Pečeť bezpečnostního systému | systém se předělává každý týden; Norbert (z týmu, nebo u lávky jako cestující) nepodepíše nic, dokud Bára ve věži nezamkne verzi („Tahle verze. Žádná další.“); pak Ruda pustí před Norbertem zkoušku pojistek a Norbert připne pečeť | jen systém ve světě iterací |
 | **P5.5** Návod pro posádku | říct si třem ze čtyř členů týmu o stránku: „Napiš, co musí vědět ten, kdo to po nás převezme.“ Stránky vložit do krabice od bot → **provozní manuál**. Gantt jako návod ★ („Řádek 214: start. Úterý. To je plán stavby, ne návod.“) | volitelné (R5.1) |
-| **P5.6** Kapitán | zeptat se vrátného: „Povedete Archu?“ → „Konečně se někdo zeptal.“ Vrátný slézá z jeřábu naposledy a jde do věže za Bárou | volitelné (R5.1) |
+| **P5.6** Kapitán | zeptat se vrátného v kabině jeřábu: „Povedete Archu?“ → „Konečně se někdo zeptal.“ Sleze z jeřábu naposledy a jde do věže za Bárou; po odpočtu sejde ke dveřím Archy (bez otázky taky) | volitelné (R5.1) |
 
 **Bára (řídicí věž):**
 
 | # | Puzzle | Řešení | Kdy |
 |---|---|---|---|
-| **P5.7** Zaučení posádky | ve zkušebním režimu řídicího pultu nechat vrátného zkusit start. Zasekne se na světlech („Které je které? Všechna byla zelená.“): Bára mu dá lístky skutečnosti z tabule ukazatelů jako legendu („Zelená jet. Žlutá pozor. Červená stát.“). Při obětovaných velkých tlačítkách nenajde tlačítko Start: Bára ho natře žlutou barvou z kapitoly 4 | volitelné (R5.1), po P5.6 |
-| **P5.8** Předstartovní kontrola | spustit kontrolu na řídicím pultu: navigace ✔, dveře čekají, počítadlo nástupu. Po nástupu ukáže **4 811 / 4 812**. Bára: „Počítadlo je opravené. Takže to není chyba. Někdo chybí.“ Z palubních lístků zjistí, že chybí Lumír, a řekne to Rudovi | vždy |
-| **P5.9** Uzavření nástupu | když Lumír nastoupí (4 812 / 4 812): „Nástup uzavřen.“ → odpočet | vždy |
+| **P5.7** Zaučení posádky | ve zkušebním režimu řídicího pultu nechat vrátného zkusit start. Zasekne se na světlech („Které je které? Všechna byla zelená.“): Bára mu napíše legendu („Zelená jet. Žlutá pozor. Červená stát.“) a připne k ní lístky skutečnosti z tabule, bez lístků ukáže barvy na žárovkách a plechovce. Při obětovaných velkých tlačítkách nenajde tlačítko Start: Bára ho natře žlutou barvou | volitelné (R5.1), po P5.6 |
+| **P5.8** Předstartovní kontrola | spustit kontrolu na řídicím pultu: navigace ✔, dveře čekají, počítadlo nástupu. Po nástupu ukáže 4 809 odbavených a 2 u startu. Bára: „Plus my dva. To je **4 811**. Počítadlo je opravené. Takže to není chyba. Někdo chybí.“ Ze seznamu lístků zjistí, že chybí Lumír, a řekne to Rudovi (když Lumír nastoupil dřív, krok odpadne) | vždy |
+| **P5.9** Uzavření nástupu | když Lumír odbaví lístek (4 810 a 2 u startu = 4 812): „Nástup uzavřen. Kromě nás dvou.“ → odpočet | vždy |
 
 **Odpočet (střih).** Amplion odpočítává: „Deset… devět…“ Na „tři“ se zastaví. Bezpečnostní
    pult na rampě: „Start zablokován. Nástup nepotvrzen.“ Bára: „Řídicí systém nástup potvrdil.“
@@ -185,17 +197,17 @@ nakonec. Pravidla v [kartách P5.10–P5.14](05-puzzly.md#finále-dva-klíče).
 
 | Pojistka | Co vidí Bára (věž) | Co udělá Ruda (rampa) | Kdy |
 |---|---|---|---|
-| **Lávka volná** (P5.10) | kamera: za Archou na lávce stojí Pan Změna s posledním přáním („A ještě by se hodil…“) | Ruda ho za Archou nevidí; po Bářině hlášení jde kolem Archy a přání odloží: „Po přistání. Zapíšu si to.“ Pan Změna: „Poprvé mi někdo řekl kdy.“ a nastoupí | vždy |
-| **Dveře zamčené** (P5.11) | řídicí systém hlásí „otevřeno“: v kameře ve dveřích trčí ocas Ještětota | Ruda zavře dveře pákou; s ocasem ve dveřích vezme Ještětotovi z tlamy přání jedno po druhém a každé odloží („Po přistání.“). S každým se zmenší, až se vejde dovnitř | zavřít vždy; přání jen `c4_creep` ≥ 1 nebo `c4_slib` ≥ 1 |
-| **Hodnoty sladěné** (P5.12) | řídicí pult ukazuje jinou hodnotu než bezpečnostní (úhel rampy, váha nákladu, počet míst) | hráč rozhodne, čí hodnota platí (fyzika z rampy, lidé z věže) a přepíše ji na druhém pultu | jen `c4_integrace` ≥ 1, jeden pár na bod |
+| **Lávka volná** (P5.10) | odbavený Pan Změna vylezl zadními dveřmi na lávku za Archou s posledním přáním („A ještě by se hodil…“); `priznal`: Bára to ohlásí sama, `trval`: až po kameře | Ruda ho za Archou nevidí; po Bářině hlášení jde kolem Archy a přání odloží: „Po přistání. Zapíšu si to.“ Pan Změna: „Poprvé mi někdo řekl kdy.“ a nastoupí | vždy |
+| **Dveře zamčené** (P5.11) | řídicí systém hlásí „otevřeno“: ve dveřích trčí ocas Ještětota (ohlásí stejně jako lávku) | Ruda zavře dveře pákou; s ocasem ve dveřích vezme Ještětotovi z tlamy přání jedno po druhém a každé odloží („Po přistání.“). S každým se zmenší, až se vejde dovnitř | zavřít vždy; přání jen `c4_creep` ≥ 1 nebo `c4_slib` ≥ 1 |
+| **Hodnoty sladěné** (P5.12) | řídicí pult ukazuje jinou hodnotu než bezpečnostní (úhel rampy, počet míst, váha nákladu podle zbylých bodů z kap. 3) | úhel převezme z rampy, počet lidí z věže, váhu změří deníkem jeřábu | jen `c4_integrace` ≥ 1, jeden pár na bod |
 | **Stav ověřen** (P5.13) | lístky skutečnosti na tabuli (nebo Bářina čísla, když lístky nejsou) | Ruda zadá skutečný stav místo zeleného ze zprávy | jen `c4_report` = `zelene` |
 | **Na tři** (P5.14) | Bára stiskne *Předat palubě* | Ruda otočí startovacím klíčem *Odjistit*; oba najednou: „Na tři.“ Při `trval` se Bára zeptá „Na čí tři?“ a Ruda musí říct „Na tvoje.“ | vždy, poslední |
 
-Po „Na tři“ pult vysune **startovací klíč**: „Pojistky uvolněny. Klíč předejte posádce.“
+Po „Na tři“ pult vydá **startovací klíč**: „Pojistky uvolněny. Klíč předejte posádce.“
 
 ### Část C: Pódium a start
 
-1. **R5.1 Předání (P5.15).** U dveří Archy předá Ruda startovací klíč. **„Předat s návodem
+1. **R5.1 Předání (P5.15).** U dveří Archy předá Ruda startovací klíč vrátnému, který tam čeká od odpočtu. **„Předat s návodem
     a zaučením“** jde jen s provozním manuálem (P5.5) a se zaučeným kapitánem (P5.6, P5.7):
     vrátný si přečte první stránku a přikývne. **„Však vy si poradíte.“** jde vždy: Ruda dá klíč
     vrátnému bez slova navíc. Vrátný: „Nikdo se mě nezeptal. Zase.“ Výsledek `c5_predani`.
@@ -203,7 +215,8 @@ Po „Na tři“ pult vysune **startovací klíč**: „Pojistky uvolněny. Klí
     Ruda u mikrofonu: **„Já.“** / **„My.“** U neobětovaného pomníku Pembok tiše: „Stojíš vedle
     sebe.“ Při „my“ Ruda jmenuje ty, které o něco požádal (stránky návodu, kapitán). Výsledek
     `c5_my`. Starosta reaguje podle `c4_report` a `c4_slib`.
-3. **Start.** Ruda a Bára nastoupí poslední. V kokpitu vrátný otočí klíčem. Na sedadlech je vidět,
+3. **Start.** Tým, starosta a Zelenka nastoupí, Ruda a Bára odbaví lístky 4 811 a 4 812 poslední
+    a počítadlo v kokpitu ukáže **4 812 / 4 812** (D64). Vrátný zasune klíč a otočí jím. Na sedadlech je vidět,
     že Ruda i Bára mají žluté ponožky. Člen týmu (první podle pořadí Pepa, Klára, Zdenda, Kryštof,
     Věra, Norbert): „Vy máte stejné ponožky.“ Bára: „Všimli jste si až teď.“ (D31). Odpočet
     dojede: „Tři. Dva. Jedna.“ Konec podle [stavu](#konce).
@@ -225,12 +238,14 @@ zvedne důvěru stakeholderů. Kapitola 5 jinak proměnné jen čte.
 | `c5_kapitan` | ano | P5.6 | R5.1 |
 | `c5_zauceni` | ano | P5.7 | R5.1 |
 | `c5_manual` | 0–4 (stránky v krabici) | P5.5 | R5.1 (aspoň 3), R5.2 („my“ jmenuje autory) |
+| `c5_lumir`, `c5_chybi_lumir`, `c5_pecet` | ano | P5.3, P5.8, P5.4 | jen stav kapitoly (uzavření nástupu, odpočet) |
 
 Kapitola nemá další kapitolu, proto příznaky `c5_*` čtou jen R5.1, R5.2, konce a epilog.
 
 ## Konce
 
-Konec se počítá při startu. Kombinuje **sladění světů** (metodická osa) a **Rudův vývoj**
+Konec se počítá při startu v pevném pořadí (D80): **1.** nízké sladění → Pomník, nebo Druhá etapa;
+**2.** „my“ a vývoj ≥ 4 → Tým; **3.** jinak Hrdina. Kombinuje **sladění světů** (metodická osa) a **Rudův vývoj**
 (osobní osa). **Bářina důvěra** mění jen epilog (D60). Konce v bibli popisovaly i to, že Archa
 odletí bez lidí nebo se rampa nedostaví. Kapitola 4 ale zaručuje, že rampa stojí a všichni jsou
 nalodění (D12), proto se konce liší tím, **co se stane po startu** (D79, upřesňuje
@@ -252,7 +267,7 @@ R4.1 poctivá zpráva, R5.2 „my“.
 |---|---|---|
 | **Pomník** (jen plán) | sladění nízké a převažuje plán: `c2_rozdeleni` = `gantt`, nebo `povaha` s `c4_usmireni` = `trval` | Archa odstartuje přesně na vteřinu. Uvnitř nikdo neví, kde sedí: kajuty jsou „podle výkresu“ a navigace bez lidí. Archa obletí město a přistane tam, kde začala. Kometa dopadne do Mlžné pláně. Rudovi postaví pomník za nejpřesnější start v dějinách města. Nedokončený |
 | **Druhá etapa** (jen iterace) | sladění nízké a převažuje iterace: `c2_rozdeleni` = `krabice`, nebo `povaha` s `priznal` | aplikace vede každého na jeho místo, kajuty jsou útulné, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: jeden metr. Kometa mine město o metr. Komise vyhlásí „fázi 3“, Archa visí metr nad rampou a Předseda vyhrál |
-| **Hrdina** | sladění vysoké a Rudův vývoj ≤ 3, nebo R5.2 = „já“ | Archa vzlétne nad mraky, počká, až kometa dopadne, a přistane zpátky na rampě. Ruda dostane od starosty medaili a všechny zásluhy. Tým se rozejde; při „my“ to Ruda řekl, ale pozdě („Tým už je na jiných projektech.“) |
+| **Hrdina** | sladění vysoké a ne Tým (vývoj ≤ 3, nebo R5.2 = „já“) | Archa vzlétne nad mraky, počká, až kometa dopadne, a přistane zpátky na rampě. Ruda dostane od starosty medaili a všechny zásluhy. Tým se rozejde; při „my“ to Ruda řekl, ale pozdě („Tým už je na jiných projektech.“) |
 | **Tým** (pravý konec) | sladění vysoké, Rudův vývoj ≥ 4 včetně „my“ | Archa vzlétne, počká a přistane. Ruda na rampě řekne „my“ znovu, tentokrát bez mikrofonu. Tým jde rovnou na další projekt: sundat lešení z radnice |
 
 **Epilog** (po přistání, startovní rampa a archiv):
@@ -261,7 +276,8 @@ R4.1 poctivá zpráva, R5.2 „my“.
    člena týmu („Díky, Věro.“); `poradi`: Archa přistane napodruhé a posádka hledá vypínač
    motorů („Kde se to vypíná?“ „Nikdo neříkal.“).
 2. **Obyvatelé** podle `c4_obet`: co v Arše chybělo („Svačiny nebyly. Ale přistáli jsme.“,
-   „Kajuty byly kulaté. Točila se mi hlava.“). Babička spojenkyně: „Na pozemek se mě zeptal.
+   při obětovaných kulatých kajutách „Hranatá kajuta. Aspoň se netočí.“), a co zůstalo (při
+   neobětovaných kulatých kajutách „Kajuty byly kulaté. Točila se mi hlava.“). Babička spojenkyně: „Na pozemek se mě zeptal.
    Tak jsem letěla.“
 3. **Bára (D60):** **vysoká důvěra:** poprvé v životě řekne termín: „Večeře. Pátek. Osm. A přijdeš
    včas.“; **střední:** nabídne Rudovi další společný projekt („Lešení na radnici. Ty plán,
@@ -286,7 +302,7 @@ kapitola, kterou nemusím opravovat.“
 1. Titulek *Kapitola 5: Hotovo*. Ráno, kometa zabírá půl oblohy. Archa stojí na plošině.
 2. Amplion: „Dnů do dopadu: nula. Prosíme občany, aby se nalodili podle pořadí na lístku.“
    Ruda: „Konečně termín, který nikdo neposune.“ Pembok: „Kometa se nepřeplánuje.“
-3. Fronta na lávce: babička s kocourem v kleci, rybáři s udicemi, Pan Změna s plovacími kruhy
+3. Fronta na lávce: babička s kocourem v kleci (prázdnou, jen když babička uvízne), rybáři s udicemi, Pan Změna s plovacími kruhy
    (s bazénem v kap. 3–4: „Pro všechny.“), na konci Předseda s kufrem a Ing. Framework s krabicí
    „Krize“. Ještětoto sedí ve dveřích Archy.
 4. Vysílačka: Bára z věže „Věž připravená. Odpočet čeká na nástup.“ (`priznal`: „Dobré ráno,
@@ -301,7 +317,7 @@ Pak titulky.
 
 ## Kontrola proti zásadám (N3h)
 
-- [x] **Gilbertův graf:** část A má 5 souběžných kroků k cíli (ve špatném stavu 6), finále je
+- [x] **Gilbertův graf:** část A má 5 souběžných kroků k cíli (se systémem ve světě iterací 6), finále je
   kosočtverec přes obě postavy, část C je záměrně úzký závěr ([rozbor](../13-graf-zavislosti.md#kapitola-5-uzavření))
 - [x] Pilíře vize: učí mechanika (každý pult vidí půlku, hodnoty se slaďují podle povahy),
   rozhodnutí mají váhu (R5.1 v epilogu, R5.2 v konci), absurdní ale fér (Ještětoto ve dveřích)
@@ -343,7 +359,11 @@ Pak titulky.
   odpočtem (dřív „víc času ve finálním puzzlu“; finále nemá časový limit).
 - **Kapitola 4, archiv (D79):** krabička Poučení je po M11 plná; v kapitole 4 zůstává prázdná
   („Poslal jsem ji dál.“), v noci po Plachetnici do ní Lumír založí lahve (jen text v kap. 5).
-- **Bible (D79):** konce podle toho, co se stane po startu; kometa do Mlžné pláně; Tým už nepotřebuje
+- **Kapitola 4 (D80):** P4.30 ukládá `c4_nastup_chybi` (kdo neprošel a proč); nepoužité důkazy si
+  na konci vezme starosta „pro noviny“.
+- **Kapitola 3 (D80):** panel bezpečnostního systému „předělává se každý týden“ i u krabice na
+  všechno (jedno pravidlo s P5.4, návrh i prototyp).
+- **Bible (D79, D80):** konce podle toho, co se stane po startu; kometa do Mlžné pláně; Tým už nepotřebuje
   vysokou důvěru (ta mění jen epilog); mapa následků s `c5_*`; startovní rampa a archiv v kap. 5.
 
 ## Rozpočet
@@ -353,8 +373,8 @@ Pak titulky.
 | Délka | 20–30 min | 25–35 min (špatné kapitoly 1–4 až 40) | dvě postavy souběžně, finále s až pěti pojistkami, 4 konce a epilog |
 | Scény (nové) | 3 (1) | 3 (1) + přechod na radnici | – |
 | Nové postavy | 0 | 0 | vrátný jako kapitán, Norbert jako cestující |
-| Předměty | 5 | 5 nových (1 jen ve variantě) + 8 z dřívějška ([seznam](05-mistnosti.md#předměty)) | – |
-| Repliky na jazyk | 200–300 | osnova ≈ 385 ([dialogy](05-dialogy.md#součet); v jednom průchodu asi 260) | 4 konce, 3 epilogy Báry, varianty skupin a pojistek |
+| Předměty | 5 | 4 nové + 9 z dřívějška (plechovka barvy jen ve variantě; [seznam](05-mistnosti.md#předměty)) | – |
+| Repliky na jazyk | 200–300 | osnova ≈ 405 po N4 ([dialogy](05-dialogy.md#součet); v jednom průchodu asi 265) | 4 konce, 3 epilogy Báry, varianty skupin a pojistek |
 | Minihry | žádná nová | žádná nová; finále *Dva klíče* je puzzle | – |
 
 **Kde ušetřit:** konce Pomník a Druhá etapa zkrátit na jeden záběr s textem (−25 replik), stránky
