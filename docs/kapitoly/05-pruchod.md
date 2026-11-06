@@ -19,7 +19,7 @@ Bářina důvěra je vysoká, sladění světů 7 ze 7, Rudův vývoj před R5.2
 ## 1. Nejkratší cesta
 
 ```text
- 1. S1 · cutscéna · titulek „Hotovo“; amplion „Dnů do dopadu: nula.“; Ruda: „Konečně termín, který nikdo neposune.“; Pembok: „Kometa se nepřeplánuje.“; fronta na lávce, Ještětoto ve dveřích, vrátný v kabině jeřábu; Bára vysílačkou: „Dobré ráno, rampo. Odpočet čeká na nástup.“
+ 1. S1 · cutscéna · titulek „Hotovo“; amplion „Dnů do dopadu: nula.“; Ruda: „Konečně termín, který nikdo neposune.“; Pembok: „Kometa se nepřeplánuje. A tohle už jsi říkal. Čtyřikrát.“; fronta na lávce, Ještětoto ve dveřích, vrátný v kabině jeřábu; Bára vysílačkou: „Dobré ráno, rampo. Odpočet čeká na nástup.“
  2. S1 · Ruda · použij Páka u dveří → dveře se otevřou, Ještětoto se stáhne na práh; fronta odbavuje lístky a nastupuje, obyvatelé, rybáři i babička s kocourem sami (c4_nastup_chybi prázdný); tým, vrátný, Zelenka a starosta odbaví lístek a čekají u pódia
  3. S1 · Ruda · přepni → Bára v S2
  4. S2 · Bára · použij Řídicí pult → Předstartovní kontrola → „4 809 odbaveno, 2 u startu.“ Bára: „Plus my dva. To je 4 811. Počítadlo je opravené. Takže to není chyba. Někdo chybí.“ → Seznam lístků → neodbavený Lumír; Bára vysílačkou Rudovi · c5_chybi_lumir
@@ -34,7 +34,7 @@ Bářina důvěra je vysoká, sladění světů 7 ze 7, Rudův vývoj před R5.2
 13. S1 · Ruda · použij Bezpečnostní pult (klíč) → „Báro. Na tři.“ → „Na tři.“ → oba najednou → „Pojistky uvolněny. Klíč předejte posádce.“ → startovací klíč
 14. S1 · Ruda · použij Startovací klíč na Vrátný (u dveří) → R5.1 „Však vy si poradíte.“ → „Nikdo se mě nezeptal. Zase.“ · c5_predani=poradi
 15. S1 · cutscéna · starosta na pódiu: „A teď ten, komu za to vděčíme!“ → R5.2 „My.“ → Ruda jmenuje tým a Báru; starosta: „Říkal jste mi pravdu. Bylo to nepříjemné.“ · c5_my, Rudův vývoj=5
-16. S1 · cutscéna · start: tým, starosta a Zelenka nastoupí; Ruda a Bára odbaví lístky 4 811 a 4 812 poslední → počítadlo v kokpitu „4 812 / 4 812“; vrátný zasune klíč a otočí jím; Pepa: „Vy máte stejné ponožky.“ Bára: „Všimli jste si až teď.“; „Tři. Dva. Jedna.“ → konec Tým: Archa nad mraky, kometa dopadne do Mlžné pláně metr za městem, přistání
+16. S1 · cutscéna · start: tým, starosta a Zelenka nastoupí; Ruda a Bára odbaví lístky 4 811 a 4 812 poslední → počítadlo v kokpitu „4 812 / 4 812“; vrátný zasune klíč a otočí jím; Pepa: „Vy máte stejné ponožky.“ Bára: „Všimli jste si až teď.“; „Tři. Dva…“ Pepa: „Dny.“ „…Jedna.“ → konec Tým: Archa nad mraky, kometa dopadne do Mlžné pláně metr za městem, přistání
 17. S1, S3 · epilog · posádka hledá vypínač (poradi); obyvatelé: „Svačiny nebyly. Ale přistáli jsme.“; Bára: „Večeře. Pátek. Osm. A přijdeš včas.“; Lumír zakládá lístek „Archa. Zahájeno 1994. Dokončeno: dnes.“; hráč vybere poučení „Dva světy, jedna Archa.“; Předseda pomáhá zakládat · konec hry
 ```
 
@@ -54,7 +54,7 @@ Navíc proti nejkratší cestě (vloží se kamkoli do části A, nebo i po fin�
  f. S1 · Ruda · mluv Vrátný → „Povedete Archu?“ → „Konečně se někdo zeptal.“ → slézá z jeřábu naposledy, jde do věže · c5_kapitan
  g. S1 · Ruda · přepni → Bára; S2 · Bára · použij Řídicí pult → Zkušební režim → vrátný: „Které je které? Všechna byla zelená.“
  h. S2 · Bára · použij Tabule ukazatelů → legenda „Zelená jet. Žlutá pozor. Červená stát.“ s lístky skutečnosti → druhý pokus projde · c5_zauceni
- i. ★ S1 · Ruda · prohlédni Gantt (plán cesty) na vrátného → „Řádek 214: start. Úterý. To je plán stavby, ne návod.“; mluv Framework → krabice „Předání“ „Návod na všechno. Je prázdná.“; babička → buchta na cestu
+ i. ★ S1 · Ruda · použij Plán cesty na Vrátný → „Poslední řádek: start. Splněno. Skoro. To je plán, ne návod.“; mluv Framework → krabice „Předání“ „Návod na všechno. Je prázdná.“; babička → buchta na cestu
 14'. S1 · Ruda · použij Startovací klíč na Vrátný → R5.1 „Předat s návodem a zaučením.“ → vrátný otevře první stránku a přikývne · c5_predani=poradne
 17'. epilog · vrátný přistane hladce a na stránce Přistání najde „Díky, Věro.“; scéna po titulcích: z radnice sundávají lešení, vrátný: „Konečně něco dolů.“; Pembok: „Konečně kapitola, kterou nemusím opravovat.“
 ```

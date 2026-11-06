@@ -74,7 +74,7 @@ jak to doopravdy vypadá (nebo co neviděl, když poslal zelenou hned).
 
 ## Výchozí stav
 
-**Ruda** má z kapitoly 3 **Prof. Pemboka**, **hrnek kávy**, **kávové pero**, **krabici od bot**,
+**Ruda** má z kapitoly 3 **Prof. Pemboka**, **hrnek kávy**, **kávové pero** (nebo propisku bez kávy, D81), **krabici od bot**,
 **plán cesty ke startu** a **rozpis rampy**. Při `c2_riziko_predem` = `usmev` má navíc
 **kopie všeho, co Předseda podepsal** (obálka z kapitoly 2 na úsměv). **Bára** má
 **svinovací metr** a **seznam pasažérů** z kapitoly 1, který teď konečně použije (D59).
@@ -252,7 +252,7 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
     razítko nedostane (při `c3_rezerva` < 0 má i objednanou plošinu), a Bára má důkazy a lístky,
     začne usmíření, jakmile je Bára v hangáru (vejde do něj, nebo v něm už stojí). Ruda přijde
     k tichým motorům střihem. Volba: **„Plán nestačí. Potřebuju tě.“** nebo **„Plán byl dobrý. Jen ho nikdo
-    nedodržel.“** Obě vedou dál (D12), mění Bářinu důvěru, Rudův vývoj a kapitolu 5. Bára
+    nedodržel.“** Obě vedou dál (D12), mění Bářinu důvěru, sladění světů a kapitolu 5. Bára
     řekne o Předsedovi teď, pokud to neudělala dřív (`c4_bara_rekla` = `hned` / `po_usmireni`).
     Při `po_usmireni` položí Rudovi na pult desky se svými důkazy: v konfrontaci je předkládá on.
 12. **M11 Plachetnice na palubě Archy (P4.28).** „Archa je loď. Tak si na ni sedneme.“ Tým, Ruda
@@ -304,12 +304,13 @@ Ruda přes posla na staveništi posílá **rozpis rampy** (P4.18).
 |---|---|---|---|---|
 | R4.1 | věž, telegraf | poctivě s variantami (4+ lístky) / zelenou | `c4_report` = `poctive` / `zelene`; `c4_listky` (0–6) | hned v M03 a P4.32; kap. 5: start na falešných datech, horší konec |
 | R4.2 | věž, tabule rozsahu | co obětovat (seznam) | `c4_obet` (seznam), `c4_creep` (velikost Ještětoto po R4.2) | P4.17 (bazén); kap. 5: co v Arše chybí, reakce obyvatel v epilogu |
-| R4.3 | hangár | „Plán nestačí. Potřebuju tě.“ / „Plán byl dobrý.“ | `c4_usmireni` = `priznal` / `trval` | kap. 5: spolupráce ve finálním puzzlu, Rudův vývoj, Bářina důvěra |
+| R4.3 | hangár | „Plán nestačí. Potřebuju tě.“ / „Plán byl dobrý.“ | `c4_usmireni` = `priznal` / `trval` | kap. 5: spolupráce ve finálním puzzlu, konec (sladění), Bářina důvěra |
 | Bára (D59) | akt B, posel | říct Rudovi hned (jen při důvěře) / až po usmíření | `c4_bara_rekla` = `hned` / `po_usmireni` | P4.31: konfrontace spolu, nebo Ruda sám; kap. 5: Předseda ve frontě, epilog |
 
 **Stavové proměnné:** poctivá zpráva zvedne důvěru stakeholderů a Rudův vývoj o 1 (vada
 „reportuje zeleně“), zelená ho nezvedne a důvěru sníží. Obětovaný pomník zvedne morálku týmu.
-R4.3 = přiznat zvedne Bářinu důvěru a sladění světů.
+R4.3 = přiznat zvedne Bářinu důvěru a sladění světů; Rudův vývoj nemění (pět zdrojů je R1.1,
+R2.2, R3.2, R4.1, R5.2; D81).
 
 **Další příznaky:**
 
@@ -356,11 +357,11 @@ hodně pokazil, má víc práce, ale ne delší frontu.
 | 1 | „Včera bylo všechno zelené.“ / „Tak ohňostroj, ne?“ | lístek Rampa nebo Trup („Světla měřila pytle cementu.“) |
 | 2 | „Lidé se mají nalodit, ne čekat.“ | lístek Nástup nebo Bářina čísla (`c3_hodnota`) |
 | 3 | „Kolik jich poletí?“ | lístek Počítadlo („4 811. Opravujeme.“, nebo „4 812, ověřeno.“) |
-| 4 | „A všechno, co jsem slíbil novinám?“ | charter: „co nepatří“ (`c1_mimo_rozsah`) nebo lístek Změny (Ještětoto) |
+| 4 | „A všechno, co jsem slíbil novinám?“ | papír o Arše (charter): „co nepatří“ (`c1_mimo_rozsah`) nebo lístek Změny (Ještětoto) |
 | 5 | „Proč bych vám měl věřit?“ | varianty ze zprávy (jen po poctivé) nebo lístek Tým |
 
   Při `c1_slib_vseho` ≥ 3 přibude před 1. kolo „A fontánu jste slíbil.“ (dobrá replika jen
-  z charteru). Po zelené zprávě jde poctivě vyhrát jen s lístky, které hráč přesto sebral.
+  z papíru o Arše). Po zelené zprávě jde poctivě vyhrát jen s lístky, které hráč přesto sebral.
 - **Výsledek:** `c4_souboj`, `c4_slib`. Bez starostova „To ne!“ jde v R4.2 obětovat `c4_souboj` − 2
   věcí (3 vyhraná kola: jednu, 5 kol: tři).
 - **Přeskočení:** Pembok vybere rychlé repliky; `c4_souboj` = 3, `c4_slib` = 2.

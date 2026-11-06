@@ -22,6 +22,8 @@ predmet_odhad,Odhad na tácku,,,,pracovní text prototypu (N6 ještě není)
 predmet_odhad_kotva,Na tácku stojí „2“. Dva dny. Zní to krásně. Moc krásně.,,Ruda,,pracovní text prototypu (N6 ještě není)
 predmet_odhad_realny,"Na tácku stojí „15“. Patnáct dní na rampu. Odhadli to ti, co ji budou stavět.",,Ruda,,pracovní text prototypu (N6 ještě není)
 predmet_krabice,Krabice od bot,,,,pracovní text prototypu (N6 ještě není)
+predmet_kopie,Kopie Předsedových podpisů,,,,pracovní text prototypu (N6 ještě není); D81
+ch2_kopie_prohlednout,"Všechno, co Předseda podepsal. S úsměvem. Kopie se neusmívají.",,Ruda,,pracovní text prototypu (N6 ještě není); D81
 predmet_krabice_prohlednout,Na víku „Co se může pokazit“. Uvnitř třicet let nic. Teď moje lístky.,,Ruda,,pracovní text prototypu (N6 ještě není)
 predmet_obalka,Obálka „Na nepředvídané“,,,,pracovní text prototypu (N6 ještě není)
 predmet_obalka_prohlednout,Peníze na jednu nepředvídanou věc. Jednu. Nepředvídané věci chodí po stádech.,,Ruda,,pracovní text prototypu (N6 ještě není)
@@ -274,6 +276,7 @@ ch2_predseda_faze_1,Výborně. A tady za start připíšu „fázi 2“. Máte t
 ch2_predseda_faze_ruda,Po startu přece následuje kometa!,,Ruda,,pracovní text prototypu (N6 ještě není)
 ch2_predseda_faze_2,"Já mám papír, vy máte názor.",,Předseda,,pracovní text prototypu (N6 ještě není)
 ch2_predseda_razitko,Vítám. Vítám. (bum) Orazítkováno.,,Předseda,,pracovní text prototypu (N6 ještě není)
+ch2_predseda_kopie,Obálka byla na úsměv. Kopie všeho, co jste podepsal, jsou zdarma. Děkuji.,,Ruda,,pracovní text prototypu (N6 ještě není); D81
 ch2_konec_beton,Staveniště. Domíchaný beton čeká. Jeřáb stojí.,,Ruda,,pracovní text prototypu (N6 ještě není)
 ch2_konec_kdo_jerab,Kdo umí s jeřábem?,,Ruda,,pracovní text prototypu (N6 ještě není)
 ch2_konec_ticho,… Ticho.,,Ruda,,pracovní text prototypu (N6 ještě není)

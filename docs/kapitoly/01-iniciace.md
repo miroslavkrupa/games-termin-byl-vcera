@@ -212,7 +212,8 @@ s nimi přijde až po razítku (R1.4).
 výhra = aspoň 3 vyhraná kola. Dobrá replika se ukáže jen s podkladem (kolo 2 zadání, kolo 3
 karta poučení, kolo 5 Bářina čísla), kola 1 a 4 mají dobrou repliku vždy. Rychlá replika kolo
 vyhraje a zvýší `c1_slib_vseho` o 1 (0–5), slabá kolo prohraje. Tři a víc rychlých replik = R1.1
-„slíbit všechno“. Prohra nic nebere, souboj jde opakovat.
+„slíbit všechno“. Prohra nic nebere, souboj jde opakovat. **Rudův vývoj** (vada „slibuje
+všechno“) stoupne o 1 při `c1_slib_vseho` < 3 (D81).
 
 ## Ukázkové dialogy
 

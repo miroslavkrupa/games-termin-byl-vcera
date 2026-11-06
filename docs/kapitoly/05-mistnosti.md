@@ -45,7 +45,7 @@ Za Archou je kus lávky, který z rampy není vidět.
 | Ing. Framework | postava | za Předsedou s krabicí „Krize“ a novou „Předání“; nastoupí s frontou (P5.1) | dialog `framework`: krabice „Předání“ ★ („Návod na všechno. Je prázdná.“) | – | ★ P5.5 |
 | Tým | postavy | čtyři členové u pódia s odbavenými lístky (vrácený člen s nimi) | mluvit → stránka návodu (P5.5); Norbert → pečeť (P5.4, systém ve světě iterací) | – | P5.4, P5.5 |
 | Norbert ve frontě | postava | bez Norberta v týmu: s kufrem a razítkem v kapse; ★ „Trup jsem podepsal z lavičky. Start vidím poprvé.“; při systému ve světě iterací zůstane u lávky („Nastoupím, až uvidím zkoušku.“) | mluvit → k pultu (P5.4) | jen bez Norberta | P5.4 |
-| Vrátný | postava | sedí v kabině jeřábu s prázdným hákem; po odpočtu stojí u dveří Archy s čepicí v ruce | dialog `vratny`: „Povedete Archu?“ (P5.6); R5.1 | – | P5.6, P5.15 |
+| Vrátný | postava | sedí v kabině jeřábu s prázdným hákem; po odpočtu stojí u dveří Archy s čepicí v ruce | dialog `vratny`: „Povedete Archu?“ (P5.6); deník jeřábu, když ho Ruda nemá („Píšu si všechno. Nikdo se nezeptal.“ naposledy, D81); R5.1 | – | P5.6, P5.12, P5.15 |
 | Bezpečnostní pult | aktivní místo | zkušební pult motorů z hangáru, kabelem spojený s trupem; řada pojistek se štítky, startovací klíč zamčený Norbertem, místo „Pečeť“; Bára: „Pevné pořadí. Nic se nemění. Rudův svět.“ | *Zkouška pojistek* vždy (P5.4; s *Ptát se dřív* ukáže i hodnoty, stav a přání); po odpočtu pojistky (P5.10–P5.14); klíč → „Na tři“ | – | P5.4, P5.10–P5.14 |
 | Kočka Riziková | postava | sedí na bezpečnostním pultu | ★ | jen `kocka` | gag |
 | Pódium | aktivní místo | pentle, mikrofon, cedule „Slavnostní start. Program: 1. Projev.“ | po předání → R5.2 | část C | P5.16 |
@@ -91,19 +91,19 @@ lahví z Plachetnice. Kartotéka seřazená podle skutečného zahájení s lís
 
 ## Předměty
 
-Dohromady **13 předmětů**: 9 z dřívějších kapitol (startovací klíč a plechovka barvy z kap. 4)
-a 4 nové. Plechovka barvy je jen ve variantě.
+Dohromady **13 předmětů**: 10 z dřívějších kapitol (startovací klíč a plechovka barvy z kap. 4)
+a 3 nové. Plechovka barvy je jen ve variantě.
 Ikony nových předmětů podle stylové bible (D52).
 
 | # | Předmět | Kdo | Kde vznikne | Kdy | Spotřebuje se | Poznámka |
 |---|---|---|---|---|---|---|
 | 1 | Prof. Pembok | Ruda | z kap. 1 | – | ne | nápověda |
 | 2 | Hrnek kávy | Ruda | z kap. 1 | – | nikdy | ★ |
-| 3 | Kávové pero | Ruda | z kap. 1 | – | ne | ★ |
+| 3 | Kávové pero (nebo propiska) | Ruda | z kap. 1 | – | ne | ★ |
 | 4 | Krabice od bot | Ruda | z kap. 2 | – | v P5.5 se změní v provozní manuál | |
 | 5 | Plán cesty ke startu | Ruda | z kap. 2 | – | ne | ★ („Poslední řádek: start. Splněno. Skoro.“) |
 | 6 | Rozpis rampy | Ruda | z kap. 3 | – | ne | ★ |
-| 7 | Deník jeřábu | Ruda | z kap. 4 | – | ne | P5.12 (váha), ★ |
+| 7 | Deník jeřábu | Ruda | z kap. 4; bez něj vrátný v S1 | – | ne | P5.12 (váha), ★ |
 | 8 | Svinovací metr | Bára | z kap. 1 | – | ne | nápověda za Báru |
 | 9 | Stránky návodu | Ruda | tým na rampě | kdykoli | v P5.5 | počítají se (1–4) |
 | 10 | Provozní manuál | Ruda | krabice od bot + 3 stránky | po P5.5 | v R5.1 (`poradne`) | |
@@ -136,7 +136,7 @@ Kdyby se potkaly dřív…“).
 | Hrnek kávy | ★ (vypije a zůstane sedět) | – | ★ | – | – | – | – | ★ („Za letu nepiju.“) | ★ („Na pult? Ne.“) | – | ★ |– | ★ („Kocour kafe nepije. Já dneska taky ne.“) |
 | Kávové pero | – | – | – | ★ (podepsat přání ★ „Podpis je slib.“) | – | – | ★ (stránku napíšou samy) | – | ★ | – | ★ („Výpůjčka mimo archiv? Ne.“) |– | – |
 | Krabice od bot | ★ („Na tebe tu lístek mám.“) | – | – | – | – | ★ („Kolega!“) | ✔ se stránkami (P5.5) | – | – | – | ★ |★ („Delší než krabice. Delší než Gantt.“) | ★ („Do krabice leze sám. Jen když nechceš.“) |
-| Plán cesty | – | ★ | – | – | ★ („Start byl ve fázi 3.“) | – | – | – | ★ | ★ | ★ |– | – |
+| Plán cesty | – | ★ | – | – | ★ („Start byl ve fázi 3.“) | – | – | ★ („Poslední řádek: start. To je plán, ne návod.“) | ★ | ★ | ★ |– | – |
 | Rozpis rampy | – | – | ★ | – | – | – | – | ★ („Ten mi pořád jde.“) | – | – | – |★ („Na rozpisu udice nejsou. Na výkresu taky ne.“) | – |
 | Deník jeřábu | – | – | – | – | – | – | – | ★ („Tu si nechte. Já začnu nový. Lodní.“) | ✔ váha (P5.12) | – | ★ („Založím. Až se vrátím.“) |– | – |
 | Stránky / provozní manuál | – | – | – | – | – | ★ („Prodám to.“) | – | ✔ v R5.1 / ★ dřív („To si přečtu v letu.“) | – | ★ | ★ |★ („Rybáři čtou jen hvězdy.“) | – |

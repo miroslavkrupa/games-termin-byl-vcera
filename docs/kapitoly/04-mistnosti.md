@@ -100,7 +100,7 @@ po žebříku se leze na palubu. V aktu B stojí v bočních dveřích dílny po
 | Zkušební pult motorů | aktivní místo | klíčová dírka, páčka Start, kontrolka „Řídicí systém“ | startovací klíč → zkouška motorů (s palivem); bez paliva ★ „Bez paliva startuje jen Gantt.“ | akt B | P4.10 |
 | Otvor ve střeše | aktivní místo | „Tudy sem vrátný spustí cokoli. Říkal.“ | – | – | stopa P4.10 |
 | Žebřík na palubu | východ / aktivní místo | „Odtud je vidět celé město. A kometa.“ | → paluba (M11 po usmíření); `odmitnuta`: kocour | – | P4.13, P4.28 |
-| Ještětoto | postava | podle `c3_creep`: „Malý. Pořád.“ / „Už se nevejde do hangáru.“ | Bára: metr → lístek Změny | – | P4.5 |
+| Ještětoto | postava | podle `c3_creep`, po R4.2 podle `c4_creep`: „Malý. Pořád.“ / „Už se nevejde do hangáru.“ | Bára: metr → lístek Změny | – | P4.5 |
 | Docházka na stěně | aktivní místo | „Pět podpisů denně. Spokojenost pět z pěti.“; Bára: „Všechny podpisy psal Kryštof.“ (bez Kryštofa: „automat na podpisy“) | – | – | stopa P4.6 |
 | Tým na bednách | postavy | kdo je v týmu (bez odešlého) | mluvit → „Jak se máš?“ (P4.6); Norbert → startovací klíč (akt B; jako posel na staveništi); člen s klíčem otevře poklop (P4.2) | – | P4.2, P4.6, P4.10 |
 | Pan Změna | postava | sedí u hadice, cedule „Bazén pro všechny“ | dialog `zmena` → kašna (P4.17) | jen `c3_bazen_v_trupu` a bazén neobětovaný v R4.2 | P4.17 |
@@ -186,13 +186,13 @@ předmětů podle stylové bible (D52). Lístky skutečnosti nejsou předměty (
 |---|---|---|---|---|---|---|
 | 1 | Prof. Pembok | Ruda | z kap. 1 | – | ne | nápověda |
 | 2 | Hrnek kávy | Ruda | z kap. 1 | – | nikdy | |
-| 3 | Kávové pero | Ruda | z kap. 1 | – | ne | |
+| 3 | Kávové pero (nebo propiska) | Ruda | z kap. 1 | – | ne | |
 | 4 | Krabice od bot s lístky | Ruda | z kap. 2 | – | ne | ★; lístky rizik jako vtip |
 | 5 | Plán cesty ke startu | Ruda | z kap. 2 | – | ne | ★ u Předsedy („Start je ve fázi 3.“) |
 | 6 | Rozpis rampy | Ruda | z kap. 3 | – | ne (Bára si ho opíše, posel ho vrátí) | P4.1, P4.18 |
 | 7 | Svinovací metr | Bára | z kap. 1 | – | ne | P4.5; nápověda za Báru |
 | 8 | Seznam pasažérů | Bára | z kap. 1 | – | v P4.21 se změní v plán Komise | D59 |
-| 9 | Kopie Předsedových podpisů | Ruda | z kap. 2 | jen `usmev` | v konfrontaci | náhrada za kterýkoli důkaz |
+| 9 | Kopie Předsedových podpisů | Ruda | z kap. 2 (konec, D81) | jen `usmev` | v konfrontaci | náhrada za kterýkoli důkaz |
 | 10 | Deník jeřábu | Ruda | vrátný | kdykoli | ne | P4.1; bez Věry P4.15 |
 | 11 | Startovací klíč | Ruda | Norbert (bez Norberta vrátný) | akt B | v pultu | P4.10 |
 | 12 | Kuchyňská minutka | Bára | dílna | akt B | u Lumíra („Budík. Konečně.“) | P4.19 |

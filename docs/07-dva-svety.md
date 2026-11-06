@@ -82,9 +82,12 @@ Přiřazení miniher k patrům je v [seznamu miniher](04-minihry.md).
 
 | Konec | Co se stalo |
 |---|---|
-| **Jen plán** | rampa je dokonalá, ale nikdo neví, jak nastoupit, a řídicí systém nefunguje |
-| **Jen iterace** | skvělá aplikace a útulné kajuty, ale rampa zůstala ve „fázi 2“ a Předseda vyhrál |
-| **Spojení** (pravý konec) | Archa letí, Ruda poprvé řekne „my“ a Bára poprvé řekne termín |
+| **Pomník** (jen plán) | Archa odstartuje na vteřinu přesně, ale uvnitř nikdo neví, kde sedí; obletí město a přistane, kde začala |
+| **Druhá etapa** (jen iterace) | skvělá aplikace a útulné kajuty, ale bezpečnostní systém z krabice má limit metr; Předseda vyhrál |
+| **Hrdina** a **Tým** (spojení) | Archa letí a přistane; Ruda si připíše zásluhy, nebo řekne „my“ a tým jde na další projekt |
+
+Přesné podmínky, epilog podle Bářiny důvěry (termín) a scéna po titulcích jsou v [bibli](03-pribehova-bible.md#konce)
+a v [návrhu kapitoly 5](kapitoly/05-uzavreni.md#konce) (D79).
 
 Konce kombinují metodickou osu s Rudovým osobním vývojem (viz [příběhová bible](03-pribehova-bible.md)).
 

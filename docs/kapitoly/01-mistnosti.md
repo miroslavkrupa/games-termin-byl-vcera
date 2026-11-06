@@ -33,7 +33,7 @@ prohlédnout, sebrat, použít, rozhovor.
 | Stůl | aktivní místo | hrnek kávy a zkušenosti ze čtrnácti projektů, „funguje jen ta káva“ | – | – | |
 | Hrnek kávy | aktivní místo | na stole, jediná věc v bytě, která funguje | sebrat → **hrnek kávy** | – | učí sebrat; po sebrání zmizí |
 | Police s knihou | aktivní místo | dárek k narozeninám, nikdy neotevřený | sebrat → **Prof. Pembok** | – | Pembok zatím mlčí |
-| Zeď slávy | aktivní místo | 14 diplomů za 14 projektů; č. 9 „týdenní výměna žárovek, 6 let, probíhá“ | Ruda: „To nebyl projekt, to byl provoz.“ | – | V01, volitelné |
+| Zeď slávy | aktivní místo | 14 diplomů za 14 projektů; č. 9 „týdenní výměna žárovek, 6 let, probíhá“, pod ním Gantt na výměnu žárovek (šest let, jeden řádek) | Ruda: „To nebyl projekt, to byl provoz.“; ★ Gantt: „Jeden řádek. Šest let. Pořád platí.“ (D81, text v N6) | – | V01, volitelné; Gantt od kap. 1 (H26) |
 | Dveře | aktivní místo | buší na ně věřitelé | rozhovor přes dveře; volba „Co chcete?“: pode dveřmi „stížnost“ a propiska, Ruda podepíše (propiska nepíše) a ukápne na papír kávu → **dekret** a **propiska** | podpis jen s hrnkem kávy | učí rozhovor; vznik dekretu; propisku si Ruda nechá |
 | Škvíra pode dveřmi | aktivní místo | chodí jí účty, upomínky a průvan | – | – | jen k prohlédnutí |
 | Díra ve zdi | východ | chybějící stěna, výhled na město, skluz na suť | → S1 | dekret, káva a Pembok v inventáři (propiska přijde s dekretem) | jen jednou |
@@ -119,17 +119,17 @@ Ruda má 15 předmětů, Bára 2 (ikony 1–17, D52).
 
 | # | Předmět | Kde vznikne | Kdy | Spotřebuje se | Ikona |
 |---|---|---|---|---|---|
-| 1 | Jmenovací dekret | Ú, škvíra pode dveřmi | úvod | ne (důkaz, kdo je Ruda) | ikony-1 #1 |
+| 1 | Jmenovací dekret | Ú, škvíra pode dveřmi | úvod | ne (důkaz, kdo je Ruda); zůstane v kap. 1, kap. 2 ho uloží | ikony-1 #1 |
 | 2 | Hrnek kávy | Ú, stůl | úvod | nikdy (nekonečný) | ikony-1 #2 |
 | 3 | Propiska bez inkoustu | Ú, pode dveřmi s dekretem | úvod | kombinací s kávou | ikony-1 #3 |
 | 4 | Kávové pero | propiska + káva | kdykoli | ne | ikony-1 #4 |
 | 5 | Prof. Pembok | Ú, police | úvod | ne (nápověda) | ikony-1 #5 |
-| 6 | Plakát Archy | S1, Pan Změna | cesta B k číslu | ne | ikony-1 #6 |
-| 7 | Požadavek Pana Změny | S1, kávové pero na stánek | cesta B | ne (vrací se v kap. 3) | ikony-1 #7 |
+| 6 | Plakát Archy | S1, Pan Změna | cesta B k číslu | ne; zůstane v kap. 1 | ikony-1 #6 |
+| 7 | Požadavek Pana Změny | S1, kávové pero na stánek | cesta B | ne; zůstane v kap. 1, kap. 3 čte jen `c1_zmena_dohoda` | ikony-1 #7 |
 | 8 | Tlačítko „2“ | S3, krabice výtahu | po vstupu do archivu | ve výtahu | ikony-1 #8 |
 | 9 | Původní zadání Archy | S3, kartotéka | po seřazení | v M01 (útržek cíle) | ikony-1 #9 |
-| 10 | Karta poučení (Most 1974) | S3, Lumírova krabička Poučení | po výpůjčce kávovým perem | ne (replika do M03) | ikony-2 #1 |
-| 11 | Katastrální mapa | S3, mapník | po vstupu do archivu | ne (M02, babička) | ikony-2 #2 |
+| 10 | Karta poučení (Most 1974) | S3, Lumírova krabička Poučení | po výpůjčce kávovým perem | ne (replika do M03); zůstane v kap. 1, v kap. 4 připluje jako první lahev v M11 | ikony-2 #1 |
+| 11 | Katastrální mapa | S3, mapník | po vstupu do archivu | ne (M02, babička); zůstane v kap. 1 | ikony-2 #2 |
 | 12 | Razítková poduška | S6, babička | jen spojenec (R1.2) | při razítku | ikony-2 #3 |
 | 13 | Podpis sponzora | S4, starosta | po M03 | v M01 | ikony-2 #4 |
 | 14 | Charter | S5, M01 | po M02 | při razítku | ikony-2 #5 |

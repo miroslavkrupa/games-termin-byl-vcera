@@ -133,7 +133,7 @@ poduška z kapitoly 1 (podle `c1_razitko` babiččina modrá, nebo hnědě zasch
 | Předseda | postava | vlídný jako vždy | dialog `predseda` | – | P2.8 |
 | Fronta | aktivní místo | dnes jen fronta, bez fronty na frontu; „pokrok“ | – | – | gag |
 | Razítko | aktivní místo | podle `c1_razitko` | – | – | |
-| Telefon | aktivní místo | mlčí | – | – | zvoní jen v kap. 1 a 4 |
+| Telefon | aktivní místo | mlčí | – | – | zvoní jen v kap. 1 |
 | Výtah | východ | – | → S1 (střih) | – | |
 
 ## Předměty
@@ -146,7 +146,7 @@ stylové bible (D52 platí pro kap. 1).
 | 1 | Prof. Pembok | z kap. 1 | – | ne | nápověda |
 | 2 | Hrnek kávy | z kap. 1 | – | nikdy | |
 | 3 | Kávové pero (nebo propiska) | z kap. 1 | – | ne | propisku jde s kávou spojit i tady |
-| 4 | Klíč od hangáru | z kap. 1 | – | na bráně (zůstane v zámku) | |
+| 4 | Klíč od hangáru | z kap. 1 | – | ano, na bráně (zůstane v zámku) | |
 | 5 | Křída | S4, tabule „Odhad dne“ | kdykoli | v M04 (zbytek na Gantt v hangáru) | |
 | 6 | Tácky | S4, výčep | kdykoli | v P2.3 | |
 | 7 | Odhad na tácku | P2.3 | po R2.1 | v M06 | „15“, nebo „2“ při kotvě |
@@ -156,6 +156,7 @@ stylové bible (D52 platí pro kap. 1).
 | 11 | List „Den dopadu“ | S3, kalendář | jen `c1_faze2` | v S6 | P2.8 |
 | 12 | Plán cesty ke startu | M06 | po M06 | v S6 (orazítkovaný zůstane) | |
 | 13 | Buchta | S2, babiččin plot | jen spojenec | sní se (★ kdekoli) | gag |
+| 14 | Kopie Předsedových podpisů | S6, razítko plánu cesty | jen `usmev`, konec kapitoly | ne (kap. 4, konfrontace) | D81; nese se přes kap. 3 |
 
 **Kontrola slepých uliček:** křída a tácky leží v hospodě od začátku a neubývají (vezme se jen
 jeden kus, další zůstane na tabuli a výčepu). Obálka se nedá utratit jinde než v M07. Formulář

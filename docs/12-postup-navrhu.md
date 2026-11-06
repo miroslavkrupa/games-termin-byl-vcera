@@ -46,7 +46,7 @@
 | **N2** | Kostry kapitol 2–5 | kostry a mapa následků (celek dřív než detail) | ✅ kostry a mapa následků schváleny (D62) | 4–8 h |
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 hotová, kapitola 2 hotová ([návrh](kapitoly/02-planovani.md), D69), kapitola 3 hotová ([návrh](kapitoly/03-realizace.md), D72), kapitola 4 hotová ([návrh](kapitoly/04-krize.md), D77, široký graf, rozpočet překročen), kapitola 5 hotová ([návrh](kapitoly/05-uzavreni.md), D79, rozpočet mírně překročen) | 50–95 h |
 | **N4** | Autorská kontrola každé kapitoly | autor projde kapitolu sám, opravy | ⚠️ kapitola 1 ✅ ([kontrola](kapitoly/01-kontrola.md), D67), kapitola 2 ✅ ([kontrola](kapitoly/02-kontrola.md), D68), 3 ✅ ([kontrola](kapitoly/03-kontrola.md), D73), 4 ✅ ([kontrola](kapitoly/04-kontrola.md), D78), 5 ✅ ([kontrola](kapitoly/05-kontrola.md), D80); papírový průchod s hráči zrušen (D66) | 5–10 h |
-| **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ❌ | 4–8 h |
+| **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ⚠️ [kontrola hotová](14-kontrola-hry.md), opravy textu zapracované (D81); 10 rozhodnutí autora do brány A | 4–8 h |
 | **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65); brána B až po N4 a N5 | 15–25 h na kapitolu 1 |
 | **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⏸️ I1 hotová, I2+ čekají na bránu B | 40–65 h |
 | **N8** | Playtest | 5 hráčů, opravy → milník **ME** | – | 8–15 h |

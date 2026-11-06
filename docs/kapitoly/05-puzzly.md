@@ -155,7 +155,7 @@ pravidlo pro kapitolu 3 (panel „předělává se každý týden“) i 5 (P5.4)
   Klára (kajuty), Pepa („Všechno trvá dva dny.“ ★, počítá se), Zdenda („Když nevíš, zavolej
   Rudovi.“ ★), Kryštof (předávací protokol, „Konečně ho někdo chce.“). Vrácený člen týmu
   (`c4_clen_zpet`) připíše „Proč jsem odešel“ ★.
-- **Stopy ve světě:** Gantt jako návod ★ („Řádek 214: start. Úterý. To je plán stavby, ne návod.“);
+- **Stopy ve světě:** plán cesty jako návod ★ („Poslední řádek: start. Splněno. Skoro. To je plán, ne návod.“);
   vrátný: „A kde se to vypíná?“; Pembok: „Kdo to bude řídit, až tu nebudeš?“
 - **Chybné, ale logické pokusy:** napsat návod sám (★ „Strana jedna: Ruda. Strana dvě: viz strana
   jedna.“), Frameworkova krabice „Předání“ (★ „Je prázdná. Návod na všechno.“), deník jeřábu (★
@@ -174,7 +174,7 @@ pravidlo pro kapitolu 3 (panel „předělává se každý týden“) i 5 (P5.4)
   nečekal.“) a jde do věže za Bárou. Po odpočtu sejde ke dveřím Archy sám, zaučený nebo ne
   („Dole mě budou potřebovat.“). Bez P5.6 sleze z jeřábu po odpočtu taky a čeká u dveří.
 - **Stopy ve světě:** vrátný řídí jediný stroj ve městě; Bára: „Kdo umí řídit něco velkého?“;
-  Pembok: „Kdo tu dvacet let řídil a nikdo se ho nezeptal?“; rybáři: „Kapitán? Vrátný. Jezdí
+  Pembok: „Kdo tu měl třicet let průkaz a nikdo se ho nezeptal?“; rybáři: „Kapitán? Vrátný. Jezdí
   pomalu a dívá se.“
 - **Chybné, ale logické pokusy:** Ruda se navrhne sám (★ Pembok: „A kdo bude na pódiu?“), Pepa
   (★ „Naučím se to za dva dny.“), Pan Změna (★ „Můžu měnit kurz?“).
@@ -287,7 +287,7 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 |---|---|---|---|
 | `kabel`, `start` | úhel rampy: rampa 12°, navigace 14° | rampa (beton) | *Převzít z rampy* |
 | `pocitadlo` | počet míst: výkres 4 812 sedadel, věž 4 812 lidí a kocour | věž (lidé) | *Převzít z věže* |
-| `svaciny`, `bazen` | váha: pult počítá s nákladem, který v Arše není | skutečná váha | Ruda použije deník jeřábu na pult (co jeřáb opravdu naložil) |
+| `svaciny`, `bazen` | váha: pult počítá s nákladem, který v Arše není | skutečná váha | Ruda použije deník jeřábu na pult (co jeřáb opravdu naložil); bez deníku z kap. 4 ho dá vrátný na požádání (D81) |
 | `navigace`, `lavka` | nezbude nikdy (navigace se nahrává první, lávka se řeší v aktu B) | – | – |
 
   Stejný pár se ukáže jen jednou, i když na něj vede víc bodů.
@@ -298,7 +298,7 @@ Odpočet se zastaví na „tři“. Bezpečnostní pult na rampě: „Start zabl
 - **Stopy ve světě:** u každé hodnoty malá ikona (beton, panáček, nebo hák jeřábu); Bára: „Co je
   z betonu, měř u tebe. Co dýchá, počítám já. A co se nakládalo, ví vrátný.“; M15 z kap. 3.
 - **Nápověda:** 1 „Kdo tu hodnotu zná líp?“ · 2 „Beton měříš ty. Lidi počítá Bára. Náklad zapsal
-  vrátný.“ · 3 zvýrazní správné tlačítko (u váhy deník).
+  vrátný.“ · 3 zvýrazní správné tlačítko (u váhy „Vrátný má deník.“, když ho Ruda nemá).
 - **Příznaky:** –
 - **Co nese:** V25; sladění podle povahy hodnoty, ne podle toho, kdo má pravdu.
 - **Riziko:** kvíz. Proto jen 1–3 páry a ikona u každé hodnoty.

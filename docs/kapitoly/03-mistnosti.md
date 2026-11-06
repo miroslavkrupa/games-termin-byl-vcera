@@ -79,6 +79,7 @@ B je tu stánek s ukázkou (nástupní sloupek a maketa kajuty).
 | Amplion | aktivní místo | „Dnů do dopadu komety: 24.“ a dál podle fáze | – | – | |
 | Kometa | aktivní místo | větší, ve dne | – | – | |
 | Kašna | aktivní místo | teče z ní kafe; rybáři v ní chytají | – | – | |
+| Ing. Framework | postava | ve fázi B u stánku s krabicí „Ukázka“ („Ukázka v krabici. Ukazuje se sama.“); při `krabice` vede ukázky podle své krabice | ★ | fáze B | D81: Framework zní v kap. 3 vždy, kap. 4 staví na jeho smlouvě |
 | Rybáři | aktivní místo (skupina) | „Chytáme, co teče.“ udice delší než oni | mluvit: „Na Archu? S udicemi, nebo vůbec.“ | – | stopa M14 (udice) |
 | Obyvatelé s kufry | aktivní místo (skupina) | pořád nevědí, kudy nastoupit | mluvit: „Kudy se bude nastupovat?“ | – | stopa M14 (šipky) |
 | Babička | postava | ve fázi B přišla na ukázku; noviny čte s lupou | dialog `babicka` | fáze B | stopa M14; podle `c1_babicka`; spojenkyně na ukázce: „Konečně se někdo ptá.“ (K9) |
@@ -161,8 +162,9 @@ průchodu jich hráč uvidí 11–13. Ikony nových předmětů podle stylové b
 | 5 | Plán cesty ke startu | Ruda | z kap. 2 | – | ne | při `c1_faze2` zarazí Předsedu (M10) |
 | 6 | Svinovací metr | Bára | z kap. 1 | – | ne | nápověda za Báru |
 | 7 | Seznam pasažérů | Bára | z kap. 1 | – | ne (kap. 4) | ★ „Ještě ne.“ (D59) |
+| 7b | Kopie Předsedových podpisů | Ruda | z kap. 2 | jen `usmev` | ne (kap. 4) | D81; ★ u Předsedy („Další kopie? Výborně.“) |
 | 8 | Žádosti o změnu (tři kopie) | Ruda | Předseda v úvodu | fáze A | v P3.2 jako stopa krysám | Předseda je dá znovu |
-| 9 | Klíč od skladu | Ruda | vrátný | fáze B, bez Věry hned (D75) | ne (zůstane v zámku) | P3.2 |
+| 9 | Klíč od skladu | Ruda | vrátný | fáze B, bez Věry hned (D75) | ano (zůstane v zámku) | P3.2 |
 | 10 | Výpočet statika z roku 1994 | Ruda | hnízdo ve skladu | po P3.2, jen bez Věry | u jeřábníka | P3.3 |
 | 11 | Rozpis rampy | Ruda | M13 | po M13 | ne (dá se Báře a ona ho vrátí) | M15 |
 | 12 | Servisní poklop | Ruda | sklad | po P3.2 | v trupu | P3.10 |

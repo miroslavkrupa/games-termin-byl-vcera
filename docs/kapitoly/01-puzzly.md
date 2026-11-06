@@ -136,7 +136,7 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Stopy ve světě:** díra místo tlačítka (prohlédnutí výtahu); lístek výtahu v kartotéce
   (hotovo v I1); Lumír vydává krabice „jen podle čísla, jako lidé“.
 - **Chybné, ale logické pokusy:** jít po schodech (zatarasené), vyjet do 1½ a vylézt (Ruda:
-  „Půl patra lezení. Na to nemám charter.“).
+  „Půl patra lezení. Na to nemám papír.“).
 - **Nápověda:** 1 „Výtahy se tu modernizují dlouho.“ · 2 „V archivu je projekt Modernizace
   výtahu. Co v té krabici asi zbylo?“ · 3 „Řekni si Lumírovi o krabici výtahu.“
 - **Příznaky:** tlačítko zůstane ve výtahu natrvalo.
@@ -218,7 +218,7 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Chybné, ale logické pokusy:** nesmysly Pana Změny a Předsedy vyplní kolonku, ale sníží
   kvalitu. Bez Bářiných kritérií zbude jen „Všichni budou spokojení“.
 - **Nápověda:** v minihře.
-- **Příznaky:** `c1_charter_kvalita` (0–3), předmět **charter**.
+- **Příznaky:** `c1_charter_kvalita` (0–3), předmět **charter** (ve hře se jmenuje *papír o Arše*, D63; „charter“ je jen autorský název).
 - **Co nese:** V03.
 - **Riziko:** může působit jako formulář. Humor v útržcích.
 

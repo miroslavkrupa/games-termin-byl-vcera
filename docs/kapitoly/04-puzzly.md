@@ -196,7 +196,7 @@ jde poslat i bez nich.
 - **Překážka:** starosta chce, co slíbil novinám.
 - **Řešení:** M03 ([pravidla](04-krize.md#m03-souboj-argumenty-se-starostou)). Starosta přijede
   hned po zprávě, Bára přijde střihem. Dobré repliky se ukážou jen s podklady: lístky
-  na tabuli, charter z kap. 1, varianty ze zprávy.
+  na tabuli, papír o Arše z kap. 1, varianty ze zprávy.
 - **Stopy ve světě:** tabule za zády (podklady); Bára šeptá číslo z lístku Počítadlo; Pembok.
 - **Chybné, ale logické pokusy:** rychlé repliky (sliby) kolo vyhrají a přičtou `c4_slib`.
 - **Nápověda:** 1 „Ukaž mu, co víš. Za tebou visí.“ · 2 „Na každou námitku je lístek.“ · 3 v minihře
@@ -229,7 +229,7 @@ jde poslat i bez nich.
   nepočítá („Bazén nepatří. To jsem podepsal.“). Obětovaná velká tlačítka: `c4_nastup` −1.
   Pomník obětuje Ruda nerad („Ten se počítá jako motivace.“).
 - **Stopy ve světě:** výsledek M14 z kap. 3 (velká tlačítka a udice jsou dílky, které lidé chtěli:
-  jdou obětovat, ale obyvatelé to v kap. 5 pocítí); charter „co nepatří“; Věra: „Trup víc
+  jdou obětovat, ale obyvatelé to v kap. 5 pocítí); papír o Arše: „co nepatří“; Věra: „Trup víc
   neunese.“
 - **Chybné, ale logické pokusy:** obětovat nic (tabule nejde potvrdit: „Nevejde se.“), obětovat
   velká tlačítka (projde, Bára: „To lidi chtěli.“).

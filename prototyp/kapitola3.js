@@ -147,7 +147,7 @@
           c2_tym: 'zdenda-krystof-pepa-vera', c2_tym_pokryti: 2, c2_rozdeleni: 'gantt', c2_vyjimky: 0,
           c2_riziko_predem: 'usmev', c2_rizika_zapsana: 'krysy-lano-usmev', c2_odhad: 'kotva', c2_rozpad: 3, c2_mosty: 'start',
         },
-        predmety: ['pembok', 'kava', 'propiska', 'krabice', 'plan'],
+        predmety: ['pembok', 'kava', 'propiska', 'krabice', 'plan', 'kopie'],
       },
     },
 
@@ -173,6 +173,7 @@
       kavove_pero: { nazev: 'predmet_kavove_pero', prohlednout: 'predmet_kavove_pero_prohlednout' },
       propiska: { nazev: 'predmet_propiska', prohlednout: 'predmet_propiska_prohlednout' },
       klic: { nazev: 'predmet_klic', prohlednout: 'ch2_klic_prohlednout' },
+      kopie: { nazev: 'predmet_kopie', prohlednout: 'ch2_kopie_prohlednout' },
       krabice: { nazev: 'predmet_krabice', prohlednout: 'ch3_krabice_prohlednout' },
       plan: { nazev: 'predmet_plan', prohlednout: { kdy: 'c1_faze2', akce: 'ch3_plan_prohlednout_faze', jinak: 'ch3_plan_prohlednout' } },
       buchta: { nazev: 'predmet_buchta', prohlednout: 'predmet_buchta_prohlednout', pouzit: ['ch2_buchta_snist', '-buchta'] },
@@ -868,7 +869,7 @@
       if (karty.length > m.kapacita + 2) { h.rekni('ch3_plan_moc'); return { hotovo: false }; }
       const nad = Math.max(0, karty.length - m.kapacita);
       return hotovo(karty, [
-        '$c3_cil=' + v.cil, v.cil === 'cesta' ? 'ch3_plan_cil_cesta_ok' : 'ch3_plan_cil_hotove_ok',
+        v.cil === 'cesta' ? 'ch3_plan_cil_cesta_ok' : 'ch3_plan_cil_hotove_ok',
         ...(nad ? ['$c3_dluh+' + nad, { kdy: TYM('pepa'), akce: 'ch3_plan_pepa_dva_dny', jinak: 'ch3_plan_navic' }] : [])]);
     },
   };

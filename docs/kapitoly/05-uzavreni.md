@@ -81,14 +81,15 @@ při předání (Archu povede někdo jiný) a na pódiu (R5.2).
 Ráno po kapitole 4, zbývá 0 („Dnes“). Archa stojí na plošině, obyvatelé čekají ve frontě
 na lávce s kufry a s palubními lístky z kapitoly 4. Ruda je na rampě, Bára ve věži.
 
-**Ruda** má Prof. Pemboka, hrnek kávy, kávové pero, krabici od bot, plán cesty ke startu,
-rozpis rampy a deník jeřábu. **Bára** má svinovací metr a ráno přinesla z dílny plechovku žluté
+**Ruda** má Prof. Pemboka, hrnek kávy, kávové pero (nebo propisku), krabici od bot, plán cesty ke startu,
+rozpis rampy a deník jeřábu (když si ho v kap. 4 neřekl, dá mu ho vrátný na rampě, D81). **Bára** má svinovací metr a ráno přinesla z dílny plechovku žluté
 barvy (zbyla z natřené žárovky). Ostatní předměty kapitoly 4 se spotřebovaly v konfrontaci, při
 nástupní zkoušce a v poklopu; nepoužité důkazy si na konci kapitoly 4 vzal starosta „pro noviny“.
 
 **Bezpečnostní pult (D80):** zkušební pult motorů vyjel s Archou z hangáru a stojí na rampě jako
 bezpečnostní pult, spojený kabelem s panelem bezpečnostního systému v trupu. Norbert do něj ráno
-zamkl startovací klíč: „Klíč patří do pojistek, dokud start nepovolí.“ Po „Na tři“ ho pult vydá
+zamkl startovací klíč: „Klíč patří do pojistek, dokud start nepovolí.“ (bez Norberta v týmu ho
+zamkl vrátný: „Mám klíče od všeho.“) Po „Na tři“ ho pult vydá
 a vrátný ho zasune v kokpitu.
 
 **Počítadlo (D80)** počítá odbavené palubní lístky, ne lidi v Arše. Tým, vrátný, Zelenka
@@ -128,7 +129,8 @@ co vidíš?“) a ve finále se zeptá „Na čí tři?“ (P5.14).
 
 **Startovní rampa** je nové pozadí: horní konec rampy se zabetonovanou plošinou a Archou,
 pohled zblízka na dveře, lávku a frontu. Staveniště rampy z kapitol 2–4 je vidět dole jako
-pozadí, jeřáb stojí naposledy s prázdným hákem. **Na radnici** je přechod jako v kapitole 4:
+pozadí, jeřáb stojí naposledy s prázdným hákem. **Na radnici** je přechod jako v kapitole 4
+(ve vestibulu Ruda: „Výtah do půlky patra. I dnes.“):
 ze startovní rampy vede do archivu přes ranní náměstí a vestibul. Hangár, dílna, trup, Komise,
 sklad, hospoda a Mlžná pláň se nepoužívají (Mlžná pláň je vidět v konci).
 
@@ -139,8 +141,9 @@ dispečer Zelenka, starosta Bohumil, Lumír, babička a kocour, obyvatelé, ryb�
 Ještětoto (velikost podle `c4_creep`), Předseda a Ing. Framework ve frontě, kočka Riziková
 (jen `kocka`), Norbert (i mimo tým, jako cestující). **Nové: žádné.**
 
-**Kapitán Archy (D79):** Archu převezme **vrátný**. Dvacet let řídí jediný jeřáb ve městě, zná
-rampu podle deníku a od kapitoly 1 říká „Nikdo se nikdy nezeptal.“ V kapitole 5 se ho Ruda
+**Kapitán Archy (D79):** Archu převezme **vrátný**. Třicet let má průkaz na jediný jeřáb ve městě
+a nikdo se ho nezeptal; řídí ho od kapitoly 2, zná rampu podle deníku a od kapitoly 1 říká
+„Nikdo se nikdy nezeptal.“ V kapitole 5 se ho Ruda
 konečně zeptá, jestli Archu povede (P5.6). Posádku tvoří rybáři („Na hvězdy koukáme
 celý život. Ryby nebraly.“).
 
@@ -160,8 +163,8 @@ celý život. Ryby nebraly.“).
 ### Úvod (dnes, ráno)
 
 1. **Poslední den.** Amplion: „Dnů do dopadu: nula. Prosíme občany, aby se nalodili podle pořadí
-   na lístku.“ Ruda: „Konečně termín, který nikdo neposune.“ Pembok: „Kometa se nepřeplánuje.“
-   Fronta na lávce, Ještětoto ve dveřích Archy. Bára vysílačkou z věže: „Věž připravená.
+   na lístku.“ Ruda: „Konečně termín, který nikdo neposune.“ Pembok: „Kometa se nepřeplánuje.
+   A tohle už jsi říkal. Čtyřikrát.“ Fronta na lávce, Ještětoto ve dveřích Archy. Bára vysílačkou z věže: „Věž připravená.
    Odpočet čeká na nástup.“ Podrobně v části [Úvod a konec](#úvod-a-konec).
 
 ### Část A: Poslední ráno (Ruda i Bára)
@@ -219,7 +222,7 @@ Po „Na tři“ pult vydá **startovací klíč**: „Pojistky uvolněny. Klí�
     a počítadlo v kokpitu ukáže **4 812 / 4 812** (D64). Vrátný zasune klíč a otočí jím. Na sedadlech je vidět,
     že Ruda i Bára mají žluté ponožky. Člen týmu (první podle pořadí Pepa, Klára, Zdenda, Kryštof,
     Věra, Norbert): „Vy máte stejné ponožky.“ Bára: „Všimli jste si až teď.“ (D31). Odpočet
-    dojede: „Tři. Dva. Jedna.“ Konec podle [stavu](#konce).
+    dojede: „Tři. Dva…“ Pepa (v týmu): „Dny.“ „…Jedna.“ Konec podle [stavu](#konce).
 
 ## Rozhodnutí kapitoly
 
@@ -265,7 +268,7 @@ R4.1 poctivá zpráva, R5.2 „my“.
 
 | Konec | Podmínka (pracovní) | Co se stane po startu |
 |---|---|---|
-| **Pomník** (jen plán) | sladění nízké a převažuje plán: `c2_rozdeleni` = `gantt`, nebo `povaha` s `c4_usmireni` = `trval` | Archa odstartuje přesně na vteřinu. Uvnitř nikdo neví, kde sedí: kajuty jsou „podle výkresu“ a navigace bez lidí. Archa obletí město a přistane tam, kde začala. Kometa dopadne do Mlžné pláně. Rudovi postaví pomník za nejpřesnější start v dějinách města. Nedokončený |
+| **Pomník** (jen plán) | sladění nízké a převažuje plán: `c2_rozdeleni` = `gantt`, nebo `povaha` s `c4_usmireni` = `trval` | Archa odstartuje přesně na vteřinu. Uvnitř nikdo neví, kde sedí: kajuty jsou „podle výkresu“ a navigace bez lidí (při `c3_gantt_v_aplikaci`: „V aplikaci byl Gantt. Lidé ne.“). Archa obletí město a přistane tam, kde začala. Kometa dopadne do Mlžné pláně. Rudovi postaví pomník za nejpřesnější start v dějinách města. Nedokončený |
 | **Druhá etapa** (jen iterace) | sladění nízké a převažuje iterace: `c2_rozdeleni` = `krabice`, nebo `povaha` s `priznal` | aplikace vede každého na jeho místo, kajuty jsou útulné, ale bezpečnostní systém z krabice má výškový limit „na zkoušku“: jeden metr. Kometa mine město o metr. Komise vyhlásí „fázi 3“, Archa visí metr nad rampou a Předseda vyhrál |
 | **Hrdina** | sladění vysoké a ne Tým (vývoj ≤ 3, nebo R5.2 = „já“) | Archa vzlétne nad mraky, počká, až kometa dopadne, a přistane zpátky na rampě. Ruda dostane od starosty medaili a všechny zásluhy. Tým se rozejde; při „my“ to Ruda řekl, ale pozdě („Tým už je na jiných projektech.“) |
 | **Tým** (pravý konec) | sladění vysoké, Rudův vývoj ≥ 4 včetně „my“ | Archa vzlétne, počká a přistane. Ruda na rampě řekne „my“ znovu, tentokrát bez mikrofonu. Tým jde rovnou na další projekt: sundat lešení z radnice |
@@ -301,7 +304,8 @@ kapitola, kterou nemusím opravovat.“
 
 1. Titulek *Kapitola 5: Hotovo*. Ráno, kometa zabírá půl oblohy. Archa stojí na plošině.
 2. Amplion: „Dnů do dopadu: nula. Prosíme občany, aby se nalodili podle pořadí na lístku.“
-   Ruda: „Konečně termín, který nikdo neposune.“ Pembok: „Kometa se nepřeplánuje.“
+   Ruda: „Konečně termín, který nikdo neposune.“ Pembok: „Kometa se nepřeplánuje. A tohle už jsi
+   říkal. Čtyřikrát.“ (úvodní trojhláška kap. 2–5 jako vtip, D81)
 3. Fronta na lávce: babička s kocourem v kleci (prázdnou, jen když babička uvízne), rybáři s udicemi, Pan Změna s plovacími kruhy
    (s bazénem v kap. 3–4: „Pro všechny.“), na konci Předseda s kufrem a Ing. Framework s krabicí
    „Krize“. Ještětoto sedí ve dveřích Archy.

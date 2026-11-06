@@ -298,13 +298,16 @@ Všechny tři se testují až ve hře (D53, D66). Rozhraní nepoužívá odborn�
 ### Konec kapitoly
 
 1. Předseda orazítkuje plán cesty: „Vítám. Vítám.“ (s úsměvem, který si hráč možná zapsal).
+   Při `c2_riziko_predem` = `usmev` si Ruda vyžádá **kopie všeho, co Předseda podepsal**:
+   „Obálka byla na úsměv. Kopie jsou zdarma.“ (předmět do kap. 4, D81).
 2. Staveniště: domíchaný beton čeká, jeřáb stojí. „Kdo umí s jeřábem?“ Ticho.
 3. Přijde vrátný z radnice v čepici jeřábníka: „Nikdo se nikdy nezeptal. Tak jsem přišel sám.“
    (návrat k jeho replice z kapitoly 1; se stopou „Prý jste se chtěl zeptat…“). Lano je nové,
    nebo prasklé podle R2.3; prasklé: „Lano? Drží. Zatím.“ (K18, předzvěst M13).
 4. První beton na rampě. Kometa je větší. Ruda: „Fáze 1 začala.“ Bára: „Zbývá dvacet pět.“
-5. Obrazovka **„Co si Nedostavěnice zapamatovala“**: tým, rozdělení, riziko předem a jedna věta
-   o mapě. Pokračování příště.
+5. Obrazovka **„Co si Nedostavěnice zapamatovala“**: tým, rozdělení (při Ganttu nebo krabici na
+   všechno: „Jedna metodika na všechno. Uvidíme.“), riziko předem a jedna věta o mapě.
+   Pokračování příště.
 
 ## Kontrola proti zásadám (N3h)
 

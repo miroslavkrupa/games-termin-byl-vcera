@@ -43,7 +43,7 @@
 
   // Konec kapitoly: razítko, staveniště, vrátný k jeřábu
   const KONEC = [
-    'ch2_predseda_razitko', '$plan_orazitkovan', '#',
+    'ch2_predseda_razitko', '$plan_orazitkovan', { kdy: "c2_riziko_predem=='usmev'", akce: ['ch2_predseda_kopie', '+kopie'] }, '#',
     '>staveniste', 'ch2_konec_beton', 'ch2_konec_kdo_jerab', 'ch2_konec_ticho',
     { kdy: 'vratny_stopa', akce: 'ch2_konec_vratny_stopa', jinak: 'ch2_konec_vratny' },
     { kdy: "c2_riziko_predem=='lano'", akce: 'ch2_konec_lano_nove', jinak: 'ch2_konec_lano_drzi' },
@@ -96,6 +96,8 @@
       kavove_pero: { nazev: 'predmet_kavove_pero', prohlednout: 'predmet_kavove_pero_prohlednout' },
       propiska: { nazev: 'predmet_propiska', prohlednout: 'predmet_propiska_prohlednout' },
       klic: { nazev: 'predmet_klic', prohlednout: 'ch2_klic_prohlednout' },
+      // Kopie všeho, co Předseda podepsal: jen při obálce na úsměv, vzniknou u razítka (D81, kap. 4 je čte)
+      kopie: { nazev: 'predmet_kopie', prohlednout: 'ch2_kopie_prohlednout' },
       kreda: { nazev: 'predmet_kreda', prohlednout: 'predmet_kreda_prohlednout' },
       tacky: { nazev: 'predmet_tacky', prohlednout: 'predmet_tacky_prohlednout' },
       odhad: { nazev: 'predmet_odhad', prohlednout: { kdy: "c2_odhad=='kotva'", akce: 'predmet_odhad_kotva', jinak: 'predmet_odhad_realny' } },
@@ -496,7 +498,8 @@
             h.nastav('c2_rozpad=' + Math.min(3, mezery + prekryvy));
             h.rekni(mezery + prekryvy ? 'ch2_m04_hotovo_slabe' : 'ch2_m04_hotovo');
           }
-          h.proved(['ch2_m04_brana_volna', '-kreda', '$m04_hotovo', '$hangar_otevren']);
+          // Klíč zůstane v zámku brány (02-mistnosti, D81)
+          h.proved(['ch2_m04_brana_volna', '-kreda', '-klic', '$m04_hotovo', '$hangar_otevren']);
           return { hotovo: true };
         },
       },

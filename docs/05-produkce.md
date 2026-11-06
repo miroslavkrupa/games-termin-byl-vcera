@@ -34,6 +34,12 @@ musí vejít; překročení je vědomé rozhodnutí se záznamem. Počty jsou ho
 | 5 Uzavření | 20–30 min | 3 (1) | 0 | 5 | 200–300 | žádná nová, finální puzzle za oba |
 | **Celkem** | **3,8–5,3 h** | **16 nových pozadí** | | **60** | **1 850–2 350** | **11 miniher** |
 
+Dvě upřesnění z kontroly celé hry ([N5](14-kontrola-hry.md), D81): **předměty** se počítají jako
+nové předměty na kapitolu (přenesené z dřívějška se nepočítají; návrhy mají 17 + 9 + 8 + 12 + 3 = 49),
+a k novým pozadím přibývá řádek **varianty pozadí** (3 stavy rampy a 2 stavy Archy v kap. 3,
+6 večerních verzí v kap. 4, 5 velikostí Ještětota, záběry čtyř konců; odhadem 10–20 h grafiky).
+Rozpočet replik a délky hry čeká na rozhodnutí autora (N5, H17 a H18).
+
 Minihry jsou rozložené tak, aby na hodinu hraní připadly nejvýš 2–3 (pravidlo
 [výukové matice](02-vyukova-matice.md#pravidla-pro-práci-s-maticí)). Kapitola 3 je na horní
 hranici; když přeroste rozpočet, jako první se zkrátí Integrační okno nebo Scope Creep.

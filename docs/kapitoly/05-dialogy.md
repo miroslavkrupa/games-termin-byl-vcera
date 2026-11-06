@@ -51,7 +51,7 @@ Bářiny výchozí reakce (`bara_*`) z kapitoly 1 se použijí znovu.
 | Téma | Podstata | Podmínka | Odhad |
 |---|---|---|---|
 | ráno | „Poslední jízda byla v pět. Nikdo nečekal.“ | – | 2 |
-| kapitán (P5.6) | „Povedete Archu?“ → „Konečně se někdo zeptal.“, sleze z jeřábu; po odpočtu „Dole mě budou potřebovat.“ | – | 4 |
+| kapitán (P5.6) | „Povedete Archu?“ → „Konečně se někdo zeptal.“, sleze z jeřábu; po odpočtu „Dole mě budou potřebovat.“; deník na požádání (D81) | – | 5 |
 | zaučení (P5.7) | „Které je které? Všechna byla zelená.“, „Tohle si zapamatuju. Napíšu si to do deníku. Lodního.“, tlačítko | P5.6 | 4 |
 | předání (R5.1) | `poradne`: přečte první stránku, přikývne; `poradi`: „Nikdo se mě nezeptal. Zase.“ | R5.1 | 3 |
 | start a epilog | otočí klíčem; přistání hladce („Díky, Věro.“) / „Kde se to vypíná?“; po titulcích „Konečně něco dolů.“ | konec | 2 |
@@ -100,7 +100,7 @@ Bářiny výchozí reakce (`bara_*`) z kapitoly 1 se použijí znovu.
 |---|---|---|
 | stránky návodu | jedna věta od každého z šesti možných členů: Věra „Neopírat se o lávku.“, Norbert „Viz norma.“, Klára „Kulaté kajuty jsou kulaté schválně.“ (obětované: „Kajuty jsou hranaté. Bohužel.“), Pepa „Všechno trvá dva dny.“, Zdenda „Když nevíš, zavolej Rudovi.“, Kryštof „Předávací protokol. Konečně ho někdo chce.“; vrácený člen „Proč jsem odešel“ | 10 |
 | „Říct to nahlas“ | u pultů hlásí, co pojistka chce | 4 |
-| ponožky | „Vy máte stejné ponožky.“ (první podle pořadí) a Bářina odpověď | 2 |
+| ponožky a odpočet | „Vy máte stejné ponožky.“ (první podle pořadí) a Bářina odpověď; Pepa při odpočtu „Dny.“ | 3 |
 | R5.2 „my“ | reakce týmu na jména | 3 |
 
 ## Scény s rozhodnutím a střihy
@@ -143,17 +143,17 @@ Bářiny výchozí reakce (`bara_*`) z kapitoly 1 se použijí znovu.
 | Bára (hraná) | 36 |
 | Ruda jako postava | 4 |
 | Zelenka | 8 |
-| vrátný | 15 |
+| vrátný | 16 |
 | Lumír | 13 |
 | starosta | 10 |
 | Norbert | 10 |
 | babička, obyvatelé, rybáři, Pan Změna, Ještětoto, Předseda, Framework | 32 |
-| tým | 19 |
+| tým | 20 |
 | scény s rozhodnutím a střihy | 20 |
 | Ruda a prohlížení | 108 |
 | finále | 12 |
 | konce a epilog | 43 |
-| **Celkem** | **≈ 405 na jazyk** |
+| **Celkem** | **≈ 408 na jazyk** |
 
 Odhad je asi o 35 % nad horní mezí rozpočtu D56 (300; po kontrole N4 o 20 víc, D80). K tomu asi 12 popisků finále a 15 vět
 obrazovky následků. V jednom průchodu hráč uslyší asi **265** replik: konce, verze epilogu,

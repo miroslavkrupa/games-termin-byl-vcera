@@ -125,7 +125,7 @@ cesta za dvě postavy prochází pět scén dvakrát. Když se v N8 potvrdí, zk
 
 Výchozí stav: `c1_bara_vyslechnuta`=0, `c1_faze2`, bez dohody, bez `c1_mimo_rozsah`,
 `c1_babicka`=`prehlizena`; `c2_tym`=[Zdenda, Kryštof, Pepa, Věra] (bez podpisu startu),
-`c2_rozdeleni`=`gantt`, `c2_riziko_predem`=`usmev`, `c2_rizika_zapsana`=[usmev, kabely, lano],
+`c2_rozdeleni`=`gantt`, `c2_riziko_predem`=`usmev`, `c2_rizika_zapsana`=[usmev, krysy, lano],
 `c2_odhad`=`kotva`, `c2_rozpad`=3, `c2_mosty`=[start].
 
 | Krok | Odlišnost |
