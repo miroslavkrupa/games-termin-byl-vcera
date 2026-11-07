@@ -1,0 +1,13 @@
+{
+  "id": "ch1_zmena_uvod",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Pan Změna",
+  "emoce": "nadšeně",
+  "hlas": "verse",
+  "text": "Welcome to Mr. Change's! Today we're selling... we'll see.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Mr. Change, hidden voice behind a market stall, giddy, changes his mind mid-sentence. Delivery: enthusiastically.",
+  "hash": "4e3ae8a8224aed0f",
+  "datum": "2026-11-07"
+}

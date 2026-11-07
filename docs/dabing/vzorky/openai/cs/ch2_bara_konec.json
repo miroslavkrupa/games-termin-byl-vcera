@@ -1,0 +1,13 @@
+{
+  "id": "ch2_bara_konec",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Bára",
+  "emoce": "věcně",
+  "hlas": "sage",
+  "text": "Hm. Měřím dál.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Barb Backlog, calm practical engineer, dry and matter-of-fact, the voice of reason. Delivery: matter-of-factly.",
+  "hash": "ce16d2215ba56457",
+  "datum": "2026-11-07"
+}

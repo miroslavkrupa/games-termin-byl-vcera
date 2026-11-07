@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_budka",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "rozlámaně",
+  "hlas": "ash",
+  "text": "Nejlepší ubytování ve městě. Má dveře.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'. Delivery: stiff and aching.",
+  "hash": "232c8449a303de99",
+  "datum": "2026-11-07"
+}

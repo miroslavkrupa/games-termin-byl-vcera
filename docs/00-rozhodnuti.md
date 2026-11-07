@@ -91,7 +91,8 @@
 | D82 | 2026-11-06 | **Brána A: celá hra uzamčena.** Rozhodnutí z kontroly N5: rozpočet D56 přepsán podle návrhů po N4 na **4,5–6 h** a **2 400–2 900 replik v osnovách** (bez stropu na ★, škrtá se podle playtestu); při rozdělení podle povahy rozhoduje mezi Pomníkem a Druhou etapou **výjimka z R2.2** (interiér u Rudy → Pomník, bezpečnostní systém u Báry → Druhá etapa), jinak R4.3; **Bářina důvěra 0–5 bodů** (vyslechnuta ≥ 2, ne Gantt, vada nahlášená, Bára určuje pořadí, přiznal; vysoká ≥ 4, střední 2–3, nízká ≤ 1); V01 jen dialog; **Deník**: sloupec *Odemkne* v matici, hravé názvy s odborným v závorce (N6); Rudův slovník frází škrtnut; odhad výroby bez kalibrace do N7; začátek kap. 2 beze změny (N8); **zlepšení z R3.3 pojmenována** (`bara`, `rizika`, `zmeny`) a mají malý následek v aktu A kap. 4 | mění D56 (délka, repliky); N5 odškrtnuto, dál N6 kapitoly 2 | [kontrola hry](14-kontrola-hry.md) |
 
 | D83 | 2026-11-07 | **N6 kapitoly 2: texty první verze** v `hra/texty/texty.csv`: 596 textů, 416 replik, oba jazyky, mluvčí, emoce a poznámka u každé repliky; pracovní texty `prototyp/texty/kapitola2.csv` zrušeny, prototyp čte kapitolu 2 z `texty.csv`; `scenar.py` generuje scénář pro každou kapitolu | osnova 454 replik → 416 (nábor 124 i se štamgasty); brána B kapitoly 2 až po přečtení nahlas autorem | [scénář](kapitoly/02-scenar.md), [postup](12-postup-navrhu.md) |
+| D84 | 2026-11-07 | **Zkouška dabingu přes AI (TTS):** skript `tools/dabing.py`, hlasy a emoce v `tools/dabing/hlasy.json`, vzorek 18 replik v obou jazycích; D07 zatím platí, rozhodne se po poslechu vzorků | zvuk `hra/zvuk/<jazyk>/<id>.mp3` (MP3 místo Ogg, Godot ho umí); repliky se zástupným `%s` bez hlasu nebo ve variantách; u OpenAI povinná věta o generovaných hlasech | [dabing](dabing/README.md), [produkce](05-produkce.md) |
 
 ## Čeká na rozhodnutí
 
-Nic.
+- Dabing přes AI: ano/ne a kterou službou, po poslechu [vzorků](dabing/README.md) (D84).

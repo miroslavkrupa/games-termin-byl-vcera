@@ -29,6 +29,7 @@ pro **PC, Mac a mobily**.
 | [Příběhová bible](docs/03-pribehova-bible.md) | svět, postavy, dějový oblouk, osnova kapitol, stavové proměnné, následky, konce |
 | [Minihry](docs/04-minihry.md) | 11 miniher ve čtyřech patrech koncepce (3 vyřazené), zásady, specifikace, pořadí prototypů, šablona |
 | [Produkce](docs/05-produkce.md) | rozsah pro jednoho autora, platformy a ovládání, příspěvky, AI grafika, příprava na dabing, jazyky |
+| [Dabing](docs/dabing/README.md) | zkouška dabingu přes AI: skript, hlasy, vzorky k poslechu a hodnocení (D84) |
 | [Stylová bible](docs/06-stylova-bible.md) | výtvarný styl podobný Deponii, pravidla, schválená varianta A (večer a krize C), zadání pro AI a automatické generování vzorků |
 | [Animace postav](docs/styl/animace-postav.md) | model postavy a zadání všech animací pro ChatGPT, pravidla a zpracování |
 | [Stylové ukázky](docs/styl/ukazky.html) | vizuální porovnání variant (otevřít v prohlížeči) |

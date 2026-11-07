@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_amplion",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Rozhlas",
+  "emoce": "úředně",
+  "hlas": "alloy",
+  "text": "Good morning, Scope Creek. Days until impact: twenty-seven.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Town public-address announcer, flat official tone with a crackle of boredom. Delivery: officially.",
+  "hash": "22f23298f3b4b11e",
+  "datum": "2026-11-07"
+}

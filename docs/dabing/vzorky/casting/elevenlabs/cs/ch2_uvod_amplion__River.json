@@ -1,0 +1,14 @@
+{
+  "id": "ch2_uvod_amplion",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v3",
+  "jazyk": "cs",
+  "postava": "Rozhlas",
+  "emoce": "úředně",
+  "hlas": "SAz9YHcvj6GT2YYXdXww",
+  "text": "[officially] Dobré ráno, Nedostavěnice. Dnů do dopadu komety: dvacet sedm.",
+  "hash": "900f07a063ee4155",
+  "kandidat": "River",
+  "postava_casting": "Rozhlas",
+  "datum": "2026-11-07"
+}

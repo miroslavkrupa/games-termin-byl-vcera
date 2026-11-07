@@ -1,0 +1,13 @@
+{
+  "id": "ch2_slon_kreda",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Ruda",
+  "emoce": "rozhodně",
+  "hlas": "ash",
+  "text": "Right then, elephant. How do you eat an elephant? One bite at a time.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'. Delivery: decisively.",
+  "hash": "d667efa7db6cd453",
+  "datum": "2026-11-07"
+}

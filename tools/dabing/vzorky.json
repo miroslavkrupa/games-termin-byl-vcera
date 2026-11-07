@@ -1,0 +1,13 @@
+{
+  "uvod": {
+    "popis": "Úvod kapitoly 2 (Ruda, Rozhlas, Pembok), Bára v hangáru, Pan Změna a Předseda z kapitoly 1. Vzorek pro rozhodnutí o dabingu.",
+    "repliky": [
+      "ch2_uvod_budka", "ch2_uvod_amplion", "ch2_uvod_ruda_30", "ch2_uvod_pembok_fronta",
+      "ch2_uvod_pembok_ukol", "ch2_uvod_ruda_plan", "ch2_uvod_pembok_naco", "ch2_uvod_ruda_vsechno",
+      "ch2_kometa_prohlednout", "ch2_slon_kreda",
+      "ch2_bara_uvod_duvera", "ch2_bara_konec",
+      "ch1_zmena_uvod", "ch1_zmena_prodej_1", "ch1_zmena_001",
+      "ch1_predseda_uvod_1", "ch1_predseda_001", "ch1_predseda_termin"
+    ]
+  }
+}

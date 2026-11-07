@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_budka",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Ruda",
+  "emoce": "rozlámaně",
+  "hlas": "ash",
+  "text": "Best accommodation in town. It has a door.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'. Delivery: stiff and aching.",
+  "hash": "6228ecd6251d533a",
+  "datum": "2026-11-07"
+}

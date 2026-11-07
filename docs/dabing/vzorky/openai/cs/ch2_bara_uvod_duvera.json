@@ -1,0 +1,13 @@
+{
+  "id": "ch2_bara_uvod_duvera",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Bára",
+  "emoce": "věcně",
+  "hlas": "sage",
+  "text": "Ahoj. Měř se mnou, nebo mi nestůj ve světle.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Barb Backlog, calm practical engineer, dry and matter-of-fact, the voice of reason. Delivery: matter-of-factly.",
+  "hash": "58aafa417a227536",
+  "datum": "2026-11-07"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ch1_predseda_001",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "echo",
+  "text": "Váš návrh je vynikající. Právě proto ho musíme důkladně odložit.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Chairman Evermore, elderly bureaucrat, kind, slow and unhurried, never says no, only 'next phase'. Delivery: kindly.",
+  "hash": "e9119666be46ae11",
+  "datum": "2026-11-07"
+}

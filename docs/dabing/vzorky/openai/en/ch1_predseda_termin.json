@@ -1,0 +1,13 @@
+{
+  "id": "ch1_predseda_termin",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "echo",
+  "text": "When it's done. Deadlines only cause needless stress.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Chairman Evermore, elderly bureaucrat, kind, slow and unhurried, never says no, only 'next phase'. Delivery: kindly.",
+  "hash": "a536a958eb401268",
+  "datum": "2026-11-07"
+}

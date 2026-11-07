@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_pembok_fronta",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Pembok",
+  "emoce": "suše",
+  "hlas": "onyx",
+  "text": "The queue for the queue took two days. You were standing in it.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Prof. Pembok, elderly professor and narrator-mentor, dry wit, slow and precise. Delivery: dryly.",
+  "hash": "909370623d1a5627",
+  "datum": "2026-11-07"
+}

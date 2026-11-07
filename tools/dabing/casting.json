@@ -1,0 +1,29 @@
+{
+  "popis": "Casting: pro každou postavu jedna typická replika namluvená několika kandidáty. Standardní hlasy ElevenLabs s pevným ID; hlasy z knihovny vyžadují u klíče oprávnění Voices: Read a Write.",
+  "postavy": {
+    "Ruda": {
+      "replika": "ch2_slon_kreda",
+      "kandidati": {"Eric": "cjVigY5qzO86Huf0OWal", "Chris": "iP95p4xoKVk53GoZ742B", "Liam": "TX3LPaxmHKxFdv7VOQHJ", "Roger": "CwhRBWXzGAHq8TQ4Fs17", "Will": "bIHbv24MWmeRgasZH58o"}
+    },
+    "Bára": {
+      "replika": "ch2_bara_uvod_duvera",
+      "kandidati": {"Alice": "Xb7hH8MSUJpSbSDYk0k2", "Matilda": "XrExE9yKIg1WjnnlVkGX", "Sarah": "EXAVITQu4vr4xnSDxMaL", "Aria": "9BWtsMINqrJLrRacOk9x", "Jessica": "cgSgspJ2msm6clMCkdW9"}
+    },
+    "Pembok": {
+      "replika": "ch2_uvod_pembok_fronta",
+      "kandidati": {"Bill": "pqHfZKP75CvOlQylNhV4", "Brian": "nPczCjzI2devNBz1zQrb", "George": "JBFqnCBsd6RMkjVDRZzb", "Daniel": "onwK4e9ZLuTAKqWW03F9"}
+    },
+    "Pan Změna": {
+      "replika": "ch1_zmena_001",
+      "kandidati": {"Callum": "N2lVS1w4EtoT3dr4eOWO", "Charlie": "IKne3meq5aSn9XLyUdCD", "Chris": "iP95p4xoKVk53GoZ742B", "Will": "bIHbv24MWmeRgasZH58o"}
+    },
+    "Předseda": {
+      "replika": "ch1_predseda_uvod_1",
+      "kandidati": {"George": "JBFqnCBsd6RMkjVDRZzb", "Bill": "pqHfZKP75CvOlQylNhV4", "Brian": "nPczCjzI2devNBz1zQrb", "Daniel": "onwK4e9ZLuTAKqWW03F9"}
+    },
+    "Rozhlas": {
+      "replika": "ch2_uvod_amplion",
+      "kandidati": {"Daniel": "onwK4e9ZLuTAKqWW03F9", "Roger": "CwhRBWXzGAHq8TQ4Fs17", "Brian": "nPczCjzI2devNBz1zQrb", "River": "SAz9YHcvj6GT2YYXdXww"}
+    }
+  }
+}

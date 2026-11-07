@@ -1,0 +1,13 @@
+{
+  "id": "ch1_zmena_prodej_1",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Pan Změna",
+  "emoce": "rozhodně",
+  "hlas": "verse",
+  "text": "Deštníky. Ne, slunečníky. Vlastně holínky.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Mr. Change, hidden voice behind a market stall, giddy, changes his mind mid-sentence. Delivery: decisively.",
+  "hash": "2d97a0c79cc2805e",
+  "datum": "2026-11-07"
+}

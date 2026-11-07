@@ -149,8 +149,10 @@ Postavy jsou nakreslené jednou, v denním světle. Do scény je usazuje engine 
 - Každá replika má **stabilní ID** (`ch1_bara_012`), které se nemění ani při úpravě textu.
 - U každé repliky je **mluvčí, emoce a poznámka pro herce** (např. `[sarkasticky]`), i když se
   zatím nedabuje.
-- Zvukové soubory se později pojmenují podle ID a jazyka (`cs/ch1_bara_012.ogg`,
-  `en/ch1_bara_012.ogg`). Engine si repliku najde sám, a když chybí, zobrazí jen titulek.
+- Zvukové soubory se pojmenují podle ID a jazyka (`hra/zvuk/cs/ch1_bara_012.mp3`,
+  `hra/zvuk/en/ch1_bara_012.mp3`). Engine si repliku najde sám, a když chybí, zobrazí jen titulek.
+- Dabing přes AI (převod textu na řeč) se zkouší skriptem `tools/dabing.py`, postup a vzorky
+  jsou v [dabing/README.md](dabing/README.md) (D84).
 - **Titulky vždy**, i s dabingem.
 - Repliky raději kratší. Dlouhé monology se špatně dabují i čtou na mobilu.
 - Načasování scén nesmí záviset na délce zvuku. Když dabing chybí, délka se odvodí z textu.

@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_ruda_vsechno",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "hrdě",
+  "hlas": "ash",
+  "text": "Na všechno.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'. Delivery: proudly.",
+  "hash": "ee7ca5c0d10f67f0",
+  "datum": "2026-11-07"
+}

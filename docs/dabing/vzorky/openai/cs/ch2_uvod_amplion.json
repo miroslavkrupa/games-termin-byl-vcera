@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_amplion",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "cs",
+  "postava": "Rozhlas",
+  "emoce": "úředně",
+  "hlas": "alloy",
+  "text": "Dobré ráno, Nedostavěnice. Dnů do dopadu komety: dvacet sedm.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak Czech with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Town public-address announcer, flat official tone with a crackle of boredom. Delivery: officially.",
+  "hash": "3bd2fd9153d640f8",
+  "datum": "2026-11-07"
+}

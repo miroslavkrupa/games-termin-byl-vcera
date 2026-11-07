@@ -1,0 +1,159 @@
+{
+  "sluzba": "openai",
+  "openai": {
+    "model": "gpt-4o-mini-tts",
+    "format": "mp3",
+    "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak {jazyk} with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: {postava} Delivery: {emoce}."
+  },
+  "elevenlabs": {
+    "model": "eleven_v3",
+    "format": "mp3_44100_128",
+    "poznamka": "Standardní hlasy ElevenLabs: Ruda Eric, Bára Alice, Pembok Bill, Pan Změna Callum, Předseda George, Rozhlas Daniel. Ostatní doplnit po výběru z knihovny (--hlasy --sluzba elevenlabs, klíč potřebuje oprávnění voices_read)."
+  },
+  "jazyky": {
+    "cs": "Czech",
+    "en": "English"
+  },
+  "postavy": {
+    "Ruda": {
+      "popis": "Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'.",
+      "openai": "ash",
+      "elevenlabs": "cjVigY5qzO86Huf0OWal"
+    },
+    "Bára": {
+      "popis": "Barb Backlog, calm practical engineer, dry and matter-of-fact, the voice of reason.",
+      "openai": "sage",
+      "elevenlabs": "Xb7hH8MSUJpSbSDYk0k2"
+    },
+    "Pembok": {
+      "popis": "Prof. Pembok, elderly professor and narrator-mentor, dry wit, slow and precise.",
+      "openai": "onyx",
+      "elevenlabs": "pqHfZKP75CvOlQylNhV4"
+    },
+    "Pan Změna": {
+      "popis": "Mr. Change, hidden voice behind a market stall, giddy, changes his mind mid-sentence.",
+      "openai": "verse",
+      "elevenlabs": "N2lVS1w4EtoT3dr4eOWO"
+    },
+    "Předseda": {
+      "popis": "Chairman Evermore, elderly bureaucrat, kind, slow and unhurried, never says no, only 'next phase'.",
+      "openai": "echo",
+      "elevenlabs": "JBFqnCBsd6RMkjVDRZzb"
+    },
+    "Framework": {
+      "popis": "Dr. Framework, methodology consultant, smooth and smug, loves jargon.",
+      "openai": "fable",
+      "elevenlabs": ""
+    },
+    "Starosta": {
+      "popis": "The mayor, loud populist, promises everything to everyone.",
+      "openai": "ballad",
+      "elevenlabs": ""
+    },
+    "Lumír": {
+      "popis": "Lumír, tired archive clerk, monotone.",
+      "openai": "alloy",
+      "elevenlabs": ""
+    },
+    "Vrátný": {
+      "popis": "Porter, gruff gatekeeper, short sentences.",
+      "openai": "onyx",
+      "elevenlabs": ""
+    },
+    "Babička": {
+      "popis": "Granny Plotkins, sweet old lady with a sharp edge.",
+      "openai": "shimmer",
+      "elevenlabs": ""
+    },
+    "Věřitel": {
+      "popis": "A creditor, impatient and nasal.",
+      "openai": "echo",
+      "elevenlabs": ""
+    },
+    "Druhý věřitel": {
+      "popis": "A second creditor, even more impatient.",
+      "openai": "verse",
+      "elevenlabs": ""
+    },
+    "Rozhlas": {
+      "popis": "Town public-address announcer, flat official tone with a crackle of boredom.",
+      "openai": "alloy",
+      "elevenlabs": "onwK4e9ZLuTAKqWW03F9"
+    },
+    "Obyvatelé": {
+      "popis": "Townspeople in chorus.",
+      "openai": "alloy",
+      "elevenlabs": ""
+    },
+    "Štamgasti": {
+      "popis": "Pub regulars, grumbling in unison.",
+      "openai": "ballad",
+      "elevenlabs": ""
+    },
+    "Pepa": {
+      "popis": "Two-Day Joe, cheerful handyman, everything takes 'two days'.",
+      "openai": "ash",
+      "elevenlabs": ""
+    },
+    "Věra": {
+      "popis": "Vera Rebar, tough welder, few words.",
+      "openai": "coral",
+      "elevenlabs": ""
+    },
+    "Norbert": {
+      "popis": "Norman Standards, pedantic inspector, nasal and precise.",
+      "openai": "echo",
+      "elevenlabs": ""
+    },
+    "Klára": {
+      "popis": "Mona Mockup, enthusiastic designer, bubbly.",
+      "openai": "nova",
+      "elevenlabs": ""
+    },
+    "Zdenda": {
+      "popis": "Benny Buddy, mayor's buddy, lazy and friendly.",
+      "openai": "verse",
+      "elevenlabs": ""
+    },
+    "Kryštof": {
+      "popis": "Chip Checkbox, nervous tester, speaks in checklists.",
+      "openai": "fable",
+      "elevenlabs": ""
+    },
+    "Kocour": {
+      "popis": "A cat. Says one thing.",
+      "openai": "sage",
+      "elevenlabs": ""
+    }
+  },
+  "emoce": {
+    "suše": "dryly",
+    "věcně": "matter-of-factly",
+    "nápověda": "helpfully, as a hint",
+    "vlídně": "kindly",
+    "monotónně": "in a monotone",
+    "nadšeně": "enthusiastically",
+    "rozhodně": "decisively",
+    "uznale": "appreciatively",
+    "pobaveně": "amused",
+    "čte": "reading aloud",
+    "spokojeně": "contentedly",
+    "sebevědomě": "confidently",
+    "hrdě": "proudly",
+    "ospale": "sleepily",
+    "zděšeně": "horrified",
+    "poučně": "instructively",
+    "zasmušile": "gloomily",
+    "rozlámaně": "stiff and aching",
+    "úředně": "officially",
+    "chladně": "coldly",
+    "zmateně": "confused",
+    "rozverně": "playfully",
+    "unaveně": "tiredly",
+    "nervózně": "nervously",
+    "opatrně": "carefully",
+    "podrážděně": "irritated",
+    "tiše": "quietly",
+    "slavnostně": "solemnly"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ch1_predseda_uvod_1",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "echo",
+  "text": "Welcome to the Committee for Approving Committees. Have a seat. Or stand. In the queue it makes no difference.",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Chairman Evermore, elderly bureaucrat, kind, slow and unhurried, never says no, only 'next phase'. Delivery: kindly.",
+  "hash": "552d9b054e412d9d",
+  "datum": "2026-11-07"
+}

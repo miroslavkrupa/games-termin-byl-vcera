@@ -1,0 +1,13 @@
+{
+  "id": "ch2_uvod_ruda_30",
+  "sluzba": "openai",
+  "model": "gpt-4o-mini-tts",
+  "jazyk": "en",
+  "postava": "Ruda",
+  "emoce": "zděšeně",
+  "hlas": "ash",
+  "text": "Twenty-seven? It was thirty!",
+  "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak English with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'. Delivery: horrified.",
+  "hash": "a2a97b77a288afd2",
+  "datum": "2026-11-07"
+}
