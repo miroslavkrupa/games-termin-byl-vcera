@@ -2,12 +2,26 @@
 extends "res://addons/popochiu/engine/objects/gui/templates/simple_click_high_res/simple_click_high_res_gui.gd"
 
 
+const Karta := preload("res://game/obrazovky/karta.gd")
+const UkazatelDnu := preload("res://game/gui/ukazatel_dnu.gd")
+const Dotyk := preload("res://game/gui/dotyk.gd")
+
+## Ukazatel dnů do dopadu komety (I6) a dotykové ovládání (podržení, nabídka po ťuknutí, D43)
+var ukazatel_dnu: Control
+var dotyk: Node
+
+
 #region Godot ######################################################################################
 func _ready() -> void:
 	super()
 	# Na dotykovém zařízení je ukazatel myši schovaný pod prstem a jen překáží (krok K8)
 	if DisplayServer.is_touchscreen_available():
 		Cursor.visible = false
+	ukazatel_dnu = UkazatelDnu.new()
+	add_child(ukazatel_dnu)
+	dotyk = Dotyk.new()
+	dotyk.name = "Dotyk"
+	add_child(dotyk)
 
 
 #endregion
@@ -24,13 +38,17 @@ func _on_unblocked() -> void:
 
 
 # Called to hide the GUI.
+# Hlavní menu (I6) skryje lištu s inventářem, popisky a ukazatel dnů; okna (nastavení, načtení)
+# zůstanou funkční.
 func _on_hidden() -> void:
 	super()
+	_ukaz_hru(false)
 
 
 # Called to show the GUI.
 func _on_shown() -> void:
 	super()
+	_ukaz_hru(true)
 
 
 # Called when `G.show_system_text()` is triggered.
@@ -92,9 +110,32 @@ func _on_inventory_item_selected(item: PopochiuInventoryItem) -> void:
 	super(item)
 
 
+# Uložení a načtení hry (I6): místo anglických hlášek šablony krátká karta v jazyce hry
+func _on_game_saved() -> void:
+	Karta.ukaz("ui_hra_ulozena")
+
+
+func _on_game_loaded(_loaded_game: Dictionary) -> void:
+	await Karta.ukaz("ui_hra_nactena")
+	G.load_feedback_finished.emit()
+
+
 # Called by `PopochiuCursor` to get the name of the cursor texture to show.
 func _get_cursor_name() -> String:
 	return super()
+
+
+#endregion
+
+
+#region Private ####################################################################################
+func _ukaz_hru(ukazat: bool) -> void:
+	for nazev in ["SimpleClickBarHighRes", "HoverTextHighRes"]:
+		var n := get_node_or_null(nazev)
+		if n:
+			n.visible = ukazat
+	if ukazatel_dnu:
+		ukazatel_dnu.skryto = not ukazat
 
 
 #endregion

@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/pracovna/hotspots/noviny/hotspot_noviny.gd" id="1_6858p"]
+
+[node name="Noviny" type="Area2D" unique_id=1612803032]
+script = ExtResource("1_6858p")
+script_name = "Noviny"
+description = "ch1_hs_noviny"
+look_at_point = Vector2(1035, 520)
+cursor = 1
+interaction_polygon = PackedVector2Array(979, 491, 1090, 491, 1090, 553, 979, 553)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2055066813]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

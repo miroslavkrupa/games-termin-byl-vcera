@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/chaloupka/walkable_areas/dvur/walkable_area_dvur.gd" id="1_j8dlh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_d17ag"]
+vertices = PackedVector2Array(1877, 1010, -341, 1010, -341, 805, 1877, 805)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-341, 805, 1877, 805, 1877, 1010, -341, 1010)])
+agent_radius = 0.0
+
+[node name="Dvur" type="Node2D" unique_id=1895379821]
+script = ExtResource("1_j8dlh")
+script_name = "Dvur"
+description = "Dvur"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(-341, 805, 1877, 805, 1877, 1010, -341, 1010)])
+
+[node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1297109600]
+visible = false
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_d17ag")

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/komise/hotspots/telefon/hotspot_telefon.gd" id="1_4m46v"]
+
+[node name="Telefon" type="Area2D" unique_id=1183494388]
+script = ExtResource("1_4m46v")
+script_name = "Telefon"
+description = "ch1_hs_telefon"
+cursor = 1
+interaction_polygon = PackedVector2Array(1143, 300, 1227, 300, 1227, 360, 1143, 360)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1709901591]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

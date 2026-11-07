@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/lumir/character_lumir.gd" id="1_ss8w0"]
+[ext_resource type="Texture2D" path="res://grafika/postavy/lumir_stoji/lumir_stoji.png" id="2_tex"]
+
+[node name="CharacterLumir" type="Area2D" unique_id=407151378]
+script = ExtResource("1_ss8w0")
+script_name = "Lumir"
+cursor = 8
+description = "postava_lumir"
+interaction_polygon = PackedVector2Array(-64, -344, 64, -344, 64, 0, -64, 0)
+text_color = Color(0.82, 0.9, 0.78, 1)
+ignore_region_scaling = true
+obstacle = true
+walk_to_point = Vector2(-105, 14)
+dialog_pos = Vector2(0, -372)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=1804402695]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=375167445]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=174130029]
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -210)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1627499798]
+visible = false
+polygon = PackedVector2Array(-64, -344, 64, -344, 64, 0, -64, 0)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=732282499]
+visible = false
+vertices = PackedVector2Array(55, 0, 48, 7, 28, 13, 0, 15, -27, 13, -48, 7, -55, 0, -48, -7, -28, -13, 0, -15, 28, -13, 48, -8)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

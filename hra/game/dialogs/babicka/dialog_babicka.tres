@@ -1,0 +1,46 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_gvejt"]
+[ext_resource type="Script" path="res://game/dialogs/babicka/dialog_babicka.gd" id="2_xfhlt"]
+
+[sub_resource type="Resource" id="Resource_wfg74"]
+resource_name = "Dum"
+script = ExtResource("1_gvejt")
+id = "Dum"
+text = "ch1_babicka_volba_dum"
+
+[sub_resource type="Resource" id="Resource_6eejr"]
+resource_name = "Pradlo"
+script = ExtResource("1_gvejt")
+id = "Pradlo"
+text = "ch1_babicka_volba_pradlo"
+
+[sub_resource type="Resource" id="Resource_q1dyg"]
+resource_name = "Pocasi"
+script = ExtResource("1_gvejt")
+id = "Pocasi"
+text = "ch1_babicka_volba_pocasi"
+
+[sub_resource type="Resource" id="Resource_olsvi"]
+resource_name = "Pozemek"
+script = ExtResource("1_gvejt")
+id = "Pozemek"
+text = "ch1_babicka_volba_pozemek"
+
+[sub_resource type="Resource" id="Resource_u0hdm"]
+resource_name = "Kocour"
+script = ExtResource("1_gvejt")
+id = "Kocour"
+text = "ch1_babicka_volba_kocour"
+
+[sub_resource type="Resource" id="Resource_cebsr"]
+resource_name = "Konec"
+script = ExtResource("1_gvejt")
+id = "Konec"
+text = "ch1_babicka_volba_konec"
+
+[resource]
+resource_name = "Babicka"
+script = ExtResource("2_xfhlt")
+script_name = "Babicka"
+options = Array[ExtResource("1_gvejt")]([SubResource("Resource_wfg74"), SubResource("Resource_6eejr"), SubResource("Resource_q1dyg"), SubResource("Resource_olsvi"), SubResource("Resource_u0hdm"), SubResource("Resource_cebsr")])

@@ -13,8 +13,10 @@
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/stanek/hotspot_stanek.tscn" id="8_gky0t"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/kometa/hotspot_kometa.tscn" id="9_ls3d5"]
 [ext_resource type="PackedScene" path="res://game/characters/pan_zmena/character_pan_zmena.tscn" id="10_j80a0"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/ulicka/hotspot_ulicka.tscn" id="12_ynjll"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/amplion/hotspot_amplion.tscn" id="13_pkldj"]
 [ext_resource type="PackedScene" path="res://game/characters/bara/character_bara.tscn" id="14_cmmcn"]
-[ext_resource type="PackedScene" path="res://game/characters/vratny/character_vratny.tscn" id="15_ynjll"]
+[ext_resource type="PackedScene" path="res://game/characters/kocour/character_kocour.tscn" id="16_jqb03"]
 
 [node name="RoomNamesti" type="Node2D" unique_id=1362046152]
 script = ExtResource("1_xhamq")
@@ -54,6 +56,12 @@ walk_to_point = Vector2(290, 805)
 
 [node name="Kometa" parent="Hotspots" unique_id=522304014 instance=ExtResource("9_ls3d5")]
 
+[node name="Ulicka" parent="Hotspots" unique_id=877801450 instance=ExtResource("12_ynjll")]
+walk_to_point = Vector2(400, 815)
+
+[node name="Amplion" parent="Hotspots" unique_id=410445406 instance=ExtResource("13_pkldj")]
+walk_to_point = Vector2(1210, 820)
+
 [node name="Regions" type="Node2D" parent="." unique_id=1128713920]
 
 [node name="Hloubka" parent="Regions" unique_id=1149518962 instance=ExtResource("4_pp1hi")]
@@ -71,5 +79,6 @@ position = Vector2(215, 750)
 [node name="CharacterBara" parent="Characters" unique_id=792553979 instance=ExtResource("14_cmmcn")]
 position = Vector2(790, 818)
 
-[node name="CharacterVratny" parent="Characters" unique_id=1674382504 instance=ExtResource("15_ynjll")]
-position = Vector2(935, 724)
+[node name="CharacterKocour" parent="Characters" unique_id=116666946 instance=ExtResource("16_jqb03")]
+position = Vector2(330, 935)
+walk_to_point = Vector2(100, -15)

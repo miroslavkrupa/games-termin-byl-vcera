@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/hotspots/ulicka/hotspot_ulicka.gd" id="1_k56ed"]
+
+[node name="Ulicka" type="Area2D" unique_id=877801450]
+script = ExtResource("1_k56ed")
+script_name = "Ulicka"
+description = "ch1_hs_ulicka"
+look_at_point = Vector2(420, 500)
+cursor = 1
+interaction_polygon = PackedVector2Array(340, 420, 500, 420, 500, 545, 340, 545)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=321136781]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/predseda/character_predseda.gd" id="1_5eksx"]
+
+[ext_resource type="Texture2D" path="res://grafika/postavy/predseda_stoji/predseda_stoji.png" id="2_tex"]
+
+[node name="CharacterPredseda" type="Area2D" unique_id=678124856]
+script = ExtResource("1_5eksx")
+script_name = "Predseda"
+description = "postava_predseda"
+cursor = 8
+interaction_polygon = PackedVector2Array(-40, -302, 40, -302, 40, 0, -40, 0)
+text_color = Color(0.78, 0.9, 1, 1)
+ignore_region_scaling = true
+obstacle = true
+walk_to_point = Vector2(-140, 130)
+dialog_pos = Vector2(0, -326)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=779456705]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=498045998]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092877835]
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -210)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1104301055]
+visible = false
+polygon = PackedVector2Array(-40, -302, 40, -302, 40, 0, -40, 0)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=218108207]
+visible = false
+vertices = PackedVector2Array(60, 0, 50, 7, 30, 12, 0, 14, -30, 12, -50, 7, -60, 0, -50, -7, -30, -12, 0, -14, 30, -12, 50, -7)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

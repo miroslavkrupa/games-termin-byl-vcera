@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" path="res://game/rooms/archiv/regions/hloubka/region_hloubka.tscn" id="5_eojfd"]
 [ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/schody/hotspot_schody.tscn" id="5_u1aqt"]
 [ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/kartoteka/hotspot_kartoteka.tscn" id="6_kc45p"]
+[ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/regal/hotspot_regal.tscn" id="7_luujs"]
+[ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/kniha/hotspot_kniha.tscn" id="8_366x4"]
+[ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/pouceni/hotspot_pouceni.tscn" id="9_heaa1"]
+[ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/mapnik/hotspot_mapnik.tscn" id="10_jv8yq"]
+[ext_resource type="PackedScene" path="res://game/rooms/archiv/hotspots/hluboky_regal/hotspot_hluboky_regal.tscn" id="11_hum43"]
+[ext_resource type="PackedScene" path="res://game/characters/lumir/character_lumir.tscn" id="13_4ach3"]
 
 [node name="RoomArchiv" type="Node2D" unique_id=1664996948]
 script = ExtResource("1_xo4er")
@@ -32,6 +38,21 @@ walk_to_point = Vector2(330, 680)
 [node name="Kartoteka" parent="Hotspots" unique_id=1827233627 instance=ExtResource("6_kc45p")]
 walk_to_point = Vector2(530, 720)
 
+[node name="Regal" parent="Hotspots" unique_id=1707249526 instance=ExtResource("7_luujs")]
+walk_to_point = Vector2(760, 712)
+
+[node name="Kniha" parent="Hotspots" unique_id=343897293 instance=ExtResource("8_366x4")]
+walk_to_point = Vector2(690, 715)
+
+[node name="Pouceni" parent="Hotspots" unique_id=2070839366 instance=ExtResource("9_heaa1")]
+walk_to_point = Vector2(900, 715)
+
+[node name="Mapnik" parent="Hotspots" unique_id=684105420 instance=ExtResource("10_jv8yq")]
+walk_to_point = Vector2(300, 730)
+
+[node name="HlubokyRegal" parent="Hotspots" unique_id=403455302 instance=ExtResource("11_hum43")]
+walk_to_point = Vector2(1120, 740)
+
 [node name="Regions" type="Node2D" parent="." unique_id=265882147]
 
 [node name="Hloubka" parent="Regions" unique_id=1899428041 instance=ExtResource("5_eojfd")]
@@ -43,3 +64,6 @@ scale_bottom = 0.58
 [node name="Markers" type="Node2D" parent="." unique_id=2140564524]
 
 [node name="Characters" type="Node2D" parent="." unique_id=262763659]
+
+[node name="CharacterLumir" parent="Characters" unique_id=407151378 instance=ExtResource("13_4ach3")]
+position = Vector2(960, 706)

@@ -1,0 +1,70 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_02kfw"]
+[ext_resource type="Script" path="res://game/dialogs/lumir/dialog_lumir.gd" id="2_yjub3"]
+
+[sub_resource type="Resource" id="Resource_cislo"]
+resource_name = "Cislo"
+script = ExtResource("1_02kfw")
+id = "Cislo"
+text = "ch1_lumir_volba_cislo"
+
+[sub_resource type="Resource" id="Resource_vymyslet"]
+resource_name = "Vymyslet"
+script = ExtResource("1_02kfw")
+id = "Vymyslet"
+text = "ch1_lumir_volba_vymyslet"
+
+[sub_resource type="Resource" id="Resource_krabice"]
+resource_name = "Krabice"
+script = ExtResource("1_02kfw")
+id = "Krabice"
+text = "ch1_lumir_volba_krabice"
+
+[sub_resource type="Resource" id="Resource_krabice_bez"]
+resource_name = "KrabiceBez"
+script = ExtResource("1_02kfw")
+id = "KrabiceBez"
+text = "ch1_lumir_volba_krabice_bez"
+
+[sub_resource type="Resource" id="Resource_kartoteka"]
+resource_name = "Kartoteka"
+script = ExtResource("1_02kfw")
+id = "Kartoteka"
+text = "ch1_lumir_volba_kartoteka"
+
+[sub_resource type="Resource" id="Resource_karta"]
+resource_name = "Karta"
+script = ExtResource("1_02kfw")
+id = "Karta"
+text = "ch1_lumir_volba_karta"
+
+[sub_resource type="Resource" id="Resource_mapy"]
+resource_name = "Mapy"
+script = ExtResource("1_02kfw")
+id = "Mapy"
+text = "ch1_lumir_volba_mapy"
+
+[sub_resource type="Resource" id="Resource_regal"]
+resource_name = "Regal"
+script = ExtResource("1_02kfw")
+id = "Regal"
+text = "ch1_lumir_volba_regal"
+
+[sub_resource type="Resource" id="Resource_ty"]
+resource_name = "Ty"
+script = ExtResource("1_02kfw")
+id = "Ty"
+text = "ch1_lumir_volba_ty"
+
+[sub_resource type="Resource" id="Resource_konec"]
+resource_name = "Konec"
+script = ExtResource("1_02kfw")
+id = "Konec"
+text = "ch1_lumir_volba_konec"
+
+[resource]
+resource_name = "Lumir"
+script = ExtResource("2_yjub3")
+script_name = "Lumir"
+options = Array[ExtResource("1_02kfw")]([SubResource("Resource_cislo"), SubResource("Resource_vymyslet"), SubResource("Resource_krabice"), SubResource("Resource_krabice_bez"), SubResource("Resource_kartoteka"), SubResource("Resource_karta"), SubResource("Resource_mapy"), SubResource("Resource_regal"), SubResource("Resource_ty"), SubResource("Resource_konec")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/kocour/character_kocour_state.gd" id="1_gw8gt"]
+
+[resource]
+resource_name = "Kocour"
+script = ExtResource("1_gw8gt")
+script_name = "Kocour"
+scene = "res://game/characters/kocour/character_kocour.tscn"

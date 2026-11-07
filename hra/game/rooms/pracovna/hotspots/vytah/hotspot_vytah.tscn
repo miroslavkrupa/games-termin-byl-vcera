@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/pracovna/hotspots/vytah/hotspot_vytah.gd" id="1_gimkd"]
+
+[node name="Vytah" type="Area2D" unique_id=10284658]
+script = ExtResource("1_gimkd")
+script_name = "Vytah"
+description = "ch1_hs_vytah"
+look_at_point = Vector2(135, 450)
+cursor = 1
+interaction_polygon = PackedVector2Array(58, 195, 213, 195, 213, 676, 58, 676)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=538270747]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

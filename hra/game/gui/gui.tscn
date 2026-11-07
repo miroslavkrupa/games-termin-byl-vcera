@@ -330,4 +330,4 @@ grow_vertical = 2
 theme = ExtResource("1_jeul6")
 script = ExtResource("24_oatf2")
 script_name = &"QuitPopup"
-title = "Quit game"
+title = "ui_hlavni_menu"

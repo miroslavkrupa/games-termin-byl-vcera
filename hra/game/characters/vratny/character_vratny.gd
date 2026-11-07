@@ -1,8 +1,7 @@
 # @popochiu-docs-ignore-class
 @tool
 extends PopochiuCharacter
-# You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
-# Use `await E.queue([])` to pause execution until the sequence completes.
+# Vrátný (S2 vestibul, od I3; v I1 stál dočasně na náměstí). Hlídá dveře, termosku a křížovku (P1.1).
 
 const Data := preload('character_vratny_state.gd')
 
@@ -46,9 +45,22 @@ func _on_middle_click() -> void:
 
 # Called when the character is clicked while an inventory item is selected
 func _on_item_used(_item: PopochiuInventoryItem) -> void:
+	# Reakce podle matice předmětů (01-mistnosti.md), všechno ★
 	match _item:
 		I.Kava:
 			await C.player.say("ch1_vratny_kava")
+		I.Dekret:
+			await _dojit()
+			await say("ch1_vratny_dekret")
+		I.KavovePero:
+			await _dojit()
+			await say("ch1_vratny_kavove_pero")
+		I.Plakat:
+			await _dojit()
+			await say("ch1_vratny_plakat")
+		I.Tlacitko:
+			await _dojit()
+			await say("ch1_vratny_tlacitko")
 		_:
 			E.command_fallback()
 
@@ -105,6 +117,15 @@ func _on_movement_ended() -> void:
 # `_region` is the PopochiuRegion that stopped the character.
 func _on_blocked_by_region(_region: PopochiuRegion) -> void:
 	pass
+
+
+#endregion
+
+#region Private ####################################################################################
+## Ruda dojde k vrátnému a otočí se k němu
+func _dojit() -> void:
+	await C.player.walk_to_clicked()
+	await C.player.face_clicked()
 
 
 #endregion

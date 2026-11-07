@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/hotspots/schody_nahoru/hotspot_schody_nahoru.gd" id="1_61psx"]
+
+[node name="SchodyNahoru" type="Area2D" unique_id=2003858770]
+script = ExtResource("1_61psx")
+script_name = "SchodyNahoru"
+description = "ch1_hs_schody_nahoru"
+look_at_point = Vector2(1110, 500)
+cursor = 1
+interaction_polygon = PackedVector2Array(980, 300, 1245, 300, 1245, 700, 980, 700)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=455803278]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/komise/hotspots/fronta/hotspot_fronta.gd" id="1_se6o6"]
+
+[node name="Fronta" type="Area2D" unique_id=1799251559]
+script = ExtResource("1_se6o6")
+script_name = "Fronta"
+description = "ch1_hs_fronta"
+cursor = 1
+interaction_polygon = PackedVector2Array(380, 517, 980, 517, 980, 721, 380, 721)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2062519374]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

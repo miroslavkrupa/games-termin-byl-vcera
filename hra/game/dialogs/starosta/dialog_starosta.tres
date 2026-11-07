@@ -1,0 +1,28 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_dw12p"]
+[ext_resource type="Script" path="res://game/dialogs/starosta/dialog_starosta.gd" id="2_q1i4o"]
+
+[sub_resource type="Resource" id="Resource_e2xq4"]
+resource_name = "Souboj"
+script = ExtResource("1_dw12p")
+id = "Souboj"
+text = "ch1_starosta_volba_souboj"
+
+[sub_resource type="Resource" id="Resource_d4bn6"]
+resource_name = "Noviny"
+script = ExtResource("1_dw12p")
+id = "Noviny"
+text = "ch1_starosta_volba_noviny"
+
+[sub_resource type="Resource" id="Resource_sq3ww"]
+resource_name = "Konec"
+script = ExtResource("1_dw12p")
+id = "Konec"
+text = "ch1_starosta_volba_konec"
+
+[resource]
+resource_name = "Starosta"
+script = ExtResource("2_q1i4o")
+script_name = "Starosta"
+options = Array[ExtResource("1_dw12p")]([SubResource("Resource_e2xq4"), SubResource("Resource_d4bn6"), SubResource("Resource_sq3ww")])

@@ -292,7 +292,7 @@ Dvě levné metody nad stávajícím AI obrázkem, bez kreslení nových fází:
   jen změny pohledu, ne pohyb. Moje chyba v ověřování: snímky jsem vyhodnotil jako funkční animaci.
   Animace se teď počítá v `_physics_process`, kde Popochiu postavu i posouvá.
 - **Loutka s klouby (D39):** části Rudy od ChatGPT (průhledné pozadí, čisté hrany) rozdělené
-  nástrojem `rozdel_casti.gd` a složené skriptem `game/characters/spolecne/kostra.gd`: klouby
+  nástrojem `rozdel_casti.gd` a složené skriptem `game/spolecne/kostra.gd`: klouby
   rameno, loket, kyčel, koleno, kotník a krk. Procedurální chůze: švih stehen, pokrčení kolene
   při švihu, chodidlo vodorovně s odvinutím přes špičku, pokles těla při rozkroku, paže proti
   nohám, lehký předklon a pohyb hlavy. Fáze podle ušlé vzdálenosti. Skript je obecný, další postavy

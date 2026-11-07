@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/props/kniha/prop_kniha.gd" id="1_81o4b"]
+
+[node name="Kniha" type="Area2D" unique_id=2083441487]
+input_pickable = false
+script = ExtResource("1_81o4b")
+script_name = "Kniha"
+description = "Kniha"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1430114452]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1678535408]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=513035754]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1374648569]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

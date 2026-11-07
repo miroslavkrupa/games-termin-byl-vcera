@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/rooms/komise/room_komise_state.gd" id="1_b1nij"]
+
+[resource]
+resource_name = "Komise"
+script = ExtResource("1_b1nij")
+script_name = "Komise"
+scene = "res://game/rooms/komise/room_komise.tscn"

@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/chaloupka/hotspots/lavicka/hotspot_lavicka.gd" id="1_jl1eo"]
+
+[node name="Lavicka" type="Area2D" unique_id=479883162]
+script = ExtResource("1_jl1eo")
+script_name = "Lavicka"
+description = "ch1_hs_lavicka"
+look_at_point = Vector2(535, 625)
+cursor = 1
+interaction_polygon = PackedVector2Array(470, 595, 600, 595, 600, 660, 470, 660)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=894362694]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

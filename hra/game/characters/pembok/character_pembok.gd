@@ -133,14 +133,14 @@ func _on_blocked_by_region(_region: PopochiuRegion) -> void:
 
 
 ## Pembok je kniha v Rudově inventáři, ve scéně ho není vidět. Než promluví, přenese se neviditelně
-## vedle Rudy, aby se jeho replika ukázala u Rudy.
-func rekni(klic: String) -> void:
+## vedle Rudy, aby se jeho replika ukázala u Rudy. [param dosad] jsou hodnoty za %s v textu.
+func rekni(klic: String, dosad: Variant = null) -> void:
 	if get_parent() == null:
 		R.current.add_character(self)
 	position = C.player.position + Vector2(70, 0)
 	# Ruda je vysoký 988 bodů v měřítku 1; replika knihy je nad jeho hlavou, jen trochu stranou
 	dialog_pos = Vector2(0, -988.0 * C.player.scale.y * 1.05)
-	await say(klic)
+	await say(klic, dosad)
 
 
 ## Po rozhovoru se Pembok zase vrátí do inventáře (zmizí z místnosti)

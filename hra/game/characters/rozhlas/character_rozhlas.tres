@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/rozhlas/character_rozhlas_state.gd" id="1_260ap"]
+
+[resource]
+resource_name = "Rozhlas"
+script = ExtResource("1_260ap")
+script_name = "Rozhlas"
+scene = "res://game/characters/rozhlas/character_rozhlas.tscn"

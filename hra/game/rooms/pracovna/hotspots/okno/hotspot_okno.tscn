@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/pracovna/hotspots/okno/hotspot_okno.gd" id="1_baah1"]
+
+[node name="Okno" type="Area2D" unique_id=1475322269]
+script = ExtResource("1_baah1")
+script_name = "Okno"
+description = "ch1_hs_okno"
+look_at_point = Vector2(1190, 300)
+cursor = 1
+interaction_polygon = PackedVector2Array(968, 61, 1411, 61, 1411, 543, 968, 543)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1296608887]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

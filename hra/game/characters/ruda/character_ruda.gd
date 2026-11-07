@@ -10,7 +10,7 @@ var state: Data = load("res://game/characters/ruda/character_ruda.tres")
 
 # Animace kreslenými fázemi (D40, D41): sady fází v grafika/postavy/ruda_<sada>/ vznikají z listů
 # od ChatGPT nástrojem nastroje/zpracuj_animace.sh. Fáze bokem jsou kreslené doprava, doleva se zrcadlí.
-# (Loutka s klouby z D39 zůstává jako záloha v game/characters/spolecne/kostra.gd.)
+# (Loutka s klouby z D39 zůstává jako záloha v game/spolecne/kostra.gd.)
 const SADY := "res://grafika/postavy/ruda_%s/"
 const NAZVY_SAD := ["model", "chuze_bok", "chuze_predu", "chuze_zezadu", "stani_bok", "stani_predu",
 	"mluveni_bok", "mluveni_predu", "zvednuti", "pouziti"]

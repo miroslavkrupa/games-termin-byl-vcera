@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/archiv/hotspots/kniha/hotspot_kniha.gd" id="1_60fx6"]
+
+[node name="Kniha" type="Area2D" unique_id=343897293]
+script = ExtResource("1_60fx6")
+script_name = "Kniha"
+description = "ch1_hs_kniha"
+cursor = 1
+look_at_point = Vector2(686, 496)
+interaction_polygon = PackedVector2Array(648, 478, 725, 478, 725, 515, 648, 515)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1500174156]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

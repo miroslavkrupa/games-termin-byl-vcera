@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/room_byt.gd" id="1_fasx2"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/walkable_areas/podlaha/walkable_area_podlaha.tscn" id="2_mbk8y"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/props/background/prop_background.tscn" id="2_n8r34"]
+[ext_resource type="Texture2D" path="res://grafika/skici/byt_pozadi.svg" id="3_15kmy"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/props/hrnek/prop_hrnek.tscn" id="4_ptphy"]
+[ext_resource type="Texture2D" path="res://grafika/skici/byt_hrnek.svg" id="5_18ya1"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/props/kniha/prop_kniha.tscn" id="6_de6gn"]
+[ext_resource type="Texture2D" path="res://grafika/skici/byt_kniha.svg" id="7_mbk8y"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/regions/hloubka/region_hloubka.tscn" id="9_eton6"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/police/hotspot_police.tscn" id="9_vrta8"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/zed/hotspot_zed.tscn" id="10_t6cek"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/stul/hotspot_stul.tscn" id="11_uobjw"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/kava/hotspot_kava.tscn" id="12_1dqk7"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/dira/hotspot_dira.tscn" id="13_7w7pv"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/dvere/hotspot_dvere.tscn" id="14_3oiem"]
+[ext_resource type="PackedScene" path="res://game/rooms/byt/hotspots/skvira/hotspot_skvira.tscn" id="15_wdu5v"]
+
+[node name="RoomByt" type="Node2D" unique_id=790046436]
+script = ExtResource("1_fasx2")
+script_name = "Byt"
+width = 1536
+height = 1024
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=1062245632]
+
+[node name="Podlaha" parent="WalkableAreas" unique_id=1080331496 instance=ExtResource("2_mbk8y")]
+
+[node name="Props" type="Node2D" parent="." unique_id=229942715]
+
+[node name="Background" parent="Props" unique_id=1817573789 instance=ExtResource("2_n8r34")]
+position = Vector2(768, 512)
+texture = ExtResource("3_15kmy")
+
+[node name="Hrnek" parent="Props" unique_id=1487540683 instance=ExtResource("4_ptphy")]
+position = Vector2(400, 553)
+texture = ExtResource("5_18ya1")
+
+[node name="Kniha" parent="Props" unique_id=2083441487 instance=ExtResource("6_de6gn")]
+position = Vector2(120, 326)
+texture = ExtResource("7_mbk8y")
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1240861171]
+
+[node name="Police" parent="Hotspots" unique_id=1616169552 instance=ExtResource("9_vrta8")]
+walk_to_point = Vector2(240, 830)
+
+[node name="Zed" parent="Hotspots" unique_id=801906426 instance=ExtResource("10_t6cek")]
+walk_to_point = Vector2(540, 820)
+
+[node name="Stul" parent="Hotspots" unique_id=1426887741 instance=ExtResource("11_uobjw")]
+walk_to_point = Vector2(520, 840)
+
+[node name="Kava" parent="Hotspots" unique_id=1298879231 instance=ExtResource("12_1dqk7")]
+walk_to_point = Vector2(440, 840)
+
+[node name="Dira" parent="Hotspots" unique_id=1678371117 instance=ExtResource("13_7w7pv")]
+walk_to_point = Vector2(940, 830)
+
+[node name="Dvere" parent="Hotspots" unique_id=1891580270 instance=ExtResource("14_3oiem")]
+walk_to_point = Vector2(1300, 850)
+
+[node name="Skvira" parent="Hotspots" unique_id=693001424 instance=ExtResource("15_wdu5v")]
+walk_to_point = Vector2(1300, 860)
+
+[node name="Regions" type="Node2D" parent="." unique_id=171088543]
+
+[node name="Hloubka" parent="Regions" unique_id=1573469468 instance=ExtResource("9_eton6")]
+scaling = true
+scale_top = 0.36
+scale_bottom = 0.48
+
+[node name="Markers" type="Node2D" parent="." unique_id=184256873]
+
+[node name="Characters" type="Node2D" parent="." unique_id=424105470]

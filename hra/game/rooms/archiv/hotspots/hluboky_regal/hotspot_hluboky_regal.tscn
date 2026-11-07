@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/archiv/hotspots/hluboky_regal/hotspot_hluboky_regal.gd" id="1_qqmve"]
+
+[node name="HlubokyRegal" type="Area2D" unique_id=403455302]
+script = ExtResource("1_qqmve")
+script_name = "HlubokyRegal"
+description = "ch1_hs_hluboky_regal"
+cursor = 1
+look_at_point = Vector2(1290, 380)
+interaction_polygon = PackedVector2Array(1150, 60, 1430, 60, 1430, 700, 1150, 700)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1816620846]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

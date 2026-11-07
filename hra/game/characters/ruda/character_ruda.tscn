@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/characters/ruda/character_ruda.gd" id="1_7mwa3"]
 [ext_resource type="Texture2D" path="res://grafika/postavy/ruda_model/faze_01.png" id="2_zepredu"]
-[ext_resource type="Script" path="res://game/characters/spolecne/stin.gd" id="3_stin"]
+[ext_resource type="Script" path="res://game/spolecne/stin.gd" id="3_stin"]
 
 [node name="CharacterRuda" type="Area2D" unique_id=1131318484]
 script = ExtResource("1_7mwa3")

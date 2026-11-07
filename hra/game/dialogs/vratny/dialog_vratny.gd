@@ -18,18 +18,31 @@ func _on_option_kdo(_opt: PopochiuDialogOption) -> void:
 	await D.say_selected()
 	await C.Vratny.say("ch1_vratny_kdo_1")
 	await C.player.say("ch1_vratny_kdo_ruda")
-	await C.Vratny.say("ch1_vratny_kdo_2")
+	# Po zapojení tlačítka „2“ (I3) jezdí výtah celý
+	await C.Vratny.say("ch1_vratny_kdo_2_tlacitko" if Globals.tlacitko_zapojeno else "ch1_vratny_kdo_2")
 	R.Namesti.state.vratny_rekl_starosta = true
 
 
 func _on_option_dovnitr(_opt: PopochiuDialogOption) -> void:
 	await D.say_selected()
-	if Globals.c1_cislo_projektu:
+	if Globals.tlacitko_zapojeno:
+		await C.Vratny.say("ch1_vratny_dovnitr_tlacitko")
+	elif Globals.c1_cislo_projektu:
 		await C.Vratny.say("ch1_vratny_dovnitr_cislo")
-		return
-	await C.Vratny.say("ch1_vratny_dovnitr_1")
-	await C.player.say("ch1_vratny_dovnitr_ruda")
-	await C.Vratny.say("ch1_vratny_dovnitr_2")
+	else:
+		await C.Vratny.say("ch1_vratny_dovnitr_1")
+		await C.player.say("ch1_vratny_dovnitr_ruda")
+		await C.Vratny.say("ch1_vratny_dovnitr_2")
+	# Vrátný zmínil Lumíra: otevře se otázka, kdo to je (stopa P1.4)
+	turn_on_options(["Lumir"])
+
+
+func _on_option_lumir(_opt: PopochiuDialogOption) -> void:
+	await D.say_selected()
+	await C.Vratny.say("ch1_vratny_lumir_1")
+	await C.player.say("ch1_vratny_lumir_ruda")
+	await C.Vratny.say("ch1_vratny_lumir_2")
+	turn_off_forever_options(["Lumir"])
 
 
 func _on_option_krizovka(_opt: PopochiuDialogOption) -> void:

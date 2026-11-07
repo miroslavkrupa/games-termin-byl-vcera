@@ -43,7 +43,7 @@ ch1_zmena_dohoda_uz,Modrou! Mám to podepsané. Kávou.,Blue! It's signed. In co
 obecne_nelze,S tím nic neudělám.,I can't do anything with that.,Ruda,,výchozí reakce
 obecne_pouzit_s,Použít %s na %s? To nedává smysl ani podle mých standardů.,"Use %s on %s? That doesn't make sense, even by my standards.",Ruda,,"výchozí reakce; %s = předmět, cíl"
 obecne_nic_k_videni,Nic zvláštního.,Nothing special.,Ruda,,výchozí reakce
-ch1_hs_schody,Schody na náměstí,Stairs to the square,,,popisek aktivního místa; od N7 vedou schody do vestibulu: „Schody do vestibulu“ / „Stairs to the lobby“
+ch1_hs_schody,Schody do vestibulu,Stairs to the lobby,,,popisek aktivního místa (východ do S2; od N7 vedou schody do vestibulu)
 ch1_schody_prohlednout,"Schody nahoru. Jediná cesta ven, a i ta je ve fázi 2: zábradlí končí v půlce.","Stairs going up. The only way out, and even that's in phase two: the railing stops halfway.",Ruda,suše,
 ch1_hs_kartoteka,Kartotéka,Card index,,,popisek aktivního místa
 ch1_kartoteka_prohlednout,"Kartotéka zkrachovalých projektů, seřazená podle plánovaného dokončení. Na každém lístku stojí „příští rok“.","An index of failed projects, sorted by planned completion date. Every card says 'next year'.",Ruda,pobaveně,zárodek puzzlu kartotéky z kap. 1
@@ -53,8 +53,45 @@ ch1_kartoteka_pouzit_3,"Kdyby tohle někdo četl dřív, ušetřil by dvacet mos
 ch1_archiv_prichod,"Archiv zkrachovalých projektů. Konečně místo, kde se něco dokončuje: seznamy toho, co se nedokončilo.","The archive of failed projects. Finally, a place where something gets finished: lists of what didn't.",Ruda,uznale,jen při prvním příchodu
 ui_nastaveni,Nastavení,Settings,,,titulek okna nastavení
 ui_jazyk,Jazyk,Language,,,nastavení
+ui_razeni_hotovo,Lístky jsou seřazené,The cards are sorted,,,tlačítko v okně řazení kartotéky (P1.5)
+ui_razeni_archa,Vzít lístek Archy,Take the Ark card,,,tlačítko v okně řazení kartotéky (chybný pokus P1.5)
+ui_zavrit,Zavřít,Close,,,tlačítko překryvných oken
+ui_m02_hotovo,Hotovo,Done,,,tlačítko v okně M02 (odevzdá rozmístění Pembokovi)
+ui_m01_hotovo,Papír je hotový,The paper is done,,,tlačítko v okně M01 (odevzdá papír o Arše)
+ui_konec_znovu,Hrát znovu od začátku,Play again from the start,,,tlačítko závěrečné obrazovky kapitoly 1 (dočasně; hlavní menu přijde v I6)
+ui_vytah_prizemi,Přízemí,Ground floor,,,tlačítko výtahu (nabídka voleb; v prototypu „=Přízemí“)
+ui_vytah_komise,1½ · Komise,1½ · Committee,,,tlačítko výtahu (od I4)
+ui_vytah_starosta,2 · Starosta,2 · Mayor,,,tlačítko výtahu po zapojení tlačítka „2“
+ui_vytah_dva,2,2,,,díra místo tlačítka „2“ (P1.6)
+ui_vytah_vylezt,Vylézt o půl patra,Climb half a floor,,,chybný pokus P1.6 (jen v Komisi)
+ui_vytah_zustat,Zůstat,Stay,,,zavře nabídku výtahu
+postava_rozhlas,Městský rozhlas,Town loudspeaker,,,"hlas z amplionu na náměstí (úvod, I6)"
+postava_veritel,Věřitel,Creditor,,,"hlasy za dveřmi Rudova bytu (úvod, I6)"
+ui_nazev_hry,Termín byl včera,Deadline Was Yesterday,,,"název hry (hlavní menu, titulky; příběhová bible)"
+ui_menu_pokracovat,Pokračovat,Continue,,,hlavní menu: načte nejnovější uloženou hru
+ui_menu_nova_hra,Nová hra,New game,,,hlavní menu
+ui_menu_nacist,Načíst hru,Load game,,,hlavní menu
+ui_menu_titulky,Titulky,Credits,,,hlavní menu a závěrečná obrazovka
+ui_menu_konec,Konec,Quit,,,hlavní menu: ukončí program (na webu chybí)
+ui_hlavni_menu,Hlavní menu,Main menu,,,tlačítko v nastavení a na závěrečné obrazovce
+ui_do_menu_otazka,Vrátit se do hlavního menu? Neuložený postup se ztratí.,Return to the main menu? Unsaved progress will be lost.,,,dotaz před návratem do menu
+ui_dal,Dál,Next,,,tlačítko obrazovky „Co si Nedostavěnice zapamatovala“
+ui_ano,Ano,Yes,,,potvrzení v okně
+ui_pozice_prazdna,Volná pozice %d,Empty slot %d,,,okno uložení a načtení; %d = číslo pozice
+ui_hra_ulozena,Hra uložena,Game saved,,,karta po uložení
+ui_hra_nactena,Hra načtena,Game loaded,,,karta po načtení
+ui_hra_nejde_nacist,Tuhle uloženou hru nejde načíst: je ze starší verze hry.,This saved game can't be loaded: it's from an older version of the game.,,,karta při načtení uložené hry ze starší verze (I6)
+ui_dotyk,Dotyk,Touch,,,nastavení ovládání na dotyku (D43)
+ui_dotyk_podrzet,Podržet = prohlédnout,Hold to look,,,"nastavení dotyku (výchozí, R3)"
+ui_dotyk_nabidka,Nabídka po ťuknutí,Menu on tap,,,nastavení dotyku (D43)
+ui_prohlednout,Prohlédnout,Look,,,nabídka po ťuknutí (D43)
+ui_pouzit,Použít,Use,,,nabídka po ťuknutí (D43)
+ui_titulky_autor,"Námět, scénář a výroba","Story, script and production",,,titulky
+ui_titulky_engine,Hra běží na,Made with,,,titulky
+ui_titulky_pismo,Písmo,Font,,,titulky
+ui_titulky_dekujeme,"Díky, že hrajete.",Thanks for playing.,,,titulky
 Save,Uložit,Save,,,šablona Popochiu: klíčem je anglický text šablony
-Load,Nahrát,Load,,,šablona Popochiu
+Load,Načíst,Load,,,šablona Popochiu
 History,Historie,History,,,šablona Popochiu
 Quit,Konec,Quit,,,šablona Popochiu
 Volume,Hlasitost,Volume,,,šablona Popochiu
@@ -67,7 +104,7 @@ Are you sure you want to quit?,Opravdu chceš skončit? Kometa nepočká.,Are yo
 OK,OK,OK,,,šablona Popochiu
 Cancel,Zrušit,Cancel,,,šablona Popochiu
 Choose a slot to save the game,Vyber pozici pro uložení hry,Choose a slot to save the game,,,šablona Popochiu
-Choose the slot to load,Vyber pozici k nahrání,Choose the slot to load,,,šablona Popochiu
+Choose the slot to load,Vyber pozici k načtení,Choose the slot to load,,,šablona Popochiu
 Nothing to show yet,Zatím tu nic není,Nothing to show yet,,,šablona Popochiu (historie)
 ok,OK,OK,,,šablona Popochiu (skryté tlačítko)
 cancel,Zrušit,Cancel,,,šablona Popochiu (skryté tlačítko)

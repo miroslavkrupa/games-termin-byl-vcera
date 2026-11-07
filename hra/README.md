@@ -1,11 +1,22 @@
-# Hra – technický prototyp „Náměstí“
+# Hra – kapitola 1 v Godotu
 
-Projekt Godot 4.7 s doplňkem Popochiu 2.2.1 (MIT, `addons/popochiu`). Plán a otázky prototypu
-jsou v [docs/08-prototyp-namesti.md](../docs/08-prototyp-namesti.md).
+Projekt Godot 4.7 s doplňkem Popochiu 2.2.1 (MIT, `addons/popochiu`). Kapitola 1 jde dohrát od
+hlavního menu po konec, chybějící grafika je zatím zástupná (D87). Stav a plán výroby jsou
+v [docs/10-plan-kapitoly-1.md](../docs/10-plan-kapitoly-1.md), začátky technického prototypu
+v [docs/08-prototyp-namesti.md](../docs/08-prototyp-namesti.md).
 
-## Otevření
+## Otevření a spuštění
 
-Godot → **Import** → `hra/project.godot` → *Import & Edit*.
+Godot → **Import** → `hra/project.godot` → *Import & Edit*. Z příkazové řádky hra začne hlavním
+menu:
+
+```bash
+godot --path hra
+```
+
+Myší levé tlačítko použije a pravé prohlédne. Prstem ťuknutí použije a podržení prohlédne,
+v nastavení jde zapnout nabídku po ťuknutí (D43). Nastavení, ukládání a návrat do menu jsou
+pod ikonou v horní liště.
 
 ## Struktura
 
@@ -17,6 +28,11 @@ Godot → **Import** → `hra/project.godot` → *Import & Edit*.
 | `texty/` | tabulka řetězců CS/EN |
 | `nastroje/` | pomocné skripty |
 | `game/` | místnosti, postavy a předměty Popochiu (vytvoří průvodce nastavením) |
+| `game/minihry/` | minihry jako překryvná okna (řazení kartotéky, M01–M03) |
+| `game/obrazovky/` | hlavní menu, karty, konec kapitoly, titulky, ukládání a nová hra (`ramec.gd`) |
+| `game/spolecne/` | skripty sdílené postavami (kostra, stín) |
+| `grafika/predmety/` | ikony předmětů 128 px |
+| `grafika/skici/` | zástupná grafika jako SVG skici v paletě stylové bible |
 
 ## Nástroje
 
@@ -36,6 +52,10 @@ akci postavy, `serie` uloží řadu snímků (s výpisem stavu animace),
 ```bash
 godot --path hra -- snimek=/tmp/snimek.png jazyk=en cekej=3 akce=DvereRadnice:pouzit,Kartoteka:pouzit po=1
 ```
+
+Ladicí běh menu přeskočí a začne na náměstí. Další parametry (výchozí místnost, příznaky,
+předměty, klepnutí do miniher, ukládání a načítání, úvod přes `start=Byt`, výpis stavů) popisuje
+hlavička `nastroje/ladeni.gd`.
 
 Texty jsou v `texty/texty.csv`; každý řádek musí mít češtinu i angličtinu. Po úpravě tabulky
 je potřeba import (editor ho udělá sám, z příkazové řádky `godot --headless --path hra --import`)

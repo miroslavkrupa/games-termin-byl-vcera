@@ -15,6 +15,12 @@ script = ExtResource("1_rrhpp")
 id = "Plakat"
 text = "ch1_zmena_volba_plakat"
 
+[sub_resource type="Resource" id="Resource_arch1"]
+resource_name = "Archa"
+script = ExtResource("1_rrhpp")
+id = "Archa"
+text = "ch1_zmena_volba_archa"
+
 [sub_resource type="Resource" id="Resource_3jj2k"]
 resource_name = "Konec"
 script = ExtResource("1_rrhpp")
@@ -25,4 +31,4 @@ text = "ch1_zmena_volba_konec"
 resource_name = "PanZmena"
 script = ExtResource("2_slf5m")
 script_name = "PanZmena"
-options = Array[ExtResource("1_rrhpp")]([SubResource("Resource_ckwei"), SubResource("Resource_hh4ls"), SubResource("Resource_3jj2k")])
+options = Array[ExtResource("1_rrhpp")]([SubResource("Resource_ckwei"), SubResource("Resource_hh4ls"), SubResource("Resource_arch1"), SubResource("Resource_3jj2k")])

@@ -1,15 +1,19 @@
 # @popochiu-docs-ignore-class
 @tool
 extends PopochiuHotspot
-# You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
-# Use `await E.queue([])` to pause execution until the sequence completes.
+# Schody z archivu: východ do vestibulu radnice (S2). Zábradlí končí v půlce.
 
 
 #region Virtual ####################################################################################
 # When the hotspot is clicked
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
-	R.goto_room("Namesti")
+	if R.Archiv.hraje_bara():
+		# Bára neodejde, dokud regál nepřeměří (K7)
+		await C.player.say("ch1_usek_odejit")
+		return
+	# Schody vedou do vestibulu (S2, od I3)
+	R.goto_room("Vestibul")
 
 
 # Called when the hotspot is double-clicked
@@ -24,6 +28,9 @@ func _on_double_click() -> void:
 # When the hotspot is right clicked
 func _on_right_click() -> void:
 	await C.player.face_clicked()
+	if R.Archiv.hraje_bara():
+		await C.player.say("ch1_usek_schody")
+		return
 	await C.player.say("ch1_schody_prohlednout")
 
 

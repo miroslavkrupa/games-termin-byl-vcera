@@ -14,6 +14,9 @@ const POZADI_VECER := preload("res://grafika/mistnosti/namesti_vecer_siroke.png"
 const KASNA_DEN := preload("res://grafika/mistnosti/namesti_den_kasna_popredi.png")
 const KASNA_VECER := preload("res://grafika/mistnosti/namesti_vecer_kasna_popredi.png")
 const SVETLO_DEN := Color(1, 1, 1)
+const Karta := preload("res://game/obrazovky/karta.gd")
+## Kam Ruda dopadne ze skluzu z bytu (suť vpředu vpravo od kašny)
+const PRISTANI := Vector2(760, 935)
 const SVETLO_VECER := Color(0.66, 0.5, 0.64)
 
 
@@ -23,9 +26,17 @@ const SVETLO_VECER := Color(0.66, 0.5, 0.64)
 # Add any code you want to setup the stage before the room is shown to the player (e.g. setting
 # character position and facing direction, active walkable area, props visibility, etc.).
 func _on_room_entered() -> void:
-	if C.player.last_room == "Archiv":
-		# Návrat z archivu: Ruda stojí u dveří radnice
+	if C.player.last_room == "Vestibul":
+		# Návrat z radnice: Ruda stojí u dveří radnice
 		C.player.position = Vector2(950, 748)
+		C.player.face_down()
+	elif C.player.last_room == "Byt":
+		# Skluzem z bytu (úvod): Ruda je zatím nad obrazovkou, dopadne v _pristani()
+		C.player.position = PRISTANI - Vector2(0, 560) if not state.vybava_dana else PRISTANI
+		C.player.face_down()
+	elif C.player.last_room == "Chaloupka":
+		# Návrat uličkou od rampy: Ruda stojí u průchodu za kašnou
+		C.player.position = Vector2(400, 815)
 		C.player.face_down()
 	else:
 		# Začátek hry: Ruda stojí vpředu vedle kašny
@@ -37,7 +48,12 @@ func _on_room_entered() -> void:
 # Implement this to start cutscenes, play sounds, etc.
 # NOTE: this is NOT called when loading a saved game. Use [_on_restore_from_savegame] for that.
 func _on_room_transition_finished() -> void:
-	# Výchozí věci z úvodu (návrh kapitoly 1, Výchozí stav); Pembok hned vysvětlí úkol
+	# Příchod z úvodu v bytě (I6): přistání, rozhlas, Pembok se otevře, karta úkolu
+	if C.player.last_room == "Byt" and not state.vybava_dana:
+		await _pristani()
+		return
+	# Hra spuštěná rovnou na náměstí (ladicí běhy bez úvodu): výchozí věci z úvodu (návrh
+	# kapitoly 1, Výchozí stav) se dají tady a Pembok hned vysvětlí úkol, jako před I6
 	if not state.vybava_dana:
 		state.vybava_dana = true
 		await I.Dekret.add()
@@ -84,6 +100,42 @@ func prepni_den_vecer() -> void:
 #endregion
 
 #region Private ####################################################################################
+## Konec úvodu (prototyp byt.dira po „>namesti“): Ruda dopadne ze skluzu, rozhlas ohlásí kometu
+## a jeho jmenování, Pembok se poprvé otevře a vysvětlí úkol, nakonec karta úkolu kapitoly.
+## Věci (dekret, káva, propiska, Pembok) má Ruda z bytu.
+func _pristani() -> void:
+	state.vybava_dana = true
+	G.block()
+	C.player.modulate = SVETLO_VECER if state.vecer else SVETLO_DEN
+	var pad := create_tween()
+	pad.tween_property(C.player, "position", PRISTANI, 0.5).from(PRISTANI - Vector2(0, 560)) \
+		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	await pad.finished
+	G.unblock()
+	await C.player.say("ch1_byt_pristani")
+	await C.player.say("ch1_ruda_001")
+	var rozhlas := C.get_character("Rozhlas")
+	for klic in ["ch1_rozhlas_001", "ch1_rozhlas_002", "ch1_rozhlas_003", "ch1_rozhlas_004"]:
+		await rozhlas.hlas(klic)
+	await C.player.face_up()
+	await C.player.say("ch1_rozhlas_ruda_1")
+	await C.player.face_down()
+	await C.player.say("ch1_rozhlas_ruda_2")
+	var kniha := C.get_character("Pembok")
+	await kniha.rekni("ch1_pembok_otevreni_1")
+	await C.player.say("ch1_pembok_otevreni_ruda")
+	await kniha.rekni("ch1_pembok_otevreni_2")
+	await kniha.rekni("ch1_pembok_001")
+	await kniha.rekni("ch1_pembok_ukol")
+	await C.player.say("ch1_pembok_ukol_ruda")
+	await kniha.rekni("ch1_pembok_ukol_2")
+	await kniha.rekni("ch1_pembok_ukol_3")
+	kniha.uklid()
+	await C.player.say("ch1_ruda_002")
+	state.pembok_otevren = true
+	await Karta.ukaz("ch1_ui_ukol")
+
+
 func _nastav_svetlo() -> void:
 	get_prop("Background").texture = POZADI_VECER if state.vecer else POZADI_DEN
 	get_prop("KasnaPopredi").texture = KASNA_VECER if state.vecer else KASNA_DEN

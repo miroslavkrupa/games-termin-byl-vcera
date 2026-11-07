@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/kocour/character_kocour.gd" id="1_ic273"]
+[ext_resource type="Texture2D" path="res://grafika/postavy/kocour_stoji/kocour_stoji.png" id="2_tex"]
+
+[node name="CharacterKocour" type="Area2D" unique_id=116666946]
+script = ExtResource("1_ic273")
+script_name = "Kocour"
+description = "postava_kocour"
+cursor = 8
+interaction_polygon = PackedVector2Array(-48, -126, 48, -126, 48, 0, -48, 0)
+text_color = Color(1, 0.72, 0.4, 1)
+ignore_region_scaling = true
+dialog_pos = Vector2(0, -150)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=2125377671]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=951746574]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=54553287]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -210)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1090448888]
+visible = false
+polygon = PackedVector2Array(-48, -126, 48, -126, 48, 0, -48, 0)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=2121532892]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -10,13 +10,8 @@ extends PopochiuHotspot
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
 	await C.player.face_clicked()
-	# Do archivu jen s číslem projektu; vrátný hlídá místo archiváře, dokud není archiv (I2)
-	if not Globals.c1_cislo_projektu:
-		await C.Vratny.say("ch1_vratny_stop")
-		return
-	if not R.Namesti.state.archiv_navstiven:
-		await C.Vratny.say("ch1_vratny_pusti")
-	R.goto_room("Archiv")
+	# Dveře vedou do vestibulu (S2, I3); archiv ve sklepě hlídá Lumír (P1.4, I2)
+	R.goto_room("Vestibul")
 
 
 # Called when the hotspot is double-clicked

@@ -8,6 +8,8 @@ extends PopochiuDialog
 func _on_start() -> void:
 	await C.player.say("ch1_bara_znovu_ruda")
 	await C.Bara.say("ch1_bara_znovu")
+	var rozsah := get_option("Rozsah")
+	rozsah.visible = not rozsah.used and (I.is_item_in_inventory("Zadani") or I.is_item_in_inventory("Papir"))
 
 
 func _option_selected(_opt: PopochiuDialogOption) -> void:
@@ -32,6 +34,17 @@ func _on_option_cislo(_opt: PopochiuDialogOption) -> void:
 		# Kdo jí skočil do řeči, číslo od ní nedostane; pošle ho ale k plakátu (žádná slepá ulička)
 		await C.Bara.say("ch1_bara_cislo_ne")
 		await C.Bara.say("ch1_bara_cislo_zmena")
+
+
+## Co na Archu nepatří (jen se zadáním nebo papírem; jednou): dobrý útržek „mimo rozsah“ pro M01 (I5)
+func _on_option_rozsah(_opt: PopochiuDialogOption) -> void:
+	await D.say_selected()
+	await C.Bara.say("ch1_bara_rozsah_1")
+	await C.player.say("ch1_bara_rozsah_ruda")
+	await C.Bara.say("ch1_bara_rozsah_2")
+	await C.Bara.say("ch1_bara_rozsah_utrzek")
+	R.Namesti.state.utrzek_mimo = true
+	turn_off_forever_options(["Rozsah"])
 
 
 func _on_option_konec(_opt: PopochiuDialogOption) -> void:

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_56ykf"]
+[ext_resource type="Script" path="res://game/dialogs/veritel/dialog_veritel.gd" id="2_ngfs3"]
+
+[sub_resource type="Resource" id="Resource_3tnct"]
+resource_name = "Nikdo"
+script = ExtResource("1_56ykf")
+id = "Nikdo"
+text = "ch1_veritel_volba_nikdo"
+
+[sub_resource type="Resource" id="Resource_jnqe0"]
+resource_name = "Kolik"
+script = ExtResource("1_56ykf")
+id = "Kolik"
+text = "ch1_veritel_volba_kolik"
+
+[sub_resource type="Resource" id="Resource_qqad7"]
+resource_name = "Co"
+script = ExtResource("1_56ykf")
+id = "Co"
+text = "ch1_veritel_volba_co"
+
+[sub_resource type="Resource" id="Resource_wkc61"]
+resource_name = "Konec"
+script = ExtResource("1_56ykf")
+id = "Konec"
+text = "ch1_veritel_volba_konec"
+
+[resource]
+resource_name = "Veritel"
+script = ExtResource("2_ngfs3")
+script_name = "Veritel"
+options = Array[ExtResource("1_56ykf")]([SubResource("Resource_3tnct"), SubResource("Resource_jnqe0"), SubResource("Resource_qqad7"), SubResource("Resource_wkc61")])

@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/tlacitko/inventory_item_tlacitko.gd" id="1_mkqv0"]
+[ext_resource type="Texture2D" path="res://grafika/predmety/tlacitko.png" id="2_ikona"]
+
+[node name="ItemTlacitko" type="TextureRect" unique_id=2039265254]
+texture = ExtResource("2_ikona")
+texture_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_mkqv0")
+script_name = "Tlacitko"
+description = "predmet_tlacitko"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1183185177]

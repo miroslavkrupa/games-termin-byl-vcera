@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/komise/hotspots/razitko/hotspot_razitko.gd" id="1_rokjj"]
+
+[node name="Razitko" type="Area2D" unique_id=1509857484]
+script = ExtResource("1_rokjj")
+script_name = "Razitko"
+description = "ch1_hs_razitko"
+cursor = 1
+interaction_polygon = PackedVector2Array(794, 315, 986, 315, 986, 415, 794, 415)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=376960685]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

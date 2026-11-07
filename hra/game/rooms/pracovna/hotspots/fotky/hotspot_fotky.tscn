@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/pracovna/hotspots/fotky/hotspot_fotky.gd" id="1_mnu88"]
+
+[node name="Fotky" type="Area2D" unique_id=1308963535]
+script = ExtResource("1_mnu88")
+script_name = "Fotky"
+description = "ch1_hs_fotky"
+look_at_point = Vector2(400, 300)
+cursor = 1
+interaction_polygon = PackedVector2Array(258, 123, 535, 123, 535, 481, 258, 481)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1055357564]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

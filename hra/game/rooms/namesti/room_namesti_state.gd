@@ -25,6 +25,10 @@ var pembok_otevren := false
 var napoveda_zmena := 0
 ## Na náměstí je večer (prototyp K7: paleta C a tónování postav)
 var vecer := false
+## Pan Změna vyprávěl o Arše („Aby to bylo hezký“): nesmyslné útržky cíle a kritérií pro M01 (I5)
+var slysel_zmena_archa := false
+## Bára řekla, co na Archu nepatří (bazén, terasa, fontána): dobrý útržek „mimo rozsah“ pro M01 (I5)
+var utrzek_mimo := false
 
 
 #region Virtual ####################################################################################

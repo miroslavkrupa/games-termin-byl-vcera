@@ -1,8 +1,8 @@
 # @popochiu-docs-ignore-class
 @tool
 extends PopochiuHotspot
-# You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
-# Use `await E.queue([])` to pause execution until the sequence completes.
+# Kartotéka zkrachovalých projektů: nejdřív čtení lístků (stopy P1.6 a P1.7), pak řazení podle
+# skutečného data zahájení (P1.5), za lístkem Archy je původní zadání.
 
 
 #region Virtual ####################################################################################
@@ -10,10 +10,33 @@ extends PopochiuHotspot
 func _on_click() -> void:
 	await C.player.walk_to_clicked()
 	await C.player.face_clicked()
-	await C.player.animuj_akci("pouziti")
-	await C.player.say("ch1_kartoteka_pouzit_1")
-	await C.player.say("ch1_kartoteka_pouzit_2")
-	await C.player.say("ch1_kartoteka_pouzit_3")
+	if R.Archiv.hraje_bara():
+		# Bára kartotéku neřadí (prototyp: výchozí reakce Báry)
+		E.command_fallback()
+		return
+	if await R.Archiv.lumir_zastavi():
+		return
+	var stav = R.Archiv.state
+	if not stav.listky_ctene:
+		await C.player.animuj_akci("pouziti")
+		await C.player.say("ch1_kartoteka_pouzit_1")
+		await C.player.say("ch1_kartoteka_pouzit_2")
+		await C.player.say("ch1_kartoteka_pouzit_3")
+		stav.listky_ctene = true
+	elif not stav.zadani_vydano:
+		await C.player.say("ch1_kartoteka_razeni_uvod")
+		await R.Archiv.otevri_razeni()
+	else:
+		await C.player.say("ch1_kartoteka_prohlednout")
+
+
+# When the hotspot is right clicked
+func _on_right_click() -> void:
+	await C.player.face_clicked()
+	if R.Archiv.hraje_bara():
+		await C.player.say("ch1_usek_kartoteka")
+		return
+	await C.player.say("ch1_kartoteka_prohlednout")
 
 
 # Called when the hotspot is double-clicked
@@ -23,12 +46,6 @@ func _on_double_click() -> void:
 	# Example: on an exit hotspot you could instantly change rooms instead of waiting for the player
 	# to walk there.
 #	await R.current = R.NewRoom
-
-
-# When the hotspot is right clicked
-func _on_right_click() -> void:
-	await C.player.face_clicked()
-	await C.player.say("ch1_kartoteka_prohlednout")
 
 
 # Called when the hotspot is middle clicked

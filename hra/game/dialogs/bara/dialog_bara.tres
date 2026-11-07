@@ -15,6 +15,12 @@ script = ExtResource("1_lc6nj")
 id = "Cislo"
 text = "ch1_bara_volba_cislo"
 
+[sub_resource type="Resource" id="Resource_rzsh1"]
+resource_name = "Rozsah"
+script = ExtResource("1_lc6nj")
+id = "Rozsah"
+text = "ch1_bara_volba_rozsah"
+
 [sub_resource type="Resource" id="Resource_karqj"]
 resource_name = "Konec"
 script = ExtResource("1_lc6nj")
@@ -25,4 +31,4 @@ text = "ch1_bara_volba_konec"
 resource_name = "Bara"
 script = ExtResource("2_yil1l")
 script_name = "Bara"
-options = Array[ExtResource("1_lc6nj")]([SubResource("Resource_jswsh"), SubResource("Resource_k87di"), SubResource("Resource_karqj")])
+options = Array[ExtResource("1_lc6nj")]([SubResource("Resource_jswsh"), SubResource("Resource_k87di"), SubResource("Resource_rzsh1"), SubResource("Resource_karqj")])

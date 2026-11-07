@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/veritel/character_veritel_state.gd" id="1_i7of6"]
+
+[resource]
+resource_name = "Veritel"
+script = ExtResource("1_i7of6")
+script_name = "Veritel"
+scene = "res://game/characters/veritel/character_veritel.tscn"

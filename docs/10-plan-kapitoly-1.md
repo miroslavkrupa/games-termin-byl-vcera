@@ -43,8 +43,8 @@ F1 a F2 mohou běžet souběžně. Iterace F3 se mohou s F2 překrývat: grafika
 
 **Změna pořadí (D54, D55):** mezi F2 a F3 se vkládá návrh celé hry na papíře a první verze
 textů kapitoly 1 podle [postupu návrhu](12-postup-navrhu.md) (kroky N0–N6, brány A a B,
-papírová část asi 65–125 h, bez testu s hráči, D66). Iterace I2–I6 začnou až po bráně B, I1 se podle nového návrhu
-zkontroluje.
+papírová část asi 65–125 h, bez testu s hráči, D66). Iterace I2–I6 měly začít až po bráně B; od D87 se
+vyrábějí hned se zástupnou grafikou.
 
 Při 5–8 hodinách týdně to vychází na **3–5 měsíců**.
 
@@ -76,6 +76,27 @@ průchody: Bára ho řekne jen tomu, kdo ji v prvním rozhovoru nechá domluvit 
 Rudu k Panu Změnovi; ten za podepsaný požadavek kávovým perem vydá plakát s číslem. Ikony
 předmětů jsou z listu `ikony-1`. **Dočasně:** dveře radnice hlídá vrátný (bez čísla nepustí),
 než v I2 přibude Lumír. Čeká: projít na počítači a telefonu, nasadit na web.
+
+**Stav I2–I6 (2026-11-07, D87):** kapitola 1 jde v Godotu dohrát celá od spuštění po konec:
+hlavní menu → úvod v bytě → náměstí → archiv, vestibul, pracovna, chaloupka, Komise → konec
+s pamětí kapitoly → „Pokračování příště“ → menu. Všechny čtyři minihry (řazení kartotéky, M01
+Charter, M02 Kdo velí, M03 Souboj argumenty) jsou překryvná okna v paletě stylové bible, úsek za
+Báru přepíná hranou postavu. Použitá jsou schválená pozadí kapitoly 1 a výřezy postav
+z prototypu. Postavy kromě Rudy stojí bez animací. Byt, panel výtahu a cedule archivu jsou SVG
+skici v `hra/grafika/skici/`. Ukládá se přes Popochiu do čtyř pozic s verzí uložení (starší
+pozice hra odmítne), nová hra vše vynuluje. Ladicí průchod nejkratší cestou (14 navazujících
+běhů `ladeni.gd`) dojde ke konci s pamětí kapitoly.
+
+Odchylky od návrhu k posouzení:
+- M01 a M02 se ovládají klepnutím (vybrat útržek nebo kartu, pak kolonku) místo přetahování;
+  řazení kartotéky se potvrzuje tlačítkem, ne po každém přesunu.
+- Rozmístění karet v M02 a útržků v M01 zůstává i po zavření okna.
+- Schody do archivu jsou na levém okraji vestibulu s cedulí „ARCHIV ↓“, pozadí schody dolů nemá.
+- Kocour sedí na náměstí i na plotě chaloupky zároveň (jako v prototypu).
+- Závěr kapitoly se odehraje na večerním náměstí; vpravo dole je ukazatel dnů do dopadu komety.
+
+Čeká: titulky (zatím jen jisté položky), schválené pozadí bytu, animace postav, ověření na
+telefonu (chůze ťuknutím, podržení), nasazení na web.
 
 Pro každou iteraci platí **definice hotového:**
 - všechny texty v češtině i angličtině, `kontrola_textu.py` bez chyb,

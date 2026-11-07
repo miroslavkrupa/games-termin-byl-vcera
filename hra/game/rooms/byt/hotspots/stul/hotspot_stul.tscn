@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/hotspots/stul/hotspot_stul.gd" id="1_dksvj"]
+
+[node name="Stul" type="Area2D" unique_id=1426887741]
+script = ExtResource("1_dksvj")
+script_name = "Stul"
+description = "ch1_hs_byt_stul"
+cursor = 1
+interaction_polygon = PackedVector2Array(458, 560, 720, 560, 720, 780, 330, 780, 330, 612, 458, 612)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1310574890]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

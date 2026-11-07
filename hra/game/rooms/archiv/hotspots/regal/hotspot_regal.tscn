@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/archiv/hotspots/regal/hotspot_regal.gd" id="1_jygik"]
+
+[node name="Regal" type="Area2D" unique_id=1707249526]
+script = ExtResource("1_jygik")
+script_name = "Regal"
+description = "ch1_hs_regal"
+cursor = 1
+look_at_point = Vector2(737, 296)
+interaction_polygon = PackedVector2Array(637, 184, 837, 184, 837, 409, 637, 409)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1154186303]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

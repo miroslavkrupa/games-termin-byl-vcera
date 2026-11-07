@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/rozhlas/character_rozhlas.gd" id="1_hlas"]
+
+[node name="CharacterRozhlas" type="Area2D" unique_id=418983651]
+script = ExtResource("1_hlas")
+script_name = "Rozhlas"
+description = "postava_rozhlas"
+clickable = false
+text_color = Color(0.95, 0.78, 0.35, 1)
+ignore_region_scaling = true
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=1937897297]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=841526200]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=764631168]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=813190777]
+visible = false
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=643730658]
+visible = false

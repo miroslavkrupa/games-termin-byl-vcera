@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/regions/hloubka/region_hloubka.gd" id="1_5bg0f"]
+
+[node name="Hloubka" type="Area2D" unique_id=1573469468]
+monitorable = false
+script = ExtResource("1_5bg0f")
+script_name = "Hloubka"
+description = "Hloubka"
+interaction_polygon = PackedVector2Array(150, 775, 1400, 775, 1536, 1010, 0, 1010)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=344639304]
+visible = false
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/metr/inventory_item_metr_state.gd" id="1_b8dva"]
+
+[resource]
+resource_name = "Metr"
+script = ExtResource("1_b8dva")
+script_name = "Metr"
+scene = "res://game/inventory_items/metr/inventory_item_metr.tscn"

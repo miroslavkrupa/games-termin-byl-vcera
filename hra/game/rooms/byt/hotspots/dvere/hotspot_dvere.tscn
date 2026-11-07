@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/hotspots/dvere/hotspot_dvere.gd" id="1_x5qkk"]
+
+[node name="Dvere" type="Area2D" unique_id=1891580270]
+script = ExtResource("1_x5qkk")
+script_name = "Dvere"
+description = "ch1_hs_byt_dvere"
+cursor = 1
+interaction_polygon = PackedVector2Array(1195, 225, 1415, 225, 1415, 790, 1195, 790)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=228579324]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

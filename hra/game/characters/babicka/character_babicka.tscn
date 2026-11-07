@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/babicka/character_babicka.gd" id="1_31xrj"]
+[ext_resource type="Texture2D" path="res://grafika/postavy/babicka_stoji/babicka_stoji.png" id="2_tex"]
+
+[node name="CharacterBabicka" type="Area2D" unique_id=166507013]
+script = ExtResource("1_31xrj")
+script_name = "Babicka"
+description = "postava_babicka"
+cursor = 8
+interaction_polygon = PackedVector2Array(-94, -320, 94, -320, 94, 0, -94, 0)
+text_color = Color(1, 0.86, 0.72, 1)
+ignore_region_scaling = true
+obstacle = true
+dialog_pos = Vector2(0, -344)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=375202906]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=450979689]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1412790271]
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -210)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=875921943]
+visible = false
+polygon = PackedVector2Array(-94, -320, 94, -320, 94, 0, -94, 0)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=770085553]
+visible = false
+vertices = PackedVector2Array(70, 0, 60, 8, 35, 14, 0, 16, -35, 14, -60, 8, -70, 0, -60, -8, -35, -14, 0, -16, 35, -14, 60, -8)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

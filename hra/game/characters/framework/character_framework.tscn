@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/characters/framework/character_framework.gd" id="1_bcxsx"]
+
+[ext_resource type="Texture2D" path="res://grafika/postavy/framework_stoji/framework_stoji.png" id="2_tex"]
+
+[node name="CharacterFramework" type="Area2D" unique_id=1801877985]
+script = ExtResource("1_bcxsx")
+script_name = "Framework"
+description = "postava_framework"
+cursor = 8
+interaction_polygon = PackedVector2Array(-60, -353, 60, -353, 60, 0, -60, 0)
+text_color = Color(0.95, 0.78, 1, 1)
+ignore_region_scaling = true
+obstacle = true
+walk_to_point = Vector2(-150, 25)
+dialog_pos = Vector2(0, -377)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=864147987]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1313950359]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663800480]
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("2_tex")
+offset = Vector2(0, -210)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=879789955]
+visible = false
+polygon = PackedVector2Array(-60, -353, 60, -353, 60, 0, -60, 0)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=2138340931]
+visible = false
+vertices = PackedVector2Array(60, 0, 50, 7, 30, 12, 0, 14, -30, 12, -50, 7, -60, 0, -50, -7, -30, -12, 0, -14, 30, -12, 50, -7)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

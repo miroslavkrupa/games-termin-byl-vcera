@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/hotspots/deska/hotspot_deska.gd" id="1_eo2vo"]
+
+[node name="Deska" type="Area2D" unique_id=1109134062]
+script = ExtResource("1_eo2vo")
+script_name = "Deska"
+description = "ch1_hs_deska"
+look_at_point = Vector2(515, 420)
+cursor = 1
+interaction_polygon = PackedVector2Array(440, 330, 590, 330, 590, 510, 440, 510)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1300336501]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

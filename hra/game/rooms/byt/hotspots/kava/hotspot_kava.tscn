@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/byt/hotspots/kava/hotspot_kava.gd" id="1_yvqrq"]
+
+[node name="Kava" type="Area2D" unique_id=1298879231]
+script = ExtResource("1_yvqrq")
+script_name = "Kava"
+description = "predmet_kava"
+cursor = 1
+interaction_polygon = PackedVector2Array(350, 498, 452, 498, 452, 606, 350, 606)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=72402994]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

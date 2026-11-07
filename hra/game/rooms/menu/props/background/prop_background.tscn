@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/menu/props/background/prop_background.gd" id="1_anksh"]
+
+[node name="Background" type="Area2D" unique_id=1512303359]
+z_index = -1
+input_pickable = false
+script = ExtResource("1_anksh")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -512
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2141178000]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=324709241]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1310294207]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1893797251]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/chaloupka/hotspots/plot/hotspot_plot.gd" id="1_1kh5t"]
+
+[node name="Plot" type="Area2D" unique_id=1289188553]
+script = ExtResource("1_1kh5t")
+script_name = "Plot"
+description = "ch1_hs_plot"
+look_at_point = Vector2(900, 720)
+cursor = 1
+interaction_polygon = PackedVector2Array(-50, 650, 560, 650, 560, 800, 740, 800, 740, 650, 1130, 650, 1130, 800, -50, 800)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=860024117]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

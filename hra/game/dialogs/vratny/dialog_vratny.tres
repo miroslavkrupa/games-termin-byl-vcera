@@ -15,6 +15,13 @@ script = ExtResource("1_j2tqx")
 id = "Dovnitr"
 text = "ch1_vratny_volba_dovnitr"
 
+[sub_resource type="Resource" id="Resource_lumir"]
+resource_name = "Lumir"
+script = ExtResource("1_j2tqx")
+id = "Lumir"
+text = "ch1_vratny_volba_lumir"
+visible = false
+
 [sub_resource type="Resource" id="Resource_h0hlm"]
 resource_name = "Krizovka"
 script = ExtResource("1_j2tqx")
@@ -31,4 +38,4 @@ text = "ch1_vratny_volba_konec"
 resource_name = "Vratny"
 script = ExtResource("2_0xpth")
 script_name = "Vratny"
-options = Array[ExtResource("1_j2tqx")]([SubResource("Resource_iiad5"), SubResource("Resource_1l0sp"), SubResource("Resource_h0hlm"), SubResource("Resource_qfmws")])
+options = Array[ExtResource("1_j2tqx")]([SubResource("Resource_iiad5"), SubResource("Resource_1l0sp"), SubResource("Resource_lumir"), SubResource("Resource_h0hlm"), SubResource("Resource_qfmws")])

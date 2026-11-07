@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/hotspots/amplion/hotspot_amplion.gd" id="1_diuvw"]
+
+[node name="Amplion" type="Area2D" unique_id=410445406]
+script = ExtResource("1_diuvw")
+script_name = "Amplion"
+description = "ch1_hs_amplion"
+cursor = 1
+interaction_polygon = PackedVector2Array(1340, 55, 1440, 55, 1440, 185, 1340, 185)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1110252499]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

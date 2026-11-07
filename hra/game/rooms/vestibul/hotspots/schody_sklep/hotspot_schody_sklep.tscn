@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/hotspots/schody_sklep/hotspot_schody_sklep.gd" id="1_bndht"]
+
+[node name="SchodySklep" type="Area2D" unique_id=1283311592]
+script = ExtResource("1_bndht")
+script_name = "SchodySklep"
+description = "ch1_hs_schody_sklep"
+look_at_point = Vector2(60, 820)
+cursor = 1
+interaction_polygon = PackedVector2Array(0, 640, 200, 640, 200, 1000, 0, 1000)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=789493964]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

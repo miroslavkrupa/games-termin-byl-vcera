@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/characters/framework/character_framework_state.gd" id="1_ip7lq"]
+
+[resource]
+resource_name = "Framework"
+script = ExtResource("1_ip7lq")
+script_name = "Framework"
+scene = "res://game/characters/framework/character_framework.tscn"

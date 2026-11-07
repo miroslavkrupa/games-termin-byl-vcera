@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/zadani/inventory_item_zadani_state.gd" id="1_2ohss"]
+
+[resource]
+resource_name = "Zadani"
+script = ExtResource("1_2ohss")
+script_name = "Zadani"
+scene = "res://game/inventory_items/zadani/inventory_item_zadani.tscn"

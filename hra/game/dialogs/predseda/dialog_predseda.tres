@@ -1,0 +1,46 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_265rq"]
+[ext_resource type="Script" path="res://game/dialogs/predseda/dialog_predseda.gd" id="2_63q6y"]
+
+[sub_resource type="Resource" id="Resource_7c58r"]
+resource_name = "Navrh"
+script = ExtResource("1_265rq")
+id = "Navrh"
+text = "ch1_predseda_volba_navrh"
+
+[sub_resource type="Resource" id="Resource_hb76m"]
+resource_name = "Termin"
+script = ExtResource("1_265rq")
+id = "Termin"
+text = "ch1_predseda_volba_termin"
+
+[sub_resource type="Resource" id="Resource_26f1d"]
+resource_name = "Kdo"
+script = ExtResource("1_265rq")
+id = "Kdo"
+text = "ch1_predseda_volba_kdo"
+
+[sub_resource type="Resource" id="Resource_pkrlh"]
+resource_name = "Razitko"
+script = ExtResource("1_265rq")
+id = "Razitko"
+text = "ch1_predseda_volba_razitko"
+
+[sub_resource type="Resource" id="Resource_w3688"]
+resource_name = "Podpis"
+script = ExtResource("1_265rq")
+id = "Podpis"
+text = "ch1_predseda_volba_podpis"
+
+[sub_resource type="Resource" id="Resource_kijse"]
+resource_name = "Konec"
+script = ExtResource("1_265rq")
+id = "Konec"
+text = "ch1_predseda_volba_konec"
+
+[resource]
+resource_name = "Predseda"
+script = ExtResource("2_63q6y")
+script_name = "Predseda"
+options = Array[ExtResource("1_265rq")]([SubResource("Resource_7c58r"), SubResource("Resource_hb76m"), SubResource("Resource_26f1d"), SubResource("Resource_pkrlh"), SubResource("Resource_w3688"), SubResource("Resource_kijse")])

@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/archiv/hotspots/mapnik/hotspot_mapnik.gd" id="1_q2jsc"]
+
+[node name="Mapnik" type="Area2D" unique_id=684105420]
+script = ExtResource("1_q2jsc")
+script_name = "Mapnik"
+description = "ch1_hs_mapnik"
+cursor = 1
+look_at_point = Vector2(207, 622)
+interaction_polygon = PackedVector2Array(150, 555, 265, 555, 265, 690, 150, 690)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=558975959]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

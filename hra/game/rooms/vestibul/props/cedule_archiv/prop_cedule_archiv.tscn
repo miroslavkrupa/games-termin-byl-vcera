@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/props/cedule_archiv/prop_cedule_archiv.gd" id="1_uthm5"]
+
+[node name="CeduleArchiv" type="Area2D" unique_id=137941157]
+input_pickable = false
+script = ExtResource("1_uthm5")
+script_name = "CeduleArchiv"
+description = "Cedule Archiv"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117655936]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=28327582]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=299744427]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=869051309]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

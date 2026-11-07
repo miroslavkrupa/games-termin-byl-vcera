@@ -119,7 +119,7 @@ Zkušenosti z prototypu (D35, [vyhodnocení](09-vyhodnoceni-prototypu.md)):
 
 - **Chůze bokem: loutka s klouby** (D39): postava po částech (hlava s krkem, trup, paže,
   2 předloktí s předměty, stehno, lýtko, bota) od ChatGPT s průhledným pozadím, složená skriptem
-  `game/characters/spolecne/kostra.gd`. Zadání: [zadani-casti.md](styl/vzorky/zadani-casti.md).
+  `game/spolecne/kostra.gd`. Zadání: [zadani-casti.md](styl/vzorky/zadani-casti.md).
 - **Chůze dopředu a dozadu:** celý obrázek zepředu nebo zezadu se pohupuje (D36).
 - **Pozor v Popochiu:** postavy nemají zapnutý `_process`; animace patří do `_physics_process`.
 - **Rozhodnuto (D40, D41): kreslené fáze** celé postavy od ChatGPT podle [modelu a zadání](styl/animace-postav.md) (8 fází na směr ve 2 řadách na jednom

@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/komise/room_komise.gd" id="1_iy7go"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/walkable_areas/podlaha/walkable_area_podlaha.tscn" id="2_gtg6x"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/props/background/prop_background.tscn" id="2_hyllr"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/komise.png" id="3_gtg6x"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/cedule/hotspot_cedule.tscn" id="5_dc53v"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/regions/hloubka/region_hloubka.tscn" id="5_xt4t7"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/vytah/hotspot_vytah.tscn" id="6_xh5ys"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/stul/hotspot_stul.tscn" id="7_exvt0"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/fronta/hotspot_fronta.tscn" id="8_lr7js"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/razitko/hotspot_razitko.tscn" id="9_ldpad"]
+[ext_resource type="PackedScene" path="res://game/rooms/komise/hotspots/telefon/hotspot_telefon.tscn" id="10_fmsxm"]
+[ext_resource type="PackedScene" path="res://game/characters/predseda/character_predseda.tscn" id="12_h5r7k"]
+[ext_resource type="PackedScene" path="res://game/characters/framework/character_framework.tscn" id="13_hwe8r"]
+
+[node name="RoomKomise" type="Node2D" unique_id=1925594272]
+script = ExtResource("1_iy7go")
+script_name = "Komise"
+width = 1536
+height = 1024
+
+[node name="WalkableAreas" type="Node2D" parent="." unique_id=71835633]
+
+[node name="Podlaha" parent="WalkableAreas" unique_id=2036223679 instance=ExtResource("2_gtg6x")]
+
+[node name="Props" type="Node2D" parent="." unique_id=192603125]
+
+[node name="Background" parent="Props" unique_id=1576391212 instance=ExtResource("2_hyllr")]
+position = Vector2(768, 512)
+texture = ExtResource("3_gtg6x")
+
+[node name="Hotspots" type="Node2D" parent="." unique_id=1451853637]
+
+[node name="Cedule" parent="Hotspots" unique_id=1652068998 instance=ExtResource("5_dc53v")]
+walk_to_point = Vector2(420, 760)
+
+[node name="Vytah" parent="Hotspots" unique_id=1928863536 instance=ExtResource("6_xh5ys")]
+walk_to_point = Vector2(150, 800)
+
+[node name="Stul" parent="Hotspots" unique_id=548144908 instance=ExtResource("7_exvt0")]
+walk_to_point = Vector2(260, 770)
+
+[node name="Fronta" parent="Hotspots" unique_id=1799251559 instance=ExtResource("8_lr7js")]
+walk_to_point = Vector2(680, 775)
+
+[node name="Razitko" parent="Hotspots" unique_id=1509857484 instance=ExtResource("9_ldpad")]
+walk_to_point = Vector2(890, 775)
+
+[node name="Telefon" parent="Hotspots" unique_id=1183494388 instance=ExtResource("10_fmsxm")]
+walk_to_point = Vector2(1180, 775)
+
+[node name="Regions" type="Node2D" parent="." unique_id=1223673863]
+
+[node name="Hloubka" parent="Regions" unique_id=853452010 instance=ExtResource("5_xt4t7")]
+scaling = true
+scale_top = 0.3
+scale_bottom = 0.56
+
+[node name="Markers" type="Node2D" parent="." unique_id=255968671]
+
+[node name="Characters" type="Node2D" parent="." unique_id=1163463688]
+
+[node name="CharacterPredseda" parent="Characters" unique_id=678124856 instance=ExtResource("12_h5r7k")]
+position = Vector2(1470, 640)
+
+[node name="CharacterFramework" parent="Characters" unique_id=1801877985 instance=ExtResource("13_hwe8r")]
+position = Vector2(1000, 735)

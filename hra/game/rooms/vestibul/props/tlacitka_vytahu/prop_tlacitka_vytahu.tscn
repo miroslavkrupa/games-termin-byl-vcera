@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/props/tlacitka_vytahu/prop_tlacitka_vytahu.gd" id="1_xcm3t"]
+
+[node name="TlacitkaVytahu" type="Area2D" unique_id=2070445951]
+input_pickable = false
+script = ExtResource("1_xcm3t")
+script_name = "TlacitkaVytahu"
+description = "Tlacitka Vytahu"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1939688684]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=188616674]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1344817104]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=876767341]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -41,6 +41,17 @@ func _on_option_plakat(_opt: PopochiuDialogOption) -> void:
 		await C.player.say("ch1_zmena_napad")
 
 
+## Co si Pan Změna myslí o Arše (jednou): nesmyslné útržky cíle a kritérií pro M01 (I5)
+func _on_option_archa(_opt: PopochiuDialogOption) -> void:
+	await D.say_selected()
+	await C.PanZmena.say("ch1_zmena_001")
+	await C.PanZmena.say("ch1_zmena_archa_2")
+	await C.PanZmena.say("ch1_zmena_archa_3")
+	await C.player.say("ch1_zmena_archa_ruda")
+	R.Namesti.state.slysel_zmena_archa = true
+	turn_off_forever_options(["Archa"])
+
+
 func _on_option_konec(_opt: PopochiuDialogOption) -> void:
 	await D.say_selected()
 	await C.PanZmena.say("ch1_zmena_konec")

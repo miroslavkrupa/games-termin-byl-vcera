@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/vestibul/hotspots/ven/hotspot_ven.gd" id="1_jtldd"]
+
+[node name="Ven" type="Area2D" unique_id=818422158]
+script = ExtResource("1_jtldd")
+script_name = "Ven"
+description = "ch1_hs_ven"
+look_at_point = Vector2(768, 1000)
+cursor = 1
+interaction_polygon = PackedVector2Array(546, 900, 990, 900, 990, 1020, 546, 1020)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=296725856]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

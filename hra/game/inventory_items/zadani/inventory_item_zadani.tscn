@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/inventory_items/zadani/inventory_item_zadani.gd" id="1_mmmck"]
+[ext_resource type="Texture2D" path="res://grafika/predmety/zadani.png" id="2_ikona"]
+
+[node name="ItemZadani" type="TextureRect" unique_id=1024023998]
+texture = ExtResource("2_ikona")
+texture_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_mmmck")
+script_name = "Zadani"
+description = "predmet_zadani"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2124285331]
