@@ -8,7 +8,7 @@ a stejná pravidla zkontroluje skript.
 |---|---|
 | `engine.js` | logika bez grafiky: scény, předměty, příznaky, dialogy, nápověda; běží v prohlížeči i v Node |
 | `kapitola1.js` až `kapitola3.js` | kapitoly jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody; od kapitoly 2 i startovní stavy z předchozí kapitoly (`predvolby`) |
-| `texty/kapitolaN.csv` | pracovní texty kapitol, které ještě nemají texty první verze (N6); jen česky, stejné sloupce jako `texty.csv` |
+| `texty/kapitolaN.csv` | pracovní texty kapitol, které ještě nemají texty první verze (N6); jen česky, stejné sloupce jako `texty.csv` (teď jen kapitola 3) |
 | `prehravac.html` | přehrávač: přepínač kapitol, volba startu, šedé scény, titulky, inventář, minihry a panel autora |
 | `obrazky/` | schválená pozadí scén (D51), postavy zepředu a ikony předmětů (D52) ze `docs/styl/vzorky` |
 | `priprav_obrazky.gd` | vyřízne postavy a ikony ze vzorků (Godot); pozadí se převádí nástrojem `sips` |
@@ -47,8 +47,8 @@ záznam replik s klíči, stav příznaků a umí skočit na libovolný krok pr�
 
 ## Kapitola 2 v prototypu
 
-Podle [návrhu](../docs/kapitoly/02-planovani.md) se třemi zjednodušeními, která se ověří až
-v Godotu:
+Podle [návrhu](../docs/kapitoly/02-planovani.md); texty čte z `hra/texty/texty.csv` (N6, D83).
+Tři zjednodušení, která se ověří až v Godotu:
 - **M06 Mapa do neznáma** se hraje po mostech: u každého z tří mostů hráč volí bod na cestě
   (přesný, nebo mlhavý) a dlaždici řeky (podrobnou, nebo hrubou). Posouvání mlhy po sloupcích
   není; pravidla mostů, kotvy (K5), výjimek a variant `gantt` / `krabice` platí.

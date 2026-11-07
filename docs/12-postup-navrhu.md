@@ -39,7 +39,7 @@
 
 ## Přehled kroků
 
-| Krok | Co | Výstup | Stav (2026-11-06) | Odhad |
+| Krok | Co | Výstup | Stav (2026-11-07) | Odhad |
 |---|---|---|---|---|
 | **N0** | Rozsah celé hry | rozhodnutí o délce, počtu kapitol a miniher | ✅ 4–5 h v 5 kapitolách, 11 miniher, rozpočty kapitol (D56–D58) | 1–2 h |
 | **N1** | Příběh celé hry | kontrola [příběhové bible](03-pribehova-bible.md), osnova kapitol | ✅ hotovo: kapitoly v kostce, D59–D61 | 2–4 h |
@@ -47,7 +47,7 @@
 | **N3** | Každá kapitola do detailu | pro kapitoly 1–5: obsah místností, průchod, karty puzzlů, matice předmětů, osnovy dialogů, úvod a konec | ⚠️ kapitola 1 hotová, kapitola 2 hotová ([návrh](kapitoly/02-planovani.md), D69), kapitola 3 hotová ([návrh](kapitoly/03-realizace.md), D72), kapitola 4 hotová ([návrh](kapitoly/04-krize.md), D77, široký graf, rozpočet překročen), kapitola 5 hotová ([návrh](kapitoly/05-uzavreni.md), D79, rozpočet mírně překročen) | 50–95 h |
 | **N4** | Autorská kontrola každé kapitoly | autor projde kapitolu sám, opravy | ⚠️ kapitola 1 ✅ ([kontrola](kapitoly/01-kontrola.md), D67), kapitola 2 ✅ ([kontrola](kapitoly/02-kontrola.md), D68), 3 ✅ ([kontrola](kapitoly/03-kontrola.md), D73), 4 ✅ ([kontrola](kapitoly/04-kontrola.md), D78), 5 ✅ ([kontrola](kapitoly/05-kontrola.md), D80); papírový průchod s hráči zrušen (D66) | 5–10 h |
 | **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ✅ [kontrola celé hry](14-kontrola-hry.md), nálezy zapracované (D81) a rozhodnutí zapsána (D82): **brána A** | 4–8 h |
-| **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65); brána B až po N4 a N5 | 15–25 h na kapitolu 1 |
+| **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65), brána B až po N4 a N5; kapitola 2: první verze všech textů (416 replik, 596 textů, [scénář](kapitoly/02-scenar.md), D83), brána B čeká na čtení nahlas | 15–25 h na kapitolu 1 |
 | **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⏸️ I1 hotová, I2+ čekají na bránu B | 40–65 h |
 | **N8** | Playtest | 5 hráčů, opravy → milník **ME** | – | 8–15 h |
 | **N9** | Ladění a vydání | vtipy, zvuk, animace, itch.io → milník **MF** | – | 8–12 h |
@@ -275,7 +275,7 @@ výrobou. Osnovy dialogů a karty puzzlů z N3 už jsou hotové, takže texty je
 
 Píše se rovnou do `hra/texty/texty.csv`, které zůstává jediným zdrojem textů. Řádky jsou
 seřazené podle scén a ID mají předponu (`ch1_bara_…`). Pro čtení si jde nechat vygenerovat
-přehled scénáře.
+přehled scénáře (`python3 hra/nastroje/scenar.py 2` zapíše `docs/kapitoly/02-scenar.md`).
 
 **Pořadí psaní:**
 1. hlavní linka a informace, které hráč potřebuje k puzzlům (z osnov dialogů),

@@ -1,7 +1,7 @@
 # Kapitola 2: osnovy dialogů
 
 > Krok N3e [postupu návrhu](../12-postup-navrhu.md). Co která postava hráči řekne, za jakých
-> podmínek a co se tím změní. Texty první verze (N6) se napíšou až před výrobou kapitoly 2.
+> podmínek a co se tím změní. Texty první verze (N6, D83) jsou ve [scénáři](02-scenar.md).
 > Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
 **Poučení z kapitoly 1:** odhad 460 replik skončil na 546, tedy o 19 % víc. Rozpočet replik je
@@ -158,6 +158,9 @@ pokrytí), rozdělení (3), riziko předem (3), mapa (2), odhad (2). Celkem asi 
 | minihry | 36 |
 | **Celkem** | **≈ 454 na jazyk** |
 
-Rozpočet je 400–500 (D56). K tomu asi 44 popisků miniher, 12 vět obrazovky následků a GUI.
+Rozpočet je 450–550 (D56, D82). K tomu asi 44 popisků miniher, 12 vět obrazovky následků a GUI.
+
+**Skutečnost po N6 (D83):** 416 replik, 35 voleb a 145 popisků ([scénář](02-scenar.md)), tedy
+mírně pod odhadem; nábor i se štamgasty 124 replik.
 Nejdražší je nábor (107 replik). Když se v N6 ukáže, že je to moc, škrtají se nejdřív třetí
 témata kandidátů a vlastní reakce ★.

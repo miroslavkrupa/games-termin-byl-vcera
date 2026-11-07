@@ -2,9 +2,9 @@
 
 > Podrobný návrh kapitoly 2. Vznikl z kostry (N2, D62) v kroku N3
 > [postupu návrhu](../12-postup-navrhu.md).
-> Stav: **návrh do detailu (N3) schválen** (D69), verze 0.3 (zapracována autorská kontrola K1–K19, D68)
+> Stav: **návrh do detailu (N3) schválen** (D69), **texty první verze** (N6, D83), verze 0.4
 > Podrobnosti: [obsah místností a matice předmětů](02-mistnosti.md), [karty puzzlů](02-puzzly.md),
-> [průchod hrou](02-pruchod.md), [osnovy dialogů](02-dialogy.md),
+> [průchod hrou](02-pruchod.md), [osnovy dialogů](02-dialogy.md), [scénář](02-scenar.md),
 > [autorská kontrola](02-kontrola.md)
 
 ## Přehled

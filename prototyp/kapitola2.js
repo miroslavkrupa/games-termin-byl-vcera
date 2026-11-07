@@ -1,6 +1,6 @@
 // Kapitola 2 jako data pro šedý prototyp. Zdroj pravdy pro logiku jsou dokumenty
-// docs/kapitoly/02-*.md. Kapitola ještě nemá texty první verze (N6), proto jsou repliky
-// pracovní a jen česky: prototyp/texty/kapitola2.csv. Zápis akcí popisuje hlavička engine.js.
+// docs/kapitoly/02-*.md. Texty první verze (N6, D83) jsou v hra/texty/texty.csv.
+// Zápis akcí popisuje hlavička engine.js.
 (function (koren) {
   'use strict';
 

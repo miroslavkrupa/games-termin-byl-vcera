@@ -5,7 +5,7 @@
 > v [02-planovani.md](02-planovani.md), puzzly v [02-puzzly.md](02-puzzly.md).
 > Stav: **schváleno** (D69), verze 0.2 (zapracována autorská kontrola, D68)
 
-Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Finální texty vzniknou v kroku N6.
+Sloupec *Prohlédnout* uvádí podstatu repliky, ne finální text. Texty první verze jsou ve [scénáři](02-scenar.md) (N6, D83).
 **K** v poznámce = podezřelá věc pro Krabici od bot: s krabicí v inventáři se prohlédnutím zapíše.
 
 ## Mapa scén
