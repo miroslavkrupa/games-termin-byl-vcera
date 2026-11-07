@@ -74,10 +74,19 @@ Zástupné ikony předmětů (do doby, než je nahradí AI grafika):
 godot --headless --path hra --script res://nastroje/zastupne_ikony.gd
 ```
 
-Nasazení webové verze na GitHub Pages (export, kontrola textů, nahrání do větve `gh-pages`):
+Nasazení webové verze na GitHub Pages (export, kontrola textů a skriptů, nahrání do větve `gh-pages`):
 
 ```bash
 sh hra/nastroje/nasad_web.sh
+```
+
+Před nahráním skript spustí kontrolu exportu. Ta pustí vyexportovaný balíček šablonou Godotu bez
+editoru a načte všechny skripty hry. Hra spuštěná z editoru má k dispozici třídy editoru, takže
+chyby, které se projeví jen v exportu, ladicí průchody nezachytí. Kontrolu jde spustit i samostatně
+po exportu (potřebuje nainstalované exportní šablony):
+
+```bash
+sh hra/nastroje/kontrola_exportu.sh
 ```
 
 Hra pak běží na https://miroslavkrupa.github.io/games-termin-byl-vcera/ (nasazení trvá asi minutu).

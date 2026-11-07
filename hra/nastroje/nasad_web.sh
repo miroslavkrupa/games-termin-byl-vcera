@@ -22,6 +22,9 @@ godot --headless --path hra --import > /dev/null 2>&1
 godot --headless --path hra --export-release "Web" export/web/index.html > /dev/null 2>&1
 test -f hra/export/web/index.pck
 
+echo "Kontrola skriptů v exportu…"
+sh hra/nastroje/kontrola_exportu.sh hra/export/web/index.pck
+
 echo "Příprava větve gh-pages…"
 git fetch -q origin gh-pages 2>/dev/null || true
 if git show-ref -q --verify refs/remotes/origin/gh-pages; then

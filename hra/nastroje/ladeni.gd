@@ -43,6 +43,11 @@
 #
 # Zakládání objektů Popochiu (viz nastroje/vytvor.gd):
 #   godot --headless --path hra -- vytvor <příkaz> <argumenty>
+#
+# Kontrola skriptů v exportu (spouští ji nastroje/nasad_web.sh přes šablonu bez editoru):
+#   <hra exportovaná šablonou> --headless -- kontrola_skriptu
+# Po startu hry načte všechny skripty z res://game/ a skončí kódem 1, když některý nejde přeložit.
+# Ve hře spuštěné z editoru Godotu jsou k dispozici třídy editoru, takže tam se taková chyba neukáže.
 extends Node
 
 
@@ -51,6 +56,9 @@ func _ready() -> void:
 	if args.size() > 0 and args[0] == "vytvor":
 		var ok: bool = load("res://nastroje/vytvor.gd").new().spust(args.slice(1))
 		get_tree().quit(0 if ok else 1)
+		return
+	if args.size() > 0 and args[0] == "kontrola_skriptu":
+		_kontrola_skriptu()
 		return
 	var p := {}
 	for arg in OS.get_cmdline_user_args():
@@ -447,3 +455,28 @@ func _vypis(kdy: String) -> void:
 		kdy, room.script_name if room else "?", hrac.position if hrac else "?", hrac.scale if hrac else "?", inventar, stav, get_window().size,
 		get_viewport().get_visible_rect(), kamera.get_screen_center_position() if kamera else "žádná"
 	])
+
+
+## Načte všechny skripty hry až po startu (jádro Popochiu je už připravené) a vypíše výsledek.
+func _kontrola_skriptu() -> void:
+	await get_tree().create_timer(1.0).timeout
+	var skripty: Array[String] = []
+	_najdi_skripty("res://game", skripty)
+	var chyby: Array[String] = []
+	for cesta in skripty:
+		var skript := ResourceLoader.load(cesta, "", ResourceLoader.CACHE_MODE_REUSE) as Script
+		if skript == null or not skript.can_instantiate():
+			chyby.append(cesta)
+			print("[kontrola skriptů] nejde přeložit: %s" % cesta)
+	print("[kontrola skriptů] načteno %d skriptů, chyb %d" % [skripty.size(), chyby.size()])
+	get_tree().quit(1 if chyby else 0)
+
+
+## V exportu jsou skripty uložené jako <jméno>.gd.remap, ResourceLoader je načte pod jménem .gd.
+func _najdi_skripty(slozka: String, vysledek: Array[String]) -> void:
+	for podslozka in DirAccess.get_directories_at(slozka):
+		_najdi_skripty(slozka.path_join(podslozka), vysledek)
+	for soubor in DirAccess.get_files_at(slozka):
+		var jmeno := soubor.trim_suffix(".remap")
+		if jmeno.ends_with(".gd") and not vysledek.has(slozka.path_join(jmeno)):
+			vysledek.append(slozka.path_join(jmeno))
