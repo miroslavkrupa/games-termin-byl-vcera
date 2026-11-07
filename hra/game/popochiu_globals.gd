@@ -50,9 +50,11 @@ var dny := 30
 
 ## Ukládání hry (I6): Popochiu ukládá proměnné jednoduchých typů sám, slovníky ne; ty jdou sem.
 ## Navíc verze uložené hry (obrazovky/ramec.gd, starší uložené hry se nenačítají).
+## Rámec se načítá až tady, ne přes preload: Popochiu načítá tenhle skript při startu a preload
+## by přes rámec natáhl jádro Popochiu dřív, než je připravené (v exportu pak skript nejde přeložit).
 func on_save() -> Dictionary:
 	return {
-		verze_ulozeni = preload("res://game/obrazovky/ramec.gd").VERZE_ULOZENI,
+		verze_ulozeni = load("res://game/obrazovky/ramec.gd").VERZE_ULOZENI,
 		m02_umisteni = m02_umisteni,
 	}
 
