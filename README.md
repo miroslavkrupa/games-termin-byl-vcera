@@ -16,7 +16,7 @@ pro **PC, Mac a mobily**.
 
 > Stav: **návrh a technický prototyp** (pracovní název; hratelný prototyp ve složce `hra/`)
 
-▶ **[Hrát prototyp online](https://miroslavkrupa.github.io/termin-byl-vcera/)** (prohlížeč na počítači i telefonu, asi 20 MB ke stažení)
+▶ **[Hrát prototyp online](https://miroslavkrupa.github.io/games-termin-byl-vcera/)** (prohlížeč na počítači i telefonu, asi 20 MB ke stažení)
 
 ## Návrhová dokumentace
 

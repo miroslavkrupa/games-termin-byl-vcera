@@ -60,7 +60,7 @@ Nasazení webové verze na GitHub Pages (export, kontrola textů, nahrání do v
 sh hra/nastroje/nasad_web.sh
 ```
 
-Hra pak běží na https://miroslavkrupa.github.io/termin-byl-vcera/ (nasazení trvá asi minutu).
+Hra pak běží na https://miroslavkrupa.github.io/games-termin-byl-vcera/ (nasazení trvá asi minutu).
 
 Rozdělení listu s částmi postavy na samostatné obrázky (pak doplnit body kloubů do skriptu postavy,
 viz `POPIS` v `game/characters/ruda/character_ruda.gd`):
