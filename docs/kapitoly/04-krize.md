@@ -7,6 +7,7 @@
 > verze 0.4; podrobné dokumenty: [místnosti a předměty](04-mistnosti.md), [karty puzzlů](04-puzzly.md),
 > [průchod](04-pruchod.md), [osnovy dialogů](04-dialogy.md).
 > Autorská kontrola (N4): [nálezy K1–K31](04-kontrola.md), zapracováno (D78).
+> Šedý prototyp: `prototyp/kapitola4.js` s pracovními texty (D85), zjednodušení v [README prototypu](../../prototyp/README.md#kapitola-4-v-prototypu).
 > Úplný graf a jeho rozbor: [graf závislostí](../13-graf-zavislosti.md#kapitola-4-krize).
 
 ## Přehled

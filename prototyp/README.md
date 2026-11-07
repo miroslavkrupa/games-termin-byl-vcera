@@ -7,8 +7,8 @@ a stejná pravidla zkontroluje skript.
 | Soubor | Obsah |
 |---|---|
 | `engine.js` | logika bez grafiky: scény, předměty, příznaky, dialogy, nápověda; běží v prohlížeči i v Node |
-| `kapitola1.js` až `kapitola3.js` | kapitoly jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody; od kapitoly 2 i startovní stavy z předchozí kapitoly (`predvolby`) |
-| `texty/kapitolaN.csv` | pracovní texty kapitol, které ještě nemají texty první verze (N6); jen česky, stejné sloupce jako `texty.csv` (teď jen kapitola 3) |
+| `kapitola1.js` až `kapitola5.js` | kapitoly jako data: aktivní místa, dialogy, minihry, nápovědy, obrazovka následků a průchody; od kapitoly 2 i startovní stavy z předchozí kapitoly (`predvolby`) |
+| `texty/kapitolaN.csv` | pracovní texty kapitol, které ještě nemají texty první verze (N6); jen česky, stejné sloupce jako `texty.csv` (teď kapitoly 3, 4 a 5) |
 | `prehravac.html` | přehrávač: přepínač kapitol, volba startu, šedé scény, titulky, inventář, minihry a panel autora |
 | `obrazky/` | schválená pozadí scén (D51), postavy zepředu a ikony předmětů (D52) ze `docs/styl/vzorky` |
 | `priprav_obrazky.gd` | vyřízne postavy a ikony ze vzorků (Godot); pozadí se převádí nástrojem `sips` |
@@ -71,6 +71,47 @@ Zjednodušení, která se ověří až v Godotu:
 - **M15 Než se zavře trup:** Rudův a Bářin pohled se přepíná přepínačem v okně minihry
   (ne portrétem), karty se přiřazují klepnutím do přihrádky.
 - **Ranní porada (P3.4)** je řada krátkých rozhovorů: každý z týmu v dílně, překážka, Ruda.
+
+## Kapitola 4 v prototypu
+
+Podle [návrhu](../docs/kapitoly/04-krize.md) (D85). Tři akty, hraní za oba, M03 Souboj argumenty
+(s tlačítkem Přeskočit, D12), R4.2 jako tabule rozsahu (druh `plan_kola`: dílky s hvězdičkami
+= velikost, „kapacita“ = kolik dílků obětovat) a M11 Plachetnice jako rozcestník (karty po jedné
+do přihrádek kotva / vítr / útes, Pembok špatnou kartu jen přesune). Zjednodušení, která se
+ověří až v Godotu:
+- **Přechod „Na radnici“** jsou přímé východy ze staveniště do archivu a Komise (a mezi nimi),
+  střih přes náměstí je jen text.
+- **Starosta přijede a M03 začne hned po odeslání zprávy** (telegraf → souboj); po výhře se
+  rovnou rozvine tabule rozsahu, po prohře ji hráč otevře sám nebo souboj zopakuje.
+- **Usmíření:** když jsou obě linky aktu B hotové a Bára není v hangáru, přijde tam střihem.
+- **P4.29** (navigace poklopem) je jeden dialog bez skutečného přepínání postav; navigace vždy
+  první; bez poklopu vrtá Věra, bez Věry Ruda.
+- **Lístek pro babičku, páska a rozpis** jdou v aktu B jen přes posla, v aktech A a C si je
+  postavy předají přímo.
+- Aktivní místa jsou rozdělená na Rudovu a Bářinu verzi (`id_r` / `id_b`), aby náhodné hraní
+  v kontrole nezakrývalo Bářiny puzzly Rudovými návštěvami.
+- Nepočítá se důvěra ani morálka (jako v kapitole 3); Bářina natřená žárovka je jen text;
+  Zelenka komentuje lístky jen podle barvy.
+
+## Kapitola 5 v prototypu
+
+Podle [návrhu](../docs/kapitoly/05-uzavreni.md) (D85). Tři scény (rampa, věž, archiv), finále
+„Dva klíče“ z existujících primitiv: pojistky jsou příznaky, kamery a pulty aktivní místa
+a dialogy, „Na tři“ je volba v dialogu pultu; při `trval` se Ruda ptá „Na čí tři?“. Konec
+se počítá v pevném pořadí (D80): body sladění, Rudův vývoj a Bářina důvěra dají `c5_konec`
+(pomník / druhá etapa / hrdina / tým) a obrazovku „Co si Nedostavěnice zapamatovala“.
+Zjednodušení:
+- **Bára sejde z věže až po předání klíče (R5.1)**, ne po „Na tři“, aby šlo dodělat zaučení
+  posádky po finále; přepínání portrétem se tím vypne.
+- **Hodnoty (P5.12)** jsou společný dialog z obou pultů; váha jde jen deníkem jeřábu na Rudův
+  pult, deník dá vrátný na požádání.
+- **Šipky na palubě** dělá vždy Bára z věže; Lumíra při `trval` hlásí až na otázku vysílačkou
+  (nové aktivní místo „Vysílačka“ na rampě).
+- Volby u Pana Změny („Dobře, uděláme to“) a u přání („Splnit“ / „Zahodit“) jsou jednorázové;
+  Ještětoto s kartičkou od Pana Změny vyleze zpátky do dveří.
+- Přechod „Na radnici“ je jedna věta při prvním příchodu do archivu; krabička Poučení jde vzít
+  až po rozhovoru s Lumírem.
+- Scény jsou bez pozadí (šedé výkresy); velikost Ještětota je jen jméno v textu.
 
 ## Zápis dat
 

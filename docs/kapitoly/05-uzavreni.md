@@ -5,6 +5,7 @@
 > Stav: **hotovo** (schváleno v D79, kontrola N4 zapracována v D80), verze 0.4; podrobné dokumenty: [místnosti a předměty](05-mistnosti.md),
 > [karty puzzlů](05-puzzly.md), [průchod](05-pruchod.md), [osnovy dialogů](05-dialogy.md).
 > Autorská kontrola (N4): [nálezy K1–K29](05-kontrola.md), zapracováno (D80).
+> Šedý prototyp: `prototyp/kapitola5.js` s pracovními texty (D85), zjednodušení v [README prototypu](../../prototyp/README.md#kapitola-5-v-prototypu).
 > Úplný graf a jeho rozbor: [graf závislostí](../13-graf-zavislosti.md#kapitola-5-uzavření).
 
 ## Přehled

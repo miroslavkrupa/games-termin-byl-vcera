@@ -600,7 +600,7 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
     $('kapitola').textContent = t(DATA.nazev);
     vykresliKapitoly();
     $('ukol').textContent = hra.s.priznaky.pembok_otevren ? t(DATA.ukol) : '';
-    $('odpocet').textContent = t(DATA.dny, hra.s.priznaky.dny || 30);
+    $('odpocet').textContent = t(DATA.dny, hra.s.priznaky.dny ?? 30); // kapitola 5 má nulu
     $('tl-napoveda').disabled = !radce() || !hra.s.priznaky.pembok_otevren;
     $('tl-napoveda').textContent = radce() === 'metr' ? 'Metr radí' : 'Pembok radí';
     vykresliPortret();
@@ -757,7 +757,9 @@ const OBRAZKY = /*@@OBRAZKY@@*/{};
         el('div', { trida: 'souboj-skore' }, el('span', { text: t('ch1_m03_kolo', m.kolo, m.kol) }), el('span', { text: `Vyhraná kola: ${m.vyhrano}` }), el('span', { text: 'Výhra od 3 kol' })),
         feed(),
         el('div', { trida: 'namitka' }, t(m.namitka)),
-        el('div', { trida: 'volby' }, ...m.odpovedi.map((o, i) => el('button', { trida: 'volba', onclick: () => poslatMinihre({ volba: o.druh }) }, el('span', { trida: 'cislo', text: String(i + 1) }), t(o.klic)))));
+        el('div', { trida: 'volby' }, ...m.odpovedi.map((o, i) => el('button', { trida: 'volba', onclick: () => poslatMinihre({ volba: o.druh }) }, el('span', { trida: 'cislo', text: String(i + 1) }), t(o.klic)))),
+        // Přeskočení (D12) jen u souboje, který ho umí vyhodnotit (kapitola 4 posílá preskocit: true)
+        m.preskocit ? el('div', { trida: 'tlacitka' }, el('button', { trida: 'tlacitko', text: 'Přeskočit (Pembok odpoví za Rudu)', onclick: () => poslatMinihre({ preskocit: true }) })) : null);
       return;
     }
     if (m.druh === 'mrizka') {

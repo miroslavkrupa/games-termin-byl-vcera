@@ -92,7 +92,9 @@
 
 | D83 | 2026-11-07 | **N6 kapitoly 2: texty první verze** v `hra/texty/texty.csv`: 596 textů, 416 replik, oba jazyky, mluvčí, emoce a poznámka u každé repliky; pracovní texty `prototyp/texty/kapitola2.csv` zrušeny, prototyp čte kapitolu 2 z `texty.csv`; `scenar.py` generuje scénář pro každou kapitolu | osnova 454 replik → 416 (nábor 124 i se štamgasty); brána B kapitoly 2 až po přečtení nahlas autorem | [scénář](kapitoly/02-scenar.md), [postup](12-postup-navrhu.md) |
 | D84 | 2026-11-07 | **Zkouška dabingu přes AI (TTS):** skript `tools/dabing.py`, hlasy a emoce v `tools/dabing/hlasy.json`, vzorek 18 replik v obou jazycích; D07 zatím platí, rozhodne se po poslechu vzorků | zvuk `hra/zvuk/<jazyk>/<id>.mp3` (MP3 místo Ogg, Godot ho umí); repliky se zástupným `%s` bez hlasu nebo ve variantách; u OpenAI povinná věta o generovaných hlasech | [dabing](dabing/README.md), [produkce](05-produkce.md) |
+| D85 | 2026-11-07 | **Kapitoly 4 a 5 v šedém prototypu:** `prototyp/kapitola4.js` (7 scén, 25 dialogů, M03, R4.2 jako tabule rozsahu, M11 jako rozcestník, 5 průchodů) a `prototyp/kapitola5.js` (3 scény, 22 dialogů, finále Dva klíče, 4 konce, 8 průchodů) s pracovními texty jen česky (1 135 a 790 textů); celá hra jde projít v prohlížeči; souboj argumenty má v přehrávači tlačítko Přeskočit (D12) | zjednodušení proti návrhu jsou v README prototypu; příznaky `c4_*` jsou pojmenované podle návrhu (`c4_zlepseni` = `ptat` / `tabule` / `nahlas`, `c4_obet` seznam); k vyjasnění v návrhu: špatná předvolba kapitoly 5 má podle průchodu `c4_zlepseni=tabule`, ale karta P5.10 s Jednou tabulí nechá Rudu vidět lávku i ocas sám | [README prototypu](../prototyp/README.md), [kapitola 4](kapitoly/04-krize.md), [kapitola 5](kapitoly/05-uzavreni.md) |
 
 ## Čeká na rozhodnutí
 
 - Dabing přes AI: ano/ne a kterou službou, po poslechu [vzorků](dabing/README.md) (D84).
+- Kapitola 5, špatný start: `c4_zlepseni` = `tabule`, nebo `nahlas`? Průchod a karta P5.10 si odporují (D85).
