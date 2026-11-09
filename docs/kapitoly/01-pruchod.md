@@ -1,7 +1,7 @@
 # Kapitola 1: průchod hrou
 
 > Krok N3b [postupu návrhu](../12-postup-navrhu.md). Každá akce hráče na samostatném řádku.
-> Z průchodu vznikne v kroku N7 automatický test pro `ladeni.gd`. Scény a předměty jsou
+> Z průchodu vznikl v kroku N7 automatický test `hra/nastroje/pruchody/kapitola1.txt`. Scény a předměty jsou
 > v [obsahu místností](01-mistnosti.md), puzzly v [kartách](01-puzzly.md).
 > Stav: **návrh**, verze 0.1
 
@@ -84,8 +84,9 @@ Odhad úplné cesty 50–60 minut (rozpočet 40–60, D56).
 | **H Razítko poduškou** | 28: poduška místo kávy | `c1_razitko`=`poduska`; v kap. 2 bez formuláře navíc |
 | **I Bez karty poučení** | vynechat 16 | souboj těžší (jedna dobrá replika chybí) |
 
-**Automatický test (N7):** nejkratší cesta a varianty A, C, D, E, G jako samostatné sekvence
-pro `ladeni.gd`. Každá končí kontrolou příznaků.
+**Automatický test (N7):** nejkratší cesta a varianty A, C, D, E, G v souboru
+`hra/nastroje/pruchody/kapitola1.txt`, spouští je `sh hra/nastroje/pruchod.sh`. Každá končí
+kontrolou paměti kapitoly.
 
 ## Kontrola slepých uliček
 

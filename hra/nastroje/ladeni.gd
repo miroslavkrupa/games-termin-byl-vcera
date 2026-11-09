@@ -48,6 +48,12 @@
 #   <hra exportovaná šablonou> --headless -- kontrola_skriptu
 # Po startu hry načte všechny skripty z res://game/ a skončí kódem 1, když některý nejde přeložit.
 # Ve hře spuštěné z editoru Godotu jsou k dispozici třídy editoru, takže tam se taková chyba neukáže.
+#
+# Automatický průchod kapitolou (krok N7 postupu, spouští ho nastroje/pruchod.sh):
+#   godot --path hra -- pruchod <soubor> [varianta=A] [rychlost=4] [jazyk=en]
+# Kroky jsou v nastroje/pruchody/<soubor>.txt, jeden na řádku (formát v README.md vedle nich).
+# Hra začne v hlavním menu a kroky se provedou za sebou v jednom běhu, bez podstrkování stavu.
+# Běh skončí kódem 0, když všechny kontroly sedí, jinak kódem 1 s řádkem, na kterém se zasekl.
 extends Node
 
 
@@ -60,6 +66,9 @@ func _ready() -> void:
 	if args.size() > 0 and args[0] == "kontrola_skriptu":
 		_kontrola_skriptu()
 		return
+	if args.size() > 1 and args[0] == "pruchod":
+		_pruchod(args[1], args.slice(2))
+		return
 	var p := {}
 	for arg in OS.get_cmdline_user_args():
 		var c := arg.split("=", true, 1)
@@ -70,15 +79,7 @@ func _ready() -> void:
 		TranslationServer.set_locale(p["jazyk"])
 	if not p.has("snimek"):
 		return
-	# Úsporný režim kreslí jen při změně; u nehybné scény by snímek nikdy nevznikl
-	OS.low_processor_usage_mode = false
-	get_node("/root/C").character_spoke.connect(
-		func(postava: PopochiuCharacter, text: String) -> void:
-			print("[replika] %s: %s" % [postava.script_name, text])
-	)
-	# Repliky se při ladění vypisují rychle a posouvají samy (hráč je posouvá klepnutím)
-	get_node("/root/E").settings.auto_continue_text = true
-	get_node("/root/E").text_speed = 0.005
+	_nastav_ladici_beh()
 	if p.has("nabidka"):
 		load("res://game/gui/dotyk.gd").nabidka_po_tuknuti = p["nabidka"] == "1"
 	if p.has("nova_hra"):
@@ -133,30 +134,9 @@ func _ready() -> void:
 		for i in kroky.size():
 			if i > 0:
 				await _az_bude_klid()
-			var c: PackedStringArray = kroky[i].split(":")
-			var misto: PopochiuClickable = get_node("/root/R").current.get_hotspot(c[0])
-			if not misto:
-				misto = get_node("/root/C").get_runtime_character(c[0])
-				# Pembok po nápovědě z místnosti zmizí, ale zůstane registrovaný: pak je to zase předmět
-				if misto and not misto.is_inside_tree():
-					misto = null
-			if not misto:
-				# Předmět v inventáři: klepnutí jako od hráče
-				var predmet: PopochiuInventoryItem = get_node("/root/I").get_item_instance(c[0])
-				if c[1] == "prohlednout":
-					predmet._on_right_click()
-				else:
-					predmet._on_click()
-				continue
-			if c[1] == "najet":
-				get_node("/root/G").hover_text_shown.emit(misto.get_description())
-			else:
-				get_node("/root/E").clicked = misto
-				var tlacitko := MOUSE_BUTTON_RIGHT if c[1] == "prohlednout" else MOUSE_BUTTON_LEFT
-				# Výchozí reakce GUI (E.command_fallback) se řídí posledním tlačítkem, které jinak
-				# nastavuje až skutečné klepnutí
-				misto.last_click_button = tlacitko
-				misto.handle_command(tlacitko)
+			var chyba := _akce(kroky[i])
+			if chyba:
+				print("[akce] ", chyba)
 	if p.has("volby"):
 		var d = get_node("/root/D")
 		for id in p["volby"].split(","):
@@ -237,6 +217,54 @@ func _ready() -> void:
 	get_viewport().get_texture().get_image().save_png(p["snimek"])
 	print("Snímek uložen: ", p["snimek"])
 	get_tree().quit()
+
+
+## Ladicí běh: repliky do výstupu, rychlé a samy se posouvají (hráč je posouvá klepnutím)
+func _nastav_ladici_beh() -> void:
+	# Úsporný režim kreslí jen při změně; u nehybné scény by snímek nikdy nevznikl
+	OS.low_processor_usage_mode = false
+	get_node("/root/C").character_spoke.connect(
+		func(postava: PopochiuCharacter, text: String) -> void:
+			print("[replika] %s: %s" % [postava.script_name, text])
+	)
+	get_node("/root/E").settings.auto_continue_text = true
+	get_node("/root/E").text_speed = 0.005
+
+
+## Klepnutí na aktivní místo, postavu nebo předmět v inventáři jako od hráče
+## ([code]Misto:pouzit|prohlednout|najet[/code]); vrátí popis chyby, nebo prázdný text
+func _akce(krok: String) -> String:
+	var c: PackedStringArray = krok.split(":")
+	if c.size() != 2 or not c[1] in ["pouzit", "prohlednout", "najet"]:
+		return "akce %s má mít tvar Misto:pouzit|prohlednout|najet" % krok
+	var misto: PopochiuClickable = get_node("/root/R").current.get_hotspot(c[0])
+	if misto and not (misto.visible and misto.clickable):
+		return "místo %s teď nejde použít (není vidět)" % c[0]
+	if not misto:
+		misto = get_node("/root/C").get_runtime_character(c[0])
+		# Pembok po nápovědě z místnosti zmizí, ale zůstane registrovaný: pak je to zase předmět
+		if misto and not misto.is_inside_tree():
+			misto = null
+	if not misto:
+		# Předmět v inventáři: klepnutí jako od hráče
+		if not get_node("/root/I").is_item_in_inventory(c[0]):
+			return "%s tu není (místo, postava ani předmět v inventáři)" % c[0]
+		var predmet: PopochiuInventoryItem = get_node("/root/I").get_item_instance(c[0])
+		if c[1] == "prohlednout":
+			predmet._on_right_click()
+		else:
+			predmet._on_click()
+		return ""
+	if c[1] == "najet":
+		get_node("/root/G").hover_text_shown.emit(misto.get_description())
+	else:
+		get_node("/root/E").clicked = misto
+		var tlacitko := MOUSE_BUTTON_RIGHT if c[1] == "prohlednout" else MOUSE_BUTTON_LEFT
+		# Výchozí reakce GUI (E.command_fallback) se řídí posledním tlačítkem, které jinak
+		# nastavuje až skutečné klepnutí
+		misto.last_click_button = tlacitko
+		misto.handle_command(tlacitko)
+	return ""
 
 
 var _menu_preskoceno := false
@@ -391,6 +419,22 @@ func _klepnout(kde: Vector2) -> void:
 		Input.parse_input_event(e)
 
 
+## Klepnutí rovnou do herního okna v souřadnicích hry; funguje i bez okna (--headless), kde
+## Input.parse_input_event nic nedoručí. Míří jen na překryvná okna z Controlů (minihry).
+func _klepnout_primo(kde: Vector2) -> void:
+	var pohyb := InputEventMouseMotion.new()
+	pohyb.position = kde
+	pohyb.global_position = kde
+	get_viewport().push_input(pohyb, true)
+	for stisk in [true, false]:
+		var e := InputEventMouseButton.new()
+		e.button_index = MOUSE_BUTTON_LEFT
+		e.pressed = stisk
+		e.position = kde
+		e.global_position = kde
+		get_viewport().push_input(e, true)
+
+
 # Dotyk prstem jako na telefonu: Godot z něj sám udělá emulovanou myš (zařízení -1), kterou
 # zpracuje game/gui/dotyk.gd (podržení = prohlédnout, nabídka po ťuknutí)
 func _dotknout(kde: Vector2, drzet: bool) -> void:
@@ -480,3 +524,333 @@ func _najdi_skripty(slozka: String, vysledek: Array[String]) -> void:
 		var jmeno := soubor.trim_suffix(".remap")
 		if jmeno.ends_with(".gd") and not vysledek.has(slozka.path_join(jmeno)):
 			vysledek.append(slozka.path_join(jmeno))
+
+
+#region Automatický průchod ########################################################################
+## Nabídka voleb čeká na výběr a co v ní je (id voleb dialogu, u nabídky ze skriptu pořadí od nuly)
+var _volby_cekaji := false
+var _nabidnute: Array[String] = []
+var _kontrol := 0
+
+
+## Automatický průchod kapitolou: kroky ze souboru nastroje/pruchody/<soubor>.txt jeden po druhém
+## v jednom běhu hry. Při chybě vypíše řádek a stav hry a skončí kódem 1.
+func _pruchod(soubor: String, parametry: Array) -> void:
+	for arg: String in parametry:
+		var c := arg.split("=", true, 1)
+		if c.size() == 2:
+			_p[c[0]] = c[1]
+	if _p.has("jazyk"):
+		TranslationServer.set_locale(_p["jazyk"])
+	var cesta := soubor if soubor.begins_with("res://") else "res://nastroje/pruchody/" + soubor
+	if not cesta.ends_with(".txt"):
+		cesta += ".txt"
+	if not FileAccess.file_exists(cesta):
+		print("[průchod] soubor %s neexistuje" % cesta)
+		get_tree().quit(1)
+		return
+	_nastav_ladici_beh()
+	# Bez okna (--headless) má okno 64 × 64 px a překryvná okna miniher by se rozložila jinak než
+	# ve hře, takže by klepnutí mířila vedle
+	get_window().size = Vector2i(
+		ProjectSettings.get_setting("display/window/size/viewport_width"),
+		ProjectSettings.get_setting("display/window/size/viewport_height")
+	)
+	print("[průchod] okno %s, viditelná oblast %s" % [get_window().size, get_viewport().get_visible_rect().size])
+	# Zrychlení hry: časovače, chůze i repliky běží rychleji, pořadí kroků zůstane
+	Engine.time_scale = float(_p.get("rychlost", "1"))
+	var d = get_node("/root/D")
+	d.dialog_options_requested.connect(_na_volby)
+	d.inline_dialog_requested.connect(_na_volby)
+	var zacatek := Time.get_ticks_msec()
+	# Hlavní menu musí naběhnout
+	await get_tree().create_timer(1.0).timeout
+	var varianta: String = _p.get("varianta", "zaklad")
+	var radky := FileAccess.get_file_as_string(cesta).split("\n")
+	var kroku := 0
+	for i in radky.size():
+		var radek := radky[i].get_slice("#", 0).strip_edges()
+		if radek.is_empty():
+			continue
+		if radek.begins_with("varianty "):
+			if not varianta in radek.split(" ", false).slice(1):
+				print("[průchod] varianta %s v souboru není (%s)" % [varianta, radek])
+				get_tree().quit(1)
+				return
+			continue
+		# Štítek na konci řádku: @A jen ve variantě A, @!A,E ve všech kromě A a E
+		var zavinac := radek.rfind(" @")
+		if zavinac >= 0:
+			var stitek := radek.substr(zavinac + 2).strip_edges()
+			radek = radek.substr(0, zavinac).strip_edges()
+			if (varianta in stitek.trim_prefix("!").split(",")) == stitek.begins_with("!"):
+				continue
+		kroku += 1
+		print("[průchod] řádek %d: %s" % [i + 1, radek])
+		var chyba := await _krok_pruchodu(radek)
+		if chyba:
+			print("[průchod] CHYBA na řádku %d (%s): %s" % [i + 1, radek, chyba])
+			_vypis("chyba")
+			get_tree().quit(1)
+			return
+	print("[průchod] HOTOVO %s, varianta %s: %d kroků, %d kontrol, %d s" % [
+		cesta.get_file(), varianta, kroku, _kontrol, (Time.get_ticks_msec() - zacatek) / 1000
+	])
+	get_tree().quit(0)
+
+
+## Jeden krok průchodu (formát v nastroje/pruchody/README.md); vrátí popis chyby, nebo prázdný text
+func _krok_pruchodu(radek: String) -> String:
+	var c := radek.split(" ", false, 1)
+	var arg := c[1].strip_edges() if c.size() > 1 else ""
+	var chyba := ""
+	match c[0]:
+		"nova_hra":
+			load("res://game/obrazovky/ramec.gd").nova_hra()
+			return await _cekej_klid()
+		"akce":
+			for krok in arg.split(","):
+				chyba = await _cekej_klid()
+				if not chyba:
+					chyba = _akce(krok)
+				if chyba:
+					return chyba
+		"volby":
+			for id in arg.split(","):
+				chyba = await _cekej_volby()
+				if chyba:
+					return chyba
+				if not id in _nabidnute:
+					return "volba %s není v nabídce (nabízí %s)" % [id, ", ".join(_nabidnute)]
+				_vyber_volbu(id)
+		"pouzij":
+			for krok in arg.split(","):
+				chyba = await _cekej_klid()
+				if chyba:
+					return chyba
+				var pc := krok.split(":")
+				if pc.size() != 2:
+					return "použití %s má mít tvar Predmet:Cil" % krok
+				if not get_node("/root/I").is_item_in_inventory(pc[0]):
+					return "předmět %s hráč nemá" % pc[0]
+				await _pouzij(pc[0], pc[1])
+		"klepni":
+			for polozka in arg.split(";"):
+				chyba = await _klepni_v_okne(polozka.strip_edges())
+				if chyba:
+					return chyba
+		"mistnost", "hrac":
+			chyba = await _cekej_klid()
+			if chyba:
+				return chyba
+			_kontrol += 1
+			var je: String = (
+				get_node("/root/R").current.script_name if c[0] == "mistnost"
+				else get_node("/root/C").player.script_name
+			)
+			if je != arg:
+				return "%s je %s, ne %s" % ["místnost" if c[0] == "mistnost" else "hráč", je, arg]
+		"priznak":
+			chyba = await _cekej_klid()
+			if chyba:
+				return chyba
+			var g = get_node("/root/Globals")
+			for z in arg.split(","):
+				var pz := z.split("=", true, 1)
+				if pz.size() != 2 or not pz[0] in g:
+					return "příznak %s v Globals není" % pz[0]
+				_kontrol += 1
+				if not _stejne(g.get(pz[0]), pz[1]):
+					return "příznak %s je %s, ne %s" % [pz[0], g.get(pz[0]), pz[1]]
+		"ma", "nema":
+			chyba = await _cekej_klid()
+			if chyba:
+				return chyba
+			for nazev in arg.split(","):
+				_kontrol += 1
+				var ma: bool = get_node("/root/I").is_item_in_inventory(nazev)
+				if ma != (c[0] == "ma"):
+					return "hráč %s předmět %s" % ["nemá" if c[0] == "ma" else "pořád má", nazev]
+		"konec":
+			return await _konec_kapitoly(arg)
+		_:
+			return "neznámý krok %s" % c[0]
+	return ""
+
+
+## Zapamatuje si nabídku voleb dialogu (i nabídku přímo ze skriptu) a vypíše ji
+func _na_volby(volby = null) -> void:
+	_nabidnute.clear()
+	if volby is Array:
+		for i in volby.size():
+			var v = volby[i]
+			if not v is PopochiuDialogOption:
+				_nabidnute.append(str(i))
+			elif v.visible and not v.disabled:
+				_nabidnute.append(v.id)
+	print("[volby] ", ", ".join(_nabidnute))
+	_volby_cekaji = true
+
+
+## Vybere volbu jako klepnutím v nabídce; u nabídky ze skriptu je id pořadí od nuly
+func _vyber_volbu(id: String) -> void:
+	var d = get_node("/root/D")
+	_volby_cekaji = false
+	var volba: PopochiuDialogOption = d.current_dialog.get_option(id) if d.current_dialog else null
+	if not volba:
+		volba = PopochiuDialogOption.new()
+		volba.id = id
+	var nabidka := _nabidka_voleb()
+	if nabidka:
+		nabidka._on_option_clicked(volba)
+	else:
+		d.option_selected.emit(volba)
+
+
+## Počká jako _az_bude_klid, až hra dokončí rozběhnutou akci. Chyba, když místo klidu čeká
+## nabídka voleb, nebo když se hra do [param limit] sekund hry neuklidní.
+func _cekej_klid(limit := 120.0) -> String:
+	var e = get_node("/root/E")
+	var g = get_node("/root/G")
+	var klidnych := 0
+	var cekam := 0
+	await get_tree().create_timer(0.5).timeout
+	while klidnych < 15:
+		await get_tree().create_timer(0.1).timeout
+		if _volby_cekaji:
+			return "čeká nabídka voleb (%s), chybí krok volby" % ", ".join(_nabidnute)
+		var kdo := _kdo_mluvi()
+		klidnych = klidnych + 1 if e.in_room and not g.is_blocked and kdo.is_empty() else 0
+		cekam += 1
+		if cekam % 100 == 0:
+			print("[čekám] v místnosti %s, GUI blokované %s, %s" % [e.in_room, g.is_blocked, kdo])
+		if cekam > limit * 10:
+			return "hra se neuklidnila (v místnosti %s, GUI blokované %s, %s)" % [e.in_room, g.is_blocked, kdo]
+	return ""
+
+
+## Počká na nabídku voleb dialogu
+func _cekej_volby(limit := 120.0) -> String:
+	var cekam := 0
+	while not _volby_cekaji:
+		await get_tree().create_timer(0.1).timeout
+		cekam += 1
+		if cekam > limit * 10:
+			return "nabídka voleb se neukázala"
+	# Nabídka se dokreslí, jako když ji vidí hráč
+	await get_tree().create_timer(0.8).timeout
+	return ""
+
+
+## Kdo právě mluví nebo jde (prázdný text, když nikdo)
+func _kdo_mluvi() -> String:
+	for c in get_tree().get_nodes_in_group("PopochiuClickable"):
+		if c is PopochiuCharacter and (c.is_talking or c.is_moving):
+			return "%s %s" % [c.script_name, "mluví" if c.is_talking else "jde"]
+	return ""
+
+
+## Hodnota příznaku proti textu ze souboru průchodu (1/0 i true/false u přepínačů)
+func _stejne(hodnota: Variant, text: String) -> bool:
+	if hodnota is bool:
+		return hodnota == (text in ["1", "true"])
+	if hodnota is int:
+		return text.is_valid_int() and hodnota == int(text)
+	return str(hodnota) == text
+
+
+## Konec kapitoly: počká na obrazovku paměti, porovná paměť s [param ocekavana] (klíče bez
+## předpony ch1_pamet_, oddělené čárkou) a tlačítky Dál a Hlavní menu dojde do hlavního menu
+func _konec_kapitoly(ocekavana: String) -> String:
+	var dal := await _cekej_tlacitko("ui_dal")
+	if not dal:
+		return "obrazovka paměti kapitoly se neukázala"
+	var pamet: Array[String] = []
+	for klic: String in load("res://game/obrazovky/konec_kapitoly.gd").pamet_kapitoly():
+		if klic != "ch1_pamet_pokracovani":
+			pamet.append(klic.trim_prefix("ch1_pamet_"))
+	var chce: Array[String] = []
+	for klic in ocekavana.split(","):
+		chce.append(klic.strip_edges())
+	pamet.sort()
+	chce.sort()
+	_kontrol += 1
+	if pamet != chce:
+		return "paměť kapitoly je %s, ne %s" % [", ".join(pamet), ", ".join(chce)]
+	dal.pressed.emit()
+	var menu := await _cekej_tlacitko("ui_hlavni_menu")
+	if not menu:
+		return "obrazovka Pokračování příště se neukázala"
+	menu.pressed.emit()
+	var cekam := 0
+	while not (get_node("/root/E").in_room and get_node("/root/R").current.script_name == "Menu"):
+		await get_tree().create_timer(0.1).timeout
+		cekam += 1
+		if cekam > 300:
+			return "hra se nevrátila do hlavního menu"
+	_kontrol += 1
+	return ""
+
+
+## Počká na viditelné tlačítko s textem [param klic] (klíč nebo jeho překlad), případně jen
+## na takové, které jde stisknout
+func _cekej_tlacitko(klic: String, limit := 120.0, jen_aktivni := false) -> Button:
+	for i in int(limit * 10):
+		for n: Button in get_tree().root.find_children("*", "Button", true, false):
+			if n.is_visible_in_tree() and n.text in [klic, tr(klic)] and not (jen_aktivni and n.disabled):
+				return n
+		await get_tree().create_timer(0.1).timeout
+	return null
+
+
+## Klepnutí v překryvném okně minihry: tlačítko podle klíče textu, pole minihry (pole:<id>),
+## souřadnice hry (x,y) nebo pauza (p2 = 2 s hry)
+func _klepni_v_okne(polozka: String) -> String:
+	if polozka.begins_with("p") and polozka.substr(1).is_valid_float():
+		await get_tree().create_timer(float(polozka.substr(1))).timeout
+		return ""
+	var kde: Vector2
+	var xy := polozka.split(",")
+	if xy.size() == 2 and xy[0].is_valid_float() and xy[1].is_valid_float():
+		await _az_domluvi()
+		kde = Vector2(float(xy[0]), float(xy[1]))
+	elif polozka.begins_with("pole:"):
+		var pole := await _cekej_pole(polozka.substr(5))
+		if not pole:
+			return "pole %s v okně minihry není" % polozka.substr(5)
+		# Pravý dolní roh pole: uprostřed už můžou ležet karty a klepnutí by je vybralo
+		kde = pole.get_global_rect().end - Vector2(18, 18)
+	else:
+		var b := await _cekej_tlacitko(polozka, 120.0, true)
+		if not b:
+			return "tlačítko %s se neukázalo nebo nejde stisknout" % polozka
+		# Okno ukázané po replice se ještě rozkládá
+		await get_tree().create_timer(0.3).timeout
+		if not b.is_visible_in_tree():
+			return "tlačítko %s zmizelo dřív, než šlo stisknout" % polozka
+		kde = b.get_global_rect().get_center()
+	_klepnout_primo(kde)
+	await get_tree().create_timer(0.7).timeout
+	return ""
+
+
+## Počká na pole minihry: překryvné okno pod kořenem stromu s polem [code]_pole[/code] (pole
+## kontejnerů M02 podle pořadí, slovník kolonek M01 podle id). Vrátí rámeček pole.
+func _cekej_pole(id: String, limit := 60.0) -> Control:
+	for i in int(limit * 10):
+		for okno in get_tree().root.get_children():
+			if not (okno is CanvasLayer and okno.visible and "_pole" in okno):
+				continue
+			var pole = okno.get("_pole")
+			var obsah: Control = null
+			if pole is Array and id.is_valid_int() and int(id) < pole.size():
+				obsah = pole[int(id)]
+			elif pole is Dictionary and pole.has(id):
+				obsah = pole[id]
+			if obsah and obsah.is_visible_in_tree():
+				return obsah.get_parent()
+		await get_tree().create_timer(0.1).timeout
+	return null
+
+
+#endregion

@@ -1,0 +1,128 @@
+# Kapitola 1: automatický průchod podle docs/kapitoly/01-pruchod.md (formát v README.md vedle).
+# zaklad je nejkratší cesta přes Báru (část 1 průchodu), písmena jsou varianty z části 3:
+# A Bára přerušená, číslo projektu přes Pana Změnu; C prohraný souboj; D slíbit všechno;
+# E babička neodhalená; G následné fáze přijaty. Čísla v poznámkách jsou kroky průchodu.
+varianty zaklad A C D E G
+
+nova_hra
+mistnost Byt
+
+# Ú Rudův byt (1–4)
+akce Kava:pouzit
+akce Police:pouzit
+ma Kava,Pembok
+akce Dvere:pouzit
+volby Co,Konec
+ma Dekret,Propiska
+akce Dira:pouzit
+mistnost Namesti
+
+# S1 Náměstí: Bára domluví třikrát (6), kávové pero (7)
+akce Bara:pouzit
+volby 0,0,0                                                              @!A
+priznak c1_bara_vyslechnuta=3,c1_bara_kriteria=1,c1_cislo_projektu=1     @!A
+# A: Ruda Báře dvakrát skočí do řeči a ona odejde; číslo projektu je na plakátu Pana Změny
+volby 1,1                                                                @A
+priznak c1_bara_vyslechnuta=0,c1_bara_kriteria=0,c1_cislo_projektu=0     @A
+pouzij Propiska:Kava
+ma KavovePero
+akce Stanek:prohlednout                                                  @A
+akce Stanek:pouzit                                                       @A
+volby Plakat,Plakat,Konec                                                @A
+pouzij KavovePero:Stanek                                                 @A
+ma Plakat,Pozadavek                                                      @A
+priznak c1_zmena_dohoda=1,c1_cislo_projektu=1                            @A
+akce DvereRadnice:pouzit
+mistnost Vestibul
+
+# S2 Vestibul: kdo rozhoduje (9), schody do archivu (10)
+akce Vratny:pouzit
+volby Kdo,Konec
+akce SchodySklep:pouzit
+mistnost Archiv
+
+# S3 Archiv: vstup s číslem projektu (11), v A s plakátem
+akce Lumir:pouzit                                                        @!A
+volby Cislo,Konec                                                        @!A
+pouzij Plakat:Lumir                                                      @A
+# Lístek, kniha, mapa (12, 14, 17; E bez mapy), tlačítko „2“ (13), karta poučení (16)
+akce Kartoteka:pouzit,Kniha:pouzit
+akce Mapnik:pouzit                                                       @!E
+akce Lumir:pouzit
+volby Krabice,Konec
+pouzij KavovePero:Lumir
+ma Tlacitko,Karta
+ma Mapa                                                                  @!E
+nema Mapa                                                                @E
+# Řazení kartotéky podle knihy, tři výměny lístků (15)
+akce Kartoteka:pouzit
+klepni ch1_listek_kasna; ch1_listek_most; ch1_listek_archa; ch1_listek_leseni; ch1_listek_kasna; ch1_listek_archa; ui_razeni_hotovo
+ma Zadani
+akce Schody:pouzit
+mistnost Vestibul
+
+# S2 → S4 výtah do 2. patra (19)
+pouzij Tlacitko:Vytah
+priznak tlacitko_zapojeno=1
+akce Vytah:pouzit
+volby Starosta
+mistnost Pracovna
+
+# S4 Pracovna: M03 Souboj argumenty (20)
+akce Starosta:pouzit
+volby Souboj
+klepni ch1_m03_k1_dobra; ch1_m03_k2_dobra; ch1_m03_k3_dobra; ch1_m03_k4_dobra; ch1_m03_k5_dobra     @!A,C,D
+# A nemá Bářina kritéria, v 5. kole dobrá replika chybí
+klepni ch1_m03_k1_dobra; ch1_m03_k2_dobra; ch1_m03_k3_dobra; ch1_m03_k4_dobra; ch1_m03_k5_slaba     @A
+# C: tři slabé repliky, starosta pošle Rudu pryč; druhý pokus vyjde
+klepni ch1_m03_k1_slaba; ch1_m03_k2_slaba; ch1_m03_k3_slaba; ch1_m03_k4_dobra; ch1_m03_k5_dobra     @C
+nema Podpis                                                              @C
+akce Starosta:pouzit                                                     @C
+volby Souboj                                                             @C
+klepni ch1_m03_k1_dobra; ch1_m03_k2_dobra; ch1_m03_k3_dobra; ch1_m03_k4_dobra; ch1_m03_k5_dobra     @C
+# D: tři rychlé repliky (sliby), starosta přidá fontánu (R1.1)
+klepni ch1_m03_k1_rychla; ch1_m03_k2_rychla; ch1_m03_k3_rychla; ch1_m03_k4_dobra; ch1_m03_k5_dobra  @D
+ma Podpis
+priznak c1_slib_vseho=0                                                  @!D
+priznak c1_slib_vseho=3                                                  @D
+akce Vytah:pouzit
+volby Komise
+mistnost Komise
+
+# S5 Komise: stůl otevře M02 Kdo tu velí (22) a po ní hned M01 Jeden papír (23)
+akce Stul:pouzit
+# M02: pole 0 nahoře vlevo (může zastavit), 1 nahoře vpravo (může a záleží mu), 3 dole vpravo (záleží mu)
+klepni postava_starosta; pole:0; postava_predseda; pole:1; postava_babicka; pole:0; postava_pan_zmena; pole:3; postava_bara; pole:3; ch1_m02_obyvatele; pole:3; ui_m02_hotovo     @!E
+# E: babička je šedá karta, Pembok jednou upozorní a druhé odevzdání projde
+klepni postava_starosta; pole:0; postava_predseda; pole:1; postava_pan_zmena; pole:3; postava_bara; pole:3; ch1_m02_obyvatele; pole:3; ui_m02_hotovo; ui_m02_hotovo     @E
+# M01: útržky do kolonek; A nemá útržek s kritérii od Báry
+klepni ch1_m01_utrzek_cil; pole:cil; ch1_m01_utrzek_termin; pole:termin; ch1_m01_utrzek_kriteria; pole:kriteria; ch1_m01_utrzek_mimo_nesmysl; pole:mimo; ch1_m01_utrzek_kdo; pole:kdo; ui_m01_hotovo     @!A
+klepni ch1_m01_utrzek_cil; pole:cil; ch1_m01_utrzek_termin; pole:termin; ch1_m01_utrzek_mimo_nesmysl; pole:mimo; ch1_m01_utrzek_kdo; pole:kdo; ui_m01_hotovo     @A
+priznak m02_hotovo=1
+priznak c1_charter_kvalita=3                                             @!A
+priznak c1_charter_kvalita=2                                             @A
+priznak c1_babicka=odhalena                                              @!E
+priznak c1_babicka=                                                      @E
+ma Papir
+
+# Fronta na frontu (24), úsek za Báru v archivu (25–26)
+akce Fronta:pouzit
+mistnost Archiv
+hrac Bara
+akce HlubokyRegal:prohlednout,HlubokyRegal:prohlednout,Lumir:prohlednout
+pouzij Metr:HlubokyRegal
+mistnost Komise
+hrac Ruda
+priznak c1_seznam_pasazeru=1,dny=28
+
+# Předseda (27), razítko kávou (28), následné fáze (29), konec kapitoly (30)
+akce Predseda:pouzit
+volby Razitko,Konec
+pouzij Kava:Razitko
+volby Odmitnout                                                          @!G
+volby Prijmout                                                           @G
+konec bara_3,slib_0,babicka_prehlizena,faze2_ne,razitko_kava,seznam            @zaklad,C
+konec bara_0,slib_0,babicka_prehlizena,faze2_ne,zmena,razitko_kava,seznam      @A
+konec bara_3,slib,babicka_prehlizena,faze2_ne,razitko_kava,seznam              @D
+konec bara_3,slib_0,babicka_neodhalena,faze2_ne,razitko_kava,seznam            @E
+konec bara_3,slib_0,babicka_prehlizena,faze2_ano,razitko_kava,seznam           @G

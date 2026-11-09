@@ -57,6 +57,14 @@ Ladicí běh menu přeskočí a začne na náměstí. Další parametry (výchoz
 předměty, klepnutí do miniher, ukládání a načítání, úvod přes `start=Byt`, výpis stavů) popisuje
 hlavička `nastroje/ladeni.gd`.
 
+Automatický průchod kapitolou 1 od nové hry po konec, nejkratší cestou i ve variantách
+z průchodu kapitoly. Hra běží bez okna a zrychleně, trvá to asi čtyři minuty. Kroky a jejich
+formát jsou v `nastroje/pruchody/`:
+
+```bash
+sh hra/nastroje/pruchod.sh
+```
+
 Texty jsou v `texty/texty.csv`; každý řádek musí mít češtinu i angličtinu. Po úpravě tabulky
 je potřeba import (editor ho udělá sám, z příkazové řádky `godot --headless --path hra --import`)
 a kontrola překladů:

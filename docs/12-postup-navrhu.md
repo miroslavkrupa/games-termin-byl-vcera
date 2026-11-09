@@ -48,7 +48,7 @@
 | **N4** | Autorská kontrola každé kapitoly | autor projde kapitolu sám, opravy | ⚠️ kapitola 1 ✅ ([kontrola](kapitoly/01-kontrola.md), D67), kapitola 2 ✅ ([kontrola](kapitoly/02-kontrola.md), D68), 3 ✅ ([kontrola](kapitoly/03-kontrola.md), D73), 4 ✅ ([kontrola](kapitoly/04-kontrola.md), D78), 5 ✅ ([kontrola](kapitoly/05-kontrola.md), D80); papírový průchod s hráči zrušen (D66); kapitoly 4 a 5 hratelné v šedém prototypu (D85), hraní autorem čeká | 5–10 h |
 | **N5** | Celá hra dohromady | kontrola napříč kapitolami → **brána A** | ✅ [kontrola celé hry](14-kontrola-hry.md), nálezy zapracované (D81) a rozhodnutí zapsána (D82): **brána A** | 4–8 h |
 | **N6** | Texty první verze | repliky kapitoly v CS i EN v `texty.csv` → **brána B** | ⚠️ kapitola 1: první verze všech textů (540 replik, 712 textů), předsunuto před N4 (D65), brána B až po N4 a N5; kapitola 2: první verze všech textů (416 replik, 596 textů, [scénář](kapitoly/02-scenar.md), D83), brána B čeká na čtení nahlas | 15–25 h na kapitolu 1 |
-| **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⚠️ kapitola 1 (I1–I6) hotová se zástupnou grafikou (D87), jde dohrát od menu po konec; čeká ověření na telefonu, kapitoly 2–5 | 40–65 h |
+| **N7** | Výroba v Godotu | iterace I2–I6, kontrola I1 → milník **MD** | ⚠️ kapitola 1 (I1–I6) hotová se zástupnou grafikou (D87), jde dohrát od menu po konec, automatický průchod projde nejkratší cestu i varianty A, C, D, E, G; čeká ověření na telefonu, kapitoly 2–5 | 40–65 h |
 | **N8** | Playtest | 5 hráčů, opravy → milník **ME** | – | 8–15 h |
 | **N9** | Ladění a vydání | vtipy, zvuk, animace, itch.io → milník **MF** | – | 8–12 h |
 
@@ -303,9 +303,11 @@ Iterace I2–I6 podle [plánu](10-plan-kapitoly-1.md) s jediným rozdílem: stav
 průchodu, karet puzzlů, obsahu místností a textů, ne podle odstavce v návrhu kapitoly.
 
 - **Nejdřív kontrola I1:** porovnat náměstí s obsahem místností, maticí a texty a doplnit, co chybí.
-- **Automatický průchod:** z `01-pruchod.md` vznikne sekvence pro `ladeni.gd` (akce, volby,
-  použití předmětů), která projde kapitolu od začátku do konce. Po každé iteraci se spustí
-  a odhalí rozbité cesty. Varianty z průchodu jsou samostatné sekvence.
+- **Automatický průchod:** z průchodu kapitoly vznikne soubor kroků
+  `hra/nastroje/pruchody/kapitolaN.txt` (akce, volby, použití předmětů, klepnutí v minihrách,
+  kontroly příznaků), který projde kapitolu od nové hry po konec. Varianty z průchodu jsou ve
+  stejném souboru, označené štítkem. Po každé iteraci se spustí (`sh hra/nastroje/pruchod.sh`)
+  a odhalí rozbité cesty.
 - Platí **definice hotového** z plánu (oba jazyky, myš i prst, nápověda, žádná slepá ulička, čas).
 
 ## N8 Playtest
