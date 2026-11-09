@@ -29,7 +29,8 @@
 # a jde rovnou na náměstí jako dřív (výchozí věci a Pembok jako před úvodem), takže starší běhy
 # fungují beze změny. Další parametry:
 #   menu=1        zůstat v hlavním menu (snímek menu, klepnutí na jeho tlačítka přes kliky=)
-#   start=Byt     přeskočit menu do jiné místnosti než náměstí (úvod v bytě); bez nulování stavu
+#   start=Byt     přeskočit menu do jiné místnosti než náměstí (úvod v bytě); bez nulování stavu;
+#                 funguje i bez snímku (godot --path hra -- start=Namesti)
 #   nova_hra=1    jako tlačítko Nová hra v menu (vynulovat stav, úvod v bytě), hned po startu
 #   nacti=<1–4>   načíst uloženou hru z pozice (jako Pokračovat / Načíst), před přípravou stavu
 #   uloz=<1–4>    po všech krocích uložit hru do pozice (jako okno Uložit), pak teprve snímek
@@ -282,7 +283,10 @@ func preskocit_menu() -> String:
 		var c := arg.split("=", true, 1)
 		if c.size() == 2:
 			p[c[0]] = c[1]
-	if not p.has("snimek") or p.has("menu") or p.has("nova_hra") or p.has("nacti"):
+	if p.has("menu") or p.has("nova_hra") or p.has("nacti"):
+		return ""
+	# Bez snímku jen s výslovným start= (hraní rovnou od vybrané místnosti)
+	if not p.has("snimek") and not p.has("start"):
 		return ""
 	return p.get("start", "Namesti")
 

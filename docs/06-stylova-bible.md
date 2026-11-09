@@ -13,7 +13,7 @@ do našeho světa: místo planety ze šrotu je tu město věčných staveb, leš
 
 | Vlastnost | Jak ji použijeme my |
 |---|---|
-| ručně kreslené, digitálně malované pozadí | malované pozadí s viditelným tahem štětce, žádné 3D ani pixel art |
+| ručně kreslené, digitálně malované pozadí | malované pozadí s viditelným tahem štětce, žádné 3D ani pixel art (pixel art vyzkoušen a zamítnut, D88) |
 | výrazná tmavá obrysová linka s proměnlivou tloušťkou | tmavě hnědá (ne černá) linka, silnější na obrysech, tenčí uvnitř |
 | přehnané proporce postav | velké hlavy, dlouhé končetiny, výrazné nosy a ruce |
 | přeplněné, detailní prostředí | každá scéna plná rozestavěných věcí, lešení, cedulí, provizorií |
@@ -211,6 +211,9 @@ python3 tools/generuj_vzorky.py --dry-run
 Suchý běh vypíše zadání a odhad ceny, nic negeneruje. Bez `--dry-run` skript obrázky vygeneruje
 a uloží do `docs/styl/vzorky/` jako `<id>_v01.png`, `<id>_v02.png`… Další volby: `--only <id>`
 (jen vybrané vzorky), `--quality low|medium|high`, `--model <model>`.
+
+Novější model gpt-image-2 umí vlastní rozměr (např. 2224 × 1024), ale neumí průhledné pozadí:
+postavy se pak kreslí na jednolitou barvu a vyříznou se (D88).
 
 Vzorek s polem `"reference"` (seznam obrázků) se generuje podle předlohy, například scéna
 s Rudou podle jeho schváleného referenčního listu. Tím se drží konzistence postav.
