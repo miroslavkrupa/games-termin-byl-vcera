@@ -63,6 +63,48 @@ Na co se při poslechu ptát: Je to vtipné, nebo to vtip zabije? Sedí hlas k p
 jména a termíny (Pembok, Gantt, Nedostavěnice, Scope Creek)? Dá se to poslouchat deset minut
 v kuse? Co by chtělo foneticky přepsat (zvláštní sloupec v tabulce textů)?
 
+## Stav 2026-11-12 (D97)
+
+- Služba: **ElevenLabs**. Hlasy vybírá autor z castingu (`vzorky/casting.html`): 12 postav
+  kapitoly 1, u každé 3 až 11 kandidátů ze standardních hlasů. Vybraný hlas se zapíše do
+  `tools/dabing/hlasy.json`.
+- Účet je na bezplatném tarifu: nestačí na celou kapitolu a API na něm odmítá hlasy
+  z knihovny (i Aria a Charlotte). Rodilé české hlasy z knihovny půjdou až s placeným tarifem;
+  pak stačí hlas přidat do „My Voices“ a zapsat jeho ID.
+- Klíč v `.env` umí jen generovat řeč. Seznam hlasů (`--hlasy`) ani zbývající kredit přečíst
+  neumí, k tomu by potřeboval oprávnění `voices_read` a `user_read`.
+- Hra nahrávky už přehrává (`hra/game/zvuk.gd`): soubor `hra/zvuk/<jazyk>/<klíč>.mp3` se
+  přehraje, když postava řekne repliku s tím klíčem. Na zkoušku jsou ve hře dvě repliky Pana
+  Změny (`ch1_zmena_uvod`, `ch1_zmena_001`).
+
+### Hlasy kapitoly 1 (vybral autor 2026-11-12)
+
+| Postava | Hlas ElevenLabs | Postava | Hlas ElevenLabs |
+|---|---|---|---|
+| Ruda | George | Framework | Liam |
+| Bára | Lily | Babička | Alice |
+| Pembok | Callum | Lumír | Eric (doplněno) |
+| Pan Změna | Chris | Vrátný | Roger (doplněno) |
+| Předseda | Brian | Věřitel | Charlie (doplněno) |
+| Rozhlas | Daniel | Druhý věřitel | Will (doplněno) |
+| Starosta | Bill | Kocour | River (doplněno) |
+
+„Doplněno“ = vybral Claude tak, aby se hlasy v kapitole neopakovaly.
+
+### Co je namluveno
+
+Úsek `kap1-uvod` (`tools/dabing/vzorky.json`, 65 replik v pořadí hry), česky, do
+`hra/zvuk/cs/`: hotovo 50 replik (telefonát, byt, věřitelé). Chybí 15 replik příchodu na
+náměstí (rozhlas, Pembok, Ruda): 2026-11-12 došel měsíční kredit bezplatného tarifu
+(10 000 znaků). Pokračuje se stejným příkazem, hotové repliky se přeskočí:
+
+```
+python3 tools/dabing.py --vzorek kap1-uvod --jazyk cs --hra
+```
+
+Nahrávky jsou MP3 128 kb/s (50 replik = 3,6 MB). Celá kapitola by v téhle kvalitě měla
+asi 40 MB na jazyk; před namluvením zbytku snížit datový tok (`format` v `hlasy.json`).
+
 ## Co bude dál, když vzorky obstojí
 
 1. Hlasy pro všechny mluvčí, případně foneticky přepsaná jména.

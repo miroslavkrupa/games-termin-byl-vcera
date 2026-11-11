@@ -322,6 +322,10 @@ def main():
         if not postava or postava not in cfg["postavy"] or "%s" in r["cs"] or "%s" in r["en"]:
             preskoceno.append(i)
             continue
+        # Volba dialogu, která je celá scénická poznámka („(odejít)“), nemá co namluvit
+        if not any(re.search(r"\w", mluveny_text(r[j])) for j in jazyky):
+            preskoceno.append(i)
+            continue
         if not cfg["postavy"][postava].get(sluzba):
             sys.exit(f"Postava „{postava}“ nemá v hlasy.json hlas pro službu {sluzba} (replika {i}). "
                      f"Hlasy vypíše: python3 tools/dabing.py --hlasy --sluzba {sluzba}")
@@ -335,7 +339,8 @@ def main():
           f"odhad ≈ ${znaku / 1000 * CENA[sluzba]:.2f}")
     if preskoceno:
         ukazka = ", ".join(preskoceno[:5]) + (", …" if len(preskoceno) > 5 else "")
-        print(f"přeskočeno {len(preskoceno)} (bez mluvčího, mluvčí mimo hlasy.json nebo zástupné %s): {ukazka}")
+        print(f"přeskočeno {len(preskoceno)} (bez mluvčího, mluvčí mimo hlasy.json, zástupné %s nebo jen "
+              f"scénická poznámka): {ukazka}")
     if args.dry_run:
         for z in ukoly:
             print(f"\n=== {z['id']} [{z['jazyk']}] {z['postava']} ({z['emoce'] or '–'}) hlas {z['hlas']} ===")
@@ -348,12 +353,20 @@ def main():
         sys.exit(f"Chybí API klíč: nastav {KLICE[sluzba]} nebo ho zapiš do souboru .env "
                  f"v kořeni projektu ({KLICE[sluzba]}=...).")
 
-    hotove = []
+    hotove, chyby = [], 0
     for z in ukoly:
         cil = out / z["jazyk"] / f"{z['id']}.mp3"
-        if vyrob(cfg, z, cil, key, args.znovu):
-            print(f"→ {z['id']} [{z['jazyk']}] {z['postava']} uloženo: {cil.relative_to(ROOT)}", flush=True)
-        hotove.append(cil)
+        try:
+            if vyrob(cfg, z, cil, key, args.znovu):
+                print(f"→ {z['id']} [{z['jazyk']}] {z['postava']} uloženo: {cil.relative_to(ROOT)}", flush=True)
+            hotove.append(cil)
+        except SystemExit as e:
+            # Jedna nepovedená replika nemá zastavit celou dávku; vyčerpaný kredit ano
+            chyby += 1
+            print(f"✗ {z['id']} [{z['jazyk']}] {z['postava']} přeskočeno: {str(e)[:200]}", flush=True)
+            if "quota" in str(e).lower() or chyby >= 5:
+                print("Končím: vyčerpaný kredit nebo opakované chyby.")
+                break
 
     if not args.hra:
         prehled_html()

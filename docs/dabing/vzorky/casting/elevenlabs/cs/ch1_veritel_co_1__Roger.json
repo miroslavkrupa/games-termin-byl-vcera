@@ -1,0 +1,14 @@
+{
+  "id": "ch1_veritel_co_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v3",
+  "jazyk": "cs",
+  "postava": "Věřitel",
+  "emoce": "věcně",
+  "hlas": "CwhRBWXzGAHq8TQ4Fs17",
+  "text": "[matter-of-factly] Máme pro vás doporučený dopis z radnice. Doručujeme ho, protože radnice dluží i nám.",
+  "hash": "75f808c96cb9cf5b",
+  "kandidat": "Roger",
+  "postava_casting": "Věřitel",
+  "datum": "2026-11-11"
+}

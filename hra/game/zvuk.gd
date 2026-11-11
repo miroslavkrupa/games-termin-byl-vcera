@@ -10,6 +10,11 @@
 # - sebrání předmětu cinkne.
 # Ostatní efekty volá hra výslovně: Zvuk.efekt("razitko"), await Zvuk.klepani() apod.
 #
+# Dabing (D97): když postava promluví a pro repliku existuje nahrávka
+# res://zvuk/<jazyk>/<klíč textu>.mp3 (vyrábí tools/dabing.py --hra), přehraje se. Titulky jsou
+# vždy; replika bez nahrávky je jen titulek. Hudba při řeči ustoupí. Klíč repliky se hledá
+# zpětně podle přeloženého textu, protože Popochiu posílá rozhraní už hotový text.
+#
 # Ladicí běhy se snímkem a automatický průchod jsou potichu (parametr zvuk=1 zvuk nechá).
 extends Node
 
@@ -42,12 +47,21 @@ const PRECHODY := {
 }
 const PROLNUTI := 1.2
 const TICHO := -60.0
+## Nahrávka repliky: jazyk a klíč textu
+const DABING_CESTA := "res://zvuk/%s/%s.mp3"
+## O kolik dB ustoupí hudba, když někdo mluví
+const USTUP_HUDBY := -7.0
 
 var _hudba: AudioStreamPlayer
 var _hraje := ""
 var _mistnost := ""
 var _efekty := {}        # název -> AudioStream
 var _posledni_klik := 0
+var _hlas: AudioStreamPlayer
+var _hlas_klic := ""
+var _klice := {}         # jazyk -> {přeložený text -> klíč textu}
+var _ladici := false
+var _ustup: Tween
 
 
 func _ready() -> void:
@@ -55,8 +69,15 @@ func _ready() -> void:
 	var parametry := Array(OS.get_cmdline_user_args())
 	var ladici: bool = parametry.has("pruchod") \
 		or parametry.any(func(a: String) -> bool: return a.begins_with("snimek="))
+	_ladici = ladici
 	if ladici and not parametry.has("zvuk=1"):
 		AudioServer.set_bus_mute(0, true)
+	var postavy := get_node_or_null("/root/C")
+	if postavy != null and postavy.has_signal("character_spoke"):
+		postavy.character_spoke.connect(_na_repliku)
+	var rozhrani := get_node_or_null("/root/G")
+	if rozhrani != null and rozhrani.has_signal("dialog_line_finished"):
+		rozhrani.dialog_line_finished.connect(_konec_repliky)
 	get_tree().node_added.connect(_na_novy_uzel)
 	var inventar := get_node_or_null("/root/I")
 	if inventar != null and inventar.has_signal("item_added"):
@@ -120,8 +141,10 @@ func popis() -> String:
 	if is_instance_valid(_hudba):
 		hudba_text = "%s (%s, %.1f s, %.0f dB)" % [_hraje, "hraje" if _hudba.playing else "stojí",
 			_hudba.get_playback_position(), _hudba.volume_db]
-	return "hudba %s, běžících efektů %d, ztlumeno %s" % [hudba_text, get_child_count() - (1 if is_instance_valid(_hudba) else 0),
-		"ano" if AudioServer.is_bus_mute(0) else "ne"]
+	var hlas := 1 if is_instance_valid(_hlas) else 0
+	return "hudba %s, běžících efektů %d, hlas %s, ztlumeno %s" % [hudba_text,
+		get_child_count() - (1 if is_instance_valid(_hudba) else 0) - hlas,
+		_hlas_klic if hlas else "žádný", "ano" if AudioServer.is_bus_mute(0) else "ne"]
 
 
 ## Přepne hudbu s prolnutím; "" hudbu ztiší. Stejná skladba hraje dál bez přerušení.
@@ -152,6 +175,72 @@ func hudba(nazev: String) -> void:
 #endregion
 
 #region Private ####################################################################################
+# Postava promluvila: najít nahrávku repliky v jazyce hry a přehrát ji
+func _na_repliku(_postava: Node, text: String) -> void:
+	_konec_repliky()
+	var jazyk := TranslationServer.get_locale().substr(0, 2)
+	var klic := _klic_textu(jazyk, text)
+	if klic == "":
+		return
+	var cesta: String = DABING_CESTA % [jazyk, klic]
+	if not ResourceLoader.exists(cesta):
+		return
+	_hlas = AudioStreamPlayer.new()
+	_hlas.stream = load(cesta)
+	add_child(_hlas)
+	_hlas.finished.connect(_konec_repliky)
+	_hlas.play()
+	_hlas_klic = klic
+	_ustup_hudby(true)
+	if _ladici:
+		print("[hlas] %s/%s" % [jazyk, klic])
+
+
+# Replika skončila (hráč ji odklepl, doběhla nebo začíná další): hlas utichne, hudba se vrátí
+func _konec_repliky() -> void:
+	if not is_instance_valid(_hlas):
+		return
+	var stary := _hlas
+	_hlas = null
+	_hlas_klic = ""
+	if stary.playing:
+		ztis(stary, 0.12)
+	else:
+		stary.queue_free()
+	_ustup_hudby(false)
+
+
+func _ustup_hudby(ustoupit: bool) -> void:
+	if not is_instance_valid(_hudba) or _hraje == "":
+		return
+	if is_instance_valid(_ustup):
+		_ustup.kill()
+	_ustup = create_tween()
+	_ustup.tween_property(_hudba, "volume_db",
+		HLASITOST_HUDBY_VSE + (USTUP_HUDBY if ustoupit else 0.0), 0.25 if ustoupit else 0.6)
+
+
+# Klíč textu podle přeloženého znění. Tabulka se sestaví jednou pro každý jazyk ze seznamu
+# nahrávek (názvy souborů jsou klíče textů): přeložený text každé nahrané repliky → její klíč.
+# Z překladu samotného seznam klíčů získat nejde (Godot ho ukládá zhuštěně). Repliky se
+# zástupným %s se nenamlouvají, a i kdyby, hra by je nenašla (výsledný text je jiný).
+func _klic_textu(jazyk: String, text: String) -> String:
+	if not _klice.has(jazyk):
+		var mapa := {}
+		var slozka: String = DABING_CESTA.get_base_dir() % jazyk
+		for soubor in DirAccess.get_files_at(slozka):
+			# v exportované hře jsou ve složce jen soubory .import
+			var nazev := soubor.trim_suffix(".import")
+			if not nazev.ends_with(".mp3"):
+				continue
+			var klic := nazev.get_basename()
+			var zneni := tr(klic)
+			if zneni != klic and not mapa.has(zneni):
+				mapa[zneni] = klic
+		_klice[jazyk] = mapa
+	return _klice[jazyk].get(text, "")
+
+
 func _na_novy_uzel(uzel: Node) -> void:
 	if uzel is BaseButton:
 		uzel.pressed.connect(_klik)

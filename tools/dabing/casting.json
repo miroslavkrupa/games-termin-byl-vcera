@@ -1,29 +1,122 @@
 {
-  "popis": "Casting: pro každou postavu jedna typická replika namluvená několika kandidáty. Standardní hlasy ElevenLabs s pevným ID; hlasy z knihovny vyžadují u klíče oprávnění Voices: Read a Write.",
-  "postavy": {
-    "Ruda": {
-      "replika": "ch2_slon_kreda",
-      "kandidati": {"Eric": "cjVigY5qzO86Huf0OWal", "Chris": "iP95p4xoKVk53GoZ742B", "Liam": "TX3LPaxmHKxFdv7VOQHJ", "Roger": "CwhRBWXzGAHq8TQ4Fs17", "Will": "bIHbv24MWmeRgasZH58o"}
-    },
-    "Bára": {
-      "replika": "ch2_bara_uvod_duvera",
-      "kandidati": {"Alice": "Xb7hH8MSUJpSbSDYk0k2", "Matilda": "XrExE9yKIg1WjnnlVkGX", "Sarah": "EXAVITQu4vr4xnSDxMaL", "Aria": "9BWtsMINqrJLrRacOk9x", "Jessica": "cgSgspJ2msm6clMCkdW9"}
-    },
-    "Pembok": {
-      "replika": "ch2_uvod_pembok_fronta",
-      "kandidati": {"Bill": "pqHfZKP75CvOlQylNhV4", "Brian": "nPczCjzI2devNBz1zQrb", "George": "JBFqnCBsd6RMkjVDRZzb", "Daniel": "onwK4e9ZLuTAKqWW03F9"}
-    },
-    "Pan Změna": {
-      "replika": "ch1_zmena_001",
-      "kandidati": {"Callum": "N2lVS1w4EtoT3dr4eOWO", "Charlie": "IKne3meq5aSn9XLyUdCD", "Chris": "iP95p4xoKVk53GoZ742B", "Will": "bIHbv24MWmeRgasZH58o"}
-    },
-    "Předseda": {
-      "replika": "ch1_predseda_uvod_1",
-      "kandidati": {"George": "JBFqnCBsd6RMkjVDRZzb", "Bill": "pqHfZKP75CvOlQylNhV4", "Brian": "nPczCjzI2devNBz1zQrb", "Daniel": "onwK4e9ZLuTAKqWW03F9"}
-    },
-    "Rozhlas": {
-      "replika": "ch2_uvod_amplion",
-      "kandidati": {"Daniel": "onwK4e9ZLuTAKqWW03F9", "Roger": "CwhRBWXzGAHq8TQ4Fs17", "Brian": "nPczCjzI2devNBz1zQrb", "River": "SAz9YHcvj6GT2YYXdXww"}
-    }
+ "popis": "Casting: pro každou postavu jedna typická replika namluvená několika kandidáty. Standardní hlasy ElevenLabs s pevným ID; hlasy z knihovny vyžadují u klíče oprávnění Voices: Read a Write. Aria a Charlotte jsou hlasy z knihovny: na bezplatném tarifu je API odmítá (2026-11-11).",
+ "postavy": {
+  "Ruda": {
+   "replika": "ch2_slon_kreda",
+   "kandidati": {
+    "Eric": "cjVigY5qzO86Huf0OWal",
+    "Chris": "iP95p4xoKVk53GoZ742B",
+    "Liam": "TX3LPaxmHKxFdv7VOQHJ",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17",
+    "Will": "bIHbv24MWmeRgasZH58o",
+    "Charlie": "IKne3meq5aSn9XLyUdCD",
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "George": "JBFqnCBsd6RMkjVDRZzb",
+    "Daniel": "onwK4e9ZLuTAKqWW03F9",
+    "Bill": "pqHfZKP75CvOlQylNhV4"
+   }
+  },
+  "Bára": {
+   "replika": "ch2_bara_uvod_duvera",
+   "kandidati": {
+    "Alice": "Xb7hH8MSUJpSbSDYk0k2",
+    "Matilda": "XrExE9yKIg1WjnnlVkGX",
+    "Sarah": "EXAVITQu4vr4xnSDxMaL",
+    "Jessica": "cgSgspJ2msm6clMCkdW9",
+    "Laura": "FGY2WhTYpPnrIDTdsKH5",
+    "Lily": "pFZP5JQG7iQjIQuC4Bku",
+    "River": "SAz9YHcvj6GT2YYXdXww"
+   }
+  },
+  "Pembok": {
+   "replika": "ch2_uvod_pembok_fronta",
+   "kandidati": {
+    "Bill": "pqHfZKP75CvOlQylNhV4",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "George": "JBFqnCBsd6RMkjVDRZzb",
+    "Daniel": "onwK4e9ZLuTAKqWW03F9"
+   }
+  },
+  "Pan Změna": {
+   "replika": "ch1_zmena_001",
+   "kandidati": {
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "Charlie": "IKne3meq5aSn9XLyUdCD",
+    "Chris": "iP95p4xoKVk53GoZ742B",
+    "Will": "bIHbv24MWmeRgasZH58o"
+   }
+  },
+  "Předseda": {
+   "replika": "ch1_predseda_uvod_1",
+   "kandidati": {
+    "George": "JBFqnCBsd6RMkjVDRZzb",
+    "Bill": "pqHfZKP75CvOlQylNhV4",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "Daniel": "onwK4e9ZLuTAKqWW03F9"
+   }
+  },
+  "Rozhlas": {
+   "replika": "ch2_uvod_amplion",
+   "kandidati": {
+    "Daniel": "onwK4e9ZLuTAKqWW03F9",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "River": "SAz9YHcvj6GT2YYXdXww"
+   }
+  },
+  "Starosta": {
+   "replika": "ch1_starosta_noviny_2",
+   "kandidati": {
+    "Bill": "pqHfZKP75CvOlQylNhV4",
+    "George": "JBFqnCBsd6RMkjVDRZzb",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17"
+   }
+  },
+  "Framework": {
+   "replika": "ch1_framework_001",
+   "kandidati": {
+    "Liam": "TX3LPaxmHKxFdv7VOQHJ",
+    "Will": "bIHbv24MWmeRgasZH58o",
+    "Chris": "iP95p4xoKVk53GoZ742B",
+    "Charlie": "IKne3meq5aSn9XLyUdCD"
+   }
+  },
+  "Věřitel": {
+   "replika": "ch1_veritel_co_1",
+   "kandidati": {
+    "Daniel": "onwK4e9ZLuTAKqWW03F9",
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17"
+   }
+  },
+  "Lumír": {
+   "replika": "ch1_lumir_001",
+   "kandidati": {
+    "Daniel": "onwK4e9ZLuTAKqWW03F9",
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "George": "JBFqnCBsd6RMkjVDRZzb"
+   }
+  },
+  "Vrátný": {
+   "replika": "ch1_vratny_dovnitr_1",
+   "kandidati": {
+    "Bill": "pqHfZKP75CvOlQylNhV4",
+    "Brian": "nPczCjzI2devNBz1zQrb",
+    "Callum": "N2lVS1w4EtoT3dr4eOWO",
+    "Roger": "CwhRBWXzGAHq8TQ4Fs17"
+   }
+  },
+  "Babička": {
+   "replika": "ch1_babicka_001",
+   "kandidati": {
+    "Matilda": "XrExE9yKIg1WjnnlVkGX",
+    "Lily": "pFZP5JQG7iQjIQuC4Bku",
+    "Alice": "Xb7hH8MSUJpSbSDYk0k2",
+    "Laura": "FGY2WhTYpPnrIDTdsKH5"
+   }
   }
+ }
 }

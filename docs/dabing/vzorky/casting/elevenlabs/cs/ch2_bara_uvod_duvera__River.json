@@ -1,0 +1,14 @@
+{
+  "id": "ch2_bara_uvod_duvera",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v3",
+  "jazyk": "cs",
+  "postava": "Bára",
+  "emoce": "věcně",
+  "hlas": "SAz9YHcvj6GT2YYXdXww",
+  "text": "[matter-of-factly] Ahoj. Měř se mnou, nebo mi nestůj ve světle.",
+  "hash": "f199ef31edf9a0c0",
+  "kandidat": "River",
+  "postava_casting": "Bára",
+  "datum": "2026-11-11"
+}
