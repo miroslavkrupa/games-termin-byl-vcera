@@ -8,11 +8,11 @@ script = ExtResource("1_31xrj")
 script_name = "Babicka"
 description = "postava_babicka"
 cursor = 8
-interaction_polygon = PackedVector2Array(-94, -320, 94, -320, 94, 0, -94, 0)
+interaction_polygon = PackedVector2Array(-86, -295, 86, -295, 86, -45, -86, -45)
 text_color = Color(1, 0.86, 0.72, 1)
 ignore_region_scaling = true
-obstacle = true
-dialog_pos = Vector2(0, -344)
+walk_to_point = Vector2(-70, 80)
+dialog_pos = Vector2(0, -318)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=375202906]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
@@ -20,13 +20,13 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=450979689]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1412790271]
-scale = Vector2(0.76, 0.76)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_tex")
 offset = Vector2(0, -210)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=875921943]
 visible = false
-polygon = PackedVector2Array(-94, -320, 94, -320, 94, 0, -94, 0)
+polygon = PackedVector2Array(-86, -295, 86, -295, 86, -45, -86, -45)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=770085553]
 visible = false

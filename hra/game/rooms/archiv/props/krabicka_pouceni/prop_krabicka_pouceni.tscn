@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/archiv/props/krabicka_pouceni/prop_krabicka_pouceni.gd" id="1_d26c5"]
+
+[node name="KrabickaPouceni" type="Area2D" unique_id=782974330]
+input_pickable = false
+script = ExtResource("1_d26c5")
+script_name = "KrabickaPouceni"
+description = "Krabicka Pouceni"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645040243]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2060290054]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1992759971]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1775793829]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

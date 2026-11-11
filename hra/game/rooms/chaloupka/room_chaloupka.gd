@@ -17,6 +17,8 @@ func _on_room_entered() -> void:
 	# Uličkou z náměstí: Ruda přichází zleva po cestě
 	C.player.position = Vector2(170, 900)
 	C.player.face_right()
+	if state.poduska_vzata:
+		schovej_podusku()
 
 
 # Called after the room transition completes; the room is now visible.
@@ -33,7 +35,20 @@ func _on_room_exited() -> void:
 
 # Called after loading a saved game.
 func _on_restore_from_savegame() -> void:
-	pass
+	if state.poduska_vzata:
+		schovej_podusku()
+
+
+#endregion
+
+
+#region Public #####################################################################################
+## Razítková poduška z lavičky zmizí, jakmile si ji Ruda vezme (D95)
+func schovej_podusku() -> void:
+	get_prop("PoduskaNaLavicce").visible = false
+	var misto: PopochiuHotspot = get_hotspot("PoduskaLavicka")
+	misto.visible = false
+	misto.clickable = false
 
 
 #endregion

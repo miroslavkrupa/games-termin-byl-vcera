@@ -1,0 +1,14 @@
+{
+  "id": "archiv-krabicka-pouceni",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1024x1024",
+  "paleta": null,
+  "reference": [
+    "hra/grafika/mistnosti/archiv.png",
+    "hra/grafika/predmety/poduska.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "One small prop for a 2D point-and-click comedy adventure game, drawn large in the middle of the image, in exactly the drawing style, line work and coloring of the first reference image (a finished background from the same game; the second image shows how small objects of this game are painted): an old open index card box standing on a desk, seen slightly from above from the front. A small worn wooden box without a lid, a brass label holder with a blank cream paper label on its front side, inside it a row of yellowed index cards standing upright with a few colored divider tabs, and one single cream card sticking up clearly higher than the others. Bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette, slightly crooked caricature shape. No text, no letters, no numbers,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0661
+}

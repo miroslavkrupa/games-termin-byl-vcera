@@ -195,7 +195,8 @@ Ve hře se nejmenují odborné pojmy (D26). Sloupec „Co nese“ je jen pro aut
 - **Cíl hráče:** zjistit, komu patří pozemek pod rampou, a získat ji na svou stranu.
 - **Překážka:** babičky se nikdo nikdy na nic nezeptal, takže se jí nikdo nezeptá ani teď.
 - **Řešení:** přijít do chaloupky s mapou nebo se znalostí z obojku a **vyslechnout ji**.
-  Dostane se spojenkyně a funkční razítková poduška.
+  Dostane se spojenkyně a svolení vzít si funkční razítkovou podušku, která leží na lavičce
+  u chaloupky (D95; dřív ji babička podávala rovnou).
 - **Stopy ve světě:** mapa (pozemek Pozemková), obojek, rampa trčí nad chaloupkou.
 - **Chybné, ale logické pokusy:** chtít podpis hned (babička: „Nejdřív buchtu.“), slíbit jí
   něco (přehlédne to a zavře okno).

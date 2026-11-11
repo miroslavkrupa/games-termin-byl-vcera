@@ -8,7 +8,7 @@ script_name = "Plot"
 description = "ch1_hs_plot"
 look_at_point = Vector2(900, 720)
 cursor = 1
-interaction_polygon = PackedVector2Array(-50, 650, 560, 650, 560, 800, 740, 800, 740, 650, 1130, 650, 1130, 800, -50, 800)
+interaction_polygon = PackedVector2Array(-50, 705, 560, 705, 560, 792, 740, 792, 740, 705, 1240, 705, 1240, 812, -50, 812)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=860024117]
 visible = false

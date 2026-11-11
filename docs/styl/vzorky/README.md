@@ -98,3 +98,4 @@ Hodnocení kol: [kolo 1](hodnoceni-kolo-1.md). Zadání ke zkopírování: [kolo
 | kocour-novy-styl_v01.png | gpt-image-2 (medium) | kocour-novy-styl_v01.json | ☐ |
 | archiv-rozsireni_v01.png | gpt-image-2 (medium) | archiv-rozsireni_v01.json | ☐ |
 | kocour-mluveni-uprava_v02.png | gpt-image-2 (medium) | kocour-mluveni-uprava_v02.json | ☐ |
+| archiv-krabicka-pouceni_v01.png | gpt-image-2 (medium) | archiv-krabicka-pouceni_v01.json | ☐ |

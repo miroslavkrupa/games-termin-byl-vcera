@@ -5,6 +5,8 @@ extends PopochiuRoomData
 
 ## Ruda už v chaloupce byl (replika při prvním příchodu)
 var navstivena := false
+## Ruda si vzal razítkovou podušku z lavičky (D95)
+var poduska_vzata := false
 
 
 #region Virtual ####################################################################################

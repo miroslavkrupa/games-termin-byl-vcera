@@ -93,7 +93,8 @@ func pozemek() -> void:
 	await r12()
 
 
-## R1.2: vyslechnout (volba v závorkách se neříká) → poduška a c1_babicka = spojenec;
+## R1.2: vyslechnout (volba v závorkách se neříká) → svolení vzít si podušku z lavičky
+## a c1_babicka = spojenec;
 ## spěchat nebo slíbit → babička zavře okno, c1_babicka = odmitnuta.
 func r12() -> void:
 	var volba: PopochiuDialogOption = await D.show_inline_dialog([
@@ -107,8 +108,8 @@ func r12() -> void:
 			await C.Babicka.say("ch1_babicka_vyslechnout_3")
 			await C.Babicka.say("ch1_babicka_poduska_1")
 			await C.Babicka.say("ch1_babicka_poduska_2")
+			# Podušku babička jen nabídne: leží na lavičce a Ruda si ji vezme sám (D95)
 			Globals.c1_babicka = "spojenec"
-			await I.Poduska.add()
 		"1":
 			await C.player.say("ch1_babicka_volba_spechat")
 			await C.Babicka.say("ch1_babicka_spechat")

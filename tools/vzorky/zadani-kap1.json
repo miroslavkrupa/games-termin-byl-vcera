@@ -300,6 +300,16 @@
     "hra/grafika/postavy/babicka_stoji/babicka_stoji.png"
    ],
    "zadani": "The first image shows a character of a 2D point-and-click comedy adventure game on a flat magenta background: a fat ginger tomcat sitting upright and looking smug. The other images show finished human characters from the same game. Repaint the cat so that he looks painted by the same hand as those characters and has real volume instead of looking like a flat paper cut-out: rich hand-painted shading with soft gradients, a clearly round belly and chest, rounded paws and cheeks, a darker shaded underside and side away from the light, lighter fur on top, visible fur texture with small tufts along the outline, bold dark-brown outlines with varying weight, the same muted warm palette. Keep exactly the same cat: the same sitting pose, the same position and size in the image, the same face and expression, ears (one torn), stripes, tail and collar with its tag. Flat pure magenta (#FF00FF) background everywhere, no ground, no shadow, no text"
+  },
+  {
+   "id": "archiv-krabicka-pouceni",
+   "velikost": "1024x1024",
+   "pruhledne": true,
+   "reference": [
+    "hra/grafika/mistnosti/archiv.png",
+    "hra/grafika/predmety/poduska.png"
+   ],
+   "zadani": "One small prop for a 2D point-and-click comedy adventure game, drawn large in the middle of the image, in exactly the drawing style, line work and coloring of the first reference image (a finished background from the same game; the second image shows how small objects of this game are painted): an old open index card box standing on a desk, seen slightly from above from the front. A small worn wooden box without a lid, a brass label holder with a blank cream paper label on its front side, inside it a row of yellowed index cards standing upright with a few colored divider tabs, and one single cream card sticking up clearly higher than the others. Bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette, slightly crooked caricature shape. No text, no letters, no numbers"
   }
  ]
 }

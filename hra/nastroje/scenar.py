@@ -51,12 +51,13 @@ SCENY_1 = [
     ]),
     ("Babiččina chaloupka", [
         "ch1_chaloupka_", "ch1_babicka_", "postava_babicka", "ch1_hs_plot", "ch1_plot_", "ch1_hs_rampa",
+        "ch1_hs_poduska_lavicka", "ch1_poduska_lavicka_",
         "ch1_rampa_", "ch1_hs_lavicka", "ch1_lavicka_", "ch1_hs_ulicka_zpet",
     ]),
     ("Nápovědy Prof. Pemboka", ["ch1_pembok_rada_"]),
     ("Předměty a kombinace", ["predmet_", "ch1_kombinace_", "ch1_dekret_"]),
     ("Konec kapitoly", ["ch1_konec_", "ch1_pamet_"]),
-    ("Výchozí reakce, postavy a GUI", ["obecne_", "postava_", "ch1_ui_"]),
+    ("Výchozí reakce, postavy a GUI", ["obecne_", "postava_", "ch1_ui_", "ch1_denik_"]),
 ]
 
 SCENY_2 = [

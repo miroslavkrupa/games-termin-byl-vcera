@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/chaloupka/hotspots/poduska_lavicka/hotspot_poduska_lavicka.gd" id="1_3bqg2"]
+
+[node name="PoduskaLavicka" type="Area2D" unique_id=864087982]
+script = ExtResource("1_3bqg2")
+script_name = "PoduskaLavicka"
+description = "ch1_hs_poduska_lavicka"
+walk_to_point = Vector2(690, 812)
+look_at_point = Vector2(545, 615)
+cursor = 10
+interaction_polygon = PackedVector2Array(522, 590, 570, 590, 570, 640, 522, 640)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1648950267]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

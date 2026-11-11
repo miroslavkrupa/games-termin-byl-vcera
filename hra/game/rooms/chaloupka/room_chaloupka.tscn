@@ -6,11 +6,15 @@
 [ext_resource type="Texture2D" path="res://grafika/mistnosti/chaloupka.png" id="3_pozadi"]
 [ext_resource type="PackedScene" path="res://game/rooms/chaloupka/hotspots/rampa/hotspot_rampa.tscn" id="4_eiyif"]
 [ext_resource type="PackedScene" path="res://game/rooms/chaloupka/regions/hloubka/region_hloubka.tscn" id="4_uqd5r"]
+[ext_resource type="PackedScene" path="res://game/rooms/chaloupka/props/poduska_na_lavicce/prop_poduska_na_lavicce.tscn" id="5_p113k"]
 [ext_resource type="PackedScene" path="res://game/rooms/chaloupka/hotspots/lavicka/hotspot_lavicka.tscn" id="5_vaqw3"]
 [ext_resource type="PackedScene" path="res://game/rooms/chaloupka/hotspots/plot/hotspot_plot.tscn" id="6_bfjo4"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/chaloupka_poduska.png" id="6_c283e"]
 [ext_resource type="PackedScene" path="res://game/rooms/chaloupka/hotspots/ulicka/hotspot_ulicka.tscn" id="7_buhn5"]
 [ext_resource type="PackedScene" path="res://game/characters/babicka/character_babicka.tscn" id="9_t7tw4"]
 [ext_resource type="PackedScene" path="res://game/characters/kocour/character_kocour.tscn" id="10_c4q3n"]
+[ext_resource type="PackedScene" path="res://game/rooms/chaloupka/hotspots/poduska_lavicka/hotspot_poduska_lavicka.tscn" id="11_c283e"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/chaloupka_plot_popredi.png" id="11_plot"]
 
 [node name="RoomChaloupka" type="Node2D" unique_id=382303199]
 script = ExtResource("1_e03ts")
@@ -28,6 +32,10 @@ height = 1024
 position = Vector2(768, 512)
 texture = ExtResource("3_pozadi")
 
+[node name="PoduskaNaLavicce" parent="Props" unique_id=1325788874 instance=ExtResource("5_p113k")]
+position = Vector2(545, 613)
+texture = ExtResource("6_c283e")
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=2012924140]
 
 [node name="Rampa" parent="Hotspots" unique_id=645632355 instance=ExtResource("4_eiyif")]
@@ -42,6 +50,9 @@ walk_to_point = Vector2(900, 850)
 [node name="Ulicka" parent="Hotspots" unique_id=175589002 instance=ExtResource("7_buhn5")]
 walk_to_point = Vector2(90, 900)
 
+[node name="PoduskaLavicka" parent="Hotspots" unique_id=864087982 instance=ExtResource("11_c283e")]
+walk_to_point = Vector2(690, 812)
+
 [node name="Regions" type="Node2D" parent="." unique_id=1057670406]
 
 [node name="Hloubka" parent="Regions" unique_id=808557187 instance=ExtResource("4_uqd5r")]
@@ -54,9 +65,14 @@ scale_bottom = 0.56
 [node name="Characters" type="Node2D" parent="." unique_id=1240894635]
 
 [node name="CharacterBabicka" parent="Characters" unique_id=166507013 instance=ExtResource("9_t7tw4")]
-position = Vector2(650, 785)
+position = Vector2(930, 750)
 walk_to_point = Vector2(-150, 70)
 
 [node name="CharacterKocour" parent="Characters" unique_id=116666946 instance=ExtResource("10_c4q3n")]
 position = Vector2(1212, 700)
 walk_to_point = Vector2(-110, 200)
+
+[node name="PlotPopredi" type="Sprite2D" parent="." unique_id=1031712401]
+z_index = 765
+position = Vector2(979.5, 744)
+texture = ExtResource("11_plot")

@@ -115,8 +115,7 @@ cancel,Zrušit,Cancel,,,šablona Popochiu (skryté tlačítko)
 Master,Celkem,Master,,,šablona Popochiu (název zvukové sběrnice)
 ch1_hs_kometa,Kometa Deadline,Comet Deadline,,,popisek aktivního místa
 ch1_kometa_prohlednout,Kometa Deadline. Každý den o kousek větší. Jako můj seznam úkolů.,Comet Deadline. A little bigger every day. Like my to-do list.,Ruda,zasmušile,
-ch1_kometa_vecer,"Počkám, až se setmí. Polovina projektového řízení je čekání.",I'll wait until it gets dark. Half of project management is waiting.,Ruda,trpělivě,prototyp: přepne náměstí na večer
-ch1_kometa_rano,A zase je ráno. Termín je o den blíž a já pořád nemám plán.,Morning again. The deadline's a day closer and I still don't have a plan.,Ruda,zívá,prototyp: přepne náměstí na den
+ch1_kometa_pouzit,"Kometu neodložím. To umí jen Komise, a ta by chtěla razítko.","I can't postpone a comet. Only the Committee can, and they'd want a stamp.",Ruda,suše,klepnutí na kometu (dřív zkušební přepínání dne a večera)
 postava_bara,Bára Backlogová,Barb Backlog,,,anglické jméno schváleno (D47)
 postava_vratny,Vrátný,Porter,,,
 postava_pembok,Prof. Pembok,Prof. Pembok,,,mluvící kniha; jméno je narážka na PMBOK
@@ -543,8 +542,8 @@ ch1_razitko_kava_2,Pro příště: příští fáze se razítkuje modře.,For fu
 ch1_razitko_kava_brzy,Poduška je mokrá. Teď ještě papír.,The pad's wet. Now I just need the page.,Ruda,spokojeně,káva na podušku před papírem (K12); pak stačí Předseda
 ch1_razitko_poduska_1,Poduška od babičky Pozemkové. Šedesát let stará a pořád funguje.,Granny Plotkins' ink pad. Sixty years old and still working.,Ruda,hrdě,poduška na razítko ✔ (c1_razitko = poduska)
 ch1_razitko_poduska_2,Modré razítko. Jako za starých časů. Kde jste… ach tak. Pozemková.,A blue stamp. Like the old days. Where did you... ah. Plotkins.,Předseda,"vlídně, ale ostražitě",
-ch1_hs_stul,Stůl pro žadatele,Applicants' desk,,,popisek aktivního místa
-ch1_stul_prohlednout,"Stůl pro žadatele. Tady se skládá jeden papír o Arše. Kdo ho nesloží, stojí ve frontě navždy.","The applicants' desk. This is where you put together the one page about the Ark. Without it, you queue forever.",Ruda,suše,
+ch1_hs_stul,Přepážka pro žadatele,Applicants' counter,,,popisek aktivního místa
+ch1_stul_prohlednout,"Přepážka pro žadatele. Tady se skládá jeden papír o Arše. Kdo ho nesloží, stojí ve frontě navždy.","The applicants' counter. This is where you put together the one page about the Ark. Without it, you queue forever.",Ruda,suše,
 ch1_stul_bez_podpisu,Bez podpisu starosty tu nemám co skládat. Je o půl patra výš.,"Without the mayor's signature, there's nothing to put together. He's half a floor up.",Ruda,zklamaně,stůl bez podpisu sponzora
 ch1_stul_bez_zadani,"Pořád nevím, proč se Archa vůbec staví. To bude někde v archivu.",I still don't know why the Ark is being built at all. That'll be somewhere in the archive.,Ruda,přemýšlivě,stůl bez původního zadání
 ch1_stul_hotovo,Papír je hotový. Už jen razítko.,The page is done. Just needs a stamp.,Ruda,spokojeně,stůl po M01
@@ -654,8 +653,13 @@ ch1_babicka_vyslechnout_1,"Nikdo se mě nikdy na nic nezeptal. Ani kudy rampa po
 ch1_babicka_vyslechnout_2,"Kdyby se zeptali, řekla bych jim, že o tři metry dál je skála. Tam by stála rovně.","If they'd asked, I'd have told them there's bedrock ten feet over. It would have stood straight there.",Babička,věcně,souvisí s Bářiným sklonem rampy (kap. 2)
 ch1_babicka_vyslechnout_ruda,Děkuju. Tohle mi nikdo jiný neřekl.,Thank you. Nobody else told me that.,Ruda,upřímně,
 ch1_babicka_vyslechnout_3,"Vy jste první, kdo poslouchal až do konce. Počkejte.",You're the first one who's listened all the way through. Wait here.,Babička,vlídně,
-ch1_babicka_poduska_1,"Tady. Razítková poduška. Po manželovi, byl úředník. Jediný, kterému něco fungovalo.","Here. An ink pad. My husband's, he was a clerk. The only one whose things ever worked.",Babička,něžně,předmět razítková poduška
+ch1_babicka_poduska_1,"Na lavičce leží razítková poduška. Po manželovi, byl úředník. Jediný, kterému něco fungovalo. Vezměte si ji.","There's an ink pad on the bench. My husband's, he was a clerk. The only one whose things ever worked. Take it.",Babička,něžně,předmět razítková poduška
 ch1_babicka_poduska_2,Komisi vyschla ta jejich už v devadesátých letech. Já vím všechno. Jen se mě nikdo neptá.,The Committee's pad dried up back in the nineties. I know everything. Nobody just asks me.,Babička,suše,
+ch1_hs_poduska_lavicka,Razítková poduška,Ink pad,,,"popisek aktivního místa (poduška na lavičce u chaloupky, D95)"
+ch1_poduska_lavicka_prohlednout,"Plechová krabička na lavičce. Uvnitř razítková poduška, vlhká a funkční. V tomhle městě zázrak.","A tin box on the bench. An ink pad inside, moist and working. A miracle in this town.",Ruda,uznale,prohlédnout podušku na lavičce
+ch1_poduska_lavicka_nesmim,"Cizí zahrada, cizí poduška. Na tu bych potřeboval svolení majitelky.","Someone else's garden, someone else's ink pad. I'd need the owner's say-so for that.",Ruda,zdrženlivě,vzít podušku bez svolení babičky
+ch1_poduska_lavicka_babicka,"Ruce pryč, mladej. To je po manželovi.","Hands off, young man. That was my husband's.",Babička,ostře,"babička hlídá podušku, dokud Rudu nevyslechne"
+ch1_poduska_lavicka_vzit,"S dovolením. Vrátím ji, až bude Archa hotová. Tedy brzy.","With your permission. I'll bring it back once the Ark is finished. So, soon.",Ruda,samolibě,vzít podušku se svolením (c1_babicka = spojenec)
 ch1_babicka_spechat,"Nejdřív buchtu. Pak podpisy. Ale vy na buchtu nemáte čas, že?","Bun first. Signatures later. But you haven't got time for a bun, have you?",Babička,chladně,pak zavře okno
 ch1_babicka_slib,Slibů mám plnou spíž. V zimě jsou k ničemu.,I've a pantry full of promises. They're no use in winter.,Babička,chladně,pak zavře okno
 ch1_babicka_zavreno,"Okno je zavřené. Jediná věc v Nedostavěnici, která se zavírá spolehlivě.",The window's shut. The one thing in Scope Creek that closes reliably.,Ruda,zklamaně,"po zavření okna (R1.2): c1_babicka = odmitnuta, okno zůstane zavřené do konce kapitoly"
@@ -693,13 +697,14 @@ ch1_pembok_rada_babicka_1,Na té mapě je jméno.,There's a name on that map.,Pe
 ch1_pembok_rada_babicka_2,"Pozemek pod rampou je něčí. A ten někdo možná ani neví, že na něm záleží.",The land under the ramp belongs to someone. Someone who may not know they matter.,Pembok,nápověda,"P1.10, 2. stupeň"
 ch1_pembok_rada_babicka_3,Zajdi uličkou k rampě za babičkou Pozemkovou. A poslouchej ji.,Head down the alley to the ramp and visit Granny Plotkins. And listen to her.,Pembok,nápověda,"P1.10, 3. stupeň"
 ch1_pembok_rada_papir_1,"Komise chce jeden papír. Proč, pro koho a do kdy.","The Committee wants one page. Why, for whom and by when.",Pembok,nápověda,"P1.11, 1. stupeň"
-ch1_pembok_rada_papir_2,Podpis starosty i zadání z archivu už máš. Sedni si ke stolu pro žadatele.,You've got the mayor's signature and the brief from the archive. Sit down at the applicants' desk.,Pembok,nápověda,"P1.11, 2. stupeň"
-ch1_pembok_rada_papir_3,"U stolu pro žadatele slož papír z útržků, které jsi posbíral.","At the applicants' desk, put the page together from the scraps you've collected.",Pembok,nápověda,"P1.11, 3. stupeň"
+ch1_pembok_rada_papir_2,Podpis starosty i zadání z archivu už máš. Zastav se u přepážky pro žadatele.,You've got the mayor's signature and the brief from the archive. Stop by the applicants' counter.,Pembok,nápověda,"P1.11, 2. stupeň"
+ch1_pembok_rada_papir_3,"U přepážky pro žadatele slož papír z útržků, které jsi posbíral.","At the applicants' counter, put the page together from the scraps you've collected.",Pembok,nápověda,"P1.11, 3. stupeň"
 ch1_pembok_rada_fronta,Papír máš. Teď se postav do fronty. Do té před frontou.,You've got the page. Now join the queue. The one before the queue.,Pembok,nápověda,P1.11 po M01
 ch1_pembok_rada_razitko_1,Razítko bez barvy nic neorazítkuje.,A stamp without ink stamps nothing.,Pembok,nápověda,"P1.13, 1. stupeň"
 ch1_pembok_rada_razitko_2,Co máš u sebe hnědého a tekutého?,What have you got on you that's brown and runny?,Pembok,nápověda,"P1.13, 2. stupeň (cesta kávou)"
 ch1_pembok_rada_razitko_2_babicka,Kdo ve městě má něco dokončeného? Třeba i fungující podušku.,"Who in this town has anything finished? A working ink pad, maybe.",Pembok,nápověda,"P1.13, 2. stupeň (cesta poduškou), když c1_babicka = odhalena nebo prehlizena"
 ch1_pembok_rada_razitko_2_poduska,Máš babiččinu podušku. Razítko ji bude mít rádo.,You've got Granny's ink pad. The stamp will love it.,Pembok,nápověda,"P1.13, 2. stupeň: spojenec s poduškou (K9)"
+ch1_pembok_rada_razitko_2_lavicka,Babička ti nabídla svou podušku. Leží u ní na lavičce.,Granny offered you her ink pad. It's lying on her bench.,Pembok,nápověda,"P1.13, 2. stupeň: spojenec, ale poduška ještě leží na lavičce"
 ch1_pembok_rada_razitko_3,Polij tu vyschlou podušku kávou.,Pour your coffee on that dried-up ink pad.,Pembok,nápověda,"P1.13, 3. stupeň"
 ch1_pembok_rada_nic,"Teď nevím o ničem, co by ti chybělo. Kromě plánu.",Right now I can't think of anything you're missing. Apart from a plan.,Pembok,suše,není co radit
 predmet_tlacitko,Tlačítko „2“,Button '2',,,název předmětu

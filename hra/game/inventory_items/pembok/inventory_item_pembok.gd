@@ -157,6 +157,8 @@ func _rada_starosta_3() -> String:
 func _rada_razitko_2() -> String:
 	if I.is_item_in_inventory("Poduska"):
 		return "ch1_pembok_rada_razitko_2_poduska"
+	if Globals.c1_babicka == "spojenec" and not R.Chaloupka.state.poduska_vzata:
+		return "ch1_pembok_rada_razitko_2_lavicka"
 	if Globals.c1_babicka == "odhalena":
 		return "ch1_pembok_rada_razitko_2_babicka"
 	return "ch1_pembok_rada_razitko_2"

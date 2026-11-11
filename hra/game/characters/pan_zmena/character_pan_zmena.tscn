@@ -8,11 +8,10 @@ script = ExtResource("1_ywn00")
 script_name = "PanZmena"
 cursor = 8
 description = "postava_pan_zmena"
-interaction_polygon = PackedVector2Array(-33, -212, 33, -212, 33, 0, -33, 0)
+interaction_polygon = PackedVector2Array(-36, -212, 36, -212, 36, -102, -36, -102)
 text_color = Color(0.78, 0.95, 0.55, 1)
 ignore_region_scaling = true
-obstacle = true
-walk_to_point = Vector2(75, 55)
+walk_to_point = Vector2(-78, 46)
 dialog_pos = Vector2(0, -242)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=337128735]
@@ -23,11 +22,13 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=976500593]
 scale = Vector2(0.3533, 0.3533)
 texture = ExtResource("2_tex")
-offset = Vector2(0, -300)
+offset = Vector2(0, -444.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 185, 311)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2016066282]
 visible = false
-polygon = PackedVector2Array(-33, -212, 33, -212, 33, 0, -33, 0)
+polygon = PackedVector2Array(-36, -212, 36, -212, 36, -102, -36, -102)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=132649710]
 visible = false

@@ -10,18 +10,18 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Scéna | Repliky | Volby | Popisky |
 |---|---|---|---|
 | Úvod: Rudův byt | 46 | 4 | 6 |
-| Náměstí | 119 | 11 | 7 |
+| Náměstí | 118 | 11 | 7 |
 | Vestibul radnice | 45 | 5 | 5 |
 | Archiv | 54 | 10 | 13 |
 | Archiv: úsek za Báru | 28 | 3 | 2 |
 | Starostova pracovna a M03 | 62 | 3 | 7 |
 | Kancelář Komise, M01 a M02 | 100 | 13 | 30 |
-| Babiččina chaloupka | 31 | 9 | 5 |
-| Nápovědy Prof. Pemboka | 40 | 0 | 0 |
+| Babiččina chaloupka | 36 | 9 | 6 |
+| Nápovědy Prof. Pemboka | 41 | 0 | 0 |
 | Předměty a kombinace | 22 | 0 | 15 |
-| Konec kapitoly | 3 | 0 | 16 |
-| Výchozí reakce, postavy a GUI | 11 | 0 | 11 |
-| **Celkem** | **561** | **58** | **117** |
+| Konec kapitoly | 3 | 0 | 17 |
+| Výchozí reakce, postavy a GUI | 11 | 0 | 22 |
+| **Celkem** | **566** | **58** | **130** |
 
 ## Úvod: Rudův byt
 
@@ -123,8 +123,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_zmena_dohoda_uz` | Pan Změna | hrdě | Modrou! Mám to podepsané. Kávou. | Blue! It's signed. In coffee. | po dohodě |
 | `ch1_hs_kometa` |  |  | Kometa Deadline | Comet Deadline | popisek aktivního místa |
 | `ch1_kometa_prohlednout` | Ruda | zasmušile | Kometa Deadline. Každý den o kousek větší. Jako můj seznam úkolů. | Comet Deadline. A little bigger every day. Like my to-do list. |  |
-| `ch1_kometa_vecer` | Ruda | trpělivě | Počkám, až se setmí. Polovina projektového řízení je čekání. | I'll wait until it gets dark. Half of project management is waiting. | prototyp: přepne náměstí na večer |
-| `ch1_kometa_rano` | Ruda | zívá | A zase je ráno. Termín je o den blíž a já pořád nemám plán. | Morning again. The deadline's a day closer and I still don't have a plan. | prototyp: přepne náměstí na den |
+| `ch1_kometa_pouzit` | Ruda | suše | Kometu neodložím. To umí jen Komise, a ta by chtěla razítko. | I can't postpone a comet. Only the Committee can, and they'd want a stamp. | klepnutí na kometu (dřív zkušební přepínání dne a večera) |
 | `ch1_ruda_001` | Ruda | sebevědomě | Nedostavěnice. Město neomezených možností. Hlavně proto, že žádnou z nich nikdo nedotáhl. | Scope Creek. A town of endless possibilities. Mostly because nobody ever finished one. | replika z návrhu kapitoly 1; na začátku |
 | `ch1_pembok_ukol` | Pembok | poučně | Bez papíru podepsaného sponzorem a bez razítka Komise ti klíč od hangáru nikdo nedá. | Without a page signed by your sponsor and stamped by the Committee, nobody will hand you the hangar key. | úvodní úkol (návrh kapitoly 1, krok 1) |
 | `ch1_pembok_ukol_ruda` | Ruda | uraženě | Papír? Za mě mluví výsledky! | Paperwork? My results speak for me! |  |
@@ -290,7 +289,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 
 | ID | Kdo | Emoce | Čeština | English | Poznámka |
 |---|---|---|---|---|---|
-| `ch1_hs_schody` |  |  | Schody na náměstí | Stairs to the square | popisek aktivního místa; od N7 vedou schody do vestibulu: „Schody do vestibulu“ / „Stairs to the lobby“ |
+| `ch1_hs_schody` |  |  | Schody do vestibulu | Stairs to the lobby | popisek aktivního místa (východ do S2; od N7 vedou schody do vestibulu) |
 | `ch1_schody_prohlednout` | Ruda | suše | Schody nahoru. Jediná cesta ven, a i ta je ve fázi 2: zábradlí končí v půlce. | Stairs going up. The only way out, and even that's in phase two: the railing stops halfway. |  |
 | `ch1_hs_kartoteka` |  |  | Kartotéka | Card index | popisek aktivního místa |
 | `ch1_kartoteka_prohlednout` | Ruda | pobaveně | Kartotéka zkrachovalých projektů, seřazená podle plánovaného dokončení. Na každém lístku stojí „příští rok“. | An index of failed projects, sorted by planned completion date. Every card says 'next year'. | zárodek puzzlu kartotéky z kap. 1 |
@@ -402,7 +401,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `obecne_bara_nelze` | Bára |  | Tohle neměřím. | I don't measure that. | výchozí reakce Báry |
 | `obecne_bara_nelze_2` | Bára |  | To by byl jen odhad. Neodhaduju. | That'd just be a guess. I don't guess. | výchozí reakce Báry |
 | `obecne_bara_nic_k_videni` | Bára |  | Nic, co by stálo za měření. | Nothing worth measuring. | výchozí reakce Báry |
-| `obecne_bara_pouzit_s` | Bára |  | %s na %s? Ne. Fyzika by nesouhlasila. | %s on %s? No. Physics wouldn't agree. | výchozí reakce Báry; %s = předmět, cíl |
+| `obecne_bara_pouzit_s` | Bára |  | %s a %s? Ne. Fyzika by nesouhlasila. | %s and %s? No. Physics wouldn't agree. | výchozí reakce Báry; %s = předmět, cíl |
 | `obecne_bara_vzit` | Bára |  | Nechám to tu. Není to moje a není to změřené. | I'll leave it. It isn't mine and it isn't measured. | výchozí reakce Báry |
 | `obecne_bara_mluvit` | Bára |  | Mluví se tu dost. Měří se málo. | There's plenty of talking around here. Not much measuring. | výchozí reakce Báry |
 
@@ -508,8 +507,8 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_razitko_kava_brzy` | Ruda | spokojeně | Poduška je mokrá. Teď ještě papír. | The pad's wet. Now I just need the page. | káva na podušku před papírem (K12); pak stačí Předseda |
 | `ch1_razitko_poduska_1` | Ruda | hrdě | Poduška od babičky Pozemkové. Šedesát let stará a pořád funguje. | Granny Plotkins' ink pad. Sixty years old and still working. | poduška na razítko ✔ (c1_razitko = poduska) |
 | `ch1_razitko_poduska_2` | Předseda | vlídně, ale ostražitě | Modré razítko. Jako za starých časů. Kde jste… ach tak. Pozemková. | A blue stamp. Like the old days. Where did you... ah. Plotkins. |  |
-| `ch1_hs_stul` |  |  | Stůl pro žadatele | Applicants' desk | popisek aktivního místa |
-| `ch1_stul_prohlednout` | Ruda | suše | Stůl pro žadatele. Tady se skládá jeden papír o Arše. Kdo ho nesloží, stojí ve frontě navždy. | The applicants' desk. This is where you put together the one page about the Ark. Without it, you queue forever. |  |
+| `ch1_hs_stul` |  |  | Přepážka pro žadatele | Applicants' counter | popisek aktivního místa |
+| `ch1_stul_prohlednout` | Ruda | suše | Přepážka pro žadatele. Tady se skládá jeden papír o Arše. Kdo ho nesloží, stojí ve frontě navždy. | The applicants' counter. This is where you put together the one page about the Ark. Without it, you queue forever. |  |
 | `ch1_stul_bez_podpisu` | Ruda | zklamaně | Bez podpisu starosty tu nemám co skládat. Je o půl patra výš. | Without the mayor's signature, there's nothing to put together. He's half a floor up. | stůl bez podpisu sponzora |
 | `ch1_stul_bez_zadani` | Ruda | přemýšlivě | Pořád nevím, proč se Archa vůbec staví. To bude někde v archivu. | I still don't know why the Ark is being built at all. That'll be somewhere in the archive. | stůl bez původního zadání |
 | `ch1_stul_hotovo` | Ruda | spokojeně | Papír je hotový. Už jen razítko. | The page is done. Just needs a stamp. | stůl po M01 |
@@ -649,6 +648,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_babicka_uvod` | Babička | suše | Dobrý den, mladej. Zase někdo z radnice? Nebo jen bloudíte? | Afternoon, young man. Another one from the town hall? Or just lost? |  |
 | `ch1_babicka_volba_dum` | Ruda |  | Váš dům je opravdu hotový? | Is your house really finished? | volba dialogu; odpověď je ch1_babicka_001 |
 | `ch1_babicka_001` | Babička | suše | Mladej, můj dům tu stojí šedesát let. Jediná dokončená stavba ve městě. Proto se mnou nikdo nemluví. Nevědí, co se s hotovou věcí dělá. | Young man, my house has stood here for sixty years. The only finished building in town. That's why nobody talks to me. They don't know how to handle closure. | replika z návrhu kapitoly 1 |
+| `ch1_babicka_001_obojek` | Babička | suše | A jestli chcete vědět, komu tady co patří, podívejte se Mourkovi na obojek. Ten kocour má papíry v lepším pořádku než radnice. | And if you want to know who owns what around here, have a look at Marmalade's collar. That cat keeps better paperwork than the town hall. | nápověda k P1.10, jen když hráč nemá mapu a nečetl obojek |
 | `ch1_babicka_volba_pradlo` | Ruda |  | Pěkné prádlo. | Nice washing. | volba dialogu |
 | `ch1_babicka_pradlo` | Babička | suše | Suší se třetí den. Rampa mi stíní. | Third day drying. The ramp blocks my sun. | stopa: rampa |
 | `ch1_babicka_volba_pocasi` | Ruda |  | Jak se máte? | How are you? | volba dialogu |
@@ -665,8 +665,13 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_babicka_vyslechnout_2` | Babička | věcně | Kdyby se zeptali, řekla bych jim, že o tři metry dál je skála. Tam by stála rovně. | If they'd asked, I'd have told them there's bedrock ten feet over. It would have stood straight there. | souvisí s Bářiným sklonem rampy (kap. 2) |
 | `ch1_babicka_vyslechnout_ruda` | Ruda | upřímně | Děkuju. Tohle mi nikdo jiný neřekl. | Thank you. Nobody else told me that. |  |
 | `ch1_babicka_vyslechnout_3` | Babička | vlídně | Vy jste první, kdo poslouchal až do konce. Počkejte. | You're the first one who's listened all the way through. Wait here. |  |
-| `ch1_babicka_poduska_1` | Babička | něžně | Tady. Razítková poduška. Po manželovi, byl úředník. Jediný, kterému něco fungovalo. | Here. An ink pad. My husband's, he was a clerk. The only one whose things ever worked. | předmět razítková poduška |
+| `ch1_babicka_poduska_1` | Babička | něžně | Na lavičce leží razítková poduška. Po manželovi, byl úředník. Jediný, kterému něco fungovalo. Vezměte si ji. | There's an ink pad on the bench. My husband's, he was a clerk. The only one whose things ever worked. Take it. | předmět razítková poduška |
 | `ch1_babicka_poduska_2` | Babička | suše | Komisi vyschla ta jejich už v devadesátých letech. Já vím všechno. Jen se mě nikdo neptá. | The Committee's pad dried up back in the nineties. I know everything. Nobody just asks me. |  |
+| `ch1_hs_poduska_lavicka` |  |  | Razítková poduška | Ink pad | popisek aktivního místa (poduška na lavičce u chaloupky, D95) |
+| `ch1_poduska_lavicka_prohlednout` | Ruda | uznale | Plechová krabička na lavičce. Uvnitř razítková poduška, vlhká a funkční. V tomhle městě zázrak. | A tin box on the bench. An ink pad inside, moist and working. A miracle in this town. | prohlédnout podušku na lavičce |
+| `ch1_poduska_lavicka_nesmim` | Ruda | zdrženlivě | Cizí zahrada, cizí poduška. Na tu bych potřeboval svolení majitelky. | Someone else's garden, someone else's ink pad. I'd need the owner's say-so for that. | vzít podušku bez svolení babičky |
+| `ch1_poduska_lavicka_babicka` | Babička | ostře | Ruce pryč, mladej. To je po manželovi. | Hands off, young man. That was my husband's. | babička hlídá podušku, dokud Rudu nevyslechne |
+| `ch1_poduska_lavicka_vzit` | Ruda | samolibě | S dovolením. Vrátím ji, až bude Archa hotová. Tedy brzy. | With your permission. I'll bring it back once the Ark is finished. So, soon. | vzít podušku se svolením (c1_babicka = spojenec) |
 | `ch1_babicka_spechat` | Babička | chladně | Nejdřív buchtu. Pak podpisy. Ale vy na buchtu nemáte čas, že? | Bun first. Signatures later. But you haven't got time for a bun, have you? | pak zavře okno |
 | `ch1_babicka_slib` | Babička | chladně | Slibů mám plnou spíž. V zimě jsou k ničemu. | I've a pantry full of promises. They're no use in winter. | pak zavře okno |
 | `ch1_babicka_zavreno` | Ruda | zklamaně | Okno je zavřené. Jediná věc v Nedostavěnici, která se zavírá spolehlivě. | The window's shut. The one thing in Scope Creek that closes reliably. | po zavření okna (R1.2): c1_babicka = odmitnuta, okno zůstane zavřené do konce kapitoly |
@@ -716,13 +721,14 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_pembok_rada_babicka_2` | Pembok | nápověda | Pozemek pod rampou je něčí. A ten někdo možná ani neví, že na něm záleží. | The land under the ramp belongs to someone. Someone who may not know they matter. | P1.10, 2. stupeň |
 | `ch1_pembok_rada_babicka_3` | Pembok | nápověda | Zajdi uličkou k rampě za babičkou Pozemkovou. A poslouchej ji. | Head down the alley to the ramp and visit Granny Plotkins. And listen to her. | P1.10, 3. stupeň |
 | `ch1_pembok_rada_papir_1` | Pembok | nápověda | Komise chce jeden papír. Proč, pro koho a do kdy. | The Committee wants one page. Why, for whom and by when. | P1.11, 1. stupeň |
-| `ch1_pembok_rada_papir_2` | Pembok | nápověda | Podpis starosty i zadání z archivu už máš. Sedni si ke stolu pro žadatele. | You've got the mayor's signature and the brief from the archive. Sit down at the applicants' desk. | P1.11, 2. stupeň |
-| `ch1_pembok_rada_papir_3` | Pembok | nápověda | U stolu pro žadatele slož papír z útržků, které jsi posbíral. | At the applicants' desk, put the page together from the scraps you've collected. | P1.11, 3. stupeň |
+| `ch1_pembok_rada_papir_2` | Pembok | nápověda | Podpis starosty i zadání z archivu už máš. Zastav se u přepážky pro žadatele. | You've got the mayor's signature and the brief from the archive. Stop by the applicants' counter. | P1.11, 2. stupeň |
+| `ch1_pembok_rada_papir_3` | Pembok | nápověda | U přepážky pro žadatele slož papír z útržků, které jsi posbíral. | At the applicants' counter, put the page together from the scraps you've collected. | P1.11, 3. stupeň |
 | `ch1_pembok_rada_fronta` | Pembok | nápověda | Papír máš. Teď se postav do fronty. Do té před frontou. | You've got the page. Now join the queue. The one before the queue. | P1.11 po M01 |
 | `ch1_pembok_rada_razitko_1` | Pembok | nápověda | Razítko bez barvy nic neorazítkuje. | A stamp without ink stamps nothing. | P1.13, 1. stupeň |
 | `ch1_pembok_rada_razitko_2` | Pembok | nápověda | Co máš u sebe hnědého a tekutého? | What have you got on you that's brown and runny? | P1.13, 2. stupeň (cesta kávou) |
 | `ch1_pembok_rada_razitko_2_babicka` | Pembok | nápověda | Kdo ve městě má něco dokončeného? Třeba i fungující podušku. | Who in this town has anything finished? A working ink pad, maybe. | P1.13, 2. stupeň (cesta poduškou), když c1_babicka = odhalena nebo prehlizena |
 | `ch1_pembok_rada_razitko_2_poduska` | Pembok | nápověda | Máš babiččinu podušku. Razítko ji bude mít rádo. | You've got Granny's ink pad. The stamp will love it. | P1.13, 2. stupeň: spojenec s poduškou (K9) |
+| `ch1_pembok_rada_razitko_2_lavicka` | Pembok | nápověda | Babička ti nabídla svou podušku. Leží u ní na lavičce. | Granny offered you her ink pad. It's lying on her bench. | P1.13, 2. stupeň: spojenec, ale poduška ještě leží na lavičce |
 | `ch1_pembok_rada_razitko_3` | Pembok | nápověda | Polij tu vyschlou podušku kávou. | Pour your coffee on that dried-up ink pad. | P1.13, 3. stupeň |
 | `ch1_pembok_rada_nic` | Pembok | suše | Teď nevím o ničem, co by ti chybělo. Kromě plánu. | Right now I can't think of anything you're missing. Apart from a plan. | není co radit |
 
@@ -784,6 +790,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_pamet_babicka_spojenec` |  |  | Babička Pozemková si pamatuje, že ses jí zeptal. | Granny Plotkins remembers that you asked her. | c1_babicka = spojenec |
 | `ch1_pamet_babicka_prehlizena` |  |  | Babička čeká, jestli se ještě někdo zastaví. | Granny's still waiting to see if anyone will stop by. | c1_babicka = prehlizena |
 | `ch1_pamet_babicka_neodhalena` |  |  | Pod rampou někdo bydlí. Zatím o tom nevíš. | Someone lives under the ramp. You don't know that yet. | c1_babicka = neodhalena |
+| `ch1_pamet_babicka_potkana` |  |  | Babičku pod rampou jsi potkal. Čí je pozemek pod rampou, ses nezeptal. | You met the granny under the ramp. Whose land the ramp stands on, you never asked. | c1_babicka = neodhalena a hráč s babičkou mluvil |
 | `ch1_pamet_babicka_odmitnuta` |  |  | Babička si pamatuje, že jsi spěchal. | Granny remembers that you were in a hurry. | c1_babicka = odmitnuta (K6) |
 | `ch1_pamet_faze2_ne` |  |  | Předseda si pamatuje, že jsi nepřipsal „následné fáze“. | The Chairman remembers that you didn't add 'subsequent phases'. | c1_faze2 = false |
 | `ch1_pamet_faze2_ano` |  |  | Předseda si pamatuje, že jsi podepsal „…a následné fáze“. | The Chairman remembers that you signed '...and subsequent phases'. | c1_faze2 = true |
@@ -799,8 +806,10 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `postava_ruda` |  |  | Ruda Gantt | Rudy Gantt | anglické jméno schváleno (D47) |
 | `postava_pan_zmena` |  |  | Pan Změna | Mr. Change | anglické jméno schváleno (D47) |
 | `obecne_nelze` | Ruda |  | S tím nic neudělám. | I can't do anything with that. | výchozí reakce |
-| `obecne_pouzit_s` | Ruda |  | Použít %s na %s? To nedává smysl ani podle mých standardů. | Use %s on %s? That doesn't make sense, even by my standards. | výchozí reakce; %s = předmět, cíl |
+| `obecne_pouzit_s` | Ruda |  | %s a %s? To nedává smysl ani podle mých standardů. | %s and %s? That doesn't make sense, even by my standards. | výchozí reakce; %s = předmět, cíl |
 | `obecne_nic_k_videni` | Ruda |  | Nic zvláštního. | Nothing special. | výchozí reakce |
+| `postava_rozhlas` |  |  | Městský rozhlas | Town loudspeaker | hlas z amplionu na náměstí (úvod, I6) |
+| `postava_veritel` |  |  | Věřitel | Creditor | hlasy za dveřmi Rudova bytu (úvod, I6) |
 | `postava_bara` |  |  | Bára Backlogová | Barb Backlog | anglické jméno schváleno (D47) |
 | `postava_vratny` |  |  | Vrátný | Porter |  |
 | `postava_pembok` |  |  | Prof. Pembok | Prof. Pembok | mluvící kniha; jméno je narážka na PMBOK |
@@ -818,3 +827,12 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_ui_ukol` |  |  | Úkol: podpis starosty a razítko Komise | Goal: the mayor's signature and the Committee's stamp | úkol kapitoly |
 | `ch1_ui_hraje_bara` |  |  | Hraješ za Báru | You're playing as Barb | přepnutí postavy |
 | `ch1_ui_hraje_ruda` |  |  | Hraješ za Rudu | You're playing as Rudy | přepnutí postavy |
+| `ch1_denik_krok_kdo` |  |  | Zjistit, kdo o Arše doopravdy rozhoduje. | Find out who really decides about the Ark. | krok v deníku |
+| `ch1_denik_krok_cislo` |  |  | Sehnat číslo projektu. | Get a project number. | krok v deníku |
+| `ch1_denik_krok_archiv` |  |  | Dostat se do archivu. | Get into the archive. | krok v deníku |
+| `ch1_denik_krok_zadani` |  |  | Najít původní zadání Archy. | Find the Ark's original brief. | krok v deníku |
+| `ch1_denik_krok_vytah` |  |  | Zprovoznit výtah do druhého patra. | Get the elevator to reach the second floor. | krok v deníku |
+| `ch1_denik_krok_podpis` |  |  | Získat podpis starosty. | Get the mayor's signature. | krok v deníku |
+| `ch1_denik_krok_papir` |  |  | Sepsat papír o Arše. | Write up the page about the Ark. | krok v deníku |
+| `ch1_denik_krok_fronta` |  |  | Vystát frontu v Komisi. | Queue up at the Committee. | krok v deníku |
+| `ch1_denik_krok_razitko` |  |  | Získat razítko Komise. | Get the Committee's stamp. | krok v deníku |

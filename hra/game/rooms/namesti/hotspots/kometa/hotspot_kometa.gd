@@ -8,10 +8,10 @@ extends PopochiuHotspot
 #region Virtual ####################################################################################
 # When the hotspot is clicked
 func _on_click() -> void:
-	# Prototyp (K7): kometa přepíná den a večer, aby šlo vyzkoušet tónování postav
+	# V prototypu (K7) kometa přepínala den a večer kvůli zkoušce tónování postav; ve hře to
+	# mátlo (setmělo se, „nový den“, a dnů do dopadu neubylo). Teď je to jen replika.
 	await C.player.face_up()
-	await C.player.say("ch1_kometa_rano" if R.Namesti.state.vecer else "ch1_kometa_vecer")
-	await R.Namesti.prepni_den_vecer()
+	await C.player.say("ch1_kometa_pouzit")
 
 
 # Called when the hotspot is double-clicked

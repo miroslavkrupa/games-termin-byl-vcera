@@ -64,6 +64,24 @@ func _process(_delta: float) -> void:
 		_denik_tlacitko.visible = _denik_dostupny()
 	if not _klavesy_povolene():
 		_mista.skryj()
+	_postavy_navrch()
+
+
+# Popochiu při překryvu postavy a aktivního místa rozhoduje podle pořadí uzlu v rodiči, takže
+# postava stojící před stánkem nebo plotem nešla oslovit: klepnutí bralo místo za ní.
+# Tady se postava pod kurzorem vždy posune navrch fronty najetých míst (E.hovered = poslední).
+func _postavy_navrch() -> void:
+	var fronta: Array = E._hovered_queue
+	if fronta.size() < 2 or not is_instance_valid(fronta[-1]) or fronta[-1] is PopochiuCharacter:
+		return
+	var postavy := fronta.filter(func(n: Variant) -> bool:
+		return is_instance_valid(n) and n is PopochiuCharacter)
+	if postavy.is_empty():
+		return
+	for postava in postavy:
+		fronta.erase(postava)
+		fronta.append(postava)
+	G.mouse_entered_clickable.emit(fronta[-1])
 
 
 # Klávesové zkratky (D93): I připne nebo schová lištu s inventářem, mezerník nebo tabulátor

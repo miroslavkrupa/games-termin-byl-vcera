@@ -74,7 +74,7 @@ scale_bottom = 0.46
 [node name="Characters" type="Node2D" parent="." unique_id=1280374402]
 
 [node name="CharacterPanZmena" parent="Characters" unique_id=1644422242 instance=ExtResource("10_j80a0")]
-position = Vector2(215, 750)
+position = Vector2(283, 759)
 
 [node name="CharacterBara" parent="Characters" unique_id=792553979 instance=ExtResource("14_cmmcn")]
 position = Vector2(790, 818)

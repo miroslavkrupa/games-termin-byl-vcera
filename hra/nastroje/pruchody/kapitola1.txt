@@ -1,8 +1,8 @@
 # Kapitola 1: automatický průchod podle docs/kapitoly/01-pruchod.md (formát v README.md vedle).
 # zaklad je nejkratší cesta přes Báru (část 1 průchodu), písmena jsou varianty z části 3:
 # A Bára přerušená, číslo projektu přes Pana Změnu; C prohraný souboj; D slíbit všechno;
-# E babička neodhalená; G následné fáze přijaty. Čísla v poznámkách jsou kroky průchodu.
-varianty zaklad A C D E G
+# E babička neodhalená; G následné fáze přijaty; B babička spojenkyně, poduška z lavičky (D95). Čísla v poznámkách jsou kroky průchodu.
+varianty zaklad A C D E G B
 
 nova_hra
 mistnost Byt
@@ -105,6 +105,29 @@ priznak c1_babicka=odhalena                                              @!E
 priznak c1_babicka=                                                      @E
 ma Papir
 
+# B: za babičkou pro podušku. Bez svolení vzít nejde, po vyslechnutí leží na lavičce k sebrání.
+akce Vytah:pouzit                                                        @B
+volby Prizemi                                                            @B
+mistnost Vestibul                                                        @B
+akce Ven:pouzit                                                          @B
+mistnost Namesti                                                         @B
+akce Ulicka:pouzit                                                       @B
+mistnost Chaloupka                                                       @B
+akce PoduskaLavicka:pouzit                                               @B
+nema Poduska                                                             @B
+akce Babicka:pouzit                                                      @B
+volby Pozemek,0,Konec                                                    @B
+priznak c1_babicka=spojenec                                              @B
+akce PoduskaLavicka:pouzit                                               @B
+ma Poduska                                                               @B
+akce Ulicka:pouzit                                                       @B
+mistnost Namesti                                                         @B
+akce DvereRadnice:pouzit                                                 @B
+mistnost Vestibul                                                        @B
+akce Vytah:pouzit                                                        @B
+volby Komise                                                             @B
+mistnost Komise                                                          @B
+
 # Fronta na frontu (24), úsek za Báru v archivu (25–26)
 akce Fronta:pouzit
 mistnost Archiv
@@ -119,7 +142,8 @@ priznak c1_seznam_pasazeru=1,dny=28
 # Předseda (27), razítko kávou (28), následné fáze (29), konec kapitoly (30)
 akce Predseda:pouzit
 volby Razitko,Konec
-pouzij Kava:Razitko
+pouzij Kava:Razitko                                                      @!B
+pouzij Poduska:Razitko                                                   @B
 volby Odmitnout                                                          @!G
 volby Prijmout                                                           @G
 konec bara_3,slib_0,babicka_prehlizena,faze2_ne,razitko_kava,seznam            @zaklad,C
@@ -127,3 +151,4 @@ konec bara_0,slib_0,babicka_prehlizena,faze2_ne,zmena,razitko_kava,seznam      @
 konec bara_3,slib,babicka_prehlizena,faze2_ne,razitko_kava,seznam              @D
 konec bara_3,slib_0,babicka_neodhalena,faze2_ne,razitko_kava,seznam            @E
 konec bara_3,slib_0,babicka_prehlizena,faze2_ano,razitko_kava,seznam           @G
+konec bara_3,slib_0,babicka_spojenec,faze2_ne,seznam                           @B
