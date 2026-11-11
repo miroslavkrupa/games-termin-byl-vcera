@@ -7,9 +7,9 @@ script = ExtResource("1_3bqg2")
 script_name = "PoduskaLavicka"
 description = "ch1_hs_poduska_lavicka"
 walk_to_point = Vector2(690, 812)
-look_at_point = Vector2(545, 615)
+look_at_point = Vector2(512, 624)
 cursor = 10
-interaction_polygon = PackedVector2Array(522, 590, 570, 590, 570, 640, 522, 640)
+interaction_polygon = PackedVector2Array(492, 602, 534, 602, 534, 646, 492, 646)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1648950267]
 visible = false

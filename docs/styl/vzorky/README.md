@@ -99,3 +99,6 @@ Hodnocení kol: [kolo 1](hodnoceni-kolo-1.md). Zadání ke zkopírování: [kolo
 | archiv-rozsireni_v01.png | gpt-image-2 (medium) | archiv-rozsireni_v01.json | ☐ |
 | kocour-mluveni-uprava_v02.png | gpt-image-2 (medium) | kocour-mluveni-uprava_v02.json | ☐ |
 | archiv-krabicka-pouceni_v01.png | gpt-image-2 (medium) | archiv-krabicka-pouceni_v01.json | ☐ |
+| namesti-posuvne_v01.png | gpt-image-2 (medium) | namesti-posuvne_v01.json | ☐ |
+| namesti-posuvne-vlevo_v01.png | gpt-image-2 (medium) | namesti-posuvne-vlevo_v01.json | ☐ |
+| namesti-posuvne-vpravo_v01.png | gpt-image-2 (medium) | namesti-posuvne-vpravo_v01.json | ☐ |

@@ -1,0 +1,14 @@
+{
+  "id": "namesti-posuvne",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "3072x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/namesti_3072.png",
+    "hra/grafika/mistnosti/chaloupka.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a finished background of a small town square from a 2D point-and-click comedy adventure game, placed in the middle of a much wider canvas. The two flat magenta strips at the far left and the far right are empty. Extend the picture into both magenta strips so that the whole canvas shows one continuous wide town square that the player will scroll through.\nOn the left strip: the square continues with more crooked, bulging old houses with red tiled roofs, a narrow side street leading away between them, an old wooden notice board with blank yellowed posters, a crooked bench and a few weeds; far away above the roofs you can see the top of a huge unfinished concrete launch ramp with wooden scaffolding rising diagonally into the sky (the same ramp as in the second image, but small and distant).\nOn the right strip: the square continues past the blue street lamp with a crooked bus stop shelter with a blank sign, an old rusty bus stop pole, a road leading out of town between leaning houses, an unfinished grey concrete panel block with a crane in the distance, a few barrels and construction barriers.\nThe paved ground with weeds between the stones, the sky with warm clouds and the row of houses continue naturally and seamlessly from the middle picture into both strips, in exactly the same drawing style, line work, colors, lighting and perspective, with a wide clear walkable pavement in the lower third. Do not draw a second comet.\nThe middle part, everything that is already painted in the first image, must stay exactly as it is, unchanged and at the same place. No magenta may remain anywhere. No people, no animals, no text, no letters",
+  "cena_usd": 0.0548
+}

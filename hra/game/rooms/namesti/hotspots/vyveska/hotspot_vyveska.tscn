@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/hotspots/vyveska/hotspot_vyveska.gd" id="1_tjm3f"]
+
+[node name="Vyveska" type="Area2D" unique_id=1274704446]
+script = ExtResource("1_tjm3f")
+script_name = "Vyveska"
+description = "ch1_hs_vyveska"
+cursor = 1
+interaction_polygon = PackedVector2Array(-740, 470, -340, 470, -340, 800, -740, 800)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=569276782]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

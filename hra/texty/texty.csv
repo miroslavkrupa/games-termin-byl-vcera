@@ -116,6 +116,12 @@ Master,Celkem,Master,,,šablona Popochiu (název zvukové sběrnice)
 ch1_hs_kometa,Kometa Deadline,Comet Deadline,,,popisek aktivního místa
 ch1_kometa_prohlednout,Kometa Deadline. Každý den o kousek větší. Jako můj seznam úkolů.,Comet Deadline. A little bigger every day. Like my to-do list.,Ruda,zasmušile,
 ch1_kometa_pouzit,"Kometu neodložím. To umí jen Komise, a ta by chtěla razítko.","I can't postpone a comet. Only the Committee can, and they'd want a stamp.",Ruda,suše,klepnutí na kometu (dřív zkušební přepínání dne a večera)
+ch1_hs_vyveska,Vývěska,Notice board,,,"popisek aktivního místa (levý okraj posuvného náměstí, D96)"
+ch1_vyveska_prohlednout,Vývěska. Samá oznámení o zahájení. O dokončení ani jedno.,The notice board. Nothing but announcements that something is starting. Not one about anything finishing.,Ruda,suše,
+ch1_vyveska_pouzit,Nic nepřipíchnu. Můj plán se na jeden papír nevejde. Na žádný.,I'm not pinning anything up. My plan doesn't fit on one sheet. Or on any.,Ruda,samolibě,
+ch1_hs_zastavka,Autobusová zastávka,Bus stop,,,"popisek aktivního místa (pravý okraj posuvného náměstí, D96)"
+ch1_zastavka_prohlednout,Zastávka. Podle jízdního řádu jede další spoj ve fázi 2.,"The bus stop. According to the timetable, the next bus leaves in phase two.",Ruda,suše,
+ch1_zastavka_pouzit,Čekat na autobus? Na to nemám termín.,Wait for a bus? I don't have the deadline for that.,Ruda,netrpělivě,
 postava_bara,Bára Backlogová,Barb Backlog,,,anglické jméno schváleno (D47)
 postava_vratny,Vrátný,Porter,,,
 postava_pembok,Prof. Pembok,Prof. Pembok,,,mluvící kniha; jméno je narážka na PMBOK
@@ -283,7 +289,7 @@ ch1_kocour_mluvit_ruda,"Ahoj, kocoure. Kdo tady rozhoduje o Arše?","Hey, cat. W
 ch1_kocour_mluvit,Mňau.,Meow.,Kocour,povýšeně,
 ch1_kocour_mluvit_ruda_2,"Nejsrozumitelnější odpověď, jakou jsem dneska dostal.",Clearest answer I've had all day.,Ruda,uznale,
 ch1_kocour_kava,Kocour očichal kávu a odešel. Pohrdá mnou s profesionální přesností.,The cat sniffed the coffee and walked off. He despises me with professional precision.,Ruda,dotčeně,káva na kocoura ★
-ch1_kocour_plot,Kocour sedí na plotě. Zjevně tady velí.,The cat's sitting on the fence. Clearly in charge here.,Ruda,uznale,prohlédnout kocoura v chaloupce
+ch1_kocour_plot,Kocour sedí u plotu. Zjevně tady velí.,The cat's sitting by the fence. Clearly in charge here.,Ruda,uznale,prohlédnout kocoura v chaloupce
 ch1_hs_ulicka,Ulička k rampě,Alley to the ramp,,,popisek aktivního místa (východ do S6)
 ch1_ulicka_prohlednout,"Ulička k rampě. Rampa trčí nad střechami, rovná jako pravítko. Jediná rovná věc ve městě.","The alley to the ramp. The ramp juts above the rooftops, straight as a ruler. The only straight thing in town.",Ruda,uznale,
 ch1_bara_volba_kdo,Kdo tady rozhoduje o Arše?,Who makes the decisions about the Ark?,Ruda,,volba dialogu; chybný pokus P1.1

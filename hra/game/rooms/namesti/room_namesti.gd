@@ -39,9 +39,9 @@ func _on_room_entered() -> void:
 		C.player.scale = _velikost_v(PRISTANI)
 		C.player.face_down()
 	elif C.player.last_room == "Chaloupka":
-		# Návrat uličkou od rampy: Ruda stojí u průchodu za kašnou
-		C.player.position = Vector2(400, 815)
-		C.player.face_down()
+		# Návrat uličkou od rampy: ulička ústí na levém okraji posuvného náměstí (D96)
+		C.player.position = Vector2(-800, 905)
+		C.player.face_right()
 	else:
 		# Začátek hry: Ruda stojí vpředu vedle kašny
 		C.player.position = Vector2(640, 960)
@@ -158,6 +158,10 @@ func _velikost_v(bod: Vector2) -> Vector2:
 func _nastav_svetlo() -> void:
 	get_prop("Background").texture = POZADI_VECER if state.vecer else POZADI_DEN
 	get_prop("KasnaPopredi").texture = KASNA_VECER if state.vecer else KASNA_DEN
+	# Koš a lampa zakrývají postavu, která za nimi prochází na pravou stranu náměstí. Večerní
+	# pozadí je jiná kresba (lampa je o kus vedle) a večer se tudy nechodí, tak se neukazují.
+	for kulisa in ["KosPopredi", "LampaPopredi"]:
+		get_prop(kulisa).visible = not state.vecer
 	var svetlo := SVETLO_VECER if state.vecer else SVETLO_DEN
 	# Oblast Hloubka pokrývá celou dlažbu, takže její barva tónuje každou postavu na náměstí
 	get_region("Hloubka").tint = svetlo

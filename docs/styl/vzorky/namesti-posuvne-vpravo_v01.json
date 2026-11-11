@@ -1,0 +1,14 @@
+{
+  "id": "namesti-posuvne-vpravo",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/namesti_vpravo_2224.png",
+    "tools/vzorky/predlohy/namesti_panorama_vpravo.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is the right part of a finished background of a small town square from a 2D point-and-click comedy adventure game. The flat magenta strip at its right edge is empty. Extend the picture into the magenta strip to the right, so the square continues there. Paint into the strip what the right part of the second image shows (a small zoomed-out sketch of the wider square), but at the full scale of the first image: an old round bus stop sign on a rusty pole (blank), a crooked wooden bus stop shelter with a small tiled roof and a bench inside, a road leading out of town between leaning old houses, and in the distance an unfinished grey concrete panel block with a construction crane. The paved ground with weeds between the stones, the sky with warm clouds and the row of houses continue naturally and seamlessly from the finished picture into the strip, in exactly the same drawing style, line work, colors, lighting, perspective and at the same scale as the finished picture, with a wide clear walkable pavement in the lower third. Do not draw a comet in the new part.\nEverything that is already painted in the first image must stay exactly as it is, unchanged, at the same place and at the same size: do not shrink or move it. No magenta may remain anywhere. No people, no animals, no text, no letters",
+  "cena_usd": 0.0561
+}

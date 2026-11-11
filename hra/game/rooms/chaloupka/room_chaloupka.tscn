@@ -33,7 +33,7 @@ position = Vector2(768, 512)
 texture = ExtResource("3_pozadi")
 
 [node name="PoduskaNaLavicce" parent="Props" unique_id=1325788874 instance=ExtResource("5_p113k")]
-position = Vector2(545, 613)
+position = Vector2(512, 624)
 texture = ExtResource("6_c283e")
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=2012924140]
@@ -69,10 +69,10 @@ position = Vector2(930, 750)
 walk_to_point = Vector2(-150, 70)
 
 [node name="CharacterKocour" parent="Characters" unique_id=116666946 instance=ExtResource("10_c4q3n")]
-position = Vector2(1212, 700)
-walk_to_point = Vector2(-110, 200)
+position = Vector2(1272, 826)
+walk_to_point = Vector2(-165, 34)
 
 [node name="PlotPopredi" type="Sprite2D" parent="." unique_id=1031712401]
-z_index = 765
-position = Vector2(979.5, 744)
+position = Vector2(979.5, 765)
 texture = ExtResource("11_plot")
+offset = Vector2(0, -21)

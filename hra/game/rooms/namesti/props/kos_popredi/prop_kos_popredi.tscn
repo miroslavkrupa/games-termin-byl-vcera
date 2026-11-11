@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/props/kos_popredi/prop_kos_popredi.gd" id="1_7mfhn"]
+
+[node name="KosPopredi" type="Area2D" unique_id=1126508199]
+input_pickable = false
+script = ExtResource("1_7mfhn")
+script_name = "KosPopredi"
+description = "Kos Popredi"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094703897]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1366397148]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1950841819]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1764093826]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

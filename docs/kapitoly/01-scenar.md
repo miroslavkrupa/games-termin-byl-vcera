@@ -10,7 +10,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Scéna | Repliky | Volby | Popisky |
 |---|---|---|---|
 | Úvod: Rudův byt | 46 | 4 | 6 |
-| Náměstí | 118 | 11 | 7 |
+| Náměstí | 122 | 11 | 9 |
 | Vestibul radnice | 45 | 5 | 5 |
 | Archiv | 54 | 10 | 13 |
 | Archiv: úsek za Báru | 28 | 3 | 2 |
@@ -21,7 +21,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | Předměty a kombinace | 22 | 0 | 15 |
 | Konec kapitoly | 3 | 0 | 17 |
 | Výchozí reakce, postavy a GUI | 11 | 0 | 22 |
-| **Celkem** | **566** | **58** | **130** |
+| **Celkem** | **570** | **58** | **132** |
 
 ## Úvod: Rudův byt
 
@@ -124,6 +124,12 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_hs_kometa` |  |  | Kometa Deadline | Comet Deadline | popisek aktivního místa |
 | `ch1_kometa_prohlednout` | Ruda | zasmušile | Kometa Deadline. Každý den o kousek větší. Jako můj seznam úkolů. | Comet Deadline. A little bigger every day. Like my to-do list. |  |
 | `ch1_kometa_pouzit` | Ruda | suše | Kometu neodložím. To umí jen Komise, a ta by chtěla razítko. | I can't postpone a comet. Only the Committee can, and they'd want a stamp. | klepnutí na kometu (dřív zkušební přepínání dne a večera) |
+| `ch1_hs_vyveska` |  |  | Vývěska | Notice board | popisek aktivního místa (levý okraj posuvného náměstí, D96) |
+| `ch1_vyveska_prohlednout` | Ruda | suše | Vývěska. Samá oznámení o zahájení. O dokončení ani jedno. | The notice board. Nothing but announcements that something is starting. Not one about anything finishing. |  |
+| `ch1_vyveska_pouzit` | Ruda | samolibě | Nic nepřipíchnu. Můj plán se na jeden papír nevejde. Na žádný. | I'm not pinning anything up. My plan doesn't fit on one sheet. Or on any. |  |
+| `ch1_hs_zastavka` |  |  | Autobusová zastávka | Bus stop | popisek aktivního místa (pravý okraj posuvného náměstí, D96) |
+| `ch1_zastavka_prohlednout` | Ruda | suše | Zastávka. Podle jízdního řádu jede další spoj ve fázi 2. | The bus stop. According to the timetable, the next bus leaves in phase two. |  |
+| `ch1_zastavka_pouzit` | Ruda | netrpělivě | Čekat na autobus? Na to nemám termín. | Wait for a bus? I don't have the deadline for that. |  |
 | `ch1_ruda_001` | Ruda | sebevědomě | Nedostavěnice. Město neomezených možností. Hlavně proto, že žádnou z nich nikdo nedotáhl. | Scope Creek. A town of endless possibilities. Mostly because nobody ever finished one. | replika z návrhu kapitoly 1; na začátku |
 | `ch1_pembok_ukol` | Pembok | poučně | Bez papíru podepsaného sponzorem a bez razítka Komise ti klíč od hangáru nikdo nedá. | Without a page signed by your sponsor and stamped by the Committee, nobody will hand you the hangar key. | úvodní úkol (návrh kapitoly 1, krok 1) |
 | `ch1_pembok_ukol_ruda` | Ruda | uraženě | Papír? Za mě mluví výsledky! | Paperwork? My results speak for me! |  |
@@ -191,7 +197,7 @@ Repliky = mluvené texty bez voleb dialogu. Popisky = názvy aktivních míst, p
 | `ch1_kocour_mluvit` | Kocour | povýšeně | Mňau. | Meow. |  |
 | `ch1_kocour_mluvit_ruda_2` | Ruda | uznale | Nejsrozumitelnější odpověď, jakou jsem dneska dostal. | Clearest answer I've had all day. |  |
 | `ch1_kocour_kava` | Ruda | dotčeně | Kocour očichal kávu a odešel. Pohrdá mnou s profesionální přesností. | The cat sniffed the coffee and walked off. He despises me with professional precision. | káva na kocoura ★ |
-| `ch1_kocour_plot` | Ruda | uznale | Kocour sedí na plotě. Zjevně tady velí. | The cat's sitting on the fence. Clearly in charge here. | prohlédnout kocoura v chaloupce |
+| `ch1_kocour_plot` | Ruda | uznale | Kocour sedí u plotu. Zjevně tady velí. | The cat's sitting by the fence. Clearly in charge here. | prohlédnout kocoura v chaloupce |
 | `ch1_hs_ulicka` |  |  | Ulička k rampě | Alley to the ramp | popisek aktivního místa (východ do S6) |
 | `ch1_ulicka_prohlednout` | Ruda | uznale | Ulička k rampě. Rampa trčí nad střechami, rovná jako pravítko. Jediná rovná věc ve městě. | The alley to the ramp. The ramp juts above the rooftops, straight as a ruler. The only straight thing in town. |  |
 | `ch1_bara_volba_kdo` | Ruda |  | Kdo tady rozhoduje o Arše? | Who makes the decisions about the Ark? | volba dialogu; chybný pokus P1.1 |

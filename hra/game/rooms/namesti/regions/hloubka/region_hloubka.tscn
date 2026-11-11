@@ -7,7 +7,7 @@ monitorable = false
 script = ExtResource("1_x2bqv")
 script_name = "Hloubka"
 description = "Hloubka"
-interaction_polygon = PackedVector2Array(150, 640, 1550, 640, 1550, 1024, 150, 1024)
+interaction_polygon = PackedVector2Array(-960, 640, 2500, 640, 2500, 1024, -960, 1024)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1119595201]
 visible = false

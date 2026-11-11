@@ -310,6 +310,39 @@
     "hra/grafika/predmety/poduska.png"
    ],
    "zadani": "One small prop for a 2D point-and-click comedy adventure game, drawn large in the middle of the image, in exactly the drawing style, line work and coloring of the first reference image (a finished background from the same game; the second image shows how small objects of this game are painted): an old open index card box standing on a desk, seen slightly from above from the front. A small worn wooden box without a lid, a brass label holder with a blank cream paper label on its front side, inside it a row of yellowed index cards standing upright with a few colored divider tabs, and one single cream card sticking up clearly higher than the others. Bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette, slightly crooked caricature shape. No text, no letters, no numbers"
+  },
+  {
+   "id": "namesti-posuvne",
+   "velikost": "3072x1024",
+   "reference": [
+    "tools/vzorky/predlohy/namesti_3072.png",
+    "hra/grafika/mistnosti/chaloupka.png"
+   ],
+   "maska": "tools/vzorky/predlohy/namesti_3072_maska.png",
+   "zadani": "The first image is a finished background of a small town square from a 2D point-and-click comedy adventure game, placed in the middle of a much wider canvas. The two flat magenta strips at the far left and the far right are empty. Extend the picture into both magenta strips so that the whole canvas shows one continuous wide town square that the player will scroll through.\nOn the left strip: the square continues with more crooked, bulging old houses with red tiled roofs, a narrow side street leading away between them, an old wooden notice board with blank yellowed posters, a crooked bench and a few weeds; far away above the roofs you can see the top of a huge unfinished concrete launch ramp with wooden scaffolding rising diagonally into the sky (the same ramp as in the second image, but small and distant).\nOn the right strip: the square continues past the blue street lamp with a crooked bus stop shelter with a blank sign, an old rusty bus stop pole, a road leading out of town between leaning houses, an unfinished grey concrete panel block with a crane in the distance, a few barrels and construction barriers.\nThe paved ground with weeds between the stones, the sky with warm clouds and the row of houses continue naturally and seamlessly from the middle picture into both strips, in exactly the same drawing style, line work, colors, lighting and perspective, with a wide clear walkable pavement in the lower third. Do not draw a second comet.\nThe middle part, everything that is already painted in the first image, must stay exactly as it is, unchanged and at the same place. No magenta may remain anywhere. No people, no animals, no text, no letters",
+   "poznamka": "První pokus: model celé náměstí zmenšil asi na 60 %, do hry se nehodil. Výsledek slouží jen jako předloha obsahu pro namesti-posuvne-vlevo a -vpravo (výřezy namesti_panorama_*). Předloha namesti_3072.png (původní pozadí uprostřed plátna 3072 px) se neuchovává."
+  },
+  {
+   "id": "namesti-posuvne-vlevo",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/namesti_vlevo_2224.png",
+    "tools/vzorky/predlohy/namesti_panorama_vlevo.png"
+   ],
+   "maska": "tools/vzorky/predlohy/namesti_vlevo_2224_maska.png",
+   "zadani": "The first image is the left part of a finished background of a small town square from a 2D point-and-click comedy adventure game. The flat magenta strip at its left edge is empty. Extend the picture into the magenta strip to the left, so the square continues there. Paint into the strip what the left part of the second image shows (a small zoomed-out sketch of the wider square), but at the full scale of the first image: an old wooden notice board with a little tiled roof and blank yellowed posters, a crooked bench in front of it, a narrow street leading uphill and away between crooked old houses with red tiled roofs, and far away above the roofs the top of a huge unfinished concrete launch ramp with wooden scaffolding. The paved ground with weeds between the stones, the sky with warm clouds and the row of houses continue naturally and seamlessly from the finished picture into the strip, in exactly the same drawing style, line work, colors, lighting, perspective and at the same scale as the finished picture, with a wide clear walkable pavement in the lower third. Do not draw a comet in the new part.\nEverything that is already painted in the first image must stay exactly as it is, unchanged, at the same place and at the same size: do not shrink or move it. No magenta may remain anywhere. No people, no animals, no text, no letters",
+   "poznamka": "Předlohy namesti_<strana>_2224.png vznikly z pozadí 2218 px před rozšířením (commit 4048290): 1616 px od příslušného okraje a 608 px prázdný pruh."
+  },
+  {
+   "id": "namesti-posuvne-vpravo",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/namesti_vpravo_2224.png",
+    "tools/vzorky/predlohy/namesti_panorama_vpravo.png"
+   ],
+   "maska": "tools/vzorky/predlohy/namesti_vpravo_2224_maska.png",
+   "zadani": "The first image is the right part of a finished background of a small town square from a 2D point-and-click comedy adventure game. The flat magenta strip at its right edge is empty. Extend the picture into the magenta strip to the right, so the square continues there. Paint into the strip what the right part of the second image shows (a small zoomed-out sketch of the wider square), but at the full scale of the first image: an old round bus stop sign on a rusty pole (blank), a crooked wooden bus stop shelter with a small tiled roof and a bench inside, a road leading out of town between leaning old houses, and in the distance an unfinished grey concrete panel block with a construction crane. The paved ground with weeds between the stones, the sky with warm clouds and the row of houses continue naturally and seamlessly from the finished picture into the strip, in exactly the same drawing style, line work, colors, lighting, perspective and at the same scale as the finished picture, with a wide clear walkable pavement in the lower third. Do not draw a comet in the new part.\nEverything that is already painted in the first image must stay exactly as it is, unchanged, at the same place and at the same size: do not shrink or move it. No magenta may remain anywhere. No people, no animals, no text, no letters",
+   "poznamka": "Předlohy namesti_<strana>_2224.png vznikly z pozadí 2218 px před rozšířením (commit 4048290): 1616 px od příslušného okraje a 608 px prázdný pruh."
   }
  ]
 }

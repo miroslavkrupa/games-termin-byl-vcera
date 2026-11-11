@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/props/lampa_popredi/prop_lampa_popredi.gd" id="1_cspjd"]
+
+[node name="LampaPopredi" type="Area2D" unique_id=2023199372]
+input_pickable = false
+script = ExtResource("1_cspjd")
+script_name = "LampaPopredi"
+description = "Lampa Popredi"
+clickable = false
+cursor = 1
+interaction_polygon = PackedVector2Array()
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=378233624]
+texture_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=537072850]
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=968020712]
+visible = false
+modulate = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=1564895940]
+visible = false
+affect_navigation_mesh = true
+carve_navigation_mesh = true

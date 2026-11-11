@@ -8,6 +8,8 @@ extends Control
 const ZNACKA := preload("res://grafika/gui/ikony/znacka.png")
 const IKONA := "res://grafika/gui/ikony/%s.png"
 const OBRYS := Color(0.16, 0.09, 0.04)
+## Výška značky s názvem pod ní: o tolik musí být středy značek svisle od sebe
+const VYSKA_ZNACKY := 98.0
 
 var _ukazane := false
 
@@ -26,13 +28,18 @@ func ukaz(ikona_pro: Callable) -> void:
 	_ukazane = true
 	var na_obrazovku := get_viewport().get_canvas_transform()
 	var obrazovka := get_viewport_rect().grow(-20)
+	var mista: Array[Dictionary] = []
 	for misto in get_tree().get_nodes_in_group("PopochiuClickable"):
 		if not _je_aktivni(misto):
 			continue
 		var bod: Vector2 = na_obrazovku * _stred(misto)
 		if not obrazovka.has_point(bod):
 			continue
-		add_child(_znacka(bod, ikona_pro.call(misto), misto.get_description()))
+		mista.append({stred = bod, kde = bod, ikona = ikona_pro.call(misto),
+			nazev = misto.get_description()})
+	_rozestup(mista, obrazovka)
+	for m in mista:
+		add_child(_znacka(m.kde, m.stred, m.ikona, m.nazev))
 
 
 func skryj() -> void:
@@ -63,10 +70,46 @@ func _stred(misto: Node) -> Vector2:
 	return obrys.global_transform * (soucet / maxf(obrys.polygon.size(), 1))
 
 
-func _znacka(bod: Vector2, ikona: String, nazev: String) -> Control:
+# Místa, která leží těsně u sebe (poduška na lavičce), by měla značky i názvy přes sebe.
+# Takové dvojice se od sebe odsunou svisle, dokud se nepřekrývají; odsunutou značku pak
+# spojuje čárka se skutečným místem.
+func _rozestup(mista: Array[Dictionary], obrazovka: Rect2) -> void:
+	for _kolo in 16:
+		var hnuto := false
+		for i in mista.size():
+			for j in range(i + 1, mista.size()):
+				var a: Dictionary = mista[i]
+				var b: Dictionary = mista[j]
+				var d: Vector2 = b.kde - a.kde
+				# šířka podle delšího z názvů (popisek je vystředěný pod značkou)
+				var sirka := 44.0 + 7.5 * (String(a.nazev).length() + String(b.nazev).length())
+				if absf(d.x) >= sirka or absf(d.y) >= VYSKA_ZNACKY:
+					continue
+				var chybi := (VYSKA_ZNACKY - absf(d.y)) / 2.0 + 1.0
+				var smer := 1.0 if d.y >= 0.0 else -1.0
+				a.kde.y = clampf(a.kde.y - smer * chybi, obrazovka.position.y + 30, obrazovka.end.y - 70)
+				b.kde.y = clampf(b.kde.y + smer * chybi, obrazovka.position.y + 30, obrazovka.end.y - 70)
+				hnuto = true
+		if not hnuto:
+			break
+
+
+func _znacka(bod: Vector2, stred: Vector2, ikona: String, nazev: String) -> Control:
 	var z := Control.new()
 	z.position = bod
 	z.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if bod.distance_to(stred) > 6.0:
+		# značka je odsunutá: čárka a tečka ukážou, ke kterému místu patří
+		var cara := Line2D.new()
+		cara.points = PackedVector2Array([Vector2.ZERO, stred - bod])
+		cara.width = 4.0
+		cara.default_color = OBRYS
+		z.add_child(cara)
+		var svetla := Line2D.new()
+		svetla.points = cara.points
+		svetla.width = 2.0
+		svetla.default_color = Color("e9b52a")
+		z.add_child(svetla)
 	var kruh := TextureRect.new()
 	kruh.texture = ZNACKA
 	kruh.position = -ZNACKA.get_size() / 2.0

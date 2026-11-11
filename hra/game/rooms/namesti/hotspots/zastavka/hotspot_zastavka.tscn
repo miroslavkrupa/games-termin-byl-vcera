@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/rooms/namesti/hotspots/zastavka/hotspot_zastavka.gd" id="1_1kqt0"]
+
+[node name="Zastavka" type="Area2D" unique_id=167446681]
+script = ExtResource("1_1kqt0")
+script_name = "Zastavka"
+description = "ch1_hs_zastavka"
+cursor = 1
+interaction_polygon = PackedVector2Array(2110, 440, 2450, 440, 2450, 860, 2110, 860)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1581989746]
+visible = false
+modulate = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)

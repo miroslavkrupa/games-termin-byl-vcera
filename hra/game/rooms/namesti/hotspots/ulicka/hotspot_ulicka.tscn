@@ -6,9 +6,9 @@
 script = ExtResource("1_k56ed")
 script_name = "Ulicka"
 description = "ch1_hs_ulicka"
-look_at_point = Vector2(420, 500)
+look_at_point = Vector2(-830, 590)
 cursor = 1
-interaction_polygon = PackedVector2Array(340, 420, 500, 420, 500, 545, 340, 545)
+interaction_polygon = PackedVector2Array(-900, 470, -790, 480, -750, 690, -880, 700)
 metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=321136781]

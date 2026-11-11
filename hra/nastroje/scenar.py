@@ -21,7 +21,8 @@ SPOLECNE = ("predmet_", "obecne_", "postava_")
 SCENY_1 = [
     ("Úvod: Rudův byt", ["ch1_uvod_", "ch1_byt_", "ch1_hs_byt_", "ch1_veritel_"]),
     ("Náměstí", [
-        "ch1_rozhlas_", "ch1_hs_amplion", "ch1_amplion_", "ch1_pembok_otevreni", "ch1_pembok_ukol",
+        "ch1_rozhlas_", "ch1_hs_amplion", "ch1_amplion_", "ch1_hs_vyveska", "ch1_vyveska_",
+        "ch1_hs_zastavka", "ch1_zastavka_", "ch1_pembok_otevreni", "ch1_pembok_ukol",
         "ch1_pembok_001", "ch1_ruda_001", "ch1_ruda_002", "ch1_hs_kasna", "ch1_kasna_", "ch1_hs_budka",
         "ch1_budka_", "ch1_hs_dvere", "ch1_dvere_", "ch1_hs_kometa", "ch1_kometa_", "ch1_hs_stanek",
         "ch1_stanek_", "ch1_zmena_", "ch1_kombinace_pero", "ch1_plakat_", "ch1_hs_ulicka", "ch1_ulicka_",

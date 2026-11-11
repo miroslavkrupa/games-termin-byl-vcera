@@ -166,4 +166,5 @@ python3 tools/generuj_vzorky.py --spec tools/vzorky/zadani-kap1.json --klic <NÁ
 | 7 | široký archiv (`archiv-rozsireni`), stojací ukazatel k archivu, kocour (`kocour-novy-styl`, `kocour-mluveni-uprava` v02) | ☑ ve hře (D93) |
 | 7 | ikony: šlápoty u východů, tlačítko deníku, značka aktivního místa (`tools/grafika/gui_ikony.py`) | ☑ ve hře (D93) |
 | 8 | plot u chaloupky jako popředí, poduška na lavičce, krabička Poučení (`archiv-krabicka-pouceni`) | ☑ ve hře (D94, D95) |
+| 9 | posuvné náměstí (`namesti-posuvne-vlevo`, `-vpravo`), koš a lampa jako popředí | ☑ zkouška ve hře (D96) |
 | – | zvuky a hudba | ☑ zapojeno, čeká na poslech ([zvuk](15-zvuk.md), D90, D91) |

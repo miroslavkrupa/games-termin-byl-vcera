@@ -9,19 +9,25 @@
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/props/kasna_popredi/prop_kasna_popredi.tscn" id="5_hcycl"]
 [ext_resource type="Texture2D" path="res://grafika/mistnosti/namesti_den_kasna_popredi.png" id="6_cmmcn"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/budka/hotspot_budka.tscn" id="6_oahb7"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/props/kos_popredi/prop_kos_popredi.tscn" id="7_r3fd5"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/dvere_radnice/hotspot_dvere_radnice.tscn" id="7_tc4kd"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/namesti_den_kos_popredi.png" id="8_8sqo4"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/stanek/hotspot_stanek.tscn" id="8_gky0t"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/kometa/hotspot_kometa.tscn" id="9_ls3d5"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/props/lampa_popredi/prop_lampa_popredi.tscn" id="9_use6x"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/namesti_den_lampa_popredi.png" id="10_18pl4"]
 [ext_resource type="PackedScene" path="res://game/characters/pan_zmena/character_pan_zmena.tscn" id="10_j80a0"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/ulicka/hotspot_ulicka.tscn" id="12_ynjll"]
 [ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/amplion/hotspot_amplion.tscn" id="13_pkldj"]
 [ext_resource type="PackedScene" path="res://game/characters/bara/character_bara.tscn" id="14_cmmcn"]
 [ext_resource type="PackedScene" path="res://game/characters/kocour/character_kocour.tscn" id="16_jqb03"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/vyveska/hotspot_vyveska.tscn" id="18_18pl4"]
+[ext_resource type="PackedScene" path="res://game/rooms/namesti/hotspots/zastavka/hotspot_zastavka.tscn" id="19_paisd"]
 
 [node name="RoomNamesti" type="Node2D" unique_id=1362046152]
 script = ExtResource("1_xhamq")
 script_name = "Namesti"
-width = 1536
+width = 3434
 height = 1024
 
 [node name="WalkableAreas" type="Node2D" parent="." unique_id=1241135975]
@@ -40,6 +46,16 @@ texture = ExtResource("6_cmmcn")
 obstacle = true
 obstacle_polygon = [Vector2(307, 94), Vector2(292, 105), Vector2(248, 115), Vector2(180, 123), Vector2(95, 128), Vector2(0, 130), Vector2(-95, 128), Vector2(-180, 123), Vector2(-248, 115), Vector2(-292, 105), Vector2(-307, 94), Vector2(-292, 83), Vector2(-248, 73), Vector2(-180, 65), Vector2(-95, 60), Vector2(0, 58), Vector2(95, 60), Vector2(180, 65), Vector2(248, 73), Vector2(292, 83)]
 
+[node name="KosPopredi" parent="Props" unique_id=1126508199 instance=ExtResource("7_r3fd5")]
+position = Vector2(1468, 812)
+baseline = 76
+texture = ExtResource("8_8sqo4")
+
+[node name="LampaPopredi" parent="Props" unique_id=2023199372 instance=ExtResource("9_use6x")]
+position = Vector2(1545, 673)
+baseline = 142
+texture = ExtResource("10_18pl4")
+
 [node name="Hotspots" type="Node2D" parent="." unique_id=1536900053]
 
 [node name="Kasna" parent="Hotspots" unique_id=245226830 instance=ExtResource("5_eluva")]
@@ -57,10 +73,16 @@ walk_to_point = Vector2(290, 805)
 [node name="Kometa" parent="Hotspots" unique_id=522304014 instance=ExtResource("9_ls3d5")]
 
 [node name="Ulicka" parent="Hotspots" unique_id=877801450 instance=ExtResource("12_ynjll")]
-walk_to_point = Vector2(400, 815)
+walk_to_point = Vector2(-800, 905)
 
 [node name="Amplion" parent="Hotspots" unique_id=410445406 instance=ExtResource("13_pkldj")]
 walk_to_point = Vector2(1210, 820)
+
+[node name="Vyveska" parent="Hotspots" unique_id=1274704446 instance=ExtResource("18_18pl4")]
+walk_to_point = Vector2(-540, 905)
+
+[node name="Zastavka" parent="Hotspots" unique_id=167446681 instance=ExtResource("19_paisd")]
+walk_to_point = Vector2(2270, 905)
 
 [node name="Regions" type="Node2D" parent="." unique_id=1128713920]
 
@@ -80,5 +102,5 @@ position = Vector2(283, 759)
 position = Vector2(790, 818)
 
 [node name="CharacterKocour" parent="Characters" unique_id=116666946 instance=ExtResource("16_jqb03")]
-position = Vector2(330, 935)
-walk_to_point = Vector2(100, -15)
+position = Vector2(-735, 918)
+walk_to_point = Vector2(110, -8)
