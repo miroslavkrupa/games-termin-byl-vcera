@@ -9,11 +9,10 @@ script = ExtResource("1_5eksx")
 script_name = "Predseda"
 description = "postava_predseda"
 cursor = 8
-interaction_polygon = PackedVector2Array(-40, -302, 40, -302, 40, 0, -40, 0)
+interaction_polygon = PackedVector2Array(-45, -302, 45, -302, 45, -139, -45, -139)
 text_color = Color(0.78, 0.9, 1, 1)
 ignore_region_scaling = true
-obstacle = true
-walk_to_point = Vector2(-140, 130)
+walk_to_point = Vector2(-85, 274)
 dialog_pos = Vector2(0, -326)
 
 [node name="ScalingPolygon" type="CollisionPolygon2D" parent="." unique_id=779456705]
@@ -24,11 +23,13 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092877835]
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("2_tex")
-offset = Vector2(0, -210)
+offset = Vector2(0, -306.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 105, 227)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1104301055]
 visible = false
-polygon = PackedVector2Array(-40, -302, 40, -302, 40, 0, -40, 0)
+polygon = PackedVector2Array(-45, -302, 45, -302, 45, -139, -45, -139)
 
 [node name="ObstaclePolygon" type="NavigationObstacle2D" parent="." unique_id=218108207]
 visible = false

@@ -3,17 +3,23 @@
 extends PopochiuCharacter
 # Předseda Věčný (S5): vlídný úsměv, který přežil tři starosty; všechno „důkladně odloží“.
 # Rozhovor `predseda` (P1.13), razítko a R1.4 „…a následné fáze“. Reakce na předměty podle matice
-# (01-mistnosti.md) a prototypu (místo predseda). Zatím nehybný obrázek (výřez z prototypu).
+# (01-mistnosti.md) a prototypu (místo predseda).
+# Sedí za předsednickým stolem: ze stojícího obrázku je vidět jen horní polovina (výřez textury
+# ve scéně postavy, region_rect), spodek zakrývá stůl namalovaný v pozadí. Fáze mluvení mají
+# stejný rozměr, takže výřez platí i pro ně.
 
 const Data := preload('character_predseda_state.gd')
+## Mluvení fázemi úst
+const Usta := preload("res://game/spolecne/usta.gd")
 
 var state: Data = load("res://game/characters/predseda/character_predseda.tres")
+var _usta = null
 
 
 #region Virtual ####################################################################################
 # Called when the room where this character is located has finished being added to the scene tree.
 func _on_room_set() -> void:
-	pass
+	_usta = Usta.pripoj(self, _usta, "predseda")
 
 
 # Called when the character is clicked
@@ -73,6 +79,7 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 
 # Override this to alter the idle animation or hook custom logic to it.
 func _play_idle() -> void:
+	Usta.mlc(_usta)
 	super()
 
 
@@ -83,6 +90,7 @@ func _play_walk(target_pos: Vector2) -> void:
 
 # Override this to alter the talk animation or hook custom logic to it.
 func _play_talk() -> void:
+	Usta.mluv(_usta)
 	super()
 
 

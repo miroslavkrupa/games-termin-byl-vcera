@@ -1,0 +1,13 @@
+{
+  "id": "namesti-amplion",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1024x1024",
+  "paleta": null,
+  "reference": [
+    "hra/grafika/mistnosti/namesti_den_siroke.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "One prop for a 2D point-and-click comedy adventure game, drawn large in the middle of the image, in exactly the drawing style, line work and coloring of the reference image (a finished background from the same game): an old town public address loudspeaker set as it hangs on a street lamp pole. A short vertical piece of dark blue metal pole (the same dark blue as the street lamp in the reference image) runs through the middle from the top edge of the prop to its bottom edge; clamped to it with a rusty iron bracket are two old horn loudspeakers, dented grey-green metal with rust stains, one horn pointing to the left and slightly down, the other pointing to the right and slightly up, wide round horn mouths, a loose black cable hanging in a loop between them. Bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette. No text, no letters,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0657
+}

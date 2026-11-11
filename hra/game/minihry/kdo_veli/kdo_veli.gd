@@ -38,6 +38,7 @@ const KONTROLA := ["predseda", "starosta", "babicka", "zmena", "bara", "obyvatel
 const POLE := [[true, false], [true, true], [false, false], [false, true]]
 
 # Paleta stylové bible: okr, rez, vybledlá petrolejová, tmavě hnědé obrysy, žlutý akcent
+const Styl := preload("res://game/obrazovky/styl.gd")
 const BARVA_PAPIR := Color("f3e4c2")
 const BARVA_LISTEK := Color("fbf3dc")
 const BARVA_POLE := Color("eddcb4")
@@ -269,6 +270,7 @@ func _vyhodnotit() -> void:
 	var spatne: Array = KONTROLA.filter(func(id: String) -> bool:
 		return (id != "babicka" or znama) and _chyba(id) >= 0)
 	if spatne.size() > 0:
+		Zvuk.efekt("spatne")
 		Globals.m02_pokusy += 1
 		var id: String = spatne[0]
 		var osa := _chyba(id)
@@ -296,6 +298,7 @@ func _vyhodnotit() -> void:
 		await _pembok("ch1_m02_babicka_chybi")
 		return
 	visible = false
+	Zvuk.efekt("spravne")
 	await I.Pembok.rada("ch1_m02_hotovo")
 	await C.player.say("ch1_m02_hotovo_ruda")
 	await I.Pembok.rada("ch1_m02_hotovo_pembok")
@@ -327,17 +330,9 @@ func _popisek(text: String, velikost: int, zarovnani: HorizontalAlignment) -> La
 	return l
 
 
-func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = vypln
-	s.border_color = obrys
-	s.set_border_width_all(sirka)
-	s.set_corner_radius_all(zaobleni)
-	s.content_margin_left = 14
-	s.content_margin_right = 14
-	s.content_margin_top = 8
-	s.content_margin_bottom = 8
-	return s
+func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBox:
+	# Malované podklady společné pro minihry a obrazovky (D89)
+	return Styl.podle_barvy(vypln, obrys, sirka, zaobleni)
 
 
 func _tlacitko(text: String, barva: Color, akce: Callable) -> Button:

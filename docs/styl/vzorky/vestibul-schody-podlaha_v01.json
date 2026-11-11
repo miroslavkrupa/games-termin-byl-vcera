@@ -1,0 +1,14 @@
+{
+  "id": "vestibul-schody-podlaha",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/vestibul_2224.png",
+    "tools/vzorky/predlohy/vestibul_2224_znacka.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a finished background of a town hall lobby from a 2D point-and-click comedy adventure game. The second image is the same picture with a red rectangle that marks a place on the floor in the lower left part, in front of the wooden porter's booth. Edit the first image only inside the place marked by that red rectangle: add there a stairwell opening in the floor with a staircase that clearly leads DOWN to the basement. It is a rectangular hole in the tiled floor, as large as the marked place, with a low worn cream stone curb (the same stone as the elevator door frame) along its far edge and along its right edge. Inside it, worn grey stone steps descend from the right side down to the left into the dark; the inner walls of the stairwell are dark bluish-brown brick, and a small caged basement lamp glows weakly deep inside. A short crooked iron handrail runs along the left edge of the opening only. The opening continues down to the bottom edge of the image, seen from above in the same perspective as the floor tiles.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters. Do not draw the red rectangle itself",
+  "cena_usd": 0.0591
+}

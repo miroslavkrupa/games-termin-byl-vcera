@@ -17,6 +17,8 @@ const SVETLO_DEN := Color(1, 1, 1)
 const Karta := preload("res://game/obrazovky/karta.gd")
 ## Kam Ruda dopadne ze skluzu z bytu (suť vpředu vpravo od kašny)
 const PRISTANI := Vector2(760, 935)
+## Z jaké výšky padá: celá postava je před pádem nad horním okrajem obrazovky
+const VYSKA_PADU := Vector2(0, 960)
 const SVETLO_VECER := Color(0.66, 0.5, 0.64)
 
 
@@ -32,7 +34,9 @@ func _on_room_entered() -> void:
 		C.player.face_down()
 	elif C.player.last_room == "Byt":
 		# Skluzem z bytu (úvod): Ruda je zatím nad obrazovkou, dopadne v _pristani()
-		C.player.position = PRISTANI - Vector2(0, 560) if not state.vybava_dana else PRISTANI
+		C.player.position = PRISTANI - VYSKA_PADU if not state.vybava_dana else PRISTANI
+		C.player.rotation = 0.0
+		C.player.scale = _velikost_v(PRISTANI)
 		C.player.face_down()
 	elif C.player.last_room == "Chaloupka":
 		# Návrat uličkou od rampy: Ruda stojí u průchodu za kašnou
@@ -107,10 +111,15 @@ func _pristani() -> void:
 	state.vybava_dana = true
 	G.block()
 	C.player.modulate = SVETLO_VECER if state.vecer else SVETLO_DEN
-	var pad := create_tween()
-	pad.tween_property(C.player, "position", PRISTANI, 0.5).from(PRISTANI - Vector2(0, 560)) \
+	# Ruda padá odshora, kde oblast hloubky není, takže by letěl malý (ve velikosti z bytu)
+	# a zvětšil se až při prvním kroku. Proto má po celý pád velikost místa, kam dopadne.
+	var velikost := _velikost_v(PRISTANI)
+	var pad := create_tween().set_parallel()
+	pad.tween_property(C.player, "position", PRISTANI, 0.6).from(PRISTANI - VYSKA_PADU) \
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	pad.tween_method(func(_k: float) -> void: C.player.scale = velikost, 0.0, 1.0, 0.6)
 	await pad.finished
+	C.player.update_scale()
 	G.unblock()
 	await C.player.say("ch1_byt_pristani")
 	await C.player.say("ch1_ruda_001")
@@ -134,6 +143,16 @@ func _pristani() -> void:
 	await C.player.say("ch1_ruda_002")
 	state.pembok_otevren = true
 	await Karta.ukaz("ch1_ui_ukol")
+
+
+## Velikost postavy na místě [param bod] podle oblasti hloubky (stejný výpočet jako v Popochiu)
+func _velikost_v(bod: Vector2) -> Vector2:
+	var hloubka: PopochiuRegion = get_region("Hloubka")
+	if hloubka == null or not hloubka.scaling:
+		return C.player.default_scale
+	var vysky: Array = Array(hloubka.interaction_polygon).map(func(b: Vector2) -> float: return b.y)
+	var podil := clampf(inverse_lerp(vysky.min(), vysky.max(), bod.y), 0.0, 1.0)
+	return Vector2.ONE * lerpf(hloubka.scale_top, hloubka.scale_bottom, podil)
 
 
 func _nastav_svetlo() -> void:

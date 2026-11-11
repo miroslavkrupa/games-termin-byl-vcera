@@ -7,7 +7,7 @@ script = ExtResource("1_yvqrq")
 script_name = "Kava"
 description = "predmet_kava"
 cursor = 1
-interaction_polygon = PackedVector2Array(350, 498, 452, 498, 452, 606, 350, 606)
+interaction_polygon = PackedVector2Array(322, 572, 396, 572, 396, 634, 322, 634)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=72402994]
 visible = false

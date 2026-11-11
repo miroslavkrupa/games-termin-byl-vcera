@@ -14,6 +14,7 @@ const KOL := 5
 const DRUHY := ["dobra", "rychla", "slaba"]
 
 # Paleta stylové bible: okr, rez, vybledlá petrolejová, tmavě hnědé obrysy, žlutý akcent
+const Styl := preload("res://game/obrazovky/styl.gd")
 const BARVA_PAPIR := Color("f3e4c2")
 const BARVA_LISTEK := Color("fbf3dc")
 const BARVA_OBRYS := Color("4a2e14")
@@ -176,6 +177,7 @@ func _prekresli_znacky() -> void:
 func _odpoved(druh: String) -> void:
 	visible = false
 	_vysledky.append(druh)
+	Zvuk.efekt("spatne" if druh == "slaba" else "spravne")
 	await C.player.say("ch1_m03_k%d_%s" % [kolo, druh])
 	await C.Starosta.say("ch1_m03_k%d_%s_reakce" % [kolo, druh])
 	if druh != "slaba":
@@ -217,17 +219,9 @@ func _popisek(text: String, velikost: int, zarovnani: HorizontalAlignment) -> La
 	return l
 
 
-func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = vypln
-	s.border_color = obrys
-	s.set_border_width_all(sirka)
-	s.set_corner_radius_all(zaobleni)
-	s.content_margin_left = 18
-	s.content_margin_right = 18
-	s.content_margin_top = 8
-	s.content_margin_bottom = 8
-	return s
+func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBox:
+	# Malované podklady společné pro minihry a obrazovky (D89)
+	return Styl.podle_barvy(vypln, obrys, sirka, zaobleni)
 
 
 #endregion

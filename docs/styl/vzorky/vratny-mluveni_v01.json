@@ -1,0 +1,13 @@
+{
+  "id": "vratny-mluveni",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "docs/styl/vzorky/vratny-list_v01.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a talking animation sheet of exactly this character in front view: 6 frames in 2 rows of 3.\nIn every frame he stands in exactly the same pose as the front view on the model sheet: the same size, the same feet, legs, body, uniform, cap, moustache, and the same thermos flask and folded crossword newspaper held in the same hands in the same way. Only the face is animated: a different mouth shape in each frame (1 closed, 2 slightly open, 3 wide open, 4 round like saying O, 5 open showing teeth, 6 half open), the moustache moves a little with the mouth, the sleepy half-closed eyes and the eyebrows change slightly, in frames 3 and 5 the head tilts very slightly.\nRULES: Draw exactly the same character as the model sheet. Same scale and proportions in every frame, same head size, same body width, same leg length, same shoe size. The props never switch hands.\nAll frames in an even grid, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0551
+}

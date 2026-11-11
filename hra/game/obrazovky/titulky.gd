@@ -15,6 +15,8 @@ const RADKY := [
 	{popisek = "ui_titulky_autor", text = "Miroslav Krupa"},
 	{popisek = "ui_titulky_engine", text = "Godot Engine\nPopochiu (Carenalgas)"},
 	{popisek = "ui_titulky_pismo", text = "Patrick Hand – Patrick Wagesreiter\n(SIL Open Font License)"},
+	{popisek = "ui_titulky_hudba", text = "ui_titulky_hudba_tema", prelozit = true},
+	{popisek = "ui_titulky_zvuky", text = "Kenney · IgnasD · fvcalderan · Dub\n(OpenGameArt.org, CC0)"},
 	{popisek = "", text = "ui_titulky_dekujeme", velikost = 48, prelozit = true},
 ]
 ## Rychlost odjíždění (body za sekundu)

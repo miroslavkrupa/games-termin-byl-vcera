@@ -7,7 +7,7 @@ extends PopochiuCharacter
 
 const Data := preload('character_rozhlas_state.gd')
 ## Kde hlas zní (souřadnice místnosti) a o kolik vedle mluví druhý hlas
-const KDE := Vector2(1395, 205)
+const KDE := Vector2(1430, 240)
 const DRUHY := Vector2(0, 0)
 
 var state: Data = load("res://game/characters/rozhlas/character_rozhlas.tres")
@@ -40,6 +40,8 @@ func hlas(klic: String, druhy := false) -> void:
 		R.current.add_character(self)
 	position = KDE + (DRUHY if druhy else Vector2.ZERO)
 	dialog_pos = Vector2(0, -20)
+	if not druhy:
+		Zvuk.efekt("rozhlas")
 	await say(klic)
 	if get_parent() == R.current.get_node("Characters"):
 		R.current.remove_character(self)

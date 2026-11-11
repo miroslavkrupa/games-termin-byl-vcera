@@ -7,7 +7,7 @@ script = ExtResource("1_dksvj")
 script_name = "Stul"
 description = "ch1_hs_byt_stul"
 cursor = 1
-interaction_polygon = PackedVector2Array(458, 560, 720, 560, 720, 780, 330, 780, 330, 612, 458, 612)
+interaction_polygon = PackedVector2Array(440, 548, 749, 548, 749, 818, 312, 818, 312, 612, 440, 612)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1310574890]
 visible = false

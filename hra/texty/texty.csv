@@ -41,7 +41,7 @@ ch1_zmena_002,Já… to jsem podepsal? Tak to asi opravdu chci. Zvláštní poci
 ch1_zmena_dohoda_ruda_3,Gratuluju. Právě jste se poprvé v životě rozhodl.,Congratulations. You've just made your first decision ever.,Ruda,samolibě,
 ch1_zmena_dohoda_uz,Modrou! Mám to podepsané. Kávou.,Blue! It's signed. In coffee.,Pan Změna,hrdě,po dohodě
 obecne_nelze,S tím nic neudělám.,I can't do anything with that.,Ruda,,výchozí reakce
-obecne_pouzit_s,Použít %s na %s? To nedává smysl ani podle mých standardů.,"Use %s on %s? That doesn't make sense, even by my standards.",Ruda,,"výchozí reakce; %s = předmět, cíl"
+obecne_pouzit_s,%s a %s? To nedává smysl ani podle mých standardů.,"%s and %s? That doesn't make sense, even by my standards.",Ruda,,"výchozí reakce; %s = předmět, cíl"
 obecne_nic_k_videni,Nic zvláštního.,Nothing special.,Ruda,,výchozí reakce
 ch1_hs_schody,Schody do vestibulu,Stairs to the lobby,,,popisek aktivního místa (východ do S2; od N7 vedou schody do vestibulu)
 ch1_schody_prohlednout,"Schody nahoru. Jediná cesta ven, a i ta je ve fázi 2: zábradlí končí v půlce.","Stairs going up. The only way out, and even that's in phase two: the railing stops halfway.",Ruda,suše,
@@ -86,9 +86,13 @@ ui_dotyk_podrzet,Podržet = prohlédnout,Hold to look,,,"nastavení dotyku (výc
 ui_dotyk_nabidka,Nabídka po ťuknutí,Menu on tap,,,nastavení dotyku (D43)
 ui_prohlednout,Prohlédnout,Look,,,nabídka po ťuknutí (D43)
 ui_pouzit,Použít,Use,,,nabídka po ťuknutí (D43)
+ui_pouzit_na,%s + %s,%s + %s,,,"popisek při najetí s vybraným předmětem; %s = předmět, cíl"
 ui_titulky_autor,"Námět, scénář a výroba","Story, script and production",,,titulky
 ui_titulky_engine,Hra běží na,Made with,,,titulky
 ui_titulky_pismo,Písmo,Font,,,titulky
+ui_titulky_hudba,Hudba,Music,,,titulky
+ui_titulky_zvuky,Zvuky,Sounds,,,titulky
+ui_titulky_hudba_tema,vlastní téma hry,original game theme,,,titulky (hudba je složená pro hru)
 ui_titulky_dekujeme,"Díky, že hrajete.",Thanks for playing.,,,titulky
 Save,Uložit,Save,,,šablona Popochiu: klíčem je anglický text šablony
 Load,Načíst,Load,,,šablona Popochiu
@@ -443,7 +447,7 @@ predmet_seznam_prohlednout,Dvacet tři jmen. Všichni z Komise. Měla bych se zl
 obecne_bara_nelze,Tohle neměřím.,I don't measure that.,Bára,,výchozí reakce Báry
 obecne_bara_nelze_2,To by byl jen odhad. Neodhaduju.,That'd just be a guess. I don't guess.,Bára,,výchozí reakce Báry
 obecne_bara_nic_k_videni,"Nic, co by stálo za měření.",Nothing worth measuring.,Bára,,výchozí reakce Báry
-obecne_bara_pouzit_s,%s na %s? Ne. Fyzika by nesouhlasila.,%s on %s? No. Physics wouldn't agree.,Bára,,"výchozí reakce Báry; %s = předmět, cíl"
+obecne_bara_pouzit_s,%s a %s? Ne. Fyzika by nesouhlasila.,%s and %s? No. Physics wouldn't agree.,Bára,,"výchozí reakce Báry; %s = předmět, cíl"
 obecne_bara_vzit,Nechám to tu. Není to moje a není to změřené.,I'll leave it. It isn't mine and it isn't measured.,Bára,,výchozí reakce Báry
 obecne_bara_mluvit,Mluví se tu dost. Měří se málo.,There's plenty of talking around here. Not much measuring.,Bára,,výchozí reakce Báry
 ch1_pracovna_prichod,Druhé patro. Vzduch je tu jiný. Voní jako slavnostní projev.,Second floor. The air's different up here. Smells like a ceremonial speech.,Ruda,nasává vzduch,jen při prvním příchodu
@@ -633,6 +637,7 @@ ch1_babicka_prohlednout,"Babička na zápraží. Za ní dům, který je hotový.
 ch1_babicka_uvod,"Dobrý den, mladej. Zase někdo z radnice? Nebo jen bloudíte?","Afternoon, young man. Another one from the town hall? Or just lost?",Babička,suše,
 ch1_babicka_volba_dum,Váš dům je opravdu hotový?,Is your house really finished?,Ruda,,volba dialogu; odpověď je ch1_babicka_001
 ch1_babicka_001,"Mladej, můj dům tu stojí šedesát let. Jediná dokončená stavba ve městě. Proto se mnou nikdo nemluví. Nevědí, co se s hotovou věcí dělá.","Young man, my house has stood here for sixty years. The only finished building in town. That's why nobody talks to me. They don't know how to handle closure.",Babička,suše,replika z návrhu kapitoly 1
+ch1_babicka_001_obojek,"A jestli chcete vědět, komu tady co patří, podívejte se Mourkovi na obojek. Ten kocour má papíry v lepším pořádku než radnice.","And if you want to know who owns what around here, have a look at Marmalade's collar. That cat keeps better paperwork than the town hall.",Babička,suše,"nápověda k P1.10, jen když hráč nemá mapu a nečetl obojek"
 ch1_babicka_volba_pradlo,Pěkné prádlo.,Nice washing.,Ruda,,volba dialogu
 ch1_babicka_pradlo,Suší se třetí den. Rampa mi stíní.,Third day drying. The ramp blocks my sun.,Babička,suše,stopa: rampa
 ch1_babicka_volba_pocasi,Jak se máte?,How are you?,Ruda,,volba dialogu
@@ -781,6 +786,7 @@ ch1_pamet_slib,"Starosta si pamatuje, že jsi slíbil všechno. Do pátku. I s f
 ch1_pamet_babicka_spojenec,"Babička Pozemková si pamatuje, že ses jí zeptal.",Granny Plotkins remembers that you asked her.,,,c1_babicka = spojenec
 ch1_pamet_babicka_prehlizena,"Babička čeká, jestli se ještě někdo zastaví.",Granny's still waiting to see if anyone will stop by.,,,c1_babicka = prehlizena
 ch1_pamet_babicka_neodhalena,Pod rampou někdo bydlí. Zatím o tom nevíš.,Someone lives under the ramp. You don't know that yet.,,,c1_babicka = neodhalena
+ch1_pamet_babicka_potkana,"Babičku pod rampou jsi potkal. Čí je pozemek pod rampou, ses nezeptal.","You met the granny under the ramp. Whose land the ramp stands on, you never asked.",,,c1_babicka = neodhalena a hráč s babičkou mluvil
 ch1_pamet_babicka_odmitnuta,"Babička si pamatuje, že jsi spěchal.",Granny remembers that you were in a hurry.,,,c1_babicka = odmitnuta (K6)
 ch1_pamet_faze2_ne,"Předseda si pamatuje, že jsi nepřipsal „následné fáze“.",The Chairman remembers that you didn't add 'subsequent phases'.,,,c1_faze2 = false
 ch1_pamet_faze2_ano,"Předseda si pamatuje, že jsi podepsal „…a následné fáze“.",The Chairman remembers that you signed '...and subsequent phases'.,,,c1_faze2 = true
@@ -1389,3 +1395,22 @@ postava_norbert,Norbert Norma,Norman Standards,,,anglické jméno schváleno (D6
 postava_klara,Klára Maketová,Mona Mockup,,,anglické jméno schváleno (D69)
 postava_zdenda,Zdenda Známý,Benny Buddy,,,anglické jméno schváleno (D69)
 postava_krystof,Kryštof Krabička,Chip Checkbox,,,anglické jméno schváleno (D69)
+ui_denik,Deník projektového manažera,Project Manager's Diary,,,titulek deníku (D93)
+ui_denik_ukol,Aktuální úkol,Current task,,,nadpis v deníku
+ui_denik_pamet,Co si Nedostavěnice pamatuje,What Scope Creek remembers,,,nadpis v deníku
+ui_denik_pamet_nic,Zatím nic. Město si začne pamatovat na konci kapitoly.,Nothing yet. The town starts remembering at the end of the chapter.,,,deník v kapitole 1
+ui_denik_vse_hotovo,Všechno odškrtnuto. To se tu ještě nestalo.,Everything ticked off. That's a first around here.,,,deník: všechny kroky kapitoly hotové
+ch1_denik_krok_kdo,"Zjistit, kdo o Arše doopravdy rozhoduje.",Find out who really decides about the Ark.,,,krok v deníku
+ch1_denik_krok_cislo,Sehnat číslo projektu.,Get a project number.,,,krok v deníku
+ch1_denik_krok_archiv,Dostat se do archivu.,Get into the archive.,,,krok v deníku
+ch1_denik_krok_zadani,Najít původní zadání Archy.,Find the Ark's original brief.,,,krok v deníku
+ch1_denik_krok_vytah,Zprovoznit výtah do druhého patra.,Get the elevator to reach the second floor.,,,krok v deníku
+ch1_denik_krok_podpis,Získat podpis starosty.,Get the mayor's signature.,,,krok v deníku
+ch1_denik_krok_papir,Sepsat papír o Arše.,Write up the page about the Ark.,,,krok v deníku
+ch1_denik_krok_fronta,Vystát frontu v Komisi.,Queue up at the Committee.,,,krok v deníku
+ch1_denik_krok_razitko,Získat razítko Komise.,Get the Committee's stamp.,,,krok v deníku
+ui_klavesy,Klávesy: I inventář · mezerník aktivní místa · D deník,Keys: I inventory · Space active spots · D diary,,,nápověda kláves v nastavení
+ui_rychlost_pomalu,pomalu,slow,,,rychlost textu v nastavení
+ui_rychlost_stredne,středně,medium,,,rychlost textu v nastavení
+ui_rychlost_rychle,rychle,fast,,,rychlost textu v nastavení
+ui_rychlost_hned,hned celý,instant,,,rychlost textu v nastavení (text se ukáže naráz)

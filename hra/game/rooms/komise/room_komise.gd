@@ -23,9 +23,9 @@ func _on_room_entered() -> void:
 		C.player.position = get_hotspot("Fronta").walk_to_point
 		C.player.face_up()
 	else:
-		# Ruda vystoupí z výtahu (levá stěna)
-		C.player.position = Vector2(150, 800)
-		C.player.face_right()
+		# Ruda vystoupí z výtahu (zadní stěna vlevo od přepážek)
+		C.player.position = Vector2(215, 775)
+		C.player.face_down()
 
 
 # Called after the room transition completes; the room is now visible.

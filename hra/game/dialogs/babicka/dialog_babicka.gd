@@ -30,6 +30,9 @@ func _option_selected(_opt: PopochiuDialogOption) -> void:
 func _on_option_dum(_opt: PopochiuDialogOption) -> void:
 	await D.say_selected()
 	await C.Babicka.say("ch1_babicka_001")
+	if Globals.c1_babicka.is_empty() and not (I.is_item_in_inventory("Mapa") or Globals.obojek_videl):
+		# Hráč zatím neví, čí je pozemek pod rampou: babička ho pošle za kocourem (obojek, P1.10)
+		await C.Babicka.say("ch1_babicka_001_obojek")
 	await _po_volbe()
 
 

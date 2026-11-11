@@ -6,9 +6,11 @@
 script = ExtResource("1_bndht")
 script_name = "SchodySklep"
 description = "ch1_hs_schody_sklep"
-look_at_point = Vector2(60, 820)
+walk_to_point = Vector2(500, 885)
+look_at_point = Vector2(230, 900)
 cursor = 1
-interaction_polygon = PackedVector2Array(0, 640, 200, 640, 200, 1000, 0, 1000)
+interaction_polygon = PackedVector2Array(0, 772, 452, 772, 452, 1024, 0, 1024)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=789493964]
 visible = false

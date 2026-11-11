@@ -158,6 +158,77 @@ skoro stejné: 2,8–3,0 u všech animací. Hra přesto každou sadu škáluje (
 bokem a akce podle výšky, zepředu a zezadu podle průměru výšky a hlavy, `POMER_HLAVY = 2,9`),
 aby drobné rozdíly mezi listy nebyly vidět.
 
+## Mluvení vedlejších postav přes API (D89)
+
+Vedlejší postavy stojí na místě, při řeči jim stačí hýbat pusou. Překreslení celého listu fází
+(jako u Rudy) se u nich neosvědčilo: fáze k sobě seděly, ale postava vyšla jiná než schválená
+(`vratny-mluveni_v01`). Používá se úprava schváleného obrázku:
+
+1. `tools/grafika/usta.py predloha` složí list se třemi kopiemi stojícího obrázku na purpurové.
+2. API (gpt-image-2, úprava obrázku) změní jen obličeje: ústa dokořán (A), malá kulatá (O),
+   pootevřená se zuby (E). Zadání `<postava>-mluveni-uprava` v `tools/vzorky/zadani-kap1.json`.
+3. `tools/grafika/usta.py sloz` vezme z každé kopie jen oblast obličeje, která se změnila,
+   a vloží ji s měkkým okrajem do původního obrázku. Tělo je ve všech fázích na pixel stejné.
+4. Fáze jsou v `hra/grafika/postavy/<postava>_mluveni/faze_01–03.png`, stejně velké jako stojící
+   obrázek. Hra při řeči náhodně střídá tři fáze a zavřenou pusu (`hra/game/spolecne/usta.gd`).
+
+Jedna postava stojí asi 0,05 USD. Hotovo u babičky, Báry, Frameworka, kocoura, Lumíra, Předsedy,
+starosty, vrátného a Pana Změny.
+
+**Výřezy z bílého pozadí:** Bára byla nakreslená na bílém pozadí a ve výřezu zůstaly zbytky
+(stín pod botami, bílá mezi prameny vlasů). Dočištěno nástrojem `tools/grafika/docisti_vyrez.py`;
+nehodí se pro postavy s bílou nebo šedou na obrysu (tenisky, šedé vlasy, cenovky).
+
+## Chůze Báry přes API (D89)
+
+Bára chodí jen v úseku, kde ji ovládá hráč (archiv). Listy vznikly přes API podle jejího
+referenčního listu (`bara-list_v02`), každý 8 fází ve 2 řadách po 4 na purpurovém pozadí:
+`bara-chuze-bok`, `bara-chuze-predu`, `bara-chuze-zezadu` (zadání v `tools/vzorky/zadani-kap1.json`).
+
+```bash
+sh tools/grafika/zpracuj_chuzi.sh bara <python s Pillow, numpy a scipy>
+```
+
+Skript list rozřeže (`rozrez_list.py`), u chůze bokem přebarví červené šmouhy na nohavici, které
+model přidal do fází 3 a 4 (`odbarvi_skvrny.py`), a fáze zarovná a změří krok (`sestav_faze.gd`).
+
+- Stání zepředu a mluvení zůstává schválený obrázek s fázemi úst; stání bokem a zezadu je
+  nehybná fáze chůze.
+- Chůze má 8 fází (Ruda 12), střídají se tedy pomaleji. Když to bude ve hře působit trhaně,
+  dá se list bokem vygenerovat znovu s 12 fázemi.
+- Ruda i Bára používají společný skript `hra/game/spolecne/postava_faze.gd`; postava v něm
+  nastaví jen cestu k sadám, výšku a poměr hlavy.
+
+## Ruda v malířském stylu přes API (D92)
+
+Ruda z ChatGPT měl plošší stínování a světlejší barvy než vedlejší postavy z gpt-image-2 a ve
+scéně působil jako z jiné hry. Animace (počet fází, pózy, zarovnání) ale byly odladěné, proto
+se nekreslily znovu, jen se **přemalovaly**:
+
+1. Schválený vzor stylu: `ruda-novy-styl_v01` (tři pohledy, přemalovaný model podle vrátného,
+   Báry a starosty).
+2. `tools/grafika/ruda_listy.py listy` složí z fází ve hře listy na purpurovém pozadí, každá fáze
+   v buňce 512 × 512 (chůze bokem 12 fází, zepředu 8, zezadu 8, stání 4 + 4, akce 6 + 6).
+3. API dostane list a vzor stylu se zadáním „přemaluj, pózy a místa nech“ (vzorky `ruda-styl-*`).
+   Model pózy i pozice dodržel, takže chůze bokem má dál 12 fází a stejný rytmus kroku.
+4. `sh tools/grafika/zpracuj_rudu.sh <python>` listy rozřeže podle mřížky a zarovná
+   (`sestav_faze.gd`), model vezme ze vzoru stylu.
+
+**Mluvení** už není samostatný list: tělo je při řeči na pixel stejné jako při stání a mění se
+jen obličej a ruka s hrnkem. `tools/grafika/ruda_mluveni.py` složí z první fáze stání list tří
+kopií, API ho upraví dvakrát (jen ústa A, O, E; jen ruka s hrnkem: dole, výš, u hrudi) a z obou
+úprav se vezmou jen změněné oblasti. Bokem vznikne 8 fází (hrnek dole a výš × ústa zavřená, A, O, E),
+zepředu 9 (tři výšky hrnku × A, O, E; zavřená ústa tam chybí, protože model u otevřených zvedl
+obočí a to by při řeči poskakovalo). Hra střídá ústa rychle uvnitř jednoho gesta a gesto mění
+po 0,9–2,4 s o jeden stupeň (`postava_faze.gd`; velikost skupiny je ve `faze.json` sady).
+
+Z listu úst se bere jen obličej (pleť s očima, obočím a ústy) a kousek pod bradou, ne vlasy:
+model při úpravě přemaluje celou hlavu a vlasy by se při řeči vlnily (D93). Místa, která se
+nezměnila, zůstávají na pixel stejná jako stojící fáze.
+
+Původní listy z ChatGPT (`ruda-chuze-bok_v03` atd.) a skript `hra/nastroje/zpracuj_animace.sh`
+zůstávají jako záloha; ve hře jsou sady z listů `ruda-styl-*`.
+
 ## Jak to hra používá
 
 - **Pohled** podle směru: při chůzi podle směru pohybu (bokem, kdykoli jde aspoň trochu do strany),

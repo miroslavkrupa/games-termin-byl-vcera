@@ -6,9 +6,11 @@
 script = ExtResource("1_gimkd")
 script_name = "Vytah"
 description = "ch1_hs_vytah"
+walk_to_point = Vector2(135, 715)
 look_at_point = Vector2(135, 450)
 cursor = 1
-interaction_polygon = PackedVector2Array(58, 195, 213, 195, 213, 676, 58, 676)
+interaction_polygon = PackedVector2Array(24, 120, 234, 120, 234, 683, 24, 683)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=538270747]
 visible = false

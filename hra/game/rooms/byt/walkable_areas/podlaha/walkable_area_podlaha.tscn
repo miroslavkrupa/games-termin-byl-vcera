@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://game/rooms/byt/walkable_areas/podlaha/walkable_area_podlaha.gd" id="1_3h67w"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_k87lh"]
-vertices = PackedVector2Array(1536, 1010, 0, 1010, 150, 775, 1400, 775)
+vertices = PackedVector2Array(1536, 1010, 0, 1010, 20, 838, 1516, 838)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(150, 775, 1400, 775, 1536, 1010, 0, 1010)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(20, 838, 1516, 838, 1536, 1010, 0, 1010)])
 agent_radius = 0.0
 
 [node name="Podlaha" type="Node2D" unique_id=1080331496]
 script = ExtResource("1_3h67w")
 script_name = "Podlaha"
 description = "Podlaha"
-interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(150, 775, 1400, 775, 1536, 1010, 0, 1010)])
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(20, 838, 1516, 838, 1536, 1010, 0, 1010)])
 
 [node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=1799247730]
 visible = false

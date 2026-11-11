@@ -1,0 +1,305 @@
+{
+ "kolo": "kapitola 1, doplnění grafiky přes API",
+ "model": "gpt-image-2",
+ "kvalita": "medium",
+ "typy": {},
+ "palety": {},
+ "vzorky": [
+  {
+   "id": "a-byt-siroke",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/byt_predloha.png",
+    "hra/grafika/mistnosti/vestibul.png",
+    "hra/grafika/mistnosti/pracovna.png"
+   ],
+   "zadani": "The second and third image are finished backgrounds from a 2D point-and-click comedy adventure game. Paint a new background for the same game: exactly the same drawing style, line work, shading, hand-painted texture, color saturation, lighting and the same kind of room perspective as those two images (a real room seen slightly from above: back wall, parts of the side walls and of the ceiling visible, floor in perspective with a clear grid of worn tiles or linoleum squares).\nThe first image is only a rough flat placement sketch for the new room. Take from it only what objects there are and where they are: keep every object at the same horizontal position, at the same height on the wall and at about the same size as in the sketch, and keep the line where the floor meets the back wall at the same height. Do not copy the flat look of the sketch: redraw every object as a crooked, bulging, hand-drawn caricature object with volume and thickness.\nThe scene: a shabby one-room flat in an unfinished concrete panel apartment block. A big part of the back wall is missing: a large ragged hole with broken bricks and bent rebar around it, through it a view of the town with unfinished grey panel blocks, a construction crane and a small comet with a glowing tail in the hazy sky. A yellow rubble chute leads from the hole down to a pile of rubble, yellow and black warning tape hangs loosely across the hole. On the left a crooked wooden shelf unit, completely empty and dusty except for one small framed photo, no books on it. On the wall a proud wall of fame: thirteen small framed diplomas with red wax seals, hanging slightly askew in rows, one bare nail where a fourteenth is missing, and a framed chart with a single long teal bar. A wobbly wooden trestle table with a few loose papers and an old teal rotary telephone with a curly cord, no mug and no cup on the table. On the right a rust-brown apartment door hanging a little crooked in its frame, with a brass knob, several envelopes and bills pushed through the gap under the door lie on the floor in front of it. A bare light bulb hangs on a wire from the ceiling. Walls like in the reference images: ochre plaster above, a faded teal painted band below with peeling patches, plus visible concrete panel joints and a few exposed pipes.\nThe left and right outer sixths of the image show only walls and floor, nothing important.\nWarm muted palette of ochre, rust and faded teal with yellow construction accents, simplified exaggerated shapes, nothing is perfectly straight, bold thick dark-brown outlines around every object, flat colors with simple soft shading, moderate amount of detail, clear open walkable floor in the lower quarter of the image, flat even ground plane, no fisheye lens distortion, not realistic, no text, no letters, no numbers, no logos, no people"
+  },
+  {
+   "id": "byt-kulisy",
+   "velikost": "1024x1024",
+   "pruhledne": true,
+   "reference": [
+    "hra/grafika/predmety/kava.png",
+    "hra/grafika/predmety/pembok.png",
+    "hra/grafika/mistnosti/vestibul.png"
+   ],
+   "zadani": "Two separate props for a 2D point-and-click comedy adventure game, drawn large, far apart, not touching, in exactly the drawing style, line work and coloring of the reference images. On the left: the white coffee mug from the first reference image, full of black coffee, without steam, standing, seen from the side slightly from above. On the right: the old brown leather book from the second reference image, but closed and lifeless: no face, no eyes, no mouth, no tongue; a brand new unopened gift still wrapped in clear shiny cellophane with a few white highlight streaks and a small yellow round sticker, standing upright, its front cover and spine visible. Bold thick dark-brown outlines, flat colors with simple soft shading, warm muted palette. No text, no letters, no numbers"
+  },
+  {
+   "id": "vestibul-kulisy",
+   "velikost": "1024x1024",
+   "pruhledne": true,
+   "reference": [
+    "hra/grafika/mistnosti/vestibul.png",
+    "hra/grafika/predmety/tlacitko.png"
+   ],
+   "zadani": "Two separate props for a 2D point-and-click comedy adventure game, drawn large, far apart, not touching, seen straight from the front, in exactly the drawing style, line work and coloring of the first reference image (a finished background from the same game). On the left: an old tin wall sign in landscape format, faded teal enamel with a cream border line, a rusty screw in each corner, slightly dented, a few rust stains; on it a simple cream pictogram of an archive box with a folder sticking out, and below it a big yellow arrow pointing straight down. On the right: a tall narrow brass elevator call panel in portrait format, the same worn brass as the button plate in the second reference image, with a small blank cream display slot at the top and three round positions one above another: the top one is a cream button engraved with the digit 1, the middle one is a cream button engraved with 1½, the bottom one is missing, just an empty dark round hole with two short loose wires sticking out. Bold thick dark-brown outlines, flat colors with simple soft shading, warm muted palette. No other text, no letters"
+  },
+  {
+   "id": "vratny-mluveni",
+   "velikost": "1536x1024",
+   "pruhledne": true,
+   "reference": [
+    "docs/styl/vzorky/vratny-list_v01.png"
+   ],
+   "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a talking animation sheet of exactly this character in front view: 6 frames in 2 rows of 3.\nIn every frame he stands in exactly the same pose as the front view on the model sheet: the same size, the same feet, legs, body, uniform, cap, moustache, and the same thermos flask and folded crossword newspaper held in the same hands in the same way. Only the face is animated: a different mouth shape in each frame (1 closed, 2 slightly open, 3 wide open, 4 round like saying O, 5 open showing teeth, 6 half open), the moustache moves a little with the mouth, the sleepy half-closed eyes and the eyebrows change slightly, in frames 3 and 5 the head tilts very slightly.\nRULES: Draw exactly the same character as the model sheet. Same scale and proportions in every frame, same head size, same body width, same leg length, same shoe size. The props never switch hands.\nAll frames in an even grid, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders"
+  },
+  {
+   "id": "vratny-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/vratny_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A, eyebrows slightly raised. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E, one eyebrow a little lower. In every copy the moustache moves a little with the mouth and the eyes stay sleepy and half closed.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the cap, hair, ears, nose, the whole body, uniform, buttons, hands, thermos flask, crossword newspaper, trousers, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "babicka-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/babicka_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. She is a kind but stubborn old village grandmother: the eyes stay clever and narrowed, the cheeks stay round.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "bara-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/bara_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. She is a calm, skeptical young engineer looking to the side: the eyes behind the round glasses keep looking the same way, one eyebrow moves slightly.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "framework-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/framework_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a slick consultant with a big salesman smile: he keeps smiling while he talks, the eyebrows move slightly.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "kocour-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/kocour_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. It is a fat, deeply judgmental ginger cat. Left copy: mouth wide open in a loud meow, showing small fangs and a pink tongue. Middle copy: mouth slightly open, as if muttering. Right copy: mouth open on one side in a grumpy half-meow. The frowning half-closed eyes stay the same, the whiskers move a little with the mouth.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "lumir-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/lumir_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a monotonous, very neat archivist with thick glasses: small restrained mouth movements, the eyes stay calm.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "predseda-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/predseda_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a calm, patient, grandfatherly old bureaucrat: small polite mouth movements, the calm eyes behind the small round glasses stay the same.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "starosta-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/starosta_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a jolly mayor with a wide smile made for cameras: he keeps smiling while he talks, the eyes stay narrowed with laughter.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "zmena-mluveni-uprava",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/zmena_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a restless, excited market vendor with wild eyebrows: the wide eyes stay wide, the eyebrows jump a little.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "bara-chuze-bok",
+   "velikost": "1536x1024",
+   "pruhledne": true,
+   "reference": [
+    "docs/styl/vzorky/bara-list_v02.png"
+   ],
+   "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a walk cycle of exactly this character in side view walking to the right: 8 frames in 2 rows of 4. Frames 1-4 are one step with the leg closer to the viewer: 1 contact (near leg forward, heel touching the ground, far leg back), 2 down (weight on the near leg, knees bent), 3 passing (far leg passing the near leg, body at its highest), 4 up (far leg swinging forward, pushing off with the near toe). Frames 5-8 are the same step with the far leg forward. The two halves must clearly differ: in frames 1-4 the near leg leads, in frames 5-8 the far leg leads. Frame 8 flows smoothly back into frame 1. Classic hand-drawn 2D adventure game animation: lively, slightly exaggerated, knees bend, the hair bounces a little. The head stays at almost the same height in all frames.\nRULES: Draw exactly the same character as on the model sheet: the same face, round glasses, messy red bob haircut, rust-red shirt with rolled-up sleeves, teal overalls with brass buckles and rolled-up cuffs, yellow measuring tape on her left hip, yellow socks, brown work boots. Same scale and proportions in every frame: the same head size, body width, leg length and boot size as on the model sheet.\nShe holds the dark tablet against her chest with both hands, the same way in every frame; the arms stay almost still. Only the legs and the body move.\nAll frames in an even grid of 2 rows of 4, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders"
+  },
+  {
+   "id": "bara-chuze-predu",
+   "velikost": "1536x1024",
+   "pruhledne": true,
+   "reference": [
+    "docs/styl/vzorky/bara-list_v02.png"
+   ],
+   "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a walk cycle of exactly this character in front view walking toward the viewer, walking in place (the figure does not get bigger or move sideways): 8 frames in 2 rows of 4. Frames 1-4 one step with her right leg, frames 5-8 with her left leg: contact, down, passing, up. The lifted foot and knee come clearly forward, the body sways very slightly from side to side, the head stays at almost the same height. She looks straight ahead at the viewer.\nRULES: Draw exactly the same character as on the model sheet: the same face, round glasses, messy red bob haircut, rust-red shirt with rolled-up sleeves, teal overalls with brass buckles and rolled-up cuffs, yellow measuring tape on her left hip, yellow socks, brown work boots. Same scale and proportions in every frame: the same head size, body width, leg length and boot size as on the model sheet.\nShe holds the dark tablet against her chest with both hands, the same way in every frame; the arms stay almost still. Only the legs and the body move.\nAll frames in an even grid of 2 rows of 4, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders"
+  },
+  {
+   "id": "bara-chuze-zezadu",
+   "velikost": "1536x1024",
+   "pruhledne": true,
+   "reference": [
+    "docs/styl/vzorky/bara-list_v02.png"
+   ],
+   "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a walk cycle of exactly this character in back view walking away from the viewer, walking in place (the figure does not get smaller or move sideways): 8 frames in 2 rows of 4. Frames 1-4 one step with her right leg, frames 5-8 with her left leg: contact, down, passing, up. The sole of the lifted boot is visible from behind, the body sways very slightly from side to side, the head stays at almost the same height. Her elbows are visible at the sides because she holds the tablet in front of her.\nRULES: Draw exactly the same character as on the model sheet: the same face, round glasses, messy red bob haircut, rust-red shirt with rolled-up sleeves, teal overalls with brass buckles and rolled-up cuffs, yellow measuring tape on her left hip, yellow socks, brown work boots. Same scale and proportions in every frame: the same head size, body width, leg length and boot size as on the model sheet.\nShe holds the dark tablet against her chest with both hands, the same way in every frame; the arms stay almost still. Only the legs and the body move.\nAll frames in an even grid of 2 rows of 4, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders"
+  },
+  {
+   "id": "gui-prvky",
+   "velikost": "1536x1024",
+   "pruhledne": true,
+   "reference": [
+    "hra/grafika/mistnosti/vestibul.png",
+    "hra/grafika/predmety/zadani.png"
+   ],
+   "zadani": "A sheet of six separate, completely empty user interface elements for a 2D point-and-click comedy adventure game, drawn in exactly the drawing style, line work and coloring of the reference images (hand-drawn caricature, bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette). All elements are seen straight from the front, flat, not rotated, not tilted, with straight but slightly wobbly hand-drawn edges, far apart from each other, not touching.\n1. Top left, very large (about half of the image): a big empty sheet of old cream office paper pinned to a slightly larger piece of brown cardboard, landscape rectangle, with one small dog-eared corner, a few faint stains near the edges, the middle perfectly clean and evenly cream.\n2. Top right: a wide, low, empty index card, very light cream, clean, landscape strip about five times wider than high.\n3. Middle right: a wide, low, empty recessed form field, a slightly darker beige rectangle with a thin inner shadow, about five times wider than high.\n4. Bottom left: an empty rust-orange enamel sign plate with a small rivet in each corner, landscape, about three times wider than high.\n5. Bottom middle: the same empty sign plate in faded teal.\n6. Bottom right: a small empty square cream button with rounded corners.\nNothing is written or drawn on any element: no text, no letters, no numbers, no icons, no lines of writing"
+  },
+  {
+   "id": "pracovna-vytah",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/pracovna_2224.png",
+    "hra/grafika/mistnosti/vestibul.png"
+   ],
+   "zadani": "The first image is a finished background of a mayor's office from a 2D point-and-click comedy adventure game. Edit only the wooden door in the left wall. Replace the wooden door with the door of an old elevator, the same elevator as in the middle of the second image (a lobby from the same game): two closed sliding door panels of worn, stained brass with a dark gap between them, no door handle, set in the same cream stone door frame that is already there, and above the frame a small half-round floor indicator dial with a red needle. Next to the frame, on the wall, a small brass call button plate with one round button. The elevator door stands at the same place, has the same size and the same perspective as the wooden door had; the red carpet still leads to it.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters"
+  },
+  {
+   "id": "namesti-amplion",
+   "velikost": "1024x1024",
+   "pruhledne": true,
+   "reference": [
+    "hra/grafika/mistnosti/namesti_den_siroke.png"
+   ],
+   "zadani": "One prop for a 2D point-and-click comedy adventure game, drawn large in the middle of the image, in exactly the drawing style, line work and coloring of the reference image (a finished background from the same game): an old town public address loudspeaker set as it hangs on a street lamp pole. A short vertical piece of dark blue metal pole (the same dark blue as the street lamp in the reference image) runs through the middle from the top edge of the prop to its bottom edge; clamped to it with a rusty iron bracket are two old horn loudspeakers, dented grey-green metal with rust stains, one horn pointing to the left and slightly down, the other pointing to the right and slightly up, wide round horn mouths, a loose black cable hanging in a loop between them. Bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette. No text, no letters"
+  },
+  {
+   "id": "ruda-novy-styl",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_3pohledy.png",
+    "hra/grafika/postavy/vratny_stoji/vratny_stoji.png",
+    "hra/grafika/postavy/bara_stoji/bara_stoji.png",
+    "hra/grafika/postavy/starosta_stoji/starosta_stoji.png"
+   ],
+   "zadani": "The first image shows the main character of a 2D point-and-click comedy adventure game in three views (front view, side view facing right, back view) on a flat magenta background. The other images show finished characters from the same game. Repaint the main character so that he looks painted by the same hand as those other characters: exactly their painting style, the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, the same amount of detail in the face, hair, hands and shoes, and the same muted warm color palette. His shirt is a slightly yellowed off-white with clearly shaded folds, not flat pure white; the trousers are faded worn denim blue; the tie a duller brick red with stripes; the mug a warm cream white.\nKeep who he is and how he stands: the same lanky figure and big head, messy spiky brown hair, long pointy pink nose, sleepy half-closed eyes and smug little smile, white shirt with rolled-up sleeves, loose red striped tie, belt, blue trousers ending above the ankles, yellow socks, brown leather shoes, a brown clipboard in one hand and a coffee mug in the other. Keep the three views, each at the same position and the same size as in the first image, the same poses. Flat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text"
+  },
+  {
+   "id": "vestibul-schody-podlaha",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/vestibul_2224.png",
+    "tools/vzorky/predlohy/vestibul_2224_znacka.png"
+   ],
+   "zadani": "The first image is a finished background of a town hall lobby from a 2D point-and-click comedy adventure game. The second image is the same picture with a red rectangle that marks a place on the floor in the lower left part, in front of the wooden porter's booth. Edit the first image only inside the place marked by that red rectangle: add there a stairwell opening in the floor with a staircase that clearly leads DOWN to the basement. It is a rectangular hole in the tiled floor, as large as the marked place, with a low worn cream stone curb (the same stone as the elevator door frame) along its far edge and along its right edge. Inside it, worn grey stone steps descend from the right side down to the left into the dark; the inner walls of the stairwell are dark bluish-brown brick, and a small caged basement lamp glows weakly deep inside. A short crooked iron handrail runs along the left edge of the opening only. The opening continues down to the bottom edge of the image, seen from above in the same perspective as the floor tiles.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters. Do not draw the red rectangle itself",
+   "poznamka": "Druhá předloha je táž scéna s červeným obdélníkem na místě úpravy; vyrobí se z predlohy/<místnost>_2224.png (obdélník viz D92 a tools/grafika/dokresli_pozadi.py)."
+  },
+  {
+   "id": "komise-vytah-prepazka",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/komise_2224.png",
+    "tools/vzorky/predlohy/komise_2224_znacka.png",
+    "hra/grafika/mistnosti/vestibul.png"
+   ],
+   "zadani": "The first image is a finished background of a committee hall in a town hall from a 2D point-and-click comedy adventure game. The second image is the same picture with a red rectangle that marks the left end of the long wooden counter. Edit the first image only inside the place marked by that red rectangle: remove the leftmost section of the wooden counter (the first shuttered window with its brass sign, the paper stacks standing there and the part of the counter below it), so that the counter begins with a proper carved wooden end post just right of the marked place and has only two shuttered windows left. In the freed place show the back wall of the room (the same ochre plaster above and peeling teal paint below, with the skirting board) and in that wall the door of an old elevator, the same elevator as in the middle of the third image (a lobby from the same game): two closed sliding door panels of worn, stained brass with a dark gap between them, set in a worn cream stone door frame, above the frame a small half-round floor indicator dial with a red needle, and on the wall right next to the frame a small brass call button plate. The elevator door stands on the line where the back wall meets the floor and is about as tall as the wooden counter. The brass posts with the red ropes in front stay exactly where they are, drawn in front of the elevator door.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters. Do not draw the red rectangle itself",
+   "poznamka": "Druhá předloha je táž scéna s červeným obdélníkem na místě úpravy; vyrobí se z predlohy/<místnost>_2224.png (obdélník viz D92 a tools/grafika/dokresli_pozadi.py)."
+  },
+  {
+   "id": "ruda-styl-chuze-bok",
+   "velikost": "2048x1536",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_chuze_bok_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+   ],
+   "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 12 times in an even grid on a flat magenta background, each figure in a slightly different pose (the 12 frames of a walk cycle in side view, read left to right and top to bottom). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines"
+  },
+  {
+   "id": "ruda-styl-chuze-predu",
+   "velikost": "2048x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_chuze_predu_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+   ],
+   "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 8 times in an even grid on a flat magenta background, each figure in a slightly different pose (the 8 frames of a walk cycle in front view, walking toward the viewer). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines"
+  },
+  {
+   "id": "ruda-styl-chuze-zezadu",
+   "velikost": "2048x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_chuze_zezadu_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+   ],
+   "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 8 times in an even grid on a flat magenta background, each figure in a slightly different pose (the 8 frames of a walk cycle in back view, walking away from the viewer). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines"
+  },
+  {
+   "id": "ruda-styl-stani",
+   "velikost": "2048x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_stani_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+   ],
+   "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 8 times in an even grid on a flat magenta background, each figure in a slightly different pose (the frames of an idle animation: top row side view with a small sip of coffee, bottom row front view with a blink). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines"
+  },
+  {
+   "id": "ruda-styl-akce",
+   "velikost": "2048x1536",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_akce_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+   ],
+   "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 12 times in an even grid on a flat magenta background, each figure in a slightly different pose (the frames of two short actions in side view: first six figures picking something up from the ground, last six figures reaching forward to use something). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines"
+  },
+  {
+   "id": "ruda-mluveni-bok-usta",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_bok_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies in side view facing right on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A, eyebrows slightly raised. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E, one eyebrow a little lower. In every copy the eyes stay sleepy and half closed. The arms, the hands and the coffee mug do not move.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the hair, ears, nose, the whole body, shirt, tie, belt, the clipboard and the hand holding it, trousers, socks, shoes, the outlines, colors and painted shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "ruda-mluveni-bok-gesta",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_bok_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies in side view facing right on a flat magenta background. Edit only the arm and hand that hold the coffee mug, to make a small gesture for a talking animation. Left copy: change nothing at all. Middle copy: the hand with the mug is lifted a little, about one mug height higher than in the left copy. Right copy: the hand with the mug is lifted to chest height in a small self-confident gesture, as if making a point while talking. The mug stays upright in every copy, stays clearly below the chin and never covers the face or the tie knot. The faces do not change: same closed smiling mouth and sleepy eyes in all three copies.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the hair, ears, nose, the whole body, shirt, tie, belt, the clipboard and the hand holding it, trousers, socks, shoes, the outlines, colors and painted shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "ruda-mluveni-predu-usta",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_predu_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies in front view on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A, eyebrows slightly raised. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E, one eyebrow a little lower. In every copy the eyes stay sleepy and half closed. The arms, the hands and the coffee mug do not move.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the hair, ears, nose, the whole body, shirt, tie, belt, the clipboard and the hand holding it, trousers, socks, shoes, the outlines, colors and painted shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "ruda-mluveni-predu-gesta",
+   "velikost": "1536x1024",
+   "reference": [
+    "tools/vzorky/predlohy/ruda_predu_3x.png"
+   ],
+   "zadani": "This image shows the same game character three times, three identical copies in front view on a flat magenta background. Edit only the arm and hand that hold the coffee mug, to make a small gesture for a talking animation. Left copy: change nothing at all. Middle copy: the hand with the mug is lifted a little, about one mug height higher than in the left copy. Right copy: the hand with the mug is lifted to chest height in a small self-confident gesture, as if making a point while talking. The mug stays upright in every copy, stays clearly below the chin and never covers the face or the tie knot. The faces do not change: same closed smiling mouth and sleepy eyes in all three copies.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the hair, ears, nose, the whole body, shirt, tie, belt, the clipboard and the hand holding it, trousers, socks, shoes, the outlines, colors and painted shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything"
+  },
+  {
+   "id": "archiv-rozsireni",
+   "velikost": "2224x1024",
+   "reference": [
+    "tools/vzorky/predlohy/archiv_2224.png",
+    "docs/styl/vzorky/a-archiv-siroke_v01.png"
+   ],
+   "zadani": "The first image is a finished background of a basement archive from a 2D point-and-click comedy adventure game, placed in the middle of a wider canvas. The two flat magenta strips at the far left and the far right are empty. Extend the picture into both magenta strips so that the whole canvas shows one continuous room: on the left continue the tall metal shelves full of dusty boxes, binders and paper stacks towards the viewer, with the floor and the ceiling continuing naturally; on the right continue the wooden and metal shelves, the green metal cabinet, boxes and the floor. Use the second image (a wider view of a similar archive) only as a guide for what kind of things stand at the sides. Paint the new parts in exactly the drawing style, line work, colors, lighting and perspective of the first image, so that no seam is visible where the old picture ends.\nThe middle part, everything that is already painted in the first image, must stay exactly as it is, unchanged and at the same place. No magenta may remain anywhere. No people, no text, no letters",
+   "maska": "tools/vzorky/predlohy/archiv_2224_maska.png"
+  },
+  {
+   "id": "kocour-novy-styl",
+   "velikost": "1024x1024",
+   "reference": [
+    "tools/vzorky/predlohy/kocour_1x.png",
+    "hra/grafika/postavy/vratny_stoji/vratny_stoji.png",
+    "hra/grafika/postavy/babicka_stoji/babicka_stoji.png"
+   ],
+   "zadani": "The first image shows a character of a 2D point-and-click comedy adventure game on a flat magenta background: a fat ginger tomcat sitting upright and looking smug. The other images show finished human characters from the same game. Repaint the cat so that he looks painted by the same hand as those characters and has real volume instead of looking like a flat paper cut-out: rich hand-painted shading with soft gradients, a clearly round belly and chest, rounded paws and cheeks, a darker shaded underside and side away from the light, lighter fur on top, visible fur texture with small tufts along the outline, bold dark-brown outlines with varying weight, the same muted warm palette. Keep exactly the same cat: the same sitting pose, the same position and size in the image, the same face and expression, ears (one torn), stripes, tail and collar with its tag. Flat pure magenta (#FF00FF) background everywhere, no ground, no shadow, no text"
+  }
+ ]
+}

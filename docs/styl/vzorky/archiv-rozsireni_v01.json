@@ -1,0 +1,14 @@
+{
+  "id": "archiv-rozsireni",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/archiv_2224.png",
+    "docs/styl/vzorky/a-archiv-siroke_v01.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a finished background of a basement archive from a 2D point-and-click comedy adventure game, placed in the middle of a wider canvas. The two flat magenta strips at the far left and the far right are empty. Extend the picture into both magenta strips so that the whole canvas shows one continuous room: on the left continue the tall metal shelves full of dusty boxes, binders and paper stacks towards the viewer, with the floor and the ceiling continuing naturally; on the right continue the wooden and metal shelves, the green metal cabinet, boxes and the floor. Use the second image (a wider view of a similar archive) only as a guide for what kind of things stand at the sides. Paint the new parts in exactly the drawing style, line work, colors, lighting and perspective of the first image, so that no seam is visible where the old picture ends.\nThe middle part, everything that is already painted in the first image, must stay exactly as it is, unchanged and at the same place. No magenta may remain anywhere. No people, no text, no letters",
+  "cena_usd": 0.0588
+}

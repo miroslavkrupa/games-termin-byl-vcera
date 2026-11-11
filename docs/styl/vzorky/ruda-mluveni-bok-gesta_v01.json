@@ -1,0 +1,13 @@
+{
+  "id": "ruda-mluveni-bok-gesta",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/ruda_bok_3x.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "This image shows the same game character three times, three identical copies in side view facing right on a flat magenta background. Edit only the arm and hand that hold the coffee mug, to make a small gesture for a talking animation. Left copy: change nothing at all. Middle copy: the hand with the mug is lifted a little, about one mug height higher than in the left copy. Right copy: the hand with the mug is lifted to chest height in a small self-confident gesture, as if making a point while talking. The mug stays upright in every copy, stays clearly below the chin and never covers the face or the tie knot. The faces do not change: same closed smiling mouth and sleepy eyes in all three copies.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the hair, ears, nose, the whole body, shirt, tie, belt, the clipboard and the hand holding it, trousers, socks, shoes, the outlines, colors and painted shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything",
+  "cena_usd": 0.0547
+}

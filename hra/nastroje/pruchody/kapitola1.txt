@@ -109,6 +109,7 @@ ma Papir
 akce Fronta:pouzit
 mistnost Archiv
 hrac Bara
+nevidi Ruda
 akce HlubokyRegal:prohlednout,HlubokyRegal:prohlednout,Lumir:prohlednout
 pouzij Metr:HlubokyRegal
 mistnost Komise

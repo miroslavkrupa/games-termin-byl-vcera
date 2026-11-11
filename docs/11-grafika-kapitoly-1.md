@@ -125,6 +125,29 @@ Pořadí ikon: 1 dekret politý kávou, 2 hrnek kávy, 3 propiska bez inkoustu, 
 Archy; 10 karta poučení (most 1974), 11 katastrální mapa, 12 razítková poduška, 13 podpis sponzora,
 14 charter, 15 klíč od hangáru, 16 Bářin metr, 17 seznam pasažérů.
 
+## Krok 5: doplnění přes API (D89)
+
+Zbylou grafiku kapitoly 1 generuje Claude přes OpenAI API (gpt-image-2). Zadání jsou
+v `tools/vzorky/zadani-kap1.json`, předlohy v `tools/vzorky/predlohy/`:
+
+```bash
+python3 tools/generuj_vzorky.py --spec tools/vzorky/zadani-kap1.json --klic <NÁZEV_KLÍČE> --only <id>
+```
+
+- **Pozadí** (`a-byt-siroke`): model dostane rozvrženou skicu (co kde je) a dvě schválená pozadí
+  jako vzor stylu a perspektivy, rozměr 2224 × 1024, do hry se ořízne na 2218 × 1024. Zadání musí
+  říct, že skica určuje jen rozmístění; jinak model okopíruje i její plochý pohled (v01).
+- **Kulisy** (`byt-kulisy`, `vestibul-kulisy`): na jednolitém purpurovém pozadí, vyříznutí
+  `tools/grafika/vyrez.py`. Panel výtahu s tlačítkem 2 je složený z tlačítka 1, aby se při
+  zapojení změnilo jen to jedno tlačítko. Cedule archivu má piktogram místo nápisu (žádný text,
+  funguje i v angličtině).
+- **Rozhraní** (`gui-prvky`): jeden list se šesti prázdnými prvky (papír na kartonu, lístek,
+  zapuštěné pole, rezavý a petrolejový smaltovaný štítek, malé tlačítko). `tools/grafika/gui_prvky.py`
+  je uloží do `hra/grafika/gui/`, hra je roztahuje jako devítidílné textury
+  (`Styl.malovany` a `Styl.podle_barvy` v `hra/game/obrazovky/styl.gd`). Minihry a obrazovky dál
+  říkají jen barvu (papír, lístek, rez), vzhled se mění na jednom místě.
+- **Mluvení postav** (`<postava>-mluveni-uprava`): postup v [animacích postav](styl/animace-postav.md#mluvení-vedlejších-postav-přes-api-d89).
+
 ## Stav
 
 | Krok | Soubory | Stav |
@@ -133,3 +156,13 @@ Archy; 10 karta poučení (most 1974), 11 katastrální mapa, 12 razítková pod
 | 2 | `a-vestibul`, `a-pracovna`, `a-komise`, `a-chaloupka`, `a-archiv-siroke` | ☑ hotovo, [hodnocení](styl/vzorky/hodnoceni-pozadi-kap1.md) |
 | 3 | 7 listů postav + kocour | ☑ hotovo, [hodnocení](styl/vzorky/hodnoceni-postavy-ikony-kap1.md) |
 | 4 | `ikony-1`, `ikony-2` | ☑ hotovo, [hodnocení](styl/vzorky/hodnoceni-postavy-ikony-kap1.md) |
+| 5 | `a-byt-siroke` (v02), `byt-kulisy`, `vestibul-kulisy` | ☑ ve hře (D89) |
+| 5 | mluvení 9 vedlejších postav (`<postava>-mluveni-uprava`) | ☑ ve hře (D89) |
+| 5 | chůze Báry (`bara-chuze-bok`, `-predu`, `-zezadu`) | ☑ ve hře (D89) |
+| 5 | malované prvky rozhraní (`gui-prvky`): okna miniher, karta kapitoly, tlačítka menu | ☑ ve hře (D89) |
+| 6 | dokreslení pozadí (`vestibul-schody-podlaha`, `komise-vytah-prepazka`, `pracovna-vytah`), amplion (`namesti-amplion`) | ☑ ve hře (D92) |
+| 6 | lišta a okna šablony v malovaném stylu, ikony nápovědy myši | ☑ ve hře (D92) |
+| 6 | Ruda v malířském stylu ostatních postav (`ruda-novy-styl`, `ruda-styl-*`, `ruda-mluveni-*`) | ☑ ve hře (D92): chůze, stání, akce, mluvení s gesty |
+| 7 | široký archiv (`archiv-rozsireni`), stojací ukazatel k archivu, kocour (`kocour-novy-styl`, `kocour-mluveni-uprava` v02) | ☑ ve hře (D93) |
+| 7 | ikony: šlápoty u východů, tlačítko deníku, značka aktivního místa (`tools/grafika/gui_ikony.py`) | ☑ ve hře (D93) |
+| – | zvuky a hudba | ☑ zapojeno, čeká na poslech ([zvuk](15-zvuk.md), D90, D91) |

@@ -58,5 +58,5 @@ position = Vector2(650, 785)
 walk_to_point = Vector2(-150, 70)
 
 [node name="CharacterKocour" parent="Characters" unique_id=116666946 instance=ExtResource("10_c4q3n")]
-position = Vector2(1212, 655)
+position = Vector2(1212, 700)
 walk_to_point = Vector2(-110, 200)

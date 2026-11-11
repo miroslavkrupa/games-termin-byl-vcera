@@ -1,18 +1,50 @@
 # @popochiu-docs-ignore-class
 @tool
-extends PopochiuCharacter
+extends "res://game/spolecne/postava_faze.gd"
 # You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
 # Use `await E.queue([])` to pause execution until the sequence completes.
 
 const Data := preload('character_bara_state.gd')
+
+## Výška Báry proti Rudovi ve stejné hloubce scény: Bára je menší postavy, ale ne trpaslík
+const PROTI_RUDOVI := 0.8
+## Výška Rudy v souřadnicích postavy (k ní jsou nastavené oblasti hloubky v místnostech)
+const VYSKA_RUDY := 988.0
 
 var state: Data = load("res://game/characters/bara/character_bara.tres")
 
 
 #region Virtual ####################################################################################
 # Called when the room where this character is located has finished being added to the scene tree.
-func _on_room_set() -> void:
-	pass
+func _nastav_animace() -> void:
+	# Chůze bokem, zepředu a zezadu (úsek za Báru, D89); stání zepředu a mluvení je schválený
+	# klidový obrázek ze scény s fázemi úst
+	vzor_sad = "res://grafika/postavy/bara_%s/"
+	vyska_postavy = 250.0
+	pomer_hlavy = 3.0
+	usta_nazev = "bara"
+	mimo_hru_klid = true
+
+
+# Jako vedlejší postava stojí Bára na místě v pevné velikosti (oblast hloubky ji nemění).
+# Když se za ni hraje (úsek v archivu), chodí scénou a musí se s hloubkou zvětšovat a zmenšovat
+# jako Ruda, jinak je vepředu proti ostatním poloviční.
+func _physics_process(delta: float) -> void:
+	super(delta)
+	if Engine.is_editor_hint():
+		return
+	if C.player != self:
+		if scale != Vector2.ONE:
+			scale = Vector2.ONE
+		return
+	var hloubka := R.current.get_node_or_null("Regions/Hloubka") as PopochiuRegion \
+		if is_instance_valid(R.current) else null
+	if hloubka == null or not hloubka.scaling:
+		return
+	var vysky: Array = Array(hloubka.interaction_polygon).map(func(b: Vector2) -> float: return b.y)
+	var podil := clampf(inverse_lerp(vysky.min(), vysky.max(), position.y), 0.0, 1.0)
+	var podle_hloubky := lerpf(hloubka.scale_top, hloubka.scale_bottom, podil)
+	scale = Vector2.ONE * (VYSKA_RUDY * PROTI_RUDOVI * podle_hloubky / vyska_postavy)
 
 
 # Called when the character is clicked
@@ -54,39 +86,6 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 			await C.player.say("ch1_bara_dekret")
 		_:
 			E.command_fallback()
-
-
-# Override this to alter the idle animation or hook custom logic to it. 
-# By default, it plays the "idle" animation from the character's Sprite.
-func _play_idle() -> void:
-	# If you want to preserve the default idle behavior, make sure to keep
-	# the call to `super()` in your override.
-	super()
-
-
-# Override this to alter the walk animation or hook custom logic to it. 
-# `target_pos` can be used to determine the movement direction.
-# By default, it plays the "walk" animation from the character's Sprite.
-func _play_walk(target_pos: Vector2) -> void:
-	# If you want to preserve the default walking behavior, make sure to keep
-	# the call to `super(target_pos)` in your override.
-	super(target_pos)
-
-
-# Override this to alter the talk animation or hook custom logic to it.
-# By default, it plays the "talk" animation from the character's Sprite.
-func _play_talk() -> void:
-	# If you want to preserve the default talk behavior, make sure to keep
-	# the call to `super()` in your override.
-	super()
-
-
-# Override this to alter the grab animation or hook custom logic to it.
-# By default, it plays the "grab" animation from the character's Sprite.
-func _play_grab() -> void:
-	# If you want to preserve the default grab behavior, make sure to keep
-	# the call to `super()` in your override.
-	super()
 
 
 # Called when the character starts moving.

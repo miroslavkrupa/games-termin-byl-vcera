@@ -6,8 +6,9 @@
 script = ExtResource("1_jmd24")
 script_name = "Stul"
 description = "ch1_hs_stul"
+walk_to_point = Vector2(585, 770)
 cursor = 1
-interaction_polygon = PackedVector2Array(73, 360, 380, 360, 380, 637, 73, 637)
+interaction_polygon = PackedVector2Array(380, 360, 790, 360, 790, 637, 380, 637)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=297769805]
 visible = false

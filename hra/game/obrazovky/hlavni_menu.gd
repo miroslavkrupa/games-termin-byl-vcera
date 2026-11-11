@@ -107,8 +107,8 @@ func _jazyk(kam: Control, nazev: String, jazyk: String) -> Button:
 	var b := Styl.tlacitko(nazev, 28, Styl.PAPIR, false)
 	b.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
 	b.toggle_mode = true
-	b.add_theme_stylebox_override("pressed", Styl.ramecek(Styl.ZLUTA, Styl.OBRYS))
-	b.add_theme_stylebox_override("hover_pressed", Styl.ramecek(Styl.ZLUTA, Styl.OBRYS))
+	b.add_theme_stylebox_override("pressed", Styl.podle_barvy(Styl.ZLUTA, Styl.OBRYS, 4, 14, Vector2(24, 8)))
+	b.add_theme_stylebox_override("hover_pressed", Styl.podle_barvy(Styl.ZLUTA, Styl.OBRYS, 4, 14, Vector2(24, 8)))
 	b.pressed.connect(func(): Jazyk.nastav(jazyk))
 	kam.add_child(b)
 	return b

@@ -1,0 +1,15 @@
+{
+  "id": "a-byt-siroke",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/byt_predloha.png",
+    "docs/styl/vzorky/a-archiv_v02.png",
+    "docs/styl/vzorky/a-vestibul_v01.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a rough flat layout sketch of a room. Paint it as a finished 2D cartoon background for a classic point-and-click comedy adventure game, caricature style. Match the drawing style, line work, shading, texture and coloring of the second and third image exactly (they are finished backgrounds from the same game).\nKeep the layout of the sketch exactly: the same camera, the same straight-on view of the back wall, and every object in the same position and at the same size as in the sketch: shelf unit on the left, diplomas on the wall, trestle table with telephone, hole in the wall, door on the right, light bulb, floor line.\nThe scene: a shabby one-room flat in an unfinished concrete panel apartment block. A big part of the back wall is missing: a large ragged hole with broken bricks and bent rebar around it, through it a view of the town with unfinished grey panel blocks, a construction crane and a small comet with a glowing tail in the hazy sky. A yellow rubble chute leads from the hole down to a pile of rubble, yellow and black warning tape hangs across the hole. On the left a crooked wooden shelf unit, completely empty and dusty except for one small framed photo, no books on it. On the wall a proud wall of fame: thirteen small framed diplomas with wax seals in neat rows, one bare nail where a fourteenth is missing, and a framed chart with a single long teal bar. A wooden trestle table with a few loose papers and an old teal rotary telephone with a curly cord, no mug and no cup on the table. On the right a rust-brown apartment door with a brass knob, several envelopes and bills pushed through the gap under the door lie on the floor in front of it. A bare light bulb hangs on a wire from the ceiling. Stained ochre plaster walls with visible concrete panel joints, worn brown linoleum floor.\nThe left and right outer sixths of the image show only plain wall and floor, nothing important.\nWarm muted palette of ochre, rust and faded teal with yellow construction accents, simplified exaggerated shapes, furniture leaning and bulging slightly, nothing is perfectly straight, bold thick dark-brown outlines around every object, flat colors with simple soft shading and subtle hand-painted texture, moderate amount of detail, clear open walkable floor in the lower quarter of the image, flat even ground plane, no fisheye lens distortion, not realistic, no text, no letters, no numbers, no logos, no people",
+  "cena_usd": 0.0725
+}

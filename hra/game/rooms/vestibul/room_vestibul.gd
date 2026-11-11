@@ -6,9 +6,9 @@ extends PopochiuRoom
 # Vrátný tu hlídá dveře, termosku a křížovku (P1.1).
 
 const Data := preload('room_vestibul_state.gd')
-## Panel tlačítek výtahu: bez dvojky (díra) a s dvojkou (skici v paletě stylové bible)
-const TLACITKA_BEZ := preload("res://grafika/skici/vytah_tlacitka_bez.svg")
-const TLACITKA_S := preload("res://grafika/skici/vytah_tlacitka_s.svg")
+## Panel tlačítek výtahu: bez dvojky (díra) a s dvojkou (malované kulisy, dvojka je složená z tlačítka 1)
+const TLACITKA_BEZ := preload("res://grafika/mistnosti/vestibul_tlacitka_bez.png")
+const TLACITKA_S := preload("res://grafika/mistnosti/vestibul_tlacitka_s.png")
 
 var state: Data = load("res://game/rooms/vestibul/room_vestibul.tres")
 
@@ -20,7 +20,7 @@ func _on_room_entered() -> void:
 	match C.player.last_room:
 		"Archiv":
 			# Po schodech ze sklepa: Ruda stojí vlevo u cedule
-			C.player.position = Vector2(170, 860)
+			C.player.position = Vector2(500, 885)
 			C.player.face_right()
 		"Pracovna", "Komise":
 			# Výtahem: Ruda vystoupí před dveřmi výtahu

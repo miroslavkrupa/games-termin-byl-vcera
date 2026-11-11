@@ -9,6 +9,7 @@ description = "ch1_hs_ulicka_zpet"
 look_at_point = Vector2(-60, 800)
 cursor = 1
 interaction_polygon = PackedVector2Array(-341, 560, 200, 560, 200, 1000, -341, 1000)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1509389569]
 visible = false

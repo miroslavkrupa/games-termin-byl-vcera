@@ -45,16 +45,9 @@ func _ready() -> void:
 	stred.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_koren.add_child(stred)
 	var panel := PanelContainer.new()
-	var s := StyleBoxFlat.new()
-	s.bg_color = BARVA_PAPIR
-	s.border_color = BARVA_OBRYS
-	s.set_border_width_all(6)
-	s.set_corner_radius_all(22)
-	s.content_margin_left = 60
-	s.content_margin_right = 60
-	s.content_margin_top = 30
-	s.content_margin_bottom = 30
-	panel.add_theme_stylebox_override("panel", s)
+	# Malovaný papír na kartonu, stejný jako okna miniher (D89)
+	panel.add_theme_stylebox_override("panel",
+		load("res://game/obrazovky/styl.gd").malovany("okno", Vector2(70, 44)))
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	stred.add_child(panel)
 	var l := Label.new()

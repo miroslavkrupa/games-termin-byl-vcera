@@ -62,3 +62,39 @@ Hodnocení kol: [kolo 1](hodnoceni-kolo-1.md). Zadání ke zkopírování: [kolo
 | kocour-list_v01.png | ChatGPT (ručně) | F2 krok 3, tři pózy | ☑ reference kapitoly 1 (D52) (ucho natržené jen zepředu) |
 | ikony-1_v01.png | ChatGPT (ručně) | [F2 krok 4](../../11-grafika-kapitoly-1.md), ikony 1–9 | ☑ reference kapitoly 1 (D52) |
 | ikony-2_v01.png | ChatGPT (ručně) | F2 krok 4, ikony 10–17 | ☑ reference kapitoly 1 (D52) |
+| a-byt-siroke_v01.png | gpt-image-2 (medium) | a-byt-siroke_v01.json | ☐ |
+| a-byt-siroke_v02.png | gpt-image-2 (medium) | a-byt-siroke_v02.json | ☐ |
+| byt-kulisy_v01.png | gpt-image-2 (medium) | byt-kulisy_v01.json | ☐ |
+| vestibul-kulisy_v01.png | gpt-image-2 (medium) | vestibul-kulisy_v01.json | ☐ |
+| vratny-mluveni_v01.png | gpt-image-2 (medium) | vratny-mluveni_v01.json | ☐ |
+| vratny-mluveni-uprava_v01.png | gpt-image-2 (medium) | vratny-mluveni-uprava_v01.json | ☐ |
+| babicka-mluveni-uprava_v01.png | gpt-image-2 (medium) | babicka-mluveni-uprava_v01.json | ☐ |
+| bara-mluveni-uprava_v01.png | gpt-image-2 (medium) | bara-mluveni-uprava_v01.json | ☐ |
+| framework-mluveni-uprava_v01.png | gpt-image-2 (medium) | framework-mluveni-uprava_v01.json | ☐ |
+| kocour-mluveni-uprava_v01.png | gpt-image-2 (medium) | kocour-mluveni-uprava_v01.json | ☐ |
+| lumir-mluveni-uprava_v01.png | gpt-image-2 (medium) | lumir-mluveni-uprava_v01.json | ☐ |
+| predseda-mluveni-uprava_v01.png | gpt-image-2 (medium) | predseda-mluveni-uprava_v01.json | ☐ |
+| starosta-mluveni-uprava_v01.png | gpt-image-2 (medium) | starosta-mluveni-uprava_v01.json | ☐ |
+| zmena-mluveni-uprava_v01.png | gpt-image-2 (medium) | zmena-mluveni-uprava_v01.json | ☐ |
+| bara-chuze-bok_v01.png | gpt-image-2 (medium) | bara-chuze-bok_v01.json | ☐ |
+| bara-chuze-predu_v01.png | gpt-image-2 (medium) | bara-chuze-predu_v01.json | ☐ |
+| bara-chuze-zezadu_v01.png | gpt-image-2 (medium) | bara-chuze-zezadu_v01.json | ☐ |
+| gui-prvky_v01.png | gpt-image-2 (medium) | gui-prvky_v01.json | ☐ |
+| pracovna-vytah_v01.png | gpt-image-2 (medium) | pracovna-vytah_v01.json | ☐ |
+| namesti-amplion_v01.png | gpt-image-2 (medium) | namesti-amplion_v01.json | ☐ |
+| ruda-novy-styl_v01.png | gpt-image-2 (medium) | ruda-novy-styl_v01.json | ☐ |
+| vestibul-schody-podlaha_v01.png | gpt-image-2 (medium) | vestibul-schody-podlaha_v01.json | ☐ |
+| komise-vytah-prepazka_v01.png | gpt-image-2 (medium) | komise-vytah-prepazka_v01.json | ☐ |
+| ruda-styl-chuze-bok_v01.png | gpt-image-2 (medium) | ruda-styl-chuze-bok_v01.json | ☐ |
+| ruda-styl-chuze-predu_v01.png | gpt-image-2 (medium) | ruda-styl-chuze-predu_v01.json | ☐ |
+| ruda-styl-chuze-zezadu_v01.png | gpt-image-2 (medium) | ruda-styl-chuze-zezadu_v01.json | ☐ |
+| ruda-styl-stani_v01.png | gpt-image-2 (medium) | ruda-styl-stani_v01.json | ☐ |
+| ruda-styl-akce_v01.png | gpt-image-2 (medium) | ruda-styl-akce_v01.json | ☐ |
+| ruda-mluveni-bok-usta_v01.png | gpt-image-2 (medium) | ruda-mluveni-bok-usta_v01.json | ☐ |
+| ruda-mluveni-bok-gesta_v01.png | gpt-image-2 (medium) | ruda-mluveni-bok-gesta_v01.json | ☐ |
+| ruda-mluveni-predu-usta_v01.png | gpt-image-2 (medium) | ruda-mluveni-predu-usta_v01.json | ☐ |
+| ruda-mluveni-predu-gesta_v01.png | gpt-image-2 (medium) | ruda-mluveni-predu-gesta_v01.json | ☐ |
+| archiv-rozsireni_v01.png | gpt-image-2 (medium) | archiv-rozsireni_v01.json | ☐ |
+| kocour-novy-styl_v01.png | gpt-image-2 (medium) | kocour-novy-styl_v01.json | ☐ |
+| archiv-rozsireni_v01.png | gpt-image-2 (medium) | archiv-rozsireni_v01.json | ☐ |
+| kocour-mluveni-uprava_v02.png | gpt-image-2 (medium) | kocour-mluveni-uprava_v02.json | ☐ |

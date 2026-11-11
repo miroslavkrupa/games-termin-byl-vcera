@@ -7,7 +7,7 @@ script = ExtResource("1_2o7i8")
 script_name = "Zed"
 description = "ch1_hs_byt_zed"
 cursor = 1
-interaction_polygon = PackedVector2Array(345, 100, 740, 100, 740, 415, 345, 415)
+interaction_polygon = PackedVector2Array(350, 140, 772, 140, 772, 492, 350, 492)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=864789572]
 visible = false

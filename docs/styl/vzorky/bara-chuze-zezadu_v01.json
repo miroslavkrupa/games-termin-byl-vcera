@@ -1,0 +1,13 @@
+{
+  "id": "bara-chuze-zezadu",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "docs/styl/vzorky/bara-list_v02.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The reference image is the model sheet of a game character (front view, side view, back view). Draw a walk cycle of exactly this character in back view walking away from the viewer, walking in place (the figure does not get smaller or move sideways): 8 frames in 2 rows of 4. Frames 1-4 one step with her right leg, frames 5-8 with her left leg: contact, down, passing, up. The sole of the lifted boot is visible from behind, the body sways very slightly from side to side, the head stays at almost the same height. Her elbows are visible at the sides because she holds the tablet in front of her.\nRULES: Draw exactly the same character as on the model sheet: the same face, round glasses, messy red bob haircut, rust-red shirt with rolled-up sleeves, teal overalls with brass buckles and rolled-up cuffs, yellow measuring tape on her left hip, yellow socks, brown work boots. Same scale and proportions in every frame: the same head size, body width, leg length and boot size as on the model sheet.\nShe holds the dark tablet against her chest with both hands, the same way in every frame; the arms stay almost still. Only the legs and the body move.\nAll frames in an even grid of 2 rows of 4, read left to right and top to bottom, the feet of every frame on that row's baseline, figures never touching or overlapping, each figure completely inside its grid cell.\nSame line work, shading and colors as the model sheet. Transparent background, no ground, no shadows, no text, no numbers, no frame borders,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0553
+}

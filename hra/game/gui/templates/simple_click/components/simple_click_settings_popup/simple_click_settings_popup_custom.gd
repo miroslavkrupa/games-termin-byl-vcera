@@ -26,13 +26,40 @@ func _ready() -> void:
 	podrzet.pressed.connect(_vyber_dotyk.bind(false))
 	nabidka.pressed.connect(_vyber_dotyk.bind(true))
 	_oznac_dotyk()
+	# Rychlost textu slovy: šablona ukazovala sekundy na znak jako „0.10x“, což nic neříká
+	text_speed.value_changed.connect(func(_hodnota: float) -> void: _popis_rychlost())
+	text_speed_label.custom_minimum_size = Vector2(150, 0)
+	text_speed_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_popis_rychlost()
+	# Nápověda klávesových zkratek pod nastavením (jen s klávesnicí)
+	if not DisplayServer.is_touchscreen_available():
+		var klavesy := Label.new()
+		klavesy.name = "Klavesy"
+		klavesy.text = "ui_klavesy"
+		klavesy.modulate = Color(1, 1, 1, 0.75)
+		klavesy.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		$Overlay/PanelContainer/VBoxContainer/BodyContainer/RightContainer.add_child(klavesy)
 
 
 func _open() -> void:
+	_popis_rychlost()
 	var v_menu: bool = is_instance_valid(R.current) and R.current.script_name == "Menu"
 	levy_sloupec.visible = not v_menu
 	oddelovac.visible = not v_menu
 	_oznac_dotyk()
+
+
+# E.text_speed jsou sekundy na jeden znak: 0,1 je nejpomalejší, 0 ukáže celý text hned
+func _popis_rychlost() -> void:
+	var na_znak: float = E.text_speed
+	var klic := "ui_rychlost_hned"
+	if na_znak >= 0.07:
+		klic = "ui_rychlost_pomalu"
+	elif na_znak >= 0.035:
+		klic = "ui_rychlost_stredne"
+	elif na_znak > 0.005:
+		klic = "ui_rychlost_rychle"
+	text_speed_label.text = klic
 
 
 func _vyber_jazyk(jazyk: String) -> void:

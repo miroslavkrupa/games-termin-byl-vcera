@@ -1,0 +1,13 @@
+{
+  "id": "vratny-mluveni-uprava",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/vratny_3x.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A, eyebrows slightly raised. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E, one eyebrow a little lower. In every copy the moustache moves a little with the mouth and the eyes stay sleepy and half closed.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the cap, hair, ears, nose, the whole body, uniform, buttons, hands, thermos flask, crossword newspaper, trousers, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything",
+  "cena_usd": 0.0545
+}

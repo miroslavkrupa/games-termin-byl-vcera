@@ -9,6 +9,7 @@ description = "ch1_hs_vytah"
 look_at_point = Vector2(765, 500)
 cursor = 1
 interaction_polygon = PackedVector2Array(605, 300, 925, 300, 925, 705, 605, 705)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1598799287]
 visible = false

@@ -62,7 +62,7 @@ scale_bottom = 0.56
 [node name="Characters" type="Node2D" parent="." unique_id=1163463688]
 
 [node name="CharacterPredseda" parent="Characters" unique_id=678124856 instance=ExtResource("12_h5r7k")]
-position = Vector2(1470, 640)
+position = Vector2(1315, 496)
 
 [node name="CharacterFramework" parent="Characters" unique_id=1801877985 instance=ExtResource("13_hwe8r")]
 position = Vector2(1000, 735)

@@ -7,7 +7,7 @@ script = ExtResource("1_31bms")
 script_name = "Police"
 description = "ch1_hs_byt_police"
 cursor = 1
-interaction_polygon = PackedVector2Array(70, 130, 270, 130, 270, 530, 70, 530)
+interaction_polygon = PackedVector2Array(45, 195, 296, 195, 270, 800, 0, 800)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=899527968]
 visible = false

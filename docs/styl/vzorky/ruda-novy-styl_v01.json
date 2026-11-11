@@ -1,0 +1,16 @@
+{
+  "id": "ruda-novy-styl",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/ruda_3pohledy.png",
+    "hra/grafika/postavy/vratny_stoji/vratny_stoji.png",
+    "hra/grafika/postavy/bara_stoji/bara_stoji.png",
+    "hra/grafika/postavy/starosta_stoji/starosta_stoji.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image shows the main character of a 2D point-and-click comedy adventure game in three views (front view, side view facing right, back view) on a flat magenta background. The other images show finished characters from the same game. Repaint the main character so that he looks painted by the same hand as those other characters: exactly their painting style, the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, the same amount of detail in the face, hair, hands and shoes, and the same muted warm color palette. His shirt is a slightly yellowed off-white with clearly shaded folds, not flat pure white; the trousers are faded worn denim blue; the tie a duller brick red with stripes; the mug a warm cream white.\nKeep who he is and how he stands: the same lanky figure and big head, messy spiky brown hair, long pointy pink nose, sleepy half-closed eyes and smug little smile, white shirt with rolled-up sleeves, loose red striped tie, belt, blue trousers ending above the ankles, yellow socks, brown leather shoes, a brown clipboard in one hand and a coffee mug in the other. Keep the three views, each at the same position and the same size as in the first image, the same poses. Flat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text",
+  "cena_usd": 0.0668
+}

@@ -22,6 +22,13 @@ var state: Data = load("res://game/rooms/archiv/room_archiv.tres")
 # Add any code you want to setup the stage before the room is shown to the player (e.g. setting
 # character position and facing direction, active walkable area, props visibility, etc.).
 func _on_room_entered() -> void:
+	# Kdo zrovna není hráčova postava, v archivu nestojí: Ruda čeká ve frontě v Komisi a Bára
+	# je po svém úseku zpátky na náměstí. Stav místnosti si je ale pamatuje z doby, kdy tu byli
+	# jako hráč, a Popochiu by je sem při vstupu vrátil.
+	for jmeno in ["Ruda", "Bara"]:
+		var postava: PopochiuCharacter = C.get_character(jmeno)
+		if postava != C.player and postava.get_parent() == $Characters:
+			remove_character(postava)
 	# Ruda (nebo Bára v úseku za Báru) přichází po schodech
 	C.player.position = Vector2(340, 700)
 	C.player.face_down_right()

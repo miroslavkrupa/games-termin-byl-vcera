@@ -1,0 +1,13 @@
+{
+  "id": "framework-mluveni-uprava",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/framework_3x.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "This image shows the same game character three times, three identical copies side by side on a flat magenta background. Edit only the faces to make three frames of a talking animation. Left copy: mouth wide open, as if saying a loud A. Middle copy: mouth small and round, as if saying O. Right copy: mouth half open showing the upper teeth, as if saying E. He is a slick consultant with a big salesman smile: he keeps smiling while he talks, the eyebrows move slightly.\nEverything else must stay exactly as in the input image, unchanged: the position and size of each figure, the direction the head is turned, the hair, headwear, glasses, ears, nose, the whole body, clothes, hands, everything the character holds, shoes, the outlines, colors and shading, and the flat pure magenta (#FF00FF) background. Do not redraw or restyle the figures, do not move them, do not add anything",
+  "cena_usd": 0.0545
+}

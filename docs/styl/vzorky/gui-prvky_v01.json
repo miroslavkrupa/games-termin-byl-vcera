@@ -1,0 +1,14 @@
+{
+  "id": "gui-prvky",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1536x1024",
+  "paleta": null,
+  "reference": [
+    "hra/grafika/mistnosti/vestibul.png",
+    "hra/grafika/predmety/zadani.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "A sheet of six separate, completely empty user interface elements for a 2D point-and-click comedy adventure game, drawn in exactly the drawing style, line work and coloring of the reference images (hand-drawn caricature, bold thick dark-brown outlines, flat colors with simple soft shading and subtle hand-painted texture, warm muted palette). All elements are seen straight from the front, flat, not rotated, not tilted, with straight but slightly wobbly hand-drawn edges, far apart from each other, not touching.\n1. Top left, very large (about half of the image): a big empty sheet of old cream office paper pinned to a slightly larger piece of brown cardboard, landscape rectangle, with one small dog-eared corner, a few faint stains near the edges, the middle perfectly clean and evenly cream.\n2. Top right: a wide, low, empty index card, very light cream, clean, landscape strip about five times wider than high.\n3. Middle right: a wide, low, empty recessed form field, a slightly darker beige rectangle with a thin inner shadow, about five times wider than high.\n4. Bottom left: an empty rust-orange enamel sign plate with a small rivet in each corner, landscape, about three times wider than high.\n5. Bottom middle: the same empty sign plate in faded teal.\n6. Bottom right: a small empty square cream button with rounded corners.\nNothing is written or drawn on any element: no text, no letters, no numbers, no icons, no lines of writing,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0552
+}

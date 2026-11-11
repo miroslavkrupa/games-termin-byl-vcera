@@ -10,6 +10,9 @@
 # akce = <AktivniMisto>:pouzit|prohlednout|najet[,…] – klepnutí levým / pravým tlačítkem, nebo jen popisek jako při najetí
 #        myší; další krok počká, až hra dokončí předchozí (i přes změnu místnosti). Místo aktivního
 #        místa jde i postava v místnosti (Bara:pouzit) nebo předmět v inventáři (Pembok:pouzit)
+# mista=1 po akci zvýrazní aktivní místa (jako držení mezerníku), denik=1 otevře deník
+# vyber = <Predmet> – před akcí vybere předmět z inventáře (kurzor nese předmět; s akce=…:najet
+#        ukáže popisek „předmět + cíl“)
 # volby = <id>,<id>… – po akci vybírá volby dialogu, vždy jakmile se nabídka zobrazí; u nabídky
 #        přímo ve skriptu (D.show_inline_dialog) je id pořadí volby od nuly
 # pouzij = <Predmet>:<Cil>[,<Predmet>:<Cil>…] – použije předmět z inventáře na aktivní místo nebo jiný předmět
@@ -24,6 +27,7 @@
 #   priznaky=c1_cislo_projektu=1,c1_babicka=spojenec  příznaky v Globals (1/0 = true/false, číslo, jinak text)
 #   stav=Archiv.archiv_vstup=1,Namesti.bara_mluvila=1  proměnné stavu místností (R.<Mistnost>.state)
 #   predmety=Plakat,KavovePero                         přidá předměty do inventáře
+#   hrac=Bara                                          přepne hráčovu postavu (úsek za Báru), před změnou místnosti
 #   mistnost=Archiv                                    přejde do místnosti (počká na přechod)
 # Rámec hry (I6): hra začíná v hlavním menu (místnost Menu). Ladicí běh se snímkem menu přeskočí
 # a jde rovnou na náměstí jako dřív (výchozí věci a Pembok jako před úvodem), takže starší běhy
@@ -35,6 +39,8 @@
 #   nacti=<1–4>   načíst uloženou hru z pozice (jako Pokračovat / Načíst), před přípravou stavu
 #   uloz=<1–4>    po všech krocích uložit hru do pozice (jako okno Uložit), pak teprve snímek
 #   titulky=1     otevřít titulky; konec_obrazovka=1 rovnou závěrečnou obrazovku kapitoly
+#   okno=razeni   otevřít okno minihry (razeni, souboj, papir, kdo_veli) pro snímek vzhledu
+#   zvuk=1        nechat zvuk zapnutý (běhy se snímkem a průchod jsou jinak potichu); stav zvuku je ve výpisu
 #   ramec=menu,nova_hra,… po ostatních krocích akce rámce: menu = zpět do hlavního menu,
 #                 nova_hra = Nová hra (vynulovat, úvod v bytě); každá počká, až se hra uklidní
 #   stavy=1       výpis po akci navíc vypíše stavy všech místností, postav a předmětů (kontrola nulování)
@@ -107,6 +113,11 @@ func _ready() -> void:
 	if p.has("konec_obrazovka"):
 		load("res://game/obrazovky/konec_kapitoly.gd").ukaz_obrazovku()
 		await get_tree().create_timer(1.0).timeout
+	if p.has("okno"):
+		# Okno minihry rovnou přes scénu (jen vzhled; na konec hry se nečeká)
+		var okno: CanvasLayer = load("res://game/minihry/%s/%s.gd" % [p["okno"], p["okno"]]).new()
+		get_tree().root.add_child(okno)
+		await get_tree().create_timer(1.0).timeout
 	if p.has("pismo"):
 		var tema: Theme = load("res://game/gui/resources/gui_theme.tres")
 		tema.default_font = load(p["pismo"])
@@ -130,6 +141,15 @@ func _ready() -> void:
 	elif p.has("klik"):
 		var xy: PackedStringArray = p["klik"].split(",")
 		_klepnout(Vector2(float(xy[0]), float(xy[1])))
+	if p.has("vyber"):
+		get_node("/root/I").get_item_instance(p["vyber"]).set_active()
+	if p.has("mista"):
+		var gui = get_node("/root/G").gui
+		gui._mista.ukaz(gui._ikona_leve)
+	if p.has("denik"):
+		load("res://game/obrazovky/denik.gd").prepni()
+		# okno deníku nabíhá, snímek až po náběhu
+		await get_tree().create_timer(0.5).timeout
 	if p.has("akce"):
 		var kroky: PackedStringArray = p["akce"].split(",")
 		for i in kroky.size():
@@ -251,13 +271,15 @@ func _akce(krok: String) -> String:
 		if not get_node("/root/I").is_item_in_inventory(c[0]):
 			return "%s tu není (místo, postava ani předmět v inventáři)" % c[0]
 		var predmet: PopochiuInventoryItem = get_node("/root/I").get_item_instance(c[0])
-		if c[1] == "prohlednout":
+		if c[1] == "najet":
+			_najet(predmet)
+		elif c[1] == "prohlednout":
 			predmet._on_right_click()
 		else:
 			predmet._on_click()
 		return ""
 	if c[1] == "najet":
-		get_node("/root/G").hover_text_shown.emit(misto.get_description())
+		_najet(misto)
 	else:
 		get_node("/root/E").clicked = misto
 		var tlacitko := MOUSE_BUTTON_RIGHT if c[1] == "prohlednout" else MOUSE_BUTTON_LEFT
@@ -266,6 +288,20 @@ func _akce(krok: String) -> String:
 		misto.last_click_button = tlacitko
 		misto.handle_command(tlacitko)
 	return ""
+
+
+## Najetí myší na místo, postavu nebo předmět: stejná cesta jako ve hře (popisek, nápověda
+## tlačítek, kurzor). Zablokované rozhraní (hra zrovna mluví) by najetí ignorovalo, snímek
+## popisku se ale dělá i tak.
+func _najet(cil: Node) -> void:
+	var g = get_node("/root/G")
+	var zablokovano: bool = g.is_blocked
+	g.is_blocked = false
+	if cil is PopochiuInventoryItem:
+		g.gui._on_mouse_entered_inventory_item(cil)
+	else:
+		g.gui._on_mouse_entered_clickable(cil)
+	g.is_blocked = zablokovano
 
 
 var _menu_preskoceno := false
@@ -306,6 +342,9 @@ func _priprav_stav(p: Dictionary) -> void:
 	if p.has("predmety"):
 		for nazev in p["predmety"].split(","):
 			await get_node("/root/I").get_item_instance(nazev).add()
+	if p.has("hrac"):
+		var c = get_node("/root/C")
+		c.player = c.get_character(p["hrac"])
 	if p.has("mistnost"):
 		var r = get_node("/root/R")
 		if r.current.script_name != p["mistnost"]:
@@ -499,6 +538,9 @@ func _vypis(kdy: String) -> void:
 			print("[inventář] %s %s" % [nazev, get_node("/root/C").get_character(nazev).inventory.keys()])
 	var pozadi = room.get_prop("Background") if room else null
 	print("[%s] barva hráče %s, pozadí %s" % [kdy, hrac.modulate if hrac else "?", pozadi.texture.resource_path if pozadi and pozadi.texture else "?"])
+	var zvuk := get_node_or_null("/root/Zvuk")
+	if zvuk != null:
+		print("[%s] zvuk: %s" % [kdy, zvuk.popis()])
 	print("[%s] místnost %s, hráč %s, měřítko %s, inventář %s, stav %s, okno %s, viditelná oblast %s, kamera %s" % [
 		kdy, room.script_name if room else "?", hrac.position if hrac else "?", hrac.scale if hrac else "?", inventar, stav, get_window().size,
 		get_viewport().get_visible_rect(), kamera.get_screen_center_position() if kamera else "žádná"
@@ -675,6 +717,17 @@ func _krok_pruchodu(radek: String) -> String:
 				var ma: bool = get_node("/root/I").is_item_in_inventory(nazev)
 				if ma != (c[0] == "ma"):
 					return "hráč %s předmět %s" % ["nemá" if c[0] == "ma" else "pořád má", nazev]
+		"vidi", "nevidi":
+			# Kontrola: postava je / není v aktuální místnosti vidět
+			chyba = await _cekej_klid()
+			if chyba:
+				return chyba
+			for nazev in arg.split(","):
+				_kontrol += 1
+				var je_tu: bool = get_node("/root/R").current.has_character(nazev) \
+					and get_node("/root/C").get_character(nazev).visible
+				if je_tu != (c[0] == "vidi"):
+					return "postava %s v místnosti %s" % [nazev, "není" if c[0] == "vidi" else "je"]
 		"konec":
 			return await _konec_kapitoly(arg)
 		_:

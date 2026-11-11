@@ -9,6 +9,7 @@ description = "ch1_hs_schody"
 cursor = 1
 interaction_polygon = PackedVector2Array(245, 640, 250, 400, 300, 350, 390, 360, 430, 420, 470, 640)
 look_at_point = Vector2(348, 468)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=2058848677]
 visible = false

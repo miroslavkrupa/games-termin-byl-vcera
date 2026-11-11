@@ -28,6 +28,7 @@ G="*uid://blk6nfpfiqrd2"
 T="*uid://30lm6k5s368s"
 Jazyk="*res://game/jazyk.gd"
 Zaber="*res://game/zaber.gd"
+Zvuk="*res://game/zvuk.gd"
 Ladeni="*res://nastroje/ladeni.gd"
 
 [display]

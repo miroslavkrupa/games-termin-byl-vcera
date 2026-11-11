@@ -19,6 +19,7 @@ const KOLONKY := ["cil", "termin", "kriteria", "mimo", "kdo"]
 const KLICOVE := ["cil", "termin", "kriteria"]
 
 # Paleta stylové bible: okr, rez, vybledlá petrolejová, tmavě hnědé obrysy, žlutý akcent
+const Styl := preload("res://game/obrazovky/styl.gd")
 const BARVA_PAPIR := Color("f3e4c2")
 const BARVA_LISTEK := Color("fbf3dc")
 const BARVA_POLE := Color("eddcb4")
@@ -265,6 +266,7 @@ func _odevzdat() -> void:
 			kvalita += 1
 	Globals.c1_charter_kvalita = kvalita
 	Globals.c1_mimo_rozsah = prirazeni.get("mimo", "") == "mimo"
+	Zvuk.efekt("spravne")
 	await C.player.say("ch1_m01_hotovo" if kvalita == 3 else "ch1_m01_hotovo_slabe")
 	await I.Zadani.remove()
 	await I.Podpis.remove()
@@ -294,17 +296,9 @@ func _popisek(text: String, velikost: int, zarovnani: HorizontalAlignment) -> La
 	return l
 
 
-func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = vypln
-	s.border_color = obrys
-	s.set_border_width_all(sirka)
-	s.set_corner_radius_all(zaobleni)
-	s.content_margin_left = 14
-	s.content_margin_right = 14
-	s.content_margin_top = 6
-	s.content_margin_bottom = 6
-	return s
+func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBox:
+	# Malované podklady společné pro minihry a obrazovky (D89)
+	return Styl.podle_barvy(vypln, obrys, sirka, zaobleni)
 
 
 func _tlacitko(text: String, barva: Color, akce: Callable) -> Button:

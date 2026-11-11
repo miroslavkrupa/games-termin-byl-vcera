@@ -23,6 +23,7 @@ const PAMET := [
 	{klic = "ch1_pamet_babicka_odmitnuta", kdy = "babicka_odmitnuta"},
 	{klic = "ch1_pamet_babicka_prehlizena", kdy = "babicka_prehlizena"},
 	{klic = "ch1_pamet_babicka_neodhalena", kdy = "babicka_neodhalena"},
+	{klic = "ch1_pamet_babicka_potkana", kdy = "babicka_potkana"},
 	{klic = "ch1_pamet_faze2_ano", kdy = "faze2_ano"},
 	{klic = "ch1_pamet_faze2_ne", kdy = "faze2_ne"},
 	{klic = "ch1_pamet_zmena", kdy = "zmena"},
@@ -72,6 +73,9 @@ static func ukaz_obrazovku() -> void:
 ## Klíče paměti kapitoly, které platí pro současný stav (stejné podmínky jako prototyp)
 static func pamet_kapitoly() -> Array:
 	var g = PopochiuUtils.e.get_node("/root/Globals")
+	# Hráč, který s babičkou mluvil, ale nezjistil, že jí patří pozemek pod rampou (mapa nebo
+	# kocourův obojek), o ní ví: „zatím o tom nevíš“ by mu neodpovídalo
+	var potkana: bool = PopochiuUtils.c.get_character("Babicka").state.uvitala
 	var plati := {
 		"bara_3": g.c1_bara_vyslechnuta >= 3,
 		"bara_castecne": g.c1_bara_vyslechnuta >= 1 and g.c1_bara_vyslechnuta < 3,
@@ -81,7 +85,8 @@ static func pamet_kapitoly() -> Array:
 		"babicka_spojenec": g.c1_babicka == "spojenec",
 		"babicka_odmitnuta": g.c1_babicka == "odmitnuta",
 		"babicka_prehlizena": g.c1_babicka == "prehlizena",
-		"babicka_neodhalena": g.c1_babicka == "neodhalena",
+		"babicka_neodhalena": g.c1_babicka == "neodhalena" and not potkana,
+		"babicka_potkana": g.c1_babicka == "neodhalena" and potkana,
 		"faze2_ano": g.c1_faze2,
 		"faze2_ne": not g.c1_faze2,
 		"zmena": g.c1_zmena_dohoda,
@@ -135,6 +140,7 @@ func _prejdi(mistnost: String) -> void:
 
 
 func _postav_obrazovku() -> void:
+	Zvuk.efekt("konec_kapitoly")
 	var koren := Control.new()
 	koren.set_anchors_preset(Control.PRESET_FULL_RECT)
 	koren.theme = load("res://game/gui/resources/gui_theme.tres")
@@ -257,17 +263,9 @@ func _popisek(text: String, velikost: int, zarovnani: HorizontalAlignment) -> La
 	return l
 
 
-func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = vypln
-	s.border_color = obrys
-	s.set_border_width_all(sirka)
-	s.set_corner_radius_all(zaobleni)
-	s.content_margin_left = 24
-	s.content_margin_right = 24
-	s.content_margin_top = 8
-	s.content_margin_bottom = 8
-	return s
+func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBox:
+	# Malované podklady společné pro minihry a obrazovky (D89)
+	return Styl.podle_barvy(vypln, obrys, sirka, zaobleni)
 
 
 #endregion

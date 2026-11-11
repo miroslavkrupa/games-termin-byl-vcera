@@ -6,8 +6,9 @@
 script = ExtResource("1_diuvw")
 script_name = "Amplion"
 description = "ch1_hs_amplion"
+walk_to_point = Vector2(1300, 805)
 cursor = 1
-interaction_polygon = PackedVector2Array(1340, 55, 1440, 55, 1440, 185, 1340, 185)
+interaction_polygon = PackedVector2Array(1405, 230, 1536, 230, 1536, 385, 1405, 385)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=1110252499]
 visible = false

@@ -1,0 +1,15 @@
+{
+  "id": "komise-vytah-prepazka",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/komise_2224.png",
+    "tools/vzorky/predlohy/komise_2224_znacka.png",
+    "hra/grafika/mistnosti/vestibul.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a finished background of a committee hall in a town hall from a 2D point-and-click comedy adventure game. The second image is the same picture with a red rectangle that marks the left end of the long wooden counter. Edit the first image only inside the place marked by that red rectangle: remove the leftmost section of the wooden counter (the first shuttered window with its brass sign, the paper stacks standing there and the part of the counter below it), so that the counter begins with a proper carved wooden end post just right of the marked place and has only two shuttered windows left. In the freed place show the back wall of the room (the same ochre plaster above and peeling teal paint below, with the skirting board) and in that wall the door of an old elevator, the same elevator as in the middle of the third image (a lobby from the same game): two closed sliding door panels of worn, stained brass with a dark gap between them, set in a worn cream stone door frame, above the frame a small half-round floor indicator dial with a red needle, and on the wall right next to the frame a small brass call button plate. The elevator door stands on the line where the back wall meets the floor and is about as tall as the wooden counter. The brass posts with the red ropes in front stay exactly where they are, drawn in front of the elevator door.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters. Do not draw the red rectangle itself",
+  "cena_usd": 0.0713
+}

@@ -1,0 +1,14 @@
+{
+  "id": "pracovna-vytah",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2224x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/pracovna_2224.png",
+    "hra/grafika/mistnosti/vestibul.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is a finished background of a mayor's office from a 2D point-and-click comedy adventure game. Edit only the wooden door in the left wall. Replace the wooden door with the door of an old elevator, the same elevator as in the middle of the second image (a lobby from the same game): two closed sliding door panels of worn, stained brass with a dark gap between them, no door handle, set in the same cream stone door frame that is already there, and above the frame a small half-round floor indicator dial with a red needle. Next to the frame, on the wall, a small brass call button plate with one round button. The elevator door stands at the same place, has the same size and the same perspective as the wooden door had; the red carpet still leads to it.\nEverything else in the image must stay exactly as in the first input image, unchanged and at the same place: all other objects, walls, floor, ceiling, perspective, outlines, colors, lighting and hand-painted texture. Do not restyle or redraw the rest of the picture, do not add people, no text, no letters",
+  "cena_usd": 0.0588
+}

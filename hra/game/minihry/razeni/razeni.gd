@@ -23,6 +23,7 @@ const ABECEDNE := ["archa", "leseni", "vytah", "most", "kasna"]
 const STEJNY_ROK := ["most", "leseni", "vytah", "kasna", "archa"]
 
 # Paleta stylové bible: okr, rez, tmavě hnědé obrysy, žlutý akcent
+const Styl := preload("res://game/obrazovky/styl.gd")
 const BARVA_PAPIR := Color("f3e4c2")
 const BARVA_LISTEK := Color("fbf3dc")
 const BARVA_OBRYS := Color("4a2e14")
@@ -79,7 +80,7 @@ func _postav() -> void:
 	stred.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	koren.add_child(stred)
 	_okno = PanelContainer.new()
-	_okno.add_theme_stylebox_override("panel", _ramecek(BARVA_PAPIR, BARVA_OBRYS, 6, 22))
+	_okno.add_theme_stylebox_override("panel", Styl.malovany("okno", Vector2(30, 26)))
 	_okno.custom_minimum_size = Vector2(1060, 0)
 	stred.add_child(_okno)
 
@@ -151,10 +152,8 @@ func _prekresli() -> void:
 		var r: Dictionary = _radky[i]
 		var vybrany := i == _vybrany
 		r.listek.text = tr(LISTKY[poradi[i]])
-		for stav in ["normal", "hover", "pressed", "focus"]:
-			r.listek.add_theme_stylebox_override(stav, _ramecek(
-				BARVA_LISTEK if stav != "hover" else BARVA_LISTEK.lightened(0.3),
-				BARVA_VYBER if vybrany else BARVA_OBRYS, 6 if vybrany else 3, 10))
+		Styl.malovane_tlacitko(r.listek, "listek", Vector2(18, 8),
+			Styl.ODSTIN_VYBER if vybrany else Color.WHITE)
 		for stav in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
 			r.listek.add_theme_color_override(stav, BARVA_TEXT)
 		r.vys.disabled = i == 0
@@ -188,6 +187,7 @@ func _posun(i: int, o: int) -> void:
 func _vyhodnotit() -> void:
 	visible = false
 	if poradi == SPRAVNE:
+		Zvuk.efekt("spravne")
 		await C.player.say("ch1_kartoteka_hotovo_1")
 		await C.Lumir.say("ch1_kartoteka_hotovo_2")
 		await I.Zadani.add()
@@ -195,6 +195,7 @@ func _vyhodnotit() -> void:
 		R.Archiv.state.razeni_poradi = []
 		zavreno.emit()
 		return
+	Zvuk.efekt("spatne")
 	if poradi == ABECEDNE:
 		await C.Lumir.say("ch1_kartoteka_abecedne")
 	elif poradi == STEJNY_ROK:
@@ -215,27 +216,12 @@ func _zavrit() -> void:
 	zavreno.emit()
 
 
-func _ramecek(vypln: Color, obrys: Color, sirka: int, zaobleni: int) -> StyleBoxFlat:
-	var s := StyleBoxFlat.new()
-	s.bg_color = vypln
-	s.border_color = obrys
-	s.set_border_width_all(sirka)
-	s.set_corner_radius_all(zaobleni)
-	s.content_margin_left = 18
-	s.content_margin_right = 18
-	s.content_margin_top = 8
-	s.content_margin_bottom = 8
-	return s
-
-
 func _sipka(znak: String, akce: Callable) -> Button:
 	var b := Button.new()
 	b.text = znak
 	b.custom_minimum_size = Vector2(74, 74)
 	b.add_theme_font_size_override("font_size", 30)
-	for stav in ["normal", "hover", "pressed", "focus", "disabled"]:
-		b.add_theme_stylebox_override(stav, _ramecek(
-			BARVA_LISTEK if stav != "disabled" else BARVA_PAPIR.darkened(0.08), BARVA_OBRYS, 3, 10))
+	Styl.malovane_tlacitko(b, "tlacitko", Vector2(8, 4))
 	b.add_theme_color_override("font_color", BARVA_TEXT)
 	b.add_theme_color_override("font_hover_color", BARVA_TEXT)
 	b.add_theme_color_override("font_pressed_color", BARVA_TEXT)
@@ -249,10 +235,8 @@ func _tlacitko(text: String, barva: Color, akce: Callable) -> Button:
 	b.text = text
 	b.custom_minimum_size = Vector2(0, 70)
 	b.add_theme_font_size_override("font_size", 30)
-	b.add_theme_stylebox_override("normal", _ramecek(barva, BARVA_OBRYS, 4, 14))
-	b.add_theme_stylebox_override("hover", _ramecek(barva.lightened(0.15), BARVA_OBRYS, 4, 14))
-	b.add_theme_stylebox_override("pressed", _ramecek(barva.darkened(0.15), BARVA_OBRYS, 4, 14))
-	b.add_theme_stylebox_override("focus", _ramecek(barva, BARVA_OBRYS, 4, 14))
+	Styl.malovane_tlacitko(b, "stitek_petrolej" if barva == BARVA_TLACITKO_HLAVNI else "stitek_rez",
+		Vector2(26, 8))
 	for stav in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
 		b.add_theme_color_override(stav, Color.WHITE)
 	b.pressed.connect(akce)

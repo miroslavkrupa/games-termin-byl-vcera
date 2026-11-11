@@ -6,7 +6,8 @@ extends PopochiuRoom
 # mlčí), přes dveře mluví s věřiteli (dialog Veritel: s kávou podepíše „stížnost“, z níž je dekret,
 # a dostane propisku) a dírou ve zdi sjede skluzem na náměstí. Přistání, rozhlas a první slova
 # Pemboka jsou v místnosti Namesti (tahle místnost při přechodu zanikne).
-# Pozadí je SVG skica (grafika/skici/byt_pozadi.svg), hrnek a kniha jsou kulisy, které zmizí.
+# Pozadí je malované (grafika/mistnosti/byt.png, široké 2218 × 1024), hrnek a kniha jsou kulisy,
+# které zmizí.
 
 const Data := preload('room_byt_state.gd')
 const Karta := preload("res://game/obrazovky/karta.gd")
@@ -19,7 +20,7 @@ var state: Data = load("res://game/rooms/byt/room_byt.tres")
 #region Virtual ####################################################################################
 func _on_room_entered() -> void:
 	# Ruda stojí u stolu, kde právě telefonoval
-	C.player.position = Vector2(600, 905)
+	C.player.position = Vector2(620, 905)
 	C.player.face_down()
 	C.player.modulate = Color.WHITE
 	nastav_veci()
@@ -30,6 +31,10 @@ func _on_room_transition_finished() -> void:
 		return
 	state.uvod_videl = true
 	await Karta.ukaz("ch1_ui_kapitola")
+	# Telefon zazvoní a Ruda ho zvedne (zvonění utichne s první replikou)
+	var zvoneni: AudioStreamPlayer = Zvuk.efekt("telefon")
+	await get_tree().create_timer(1.4).timeout
+	Zvuk.ztis(zvoneni)
 	for klic in UVOD:
 		await C.player.say(klic)
 

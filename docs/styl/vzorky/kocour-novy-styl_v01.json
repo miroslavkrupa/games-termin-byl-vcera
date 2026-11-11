@@ -1,0 +1,15 @@
+{
+  "id": "kocour-novy-styl",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1024x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/kocour_1x.png",
+    "hra/grafika/postavy/vratny_stoji/vratny_stoji.png",
+    "hra/grafika/postavy/babicka_stoji/babicka_stoji.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image shows a character of a 2D point-and-click comedy adventure game on a flat magenta background: a fat ginger tomcat sitting upright and looking smug. The other images show finished human characters from the same game. Repaint the cat so that he looks painted by the same hand as those characters and has real volume instead of looking like a flat paper cut-out: rich hand-painted shading with soft gradients, a clearly round belly and chest, rounded paws and cheeks, a darker shaded underside and side away from the light, lighter fur on top, visible fur texture with small tufts along the outline, bold dark-brown outlines with varying weight, the same muted warm palette. Keep exactly the same cat: the same sitting pose, the same position and size in the image, the same face and expression, ears (one torn), stripes, tail and collar with its tag. Flat pure magenta (#FF00FF) background everywhere, no ground, no shadow, no text",
+  "cena_usd": 0.0704
+}

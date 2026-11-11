@@ -1,0 +1,15 @@
+{
+  "id": "byt-kulisy",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1024x1024",
+  "paleta": null,
+  "reference": [
+    "hra/grafika/predmety/kava.png",
+    "hra/grafika/predmety/pembok.png",
+    "hra/grafika/mistnosti/vestibul.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "Two separate props for a 2D point-and-click comedy adventure game, drawn large, far apart, not touching, in exactly the drawing style, line work and coloring of the reference images. On the left: the white coffee mug from the first reference image, full of black coffee, without steam, standing, seen from the side slightly from above. On the right: the old brown leather book from the second reference image, but closed and lifeless: no face, no eyes, no mouth, no tongue; a brand new unopened gift still wrapped in clear shiny cellophane with a few white highlight streaks and a small yellow round sticker, standing upright, its front cover and spine visible. Bold thick dark-brown outlines, flat colors with simple soft shading, warm muted palette. No text, no letters, no numbers,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0666
+}

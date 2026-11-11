@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/props/tlacitka_vytahu/prop_tlacitka_vytahu.tscn" id="5_xk0ah"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/hotspots/deska/hotspot_deska.tscn" id="5_xvc1v"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/hotspots/vytah/hotspot_vytah.tscn" id="6_p5gg1"]
-[ext_resource type="Texture2D" path="res://grafika/skici/vytah_tlacitka_bez.svg" id="6_radl4"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/vestibul_tlacitka_bez.png" id="6_radl4"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/props/cedule_archiv/prop_cedule_archiv.tscn" id="7_05x51"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/hotspots/schody_nahoru/hotspot_schody_nahoru.tscn" id="7_yvcof"]
-[ext_resource type="Texture2D" path="res://grafika/skici/cedule_archiv.svg" id="8_1u66u"]
+[ext_resource type="Texture2D" path="res://grafika/mistnosti/vestibul_cedule_archiv.png" id="8_1u66u"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/hotspots/schody_sklep/hotspot_schody_sklep.tscn" id="8_trf2n"]
 [ext_resource type="PackedScene" path="res://game/rooms/vestibul/hotspots/ven/hotspot_ven.tscn" id="9_4wphu"]
 [ext_resource type="PackedScene" path="res://game/characters/vratny/character_vratny.tscn" id="15_1u66u"]
@@ -37,7 +37,7 @@ position = Vector2(900, 500)
 texture = ExtResource("6_radl4")
 
 [node name="CeduleArchiv" parent="Props" unique_id=137941157 instance=ExtResource("7_05x51")]
-position = Vector2(130, 560)
+position = Vector2(51, 640)
 texture = ExtResource("8_1u66u")
 
 [node name="Hotspots" type="Node2D" parent="." unique_id=1545446585]

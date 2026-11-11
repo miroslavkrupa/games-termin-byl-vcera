@@ -5,14 +5,17 @@ extends PopochiuCharacter
 # čísla (P1.6) a půjčuje kartu poučení za podpis (P1.7). Zatím nehybný obrázek ze schváleného listu.
 
 const Data := preload('character_lumir_state.gd')
+## Mluvení fázemi úst
+const Usta := preload("res://game/spolecne/usta.gd")
 
 var state: Data = load("res://game/characters/lumir/character_lumir.tres")
+var _usta = null
 
 
 #region Virtual ####################################################################################
 # Called when the room where this character is located has finished being added to the scene tree.
 func _on_room_set() -> void:
-	pass
+	_usta = Usta.pripoj(self, _usta, "lumir")
 
 
 # Called when the character is clicked
@@ -102,6 +105,7 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 # Override this to alter the idle animation or hook custom logic to it.
 # By default, it plays the "idle" animation from the character's Sprite.
 func _play_idle() -> void:
+	Usta.mlc(_usta)
 	# If you want to preserve the default idle behavior, make sure to keep
 	# the call to `super()` in your override.
 	super()
@@ -119,6 +123,7 @@ func _play_walk(target_pos: Vector2) -> void:
 # Override this to alter the talk animation or hook custom logic to it.
 # By default, it plays the "talk" animation from the character's Sprite.
 func _play_talk() -> void:
+	Usta.mluv(_usta)
 	# If you want to preserve the default talk behavior, make sure to keep
 	# the call to `super()` in your override.
 	super()

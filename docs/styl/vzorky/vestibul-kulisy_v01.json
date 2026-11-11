@@ -1,0 +1,14 @@
+{
+  "id": "vestibul-kulisy",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "1024x1024",
+  "paleta": null,
+  "reference": [
+    "hra/grafika/mistnosti/vestibul.png",
+    "hra/grafika/predmety/tlacitko.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "Two separate props for a 2D point-and-click comedy adventure game, drawn large, far apart, not touching, seen straight from the front, in exactly the drawing style, line work and coloring of the first reference image (a finished background from the same game). On the left: an old tin wall sign in landscape format, faded teal enamel with a cream border line, a rusty screw in each corner, slightly dented, a few rust stains; on it a simple cream pictogram of an archive box with a folder sticking out, and below it a big yellow arrow pointing straight down. On the right: a tall narrow brass elevator call panel in portrait format, the same worn brass as the button plate in the second reference image, with a small blank cream display slot at the top and three round positions one above another: the top one is a cream button engraved with the digit 1, the middle one is a cream button engraved with 1½, the bottom one is missing, just an empty dark round hole with two short loose wires sticking out. Bold thick dark-brown outlines, flat colors with simple soft shading, warm muted palette. No other text, no letters,\nplain flat solid pure magenta (#FF00FF) background everywhere around the subject, no ground, no shadows, no gradient",
+  "cena_usd": 0.0664
+}

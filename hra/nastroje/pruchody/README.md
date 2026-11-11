@@ -32,6 +32,7 @@ nikdo nemluví ani nejde a GUI není blokované. Čeká nejvýš 120 sekund hry.
 | `hrac Nazev` | kontrola: hraje se za postavu |
 | `priznak nazev=hodnota` | kontrola příznaků v Globals, víc oddělených čárkou; přepínače `1` a `0`, za `=` nic znamená prázdný text |
 | `ma Predmet` / `nema Predmet` | kontrola inventáře postavy, za kterou se hraje, víc oddělených čárkou |
+| `vidi Postava` / `nevidi Postava` | kontrola: postava je / není v aktuální místnosti vidět, víc oddělených čárkou |
 | `konec klic,klic` | počká na obrazovku paměti kapitoly, porovná paměť (klíče bez `ch1_pamet_` a bez `pokracovani`) a tlačítky dojde do hlavního menu |
 
 Když místo klidu čeká nabídka voleb, krok skončí chybou, protože v souboru chybí `volby`.

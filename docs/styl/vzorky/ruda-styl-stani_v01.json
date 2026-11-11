@@ -1,0 +1,14 @@
+{
+  "id": "ruda-styl-stani",
+  "model": "gpt-image-2",
+  "kvalita": "medium",
+  "velikost": "2048x1024",
+  "paleta": null,
+  "reference": [
+    "tools/vzorky/predlohy/ruda_stani_list.png",
+    "docs/styl/vzorky/ruda-novy-styl_v01.png"
+  ],
+  "datum": "2026-11-11",
+  "zadani": "The first image is an animation sheet for a 2D point-and-click comedy adventure game: the main character drawn 8 times in an even grid on a flat magenta background, each figure in a slightly different pose (the frames of an idle animation: top row side view with a small sip of coffee, bottom row front view with a blink). The second image shows the same character in the final painting style of the game (front, side and back view).\nRepaint every figure of the first image in exactly the painting style of the second image: the same bold dark-brown outlines with varying weight, the same rich hand-painted shading with soft gradients, visible fabric texture, folds and small wrinkles, a slightly yellowed off-white shirt with shaded folds (not flat pure white), faded worn denim blue trousers, a duller brick-red striped tie, a warm cream-white mug, the same rendering of the face, hair, hands, yellow socks and brown leather shoes.\nThis is frame-by-frame animation, so the drawing itself must not change: keep every figure exactly where it is in the grid, at exactly the same size, in exactly the same pose. Do not move any arm, leg, hand, foot, the head, the mug or the clipboard, do not change the facial expression or the mouth shape of any figure, do not add or remove figures. All figures must look like the same painting in different poses: identical colors, identical hair shape and identical level of detail in every figure.\nFlat pure magenta (#FF00FF) background everywhere, no ground, no shadows, no text, no numbers, no grid lines",
+  "cena_usd": 0.061
+}

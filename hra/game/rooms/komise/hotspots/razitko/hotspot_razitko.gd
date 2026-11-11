@@ -46,10 +46,12 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 				await C.player.say("ch1_razitko_pouzit")
 			elif stav.predseda_souhlas:
 				await C.player.animuj_akci("pouziti")
+				Zvuk.efekt("razitko")
 				await C.player.say("ch1_razitko_kava_1")
 				await R.Komise.razitko_kavou()
 			else:
 				await C.player.animuj_akci("pouziti")
+				Zvuk.efekt("razitko")
 				await C.player.say("ch1_razitko_kava_brzy")
 				stav.poduska_mokra = true
 		I.Poduska:

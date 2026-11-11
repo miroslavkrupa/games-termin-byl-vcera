@@ -7,7 +7,8 @@ script = ExtResource("1_ayhki")
 script_name = "Dira"
 description = "ch1_hs_byt_dira"
 cursor = 1
-interaction_polygon = PackedVector2Array(790, 275, 1085, 275, 1085, 760, 790, 760)
+interaction_polygon = PackedVector2Array(800, 205, 1168, 205, 1168, 798, 800, 798)
+metadata/vychod = true
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="." unique_id=861805501]
 visible = false

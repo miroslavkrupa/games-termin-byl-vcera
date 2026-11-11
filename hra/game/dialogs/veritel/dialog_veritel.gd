@@ -13,6 +13,7 @@ func _on_start() -> void:
 	var byt = R.Byt.state
 	if not byt.veritel_busil:
 		byt.veritel_busil = true
+		await Zvuk.klepani()
 		await R.Byt.veritel("ch1_veritel_buseni_1")
 		await R.Byt.veritel("ch1_veritel_buseni_2")
 		await C.player.say("ch1_veritel_buseni_ruda")
