@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_zed_prohlednout",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "hrdě",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[proudly] Zeď slávy. Čtrnáct diplomů za čtrnáct projektů. Všechny „za účast“.",
-  "hash": "1249af0d99393dd9",
-  "datum": "2026-11-12"
+  "hash": "2138c794aa5ab92a",
+  "datum": "2026-11-12",
+  "kredity": 31
 }

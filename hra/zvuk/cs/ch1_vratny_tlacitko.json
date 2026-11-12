@@ -1,0 +1,13 @@
+{
+  "id": "ch1_vratny_tlacitko",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Vrátný",
+  "emoce": "ospale",
+  "hlas": "uDacAqQFeaEgizFMEiSl",
+  "text": "[sleepily] Tlačítko dvě? Tak to vás čeká starosta. Nebo vy jeho. Spíš vy jeho.",
+  "hash": "a418f90e7441a010",
+  "datum": "2026-11-12",
+  "kredity": 31
+}

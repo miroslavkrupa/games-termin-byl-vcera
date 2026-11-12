@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_odchod",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "naštvaně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "Převzato. A teď k těm fakturám!",
-  "hash": "6fd95feef232d1fc",
-  "datum": "2026-11-12"
+  "hash": "31ac1f835763e55f",
+  "datum": "2026-11-12",
+  "kredity": 12
 }

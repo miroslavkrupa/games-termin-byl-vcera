@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_pristani",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "otřeseně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Přistání podle plánu. Plán byl přežít.",
-  "hash": "a558fb7ee48c60be",
-  "datum": "2026-11-12"
+  "hash": "bf3329b56988d1b0",
+  "datum": "2026-11-12",
+  "kredity": 15
 }

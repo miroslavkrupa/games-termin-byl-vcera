@@ -1,0 +1,15 @@
+{
+  "id": "ch1_vratny_kavove_pero",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Vrátný",
+  "emoce": "ospale",
+  "hlas": "CwhRBWXzGAHq8TQ4Fs17",
+  "text": "[sleepily] Půjčit? Ne. Křížovky luštím tužkou. Kdyby se náhodou něco dokončilo, aby to šlo vygumovat.",
+  "hash": "2a5b58e9ed094c01",
+  "kandidat": "Roger-v4",
+  "postava_casting": "Vrátný",
+  "datum": "2026-11-12",
+  "kredity": 40
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ch1_babicka_vyslechnout_3",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Babička",
+  "emoce": "vlídně",
+  "hlas": "cjDdmfVUe8VozmpZQVUC",
+  "text": "[kindly] Vy jste první, kdo poslouchal až do konce. Počkejte.",
+  "hash": "751386040b2b0776",
+  "datum": "2026-11-12",
+  "kredity": 24
+}

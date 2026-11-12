@@ -559,6 +559,9 @@ func _kontrola_skriptu() -> void:
 			chyby.append(cesta)
 			print("[kontrola skriptů] nejde přeložit: %s" % cesta)
 	print("[kontrola skriptů] načteno %d skriptů, chyb %d" % [skripty.size(), chyby.size()])
+	# Dabing: v exportu jsou nahrávky jen jako importované soubory; hra je musí umět najít
+	for jazyk in ["cs", "en"]:
+		print("[kontrola dabingu] %s: %s" % [jazyk, get_node("/root/Zvuk").nahravky(jazyk)])
 	get_tree().quit(1 if chyby else 0)
 
 

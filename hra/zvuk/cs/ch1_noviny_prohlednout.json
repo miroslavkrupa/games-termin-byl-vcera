@@ -1,0 +1,13 @@
+{
+  "id": "ch1_noviny_prohlednout",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "čte",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
+  "text": "[reading aloud] Noviny. Na titulní straně starosta u nedokončeného mostu: „Starosta zahájil další etapu!“",
+  "hash": "f4640e8edc160b26",
+  "datum": "2026-11-12",
+  "kredity": 42
+}

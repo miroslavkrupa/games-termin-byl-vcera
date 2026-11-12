@@ -1,0 +1,13 @@
+{
+  "id": "ch1_pembok_rada_stanek",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Číslo projektu nemusí znát jen lidé. Prohlédni si pořádně ten stánek.",
+  "hash": "4c916ace2c2b64c3",
+  "datum": "2026-11-12",
+  "kredity": 37
+}

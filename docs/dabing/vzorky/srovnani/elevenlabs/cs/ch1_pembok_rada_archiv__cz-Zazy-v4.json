@@ -1,0 +1,15 @@
+{
+  "id": "ch1_pembok_rada_archiv",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "U48DQ1c9SVmD2BVCSiHL",
+  "text": "[helpfully, as a hint] Číslo máš. Archiv je ve sklepě radnice. Kde jinde by město schovávalo svoje chyby?",
+  "hash": "da2396c23ea0422d",
+  "kandidat": "cz-Zazy-v4",
+  "postava_casting": "Pembok",
+  "datum": "2026-11-12",
+  "kredity": 42
+}

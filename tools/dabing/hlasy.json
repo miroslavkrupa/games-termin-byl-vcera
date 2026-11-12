@@ -6,9 +6,9 @@
   "pokyny": "Voice acting for a comedy point-and-click adventure game. Speak {jazyk} with native pronunciation, natural pacing and comic timing. Do not read stage directions. Character: {postava} Delivery: {emoce}."
  },
  "elevenlabs": {
-  "model": "eleven_v3",
-  "format": "mp3_44100_128",
-  "poznamka": "Hlasy kapitoly 1 vybral autor 2026-11-12 (D97): Ruda George, Pembok Callum, Pan Změna Chris, Předseda Brian, Rozhlas Daniel, Starosta Bill, Bára Lily, Framework Liam, Babička Alice. Lumír Eric, Vrátný Roger, Věřitel Charlie, Druhý věřitel Will a Kocour River jsou doplněné tak, aby se hlasy neopakovaly. Postavy dalších kapitol hlas zatím nemají."
+  "model": "eleven_v4",
+  "format": "mp3_44100_64",
+  "poznamka": "Od 2026-11-12 (tarif Starter, D98): model eleven_v4 a rodilé české hlasy z knihovny ElevenLabs. Autor zadal: Pembok hluboký a mentorující, Ruda namyšlený floutek, Bára v pohodě a agilní, ostatní podle povahy a bez opakování; hlasy přidělil Claude podle popisů v knihovně. Původní výběr autora pro model eleven_v3 (standardní anglické hlasy George, Lily, Callum…) zůstává u postav v polích elevenlabs_v3. Postavy dalších kapitol hlas zatím nemají."
  },
  "jazyky": {
   "cs": "Czech",
@@ -18,80 +18,106 @@
   "Ruda": {
    "popis": "Rudy Gantt, overconfident project manager in his forties, talks fast, everything is a 'phase'.",
    "openai": "ash",
-   "elevenlabs": "JBFqnCBsd6RMkjVDRZzb",
-   "elevenlabs_jmeno": "George"
+   "elevenlabs": "pbkYN44QoHzaZgZJyduO",
+   "elevenlabs_jmeno": "Johnny Castle",
+   "elevenlabs_v3": "JBFqnCBsd6RMkjVDRZzb",
+   "elevenlabs_v3_jmeno": "George"
   },
   "Bára": {
    "popis": "Barb Backlog, calm practical engineer, dry and matter-of-fact, the voice of reason.",
    "openai": "sage",
-   "elevenlabs": "pFZP5JQG7iQjIQuC4Bku",
-   "elevenlabs_jmeno": "Lily"
+   "elevenlabs": "lL2te4KGkMwtJVActenQ",
+   "elevenlabs_jmeno": "Marketa",
+   "elevenlabs_v3": "pFZP5JQG7iQjIQuC4Bku",
+   "elevenlabs_v3_jmeno": "Lily"
   },
   "Pembok": {
    "popis": "Prof. Pembok, elderly professor and narrator-mentor, dry wit, slow and precise.",
    "openai": "onyx",
-   "elevenlabs": "N2lVS1w4EtoT3dr4eOWO",
-   "elevenlabs_jmeno": "Callum"
+   "elevenlabs": "A4QaWrc6j9wnj1l191pm",
+   "elevenlabs_jmeno": "Jiri",
+   "elevenlabs_v3": "N2lVS1w4EtoT3dr4eOWO",
+   "elevenlabs_v3_jmeno": "Callum"
   },
   "Pan Změna": {
    "popis": "Mr. Change, hidden voice behind a market stall, giddy, changes his mind mid-sentence.",
    "openai": "verse",
-   "elevenlabs": "iP95p4xoKVk53GoZ742B",
-   "elevenlabs_jmeno": "Chris"
+   "elevenlabs": "Y9pzXglljt62KSmEAcTg",
+   "elevenlabs_jmeno": "Michael Rig",
+   "elevenlabs_v3": "iP95p4xoKVk53GoZ742B",
+   "elevenlabs_v3_jmeno": "Chris"
   },
   "Předseda": {
    "popis": "Chairman Evermore, elderly bureaucrat, kind, slow and unhurried, never says no, only 'next phase'.",
    "openai": "echo",
-   "elevenlabs": "nPczCjzI2devNBz1zQrb",
-   "elevenlabs_jmeno": "Brian"
+   "elevenlabs": "74AN1miXRSagO1nasQXA",
+   "elevenlabs_jmeno": "Romáro",
+   "elevenlabs_v3": "nPczCjzI2devNBz1zQrb",
+   "elevenlabs_v3_jmeno": "Brian"
   },
   "Framework": {
    "popis": "Dr. Framework, methodology consultant, smooth and smug, loves jargon.",
    "openai": "fable",
-   "elevenlabs": "TX3LPaxmHKxFdv7VOQHJ",
-   "elevenlabs_jmeno": "Liam"
+   "elevenlabs": "uYFJyGaibp4N2VwYQshk",
+   "elevenlabs_jmeno": "Adam",
+   "elevenlabs_v3": "TX3LPaxmHKxFdv7VOQHJ",
+   "elevenlabs_v3_jmeno": "Liam"
   },
   "Starosta": {
    "popis": "The mayor, loud populist, promises everything to everyone.",
    "openai": "ballad",
-   "elevenlabs": "pqHfZKP75CvOlQylNhV4",
-   "elevenlabs_jmeno": "Bill"
+   "elevenlabs": "NHv5TpkohJlOhwlTCzJk",
+   "elevenlabs_jmeno": "Pawel",
+   "elevenlabs_v3": "pqHfZKP75CvOlQylNhV4",
+   "elevenlabs_v3_jmeno": "Bill"
   },
   "Lumír": {
    "popis": "Lumír, tired archive clerk, monotone.",
    "openai": "alloy",
-   "elevenlabs": "cjVigY5qzO86Huf0OWal",
-   "elevenlabs_jmeno": "Eric"
+   "elevenlabs": "U48DQ1c9SVmD2BVCSiHL",
+   "elevenlabs_jmeno": "Zazy",
+   "elevenlabs_v3": "cjVigY5qzO86Huf0OWal",
+   "elevenlabs_v3_jmeno": "Eric"
   },
   "Vrátný": {
    "popis": "Porter, gruff gatekeeper, short sentences.",
    "openai": "onyx",
-   "elevenlabs": "CwhRBWXzGAHq8TQ4Fs17",
-   "elevenlabs_jmeno": "Roger"
+   "elevenlabs": "uDacAqQFeaEgizFMEiSl",
+   "elevenlabs_jmeno": "Stepan Bezec",
+   "elevenlabs_v3": "CwhRBWXzGAHq8TQ4Fs17",
+   "elevenlabs_v3_jmeno": "Roger"
   },
   "Babička": {
    "popis": "Granny Plotkins, sweet old lady with a sharp edge.",
    "openai": "shimmer",
-   "elevenlabs": "Xb7hH8MSUJpSbSDYk0k2",
-   "elevenlabs_jmeno": "Alice"
+   "elevenlabs": "cjDdmfVUe8VozmpZQVUC",
+   "elevenlabs_jmeno": "Monica",
+   "elevenlabs_v3": "Xb7hH8MSUJpSbSDYk0k2",
+   "elevenlabs_v3_jmeno": "Alice"
   },
   "Věřitel": {
    "popis": "A creditor, impatient and nasal.",
    "openai": "echo",
-   "elevenlabs": "IKne3meq5aSn9XLyUdCD",
-   "elevenlabs_jmeno": "Charlie"
+   "elevenlabs": "th1tvW1UMSnasFH7w7ZW",
+   "elevenlabs_jmeno": "Tomáš Nikl",
+   "elevenlabs_v3": "IKne3meq5aSn9XLyUdCD",
+   "elevenlabs_v3_jmeno": "Charlie"
   },
   "Druhý věřitel": {
    "popis": "A second creditor, even more impatient.",
    "openai": "verse",
-   "elevenlabs": "bIHbv24MWmeRgasZH58o",
-   "elevenlabs_jmeno": "Will"
+   "elevenlabs": "vP4R9CqQI4q0HlVrXJWj",
+   "elevenlabs_jmeno": "Zdeněk",
+   "elevenlabs_v3": "bIHbv24MWmeRgasZH58o",
+   "elevenlabs_v3_jmeno": "Will"
   },
   "Rozhlas": {
    "popis": "Town public-address announcer, flat official tone with a crackle of boredom.",
    "openai": "alloy",
-   "elevenlabs": "onwK4e9ZLuTAKqWW03F9",
-   "elevenlabs_jmeno": "Daniel"
+   "elevenlabs": "RLNDyOw6Pdm1OI4UkciF",
+   "elevenlabs_jmeno": "Petr Sovadina",
+   "elevenlabs_v3": "onwK4e9ZLuTAKqWW03F9",
+   "elevenlabs_v3_jmeno": "Daniel"
   },
   "Obyvatelé": {
    "popis": "Townspeople in chorus.",
@@ -136,8 +162,10 @@
   "Kocour": {
    "popis": "A cat. Says one thing.",
    "openai": "sage",
-   "elevenlabs": "SAz9YHcvj6GT2YYXdXww",
-   "elevenlabs_jmeno": "River"
+   "elevenlabs": "e6RzI8kmgjn6nh36K9J3",
+   "elevenlabs_jmeno": "Kami",
+   "elevenlabs_v3": "SAz9YHcvj6GT2YYXdXww",
+   "elevenlabs_v3_jmeno": "River"
   }
  },
  "emoce": {

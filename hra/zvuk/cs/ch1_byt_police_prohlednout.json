@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_police_prohlednout",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "provinile",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Police. Jediná kniha, kterou mám. Dárek k narozeninám, pořád v celofánu.",
-  "hash": "b19bdc979b7afb09",
-  "datum": "2026-11-12"
+  "hash": "9ba9eaae265b3792",
+  "datum": "2026-11-12",
+  "kredity": 29
 }

@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_nikdo_1",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "klidně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "Tak tu nikdo nepodepíše, že se odstěhoval.",
-  "hash": "bc0a432115f48175",
-  "datum": "2026-11-12"
+  "hash": "693f8ad75d53bbe9",
+  "datum": "2026-11-12",
+  "kredity": 17
 }

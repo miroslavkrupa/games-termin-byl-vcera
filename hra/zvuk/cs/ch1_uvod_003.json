@@ -1,12 +1,13 @@
 {
   "id": "ch1_uvod_003",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "sebevědomě",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[confidently] Vinou ostatních, samozřejmě. Já jsem byl jediný, kdo se držel plánu.",
-  "hash": "dbf2040f47b794dd",
-  "datum": "2026-11-12"
+  "hash": "e6c97f21ed7f0c2c",
+  "datum": "2026-11-12",
+  "kredity": 33
 }

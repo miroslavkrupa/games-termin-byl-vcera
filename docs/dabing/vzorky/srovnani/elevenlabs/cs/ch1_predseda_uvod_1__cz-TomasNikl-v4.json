@@ -1,0 +1,15 @@
+{
+  "id": "ch1_predseda_uvod_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
+  "text": "[kindly] Vítejte v Komisi pro schvalování komisí. Posaďte se. Nebo stůjte, ve frontě je to jedno.",
+  "hash": "a08dcd3b8218e3cf",
+  "kandidat": "cz-TomasNikl-v4",
+  "postava_casting": "Předseda",
+  "datum": "2026-11-12",
+  "kredity": 39
+}

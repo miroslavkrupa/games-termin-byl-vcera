@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_kniha_mlci",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "spokojeně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[contentedly] Kniha mlčí. Konečně někdo, kdo mi neskáče do řeči.",
-  "hash": "960f73d7909b08fd",
-  "datum": "2026-11-12"
+  "hash": "483a632585560df7",
+  "datum": "2026-11-12",
+  "kredity": 26
 }

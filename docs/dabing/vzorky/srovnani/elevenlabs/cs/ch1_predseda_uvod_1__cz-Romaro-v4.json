@@ -1,0 +1,15 @@
+{
+  "id": "ch1_predseda_uvod_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "74AN1miXRSagO1nasQXA",
+  "text": "[kindly] Vítejte v Komisi pro schvalování komisí. Posaďte se. Nebo stůjte, ve frontě je to jedno.",
+  "hash": "1f59bc81d9b4ef72",
+  "kandidat": "cz-Romaro-v4",
+  "postava_casting": "Předseda",
+  "datum": "2026-11-12",
+  "kredity": 39
+}

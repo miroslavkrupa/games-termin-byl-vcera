@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_skluz",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "ve skluzu",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Jůůů…",
-  "hash": "ac01b5910662f776",
-  "datum": "2026-11-12"
+  "hash": "42a69659fa6d8708",
+  "datum": "2026-11-12",
+  "kredity": 2
 }

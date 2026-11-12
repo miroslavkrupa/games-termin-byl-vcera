@@ -1,12 +1,13 @@
 {
   "id": "ch1_uvod_004",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "nejistě",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Plán byl, že to bude hotové. Haló? Haló?",
-  "hash": "d150587b87682bce",
-  "datum": "2026-11-12"
+  "hash": "26ae8626f4df58d1",
+  "datum": "2026-11-12",
+  "kredity": 16
 }

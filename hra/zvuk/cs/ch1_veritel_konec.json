@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_konec",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "výhružně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "Neutečete nám, Gantte! Dveře hlídáme!",
-  "hash": "300027b42d1f83b2",
-  "datum": "2026-11-12"
+  "hash": "58cc8e9778e90f74",
+  "datum": "2026-11-12",
+  "kredity": 15
 }

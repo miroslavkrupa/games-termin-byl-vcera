@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_kolik_1",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "věcně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "[matter-of-factly] Dvanáct tisíc.",
-  "hash": "7669061844ba0148",
-  "datum": "2026-11-12"
+  "hash": "b294a1469b4ccf88",
+  "datum": "2026-11-12",
+  "kredity": 13
 }

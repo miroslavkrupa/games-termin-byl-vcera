@@ -1,0 +1,13 @@
+{
+  "id": "ch1_predseda_razitko_bez_papiru",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "74AN1miXRSagO1nasQXA",
+  "text": "[kindly] Razítko na co? Na prázdný stůl? To jsme dělali v osmdesátých letech.",
+  "hash": "410e74a978e1cd89",
+  "datum": "2026-11-12",
+  "kredity": 31
+}

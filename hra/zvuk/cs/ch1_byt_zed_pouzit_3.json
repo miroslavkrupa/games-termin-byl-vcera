@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_zed_pouzit_3",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "suše",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[dryly] Na diplom číslo čtrnáct ještě nemám rámeček. Ten rámeček je taky projekt.",
-  "hash": "dbe54e4353601daa",
-  "datum": "2026-11-12"
+  "hash": "3a58d4a36cc35f46",
+  "datum": "2026-11-12",
+  "kredity": 32
 }

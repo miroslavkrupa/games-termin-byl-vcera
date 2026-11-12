@@ -1,0 +1,13 @@
+{
+  "id": "ch1_m02_malo",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] O téhle postavě víš málo. Promluv si s ní.",
+  "hash": "b1d527d8240a3110",
+  "datum": "2026-11-12",
+  "kredity": 26
+}

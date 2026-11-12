@@ -1,0 +1,15 @@
+{
+  "id": "ch1_veritel_co_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Věřitel",
+  "emoce": "věcně",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
+  "text": "[matter-of-factly] Máme pro vás doporučený dopis z radnice. Doručujeme ho, protože radnice dluží i nám.",
+  "hash": "4cc6ad0840d9784d",
+  "kandidat": "cz-TomasNikl-v4",
+  "postava_casting": "Věřitel",
+  "datum": "2026-11-12",
+  "kredity": 41
+}

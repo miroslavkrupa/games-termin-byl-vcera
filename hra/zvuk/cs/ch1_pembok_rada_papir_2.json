@@ -1,0 +1,13 @@
+{
+  "id": "ch1_pembok_rada_papir_2",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Podpis starosty i zadání z archivu už máš. Zastav se u přepážky pro žadatele.",
+  "hash": "be4a328b24a4f8d2",
+  "datum": "2026-11-12",
+  "kredity": 40
+}

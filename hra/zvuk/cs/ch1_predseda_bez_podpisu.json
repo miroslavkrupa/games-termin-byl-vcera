@@ -1,0 +1,13 @@
+{
+  "id": "ch1_predseda_bez_podpisu",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "74AN1miXRSagO1nasQXA",
+  "text": "[kindly] Bez podpisu sponzora vás nemohu zařadit ani do fronty. Natož do fronty na frontu.",
+  "hash": "04b3a6965bdd111e",
+  "datum": "2026-11-12",
+  "kredity": 36
+}

@@ -56,3 +56,4 @@ if [ "$KOD" -ne 0 ] || [ -z "$SOUHRN" ] || grep -q "res://game/" "$VYPIS"; then
 	exit 1
 fi
 echo "Kontrola exportu prošla: ${SOUHRN#\[kontrola skriptů\] }."
+grep "^\[kontrola dabingu\]" "$VYPIS" | sed 's/^\[kontrola dabingu\] /Dabing v exportu, /' || true

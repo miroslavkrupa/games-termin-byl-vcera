@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_volba_co",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Co chcete?",
-  "hash": "2fa170662dd11f4d",
-  "datum": "2026-11-12"
+  "hash": "f66acb3c48879a14",
+  "datum": "2026-11-12",
+  "kredity": 4
 }

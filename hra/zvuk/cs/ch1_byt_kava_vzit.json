@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_kava_vzit",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "láskyplně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Bez kávy nikam. Káva je jediný plán, který mě nikdy nezklamal.",
-  "hash": "0d6642ea161e5a99",
-  "datum": "2026-11-12"
+  "hash": "fd3207c6962a6fcf",
+  "datum": "2026-11-12",
+  "kredity": 25
 }

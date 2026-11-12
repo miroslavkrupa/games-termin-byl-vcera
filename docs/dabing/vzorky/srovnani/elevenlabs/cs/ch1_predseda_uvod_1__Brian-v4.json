@@ -1,0 +1,15 @@
+{
+  "id": "ch1_predseda_uvod_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Předseda",
+  "emoce": "vlídně",
+  "hlas": "nPczCjzI2devNBz1zQrb",
+  "text": "[kindly] Vítejte v Komisi pro schvalování komisí. Posaďte se. Nebo stůjte, ve frontě je to jedno.",
+  "hash": "cb36a8ec61a733fa",
+  "kandidat": "Brian-v4",
+  "postava_casting": "Předseda",
+  "datum": "2026-11-12",
+  "kredity": 39
+}

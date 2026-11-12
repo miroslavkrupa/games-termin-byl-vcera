@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_dvere_prohlednout",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "nervózně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[nervously] Dveře. Na druhé straně buší věřitelé. Na téhle straně stojím já a vymýšlím plán.",
-  "hash": "eadadb87c6953072",
-  "datum": "2026-11-12"
+  "hash": "58d1675cc7b39a11",
+  "datum": "2026-11-12",
+  "kredity": 37
 }

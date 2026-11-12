@@ -1,0 +1,13 @@
+{
+  "id": "ch1_babicka_vyslechnout_2",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Babička",
+  "emoce": "věcně",
+  "hlas": "cjDdmfVUe8VozmpZQVUC",
+  "text": "[matter-of-factly] Kdyby se zeptali, řekla bych jim, že o tři metry dál je skála. Tam by stála rovně.",
+  "hash": "8cd2542729f829a5",
+  "datum": "2026-11-12",
+  "kredity": 40
+}

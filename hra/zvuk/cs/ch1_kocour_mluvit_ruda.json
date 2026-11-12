@@ -1,0 +1,13 @@
+{
+  "id": "ch1_kocour_mluvit_ruda",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "přátelsky",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
+  "text": "Ahoj, kocoure. Kdo tady rozhoduje o Arše?",
+  "hash": "c317ff46e430c8fe",
+  "datum": "2026-11-12",
+  "kredity": 16
+}

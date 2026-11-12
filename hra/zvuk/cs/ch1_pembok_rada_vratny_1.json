@@ -1,0 +1,13 @@
+{
+  "id": "ch1_pembok_rada_vratny_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Kdo podepsal tvůj dekret? A rozhoduje vůbec o něčem?",
+  "hash": "0d553ed81224a075",
+  "datum": "2026-11-12",
+  "kredity": 30
+}

@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_kolik_3",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "věcně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "[matter-of-factly] Dvacet. Čím víc se ptá, tím víc to je.",
-  "hash": "0a3638a2eaa0607f",
-  "datum": "2026-11-12"
+  "hash": "e377706a66468b59",
+  "datum": "2026-11-12",
+  "kredity": 23
 }

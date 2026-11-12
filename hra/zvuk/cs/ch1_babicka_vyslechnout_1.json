@@ -1,0 +1,13 @@
+{
+  "id": "ch1_babicka_vyslechnout_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Babička",
+  "emoce": "tiše",
+  "hlas": "cjDdmfVUe8VozmpZQVUC",
+  "text": "[quietly] Nikdo se mě nikdy na nic nezeptal. Ani kudy rampa povede, ani jestli mi nevadí.",
+  "hash": "faedeac58f3ba898",
+  "datum": "2026-11-12",
+  "kredity": 36
+}

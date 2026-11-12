@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_bez_kavy",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "zásadově",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Nic nepodepisuju, dokud nemám v ruce kávu. Zásada číslo jedna.",
-  "hash": "46521765ac46e8f6",
-  "datum": "2026-11-12"
+  "hash": "bc8e187c6428d54d",
+  "datum": "2026-11-12",
+  "kredity": 25
 }

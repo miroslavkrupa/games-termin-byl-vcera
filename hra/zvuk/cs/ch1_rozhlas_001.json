@@ -1,0 +1,13 @@
+{
+  "id": "ch1_rozhlas_001",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Rozhlas",
+  "emoce": "úředně",
+  "hlas": "RLNDyOw6Pdm1OI4UkciF",
+  "text": "[officially] Hlášení městského rozhlasu. Kometa Deadline dopadne na Nedostavěnici za třicet dní.",
+  "hash": "aeb5c6e8c8e7a5e6",
+  "datum": "2026-11-12",
+  "kredity": 38
+}

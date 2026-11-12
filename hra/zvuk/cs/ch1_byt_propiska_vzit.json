@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_propiska_vzit",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "spokojeně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[contentedly] Propiska. Nepíše, ale dobře vypadá v náprsní kapse. Jako já na poradách.",
-  "hash": "e8a194ff10ecdb8a",
-  "datum": "2026-11-12"
+  "hash": "1e69b8d01507cb97",
+  "datum": "2026-11-12",
+  "kredity": 34
 }

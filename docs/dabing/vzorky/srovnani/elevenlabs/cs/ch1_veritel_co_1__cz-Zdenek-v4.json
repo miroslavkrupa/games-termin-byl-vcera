@@ -1,0 +1,15 @@
+{
+  "id": "ch1_veritel_co_1",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Věřitel",
+  "emoce": "věcně",
+  "hlas": "vP4R9CqQI4q0HlVrXJWj",
+  "text": "[matter-of-factly] Máme pro vás doporučený dopis z radnice. Doručujeme ho, protože radnice dluží i nám.",
+  "hash": "322e722d5974f0d8",
+  "kandidat": "cz-Zdenek-v4",
+  "postava_casting": "Druhý věřitel",
+  "datum": "2026-11-12",
+  "kredity": 41
+}

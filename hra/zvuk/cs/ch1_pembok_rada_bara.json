@@ -1,0 +1,13 @@
+{
+  "id": "ch1_pembok_rada_bara",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Lidé, kteří měří, většinou vědí víc než lidé, kteří slibují. Ta žena u kašny měří.",
+  "hash": "2384910d2e2bb5aa",
+  "datum": "2026-11-12",
+  "kredity": 42
+}

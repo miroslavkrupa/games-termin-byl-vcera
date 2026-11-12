@@ -1,0 +1,13 @@
+{
+  "id": "ch1_vratny_dovnitr_cislo",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Vrátný",
+  "emoce": "ospale",
+  "hlas": "uDacAqQFeaEgizFMEiSl",
+  "text": "[sleepily] Číslo máte, tak sklep je váš. Dolů po schodech, nahoru se stejně nedostanete.",
+  "hash": "140fb429570fd3ec",
+  "datum": "2026-11-12",
+  "kredity": 35
+}

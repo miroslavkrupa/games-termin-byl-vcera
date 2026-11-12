@@ -1,0 +1,13 @@
+{
+  "id": "obecne_bara_mluvit",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Bára",
+  "emoce": "",
+  "hlas": "lL2te4KGkMwtJVActenQ",
+  "text": "Mluví se tu dost. Měří se málo.",
+  "hash": "9ee6724d124a2800",
+  "datum": "2026-11-12",
+  "kredity": 12
+}

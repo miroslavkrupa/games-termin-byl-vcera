@@ -1,0 +1,208 @@
+{
+ "popis": "Srovnání po přechodu na tarif Starter (2026-11-12), vše v modelu eleven_v4: u každé postavy původní standardní hlas (…-v4) a rodilé české hlasy z knihovny (cz-…-v4). Ukázky původních hlasů v modelu eleven_v3 tu nejsou (omylem se přegenerovaly novým modelem a byly smazány). ID českých hlasů jsou z veřejného výpisu knihovny, hlas tam může autor kdykoli stáhnout.",
+ "nadpis": "Srovnání hlasů: v3, v4 a rodilé české hlasy",
+ "uvod": "Vše v modelu eleven_v4: původní standardní hlas (…-v4) a rodilé české hlasy z knihovny (cz-…-v4). Přidělené hlasy jsou v tools/dabing/hlasy.json.",
+ "postavy": {
+  "Ruda": {
+   "replika": "ch1_ruda_001",
+   "kandidati": {
+    "George-v4": {
+     "hlas": "JBFqnCBsd6RMkjVDRZzb",
+     "model": "eleven_v4"
+    },
+    "cz-Adam-v4": {
+     "hlas": "uYFJyGaibp4N2VwYQshk",
+     "model": "eleven_v4"
+    },
+    "cz-JohnnyCastle-v4": {
+     "hlas": "pbkYN44QoHzaZgZJyduO",
+     "model": "eleven_v4"
+    },
+    "cz-Pawel-v4": {
+     "hlas": "NHv5TpkohJlOhwlTCzJk",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Bára": {
+   "replika": "ch1_bara_odchod",
+   "kandidati": {
+    "Lily-v4": {
+     "hlas": "pFZP5JQG7iQjIQuC4Bku",
+     "model": "eleven_v4"
+    },
+    "cz-Denisa-v4": {
+     "hlas": "OAAjJsQDvpg3sVjiLgyl",
+     "model": "eleven_v4"
+    },
+    "cz-Kami-v4": {
+     "hlas": "e6RzI8kmgjn6nh36K9J3",
+     "model": "eleven_v4"
+    },
+    "cz-Marketa-v4": {
+     "hlas": "lL2te4KGkMwtJVActenQ",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Pembok": {
+   "replika": "ch1_pembok_rada_archiv",
+   "kandidati": {
+    "Callum-v4": {
+     "hlas": "N2lVS1w4EtoT3dr4eOWO",
+     "model": "eleven_v4"
+    },
+    "cz-Romaro-v4": {
+     "hlas": "74AN1miXRSagO1nasQXA",
+     "model": "eleven_v4"
+    },
+    "cz-TomasNikl-v4": {
+     "hlas": "th1tvW1UMSnasFH7w7ZW",
+     "model": "eleven_v4"
+    },
+    "cz-Zazy-v4": {
+     "hlas": "U48DQ1c9SVmD2BVCSiHL",
+     "model": "eleven_v4"
+    },
+    "cz-Jiri-v4": {
+     "hlas": "A4QaWrc6j9wnj1l191pm",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Rozhlas": {
+   "replika": "ch1_rozhlas_001",
+   "kandidati": {
+    "Daniel-v4": {
+     "hlas": "onwK4e9ZLuTAKqWW03F9",
+     "model": "eleven_v4"
+    },
+    "cz-PetrSovadina-v4": {
+     "hlas": "RLNDyOw6Pdm1OI4UkciF",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Pan Změna": {
+   "replika": "ch1_zmena_plakat_zpet",
+   "kandidati": {
+    "Chris-v4": {
+     "hlas": "iP95p4xoKVk53GoZ742B",
+     "model": "eleven_v4"
+    },
+    "cz-JohnnyCastle-v4": {
+     "hlas": "pbkYN44QoHzaZgZJyduO",
+     "model": "eleven_v4"
+    },
+    "cz-MichaelRig-v4": {
+     "hlas": "Y9pzXglljt62KSmEAcTg",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Vrátný": {
+   "replika": "ch1_vratny_kavove_pero",
+   "kandidati": {
+    "Roger-v4": {
+     "hlas": "CwhRBWXzGAHq8TQ4Fs17",
+     "model": "eleven_v4"
+    },
+    "cz-StepanBezec-v4": {
+     "hlas": "uDacAqQFeaEgizFMEiSl",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Starosta": {
+   "replika": "ch1_starosta_slib_1",
+   "kandidati": {
+    "Bill-v4": {
+     "hlas": "pqHfZKP75CvOlQylNhV4",
+     "model": "eleven_v4"
+    },
+    "cz-Pawel-v4": {
+     "hlas": "NHv5TpkohJlOhwlTCzJk",
+     "model": "eleven_v4"
+    },
+    "cz-PetrSovadina-v4": {
+     "hlas": "RLNDyOw6Pdm1OI4UkciF",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Předseda": {
+   "replika": "ch1_predseda_uvod_1",
+   "kandidati": {
+    "Brian-v4": {
+     "hlas": "nPczCjzI2devNBz1zQrb",
+     "model": "eleven_v4"
+    },
+    "cz-Romaro-v4": {
+     "hlas": "74AN1miXRSagO1nasQXA",
+     "model": "eleven_v4"
+    },
+    "cz-TomasNikl-v4": {
+     "hlas": "th1tvW1UMSnasFH7w7ZW",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Babička": {
+   "replika": "ch1_babicka_poduska_2",
+   "kandidati": {
+    "Alice-v4": {
+     "hlas": "Xb7hH8MSUJpSbSDYk0k2",
+     "model": "eleven_v4"
+    },
+    "cz-Monica-v4": {
+     "hlas": "cjDdmfVUe8VozmpZQVUC",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Lumír": {
+   "replika": "ch1_lumir_001",
+   "kandidati": {
+    "Eric-v4": {
+     "hlas": "cjVigY5qzO86Huf0OWal",
+     "model": "eleven_v4"
+    },
+    "cz-Zazy-v4": {
+     "hlas": "U48DQ1c9SVmD2BVCSiHL",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Framework": {
+   "replika": "ch1_framework_kufr_1",
+   "kandidati": {
+    "Liam-v4": {
+     "hlas": "TX3LPaxmHKxFdv7VOQHJ",
+     "model": "eleven_v4"
+    },
+    "cz-Adam-v4": {
+     "hlas": "uYFJyGaibp4N2VwYQshk",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Věřitel": {
+   "replika": "ch1_veritel_co_1",
+   "kandidati": {
+    "cz-TomasNikl-v4": {
+     "hlas": "th1tvW1UMSnasFH7w7ZW",
+     "model": "eleven_v4"
+    }
+   }
+  },
+  "Druhý věřitel": {
+   "replika": "ch1_veritel_co_1",
+   "kandidati": {
+    "cz-Zdenek-v4": {
+     "hlas": "vP4R9CqQI4q0HlVrXJWj",
+     "model": "eleven_v4"
+    }
+   }
+  }
+ }
+}

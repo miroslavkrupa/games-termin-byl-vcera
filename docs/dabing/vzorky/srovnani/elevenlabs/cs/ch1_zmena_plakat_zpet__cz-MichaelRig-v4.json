@@ -1,0 +1,15 @@
+{
+  "id": "ch1_zmena_plakat_zpet",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pan Změna",
+  "emoce": "zmateně",
+  "hlas": "Y9pzXglljt62KSmEAcTg",
+  "text": "[confused] Můj starý plakát! Chci ho zpátky. Ne, nechci. Nechte si ho, než si to rozmyslím.",
+  "hash": "01dff9536337ab1a",
+  "kandidat": "cz-MichaelRig-v4",
+  "postava_casting": "Pan Změna",
+  "datum": "2026-11-12",
+  "kredity": 36
+}

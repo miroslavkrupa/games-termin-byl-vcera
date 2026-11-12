@@ -1,0 +1,13 @@
+{
+  "id": "ch1_m02_predseda_stred",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Předseda uprostřed? Jsi si jistý? Vzpomeň si, přes koho všechno musí projít.",
+  "hash": "524abb80369939a9",
+  "datum": "2026-11-12",
+  "kredity": 40
+}

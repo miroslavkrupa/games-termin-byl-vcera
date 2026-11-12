@@ -1,0 +1,13 @@
+{
+  "id": "ch1_zastavka_prohlednout",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "suše",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
+  "text": "[dryly] Zastávka. Podle jízdního řádu jede další spoj ve fázi 2.",
+  "hash": "e57146cce0dcac31",
+  "datum": "2026-11-12",
+  "kredity": 26
+}

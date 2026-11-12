@@ -40,7 +40,7 @@ ty by se musely nahrát ve všech variantách nebo nechat bez hlasu.
 | Služba | Model | Čeština | Emoce | Cena orientačně | Klíč |
 |---|---|---|---|---|---|
 | OpenAI | `gpt-4o-mini-tts` | ano, lehký přízvuk | pokyn slovy (`instructions`) | ≈ 0,02 USD / 1 000 znaků | `OPENAI_API_KEY` v `.env` (stejný jako pro obrázky) |
-| ElevenLabs | `eleven_v3` | ano, nejlepší | tagy v textu (`[dryly]`) | ≈ 0,22 USD / 1 000 znaků (tarif Creator) | `ELEVENLABS_API_KEY` v `.env`; hlasy vybrat z knihovny a zapsat `voice_id` do `hlasy.json`, seznam dá `--hlasy --sluzba elevenlabs` |
+| ElevenLabs | `eleven_v4` (dřív `eleven_v3`) | ano, nejlepší | tagy v textu (`[dryly]`) | 0,4 kreditu za znak; tarif Starter má 30 000 kreditů měsíčně | `ELEVENLABS_API_KEY` v `.env`; hlasy vybrat z knihovny a zapsat `voice_id` do `hlasy.json`, seznam dá `--hlasy --sluzba elevenlabs` |
 
 Ceny ověřit v ceníku před větším generováním. Pravidla OpenAI vyžadují ve hře uvést, že hlasy
 jsou generované. Kapitola 1 má asi 62 tisíc znaků v obou jazycích, kapitola 2 asi 45 tisíc
@@ -63,47 +63,76 @@ Na co se při poslechu ptát: Je to vtipné, nebo to vtip zabije? Sedí hlas k p
 jména a termíny (Pembok, Gantt, Nedostavěnice, Scope Creek)? Dá se to poslouchat deset minut
 v kuse? Co by chtělo foneticky přepsat (zvláštní sloupec v tabulce textů)?
 
-## Stav 2026-11-12 (D97)
+## Stav 2026-11-12 (D97, D98)
 
-- Služba: **ElevenLabs**. Hlasy vybírá autor z castingu (`vzorky/casting.html`): 12 postav
-  kapitoly 1, u každé 3 až 11 kandidátů ze standardních hlasů. Vybraný hlas se zapíše do
-  `tools/dabing/hlasy.json`.
-- Účet je na bezplatném tarifu: nestačí na celou kapitolu a API na něm odmítá hlasy
-  z knihovny (i Aria a Charlotte). Rodilé české hlasy z knihovny půjdou až s placeným tarifem;
-  pak stačí hlas přidat do „My Voices“ a zapsat jeho ID.
+- Služba: **ElevenLabs**, tarif Starter (30 000 kreditů měsíčně), model **`eleven_v4`**.
+  Namlouvání stojí 0,4 kreditu za znak včetně značek emocí (`[dryly] `); skutečný odečet vrací
+  služba u každé repliky, skript ho vypisuje a ukládá do `<id>.json` (pole `kredity`).
+- Hlasy: **rodilé české hlasy z knihovny ElevenLabs**. Na placeném tarifu je API přijímá přímo
+  podle ID, není potřeba je přidávat do „My Voices“. Autor hlasu ho může z knihovny stáhnout;
+  pak by se postava musela přeobsadit a přemluvit.
+- Srovnání k poslechu: `vzorky/srovnani.html` (zadání `tools/dabing/srovnani.json`, spouští se
+  `python3 tools/dabing.py --casting srovnani --jazyk cs`): u každé postavy původní standardní
+  hlas a české hlasy, vše v modelu v4. Starší casting standardních hlasů v modelu v3 je
+  `vzorky/casting.html`.
 - Klíč v `.env` umí jen generovat řeč. Seznam hlasů (`--hlasy`) ani zbývající kredit přečíst
-  neumí, k tomu by potřeboval oprávnění `voices_read` a `user_read`.
-- Hra nahrávky už přehrává (`hra/game/zvuk.gd`): soubor `hra/zvuk/<jazyk>/<klíč>.mp3` se
-  přehraje, když postava řekne repliku s tím klíčem. Na zkoušku jsou ve hře dvě repliky Pana
-  Změny (`ch1_zmena_uvod`, `ch1_zmena_001`).
+  neumí, k tomu by potřeboval oprávnění `voices_read` a `user_read`. Seznam českých hlasů
+  s ID je veřejně na https://json2video.com/ai-voices/elevenlabs/languages/czech/ (39 hlasů).
 
-### Hlasy kapitoly 1 (vybral autor 2026-11-12)
+### Hlasy kapitoly 1 (D98)
 
-| Postava | Hlas ElevenLabs | Postava | Hlas ElevenLabs |
-|---|---|---|---|
-| Ruda | George | Framework | Liam |
-| Bára | Lily | Babička | Alice |
-| Pembok | Callum | Lumír | Eric (doplněno) |
-| Pan Změna | Chris | Vrátný | Roger (doplněno) |
-| Předseda | Brian | Věřitel | Charlie (doplněno) |
-| Rozhlas | Daniel | Druhý věřitel | Will (doplněno) |
-| Starosta | Bill | Kocour | River (doplněno) |
+Autor zadal povahu tří hlavních hlasů (Pembok hluboký a mentorující, Ruda namyšlený floutek,
+Bára v pohodě a agilní) a že se hlasy nemají opakovat; konkrétní hlasy přidělil Claude podle
+popisů v knihovně. Původní výběr autora pro model v3 (George, Lily, Callum…) zůstává
+v `tools/dabing/hlasy.json` v polích `elevenlabs_v3`.
 
-„Doplněno“ = vybral Claude tak, aby se hlasy v kapitole neopakovaly.
+| Postava | Hlas | Popis v knihovně |
+|---|---|---|
+| Ruda | Johnny Castle | Confident and Smart |
+| Bára | Marketa | Calm and Autentic, mladá, moravská |
+| Pembok | Jiri | Deep, Reflective and Husky |
+| Pan Změna | Michael Rig | Fairytale Narrator |
+| Předseda | Romáro | starší, přátelský |
+| Rozhlas | Petr Sovadina | Authoritative and Steady |
+| Starosta | Pawel | Cinematic, Deep and Confident |
+| Framework | Adam | Velvety and Conversational |
+| Babička | Monica | Slow, Steady and Clean (starší ženský hlas v knihovně není) |
+| Lumír | Zazy | Clear Audiobook Narrator |
+| Vrátný | Stepan Bezec | Mature and Serious |
+| Věřitel | Tomáš Nikl | padesátník, výklad |
+| Druhý věřitel | Zdeněk | Strong and Deep |
+| Kocour | Kami | Warm, Velvety and Soothing |
 
 ### Co je namluveno
 
-Úsek `kap1-uvod` (`tools/dabing/vzorky.json`, 65 replik v pořadí hry), česky, do
-`hra/zvuk/cs/`: hotovo 50 replik (telefonát, byt, věřitelé). Chybí 15 replik příchodu na
-náměstí (rozhlas, Pembok, Ruda): 2026-11-12 došel měsíční kredit bezplatného tarifu
-(10 000 znaků). Pokračuje se stejným příkazem, hotové repliky se přeskočí:
+Česky celá kapitola 1 a společné repliky: **625 replik**, 37 tisíc znaků, 14 800 kreditů,
+v `hra/zvuk/cs/` (25 MB). Bez hlasu zůstávají repliky se zástupným `%s`, volby, které jsou
+jen scénická poznámka, a texty bez mluvčího (názvy míst, rozhraní). Anglicky zatím nic.
+
+Kredit za 2026-11-12 podle odpovědí služby: zbytek úvodu ve v3 336, srovnání hlasů 2 284
+(z toho asi 440 omylem: ukázky v3 se po přepnutí modelu přegenerovaly), kapitola 14 800,
+dohromady asi 17 500 z 30 000.
+
+Namlouvá se příkazem (hotové repliky se přeskočí, dokud se nezmění text, hlas, model nebo
+emoce; `--dil I/N` rozdělí práci mezi víc běhů vedle sebe):
 
 ```
-python3 tools/dabing.py --vzorek kap1-uvod --jazyk cs --hra
+python3 tools/dabing.py --kapitola 1 --spolecne --jazyk cs --hra
 ```
 
-Nahrávky jsou MP3 128 kb/s (50 replik = 3,6 MB). Celá kapitola by v téhle kvalitě měla
-asi 40 MB na jazyk; před namluvením zbytku snížit datový tok (`format` v `hlasy.json`).
+`--spolecne` jsou repliky společné všem kapitolám (klíče bez `chN_`: popisy předmětů, obecné
+hlášky). Nahrávky jsou MP3 64 kb/s mono (`format` v `hlasy.json`).
+
+### Jak to hraje hra
+
+- `hra/game/zvuk.gd`: když postava promluví a existuje `hra/zvuk/<jazyk>/<klíč>.mp3`,
+  přehraje se a hudba ustoupí. Nahrávka se hledá podle znění repliky; když stejnou větu říkají
+  dvě postavy („Děkuju, Lumíre.“ Ruda i Bára), rozhodne mluvčí podle `hra/zvuk/mluvci.json`
+  (zapisuje ho `tools/dabing.py --hra`).
+- Samočinné pokračování („Samo“ v nastavení): replika s nahrávkou počká na konec hlasu
+  a 0,6 s, replika bez nahrávky 3 s po vypsání jako dřív
+  (`hra/game/gui/components/dialog_text/dialog_overhead/dialog_overhead_custom.gd`).
+  Ladicí běhy a průchod na hlas nečekají; `hlas=1` čekání zapne i tam.
 
 ## Co bude dál, když vzorky obstojí
 

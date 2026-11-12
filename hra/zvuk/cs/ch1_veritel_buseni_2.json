@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_buseni_2",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Věřitel",
   "emoce": "naštvaně",
-  "hlas": "IKne3meq5aSn9XLyUdCD",
+  "hlas": "th1tvW1UMSnasFH7w7ZW",
   "text": "Projekt čtrnáct skončil. Faktury ne!",
-  "hash": "5109b32325d8299f",
-  "datum": "2026-11-12"
+  "hash": "a7a5a48e98f62401",
+  "datum": "2026-11-12",
+  "kredity": 14
 }

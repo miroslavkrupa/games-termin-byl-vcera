@@ -1,0 +1,13 @@
+{
+  "id": "ch1_starosta_kava",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Starosta",
+  "emoce": "odmítavě",
+  "hlas": "NHv5TpkohJlOhwlTCzJk",
+  "text": "Kávu ne. Na fotkách se mi pak třesou ruce. A nůžky.",
+  "hash": "d1699826ab5e36de",
+  "datum": "2026-11-12",
+  "kredity": 20
+}

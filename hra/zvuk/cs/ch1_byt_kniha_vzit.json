@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_kniha_vzit",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "sebevědomě",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[confidently] Vezmu ji. Kniha v ruce vypadá jako plán.",
-  "hash": "7652a3e7ec96f82b",
-  "datum": "2026-11-12"
+  "hash": "4d65aa63fcc74901",
+  "datum": "2026-11-12",
+  "kredity": 22
 }

@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_podpis_ruda",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "rychle",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Podepíšu cokoli, hlavně když to zmizí.",
-  "hash": "6b9642c1db16d60b",
-  "datum": "2026-11-12"
+  "hash": "61449532b1b19ae8",
+  "datum": "2026-11-12",
+  "kredity": 15
 }

@@ -1,0 +1,13 @@
+{
+  "id": "ch1_babicka_mapa",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Ruda",
+  "emoce": "ukazuje mapu",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
+  "text": "Na mapě stojí, že pozemek pod rampou je váš.",
+  "hash": "9f586aaed7f58000",
+  "datum": "2026-11-12",
+  "kredity": 18
+}

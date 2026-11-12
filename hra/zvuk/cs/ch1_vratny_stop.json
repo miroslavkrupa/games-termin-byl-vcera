@@ -1,0 +1,13 @@
+{
+  "id": "ch1_vratny_stop",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Vrátný",
+  "emoce": "ospale",
+  "hlas": "uDacAqQFeaEgizFMEiSl",
+  "text": "[sleepily] Bez čísla projektu vás Lumír ze sklepa vyhodí. A mě s vámi.",
+  "hash": "9ae9241d1bc15890",
+  "datum": "2026-11-12",
+  "kredity": 28
+}

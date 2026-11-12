@@ -1,0 +1,13 @@
+{
+  "id": "ch1_kocour_mluvit",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Kocour",
+  "emoce": "povýšeně",
+  "hlas": "e6RzI8kmgjn6nh36K9J3",
+  "text": "Mňau.",
+  "hash": "29a31ee6082a2248",
+  "datum": "2026-11-12",
+  "kredity": 2
+}

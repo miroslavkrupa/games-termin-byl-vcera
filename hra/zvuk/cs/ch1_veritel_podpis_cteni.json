@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_podpis_cteni",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "čte, užasle",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[reading aloud] „Jmenovací dekret. Rudolf Gantt se jmenuje projektovým manažerem Archy.“ To není stížnost.",
-  "hash": "25506c604c86be03",
-  "datum": "2026-11-12"
+  "hash": "272868bd2e54b38d",
+  "datum": "2026-11-12",
+  "kredity": 42
 }

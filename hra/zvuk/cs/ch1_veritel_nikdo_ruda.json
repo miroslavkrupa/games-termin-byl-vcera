@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_nikdo_ruda",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "uznale",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "[appreciatively] …To je chytré.",
-  "hash": "9d3f2d97bdb09d1d",
-  "datum": "2026-11-12"
+  "hash": "cad6dfadae294e93",
+  "datum": "2026-11-12",
+  "kredity": 12
 }

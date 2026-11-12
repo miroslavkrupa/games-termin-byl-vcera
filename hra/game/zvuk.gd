@@ -59,7 +59,10 @@ var _efekty := {}        # název -> AudioStream
 var _posledni_klik := 0
 var _hlas: AudioStreamPlayer
 var _hlas_klic := ""
-var _klice := {}         # jazyk -> {přeložený text -> klíč textu}
+var _klice := {}         # jazyk -> {přeložený text -> [klíče textů]}
+var _kdo_mluvi := {}     # klíč textu -> jméno postavy; jen u vět, které říká víc postav
+var _mela_hlas := false  # právě říkaná replika má nahrávku
+var _cekat_na_hlas := true
 var _ladici := false
 var _ustup: Tween
 
@@ -70,6 +73,9 @@ func _ready() -> void:
 	var ladici: bool = parametry.has("pruchod") \
 		or parametry.any(func(a: String) -> bool: return a.begins_with("snimek="))
 	_ladici = ladici
+	# Ladicí běhy mají zvuk ztlumený a na hlas nečekají (průchod by se zdržoval); hlas=1 čekání
+	# zapne i tak, aby šlo vyzkoušet bez zvuku z reproduktorů
+	_cekat_na_hlas = not ladici or parametry.has("zvuk=1") or parametry.has("hlas=1")
 	if ladici and not parametry.has("zvuk=1"):
 		AudioServer.set_bus_mute(0, true)
 	var postavy := get_node_or_null("/root/C")
@@ -176,10 +182,11 @@ func hudba(nazev: String) -> void:
 
 #region Private ####################################################################################
 # Postava promluvila: najít nahrávku repliky v jazyce hry a přehrát ji
-func _na_repliku(_postava: Node, text: String) -> void:
+func _na_repliku(postava: Node, text: String) -> void:
 	_konec_repliky()
+	_mela_hlas = false
 	var jazyk := TranslationServer.get_locale().substr(0, 2)
-	var klic := _klic_textu(jazyk, text)
+	var klic := _klic_textu(jazyk, text, postava)
 	if klic == "":
 		return
 	var cesta: String = DABING_CESTA % [jazyk, klic]
@@ -190,6 +197,7 @@ func _na_repliku(_postava: Node, text: String) -> void:
 	add_child(_hlas)
 	_hlas.finished.connect(_konec_repliky)
 	_hlas.play()
+	_mela_hlas = true
 	_hlas_klic = klic
 	_ustup_hudby(true)
 	if _ladici:
@@ -221,10 +229,12 @@ func _ustup_hudby(ustoupit: bool) -> void:
 
 
 # Klíč textu podle přeloženého znění. Tabulka se sestaví jednou pro každý jazyk ze seznamu
-# nahrávek (názvy souborů jsou klíče textů): přeložený text každé nahrané repliky → její klíč.
+# nahrávek (názvy souborů jsou klíče textů): přeložený text každé nahrané repliky → její klíče.
 # Z překladu samotného seznam klíčů získat nejde (Godot ho ukládá zhuštěně). Repliky se
 # zástupným %s se nenamlouvají, a i kdyby, hra by je nenašla (výsledný text je jiný).
-func _klic_textu(jazyk: String, text: String) -> String:
+# Stejnou větu můžou říkat dvě postavy („Děkuju, Lumíre.“ Ruda i Bára): pak rozhodne, kdo
+# mluví, podle res://zvuk/mluvci.json (klíč → jméno postavy, zapisuje tools/dabing.py).
+func _klic_textu(jazyk: String, text: String, postava: Node = null) -> String:
 	if not _klice.has(jazyk):
 		var mapa := {}
 		var slozka: String = DABING_CESTA.get_base_dir() % jazyk
@@ -235,10 +245,65 @@ func _klic_textu(jazyk: String, text: String) -> String:
 				continue
 			var klic := nazev.get_basename()
 			var zneni := tr(klic)
-			if zneni != klic and not mapa.has(zneni):
-				mapa[zneni] = klic
+			if zneni == klic:
+				continue
+			if not mapa.has(zneni):
+				mapa[zneni] = []
+			if not mapa[zneni].has(klic):
+				mapa[zneni].append(klic)
 		_klice[jazyk] = mapa
-	return _klice[jazyk].get(text, "")
+	var klice: Array = _klice[jazyk].get(text, [])
+	if klice.is_empty():
+		return ""
+	if klice.size() > 1 and postava != null and "script_name" in postava:
+		var jmeno := String(postava.script_name).to_lower()
+		for klic in klice:
+			if _mluvci().get(klic, "") == jmeno:
+				return klic
+	return klice[0]
+
+
+func _mluvci() -> Dictionary:
+	if _kdo_mluvi.is_empty():
+		_kdo_mluvi = {"": ""}
+		var soubor := FileAccess.open(DABING_CESTA.get_base_dir().get_base_dir() + "/mluvci.json",
+			FileAccess.READ)
+		if soubor:
+			var data = JSON.parse_string(soubor.get_as_text())
+			if data is Dictionary:
+				_kdo_mluvi.merge(data)
+	return _kdo_mluvi
+
+
+## Kolik replik má v daném jazyce nahrávku, kterou hra najde a umí načíst (kontrola exportu)
+func nahravky(jazyk: String) -> String:
+	var puvodni := TranslationServer.get_locale()
+	TranslationServer.set_locale(jazyk)
+	_klice.erase(jazyk)
+	_klic_textu(jazyk, "")
+	var klicu := 0
+	var nactenych := 0
+	for klice in _klice[jazyk].values():
+		for klic in klice:
+			klicu += 1
+			if ResourceLoader.exists(DABING_CESTA % [jazyk, klic]):
+				nactenych += 1
+	TranslationServer.set_locale(puvodni)
+	return "nahrávek %d, z toho k načtení %d, vět s více mluvčími %d" % [klicu, nactenych,
+		_mluvci().size() - 1]
+
+
+## Kolik sekund ještě poběží hlas právě říkané repliky (0, když replika nahrávku nemá nebo
+## už dozněla). Podle toho titulky při samočinném pokračování počkají, až postava domluví.
+func zbyva_hlasu() -> float:
+	if not is_instance_valid(_hlas) or not _hlas.playing or _hlas.stream == null:
+		return 0.0
+	return maxf(_hlas.stream.get_length() - _hlas.get_playback_position(), 0.0)
+
+
+## Jestli právě říkaná replika má (nebo měla) nahrávku, na kterou mají titulky čekat
+func replika_s_hlasem() -> bool:
+	return _mela_hlas and _cekat_na_hlas
 
 
 func _na_novy_uzel(uzel: Node) -> void:

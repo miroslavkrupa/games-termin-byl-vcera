@@ -1,0 +1,13 @@
+{
+  "id": "ch1_pembok_rada_razitko_2_poduska",
+  "sluzba": "elevenlabs",
+  "model": "eleven_v4",
+  "jazyk": "cs",
+  "postava": "Pembok",
+  "emoce": "nápověda",
+  "hlas": "A4QaWrc6j9wnj1l191pm",
+  "text": "[helpfully, as a hint] Máš babiččinu podušku. Razítko ji bude mít rádo.",
+  "hash": "d82130060f532ad7",
+  "datum": "2026-11-12",
+  "kredity": 28
+}

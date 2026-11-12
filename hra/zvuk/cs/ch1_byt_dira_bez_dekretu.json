@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_dira_bez_dekretu",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "váhavě",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Ještě ne. Ti za dveřmi by mi nedali pokoj. Nejdřív zjistím, co chtějí.",
-  "hash": "bd7081f395eb6890",
-  "datum": "2026-11-12"
+  "hash": "568b87223644f028",
+  "datum": "2026-11-12",
+  "kredity": 28
 }

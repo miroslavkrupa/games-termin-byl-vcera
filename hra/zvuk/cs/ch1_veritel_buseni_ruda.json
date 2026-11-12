@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_buseni_ruda",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "šeptem",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Faktury. Jediné, co se v tomhle městě vždycky dokončí.",
-  "hash": "b912cee06760e696",
-  "datum": "2026-11-12"
+  "hash": "0ef56bdced06e4e8",
+  "datum": "2026-11-12",
+  "kredity": 22
 }

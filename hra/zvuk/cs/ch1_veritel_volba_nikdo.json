@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_volba_nikdo",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Tady nikdo nebydlí!",
-  "hash": "31bd6a899bd9d23f",
-  "datum": "2026-11-12"
+  "hash": "8d9c35f5e7ec9da5",
+  "datum": "2026-11-12",
+  "kredity": 8
 }

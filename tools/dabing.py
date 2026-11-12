@@ -35,6 +35,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import unicodedata
 import urllib.error
 import urllib.request
 
@@ -47,7 +48,9 @@ OUT_VZORKY = ROOT / "docs" / "dabing" / "vzorky"
 OUT_HRA = ROOT / "hra" / "zvuk"
 
 KLICE = {"openai": "OPENAI_API_KEY", "elevenlabs": "ELEVENLABS_API_KEY"}
-# Orientační cena v USD za 1000 znaků; před větším generováním ověřit v ceníku služby
+# Orientační cena v USD za 1000 znaků; před větším generováním ověřit v ceníku služby.
+# ElevenLabs se platí kredity z předplatného: skutečný odečet za každou repliku vrací služba
+# v odpovědi a skript ho vypisuje i ukládá do <id>.json („kredity“).
 CENA = {"openai": 0.02, "elevenlabs": 0.22}
 ZAVORKY = re.compile(r"\s*\([^)]*\)")
 
@@ -78,7 +81,7 @@ def mluveny_text(text):
 def send(req):
     try:
         with urllib.request.urlopen(req, timeout=300) as r:
-            return r.read()
+            return r.read(), r.headers
     except urllib.error.HTTPError as e:
         body = e.read().decode(errors="replace")
         raise ChybaAPI(f"Chyba API {e.code}: {body}")
@@ -104,14 +107,14 @@ def tag_elevenlabs(cfg, emoce):
     return f"[{tag}] " if tag and tag != emoce else ""
 
 
-def zadani(cfg, sluzba, radek, jazyk, hlas=None):
+def zadani(cfg, sluzba, radek, jazyk, hlas=None, model=None):
     """Sestaví, co se službě pošle. Vrací slovník s popisem i hashem pro cache."""
     postava = radek["_mluvci"].strip()
     emoce = radek["_emoce"].strip()
     text = mluveny_text(radek[jazyk])
     if hlas is None:
         hlas = cfg["postavy"].get(postava, {}).get(sluzba, "")
-    z = {"id": radek["keys"], "sluzba": sluzba, "model": cfg[sluzba]["model"], "jazyk": jazyk,
+    z = {"id": radek["keys"], "sluzba": sluzba, "model": model or cfg[sluzba]["model"], "jazyk": jazyk,
          "postava": postava, "emoce": emoce, "hlas": hlas, "text": text}
     if sluzba == "openai":
         z["pokyny"] = pokyny_openai(cfg, postava, emoce, jazyk)
@@ -122,6 +125,7 @@ def zadani(cfg, sluzba, radek, jazyk, hlas=None):
 
 
 def generuj(cfg, z, key):
+    """Vrací zvuk a počet kreditů, které služba za repliku odečetla (None, když to neřekne)."""
     if z["sluzba"] == "openai":
         payload = {"model": z["model"], "voice": z["hlas"], "input": z["text"],
                    "instructions": z["pokyny"], "response_format": cfg["openai"]["format"]}
@@ -136,7 +140,9 @@ def generuj(cfg, z, key):
             f"?output_format={cfg['elevenlabs']['format']}",
             data=json.dumps(payload).encode(),
             headers={"xi-api-key": key, "Content-Type": "application/json"})
-    return send(req)
+    data, hlavicky = send(req)
+    kredity = hlavicky.get("character-cost")
+    return data, int(kredity) if kredity and kredity.isdigit() else None
 
 
 def vypis_hlasy(sluzba, key):
@@ -145,7 +151,7 @@ def vypis_hlasy(sluzba, key):
               "shimmer, verse, marin, cedar. Ukázky: https://www.openai.fm")
         return
     req = urllib.request.Request("https://api.elevenlabs.io/v1/voices", headers={"xi-api-key": key})
-    data = json.loads(send(req))
+    data = json.loads(send(req)[0])
     for v in data.get("voices", []):
         labels = ", ".join(f"{k}: {val}" for k, val in (v.get("labels") or {}).items())
         print(f"{v['voice_id']}  {v['name']:20} {labels}")
@@ -193,30 +199,64 @@ def prehled_html():
 
 
 def vyrob(cfg, z, cil, key, znovu):
-    """Vygeneruje jednu nahrávku do cíle, pokud tam už není stejná. Vrací True, když se generovalo."""
+    """Vygeneruje jednu nahrávku do cíle, pokud tam už není stejná. Vrací None, když už hotová
+    je, jinak počet odečtených kreditů (0, když ho služba nesdělí)."""
     meta = cil.with_suffix(".json")
     if cil.exists() and meta.exists() and not znovu:
         if json.loads(meta.read_text(encoding="utf-8")).get("hash") == z["hash"]:
-            return False
-    data = generuj(cfg, z, key)
+            return None
+    data, kredity = generuj(cfg, z, key)
     cil.parent.mkdir(parents=True, exist_ok=True)
     cil.write_bytes(data)
-    meta.write_text(json.dumps({**z, "datum": datetime.date.today().isoformat()},
-                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return True
+    zapis = {**z, "datum": datetime.date.today().isoformat()}
+    if kredity is not None:
+        zapis["kredity"] = kredity
+    meta.write_text(json.dumps(zapis, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return kredity or 0
 
 
-def casting(cfg, sluzba, texty, jazyky, key, dry_run, znovu):
-    spec = json.loads(CASTING.read_text(encoding="utf-8"))
-    out = OUT_VZORKY / "casting" / sluzba
+def jmeno_ve_hre(postava):
+    """Jméno mluvčího z tabulky textů, jak ho má postava ve hře (script_name malými písmeny)."""
+    bez = unicodedata.normalize("NFD", postava)
+    return "".join(c for c in bez if c.isalnum() and not unicodedata.combining(c)).lower()
+
+
+def zapis_mluvci(cfg, texty):
+    """Hra pozná nahrávku podle znění repliky. Když stejnou větu říkají dvě postavy
+    („Děkuju, Lumíre.“ Ruda i Bára), musí vědět, čí která nahrávka je: hra/zvuk/mluvci.json
+    má pro takové repliky klíč → mluvčí (hra/game/zvuk.gd)."""
+    mluvci = {}
+    for jazyk_dir in sorted(p for p in OUT_HRA.glob("*") if p.is_dir()):
+        podle_zneni = {}
+        for zvuk in sorted(jazyk_dir.glob("*.mp3")):
+            r = texty.get(zvuk.stem)
+            if r:
+                podle_zneni.setdefault(r[jazyk_dir.name], []).append(zvuk.stem)
+        for klice in podle_zneni.values():
+            if len({texty[k]["_mluvci"].strip() for k in klice}) > 1:
+                for k in klice:
+                    mluvci[k] = jmeno_ve_hre(texty[k]["_mluvci"].strip())
+    (OUT_HRA / "mluvci.json").write_text(
+        json.dumps(mluvci, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def casting(cfg, sluzba, texty, jazyky, key, dry_run, znovu, nazev="casting"):
+    soubor = CASTING.with_name(nazev + ".json")
+    if not soubor.exists():
+        sys.exit(f"Chybí zadání {soubor.relative_to(ROOT)}")
+    spec = json.loads(soubor.read_text(encoding="utf-8"))
+    out = OUT_VZORKY / nazev / sluzba
     ukoly = []
     for postava, p in spec["postavy"].items():
         r = texty.get(p["replika"])
         if not r:
             sys.exit(f"Casting: replika {p['replika']} není v texty.csv")
         for jmeno, hlas in p["kandidati"].items():
+            # kandidát je ID hlasu, nebo {"hlas": ID, "model": jiný model než v hlasy.json}
+            model = hlas.get("model") if isinstance(hlas, dict) else None
+            hlas = hlas["hlas"] if isinstance(hlas, dict) else hlas
             for jazyk in jazyky:
-                z = zadani(cfg, sluzba, r, jazyk, hlas)
+                z = zadani(cfg, sluzba, r, jazyk, hlas, model)
                 z["kandidat"] = jmeno
                 z["postava_casting"] = postava
                 ukoly.append((z, out / jazyk / f"{p['replika']}__{jmeno}.mp3"))
@@ -229,27 +269,34 @@ def casting(cfg, sluzba, texty, jazyky, key, dry_run, znovu):
         return
     if not key:
         sys.exit(f"Chybí API klíč {KLICE[sluzba]}.")
+    kredity = 0
     for z, cil in ukoly:
         try:
-            if vyrob(cfg, z, cil, key, znovu):
-                print(f"→ {z['postava_casting']} / {z['kandidat']} [{z['jazyk']}] uloženo", flush=True)
+            k = vyrob(cfg, z, cil, key, znovu)
+            if k is not None:
+                kredity += k
+                print(f"→ {z['postava_casting']} / {z['kandidat']} [{z['jazyk']}] uloženo "
+                      f"({len(z['text'])} znaků, {k} kreditů)", flush=True)
         except ChybaAPI as e:
             print(f"✗ {z['postava_casting']} / {z['kandidat']} [{z['jazyk']}] přeskočen: "
                   f"{str(e).splitlines()[0][:160]}")
-    casting_html(spec)
-    print(f"přehled castingu: {(OUT_VZORKY / 'casting.html').relative_to(ROOT)}")
+    print(f"odečteno kreditů: {kredity}")
+    casting_html(spec, nazev)
+    print(f"přehled: {(OUT_VZORKY / (nazev + '.html')).relative_to(ROOT)}")
 
 
-def casting_html(spec):
-    """Obnoví docs/dabing/vzorky/casting.html: postava × kandidáti, každá služba zvlášť."""
-    casti = ["<!doctype html><html lang='cs'><meta charset='utf-8'><title>Casting hlasů</title>",
+def casting_html(spec, nazev="casting"):
+    """Obnoví docs/dabing/vzorky/<nazev>.html: postava × kandidáti, každá služba zvlášť."""
+    nadpis = spec.get("nadpis", "Casting hlasů")
+    casti = [f"<!doctype html><html lang='cs'><meta charset='utf-8'><title>{html.escape(nadpis)}</title>",
              "<style>body{font-family:sans-serif;max-width:70em;margin:1em auto;padding:0 1em}"
              "table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ccc;"
              "padding:.4em;vertical-align:top;text-align:left}audio{width:12em}small{color:#666}"
              ".k{display:inline-block;margin:0 1em .5em 0}</style>",
-             f"<h1>Casting hlasů</h1><p>Obnoveno {datetime.date.today().isoformat()}. "
-             "Vybraný hlas se zapíše do <code>tools/dabing/hlasy.json</code>.</p>"]
-    for sl_dir in sorted((OUT_VZORKY / "casting").glob("*")):
+             f"<h1>{html.escape(nadpis)}</h1><p>Obnoveno {datetime.date.today().isoformat()}. "
+             "Vybraný hlas se zapíše do <code>tools/dabing/hlasy.json</code>.</p>"
+             + (f"<p>{html.escape(spec['uvod'])}</p>" if spec.get("uvod") else "")]
+    for sl_dir in sorted((OUT_VZORKY / nazev).glob("*")):
         if not sl_dir.is_dir():
             continue
         casti.append(f"<h2>{html.escape(sl_dir.name)}</h2><table><tr><th>Postava</th><th>Kandidáti</th></tr>")
@@ -269,21 +316,26 @@ def casting_html(spec):
                          f"<td>{''.join(bunky)}</td></tr>")
         casti.append("</table>")
     casti.append("</html>")
-    (OUT_VZORKY / "casting.html").write_text("\n".join(casti) + "\n", encoding="utf-8")
+    (OUT_VZORKY / (nazev + ".html")).write_text("\n".join(casti) + "\n", encoding="utf-8")
 
 
 def main():
     ap = argparse.ArgumentParser(description="Generuje dabing replik přes TTS službu.")
     ap.add_argument("--vzorek", default="uvod", help="název vzorku z vzorky.json (výchozí: uvod)")
     ap.add_argument("--kapitola", type=int, help="všechny repliky kapitoly N místo vzorku")
+    ap.add_argument("--spolecne", action="store_true",
+                    help="repliky společné všem kapitolám (klíče bez chN_: předměty, obecné hlášky)")
     ap.add_argument("--only", action="append", help="id repliky (lze opakovat)")
     ap.add_argument("--jazyk", choices=["cs", "en"], help="jen jeden jazyk")
     ap.add_argument("--sluzba", choices=sorted(KLICE), help="přepíše službu z hlasy.json")
     ap.add_argument("--hra", action="store_true", help="ukládat do hra/zvuk/ místo docs/dabing/vzorky/")
+    ap.add_argument("--dil", metavar="I/N", help="jen I-tý díl z N (každá N-tá replika): "
+                    "víc běhů vedle sebe namluví kapitolu rychleji")
     ap.add_argument("--znovu", action="store_true", help="generovat i už hotové repliky")
     ap.add_argument("--dry-run", action="store_true", help="jen vypsat zadání a odhad ceny")
     ap.add_argument("--hlasy", action="store_true", help="vypsat hlasy, které služba nabízí")
-    ap.add_argument("--casting", action="store_true", help="kandidáti hlasů pro postavy z casting.json")
+    ap.add_argument("--casting", nargs="?", const="casting", metavar="ZADÁNÍ",
+                    help="kandidáti hlasů pro postavy z tools/dabing/<ZADÁNÍ>.json (výchozí casting)")
     ap.add_argument("--prehrat", action="store_true", help="po vygenerování přehrát (afplay)")
     args = ap.parse_args()
 
@@ -300,10 +352,11 @@ def main():
     texty = nacti_texty()
     jazyky = [args.jazyk] if args.jazyk else ["cs", "en"]
     if args.casting:
-        casting(cfg, sluzba, texty, jazyky, key, args.dry_run, args.znovu)
+        casting(cfg, sluzba, texty, jazyky, key, args.dry_run, args.znovu, args.casting)
         return
-    if args.kapitola:
-        ids = [k for k in texty if k.startswith(f"ch{args.kapitola}_")]
+    if args.kapitola or args.spolecne:
+        ids = [k for k in texty if (args.kapitola and k.startswith(f"ch{args.kapitola}_"))
+               or (args.spolecne and not re.match(r"ch\d+_", k))]
     else:
         vz = json.loads(VZORKY.read_text(encoding="utf-8"))
         if args.vzorek not in vz:
@@ -332,6 +385,9 @@ def main():
         for jazyk in jazyky:
             ukoly.append(zadani(cfg, sluzba, r, jazyk))
 
+    if args.dil:
+        dil, z_kolika = (int(x) for x in args.dil.split("/"))
+        ukoly = ukoly[dil - 1::z_kolika]
     out = OUT_HRA if args.hra else OUT_VZORKY / sluzba
     znaku = sum(len(z["text"]) for z in ukoly)
     print(f"{len(ukoly)} nahrávek ({len(ids) - len(preskoceno)} replik × {len(jazyky)} jaz.), "
@@ -353,14 +409,18 @@ def main():
         sys.exit(f"Chybí API klíč: nastav {KLICE[sluzba]} nebo ho zapiš do souboru .env "
                  f"v kořeni projektu ({KLICE[sluzba]}=...).")
 
-    hotove, chyby = [], 0
+    hotove, chyby, kredity, novych = [], 0, 0, 0
     for z in ukoly:
         cil = out / z["jazyk"] / f"{z['id']}.mp3"
         try:
-            if vyrob(cfg, z, cil, key, args.znovu):
-                print(f"→ {z['id']} [{z['jazyk']}] {z['postava']} uloženo: {cil.relative_to(ROOT)}", flush=True)
+            k = vyrob(cfg, z, cil, key, args.znovu)
+            if k is not None:
+                kredity += k
+                novych += 1
+                print(f"→ {z['id']} [{z['jazyk']}] {z['postava']} uloženo: {cil.relative_to(ROOT)} "
+                      f"({len(z['text'])} znaků, {k} kreditů)", flush=True)
             hotove.append(cil)
-        except SystemExit as e:
+        except ChybaAPI as e:
             # Jedna nepovedená replika nemá zastavit celou dávku; vyčerpaný kredit ano
             chyby += 1
             print(f"✗ {z['id']} [{z['jazyk']}] {z['postava']} přeskočeno: {str(e)[:200]}", flush=True)
@@ -368,6 +428,10 @@ def main():
                 print("Končím: vyčerpaný kredit nebo opakované chyby.")
                 break
 
+    print(f"nově namluveno {novych} replik, odečteno kreditů: {kredity}; "
+          f"hotovo {len(hotove)} z {len(ukoly)}")
+    if args.hra:
+        zapis_mluvci(cfg, texty)
     if not args.hra:
         prehled_html()
         print(f"přehled k poslechu: {(OUT_VZORKY / 'index.html').relative_to(ROOT)}")

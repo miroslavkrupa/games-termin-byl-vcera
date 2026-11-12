@@ -1,12 +1,13 @@
 {
   "id": "ch1_veritel_volba_kolik",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Kolik vlastně dlužím?",
-  "hash": "e8d45b23eb00ab98",
-  "datum": "2026-11-12"
+  "hash": "055e6eaa3cc643a5",
+  "datum": "2026-11-12",
+  "kredity": 8
 }

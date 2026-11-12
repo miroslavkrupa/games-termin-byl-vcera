@@ -1,12 +1,13 @@
 {
   "id": "ch1_byt_dira_pouzit",
   "sluzba": "elevenlabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "jazyk": "cs",
   "postava": "Ruda",
   "emoce": "odhodlaně",
-  "hlas": "JBFqnCBsd6RMkjVDRZzb",
+  "hlas": "pbkYN44QoHzaZgZJyduO",
   "text": "Hrdinové se neschovávají. Hrdinové utíkají. Strategicky.",
-  "hash": "161553721a2bfad8",
-  "datum": "2026-11-12"
+  "hash": "275cb49140da3a2a",
+  "datum": "2026-11-12",
+  "kredity": 22
 }
